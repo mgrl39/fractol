@@ -549,7 +549,7 @@
         <references refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" compoundref="fractol_8h" startline="188">WIDTH</references>
         <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
         <referencedby refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</referencedby>
-        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</referencedby>
+        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="151" endline="169">render_mandelbrot</referencedby>
       </memberdef>
       <memberdef kind="function" id="fractol_8h_1aa136a596dce9e2897d5eb0805a5a459f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -618,7 +618,7 @@
         <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" compoundref="fractol_8h" startline="44">SCALE_Y</references>
         <references refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" compoundref="fractol_8h" startline="108">s_render_vars::start</references>
         <references refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" compoundref="fractol_8h" startline="188">WIDTH</references>
-        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</referencedby>
+        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="151" endline="169">render_mandelbrot</referencedby>
       </memberdef>
       <memberdef kind="function" id="fractol_8h_1af87a6532ce68469fef69f9c207960094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -659,9 +659,9 @@
         <references refid="structs__color_1a6d246ab8c311f6f86da2f9aa129b98d9" compoundref="fractol_8h" startline="84">s_color::g</references>
         <references refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" compoundref="fractol_8h" startline="193">MAX_ITERATIONS</references>
         <references refid="structs__color_1a251e854381c6945efbbffc33796e6035" compoundref="fractol_8h" startline="83">s_color::r</references>
-        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="97" endline="116">mandelbrot_escape_check</referencedby>
         <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
-        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="121" endline="146">render_mandelbrot_row</referencedby>
       </memberdef>
       <memberdef kind="function" id="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>double</type>
@@ -774,7 +774,7 @@
         <references refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" compoundref="fractol_8h" startline="26">JULIA</references>
         <references refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" compoundref="fractol_8h" startline="25">MANDELBROT</references>
         <references refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</references>
-        <references refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</references>
+        <references refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="151" endline="169">render_mandelbrot</references>
         <referencedby refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</referencedby>
         <referencedby refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" compoundref="utils_8c" startline="91" endline="104">handle_scroll</referencedby>
         <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
@@ -796,12 +796,12 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="fractol.h" line="170" column="5" bodyfile="mandelbrot.c" bodystart="115" bodyend="133" declfile="fractol.h" declline="170" declcolumn="5"/>
+        <location file="fractol.h" line="170" column="5" bodyfile="mandelbrot.c" bodystart="151" bodyend="169" declfile="fractol.h" declline="170" declcolumn="5"/>
         <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
         <references refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</references>
         <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
         <references refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" compoundref="calcs_8c" startline="78" endline="93">precompute_coords</references>
-        <references refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</references>
+        <references refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="121" endline="146">render_mandelbrot_row</references>
         <referencedby refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</referencedby>
       </memberdef>
       <memberdef kind="function" id="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">

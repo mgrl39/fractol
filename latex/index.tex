@@ -2,14 +2,14 @@
 \hypertarget{index}{}\label{index}\index{Fractol: A Fractal Visualization Project@{Fractol: A Fractal Visualization Project}}
 \label{index_md_README}%
 \Hypertarget{index_md_README}%
- Fractol is a fractal visualization tool written in C that leverages the MLX42 graphics library for rendering complex and stunning fractals. The project supports the generation of the Mandelbrot and Julia sets, with interactive controls for zooming, panning, and exploring these fascinating mathematical structures.\hypertarget{index_autotoc_md200}{}\doxysection{\texorpdfstring{Overview}{Overview}}\label{index_autotoc_md200}
-Fractals are infinitely complex patterns that are self-\/similar across different scales. They are created by repeating a simple mathematical process over and over in an ongoing feedback loop. Fractol uses this principle to generate visually captivating fractal images.\hypertarget{index_autotoc_md201}{}\doxysubsection{\texorpdfstring{Supported Fractals}{Supported Fractals}}\label{index_autotoc_md201}
+ Fractol is a fractal visualization tool written in C that leverages the MLX42 graphics library for rendering complex and stunning fractals. The project supports the generation of the Mandelbrot and Julia sets, with interactive controls for zooming, panning, and exploring these fascinating mathematical structures.\hypertarget{index_autotoc_md202}{}\doxysection{\texorpdfstring{Overview}{Overview}}\label{index_autotoc_md202}
+Fractals are infinitely complex patterns that are self-\/similar across different scales. They are created by repeating a simple mathematical process over and over in an ongoing feedback loop. Fractol uses this principle to generate visually captivating fractal images.\hypertarget{index_autotoc_md203}{}\doxysubsection{\texorpdfstring{Supported Fractals}{Supported Fractals}}\label{index_autotoc_md203}
 
 \begin{DoxyItemize}
 \item Mandelbrot Set\+: A set of complex numbers that do not diverge when iteratively applied to the equation {\ttfamily z\+\_\+(n+1) = z\+\_\+n\texorpdfstring{$^\wedge$}{\string^}2 + c}, starting with {\ttfamily z\+\_\+0 = 0}.
 \item Julia Set\+: A family of fractals defined for a fixed complex constant {\ttfamily c}, iterating over {\ttfamily z\+\_\+(n+1) = z\+\_\+n\texorpdfstring{$^\wedge$}{\string^}2 + c}.
-\end{DoxyItemize}\hypertarget{index_autotoc_md202}{}\doxysection{\texorpdfstring{Mathematical Foundation}{Mathematical Foundation}}\label{index_autotoc_md202}
-\hypertarget{index_autotoc_md203}{}\doxysubsection{\texorpdfstring{Complex Numbers}{Complex Numbers}}\label{index_autotoc_md203}
+\end{DoxyItemize}\hypertarget{index_autotoc_md204}{}\doxysection{\texorpdfstring{Mathematical Foundation}{Mathematical Foundation}}\label{index_autotoc_md204}
+\hypertarget{index_autotoc_md205}{}\doxysubsection{\texorpdfstring{Complex Numbers}{Complex Numbers}}\label{index_autotoc_md205}
 Fractals rely on complex numbers, which have two components\+:
 \begin{DoxyItemize}
 \item {\bfseries{Real part (Re)}}
@@ -21,7 +21,7 @@ Complex numbers can be represented as {\ttfamily z = a + bi}, where\+:
 \item {\ttfamily a} is the real component.
 \item {\ttfamily b} is the imaginary component.
 \item {\ttfamily i} is the square root of -\/1.
-\end{DoxyItemize}\hypertarget{index_autotoc_md204}{}\doxysubsection{\texorpdfstring{Iteration and Divergence}{Iteration and Divergence}}\label{index_autotoc_md204}
+\end{DoxyItemize}\hypertarget{index_autotoc_md206}{}\doxysubsection{\texorpdfstring{Iteration and Divergence}{Iteration and Divergence}}\label{index_autotoc_md206}
 The fundamental concept in fractal generation is iteration\+:
 \begin{DoxyEnumerate}
 \item Start with an initial complex number {\ttfamily z\+\_\+0}.
@@ -29,14 +29,14 @@ The fundamental concept in fractal generation is iteration\+:
 \item Stop if the magnitude of {\ttfamily z}, given by {\ttfamily \texorpdfstring{$\vert$}{|}z\texorpdfstring{$\vert$}{|}\texorpdfstring{$^\wedge$}{\string^}2}, is greater than 4 (escape condition) or if the maximum number of iterations is reached.
 \end{DoxyEnumerate}
 
-The number of iterations before escape determines the color of a pixel, creating the fractal\textquotesingle{}s intricate patterns.\hypertarget{index_autotoc_md205}{}\doxysubsection{\texorpdfstring{Coordinate Mapping}{Coordinate Mapping}}\label{index_autotoc_md205}
+The number of iterations before escape determines the color of a pixel, creating the fractal\textquotesingle{}s intricate patterns.\hypertarget{index_autotoc_md207}{}\doxysubsection{\texorpdfstring{Coordinate Mapping}{Coordinate Mapping}}\label{index_autotoc_md207}
 The fractal exists in the complex plane, but pixels are rendered in a 2D screen coordinate system. Fractol maps each pixel to a corresponding complex number based on\+:
 \begin{DoxyItemize}
 \item The screen resolution.
 \item The zoom level.
 \item The viewport offset.
-\end{DoxyItemize}\hypertarget{index_autotoc_md206}{}\doxysection{\texorpdfstring{Project Structure}{Project Structure}}\label{index_autotoc_md206}
-\hypertarget{index_autotoc_md207}{}\doxysubsection{\texorpdfstring{Core Files}{Core Files}}\label{index_autotoc_md207}
+\end{DoxyItemize}\hypertarget{index_autotoc_md208}{}\doxysection{\texorpdfstring{Project Structure}{Project Structure}}\label{index_autotoc_md208}
+\hypertarget{index_autotoc_md209}{}\doxysubsection{\texorpdfstring{Core Files}{Core Files}}\label{index_autotoc_md209}
 
 \begin{DoxyItemize}
 \item {\ttfamily \doxylink{main_8c}{main.\+c}}\+: Program entry point, argument validation, and MLX42 initialization.
@@ -45,8 +45,8 @@ The fractal exists in the complex plane, but pixels are rendered in a 2D screen 
 \item {\ttfamily \doxylink{mandelbrot_8c}{mandelbrot.\+c}}\+: Logic for rendering the Mandelbrot set.
 \item {\ttfamily \doxylink{utils_8c}{utils.\+c}}\+: Helper functions for input handling, number parsing, and string comparison.
 \item {\ttfamily \doxylink{fractol_8h}{fractol.\+h}}\+: Header file containing declarations, structures, and constants.
-\end{DoxyItemize}\hypertarget{index_autotoc_md208}{}\doxysubsection{\texorpdfstring{Key Concepts}{Key Concepts}}\label{index_autotoc_md208}
-\hypertarget{index_autotoc_md209}{}\doxysubsubsection{\texorpdfstring{Fractal Rendering}{Fractal Rendering}}\label{index_autotoc_md209}
+\end{DoxyItemize}\hypertarget{index_autotoc_md210}{}\doxysubsection{\texorpdfstring{Key Concepts}{Key Concepts}}\label{index_autotoc_md210}
+\hypertarget{index_autotoc_md211}{}\doxysubsubsection{\texorpdfstring{Fractal Rendering}{Fractal Rendering}}\label{index_autotoc_md211}
 
 \begin{DoxyEnumerate}
 \item {\bfseries{Scaling and Limits}}\+:
@@ -62,12 +62,12 @@ The fractal exists in the complex plane, but pixels are rendered in a 2D screen 
 \begin{DoxyItemize}
 \item For the Julia set ({\ttfamily render\+\_\+julia}) and Mandelbrot set ({\ttfamily render\+\_\+mandelbrot}), Fractol iterates through each pixel, computes whether it escapes, and assigns a color based on the number of iterations.
 \end{DoxyItemize}
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md210}{}\doxysubsubsection{\texorpdfstring{Color Mapping}{Color Mapping}}\label{index_autotoc_md210}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md212}{}\doxysubsubsection{\texorpdfstring{Color Mapping}{Color Mapping}}\label{index_autotoc_md212}
 The color of each pixel is determined by the number of iterations before escape. A smooth gradient effect is applied using\+:
 \begin{DoxyItemize}
 \item Normalized Iterations\+: Proportional mapping of the iteration count to a color gradient.
 \item ARGB Encoding\+: Colors are represented in ARGB format for rendering.
-\end{DoxyItemize}\hypertarget{index_autotoc_md211}{}\doxysubsubsection{\texorpdfstring{Interactive Controls}{Interactive Controls}}\label{index_autotoc_md211}
+\end{DoxyItemize}\hypertarget{index_autotoc_md213}{}\doxysubsubsection{\texorpdfstring{Interactive Controls}{Interactive Controls}}\label{index_autotoc_md213}
 
 \begin{DoxyItemize}
 \item {\bfseries{Keyboard}}\+:
@@ -81,8 +81,8 @@ The color of each pixel is determined by the number of iterations before escape.
 \begin{DoxyItemize}
 \item Scroll\+: Zoom in/out at the cursor\textquotesingle{}s location.
 \end{DoxyItemize}
-\end{DoxyItemize}\hypertarget{index_autotoc_md212}{}\doxysection{\texorpdfstring{How to Use}{How to Use}}\label{index_autotoc_md212}
-\hypertarget{index_autotoc_md213}{}\doxysubsection{\texorpdfstring{Build and Run}{Build and Run}}\label{index_autotoc_md213}
+\end{DoxyItemize}\hypertarget{index_autotoc_md214}{}\doxysection{\texorpdfstring{How to Use}{How to Use}}\label{index_autotoc_md214}
+\hypertarget{index_autotoc_md215}{}\doxysubsection{\texorpdfstring{Build and Run}{Build and Run}}\label{index_autotoc_md215}
 
 \begin{DoxyEnumerate}
 \item Compile the project using {\ttfamily make}\+: 
@@ -107,13 +107,13 @@ The color of each pixel is determined by the number of iterations before escape.
 
 \end{DoxyCode}
 
-\end{DoxyEnumerate}\hypertarget{index_autotoc_md214}{}\doxysubsection{\texorpdfstring{Fractal Types}{Fractal Types}}\label{index_autotoc_md214}
+\end{DoxyEnumerate}\hypertarget{index_autotoc_md216}{}\doxysubsection{\texorpdfstring{Fractal Types}{Fractal Types}}\label{index_autotoc_md216}
 
 \begin{DoxyItemize}
 \item {\bfseries{mandelbrot}}\+: Generates the Mandelbrot set.
 \item {\bfseries{julia {\ttfamily \texorpdfstring{$<$}{<}c\+\_\+re\texorpdfstring{$>$}{>} \texorpdfstring{$<$}{<}c\+\_\+im\texorpdfstring{$>$}{>}}}}\+: Generates a Julia set with the given complex number.
-\end{DoxyItemize}\hypertarget{index_autotoc_md215}{}\doxysection{\texorpdfstring{Technical Highlights}{Technical Highlights}}\label{index_autotoc_md215}
-\hypertarget{index_autotoc_md216}{}\doxysubsection{\texorpdfstring{Dynamic Scaling}{Dynamic Scaling}}\label{index_autotoc_md216}
-Fractol dynamically adjusts the scale of the fractal based on the zoom level and screen resolution, ensuring high-\/detail rendering at any zoom level.\hypertarget{index_autotoc_md217}{}\doxysubsection{\texorpdfstring{Early Escape Optimization}{Early Escape Optimization}}\label{index_autotoc_md217}
-The Mandelbrot implementation includes early escape checks for points within known regions of the set, significantly speeding up rendering.\hypertarget{index_autotoc_md218}{}\doxysubsection{\texorpdfstring{Multi-\/\+Precision Calculations}{Multi-Precision Calculations}}\label{index_autotoc_md218}
+\end{DoxyItemize}\hypertarget{index_autotoc_md217}{}\doxysection{\texorpdfstring{Technical Highlights}{Technical Highlights}}\label{index_autotoc_md217}
+\hypertarget{index_autotoc_md218}{}\doxysubsection{\texorpdfstring{Dynamic Scaling}{Dynamic Scaling}}\label{index_autotoc_md218}
+Fractol dynamically adjusts the scale of the fractal based on the zoom level and screen resolution, ensuring high-\/detail rendering at any zoom level.\hypertarget{index_autotoc_md219}{}\doxysubsection{\texorpdfstring{Early Escape Optimization}{Early Escape Optimization}}\label{index_autotoc_md219}
+The Mandelbrot implementation includes early escape checks for points within known regions of the set, significantly speeding up rendering.\hypertarget{index_autotoc_md220}{}\doxysubsection{\texorpdfstring{Multi-\/\+Precision Calculations}{Multi-Precision Calculations}}\label{index_autotoc_md220}
 To maintain precision during deep zoom levels, calculations are performed using double-\/precision floating-\/point numbers. 

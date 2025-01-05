@@ -6,10 +6,10 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para><anchor id="md_mandelbrot__calcs_1autotoc_md172"/> El archivo <computeroutput><ref refid="mandelbrot_8c" kindref="compound">mandelbrot.c</ref></computeroutput> contiene la lógica necesaria para renderizar el conjunto de Mandelbrot en el proyecto Fractol. Este archivo incluye funciones para realizar iteraciones en puntos del plano complejo, optimizar las condiciones de escape y mapear los resultados a colores en los píxeles.</para>
-<sect1 id="md_mandelbrot__calcs_1autotoc_md173">
+<para><anchor id="md_mandelbrot__calcs_1autotoc_md174"/> El archivo <computeroutput><ref refid="mandelbrot_8c" kindref="compound">mandelbrot.c</ref></computeroutput> contiene la lógica necesaria para renderizar el conjunto de Mandelbrot en el proyecto Fractol. Este archivo incluye funciones para realizar iteraciones en puntos del plano complejo, optimizar las condiciones de escape y mapear los resultados a colores en los píxeles.</para>
+<sect1 id="md_mandelbrot__calcs_1autotoc_md175">
 <title>1. compute_next_iteration</title>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md174">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md176">
 <title>Definición</title>
 <para><programlisting filename=".c"><codeline><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" kindref="member">compute_next_iteration</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -25,7 +25,7 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md175">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md177">
 <title>¿Qué hace esta función?</title>
 <para>Calcula la siguiente iteración de <computeroutput>z</computeroutput> usando la fórmula iterativa del conjunto de Mandelbrot:</para>
 <para><programlisting><codeline><highlight class="normal">z_n+1<sp/>=<sp/>z_n^2<sp/>+<sp/>c</highlight></codeline>
@@ -36,7 +36,7 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md176">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md178">
 <title>Parámetros</title>
 <para><itemizedlist>
 <listitem><para><computeroutput>t_render_vars *vars</computeroutput>: Contiene las variables necesarias para los cálculos, incluyendo <computeroutput>z</computeroutput>, <computeroutput>c</computeroutput>, y sus cuadrados.</para>
@@ -44,7 +44,7 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md177">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md179">
 <title>Ejemplo Práctico</title>
 <para>Supongamos:<itemizedlist>
 <listitem><para><computeroutput>z = 0 + 0i</computeroutput></para>
@@ -64,9 +64,9 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="md_mandelbrot__calcs_1autotoc_md179">
+<sect1 id="md_mandelbrot__calcs_1autotoc_md181">
 <title>2. mandelbrot_iterations</title>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md180">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md182">
 <title>Definición</title>
 <para><programlisting filename=".c"><codeline><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" kindref="member">mandelbrot_iterations</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -93,7 +93,7 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md181">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md183">
 <title>¿Qué hace esta función?</title>
 <para>Determina si un punto pertenece al conjunto de Mandelbrot. Aplica iterativamente la fórmula hasta que:<orderedlist>
 <listitem><para><programlisting><codeline><highlight class="normal">|z|^2<sp/>&gt;<sp/>4</highlight></codeline>
@@ -102,7 +102,7 @@
 </listitem></orderedlist>
 </para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md182">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md184">
 <title>Parámetros</title>
 <para><itemizedlist>
 <listitem><para><computeroutput>t_render_vars *vars</computeroutput>: Variables necesarias para los cálculos, como <computeroutput>z</computeroutput>, <computeroutput>c</computeroutput>, y el número de iteraciones.</para>
@@ -110,7 +110,7 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md183">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md185">
 <title>Ejemplo Práctico</title>
 <para>Para <computeroutput>c = -0.75 + 0.1i</computeroutput>:<orderedlist>
 <listitem><para><programlisting><codeline><highlight class="normal">z_0<sp/>=<sp/>0<sp/>+<sp/>0i</highlight></codeline>
@@ -128,9 +128,9 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="md_mandelbrot__calcs_1autotoc_md185">
+<sect1 id="md_mandelbrot__calcs_1autotoc_md187">
 <title>3. mandelbrot_escape_check</title>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md186">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md188">
 <title>Definición</title>
 <para><programlisting filename=".c"><codeline><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" kindref="member">mandelbrot_escape_check</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -154,7 +154,7 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md187">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md189">
 <title>¿Qué hace esta función?</title>
 <para>Optimiza la detección de puntos que están garantizados como parte del conjunto de Mandelbrot, evitando realizar todas las iteraciones.</para>
 <para><bold>Explicación:</bold><itemizedlist>
@@ -162,7 +162,7 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md188">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md190">
 <title>Parámetros</title>
 <para><itemizedlist>
 <listitem><para><computeroutput>t_render_vars *vars</computeroutput>: Variables de cálculo.</para>
@@ -174,9 +174,9 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="md_mandelbrot__calcs_1autotoc_md190">
+<sect1 id="md_mandelbrot__calcs_1autotoc_md192">
 <title>4. render_mandelbrot_row</title>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md191">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md193">
 <title>Definición</title>
 <para><programlisting filename=".c"><codeline><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" kindref="member">render_mandelbrot_row</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -204,7 +204,7 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md192">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md194">
 <title>¿Qué hace esta función?</title>
 <para>Renderiza una fila completa del fractal:<orderedlist>
 <listitem><para>Calcula los valores de <computeroutput>c</computeroutput> para cada píxel.</para>
@@ -213,7 +213,7 @@
 </listitem></orderedlist>
 </para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md193">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md195">
 <title>Parámetros</title>
 <para><itemizedlist>
 <listitem><para><computeroutput>t_render_vars *vars</computeroutput>: Variables de cálculo.</para>
@@ -225,9 +225,9 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="md_mandelbrot__calcs_1autotoc_md195">
+<sect1 id="md_mandelbrot__calcs_1autotoc_md197">
 <title>5. render_mandelbrot</title>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md196">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md198">
 <title>Definición</title>
 <para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" kindref="member">render_mandelbrot</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
 <codeline><highlight class="normal">{</highlight></codeline>
@@ -250,11 +250,11 @@
 <codeline><highlight class="normal">}</highlight></codeline>
 </programlisting></para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md197">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md199">
 <title>¿Qué hace esta función?</title>
 <para>Renderiza el fractal completo fila por fila. Precomputa las coordenadas de los píxeles para optimizar el cálculo durante el proceso de renderizado.</para>
 </sect2>
-<sect2 id="md_mandelbrot__calcs_1autotoc_md198">
+<sect2 id="md_mandelbrot__calcs_1autotoc_md200">
 <title>Parámetros</title>
 <para><itemizedlist>
 <listitem><para><computeroutput>t_data *data</computeroutput>: Información del fractal. </para>

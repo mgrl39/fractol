@@ -722,26 +722,26 @@ Definition at line \fB165\fP of file \fBjulia\&.c\fP\&..PP
 .PP
 Render the Mandelbrot fractal\&. Render the Mandelbrot fractal\&. 
 .PP
-Definition at line \fB115\fP of file \fBmandelbrot\&.c\fP\&..PP
+Definition at line \fB151\fP of file \fBmandelbrot\&.c\fP\&..PP
 .nf
-116 {
-117     t_render_vars   vars;
-118     double          *precomputed_c_re;
-119     double          *precomputed_c_im;
-120     int             y;
-121 
-122     calculate_scales_and_limits(&vars, data);
-123     if (!precompute_coords(&precomputed_c_re, &precomputed_c_im, &vars))
-124         return ;
-125     y = 0;
-126     while (y < HEIGHT)
-127     {
-128         vars\&.c_im = precomputed_c_im[y];
-129         render_mandelbrot_row(&vars, data, y++);
-130     }
-131     free(precomputed_c_re);
-132     free(precomputed_c_im);
-133 }
+152 {
+153     t_render_vars   vars;
+154     double          *precomputed_c_re;
+155     double          *precomputed_c_im;
+156     int             y;
+157 
+158     calculate_scales_and_limits(&vars, data);
+159     if (!precompute_coords(&precomputed_c_re, &precomputed_c_im, &vars))
+160         return ;
+161     y = 0;
+162     while (y < HEIGHT)
+163     {
+164         vars\&.c_im = precomputed_c_im[y];
+165         render_mandelbrot_row(&vars, data, y++);
+166     }
+167     free(precomputed_c_re);
+168     free(precomputed_c_im);
+169 }
 .fi
 
 .SH "Author"

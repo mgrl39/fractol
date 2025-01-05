@@ -21,7 +21,7 @@
         <referencedby refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</referencedby>
         <referencedby refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" compoundref="utils_8c" startline="91" endline="104">handle_scroll</referencedby>
         <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
-        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="97" endline="116">mandelbrot_escape_check</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" prot="public" static="no" mutable="no">
         <type>double</type>

@@ -10,7 +10,8 @@ Include dependency graph for fractol.\+h\+:\nopagebreak
 \includegraphics[width=317pt]{fractol_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1048,28 +1049,28 @@ Render the Mandelbrot fractal.
 
 Render the Mandelbrot fractal. 
 
-Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00115}{115}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00151}{151}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00116\ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_re;}
-\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_im;}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\&precomputed\_c\_re,\ \&precomputed\_c\_im,\ \&vars))}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ return\ ;}
-\DoxyCodeLine{00125\ \ \ \ \ y\ =\ 0;}
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
-\DoxyCodeLine{00127\ \ \ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ precomputed\_c\_im[y];}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\&vars,\ data,\ y++);}
-\DoxyCodeLine{00130\ \ \ \ \ \}}
-\DoxyCodeLine{00131\ \ \ \ \ free(precomputed\_c\_re);}
-\DoxyCodeLine{00132\ \ \ \ \ free(precomputed\_c\_im);}
-\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_re;}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_im;}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\&precomputed\_c\_re,\ \&precomputed\_c\_im,\ \&vars))}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00161\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ precomputed\_c\_im[y];}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ free(precomputed\_c\_re);}
+\DoxyCodeLine{00168\ \ \ \ \ free(precomputed\_c\_im);}
+\DoxyCodeLine{00169\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak

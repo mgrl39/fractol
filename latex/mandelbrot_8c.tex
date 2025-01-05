@@ -1,7 +1,13 @@
 \doxysection{mandelbrot.\+c File Reference}
 \hypertarget{mandelbrot_8c}{}\label{mandelbrot_8c}\index{mandelbrot.c@{mandelbrot.c}}
+
+
+Implementation of the Mandelbrot set rendering.  
+
+
 {\ttfamily \#include "{}fractol.\+h"{}}\newline
-Include dependency graph for mandelbrot.\+c\+:\nopagebreak
+Include dependency graph for mandelbrot.\+c\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,6 +29,35 @@ void \mbox{\hyperlink{mandelbrot_8c_ac4c610e75a028afb898607ea03e80b30}{render\+\
 \begin{DoxyCompactList}\small\item\em Renders the Mandelbrot set fractal. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Implementation of the Mandelbrot set rendering. 
+
+This file contains all the functions necessary to compute and render the Mandelbrot set fractal. The Mandelbrot set is a visual representation off a mathematical formula applied to complex numbers. THe complexity and beauty of its patterns arise from how quickly or slowly each point "{}escapes"{} beyond a defined boundary.\hypertarget{mandelbrot_8c_autotoc_md172}{}\doxysubsubsubsection{\texorpdfstring{For Technical Users\+:}{For Technical Users:}}\label{mandelbrot_8c_autotoc_md172}
+
+\begin{DoxyItemize}
+\item {\bfseries{Core Algorithm\+:}} The Mandelbrot set uses the formula {\ttfamily z = z\texorpdfstring{$^\wedge$}{\string^}2 + c}, where\+:
+\begin{DoxyItemize}
+\item {\ttfamily z} starts at (0, 0) for every point.
+\item {\ttfamily c} is the complex number corresponding to the pixel\textquotesingle{}s position on the screen.
+\item Iterations continue until {\ttfamily \texorpdfstring{$\vert$}{|}z\texorpdfstring{$\vert$}{|}2 \texorpdfstring{$>$}{>} 4} (escape condition) or the maximum number of iterations is reached.
+\end{DoxyItemize}
+\item {\bfseries{Optimization\+:}}
+\begin{DoxyItemize}
+\item {\bfseries{Escape Checks\+:}} Early checks prevent unnecessary calculations for points.
+\item {\bfseries{Precomputed Coordinates\+:}} Reduces redundant computations of pixel coordinates.
+\item {\bfseries{Row-\/\+Based Rendering\+:}} Processes the fractal row by row for efficient memory and rendering operations.
+\item {\bfseries{Color Mapping\+:}} The number of iteerations determines the color of each pixexl, creating vibrant and intricaate fractal patterns.
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{mandelbrot_8c_autotoc_md173}{}\doxysubsubsubsection{\texorpdfstring{For Non-\/\+Technical Users\+:}{For Non-Technical Users:}}\label{mandelbrot_8c_autotoc_md173}
+
+\begin{DoxyItemize}
+\item {\bfseries{What is the Mandelbrot Set?}} The Mandelbrot set is a mathematical design created by repeatedly applying a simple formula to point on a grid. Points that "{}escape"{} quickly create bright colors, while points that stay "{}trapped"{} generate the darker areas of the fractal. 
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+
+
+
 \doxysubsection{Function Documentation}
 \Hypertarget{mandelbrot_8c_adb033de8daea75468f78428253a261cf}\label{mandelbrot_8c_adb033de8daea75468f78428253a261cf} 
 \index{mandelbrot.c@{mandelbrot.c}!compute\_next\_iteration@{compute\_next\_iteration}}
@@ -36,21 +71,21 @@ Computes the next iteration for a single point in the Mandelbrot set.
 
 
 
-Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00018}{18}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00054}{54}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00019\ \{}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{double}\ \ temp\_z\_re;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ temp\_z\_re\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ -\/\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
-\DoxyCodeLine{00023\ \ \ \ \ temp\_z\_re\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i];}
-\DoxyCodeLine{00024\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ (2.0\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]);}
-\DoxyCodeLine{00025\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
-\DoxyCodeLine{00026\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ temp\_z\_re;}
-\DoxyCodeLine{00027\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
-\DoxyCodeLine{00028\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
-\DoxyCodeLine{00029\ \}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{double}\ \ temp\_z\_re;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ temp\_z\_re\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ -\/\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{00059\ \ \ \ \ temp\_z\_re\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i];}
+\DoxyCodeLine{00060\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ (2.0\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]);}
+\DoxyCodeLine{00061\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{00062\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ temp\_z\_re;}
+\DoxyCodeLine{00063\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{00064\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{00065\ \}}
 
 \end{DoxyCode}
 Here is the caller graph for this function\+:\nopagebreak
@@ -72,29 +107,29 @@ Performs an early scape check for a point in the Mandelbrot set.
 
 
 
-Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00061}{61}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00097}{97}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00062\ \{}
-\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ max\_color;}
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{double}\ \ dist\_sq;}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{double}\ \ esc\_chk;}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{double}\ \ bound\_condition;}
-\DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \ \ \ \ max\_color\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(\mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}});}
-\DoxyCodeLine{00069\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ -\/\ 0.25;}
-\DoxyCodeLine{00070\ \ \ \ \ dist\_sq\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}};}
-\DoxyCodeLine{00071\ \ \ \ \ dist\_sq\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
-\DoxyCodeLine{00072\ \ \ \ \ esc\_chk\ =\ dist\_sq\ *\ (dist\_sq\ +\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}});}
-\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{if}\ ((data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ >\ 1.0)\ \&\&\ (esc\_chk\ <\ 0.25\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}))}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i]\ =\ max\_color,\ 1);}
-\DoxyCodeLine{00075\ \ \ \ \ bound\_condition\ =\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ +\ 1)\ *\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ +\ 1);}
-\DoxyCodeLine{00076\ \ \ \ \ bound\_condition\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
-\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (bound\_condition\ <\ 0.0625)}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i]\ =\ max\_color,\ 1);}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
-\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ max\_color;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{double}\ \ dist\_sq;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{double}\ \ esc\_chk;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{double}\ \ bound\_condition;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ max\_color\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(\mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}});}
+\DoxyCodeLine{00105\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ -\/\ 0.25;}
+\DoxyCodeLine{00106\ \ \ \ \ dist\_sq\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}};}
+\DoxyCodeLine{00107\ \ \ \ \ dist\_sq\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{00108\ \ \ \ \ esc\_chk\ =\ dist\_sq\ *\ (dist\_sq\ +\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}});}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ ((data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ >\ 1.0)\ \&\&\ (esc\_chk\ <\ 0.25\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}))}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i]\ =\ max\_color,\ 1);}
+\DoxyCodeLine{00111\ \ \ \ \ bound\_condition\ =\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ +\ 1)\ *\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ +\ 1);}
+\DoxyCodeLine{00112\ \ \ \ \ bound\_condition\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{if}\ (bound\_condition\ <\ 0.0625)}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i]\ =\ max\_color,\ 1);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00116\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -123,32 +158,32 @@ Performs the iterations for a single point in the Mandelbrot set.
 
 
 
-Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00034}{34}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00070}{70}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00035\ \{}
-\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \ current\_magnitude\_squared;}
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \ escape\_radius\_squared;}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \ \ escape\_radius\_squared\ =\ 4.0;}
-\DoxyCodeLine{00040\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ 0.0;}
-\DoxyCodeLine{00041\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 0.0;}
-\DoxyCodeLine{00042\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ 0;}
-\DoxyCodeLine{00043\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 0;}
-\DoxyCodeLine{00044\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ =\ 0;}
-\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)}
-\DoxyCodeLine{00046\ \ \ \ \ \{}
-\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ current\_magnitude\_squared\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ current\_magnitude\_squared\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
-\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ >=\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}})}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
-\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_magnitude\_squared\ >\ escape\_radius\_squared)}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
-\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_adb033de8daea75468f78428253a261cf}{compute\_next\_iteration}}(vars,\ i);}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}++;}
-\DoxyCodeLine{00055\ \ \ \ \ \}}
-\DoxyCodeLine{00056\ \}}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{double}\ \ current\_magnitude\_squared;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{double}\ \ escape\_radius\_squared;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ escape\_radius\_squared\ =\ 4.0;}
+\DoxyCodeLine{00076\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ 0.0;}
+\DoxyCodeLine{00077\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 0.0;}
+\DoxyCodeLine{00078\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ 0;}
+\DoxyCodeLine{00079\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 0;}
+\DoxyCodeLine{00080\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ =\ 0;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{while}\ (1)}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ current\_magnitude\_squared\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ current\_magnitude\_squared\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ >=\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}})}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_magnitude\_squared\ >\ escape\_radius\_squared)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_adb033de8daea75468f78428253a261cf}{compute\_next\_iteration}}(vars,\ i);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}++;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -177,28 +212,28 @@ Renders the Mandelbrot set fractal.
 
 Render the Mandelbrot fractal. 
 
-Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00115}{115}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00151}{151}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00116\ \{}
-\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
-\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_re;}
-\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_im;}
-\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
-\DoxyCodeLine{00121\ }
-\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
-\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\&precomputed\_c\_re,\ \&precomputed\_c\_im,\ \&vars))}
-\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ return\ ;}
-\DoxyCodeLine{00125\ \ \ \ \ y\ =\ 0;}
-\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
-\DoxyCodeLine{00127\ \ \ \ \ \{}
-\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ precomputed\_c\_im[y];}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\&vars,\ data,\ y++);}
-\DoxyCodeLine{00130\ \ \ \ \ \}}
-\DoxyCodeLine{00131\ \ \ \ \ free(precomputed\_c\_re);}
-\DoxyCodeLine{00132\ \ \ \ \ free(precomputed\_c\_im);}
-\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_re;}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_im;}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\&precomputed\_c\_re,\ \&precomputed\_c\_im,\ \&vars))}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00161\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{00163\ \ \ \ \ \{}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ precomputed\_c\_im[y];}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ free(precomputed\_c\_re);}
+\DoxyCodeLine{00168\ \ \ \ \ free(precomputed\_c\_im);}
+\DoxyCodeLine{00169\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak
@@ -227,35 +262,35 @@ Renders a single row of the Mandelbrot set.
 
 
 
-Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00085}{85}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00121}{121}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00086\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
-\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
-\DoxyCodeLine{00089\ }
-\DoxyCodeLine{00090\ \ \ \ \ x\ =\ 0;}
-\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
-\DoxyCodeLine{00092\ \ \ \ \ \{}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ +\ (y\ *\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ +\ x);}
-\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ x\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
-\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[1]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
-\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[1]\ +=\ (x\ +\ 1)\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
-\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ i\ =\ 0;}
-\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ 2)}
-\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{mandelbrot_8c_af0b8186beab597df25a8f56717d0cb44}{mandelbrot\_escape\_check}}(vars,\ i,\ data))}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
-\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue\ ;}
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_acedaf5af2ba2cbe5b5efefb43b1068d4}{mandelbrot\_iterations}}(vars,\ i);}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i++]\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}});}
-\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ x\ +=\ 2;}
-\DoxyCodeLine{00109\ \ \ \ \ \}}
-\DoxyCodeLine{00110\ \}}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{00128\ \ \ \ \ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ +\ (y\ *\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ +\ x);}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ x\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[1]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[1]\ +=\ (x\ +\ 1)\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ 2)}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{mandelbrot_8c_af0b8186beab597df25a8f56717d0cb44}{mandelbrot\_escape\_check}}(vars,\ i,\ data))}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue\ ;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_acedaf5af2ba2cbe5b5efefb43b1068d4}{mandelbrot\_iterations}}(vars,\ i);}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i++]\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}});}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ x\ +=\ 2;}
+\DoxyCodeLine{00145\ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \}}
 
 \end{DoxyCode}
 Here is the call graph for this function\+:\nopagebreak

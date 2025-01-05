@@ -51,14 +51,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mandelbrot.c" line="18" column="12" bodyfile="mandelbrot.c" bodystart="18" bodyend="29"/>
+        <location file="mandelbrot.c" line="54" column="12" bodyfile="mandelbrot.c" bodystart="54" bodyend="65"/>
         <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
         <references refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" compoundref="fractol_8h" startline="111">s_render_vars::c_re</references>
         <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
         <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
         <references refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" compoundref="fractol_8h" startline="109">s_render_vars::z</references>
         <references refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" compoundref="fractol_8h" startline="110">s_render_vars::z_squared</references>
-        <referencedby refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" compoundref="mandelbrot_8c" startline="34" endline="56">mandelbrot_iterations</referencedby>
+        <referencedby refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" compoundref="mandelbrot_8c" startline="70" endline="92">mandelbrot_iterations</referencedby>
       </memberdef>
       <memberdef kind="function" id="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -80,15 +80,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mandelbrot.c" line="34" column="12" bodyfile="mandelbrot.c" bodystart="34" bodyend="56"/>
+        <location file="mandelbrot.c" line="70" column="12" bodyfile="mandelbrot.c" bodystart="70" bodyend="92"/>
         <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
         <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
-        <references refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" compoundref="mandelbrot_8c" startline="18" endline="29">compute_next_iteration</references>
+        <references refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" compoundref="mandelbrot_8c" startline="54" endline="65">compute_next_iteration</references>
         <references refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" compoundref="fractol_8h" startline="106">s_render_vars::iterations</references>
         <references refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" compoundref="fractol_8h" startline="193">MAX_ITERATIONS</references>
         <references refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" compoundref="fractol_8h" startline="109">s_render_vars::z</references>
         <references refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" compoundref="fractol_8h" startline="110">s_render_vars::z_squared</references>
-        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="121" endline="146">render_mandelbrot_row</referencedby>
       </memberdef>
       <memberdef kind="function" id="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>int</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mandelbrot.c" line="61" column="11" bodyfile="mandelbrot.c" bodystart="61" bodyend="80"/>
+        <location file="mandelbrot.c" line="97" column="11" bodyfile="mandelbrot.c" bodystart="97" bodyend="116"/>
         <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
         <references refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" compoundref="fractol_8h" startline="111">s_render_vars::c_re</references>
         <references refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" compoundref="fractol_8h" startline="112">s_render_vars::c_re_centered</references>
@@ -122,7 +122,7 @@
         <references refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" compoundref="fractol_8h" startline="193">MAX_ITERATIONS</references>
         <references refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" compoundref="fractol_8h" startline="115">s_render_vars::row</references>
         <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
-        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="121" endline="146">render_mandelbrot_row</referencedby>
       </memberdef>
       <memberdef kind="function" id="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -148,20 +148,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mandelbrot.c" line="85" column="12" bodyfile="mandelbrot.c" bodystart="85" bodyend="110"/>
+        <location file="mandelbrot.c" line="121" column="12" bodyfile="mandelbrot.c" bodystart="121" bodyend="146"/>
         <references refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" compoundref="fractol_8h" startline="111">s_render_vars::c_re</references>
         <references refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" compoundref="calcs_8c" startline="131" endline="143">calculate_color</references>
         <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
         <references refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" compoundref="fractol_8h" startline="106">s_render_vars::iterations</references>
-        <references refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</references>
-        <references refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" compoundref="mandelbrot_8c" startline="34" endline="56">mandelbrot_iterations</references>
+        <references refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="97" endline="116">mandelbrot_escape_check</references>
+        <references refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" compoundref="mandelbrot_8c" startline="70" endline="92">mandelbrot_iterations</references>
         <references refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" compoundref="fractol_8h" startline="114">s_render_vars::pixels</references>
         <references refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" compoundref="fractol_8h" startline="115">s_render_vars::row</references>
         <references refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" compoundref="fractol_8h" startline="107">s_render_vars::scale</references>
         <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" compoundref="fractol_8h" startline="43">SCALE_X</references>
         <references refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" compoundref="fractol_8h" startline="108">s_render_vars::start</references>
         <references refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" compoundref="fractol_8h" startline="188">WIDTH</references>
-        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</referencedby>
+        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="151" endline="169">render_mandelbrot</referencedby>
       </memberdef>
       <memberdef kind="function" id="mandelbrot_8c_1ac4c610e75a028afb898607ea03e80b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -180,18 +180,46 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="mandelbrot.c" line="115" column="5" bodyfile="mandelbrot.c" bodystart="115" bodyend="133"/>
+        <location file="mandelbrot.c" line="151" column="5" bodyfile="mandelbrot.c" bodystart="151" bodyend="169"/>
         <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
         <references refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</references>
         <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
         <references refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" compoundref="calcs_8c" startline="78" endline="93">precompute_coords</references>
-        <references refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</references>
+        <references refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="121" endline="146">render_mandelbrot_row</references>
         <referencedby refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
+<para>Implementation of the Mandelbrot set rendering. </para>
     </briefdescription>
     <detaileddescription>
+<para>This file contains all the functions necessary to compute and render the Mandelbrot set fractal. The Mandelbrot set is a visual representation off a mathematical formula applied to complex numbers. THe complexity and beauty of its patterns arise from how quickly or slowly each point &quot;escapes&quot; beyond a defined boundary.</para>
+<sect3 id="mandelbrot_8c_1autotoc_md172">
+<title>For Technical Users:</title>
+<para><itemizedlist>
+<listitem><para><bold>Core Algorithm:</bold> The Mandelbrot set uses the formula <computeroutput>z = z^2 + c</computeroutput>, where:<itemizedlist>
+<listitem><para><computeroutput>z</computeroutput> starts at (0, 0) for every point.</para>
+</listitem><listitem><para><computeroutput>c</computeroutput> is the complex number corresponding to the pixel&apos;s position on the screen.</para>
+</listitem><listitem><para>Iterations continue until <computeroutput>|z|2 &gt; 4</computeroutput> (escape condition) or the maximum number of iterations is reached.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Optimization:</bold><itemizedlist>
+<listitem><para><bold>Escape Checks:</bold> Early checks prevent unnecessary calculations for points.</para>
+</listitem><listitem><para><bold>Precomputed Coordinates:</bold> Reduces redundant computations of pixel coordinates.</para>
+</listitem><listitem><para><bold>Row-Based Rendering:</bold> Processes the fractal row by row for efficient memory and rendering operations.</para>
+</listitem><listitem><para><bold>Color Mapping:</bold> The number of iteerations determines the color of each pixexl, creating vibrant and intricaate fractal patterns.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="mandelbrot_8c_1autotoc_md173">
+<title>For Non-Technical Users:</title>
+<para><itemizedlist>
+<listitem><para><bold>What is the Mandelbrot Set?</bold> The Mandelbrot set is a mathematical design created by repeatedly applying a simple formula to point on a grid. Points that &quot;escape&quot; quickly create bright colors, while points that stay &quot;trapped&quot; generate the darker areas of the fractal. </para>
+</listitem></itemizedlist>
+</para>
+</sect3>
     </detaileddescription>
     <programlisting>
 <codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
@@ -202,131 +230,167 @@
 <codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>meghribe<sp/>&lt;meghribe@student.42barcelona.co<sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/12/24<sp/>19:20:48<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2025/01/04<sp/>12:39:52<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2025/01/05<sp/>14:17:32<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fractol_8h" kindref="compound">fractol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
 <codeline lineno="15"><highlight class="comment">/**</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Computes<sp/>the<sp/>next<sp/>iteration<sp/>for<sp/>a<sp/>single<sp/>point<sp/>in<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18" refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" kindref="member">compute_next_iteration</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)</highlight></codeline>
-<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>temp_z_re;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"></highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>temp_z_re<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>-<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>temp_z_re<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i];</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>(2.0<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>temp_z_re;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
-<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
-<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="31"><highlight class="comment">/**</highlight></codeline>
-<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Performs<sp/>the<sp/>iterations<sp/>for<sp/>a<sp/>single<sp/>point<sp/>in<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
-<codeline lineno="33"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34" refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" kindref="member">mandelbrot_iterations</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>current_magnitude_squared;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>escape_radius_squared;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>escape_radius_squared<sp/>=<sp/>4.0;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>0.0;</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_magnitude_squared<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_magnitude_squared<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>&gt;=<sp/><ref refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kindref="member">MAX_ITERATIONS</ref>)</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_magnitude_squared<sp/>&gt;<sp/>escape_radius_squared)</highlight></codeline>
-<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" kindref="member">compute_next_iteration</ref>(vars,<sp/>i);</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>++;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="58"><highlight class="comment">/**</highlight></codeline>
-<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Performs<sp/>an<sp/>early<sp/>scape<sp/>check<sp/>for<sp/>a<sp/>point<sp/>in<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
-<codeline lineno="60"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61" refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" kindref="member">mandelbrot_escape_check</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
-<codeline lineno="62"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>max_color;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>dist_sq;</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>esc_chk;</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>bound_condition;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>max_color<sp/>=<sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(<ref refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kindref="member">MAX_ITERATIONS</ref>);</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref><sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i]<sp/>-<sp/>0.25;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>dist_sq<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref>;</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>dist_sq<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>esc_chk<sp/>=<sp/>dist_sq<sp/>*<sp/>(dist_sq<sp/>+<sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref>);</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>&gt;<sp/>1.0)<sp/>&amp;&amp;<sp/>(esc_chk<sp/>&lt;<sp/>0.25<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>))</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref>[i]<sp/>=<sp/>max_color,<sp/>1);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>bound_condition<sp/>=<sp/>(vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i]<sp/>+<sp/>1)<sp/>*<sp/>(vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i]<sp/>+<sp/>1);</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>bound_condition<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bound_condition<sp/>&lt;<sp/>0.0625)</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref>[i]<sp/>=<sp/>max_color,<sp/>1);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
-<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="82"><highlight class="comment">/**</highlight></codeline>
-<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Renders<sp/>a<sp/>single<sp/>row<sp/>of<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
-<codeline lineno="84"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85" refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" kindref="member">render_mandelbrot_row</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
-<codeline lineno="86"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref>)</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref><sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" kindref="member">pixels</ref><sp/>+<sp/>(y<sp/>*<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref><sp/>+<sp/>x);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>];</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[1]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[1]<sp/>+=<sp/>(x<sp/>+<sp/>1)<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>];</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>2)</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" kindref="member">mandelbrot_escape_check</ref>(vars,<sp/>i,<sp/>data))</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>continue<sp/>;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" kindref="member">mandelbrot_iterations</ref>(vars,<sp/>i);</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref>[i++]<sp/>=<sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>2;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
-<codeline lineno="112"><highlight class="comment">/**</highlight></codeline>
-<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Renders<sp/>the<sp/>Mandelbrot<sp/>set<sp/>fractal.</highlight></codeline>
-<codeline lineno="114"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115" refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1ac4c610e75a028afb898607ea03e80b30" kindref="member">render_mandelbrot</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
-<codeline lineno="116"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/><sp/><sp/>vars;</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*precomputed_c_re;</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*precomputed_c_im;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" kindref="member">calculate_scales_and_limits</ref>(&amp;vars,<sp/>data);</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" kindref="member">precompute_coords</ref>(&amp;precomputed_c_re,<sp/>&amp;precomputed_c_im,<sp/>&amp;vars))</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>;</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(y<sp/>&lt;<sp/><ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref>)</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars.<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>=<sp/>precomputed_c_im[y];</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" kindref="member">render_mandelbrot_row</ref>(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>free(precomputed_c_re);</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>free(precomputed_c_im);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>@file<sp/>mandelbrot.c</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Implementation<sp/>of<sp/>the<sp/>Mandelbrot<sp/>set<sp/>rendering.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>all<sp/>the<sp/>functions<sp/>necessary<sp/>to<sp/>compute<sp/>and<sp/>render<sp/>the</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>Mandelbrot<sp/>set<sp/>fractal.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>The<sp/>Mandelbrot<sp/>set<sp/>is<sp/>a<sp/>visual<sp/>representation<sp/>off<sp/>a<sp/>mathematical<sp/>formula</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>applied<sp/>to<sp/>complex<sp/>numbers.<sp/>THe<sp/>complexity<sp/>and<sp/>beauty<sp/>of<sp/>its<sp/>patterns<sp/>arise</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>from<sp/>how<sp/>quickly<sp/>or<sp/>slowly<sp/>each<sp/>point<sp/>&quot;escapes&quot;<sp/>beyond<sp/>a<sp/>defined<sp/>boundary.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>###<sp/>For<sp/>Technical<sp/>Users:</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>-<sp/>**Core<sp/>Algorithm:**<sp/>The<sp/>Mandelbrot<sp/>set<sp/>uses<sp/>the<sp/>formula<sp/>`z<sp/>=<sp/>z^2<sp/>+<sp/>c`,</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/><sp/><sp/>where:</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>`z`<sp/>starts<sp/>at<sp/>(0,<sp/>0)<sp/>for<sp/>every<sp/>point.</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>`c`<sp/>is<sp/>the<sp/>complex<sp/>number<sp/>corresponding<sp/>to<sp/>the<sp/>pixel&apos;s<sp/>position<sp/>on<sp/>the</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/><sp/><sp/>screen.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Iterations<sp/>continue<sp/>until<sp/>`|z|2<sp/>&gt;<sp/>4`<sp/>(escape<sp/>condition)<sp/>or<sp/>the<sp/>maximum</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>number<sp/>of<sp/>iterations<sp/>is<sp/>reached.</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>-<sp/>**Optimization:**</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>**Escape<sp/>Checks:**<sp/>Early<sp/>checks<sp/>prevent<sp/>unnecessary<sp/>calculations<sp/>for</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/>points.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>**Precomputed<sp/>Coordinates:**<sp/>Reduces<sp/>redundant<sp/>computations<sp/>of<sp/>pixel</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>coordinates.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>**Row-Based<sp/>Rendering:**<sp/>Processes<sp/>the<sp/>fractal<sp/>row<sp/>by<sp/>row<sp/>for<sp/>efficient</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>memory<sp/>and<sp/>rendering<sp/>operations.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>**Color<sp/>Mapping:**<sp/>The<sp/>number<sp/>of<sp/>iteerations<sp/>determines<sp/>the<sp/>color<sp/>of</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>each<sp/>pixexl,<sp/>creating<sp/>vibrant<sp/>and<sp/>intricaate<sp/>fractal<sp/>patterns.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>###<sp/>For<sp/>Non-Technical<sp/>Users:</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>-<sp/>**What<sp/>is<sp/>the<sp/>Mandelbrot<sp/>Set?**</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/><sp/>The<sp/>Mandelbrot<sp/>set<sp/>is<sp/>a<sp/>mathematical<sp/>design<sp/>created<sp/>by<sp/>repeatedly</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/><sp/><sp/>applying<sp/>a<sp/>simple<sp/>formula<sp/>to<sp/>point<sp/>on<sp/>a<sp/>grid.<sp/>Points<sp/>that<sp/>&quot;escape&quot;</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/><sp/>quickly<sp/>create<sp/>bright<sp/>colors,<sp/>while<sp/>points<sp/>that<sp/>stay<sp/>&quot;trapped&quot;</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/><sp/>generate<sp/>the<sp/>darker<sp/>areas<sp/>of<sp/>the<sp/>fractal.</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*/</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="51"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Computes<sp/>the<sp/>next<sp/>iteration<sp/>for<sp/>a<sp/>single<sp/>point<sp/>in<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" kindref="member">compute_next_iteration</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>temp_z_re;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>temp_z_re<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>-<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>temp_z_re<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i];</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>(2.0<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>temp_z_re;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="67"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Performs<sp/>the<sp/>iterations<sp/>for<sp/>a<sp/>single<sp/>point<sp/>in<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" kindref="member">mandelbrot_iterations</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i)</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>current_magnitude_squared;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>escape_radius_squared;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>escape_radius_squared<sp/>=<sp/>4.0;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_magnitude_squared<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_magnitude_squared<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>&gt;=<sp/><ref refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kindref="member">MAX_ITERATIONS</ref>)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(current_magnitude_squared<sp/>&gt;<sp/>escape_radius_squared)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" kindref="member">compute_next_iteration</ref>(vars,<sp/>i);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>++;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="94"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Performs<sp/>an<sp/>early<sp/>scape<sp/>check<sp/>for<sp/>a<sp/>point<sp/>in<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" kindref="member">mandelbrot_escape_check</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>max_color;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>dist_sq;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>esc_chk;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>bound_condition;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>max_color<sp/>=<sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(<ref refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kindref="member">MAX_ITERATIONS</ref>);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref><sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i]<sp/>-<sp/>0.25;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>dist_sq<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>dist_sq<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>esc_chk<sp/>=<sp/>dist_sq<sp/>*<sp/>(dist_sq<sp/>+<sp/>vars-&gt;<ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref>);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>&gt;<sp/>1.0)<sp/>&amp;&amp;<sp/>(esc_chk<sp/>&lt;<sp/>0.25<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>))</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref>[i]<sp/>=<sp/>max_color,<sp/>1);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>bound_condition<sp/>=<sp/>(vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i]<sp/>+<sp/>1)<sp/>*<sp/>(vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[i]<sp/>+<sp/>1);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>bound_condition<sp/>+=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bound_condition<sp/>&lt;<sp/>0.0625)</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref>[i]<sp/>=<sp/>max_color,<sp/>1);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Renders<sp/>a<sp/>single<sp/>row<sp/>of<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" kindref="member">render_mandelbrot_row</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref>)</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref><sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" kindref="member">pixels</ref><sp/>+<sp/>(y<sp/>*<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref><sp/>+<sp/>x);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>];</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[1]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[1]<sp/>+=<sp/>(x<sp/>+<sp/>1)<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>];</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(i<sp/>&lt;<sp/>2)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" kindref="member">mandelbrot_escape_check</ref>(vars,<sp/>i,<sp/>data))</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>continue<sp/>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" kindref="member">mandelbrot_iterations</ref>(vars,<sp/>i);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref>[i++]<sp/>=<sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>2;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="148"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Renders<sp/>the<sp/>Mandelbrot<sp/>set<sp/>fractal.</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151" refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1ac4c610e75a028afb898607ea03e80b30" kindref="member">render_mandelbrot</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="152"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/><sp/><sp/>vars;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*precomputed_c_re;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*precomputed_c_im;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" kindref="member">calculate_scales_and_limits</ref>(&amp;vars,<sp/>data);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" kindref="member">precompute_coords</ref>(&amp;precomputed_c_re,<sp/>&amp;precomputed_c_im,<sp/>&amp;vars))</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(y<sp/>&lt;<sp/><ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref>)</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars.<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>=<sp/>precomputed_c_im[y];</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" kindref="member">render_mandelbrot_row</ref>(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>free(precomputed_c_re);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>free(precomputed_c_im);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="mandelbrot.c"/>
   </compounddef>

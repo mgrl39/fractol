@@ -1,9 +1,9 @@
 \chapter{Calculos de Mandelbrot}
 \hypertarget{md_mandelbrot__calcs}{}\label{md_mandelbrot__calcs}\index{Calculos de Mandelbrot@{Calculos de Mandelbrot}}
-\label{md_mandelbrot__calcs_autotoc_md172}%
-\Hypertarget{md_mandelbrot__calcs_autotoc_md172}%
- El archivo {\ttfamily \doxylink{mandelbrot_8c}{mandelbrot.\+c}} contiene la lógica necesaria para renderizar el conjunto de Mandelbrot en el proyecto Fractol. Este archivo incluye funciones para realizar iteraciones en puntos del plano complejo, optimizar las condiciones de escape y mapear los resultados a colores en los píxeles.\hypertarget{md_mandelbrot__calcs_autotoc_md173}{}\doxysection{\texorpdfstring{1. compute\+\_\+next\+\_\+iteration}{1. compute\_next\_iteration}}\label{md_mandelbrot__calcs_autotoc_md173}
-\hypertarget{md_mandelbrot__calcs_autotoc_md174}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md174}
+\label{md_mandelbrot__calcs_autotoc_md174}%
+\Hypertarget{md_mandelbrot__calcs_autotoc_md174}%
+ El archivo {\ttfamily \doxylink{mandelbrot_8c}{mandelbrot.\+c}} contiene la lógica necesaria para renderizar el conjunto de Mandelbrot en el proyecto Fractol. Este archivo incluye funciones para realizar iteraciones en puntos del plano complejo, optimizar las condiciones de escape y mapear los resultados a colores en los píxeles.\hypertarget{md_mandelbrot__calcs_autotoc_md175}{}\doxysection{\texorpdfstring{1. compute\+\_\+next\+\_\+iteration}{1. compute\_next\_iteration}}\label{md_mandelbrot__calcs_autotoc_md175}
+\hypertarget{md_mandelbrot__calcs_autotoc_md176}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md176}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mandelbrot_8c_adb033de8daea75468f78428253a261cf}{compute\_next\_iteration}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \textcolor{keywordtype}{int}\ i)}
@@ -20,7 +20,7 @@
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_mandelbrot__calcs_autotoc_md175}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md175}
+\hypertarget{md_mandelbrot__calcs_autotoc_md177}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md177}
 Calcula la siguiente iteración de {\ttfamily z} usando la fórmula iterativa del conjunto de Mandelbrot\+:
 
 
@@ -34,12 +34,12 @@ Calcula la siguiente iteración de {\ttfamily z} usando la fórmula iterativa de
 \begin{DoxyItemize}
 \item Usa los valores actuales de {\ttfamily z} (parte real e imaginaria) y la constante {\ttfamily c} (coordenadas del píxel en el plano complejo).
 \item Actualiza los valores de {\ttfamily z} y los cuadrados de sus componentes para las próximas iteraciones.
-\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md176}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md176}
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md178}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md178}
 
 \begin{DoxyItemize}
 \item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Contiene las variables necesarias para los cálculos, incluyendo {\ttfamily z}, {\ttfamily c}, y sus cuadrados.
 \item {\ttfamily int i}\+: Índice del punto en el conjunto de datos.
-\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md177}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md_mandelbrot__calcs_autotoc_md177}
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md179}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md_mandelbrot__calcs_autotoc_md179}
 Supongamos\+:
 \begin{DoxyItemize}
 \item {\ttfamily z = 0 + 0i}
@@ -65,8 +65,8 @@ Supongamos\+:
 \end{DoxyEnumerate}
 
 \DoxyHorRuler{0}
-\hypertarget{md_mandelbrot__calcs_autotoc_md179}{}\doxysection{\texorpdfstring{2. mandelbrot\+\_\+iterations}{2. mandelbrot\_iterations}}\label{md_mandelbrot__calcs_autotoc_md179}
-\hypertarget{md_mandelbrot__calcs_autotoc_md180}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md180}
+\hypertarget{md_mandelbrot__calcs_autotoc_md181}{}\doxysection{\texorpdfstring{2. mandelbrot\+\_\+iterations}{2. mandelbrot\_iterations}}\label{md_mandelbrot__calcs_autotoc_md181}
+\hypertarget{md_mandelbrot__calcs_autotoc_md182}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md182}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mandelbrot_8c_acedaf5af2ba2cbe5b5efefb43b1068d4}{mandelbrot\_iterations}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \textcolor{keywordtype}{int}\ i)}
@@ -94,7 +94,7 @@ Supongamos\+:
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_mandelbrot__calcs_autotoc_md181}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md181}
+\hypertarget{md_mandelbrot__calcs_autotoc_md183}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md183}
 Determina si un punto pertenece al conjunto de Mandelbrot. Aplica iterativamente la fórmula hasta que\+:
 \begin{DoxyEnumerate}
 \item 
@@ -104,12 +104,12 @@ Determina si un punto pertenece al conjunto de Mandelbrot. Aplica iterativamente
 \end{DoxyCode}
  (El punto escapa del conjunto).
 \item Se alcanza el máximo de iteraciones ({\ttfamily MAX\+\_\+\+ITERATIONS}), lo que indica que el punto es parte del conjunto o está muy cercano.
-\end{DoxyEnumerate}\hypertarget{md_mandelbrot__calcs_autotoc_md182}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md182}
+\end{DoxyEnumerate}\hypertarget{md_mandelbrot__calcs_autotoc_md184}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md184}
 
 \begin{DoxyItemize}
 \item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Variables necesarias para los cálculos, como {\ttfamily z}, {\ttfamily c}, y el número de iteraciones.
 \item {\ttfamily int i}\+: Índice del punto actual.
-\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md183}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md_mandelbrot__calcs_autotoc_md183}
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md185}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md_mandelbrot__calcs_autotoc_md185}
 Para {\ttfamily c = -\/0.\+75 + 0.\+1i}\+:
 \begin{DoxyEnumerate}
 \item 
@@ -136,8 +136,8 @@ Para {\ttfamily c = -\/0.\+75 + 0.\+1i}\+:
 \end{DoxyEnumerate}
 
 \DoxyHorRuler{0}
-\hypertarget{md_mandelbrot__calcs_autotoc_md185}{}\doxysection{\texorpdfstring{3. mandelbrot\+\_\+escape\+\_\+check}{3. mandelbrot\_escape\_check}}\label{md_mandelbrot__calcs_autotoc_md185}
-\hypertarget{md_mandelbrot__calcs_autotoc_md186}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md186}
+\hypertarget{md_mandelbrot__calcs_autotoc_md187}{}\doxysection{\texorpdfstring{3. mandelbrot\+\_\+escape\+\_\+check}{3. mandelbrot\_escape\_check}}\label{md_mandelbrot__calcs_autotoc_md187}
+\hypertarget{md_mandelbrot__calcs_autotoc_md188}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md188}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{mandelbrot_8c_af0b8186beab597df25a8f56717d0cb44}{mandelbrot\_escape\_check}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \textcolor{keywordtype}{int}\ i,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
@@ -162,13 +162,13 @@ Para {\ttfamily c = -\/0.\+75 + 0.\+1i}\+:
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_mandelbrot__calcs_autotoc_md187}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md187}
+\hypertarget{md_mandelbrot__calcs_autotoc_md189}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md189}
 Optimiza la detección de puntos que están garantizados como parte del conjunto de Mandelbrot, evitando realizar todas las iteraciones.
 
 {\bfseries{Explicación\+:}}
 \begin{DoxyItemize}
 \item Comprueba si el punto está en regiones conocidas del conjunto usando condiciones geométricas predefinidas.
-\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md188}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md188}
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md190}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md190}
 
 \begin{DoxyItemize}
 \item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Variables de cálculo.
@@ -177,8 +177,8 @@ Optimiza la detección de puntos que están garantizados como parte del conjunto
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_mandelbrot__calcs_autotoc_md190}{}\doxysection{\texorpdfstring{4. render\+\_\+mandelbrot\+\_\+row}{4. render\_mandelbrot\_row}}\label{md_mandelbrot__calcs_autotoc_md190}
-\hypertarget{md_mandelbrot__calcs_autotoc_md191}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md191}
+\hypertarget{md_mandelbrot__calcs_autotoc_md192}{}\doxysection{\texorpdfstring{4. render\+\_\+mandelbrot\+\_\+row}{4. render\_mandelbrot\_row}}\label{md_mandelbrot__calcs_autotoc_md192}
+\hypertarget{md_mandelbrot__calcs_autotoc_md193}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md193}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data,\ \textcolor{keywordtype}{int}\ y)}
@@ -207,13 +207,13 @@ Optimiza la detección de puntos que están garantizados como parte del conjunto
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_mandelbrot__calcs_autotoc_md192}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md192}
+\hypertarget{md_mandelbrot__calcs_autotoc_md194}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md194}
 Renderiza una fila completa del fractal\+:
 \begin{DoxyEnumerate}
 \item Calcula los valores de {\ttfamily c} para cada píxel.
 \item Aplica condiciones de escape rápidas.
 \item Realiza iteraciones para determinar el color del píxel.
-\end{DoxyEnumerate}\hypertarget{md_mandelbrot__calcs_autotoc_md193}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md193}
+\end{DoxyEnumerate}\hypertarget{md_mandelbrot__calcs_autotoc_md195}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md195}
 
 \begin{DoxyItemize}
 \item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Variables de cálculo.
@@ -222,8 +222,8 @@ Renderiza una fila completa del fractal\+:
 \end{DoxyItemize}
 
 \DoxyHorRuler{0}
-\hypertarget{md_mandelbrot__calcs_autotoc_md195}{}\doxysection{\texorpdfstring{5. render\+\_\+mandelbrot}{5. render\_mandelbrot}}\label{md_mandelbrot__calcs_autotoc_md195}
-\hypertarget{md_mandelbrot__calcs_autotoc_md196}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md196}
+\hypertarget{md_mandelbrot__calcs_autotoc_md197}{}\doxysection{\texorpdfstring{5. render\+\_\+mandelbrot}{5. render\_mandelbrot}}\label{md_mandelbrot__calcs_autotoc_md197}
+\hypertarget{md_mandelbrot__calcs_autotoc_md198}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md198}
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_ac4c610e75a028afb898607ea03e80b30}{render\_mandelbrot}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
@@ -247,8 +247,8 @@ Renderiza una fila completa del fractal\+:
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
-\hypertarget{md_mandelbrot__calcs_autotoc_md197}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md197}
-Renderiza el fractal completo fila por fila. Precomputa las coordenadas de los píxeles para optimizar el cálculo durante el proceso de renderizado.\hypertarget{md_mandelbrot__calcs_autotoc_md198}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md198}
+\hypertarget{md_mandelbrot__calcs_autotoc_md199}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md199}
+Renderiza el fractal completo fila por fila. Precomputa las coordenadas de los píxeles para optimizar el cálculo durante el proceso de renderizado.\hypertarget{md_mandelbrot__calcs_autotoc_md200}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md200}
 
 \begin{DoxyItemize}
 \item {\ttfamily t\+\_\+data \texorpdfstring{$\ast$}{*}data}\+: Información del fractal. 

@@ -7,10 +7,10 @@
     </briefdescription>
     <detaileddescription>
 <para><anchor id="index_1md_README"/> Fractol is a fractal visualization tool written in C that leverages the MLX42 graphics library for rendering complex and stunning fractals. The project supports the generation of the Mandelbrot and Julia sets, with interactive controls for zooming, panning, and exploring these fascinating mathematical structures.</para>
-<sect1 id="index_1autotoc_md200">
+<sect1 id="index_1autotoc_md202">
 <title>Overview</title>
 <para>Fractals are infinitely complex patterns that are self-similar across different scales. They are created by repeating a simple mathematical process over and over in an ongoing feedback loop. Fractol uses this principle to generate visually captivating fractal images.</para>
-<sect2 id="index_1autotoc_md201">
+<sect2 id="index_1autotoc_md203">
 <title>Supported Fractals</title>
 <para><itemizedlist>
 <listitem><para>Mandelbrot Set: A set of complex numbers that do not diverge when iteratively applied to the equation <computeroutput>z_(n+1) = z_n^2 + c</computeroutput>, starting with <computeroutput>z_0 = 0</computeroutput>.</para>
@@ -19,9 +19,9 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="index_1autotoc_md202">
+<sect1 id="index_1autotoc_md204">
 <title>Mathematical Foundation</title>
-<sect2 id="index_1autotoc_md203">
+<sect2 id="index_1autotoc_md205">
 <title>Complex Numbers</title>
 <para>Fractals rely on complex numbers, which have two components:<itemizedlist>
 <listitem><para><bold>Real part (Re)</bold></para>
@@ -35,7 +35,7 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="index_1autotoc_md204">
+<sect2 id="index_1autotoc_md206">
 <title>Iteration and Divergence</title>
 <para>The fundamental concept in fractal generation is iteration:<orderedlist>
 <listitem><para>Start with an initial complex number <computeroutput>z_0</computeroutput>.</para>
@@ -45,7 +45,7 @@
 </para>
 <para>The number of iterations before escape determines the color of a pixel, creating the fractal&apos;s intricate patterns.</para>
 </sect2>
-<sect2 id="index_1autotoc_md205">
+<sect2 id="index_1autotoc_md207">
 <title>Coordinate Mapping</title>
 <para>The fractal exists in the complex plane, but pixels are rendered in a 2D screen coordinate system. Fractol maps each pixel to a corresponding complex number based on:<itemizedlist>
 <listitem><para>The screen resolution.</para>
@@ -55,9 +55,9 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="index_1autotoc_md206">
+<sect1 id="index_1autotoc_md208">
 <title>Project Structure</title>
-<sect2 id="index_1autotoc_md207">
+<sect2 id="index_1autotoc_md209">
 <title>Core Files</title>
 <para><itemizedlist>
 <listitem><para><computeroutput><ref refid="main_8c" kindref="compound">main.c</ref></computeroutput>: Program entry point, argument validation, and MLX42 initialization.</para>
@@ -69,9 +69,9 @@
 </listitem></itemizedlist>
 </para>
 </sect2>
-<sect2 id="index_1autotoc_md208">
+<sect2 id="index_1autotoc_md210">
 <title>Key Concepts</title>
-<sect3 id="index_1autotoc_md209">
+<sect3 id="index_1autotoc_md211">
 <title>Fractal Rendering</title>
 <para><orderedlist>
 <listitem><para><bold>Scaling and Limits</bold>:<itemizedlist>
@@ -90,7 +90,7 @@
 </listitem></orderedlist>
 </para>
 </sect3>
-<sect3 id="index_1autotoc_md210">
+<sect3 id="index_1autotoc_md212">
 <title>Color Mapping</title>
 <para>The color of each pixel is determined by the number of iterations before escape. A smooth gradient effect is applied using:<itemizedlist>
 <listitem><para>Normalized Iterations: Proportional mapping of the iteration count to a color gradient.</para>
@@ -98,7 +98,7 @@
 </listitem></itemizedlist>
 </para>
 </sect3>
-<sect3 id="index_1autotoc_md211">
+<sect3 id="index_1autotoc_md213">
 <title>Interactive Controls</title>
 <para><itemizedlist>
 <listitem><para><bold>Keyboard</bold>:<itemizedlist>
@@ -117,9 +117,9 @@
 </sect3>
 </sect2>
 </sect1>
-<sect1 id="index_1autotoc_md212">
+<sect1 id="index_1autotoc_md214">
 <title>How to Use</title>
-<sect2 id="index_1autotoc_md213">
+<sect2 id="index_1autotoc_md215">
 <title>Build and Run</title>
 <para><orderedlist>
 <listitem><para>Compile the project using <computeroutput>make</computeroutput>: <programlisting filename=".bash"><codeline><highlight class="normal">make</highlight></codeline>
@@ -131,7 +131,7 @@
 </listitem></orderedlist>
 </para>
 </sect2>
-<sect2 id="index_1autotoc_md214">
+<sect2 id="index_1autotoc_md216">
 <title>Fractal Types</title>
 <para><itemizedlist>
 <listitem><para><bold>mandelbrot</bold>: Generates the Mandelbrot set.</para>
@@ -140,17 +140,17 @@
 </para>
 </sect2>
 </sect1>
-<sect1 id="index_1autotoc_md215">
+<sect1 id="index_1autotoc_md217">
 <title>Technical Highlights</title>
-<sect2 id="index_1autotoc_md216">
+<sect2 id="index_1autotoc_md218">
 <title>Dynamic Scaling</title>
 <para>Fractol dynamically adjusts the scale of the fractal based on the zoom level and screen resolution, ensuring high-detail rendering at any zoom level.</para>
 </sect2>
-<sect2 id="index_1autotoc_md217">
+<sect2 id="index_1autotoc_md219">
 <title>Early Escape Optimization</title>
 <para>The Mandelbrot implementation includes early escape checks for points within known regions of the set, significantly speeding up rendering.</para>
 </sect2>
-<sect2 id="index_1autotoc_md218">
+<sect2 id="index_1autotoc_md220">
 <title>Multi-Precision Calculations</title>
 <para>To maintain precision during deep zoom levels, calculations are performed using double-precision floating-point numbers. </para>
 </sect2>
