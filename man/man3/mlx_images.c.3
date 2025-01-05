@@ -1,0 +1,398 @@
+.TH "MLX42/src/mlx_images.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_images.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_flush_batch\fP (\fBmlx_ctx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBint8_t\fP \fBmlx_bind_texture\fP (\fBmlx_ctx_t\fP *\fBmlx\fP, \fBmlx_image_t\fP *\fBimg\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_draw_instance\fP (\fBmlx_ctx_t\fP *\fBmlx\fP, \fBmlx_image_t\fP *\fBimg\fP, \fBmlx_instance_t\fP *\fBinstance\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_instance_t\fP * \fBmlx_grow_instances\fP (\fBmlx_image_t\fP *\fBimg\fP, \fBbool\fP *\fBdid_realloc\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_instance_depth\fP (\fBmlx_instance_t\fP *\fBinstance\fP, \fBint32_t\fP zdepth)"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_image_to_window\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_image_t\fP *\fBimg\fP, \fBint32_t\fP \fBx\fP, \fBint32_t\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_image_t\fP * \fBmlx_new_image\fP (\fBmlx_t\fP *\fBmlx\fP, \fBuint32_t\fP \fBwidth\fP, \fBuint32_t\fP \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_delete_image\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_image_t\fP *\fBimage\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_resize_image\fP (\fBmlx_image_t\fP *\fBimg\fP, \fBuint32_t\fP \fBnwidth\fP, \fBuint32_t\fP \fBnheight\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBint8_t\fP mlx_bind_texture (\fBmlx_ctx_t\fP * mlx, \fBmlx_image_t\fP * img)\fC [static]\fP"
+
+.PP
+Definition at line \fB30\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+31 {
+32     const GLint handle = (GLint)((mlx_image_ctx_t*)img\->context)\->texture;
+33 
+34     // Attempt to bind the texture, or obtain the index if it is already bound\&.
+35     for (int8_t i = 0; i < 16; i++)
+36     {
+37         if (mlx\->bound_textures[i] == handle)
+38             return (i);
+39 
+40         if (mlx\->bound_textures[i] == 0)
+41         {
+42             mlx\->bound_textures[i] = handle;
+43 
+44             glActiveTexture(GL_TEXTURE0 + i);
+45             glBindTexture(GL_TEXTURE_2D, handle);
+46             return (i);
+47         }
+48     }
+49 
+50     // If no free slot was found, flush the batch and assign the texture to the first available slot
+51     mlx_flush_batch(mlx);
+52 
+53     mlx\->bound_textures[0] = handle;
+54     glActiveTexture(GL_TEXTURE0);
+55     glBindTexture(GL_TEXTURE_2D, handle);
+56     return (0);
+57 }
+.fi
+
+.SS "\fBvoid\fP mlx_delete_image (\fBmlx_t\fP * mlx, \fBmlx_image_t\fP * image)"
+Deleting an image will remove it from the render queue as well as any and all instances it might have\&. Additionally, just as extra measures sets all the data to NULL\&.
+.PP
+If you simply wish to stop rendering an image without de-allocation set the 'enabled' boolean in the image struct\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIimage\fP The image to delete\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB204\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+205 {
+206     MLX_NONNULL(mlx);
+207     MLX_NONNULL(image);
+208 
+209     mlx_ctx_t* mlxctx = mlx\->context;
+210 
+211     // Delete all instances in the render queue
+212     mlx_list_t* quelst;
+213     while ((quelst = mlx_lstremove(&mlxctx\->render_queue, image, &mlx_equal_inst)))
+214         mlx_freen(2, quelst\->content, quelst);
+215 
+216     mlx_list_t* imglst;
+217     if ((imglst = mlx_lstremove(&mlxctx\->images, image, &mlx_equal_image)))
+218     {
+219         glDeleteTextures(1, &((mlx_image_ctx_t*)image\->context)\->texture);
+220         mlx_freen(5, image\->pixels, image\->instances, image\->context, imglst, image);
+221     }
+222 }
+.fi
+
+.SS "\fBvoid\fP mlx_draw_instance (\fBmlx_ctx_t\fP * mlx, \fBmlx_image_t\fP * img, \fBmlx_instance_t\fP * instance)"
+Internal function to draw a single instance of an image to the screen\&. 
+.PP
+Definition at line \fB63\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+64 {
+65     float w = (float) img\->width;
+66     float h = (float) img\->height;
+67     float x = (float) instance\->x;
+68     float y = (float) instance\->y;
+69     float z = (float) instance\->z;
+70     int8_t tex = mlx_bind_texture(mlx, img);
+71 
+72     vertex_t vertices[6] = {
+73             (vertex_t){x, y, z, 0\&.f, 0\&.f, tex},
+74             (vertex_t){x + w, y + h, z, 1\&.f, 1\&.f, tex},
+75             (vertex_t){x + w, y, z, 1\&.f, 0\&.f, tex},
+76             (vertex_t){x, y, z, 0\&.f, 0\&.f, tex},
+77             (vertex_t){x, y + h, z, 0\&.f, 1\&.f, tex},
+78             (vertex_t){x + w, y + h, z, 1\&.f, 1\&.f, tex},
+79     };
+80     memmove(mlx\->batch_vertices + mlx\->batch_size, vertices, sizeof(vertices));
+81     mlx\->batch_size += 6;
+82 
+83     if (mlx\->batch_size >= MLX_BATCH_SIZE)
+84         mlx_flush_batch(mlx);
+85 }
+.fi
+
+.SS "\fBvoid\fP mlx_flush_batch (\fBmlx_ctx_t\fP * mlx)"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+18 {
+19     if (mlx\->batch_size <= 0)
+20         return;
+21 
+22     glBindBuffer(GL_ARRAY_BUFFER, mlx\->vbo);
+23     glBufferData(GL_ARRAY_BUFFER, mlx\->batch_size * sizeof(vertex_t), mlx\->batch_vertices, GL_STATIC_DRAW);
+24     glDrawArrays(GL_TRIANGLES, 0, mlx\->batch_size);
+25 
+26     mlx\->batch_size = 0;
+27     memset(mlx\->bound_textures, 0, sizeof(mlx\->bound_textures));
+28 }
+.fi
+
+.SS "\fBmlx_instance_t\fP * mlx_grow_instances (\fBmlx_image_t\fP * img, \fBbool\fP * did_realloc)"
+
+.PP
+Definition at line \fB87\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+88 {
+89     mlx_image_ctx_t* const ctx = img\->context;
+90     if (img\->count >= ctx\->instances_capacity)
+91     {
+92         if (ctx\->instances_capacity == 0)
+93             ctx\->instances_capacity = img\->count;
+94         else
+95             ctx\->instances_capacity *= 2;
+96         *did_realloc = true;
+97         return realloc(img\->instances, ctx\->instances_capacity * sizeof(mlx_instance_t));
+98     }
+99     *did_realloc = false;
+100     return img\->instances;
+101 }
+.fi
+
+.SS "\fBint32_t\fP mlx_image_to_window (\fBmlx_t\fP * mlx, \fBmlx_image_t\fP * img, \fBint32_t\fP x, \fBint32_t\fP y)"
+Draws a new instance of an image, it will then share the same pixel buffer as the image\&.
+.PP
+NOTE: Keep in mind that the instance array gets reallocated, try to store the return value to the instance! NOT the pointer! It will become invalid!
+.PP
+WARNING: Try to display as few images on the window as possible, drawing too many images will cause a loss in performance!
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIimg\fP The image to draw on the screen\&. 
+.br
+\fIx\fP The X position\&. 
+.br
+\fIy\fP The Y position\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Index to the instance, or -1 on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB121\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+122 {
+123     MLX_NONNULL(mlx);
+124     MLX_NONNULL(img);
+125 
+126     // Allocate buffers\&.\&.\&.
+127     img\->count++;
+128     bool did_realloc;
+129     mlx_instance_t* instances = mlx_grow_instances(img, &did_realloc);
+130     draw_queue_t* queue = calloc(1, sizeof(draw_queue_t));
+131     if (!instances || !queue)
+132     {
+133         if (did_realloc)
+134             free(instances);
+135         return (free(queue), mlx_error(MLX_MEMFAIL), \-1);
+136     }
+137 
+138     // Set data\&.\&.\&.
+139     queue\->image = img;
+140     int32_t index = queue\->instanceid = img\->count \- 1;
+141     img\->instances = instances;
+142     img\->instances[index]\&.x = x;
+143     img\->instances[index]\&.y = y;
+144 
+145     // NOTE: We keep updating the Z for the convenience of the user\&.
+146     // Always update Z depth to prevent overlapping images by default\&.
+147     img\->instances[index]\&.z = ((mlx_ctx_t*)mlx\->context)\->zdepth++;
+148     img\->instances[index]\&.enabled = true;
+149 
+150     // Add draw call\&.\&.\&.
+151     sort_queue = true;
+152     mlx_list_t* templst;
+153     if ((templst = mlx_lstnew(queue)))
+154     {
+155         mlx_lstadd_front(&((mlx_ctx_t*)mlx\->context)\->render_queue, templst);
+156         return (index);
+157     }
+158     return (mlx_freen(2, instances, queue), mlx_error(MLX_MEMFAIL), \-1);
+159 }
+.fi
+
+.SS "\fBmlx_image_t\fP * mlx_new_image (\fBmlx_t\fP * mlx, \fBuint32_t\fP width, \fBuint32_t\fP height)"
+Creates and allocates a new image buffer\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIwidth\fP The desired width of the image\&. 
+.br
+\fIheight\fP The desired height of the image\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the image buffer, if it failed to allocate then NULL\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB161\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+162 {
+163     MLX_NONNULL(mlx);
+164 
+165     if (!width || !height || width > INT16_MAX || height > INT16_MAX)
+166         return ((void*)mlx_error(MLX_INVDIM));
+167 
+168     const mlx_ctx_t* mlxctx = mlx\->context;
+169     mlx_image_t* newimg = calloc(1, sizeof(mlx_image_t));
+170     mlx_image_ctx_t* newctx = calloc(1, sizeof(mlx_image_ctx_t));
+171     if (!newimg || !newctx)
+172     {
+173         mlx_freen(2, newimg, newctx);
+174         return ((void *)mlx_error(MLX_MEMFAIL));
+175     }
+176     newimg\->enabled = true;
+177     newimg\->context = newctx;
+178     (*(uint32_t*)&newimg\->width) = width;
+179     (*(uint32_t*)&newimg\->height) = height;
+180     if (!(newimg\->pixels = calloc(width * height, sizeof(int32_t))))
+181     {
+182         mlx_freen(2, newimg, newctx);
+183         return ((void *)mlx_error(MLX_MEMFAIL));
+184     }
+185 
+186     mlx_list_t* newentry;
+187     if (!(newentry = mlx_lstnew(newimg)))
+188     {
+189         mlx_freen(3, newimg\->pixels, newimg\->context, newimg);
+190         return ((void *)mlx_error(MLX_MEMFAIL));
+191     }
+192 
+193     // Generate OpenGL texture
+194     glGenTextures(1, &newctx\->texture);
+195     glBindTexture(GL_TEXTURE_2D, newctx\->texture);
+196     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+197     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+198     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+199     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+200     mlx_lstadd_front((mlx_list_t**)(&mlxctx\->images), newentry);
+201     return (newimg);
+202 }
+.fi
+
+.SS "\fBbool\fP mlx_resize_image (\fBmlx_image_t\fP * img, \fBuint32_t\fP nwidth, \fBuint32_t\fP nheight)"
+Allows you to resize an image, a new pixel buffer is allocated to fit & the previous data is scaled to fit the new size\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIimg\fP The image to resize\&. 
+.br
+\fInwidth\fP The new width\&. 
+.br
+\fInheight\fP The new height\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if image was resized or false on error\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB224\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+225 {
+226     MLX_NONNULL(img);
+227 
+228     if (!nwidth || !nheight || nwidth > INT16_MAX || nheight > INT16_MAX)
+229         return (mlx_error(MLX_INVDIM));
+230     if (nwidth != img\->width || nheight != img\->height)
+231     {
+232         uint32_t* origin = (uint32_t*)img\->pixels;
+233         float wstep = (float)img\->width / nwidth;
+234         float hstep = (float)img\->height / nheight;
+235 
+236         uint8_t* tempbuff = calloc(nwidth * nheight, BPP);
+237         if (!tempbuff)
+238             return (mlx_error(MLX_MEMFAIL));
+239         img\->pixels = tempbuff;
+240         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, nwidth, nheight, 0, GL_RGBA, GL_UNSIGNED_BYTE, img\->pixels);
+241 
+242         uint32_t* destin = (uint32_t*)img\->pixels;
+243         for (uint32_t j = 0; j < nheight; j++)
+244             for (uint32_t i = 0; i < nwidth; i++)
+245                 destin[j * nwidth + i] = origin[(uint32_t)(j * hstep) * img\->width + (uint32_t)(i * wstep)];
+246         (*(uint32_t*)&img\->width) = nwidth;
+247         (*(uint32_t*)&img\->height) = nheight;
+248         free(origin);
+249     }
+250     return (true);
+251 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_instance_depth (\fBmlx_instance_t\fP * instance, \fBint32_t\fP zdepth)"
+Sets the depth / Z axis value of an instance\&.
+.PP
+NOTE: Keep in mind that images that are on the same Z layer cut each other off\&. so if you don't see your image anymore make sure it's not conflicting by being on the same layer as another image\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIinstance\fP The instance on which to change the depth\&. 
+.br
+\fIzdepth\fP The new depth value\&. 
+.RE
+.PP
+NOTE: The reason why we don't sort directly is that the user might call this function multiple times in a row and we don't want to sort for every change\&. Pre-loop wise that is\&.
+.PP
+Definition at line \fB105\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+106 {
+107     MLX_NONNULL(instance);
+108 
+109     if (instance\->z == zdepth)
+110         return;
+111     instance\->z = zdepth;
+112 
+113     /**
+114      * NOTE: The reason why we don't sort directly is that
+115      * the user might call this function multiple times in a row and we don't
+116      * want to sort for every change\&. Pre\-loop wise that is\&.
+117      */
+118     sort_queue = true;
+119 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

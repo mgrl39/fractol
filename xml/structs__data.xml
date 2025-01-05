@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structs__data" kind="struct" language="C++" prot="public">
+    <compoundname>s_data</compoundname>
+    <includes refid="fractol_8h" local="no">fractol.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_data::zoom</definition>
+        <argsstring></argsstring>
+        <name>zoom</name>
+        <qualifiedname>s_data::zoom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="93" column="7" bodyfile="fractol.h" bodystart="93" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</referencedby>
+        <referencedby refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</referencedby>
+        <referencedby refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" compoundref="utils_8c" startline="91" endline="104">handle_scroll</referencedby>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_data::c[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>c</name>
+        <qualifiedname>s_data::c</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="94" column="7" bodyfile="fractol.h" bodystart="94" bodyend="-1"/>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
+        <referencedby refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" compoundref="julia_8c" startline="84" endline="102">julia_iterations</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_data::offset[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>offset</name>
+        <qualifiedname>s_data::offset</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="95" column="7" bodyfile="fractol.h" bodystart="95" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</referencedby>
+        <referencedby refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</referencedby>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" prot="public" static="no" mutable="no">
+        <type>mlx_t *</type>
+        <definition>mlx_t* s_data::mlx</definition>
+        <argsstring></argsstring>
+        <name>mlx</name>
+        <qualifiedname>s_data::mlx</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="96" column="6" bodyfile="fractol.h" bodystart="96" bodyend="-1"/>
+        <referencedby refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</referencedby>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" prot="public" static="no" mutable="no">
+        <type>mlx_image_t *</type>
+        <definition>mlx_image_t* s_data::img</definition>
+        <argsstring></argsstring>
+        <name>img</name>
+        <qualifiedname>s_data::img</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="97" column="12" bodyfile="fractol.h" bodystart="97" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</referencedby>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" prot="public" static="no" mutable="no">
+        <type><ref refid="fractol_8h_1a87e2208c89c44020c05fae234f5d17d7" kindref="member">t_fractal_type</ref></type>
+        <definition>t_fractal_type s_data::fractal_type</definition>
+        <argsstring></argsstring>
+        <name>fractal_type</name>
+        <qualifiedname>s_data::fractal_type</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="98" column="15" bodyfile="fractol.h" bodystart="98" bodyend="-1"/>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+        <referencedby refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Data structure for fractal rendering. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>s_data</label>
+        <link refid="structs__data"/>
+      </node>
+    </collaborationgraph>
+    <location file="fractol.h" line="91" column="1" bodyfile="fractol.h" bodystart="92" bodyend="99"/>
+    <listofallmembers>
+      <member refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" prot="public" virt="non-virtual"><scope>s_data</scope><name>c</name></member>
+      <member refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" prot="public" virt="non-virtual"><scope>s_data</scope><name>fractal_type</name></member>
+      <member refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" prot="public" virt="non-virtual"><scope>s_data</scope><name>img</name></member>
+      <member refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" prot="public" virt="non-virtual"><scope>s_data</scope><name>mlx</name></member>
+      <member refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" prot="public" virt="non-virtual"><scope>s_data</scope><name>offset</name></member>
+      <member refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" prot="public" virt="non-virtual"><scope>s_data</scope><name>zoom</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

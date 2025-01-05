@@ -1,0 +1,353 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="MLX42_2README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;/br&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;https://user-images.githubusercontent.com/63303990/150698103-7e908ff3-abf8-4b0f-ad54-07a76b6c45e2.png&quot;<sp/>alt=&quot;42MLX_Logo&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;sub&gt;Written<sp/>by<sp/>&lt;a<sp/>href=&quot;https://portfolio.w2wizard.dev/&quot;&gt;W2.Wizard&lt;/a&gt;<sp/>for<sp/>Codam&lt;/sub&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/br&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;img<sp/>src=&quot;https://img.shields.io/github/license/codam-coding-college/MLX42&quot;<sp/>alt=&quot;License<sp/>GPL2.0&quot;&gt;<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;img<sp/>src=&quot;https://github.com/codam-coding-college/MLX42/actions/workflows/ci.yml/badge.svg&quot;<sp/>alt=&quot;Build&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;img<sp/>src=&quot;https://img.shields.io/github/forks/codam-coding-college/MLX42&quot;<sp/>alt=&quot;Forks&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;/div&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>is<sp/>a<sp/>performant,<sp/>easy<sp/>to<sp/>use,<sp/>cross-platform,<sp/>minimal<sp/>windowing<sp/>graphics<sp/>library<sp/>to<sp/>create<sp/>graphical<sp/>applications<sp/>without<sp/>having<sp/>to<sp/>work<sp/>directly<sp/>with<sp/>the<sp/>native<sp/>windowing<sp/>framework<sp/>of<sp/>the<sp/>given<sp/>operating<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>provides<sp/>primitive<sp/>tools<sp/>to<sp/>draw<sp/>textures<sp/>onto<sp/>the<sp/>window<sp/>as<sp/>well<sp/>as<sp/>modifying<sp/>them<sp/>at<sp/>runtime<sp/>as<sp/>they<sp/>get<sp/>displayed<sp/>on<sp/>the<sp/>window.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Features<sp/>✨</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>comes<sp/>with<sp/>a<sp/>plethora<sp/>of<sp/>features<sp/>that<sp/>make<sp/>using<sp/>it<sp/>actually<sp/>a<sp/>joy<sp/>instead<sp/>of<sp/>a<sp/>chore.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Cross-Platform<sp/>🖥️</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Run<sp/>it<sp/>on<sp/>your<sp/>grandma&apos;s<sp/>WindowsXP,<sp/>on<sp/>your<sp/>uncle&apos;s<sp/>debian<sp/>or<sp/>on<sp/>a<sp/>hipster&apos;s<sp/>MacOS!</highlight></codeline>
+<codeline><highlight class="normal">No<sp/>matter<sp/>what<sp/>the<sp/>platform,<sp/>if<sp/>MLX42<sp/>can<sp/>build<sp/>on<sp/>it,<sp/>it<sp/>will<sp/>run<sp/>on<sp/>its<sp/>native<sp/>windowing<sp/>system.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>allows<sp/>you<sp/>to<sp/>work<sp/>on<sp/>your<sp/>project<sp/>no<sp/>matter<sp/>which<sp/>machine<sp/>it<sp/>is<sp/>on.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Documented<sp/>📚</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>cares<sp/>about<sp/>good<sp/>documentation,<sp/>every<sp/>function,<sp/>usage<sp/>and<sp/>even<sp/>some<sp/>internal<sp/>workings<sp/>are<sp/>documented!</highlight></codeline>
+<codeline><highlight class="normal">No<sp/>more<sp/>guessing<sp/>and<sp/>searching<sp/>how<sp/>something<sp/>functions<sp/>or<sp/>is<sp/>supposed<sp/>to<sp/>work.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Performance<sp/>🚀</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>is<sp/>built<sp/>on<sp/>OpenGL<sp/>and<sp/>uses<sp/>batched<sp/>rendering<sp/>to<sp/>speed<sp/>up<sp/>the<sp/>rendering<sp/>process<sp/>compared<sp/>to<sp/>other<sp/>libraries.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Open<sp/>source<sp/>&amp;&amp;<sp/>Community<sp/>driven<sp/>🌐</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>project<sp/>is<sp/>being<sp/>actively<sp/>maintained<sp/>by<sp/>Codam<sp/>as<sp/>well<sp/>as<sp/>students<sp/>from<sp/>the<sp/>42<sp/>Network.<sp/>This<sp/>gives<sp/>students<sp/>the<sp/>direct<sp/>opportunity<sp/>to<sp/>learn<sp/>more<sp/>about<sp/>the<sp/>library<sp/>itself<sp/>as<sp/>well<sp/>as<sp/>fix<sp/>any<sp/>potential<sp/>bugs<sp/>instead<sp/>of<sp/>merely<sp/>accepting<sp/>them.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation<sp/>🏗️</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>General<sp/>compilation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Overall<sp/>the<sp/>building<sp/>of<sp/>this<sp/>project<sp/>is<sp/>as<sp/>follows<sp/>for<sp/>ALL<sp/>systems.<sp/>As<sp/>long<sp/>as<sp/>CMake<sp/>can<sp/>make<sp/>sense<sp/>of<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>[Download<sp/>and<sp/>build<sp/>MLX42](#download-and-build---mlx42)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>case<sp/>your<sp/>system<sp/>doesn&apos;t<sp/>have<sp/>[glfw](https://github.com/glfw/glfw)<sp/>installed<sp/>cmake<sp/>will<sp/>detect<sp/>this<sp/>and<sp/>download<sp/>it<sp/>for<sp/>you.</highlight></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>then<sp/>run<sp/>`sudo<sp/>make<sp/>install`<sp/>in<sp/>the<sp/>`_deps`<sp/>directory<sp/>of<sp/>glfw.<sp/>If<sp/>you&apos;re<sp/>using<sp/>a<sp/>42<sp/>Computer<sp/>(MacOS,<sp/>Linux),<sp/>ask<sp/>your<sp/>favourite<sp/>sysadmin<sp/>to<sp/>install<sp/>it.</highlight></codeline>
+<codeline><highlight class="normal">Same<sp/>goes<sp/>for<sp/>CMake<sp/>or<sp/>any<sp/>other<sp/>dependencies<sp/>you<sp/>might<sp/>need<sp/>for<sp/>your<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">However<sp/>if<sp/>you<sp/>can&apos;t<sp/>do<sp/>either<sp/>CMake<sp/>will<sp/>still<sp/>be<sp/>able<sp/>to<sp/>fetch<sp/>GLFW<sp/>and<sp/>build<sp/>it.<sp/>You<sp/>can<sp/>then<sp/>statically<sp/>link<sp/>it<sp/>from<sp/>the<sp/>`_deps`<sp/>folder.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&gt;<sp/>[!NOTE]</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>For<sp/>Codam,<sp/>GLFW<sp/>is<sp/>already<sp/>installed<sp/>on<sp/>the<sp/>Macs.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&gt;<sp/>[!NOTE]</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>During<sp/>the<sp/>linking<sp/>stage,<sp/>the<sp/>flag<sp/>to<sp/>link<sp/>GLFW<sp/>can<sp/>either<sp/>be:<sp/>-lglfw3<sp/>or<sp/>-lglfw<sp/>depending<sp/>on<sp/>your<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Compile<sp/>your<sp/>program<sp/>with<sp/>the<sp/>library:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>For:<sp/>[MacOS](#for-macos)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>For:<sp/>[Linux](#for-linux)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>For:<sp/>[Windows](#for-windows)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Profit!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Installing<sp/>to<sp/>the<sp/>system</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>fully<sp/>build<sp/>the<sp/>library<sp/>and<sp/>install<sp/>it<sp/>to<sp/>your<sp/>system<sp/>run<sp/>the<sp/>following<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-B<sp/>build<sp/>&amp;&amp;<sp/>cmake<sp/>--build<sp/>build<sp/>--parallel<sp/>--config<sp/>(Debug|Release|RelWithDebInfo|MinSizeRel)<sp/>--target<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">By<sp/>default<sp/>windows<sp/>will<sp/>place<sp/>the<sp/>installed<sp/>lib<sp/>into:<sp/>`C:\Program<sp/>Files<sp/>(x86)\mlx42`<sp/>and<sp/>for<sp/>MacOS<sp/>/<sp/>Linux<sp/>it<sp/>will<sp/>be<sp/>placed<sp/>into<sp/>`/usr/local/lib`<sp/>and<sp/>`/usr/local/include`<sp/>respectively.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Unit<sp/>tests</highlight></codeline>
+<codeline><highlight class="normal">MLX42<sp/>comes<sp/>with<sp/>some<sp/>unit<sp/>tests<sp/>to<sp/>ensure<sp/>the<sp/>integrity<sp/>of<sp/>the<sp/>library,<sp/>to<sp/>build<sp/>them<sp/>run<sp/>the<sp/>following<sp/>command:</highlight></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-DBUILD_TESTS=ON<sp/>-B<sp/>build<sp/>&amp;&amp;<sp/>cmake<sp/>--build<sp/>build<sp/>--parallel</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>simply<sp/>run<sp/>them<sp/>with:</highlight></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">ctest<sp/>--output-on-failure<sp/>--test-dir<sp/>build</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Download<sp/>and<sp/>build<sp/>-<sp/>MLX42</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash<sp/></highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/codam-coding-college/MLX42.git</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>MLX42</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>-B<sp/>build<sp/>#<sp/>build<sp/>here<sp/>refers<sp/>to<sp/>the<sp/>outputfolder.</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>--build<sp/>build<sp/>-j4<sp/>#<sp/>or<sp/>do<sp/>make<sp/>-C<sp/>build<sp/>-j4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>output<sp/>library<sp/>file<sp/>is<sp/>called<sp/>`libmlx42.a`<sp/>and<sp/>is<sp/>located<sp/>in<sp/>the<sp/>`build`<sp/>folder<sp/>that<sp/>you<sp/>specified.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Available<sp/>Options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>pass<sp/>build<sp/>[options](./docs/index.md#available-options)<sp/>to<sp/>cmake,<sp/>e.g:<sp/>`cmake<sp/>-DDEBUG=1<sp/>-DGLFW_FETCH=0...`.<sp/>These<sp/>will<sp/>for<sp/>instance<sp/>let<sp/>you<sp/>build<sp/>it<sp/>in<sp/>DEBUG<sp/>mode<sp/>or<sp/>alter<sp/>any<sp/>sort<sp/>of<sp/>behaviour<sp/>at<sp/>build-time.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>find<sp/>an<sp/>example<sp/>makefile<sp/>in<sp/>the<sp/>documentation<sp/>[here](https://github.com/codam-coding-college/MLX42/blob/master/docs/Basics.md).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>For<sp/>MacOS:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Installing<sp/>the<sp/>dependencies</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>your<sp/>system<sp/>has<sp/>neither<sp/>GLFW<sp/>nor<sp/>CMake<sp/>its<sp/>highly<sp/>recommended<sp/>you<sp/>use<sp/>brew<sp/>to<sp/>install<sp/>those<sp/>missing<sp/>dependencies.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>42<sp/>Campuses<sp/>you<sp/>can<sp/>use:<sp/>[42Homebrew](https://github.com/kube/42homebrew)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Otherwise<sp/>with<sp/>homebrew:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">brew<sp/>install<sp/>glfw</highlight></codeline>
+<codeline><highlight class="normal">brew<sp/>install<sp/>cmake</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>are<sp/>using<sp/>Apple<sp/>Silicon<sp/>(M1<sp/>chip<sp/>or<sp/>later),<sp/>note<sp/>that<sp/>the<sp/>Homebrew<sp/>install<sp/>path<sp/>is<sp/>different.</highlight></codeline>
+<codeline><highlight class="normal">You<sp/>may<sp/>want<sp/>to<sp/>update<sp/>your<sp/>shell<sp/>configuration<sp/>file.<sp/>For<sp/>Zsh<sp/>users<sp/>(default<sp/>shell<sp/>on<sp/>newer<sp/>macOS<sp/>versions):</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">nano<sp/>~/.zshrc</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>LIBRARY_PATH=/opt/homebrew/lib</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Restart<sp/>your<sp/>shell<sp/>session<sp/>or<sp/>restart<sp/>your<sp/>terminal<sp/>for<sp/>the<sp/>changes<sp/>to<sp/>take<sp/>effect.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>MacOS<sp/>you<sp/>need<sp/>to<sp/>use<sp/>the<sp/>following<sp/>flags<sp/>to<sp/>compile<sp/>your<sp/>program<sp/>with<sp/>the<sp/>library</highlight></codeline>
+<codeline><highlight class="normal">in<sp/>order<sp/>to<sp/>link<sp/>the<sp/>program<sp/>with<sp/>the<sp/>correct<sp/>frameworks:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">-framework<sp/>Cocoa<sp/>-framework<sp/>OpenGL<sp/>-framework<sp/>IOKit</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Normally<sp/>if<sp/>you<sp/>simply<sp/>installed<sp/>/<sp/>built<sp/>`glfw`<sp/>from<sp/>source<sp/>or<sp/>already<sp/>have<sp/>it<sp/>installed</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>compilation<sp/>should<sp/>be:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">gcc<sp/>main.c<sp/>...<sp/>libmlx42.a<sp/>-Iinclude<sp/>-lglfw</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Via<sp/>[Homebrew](https://brew.sh/)<sp/>/<sp/>[42Homebrew](https://github.com/kube/42homebrew)</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Homebrew</highlight></codeline>
+<codeline><highlight class="normal">gcc<sp/>main.c<sp/>...<sp/>libmlx42.a<sp/>-Iinclude<sp/>-lglfw<sp/>-L&quot;/opt/homebrew/Cellar/glfw/3.3.8/lib/&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>42Homebrew</highlight></codeline>
+<codeline><highlight class="normal">gcc<sp/>main.c<sp/>...<sp/>libmlx42.a<sp/>-Iinclude<sp/>-lglfw<sp/>-L&quot;/Users/$(USER)/.brew/opt/glfw/lib/&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>MacOS<sp/>Security:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>running<sp/>your<sp/>program<sp/>in<sp/>MacOS<sp/>it<sp/>may<sp/>complain,<sp/>because<sp/>with<sp/>Macs<sp/>you<sp/>just<sp/>gotta<sp/>think<sp/>differently.</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>case<sp/>of<sp/>any<sp/>security<sp/>warnings<sp/>or<sp/>MacOS<sp/>telling<sp/>you<sp/>it<sp/>can&apos;t<sp/>verify<sp/>the<sp/>author/developer,<sp/>go<sp/>to<sp/>```Settings<sp/>&gt;<sp/>Security<sp/>&amp;<sp/>Privacy```.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>will<sp/>be<sp/>a<sp/>pop-up<sp/>at<sp/>the<sp/>bottom<sp/>telling<sp/>you<sp/>that<sp/>an<sp/>application<sp/>tried<sp/>to<sp/>run,<sp/>click<sp/>the<sp/>option<sp/>to<sp/>let<sp/>it<sp/>run.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>For<sp/>Linux:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Install<sp/>the<sp/>necessary<sp/>packages:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>Debian<sp/>like<sp/>(Ubuntu,<sp/>Mint,<sp/>Pop<sp/>OS...):</highlight></codeline>
+<codeline><highlight class="normal">```bash<sp/></highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt<sp/>update</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>apt<sp/>install<sp/>build-essential<sp/>libx11-dev<sp/>libglfw3-dev<sp/>libglfw3<sp/>xorg-dev</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>Arch-linux<sp/>(Manjaro,<sp/>Endeavor,<sp/>Garuda):</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>pacman<sp/>-S<sp/>glfw-x11</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">OR<sp/>(if<sp/>you<sp/>use<sp/>sway/wlroots<sp/>compositor<sp/>or<sp/>other<sp/>wayland<sp/>compositor)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">sudo<sp/>pacman<sp/>-S<sp/>glfw-wayland</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>[Download<sp/>and<sp/>build<sp/>MLX42](#download-and-build---mlx42)<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>Compile<sp/>your<sp/>program<sp/>with<sp/>the<sp/>library:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">gcc<sp/>main.c<sp/>...<sp/>libmlx42.a<sp/>-Iinclude<sp/>-ldl<sp/>-lglfw<sp/>-pthread<sp/>-lm</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Profit!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>For<sp/>Windows<sp/>(with<sp/>Windows<sp/>Subsystem<sp/>for<sp/>Linux<sp/>2<sp/>(WSL2))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&gt;<sp/>[!IMPORTANT]</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>Before<sp/>starting<sp/>with<sp/>all<sp/>these<sp/>steps,<sp/>[read<sp/>this](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Set<sp/>these<sp/>variables<sp/>in<sp/>your<sp/>`.zshrc`<sp/>or<sp/>`.bashrc`:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>DISPLAY=$(ip<sp/>route<sp/>list<sp/>default<sp/>|<sp/>awk<sp/>&apos;{print<sp/>$3}&apos;):0</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>LIBGL_ALWAYS_INDIRECT=0</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">(If<sp/>the<sp/>DISPLAY<sp/>export<sp/>command<sp/>is<sp/>failing,<sp/>see<sp/>this<sp/>[StackOverflow](https://stackoverflow.com/a/61110604)<sp/>post<sp/>for<sp/>alternatives)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Download<sp/>and<sp/>install<sp/>an<sp/>XServer<sp/>application<sp/>with<sp/>extended<sp/>configuration<sp/>(XMing<sp/>does<sp/>not<sp/>qualify)</highlight></codeline>
+<codeline><highlight class="normal">VcXsrv<sp/>works:<sp/>https://sourceforge.net/projects/vcxsrv/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>Open<sp/>Windows<sp/>Defender<sp/>Firewall,<sp/>and<sp/>follow<sp/>these<sp/>steps:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Go<sp/>to<sp/>&apos;Allow<sp/>an<sp/>app<sp/>or<sp/>feature<sp/>through<sp/>Windows<sp/>Defender<sp/>Firewall&apos;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Change<sp/>Settings</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Find<sp/>the<sp/>installed<sp/>XServer,<sp/>for<sp/>VcXsrv<sp/>that&apos;s<sp/>&apos;VcXsrv<sp/>windows<sp/>server&apos;</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Enable<sp/>communication<sp/>over<sp/>Private<sp/>**and**<sp/>Public<sp/>network</highlight></codeline>
+<codeline><highlight class="normal">Optionally<sp/>you<sp/>might<sp/>be<sp/>able<sp/>to<sp/>provide<sp/>these<sp/>settings<sp/>on<sp/>first<sp/>launch<sp/>of<sp/>the<sp/>XServer<sp/>application,</highlight></codeline>
+<codeline><highlight class="normal">and<sp/>they<sp/>might<sp/>not<sp/>even<sp/>show<sp/>up<sp/>in<sp/>the<sp/>list<sp/>until<sp/>the<sp/>first<sp/>time<sp/>you<sp/>start<sp/>the<sp/>app.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/>Start<sp/>the<sp/>XLaunch<sp/>application<sp/>(for<sp/>VcXsrv)<sp/>and<sp/>provide<sp/>these<sp/>configuration<sp/>settings:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Leave<sp/>Display<sp/>number<sp/>on<sp/>auto</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Start<sp/>no<sp/>client</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**UNTICK**<sp/>`Native<sp/>opengl`<sp/>option</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**TICK**<sp/>`Disable<sp/>access<sp/>control`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Finish<sp/>starting<sp/>the<sp/>server</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">5.<sp/>Probably<sp/>all<sp/>the<sp/>other<sp/>steps<sp/>for<sp/>Linux<sp/>apply,<sp/>just<sp/>clone,<sp/>build<sp/>and<sp/>run.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">----</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>For<sp/>Windows<sp/>Native:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&gt;<sp/>[!IMPORTANT]</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>Be<sp/>aware<sp/>that<sp/>Visual<sp/>Studio<sp/>(2022)<sp/>is<sp/>required<sp/>for<sp/>this.<sp/>Developing<sp/>on<sp/>Windows<sp/>can<sp/>be<sp/>somewhat<sp/>frustrating.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>highly<sp/>recommend<sp/>you<sp/>simply<sp/>use<sp/>[WSL2](#for-windows-with-windows-subsystem-for-linux-2-wsl2)<sp/>to<sp/>make<sp/>this<sp/>as<sp/>painless<sp/>as<sp/>possible.</highlight></codeline>
+<codeline><highlight class="normal">However<sp/>if<sp/>you<sp/>insist<sp/>on<sp/>building<sp/>for<sp/>windows<sp/>natively<sp/>then<sp/>all<sp/>you<sp/>need<sp/>in<sp/>terms<sp/>of<sp/>dependencies<sp/>is:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[CMake](https://cmake.org/download/)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[GLFW](https://www.glfw.org/download.html)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>you<sp/>have<sp/>all<sp/>the<sp/>dependencies<sp/>correctly<sp/>installed<sp/>`CMake`<sp/>will<sp/>generate</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>visual<sp/>studio<sp/>project<sp/>files.<sp/>Simply<sp/>build<sp/>it<sp/>and<sp/>once<sp/>you<sp/>have<sp/>a<sp/>`.lib`<sp/>file</highlight></codeline>
+<codeline><highlight class="normal">move<sp/>them<sp/>to<sp/>your<sp/>actual<sp/>project<sp/>and<sp/>install<sp/>them<sp/>as<sp/>you<sp/>would<sp/>with<sp/>any<sp/>other<sp/>library.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Just<sp/>in<sp/>case<sp/>here&apos;s<sp/>a<sp/>[video](https://youtu.be/or1dAmUO8k0?t=494)<sp/>showing<sp/>you<sp/>how<sp/>this<sp/>can<sp/>be<sp/>done.<sp/>Conveniently<sp/>this<sp/>video<sp/>also<sp/>covers<sp/>how<sp/>you<sp/>can<sp/>link<sp/>`glfw`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Of<sp/>course<sp/>it&apos;s<sp/>up<sp/>to<sp/>you<sp/>to<sp/>make<sp/>sure<sp/>that<sp/>the<sp/>code<sp/>you<sp/>write<sp/>is<sp/>portable.<sp/>Things<sp/>that<sp/>exist<sp/>on<sp/>`Unix`<sp/>don&apos;t<sp/>necessarily<sp/>exist<sp/>on<sp/>`Win32`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![MLX42](docs/assets/demo.gif)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>-----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Codam<sp/>Coding<sp/>College,<sp/>Amsterdam<sp/>@<sp/>2022-2023<sp/>by<sp/>W2Wizard.</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>See<sp/>README<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>-----------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdbool.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;MLX42/MLX42.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#define<sp/>WIDTH<sp/>512</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>HEIGHT<sp/>512</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>mlx_image_t*<sp/>image;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>-----------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>ft_pixel(int32_t<sp/>r,<sp/>int32_t<sp/>g,<sp/>int32_t<sp/>b,<sp/>int32_t<sp/>a)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(r<sp/>&lt;&lt;<sp/>24<sp/>|<sp/>g<sp/>&lt;&lt;<sp/>16<sp/>|<sp/>b<sp/>&lt;&lt;<sp/>8<sp/>|<sp/>a);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>ft_randomize(void*<sp/>param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>(void)param;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(uint32_t<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>image-&gt;width;<sp/>++i)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>for<sp/>(uint32_t<sp/>y<sp/>=<sp/>0;<sp/>y<sp/>&lt;<sp/>image-&gt;height;<sp/>++y)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>color<sp/>=<sp/>ft_pixel(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rand()<sp/>%<sp/>0xFF,<sp/>//<sp/>R</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rand()<sp/>%<sp/>0xFF,<sp/>//<sp/>G</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rand()<sp/>%<sp/>0xFF,<sp/>//<sp/>B</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>rand()<sp/>%<sp/>0xFF<sp/><sp/>//<sp/>A</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_put_pixel(image,<sp/>i,<sp/>y,<sp/>color);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>ft_hook(void*<sp/>param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx<sp/>=<sp/>param;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(mlx,<sp/>MLX_KEY_ESCAPE))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_close_window(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(mlx,<sp/>MLX_KEY_UP))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>image-&gt;instances[0].y<sp/>-=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(mlx,<sp/>MLX_KEY_DOWN))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>image-&gt;instances[0].y<sp/>+=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(mlx,<sp/>MLX_KEY_LEFT))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>image-&gt;instances[0].x<sp/>-=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(mlx,<sp/>MLX_KEY_RIGHT))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>image-&gt;instances[0].x<sp/>+=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>-----------------------------------------------------------------------------</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Gotta<sp/>error<sp/>check<sp/>this<sp/>stuff</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!(mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>&quot;MLX42&quot;,<sp/>true)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(mlx_strerror(mlx_errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!(image<sp/>=<sp/>mlx_new_image(mlx,<sp/>128,<sp/>128)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_close_window(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(mlx_strerror(mlx_errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_image_to_window(mlx,<sp/>image,<sp/>0,<sp/>0)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_close_window(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(mlx_strerror(mlx_errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop_hook(mlx,<sp/>ft_randomize,<sp/>mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop_hook(mlx,<sp/>ft_hook,<sp/>mlx);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/README.md"/>
+  </compounddef>
+</doxygen>

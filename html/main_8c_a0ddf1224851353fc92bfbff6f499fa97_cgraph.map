@@ -1,0 +1,53 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Main entry point for the fractal rendering program." alt="" coords="5,172,60,198"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a2b8d2884ae79f1a4148a72db584e88f9" title="Prints an error message and terminates the program." alt="" coords="315,196,435,222"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="60,184,302,201,301,207,60,190"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#aba5be72a261c5846a5d6e7b315548d33" title="Converts a string to a double." alt="" coords="151,46,217,71"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="39,171,65,131,84,108,106,88,137,71,139,75,110,93,88,112,70,134,43,174"/>
+<area shape="rect" id="Node000005" href="$utils_8c.html#a1f2ff2312e5994560c9537cd9173be94" title="Compares two strings." alt="" coords="334,98,417,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="46,170,73,150,107,132,163,117,220,108,320,105,320,110,220,114,164,122,109,137,76,154,50,174"/>
+<area shape="rect" id="Node000006" href="$utils_8c.html#aa40f0dfb0dfb158de3f6f8b98f0de3ec" title="Handles key inputs." alt="" coords="136,298,232,323"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="42,197,68,240,87,264,110,284,124,293,122,297,106,289,83,267,63,243,38,199"/>
+<area shape="rect" id="Node000007" href="$calcs_8c.html#a6010a48038dd00722649b2e7ad69668d" title="Renders the chosen fractal on the screen." alt="" coords="319,298,432,323"/>
+<area shape="poly" id="edge25_Node000001_Node000007" title=" " alt="" coords="38,197,45,227,57,265,78,304,93,320,109,333,136,346,166,353,196,356,226,354,285,342,333,326,335,331,286,347,227,359,196,361,165,359,135,351,107,338,89,324,74,307,52,267,39,228,33,198"/>
+<area shape="rect" id="Node000019" href="$utils_8c.html#ace17996cda407bf3eb3480f07ccdd107" title="Handles scroll inputs." alt="" coords="130,248,238,274"/>
+<area shape="poly" id="edge21_Node000001_Node000019" title=" " alt="" coords="55,195,109,227,139,241,137,245,107,231,52,200"/>
+<area shape="rect" id="Node000020" href="$main_8c.html#af11254df8693917e711076d34d657214" title="Initializes the MLX42 rendering environment." alt="" coords="308,22,443,47"/>
+<area shape="poly" id="edge23_Node000001_Node000020" title=" " alt="" coords="33,172,39,141,52,102,74,62,89,45,107,31,132,18,160,9,217,3,272,7,321,16,320,21,272,12,217,8,161,14,134,23,109,35,92,49,78,65,57,104,45,143,38,173"/>
+<area shape="rect" id="Node000021" href="$main_8c.html#a9350b6f05ff8d1ac8cd5deca133fd37f" title="Validates the command&#45;line arguments for fractal rendering." alt="" coords="108,147,260,172"/>
+<area shape="poly" id="edge26_Node000001_Node000021" title=" " alt="" coords="60,178,94,172,95,177,61,183"/>
+<area shape="rect" id="Node000003" href="$utils_8c.html#a36c588cff7b2e8e39224a1f6105fa39d" title="Writes a string to a file descriptor." alt="" coords="515,110,613,135"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="411,194,442,181,526,139,529,144,444,186,413,199"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="232,308,305,308,305,313,232,313"/>
+<area shape="rect" id="Node000008" href="$julia_8c.html#ac62d3b22b714b98af9c4faeac6e6e650" title="Renders the Julia fractal." alt="" coords="515,322,613,347"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="433,315,501,324,501,329,432,320"/>
+<area shape="rect" id="Node000013" href="$mandelbrot_8c.html#ac4c610e75a028afb898607ea03e80b30" title="Render the Mandelbrot fractal." alt="" coords="491,268,637,294"/>
+<area shape="poly" id="edge12_Node000007_Node000013" title=" " alt="" coords="432,299,477,292,478,297,433,304"/>
+<area shape="rect" id="Node000009" href="$calcs_8c.html#af548b6205acd0da6696adf5b79aa23a3" title="Calculates the scales and starting points for the fractal rendering." alt="" coords="694,314,854,354"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="613,332,680,332,680,337,613,337"/>
+<area shape="rect" id="Node000010" href="$julia_8c.html#ac8f82667795f7c5ff50e0bdceae44afc" title="Renders a single row of the Julia set." alt="" coords="709,379,839,404"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="612,345,715,373,713,378,611,350"/>
+<area shape="rect" id="Node000011" href="$calcs_8c.html#af87a6532ce68469fef69f9c207960094" title="Calculates the color of a pixel based on how many iterations it takes to &quot;escape&quot;." alt="" coords="1182,315,1302,340"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="839,383,962,369,1105,350,1168,339,1169,345,1106,356,963,375,840,388"/>
+<area shape="rect" id="Node000012" href="$julia_8c.html#a06a8d464c822682fafa59d5a404516bb" title="Performs the iterations for a signle point in the Julia set." alt="" coords="949,416,1067,442"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="840,399,936,415,935,420,839,405"/>
+<area shape="poly" id="edge13_Node000013_Node000009" title=" " alt="" coords="616,291,682,308,681,313,614,296"/>
+<area shape="rect" id="Node000014" href="$calcs_8c.html#aa136a596dce9e2897d5eb0805a5a459f" title="Precomputes the coordinates for each pixel in the fractal." alt="" coords="699,215,849,240"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="614,266,710,241,711,246,616,271"/>
+<area shape="rect" id="Node000015" href="$mandelbrot_8c.html#a41962ad3e954759faba4734b566ba90e" title="Renders a single row of the Mandelbrot set." alt="" coords="685,264,863,290"/>
+<area shape="poly" id="edge15_Node000013_Node000015" title=" " alt="" coords="638,277,672,276,672,282,638,282"/>
+<area shape="poly" id="edge16_Node000015_Node000011" title=" " alt="" coords="863,279,979,288,1106,301,1169,311,1168,316,1105,306,978,293,863,284"/>
+<area shape="rect" id="Node000016" href="$mandelbrot_8c.html#af0b8186beab597df25a8f56717d0cb44" title="Performs an early scape check for a point in the Mandelbrot set." alt="" coords="911,315,1105,340"/>
+<area shape="poly" id="edge17_Node000015_Node000016" title=" " alt="" coords="834,287,936,310,935,315,833,292"/>
+<area shape="rect" id="Node000017" href="$mandelbrot_8c.html#acedaf5af2ba2cbe5b5efefb43b1068d4" title="Performs the iterations for a single point in the Mandelbrot set." alt="" coords="925,214,1091,239"/>
+<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="833,262,935,239,936,245,834,267"/>
+<area shape="poly" id="edge18_Node000016_Node000011" title=" " alt="" coords="1105,325,1168,325,1168,330,1105,330"/>
+<area shape="rect" id="Node000018" href="$mandelbrot_8c.html#adb033de8daea75468f78428253a261cf" title="Computes the next iteration for a single point in the Mandelbrot set." alt="" coords="1153,214,1331,239"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="1092,224,1140,224,1140,229,1092,229"/>
+<area shape="poly" id="edge22_Node000019_Node000007" title=" " alt="" coords="235,271,312,291,311,297,233,276"/>
+<area shape="poly" id="edge24_Node000020_Node000003" title=" " alt="" coords="405,45,524,101,522,106,403,50"/>
+<area shape="poly" id="edge27_Node000021_Node000002" title=" " alt="" coords="235,170,312,190,311,195,233,175"/>
+<area shape="poly" id="edge28_Node000021_Node000005" title=" " alt="" coords="233,144,320,122,321,127,235,150"/>
+<area shape="rect" id="Node000022" href="$main_8c.html#a3443f98f251000405fbc46a7951deaa9" title="Validates if a string represents a valid number." alt="" coords="311,147,440,172"/>
+<area shape="poly" id="edge29_Node000021_Node000022" title=" " alt="" coords="260,157,297,157,297,162,260,162"/>
+</map>

@@ -1,0 +1,264 @@
+\doxysection{calcs.\+c File Reference}
+\hypertarget{calcs_8c}{}\label{calcs_8c}\index{calcs.c@{calcs.c}}
+
+
+Core calculations for fractal rendering.  
+
+
+{\ttfamily \#include "{}fractol.\+h"{}}\newline
+Include dependency graph for calcs.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{calcs_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\+\_\+scales\+\_\+and\+\_\+limits}} (\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}vars, \mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Calculates the scales and starting points for the fractal rendering. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\+\_\+coords}} (double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}c\+\_\+re, double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}c\+\_\+im, \mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}vars)
+\begin{DoxyCompactList}\small\item\em Precomputes the coordinates for each pixel in the fractal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{render\+\_\+fractal}} (\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Renders the chosen fractal on the screen. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\+\_\+color}} (int iterations)
+\begin{DoxyCompactList}\small\item\em Calculates the color of a pixel based on how many iterations it takes to "{}escape"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core calculations for fractal rendering. 
+
+This file contains the functions responsible for performing the core calculations required to render fractals. It handles\+:
+\begin{DoxyItemize}
+\item Scaling and positioning the fractal within the rendering window.
+\item Precomputing the coordinates ffor each pixel to optimize rendering performance.
+\item Rendering the fractal by delegating to specific algorithms (Julia or Mandelbrot).
+\item Mapping iteration counts to colors for visually representing fractal complexity.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item This file performs the "{}math magic"{} that powers the fractal visuals, calculating where and howw the fractal is drawn and colored on the screen. 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{calcs_8c_af87a6532ce68469fef69f9c207960094}\label{calcs_8c_af87a6532ce68469fef69f9c207960094} 
+\index{calcs.c@{calcs.c}!calculate\_color@{calculate\_color}}
+\index{calculate\_color@{calculate\_color}!calcs.c@{calcs.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_color()}{calculate\_color()}}
+{\footnotesize\ttfamily int calculate\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{iterations }\end{DoxyParamCaption})}
+
+
+
+Calculates the color of a pixel based on how many iterations it takes to "{}escape"{}. 
+
+Calculates the color based on the number of iterations.
+
+This function determines the color of each pixel in the fractal by mapping the iteration count (how many steps we are needed to reach a threshold) to a color gradient.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item The function decides the color of each pooint in the fractal, creating the beautiful patterns you see based on how "{}complex"{} the point is.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterations} & Number of iterations required for the opint to "{}escape"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the calculated color as an integer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00131}{131}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{double}\ \ it\_count;}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ base\_gray;}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{structs__color}{t\_color}}\ \ color;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ it\_count\ =\ (double)iterations\ /\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}};}
+\DoxyCodeLine{00138\ \ \ \ \ base\_gray\ =\ (30\ +\ 190\ *\ (it\_count\ *\ (1\ -\/\ 0.2\ *\ it\_count)));}
+\DoxyCodeLine{00139\ \ \ \ \ color.\mbox{\hyperlink{structs__color_a251e854381c6945efbbffc33796e6035}{r}}\ =\ base\_gray\ -\/\ (5\ *\ (1\ -\/\ it\_count)\ *\ it\_count\ *\ it\_count);}
+\DoxyCodeLine{00140\ \ \ \ \ color.g\ =\ base\_gray\ -\/\ (10\ *\ (1\ -\/\ it\_count)\ *\ (1\ -\/\ it\_count));}
+\DoxyCodeLine{00141\ \ \ \ \ color.b\ =\ base\_gray\ -\/\ (15\ *\ (1\ -\/\ it\_count)\ *\ it\_count);}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{return}\ ((0xFF\ <<\ 24)\ |\ (color.r\ <<\ 16)\ |\ (color.g\ <<\ 8)\ |\ color.b);}
+\DoxyCodeLine{00143\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calcs_8c_af87a6532ce68469fef69f9c207960094_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}\label{calcs_8c_af548b6205acd0da6696adf5b79aa23a3} 
+\index{calcs.c@{calcs.c}!calculate\_scales\_and\_limits@{calculate\_scales\_and\_limits}}
+\index{calculate\_scales\_and\_limits@{calculate\_scales\_and\_limits}!calcs.c@{calcs.c}}
+\doxysubsubsection{\texorpdfstring{calculate\_scales\_and\_limits()}{calculate\_scales\_and\_limits()}}
+{\footnotesize\ttfamily void calculate\+\_\+scales\+\_\+and\+\_\+limits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}}]{vars,  }\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Calculates the scales and starting points for the fractal rendering. 
+
+Calculates scales and limits for rendering fractals.
+
+This function determines how the fractal is scaled and positioned on the screen. It computes the scale factors for each pixel and establishes the starting points ffor the real and imaginary part of the fractal based on the zoom level and offsets.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item Think of it as setting the "{}zoom"{} and "{}pam"{} for the fractal to display it correctly on the screen.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars} & Pointer to the rendering variables structure. \\
+\hline
+{\em data} & Pointer to the main data structure containing fractal information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00052}{52}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{00055\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{00056\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}];}
+\DoxyCodeLine{00057\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}];}
+\DoxyCodeLine{00058\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ =\ (uint32\_t\ *)data-\/>\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}}-\/>pixels;}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calcs_8c_af548b6205acd0da6696adf5b79aa23a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}\label{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f} 
+\index{calcs.c@{calcs.c}!precompute\_coords@{precompute\_coords}}
+\index{precompute\_coords@{precompute\_coords}!calcs.c@{calcs.c}}
+\doxysubsubsection{\texorpdfstring{precompute\_coords()}{precompute\_coords()}}
+{\footnotesize\ttfamily int precompute\+\_\+coords (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{c\+\_\+re,  }\item[{double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{c\+\_\+im,  }\item[{\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}}]{vars }\end{DoxyParamCaption})}
+
+
+
+Precomputes the coordinates for each pixel in the fractal. 
+
+Precomputes coordinates for fractal rendering.
+
+This function calculates the real and imaginary parts of the fractal for each pixel on the screen, storing them in arrays for quick access during rendering. It ensures that every point is prepared for the fractal calculations.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item Imagine this as creating a "{}grid"{} of points where the fractal will be drawn. This points tell the program where to caalculate the colors.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+\_\+re} & Pointer to the array storing real coordinates. \\
+\hline
+{\em c\+\_\+im} & Pointer to the array storing imaginary coordinates. \\
+\hline
+{\em vars} & Pointer to the rendering variables structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 on success, or 0 if memory allocation fails. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00078}{78}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ *c\_re\ =\ (\textcolor{keywordtype}{double}\ *)malloc(\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00083\ \ \ \ \ *c\_im\ =\ (\textcolor{keywordtype}{double}\ *)malloc(\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*c\_re)\ ||\ !(*c\_im))}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free(*c\_re),\ free(*c\_im),\ 0);}
+\DoxyCodeLine{00086\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ (*c\_re)[i]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ i\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{00089\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ (*c\_im)[i]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ i\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{00093\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{calcs_8c_a6010a48038dd00722649b2e7ad69668d}\label{calcs_8c_a6010a48038dd00722649b2e7ad69668d} 
+\index{calcs.c@{calcs.c}!render\_fractal@{render\_fractal}}
+\index{render\_fractal@{render\_fractal}!calcs.c@{calcs.c}}
+\doxysubsubsection{\texorpdfstring{render\_fractal()}{render\_fractal()}}
+{\footnotesize\ttfamily void render\+\_\+fractal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Renders the chosen fractal on the screen. 
+
+Render the specified fractal.
+
+This function selects the appropiate rendering algorithm based on the fractal type chosen by the user (Julia or Mandelbrot) and renders it on the screen.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item Depending on the type of fractal (Julia or Mandelbrot), this function draws the chosen fractal pattern for you to see.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the main data structure containing fractal and rendering details. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00108}{108}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ ==\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{JULIA}})}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}{render\_julia}}(data);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ ==\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{MANDELBROT}})}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_ac4c610e75a028afb898607ea03e80b30}{render\_mandelbrot}}(data);}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calcs_8c_a6010a48038dd00722649b2e7ad69668d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calcs_8c_a6010a48038dd00722649b2e7ad69668d_icgraph}
+\end{center}
+\end{figure}

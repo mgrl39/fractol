@@ -1,0 +1,98 @@
+\doxysection{xpm3\+\_\+conv Namespace Reference}
+\hypertarget{namespacexpm3__conv}{}\label{namespacexpm3__conv}\index{xpm3\_conv@{xpm3\_conv}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacexpm3__conv_a71be0e4d60aae570fb979ec9a691e24f}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{dict}} \mbox{\hyperlink{namespacexpm3__conv_a2ff4e88f02862607ab7c142719ae7c3b}{colours}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacexpm3__conv_a71be0e4d60aae570fb979ec9a691e24f}\label{namespacexpm3__conv_a71be0e4d60aae570fb979ec9a691e24f} 
+\index{xpm3\_conv@{xpm3\_conv}!main@{main}}
+\index{main@{main}!xpm3\_conv@{xpm3\_conv}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily xpm3\+\_\+conv.\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{xpm3__conv_8py_source_l00774}{774}} of file \mbox{\hyperlink{xpm3__conv_8py_source}{xpm3\+\_\+conv.\+py}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00774\ \textcolor{keyword}{def\ }\mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}():}
+\DoxyCodeLine{00775\ \ \ \ \ \textcolor{keywordflow}{if}\ len(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{sys.argv}})\ !=\ 2:}
+\DoxyCodeLine{00776\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}Use:\ py\ xpmconv.py\ |filename.xpm|"{}})}
+\DoxyCodeLine{00777\ \ \ \ \ \ \ \ \ exit(1)}
+\DoxyCodeLine{00778\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}.xpm"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{sys.argv}}[1]:}
+\DoxyCodeLine{00779\ \ \ \ \ \ \ \ \ print(\textcolor{stringliteral}{"{}not\ an\ xpm\ file"{}})}
+\DoxyCodeLine{00780\ \ \ \ \ \ \ \ \ exit(1)}
+\DoxyCodeLine{00781\ \ \ \ \ \textcolor{keyword}{with}\ open(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{sys.argv}}[1],\ \textcolor{stringliteral}{"{}r"{}})\ \textcolor{keyword}{as}\ f:}
+\DoxyCodeLine{00782\ \ \ \ \ \ \ \ \ oldxpm\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{f.readlines}}()[3:]}
+\DoxyCodeLine{00783\ \ \ \ \ fname\ =\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{sys.argv}}[1])[:-\/3]\ +\ \textcolor{stringliteral}{"{}xpm42"{}}}
+\DoxyCodeLine{00784\ \ \ \ \ newxpm42\ =\ open(fname,\ \textcolor{stringliteral}{"{}w"{}})}
+\DoxyCodeLine{00785\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{newxpm42.write}}(\textcolor{stringliteral}{"{}!XPM42\(\backslash\)n"{}})}
+\DoxyCodeLine{00786\ \ \ \ \ cpp\ =\ int(oldxpm[0].split()[3])}
+\DoxyCodeLine{00787\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{newxpm42.write}}(oldxpm[0][1:-\/3]\ +\ \textcolor{stringliteral}{"{}c\(\backslash\)n"{}})}
+\DoxyCodeLine{00788\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{oldxpm.pop}}(0)}
+\DoxyCodeLine{00789\ \ \ \ \ prev\ =\ 0}
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{keywordflow}{for}\ l\ \textcolor{keywordflow}{in}\ oldxpm:}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}/*\ pixels\ */"{}}\ \textcolor{keywordflow}{in}\ l:}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ temp\ =\ l[1:-\/3]\ +\ \textcolor{stringliteral}{"{}FF"{}}\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00794\ \ \ \ \ \ \ \ \ out\ =\ temp[:cpp]}
+\DoxyCodeLine{00795\ \ \ \ \ \ \ \ \ out\ =\ out\ +\ temp[(cpp+2):]}
+\DoxyCodeLine{00796\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}\#"{}}\ \textcolor{keywordflow}{not}\ \textcolor{keywordflow}{in}\ out[2:]:}
+\DoxyCodeLine{00797\ \ \ \ \ \ \ \ \ \ \ \ \ repcol\ =\ out[cpp+1:]}
+\DoxyCodeLine{00798\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ repcol[:-\/3].lower()}
+\DoxyCodeLine{00799\ \ \ \ \ \ \ \ \ \ \ \ \ repcol\ =\ colours[repcol[:-\/3].lower()]}
+\DoxyCodeLine{00800\ \ \ \ \ \ \ \ \ \ \ \ \ out\ =\ out[:cpp+1]\ +\ \textcolor{stringliteral}{"{}\#"{}}\ +\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{repcol.upper}}()\ +\ \textcolor{stringliteral}{"{}FF\(\backslash\)n"{}}}
+\DoxyCodeLine{00801\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ temp\ ==\ \textcolor{stringliteral}{"{}none"{}}:}
+\DoxyCodeLine{00802\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ out\ =\ out[:-\/3]\ +\ \textcolor{stringliteral}{"{}00\(\backslash\)n"{}}\ }
+\DoxyCodeLine{00803\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{newxpm42.write}}(out)}
+\DoxyCodeLine{00804\ \ \ \ \ \ \ \ \ prev\ +=\ 1}
+\DoxyCodeLine{00805\ \ \ \ \ oldxpm\ =\ oldxpm[prev\ +\ 1:]}
+\DoxyCodeLine{00806\ \ \ \ \ \textcolor{keywordflow}{for}\ i,\ l\ \textcolor{keywordflow}{in}\ enumerate(oldxpm):}
+\DoxyCodeLine{00807\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{stringliteral}{"{}\};"{}}\ \textcolor{keywordflow}{in}\ oldxpm[i\ +\ 1]:}
+\DoxyCodeLine{00808\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ =\ l[1:-\/2]\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00809\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{newxpm42.write}}(temp)}
+\DoxyCodeLine{00810\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break}}
+\DoxyCodeLine{00811\ \ \ \ \ \ \ \ \ temp\ =\ l[1:-\/3]\ +\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}}}
+\DoxyCodeLine{00812\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{newxpm42.write}}(temp)}
+\DoxyCodeLine{00813\ }
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{namespacexpm3__conv_a71be0e4d60aae570fb979ec9a691e24f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{namespacexpm3__conv_a71be0e4d60aae570fb979ec9a691e24f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{namespacexpm3__conv_a2ff4e88f02862607ab7c142719ae7c3b}\label{namespacexpm3__conv_a2ff4e88f02862607ab7c142719ae7c3b} 
+\index{xpm3\_conv@{xpm3\_conv}!colours@{colours}}
+\index{colours@{colours}!xpm3\_conv@{xpm3\_conv}}
+\doxysubsubsection{\texorpdfstring{colours}{colours}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{dict}} xpm3\+\_\+conv.\+colours}
+
+
+
+Definition at line \mbox{\hyperlink{xpm3__conv_8py_source_l00018}{18}} of file \mbox{\hyperlink{xpm3__conv_8py_source}{xpm3\+\_\+conv.\+py}}.
+

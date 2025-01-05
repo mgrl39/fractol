@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__list" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_list</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__list_1a4ec1b7b3904979305c777e6520eee837" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_list::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <qualifiedname>mlx_list::content</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="87" column="5" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="87" bodyend="-1"/>
+        <referencedby refid="MLX42__Int_8h_1acdd55bf29013651c970a5858f2d1dcfd" compoundref="mlx__list_8c" startline="45" endline="56">mlx_lstnew</referencedby>
+        <referencedby refid="mlx__loop_8c_1aaa7ba75154ec3bba6511cc7cb9625baa" compoundref="mlx__loop_8c" startline="30" endline="66">mlx_render_images</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">struct</ref> <ref refid="structmlx__list" kindref="compound">mlx_list</ref> *</type>
+        <definition>struct mlx_list* mlx_list::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <qualifiedname>mlx_list::next</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="88" column="15" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="88" bodyend="-1"/>
+        <referencedby refid="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" compoundref="mlx__list_8c" startline="126" endline="153">mlx_insertsort</referencedby>
+        <referencedby refid="MLX42__Int_8h_1a7b443d2be908f580e504765e3ed2ba78" compoundref="mlx__list_8c" startline="33" endline="43">mlx_lstclear</referencedby>
+        <referencedby refid="MLX42__Int_8h_1a0e833de4c4de8a1e06a313514f82eba3" compoundref="mlx__list_8c" startline="58" endline="65">mlx_lstlast</referencedby>
+        <referencedby refid="MLX42__Int_8h_1a4771a982050b3e2468d6fb4a8de9ab70" compoundref="mlx__list_8c" startline="100" endline="115">mlx_lstremove</referencedby>
+        <referencedby refid="mlx__loop_8c_1aaa7ba75154ec3bba6511cc7cb9625baa" compoundref="mlx__loop_8c" startline="30" endline="66">mlx_render_images</referencedby>
+        <referencedby refid="MLX42__Int_8h_1a3600368649993a1cc09550339063d2fe" compoundref="mlx__list_8c" startline="161" endline="176">mlx_sort_renderqueue</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">struct</ref> <ref refid="structmlx__list" kindref="compound">mlx_list</ref> *</type>
+        <definition>struct mlx_list* mlx_list::prev</definition>
+        <argsstring></argsstring>
+        <name>prev</name>
+        <qualifiedname>mlx_list::prev</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="89" column="15" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="89" bodyend="-1"/>
+        <referencedby refid="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" compoundref="mlx__list_8c" startline="126" endline="153">mlx_insertsort</referencedby>
+        <referencedby refid="MLX42__Int_8h_1a4771a982050b3e2468d6fb4a8de9ab70" compoundref="mlx__list_8c" startline="100" endline="115">mlx_lstremove</referencedby>
+        <referencedby refid="MLX42__Int_8h_1a3600368649993a1cc09550339063d2fe" compoundref="mlx__list_8c" startline="161" endline="176">mlx_sort_renderqueue</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_list</label>
+        <link refid="structmlx__list"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>+next</edgelabel>
+          <edgelabel>+prev</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="85" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="86" bodyend="90"/>
+    <listofallmembers>
+      <member refid="structmlx__list_1a4ec1b7b3904979305c777e6520eee837" prot="public" virt="non-virtual"><scope>mlx_list</scope><name>content</name></member>
+      <member refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" prot="public" virt="non-virtual"><scope>mlx_list</scope><name>next</name></member>
+      <member refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" prot="public" virt="non-virtual"><scope>mlx_list</scope><name>prev</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

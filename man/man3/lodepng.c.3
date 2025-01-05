@@ -1,0 +1,288 @@
+.TH "MLX42/lib/png/lodepng.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/lib/png/lodepng.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'lodepng/lodepng\&.h'\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBucvector\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_INLINE\fP   /* \fBnot\fP \fBavailable\fP */"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_RESTRICT\fP   /* \fBnot\fP \fBavailable\fP */"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_MAX\fP(\fBa\fP,  \fBb\fP)   (((\fBa\fP) > (\fBb\fP)) ? (\fBa\fP) : (\fBb\fP))"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_MIN\fP(\fBa\fP,  \fBb\fP)   (((\fBa\fP) < (\fBb\fP)) ? (\fBa\fP) : (\fBb\fP))"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBCERROR_BREAK\fP(\fBerrorvar\fP,  \fBcode\fP)"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBERROR_BREAK\fP(\fBcode\fP)   \fBCERROR_BREAK\fP(error, \fBcode\fP)"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBCERROR_RETURN_ERROR\fP(\fBerrorvar\fP,  \fBcode\fP)"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBCERROR_TRY_RETURN\fP(\fBcall\fP)"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBCERROR_RETURN\fP(\fBerrorvar\fP,  \fBcode\fP)"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBucvector\fP \fBucvector\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP * \fBlodepng_malloc\fP (\fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP * \fBlodepng_realloc\fP (\fBvoid\fP *\fBptr\fP, \fBsize_t\fP \fBnew_size\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_free\fP (\fBvoid\fP *\fBptr\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBlodepng_memcpy\fP (\fBvoid\fP *\fBLODEPNG_RESTRICT\fP \fBdst\fP, \fBconst\fP \fBvoid\fP *\fBLODEPNG_RESTRICT\fP \fBsrc\fP, \fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBlodepng_memset\fP (\fBvoid\fP *\fBLODEPNG_RESTRICT\fP \fBdst\fP, \fBint\fP \fBvalue\fP, \fBsize_t\fP \fBnum\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBsize_t\fP \fBlodepng_strlen\fP (\fBconst\fP \fBchar\fP *\fBa\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBunsigned\fP \fBucvector_reserve\fP (\fBucvector\fP *\fBp\fP, \fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBunsigned\fP \fBucvector_resize\fP (\fBucvector\fP *\fBp\fP, \fBsize_t\fP \fBsize\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBucvector\fP \fBucvector_init\fP (\fBunsigned\fP \fBchar\fP *\fBbuffer\fP, \fBsize_t\fP \fBsize\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBconst\fP \fBchar\fP * \fBLODEPNG_VERSION_STRING\fP = '20230410'"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#\fBdefine\fP CERROR_BREAK(\fBerrorvar\fP, \fBcode\fP)"
+\fBValue:\fP.PP
+.nf
+  {\\
+  errorvar = code;\\
+  break;\\
+}
+.fi
+
+.PP
+Definition at line \fB179\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+179                                     {\\
+180   errorvar = code;\\
+181   break;\\
+182 }
+.fi
+
+.SS "#\fBdefine\fP CERROR_RETURN(\fBerrorvar\fP, \fBcode\fP)"
+\fBValue:\fP.PP
+.nf
+  {\\
+  errorvar = code;\\
+  return;\\
+}
+.fi
+
+.PP
+Definition at line \fB200\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+200                                      {\\
+201   errorvar = code;\\
+202   return;\\
+203 }
+.fi
+
+.SS "#\fBdefine\fP CERROR_RETURN_ERROR(\fBerrorvar\fP, \fBcode\fP)"
+\fBValue:\fP.PP
+.nf
+  {\\
+  errorvar = code;\\
+  return code;\\
+}
+.fi
+
+.PP
+Definition at line \fB188\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+188                                            {\\
+189   errorvar = code;\\
+190   return code;\\
+191 }
+.fi
+
+.SS "#\fBdefine\fP CERROR_TRY_RETURN(\fBcall\fP)"
+\fBValue:\fP.PP
+.nf
+  {\\
+  unsigned error = call;\\
+  if(error) return error;\\
+}
+.fi
+
+.PP
+Definition at line \fB194\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+194                                {\\
+195   unsigned error = call;\\
+196   if(error) return error;\\
+197 }
+.fi
+
+.SS "#\fBdefine\fP ERROR_BREAK(\fBcode\fP)   \fBCERROR_BREAK\fP(error, \fBcode\fP)"
+
+.PP
+Definition at line \fB185\fP of file \fBlodepng\&.c\fP\&.
+.SS "#\fBdefine\fP LODEPNG_INLINE   /* \fBnot\fP \fBavailable\fP */"
+
+.PP
+Definition at line \fB104\fP of file \fBlodepng\&.c\fP\&.
+.SS "#\fBdefine\fP LODEPNG_MAX(\fBa\fP, \fBb\fP)   (((\fBa\fP) > (\fBb\fP)) ? (\fBa\fP) : (\fBb\fP))"
+
+.PP
+Definition at line \fB141\fP of file \fBlodepng\&.c\fP\&.
+.SS "#\fBdefine\fP LODEPNG_MIN(\fBa\fP, \fBb\fP)   (((\fBa\fP) < (\fBb\fP)) ? (\fBa\fP) : (\fBb\fP))"
+
+.PP
+Definition at line \fB142\fP of file \fBlodepng\&.c\fP\&.
+.SS "#\fBdefine\fP LODEPNG_RESTRICT   /* \fBnot\fP \fBavailable\fP */"
+
+.PP
+Definition at line \fB113\fP of file \fBlodepng\&.c\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBtypedef\fP \fBstruct\fP \fBucvector\fP \fBucvector\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP lodepng_free (\fBvoid\fP * ptr)"
+
+.SS "\fBvoid\fP * lodepng_malloc (\fBsize_t\fP size)"
+
+.SS "\fBstatic\fP \fBvoid\fP lodepng_memcpy (\fBvoid\fP *\fBLODEPNG_RESTRICT\fP dst, \fBconst\fP \fBvoid\fP *\fBLODEPNG_RESTRICT\fP src, \fBsize_t\fP size)\fC [static]\fP"
+
+.PP
+Definition at line \fB120\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+121                                                                           {
+122   size_t i;
+123   for(i = 0; i < size; i++) ((char*)dst)[i] = ((const char*)src)[i];
+124 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP lodepng_memset (\fBvoid\fP *\fBLODEPNG_RESTRICT\fP dst, \fBint\fP value, \fBsize_t\fP num)\fC [static]\fP"
+
+.PP
+Definition at line \fB126\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+127                                                   {
+128   size_t i;
+129   for(i = 0; i < num; i++) ((char*)dst)[i] = (char)value;
+130 }
+.fi
+
+.SS "\fBvoid\fP * lodepng_realloc (\fBvoid\fP * ptr, \fBsize_t\fP new_size)"
+
+.SS "\fBstatic\fP \fBsize_t\fP lodepng_strlen (\fBconst\fP \fBchar\fP * a)\fC [static]\fP"
+
+.PP
+Definition at line \fB133\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+133                                             {
+134   const char* orig = a;
+135   /* avoid warning about unused function in case of disabled COMPILE\&.\&.\&. macros */
+136   (void)(&lodepng_strlen);
+137   while(*a) a++;
+138   return (size_t)(a \- orig);
+139 }
+.fi
+
+.SS "\fBstatic\fP \fBucvector\fP ucvector_init (\fBunsigned\fP \fBchar\fP * buffer, \fBsize_t\fP size)\fC [static]\fP"
+
+.PP
+Definition at line \fB288\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+288                                                                   {
+289   ucvector v;
+290   v\&.data = buffer;
+291   v\&.allocsize = v\&.size = size;
+292   return v;
+293 }
+.fi
+
+.SS "\fBstatic\fP \fBunsigned\fP ucvector_reserve (\fBucvector\fP * p, \fBsize_t\fP size)\fC [static]\fP"
+
+.PP
+Definition at line \fB269\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+269                                                            {
+270   if(size > p\->allocsize) {
+271     size_t newsize = size + (p\->allocsize >> 1u);
+272     void* data = lodepng_realloc(p\->data, newsize);
+273     if(data) {
+274       p\->allocsize = newsize;
+275       p\->data = (unsigned char*)data;
+276     }
+277     else return 0; /*error: not enough memory*/
+278   }
+279   return 1; /*success*/
+280 }
+.fi
+
+.SS "\fBstatic\fP \fBunsigned\fP ucvector_resize (\fBucvector\fP * p, \fBsize_t\fP size)\fC [static]\fP"
+
+.PP
+Definition at line \fB283\fP of file \fBlodepng\&.c\fP\&..PP
+.nf
+283                                                           {
+284   p\->size = size;
+285   return ucvector_reserve(p, size);
+286 }
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBconst\fP \fBchar\fP* LODEPNG_VERSION_STRING = '20230410'"
+
+.PP
+Definition at line \fB47\fP of file \fBlodepng\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

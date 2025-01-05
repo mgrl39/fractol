@@ -1,0 +1,93 @@
+.TH "mlx_image" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mlx_image
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MLX42\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBconst\fP \fBuint32_t\fP \fBwidth\fP"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBuint32_t\fP \fBheight\fP"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP * \fBpixels\fP"
+.br
+.ti -1c
+.RI "\fBmlx_instance_t\fP * \fBinstances\fP"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBcount\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBenabled\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP * \fBcontext\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+An image with an individual buffer that can be rendered\&. Any value can be modified except the width/height and context\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP The width of the image\&. 
+.br
+\fIheight\fP The height of the image\&. 
+.br
+\fIpixels\fP The literal pixel data\&. 
+.br
+\fIinstances\fP An instance carrying the X, Y and Z location data\&. 
+.br
+\fIcount\fP The element count of the instances array\&. 
+.br
+\fIenabled\fP If true the image is drawn onto the screen, else it's not\&. 
+.br
+\fIcontext\fP Abstracted OpenGL data\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB340\fP of file \fBMLX42\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBvoid\fP* mlx_image::context"
+
+.PP
+Definition at line \fB348\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBsize_t\fP mlx_image::count"
+
+.PP
+Definition at line \fB346\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBbool\fP mlx_image::enabled"
+
+.PP
+Definition at line \fB347\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBconst\fP \fBuint32_t\fP mlx_image::height"
+
+.PP
+Definition at line \fB343\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBmlx_instance_t\fP* mlx_image::instances"
+
+.PP
+Definition at line \fB345\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBuint8_t\fP* mlx_image::pixels"
+
+.PP
+Definition at line \fB344\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBconst\fP \fBuint32_t\fP mlx_image::width"
+
+.PP
+Definition at line \fB342\fP of file \fBMLX42\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

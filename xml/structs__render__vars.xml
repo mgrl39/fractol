@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structs__render__vars" kind="struct" language="C++" prot="public">
+    <compoundname>s_render_vars</compoundname>
+    <includes refid="fractol_8h" local="no">fractol.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int s_render_vars::iterations</definition>
+        <argsstring></argsstring>
+        <name>iterations</name>
+        <qualifiedname>s_render_vars::iterations</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="106" column="4" bodyfile="fractol.h" bodystart="106" bodyend="-1"/>
+        <referencedby refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" compoundref="julia_8c" startline="84" endline="102">julia_iterations</referencedby>
+        <referencedby refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" compoundref="mandelbrot_8c" startline="34" endline="56">mandelbrot_iterations</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1a0d03489cebdef050251bdf227262060a" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_render_vars::scale[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>scale</name>
+        <qualifiedname>s_render_vars::scale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="107" column="7" bodyfile="fractol.h" bodystart="107" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</referencedby>
+        <referencedby refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" compoundref="calcs_8c" startline="78" endline="93">precompute_coords</referencedby>
+        <referencedby refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_render_vars::start[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>start</name>
+        <qualifiedname>s_render_vars::start</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="108" column="7" bodyfile="fractol.h" bodystart="108" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</referencedby>
+        <referencedby refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" compoundref="calcs_8c" startline="78" endline="93">precompute_coords</referencedby>
+        <referencedby refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_render_vars::z[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>z</name>
+        <qualifiedname>s_render_vars::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="109" column="7" bodyfile="fractol.h" bodystart="109" bodyend="-1"/>
+        <referencedby refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" compoundref="mandelbrot_8c" startline="18" endline="29">compute_next_iteration</referencedby>
+        <referencedby refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" compoundref="julia_8c" startline="84" endline="102">julia_iterations</referencedby>
+        <referencedby refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" compoundref="mandelbrot_8c" startline="34" endline="56">mandelbrot_iterations</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_render_vars::z_squared[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>z_squared</name>
+        <qualifiedname>s_render_vars::z_squared</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="110" column="7" bodyfile="fractol.h" bodystart="110" bodyend="-1"/>
+        <referencedby refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" compoundref="mandelbrot_8c" startline="18" endline="29">compute_next_iteration</referencedby>
+        <referencedby refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" compoundref="julia_8c" startline="84" endline="102">julia_iterations</referencedby>
+        <referencedby refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" compoundref="mandelbrot_8c" startline="34" endline="56">mandelbrot_iterations</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_render_vars::c_re[2]</definition>
+        <argsstring>[2]</argsstring>
+        <name>c_re</name>
+        <qualifiedname>s_render_vars::c_re</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="111" column="7" bodyfile="fractol.h" bodystart="111" bodyend="-1"/>
+        <referencedby refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" compoundref="mandelbrot_8c" startline="18" endline="29">compute_next_iteration</referencedby>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_render_vars::c_re_centered</definition>
+        <argsstring></argsstring>
+        <name>c_re_centered</name>
+        <qualifiedname>s_render_vars::c_re_centered</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="112" column="7" bodyfile="fractol.h" bodystart="112" bodyend="-1"/>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_render_vars::c_im</definition>
+        <argsstring></argsstring>
+        <name>c_im</name>
+        <qualifiedname>s_render_vars::c_im</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="113" column="7" bodyfile="fractol.h" bodystart="113" bodyend="-1"/>
+        <referencedby refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" compoundref="mandelbrot_8c" startline="18" endline="29">compute_next_iteration</referencedby>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+        <referencedby refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* s_render_vars::pixels</definition>
+        <argsstring></argsstring>
+        <name>pixels</name>
+        <qualifiedname>s_render_vars::pixels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="114" column="9" bodyfile="fractol.h" bodystart="114" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" prot="public" static="no" mutable="no">
+        <type>uint32_t *</type>
+        <definition>uint32_t* s_render_vars::row</definition>
+        <argsstring></argsstring>
+        <name>row</name>
+        <qualifiedname>s_render_vars::row</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="115" column="9" bodyfile="fractol.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Variables used for fractal rendering calculations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>s_render_vars</label>
+        <link refid="structs__render__vars"/>
+      </node>
+    </collaborationgraph>
+    <location file="fractol.h" line="104" column="1" bodyfile="fractol.h" bodystart="105" bodyend="116"/>
+    <listofallmembers>
+      <member refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>c_im</name></member>
+      <member refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>c_re</name></member>
+      <member refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>c_re_centered</name></member>
+      <member refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>iterations</name></member>
+      <member refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>pixels</name></member>
+      <member refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>row</name></member>
+      <member refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>scale</name></member>
+      <member refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>start</name></member>
+      <member refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>z</name></member>
+      <member refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" prot="public" virt="non-virtual"><scope>s_render_vars</scope><name>z_squared</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

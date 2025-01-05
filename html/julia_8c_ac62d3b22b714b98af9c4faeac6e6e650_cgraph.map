@@ -1,0 +1,11 @@
+<map id="render_julia" name="render_julia">
+<area shape="rect" id="Node000001" title="Renders the Julia set fractal." alt="" coords="5,42,104,67"/>
+<area shape="rect" id="Node000002" href="$calcs_8c.html#af548b6205acd0da6696adf5b79aa23a3" title="Calculates the scales and starting points for the fractal rendering." alt="" coords="152,5,312,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,44,138,38,139,43,105,49"/>
+<area shape="rect" id="Node000003" href="$julia_8c.html#ac8f82667795f7c5ff50e0bdceae44afc" title="Renders a single row of the Julia set." alt="" coords="167,70,297,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="105,60,154,68,153,73,104,65"/>
+<area shape="rect" id="Node000004" href="$calcs_8c.html#af87a6532ce68469fef69f9c207960094" title="Calculates the color of a pixel based on how many iterations it takes to &quot;escape&quot;." alt="" coords="360,45,480,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="297,71,346,65,347,70,298,77"/>
+<area shape="rect" id="Node000005" href="$julia_8c.html#a06a8d464c822682fafa59d5a404516bb" title="Performs the iterations for a signle point in the Julia set." alt="" coords="361,94,479,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="298,88,347,95,346,100,297,94"/>
+</map>

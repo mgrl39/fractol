@@ -1,0 +1,1088 @@
+\doxysection{fractol.\+h File Reference}
+\hypertarget{fractol_8h}{}\label{fractol_8h}\index{fractol.h@{fractol.h}}
+{\ttfamily \#include "{}MLX42/\+MLX42.\+h"{}}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for fractol.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{fractol_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structs__color}{s\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em Represents an RGB color. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structs__data}{s\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Data structure for fractal rendering. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structs__render__vars}{s\+\_\+render\+\_\+vars}}
+\begin{DoxyCompactList}\small\item\em Variables used for fractal rendering calculations. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structs__atod__data}{s\+\_\+atod\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Helper structure for string-\/to-\/double conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}~800
+\item 
+\#define \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}~\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}
+\item 
+\#define \mbox{\hyperlink{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f}{ZOOM\+\_\+\+IN}}~1.\+1
+\item 
+\#define \mbox{\hyperlink{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb}{ZOOM\+\_\+\+OUT}}~0.\+9
+\item 
+\#define \mbox{\hyperlink{fractol_8h_a7a1f70b32a536263893f6dd2d2770ad7}{FRACTAL\+\_\+\+LIMIT}}~4.\+0
+\item 
+\#define \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\+\_\+\+ITERATIONS}}~75
+\item 
+\#define \mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}}~"{}\textbackslash{}033\mbox{[}0m"{}
+\item 
+\#define \mbox{\hyperlink{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba}{LIGHT\+\_\+\+RED}}~"{}\textbackslash{}033\mbox{[}38;5;203m"{}
+\item 
+\#define \mbox{\hyperlink{fractol_8h_af0506fcfa991103f2a0747bb5c041c06}{LIGHT\+\_\+\+GOLD}}~"{}\textbackslash{}033\mbox{[}38;5;220m"{}
+\item 
+\#define \mbox{\hyperlink{fractol_8h_a5a7142ee95ebc63218ed3aac2ae06b13}{LIGHT\+\_\+\+GREEN}}~"{}\textbackslash{}033\mbox{[}38;5;120m"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12}{e\+\_\+fractal\+\_\+type}} \mbox{\hyperlink{fractol_8h_a87e2208c89c44020c05fae234f5d17d7}{t\+\_\+fractal\+\_\+type}}
+\item 
+typedef enum \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6}{e\+\_\+offset\+\_\+index}} \mbox{\hyperlink{fractol_8h_a28da728f4eaa09c08c9c92968b1126c5}{t\+\_\+offset\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Indices for offsets in the x and y directions. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad}{e\+\_\+scale\+\_\+index}} \mbox{\hyperlink{fractol_8h_acc52c36a8d0ef83a52f4bd64e75379d9}{t\+\_\+scale\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Indices for scaling factors in the x and y directions. \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55}{e\+\_\+complex\+\_\+index}} \mbox{\hyperlink{fractol_8h_ab6761e1fd55084307b894e7fb9301183}{t\+\_\+complex\+\_\+index}}
+\begin{DoxyCompactList}\small\item\em Indices for complex numbers (real and imaginary) \end{DoxyCompactList}\item 
+typedef enum \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1b}{e\+\_\+number\+\_\+flags}} \mbox{\hyperlink{fractol_8h_a2e791bec888de17dac932dc1f31b3797}{t\+\_\+number\+\_\+flags}}
+\begin{DoxyCompactList}\small\item\em Flags for validating numbers. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structs__color}{s\+\_\+color}} \mbox{\hyperlink{fractol_8h_a43da74144dd0bc8864f91dfed33bd6bf}{t\+\_\+color}}
+\begin{DoxyCompactList}\small\item\em Represents an RGB color. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structs__data}{s\+\_\+data}} \mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Data structure for fractal rendering. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structs__render__vars}{s\+\_\+render\+\_\+vars}} \mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}}
+\begin{DoxyCompactList}\small\item\em Variables used for fractal rendering calculations. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structs__atod__data}{s\+\_\+atod\+\_\+data}} \mbox{\hyperlink{fractol_8h_ab9cfae5f88a2c51a1b5d39245e0dcaed}{t\+\_\+atod\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Helper structure for string-\/to-\/double conversion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12}{e\+\_\+fractal\+\_\+type}} \{ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{MANDELBROT}}
+, \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{JULIA}}
+ \}
+\item 
+enum \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6}{e\+\_\+offset\+\_\+index}} \{ \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\+\_\+X}}
+, \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\+\_\+Y}}
+ \}
+\begin{DoxyCompactList}\small\item\em Indices for offsets in the x and y directions. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad}{e\+\_\+scale\+\_\+index}} \{ \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\+\_\+X}}
+, \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\+\_\+Y}}
+ \}
+\begin{DoxyCompactList}\small\item\em Indices for scaling factors in the x and y directions. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55}{e\+\_\+complex\+\_\+index}} \{ \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\+\_\+\+RE}}
+, \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\+\_\+\+IM}}
+ \}
+\begin{DoxyCompactList}\small\item\em Indices for complex numbers (real and imaginary) \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1b}{e\+\_\+number\+\_\+flags}} \{ \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\+\_\+\+DIGIT}}
+, \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\+\_\+\+POINT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Flags for validating numbers. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1b}{e\+\_\+err\+\_\+msg}} \{ \newline
+\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc}{NO\+\_\+\+TYPE}}
+, \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546}{INVALID\+\_\+\+TYPE}}
+, \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7}{JULIA\+\_\+\+ARGS}}
+, \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68}{JULIA\+\_\+\+NUM}}
+, \newline
+\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97}{MANDELBROT\+\_\+\+ARGS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Error messages used for input validation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fractol_8h_af548b6205acd0da6696adf5b79aa23a3}{calculate\+\_\+scales\+\_\+and\+\_\+limits}} (\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}vars, \mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Calculates scales and limits for rendering fractals. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fractol_8h_aa136a596dce9e2897d5eb0805a5a459f}{precompute\+\_\+coords}} (double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}c\+\_\+re, double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}c\+\_\+im, \mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}vars)
+\begin{DoxyCompactList}\small\item\em Precomputes coordinates for fractal rendering. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fractol_8h_af87a6532ce68469fef69f9c207960094}{calculate\+\_\+color}} (int iterations)
+\begin{DoxyCompactList}\small\item\em Calculates the color based on the number of iterations. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{fractol_8h_aba5be72a261c5846a5d6e7b315548d33}{ft\+\_\+atod}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Converts a string to a double. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}{ft\+\_\+strcmp}} (const char \texorpdfstring{$\ast$}{*}s1, const char \texorpdfstring{$\ast$}{*}s2)
+\begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\+\_\+putstr\+\_\+fd}} (char \texorpdfstring{$\ast$}{*}s, int fd)
+\begin{DoxyCompactList}\small\item\em Writes a string to a file descriptor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fractol_8h_a6010a48038dd00722649b2e7ad69668d}{render\+\_\+fractal}} (\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Render the specified fractal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fractol_8h_ac4c610e75a028afb898607ea03e80b30}{render\+\_\+mandelbrot}} (\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Render the Mandelbrot fractal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}{render\+\_\+julia}} (\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Renders the Julia fractal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fractol_8h_aa40f0dfb0dfb158de3f6f8b98f0de3ec}{handle\+\_\+key}} (mlx\+\_\+key\+\_\+data\+\_\+t keydata, void \texorpdfstring{$\ast$}{*}param)
+\begin{DoxyCompactList}\small\item\em Handles key inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{fractol_8h_ace17996cda407bf3eb3480f07ccdd107}{handle\+\_\+scroll}} (double xdelta, double ydelta, void \texorpdfstring{$\ast$}{*}param)
+\begin{DoxyCompactList}\small\item\em Handles scroll inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{fractol_8h_a7a1f70b32a536263893f6dd2d2770ad7}\label{fractol_8h_a7a1f70b32a536263893f6dd2d2770ad7} 
+\index{fractol.h@{fractol.h}!FRACTAL\_LIMIT@{FRACTAL\_LIMIT}}
+\index{FRACTAL\_LIMIT@{FRACTAL\_LIMIT}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{FRACTAL\_LIMIT}{FRACTAL\_LIMIT}}
+{\footnotesize\ttfamily \#define FRACTAL\+\_\+\+LIMIT~4.\+0}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00192}{192}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}\label{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e} 
+\index{fractol.h@{fractol.h}!HEIGHT@{HEIGHT}}
+\index{HEIGHT@{HEIGHT}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{HEIGHT}{HEIGHT}}
+{\footnotesize\ttfamily \#define HEIGHT~\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00189}{189}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_af0506fcfa991103f2a0747bb5c041c06}\label{fractol_8h_af0506fcfa991103f2a0747bb5c041c06} 
+\index{fractol.h@{fractol.h}!LIGHT\_GOLD@{LIGHT\_GOLD}}
+\index{LIGHT\_GOLD@{LIGHT\_GOLD}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_GOLD}{LIGHT\_GOLD}}
+{\footnotesize\ttfamily \#define LIGHT\+\_\+\+GOLD~"{}\textbackslash{}033\mbox{[}38;5;220m"{}}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00196}{196}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_a5a7142ee95ebc63218ed3aac2ae06b13}\label{fractol_8h_a5a7142ee95ebc63218ed3aac2ae06b13} 
+\index{fractol.h@{fractol.h}!LIGHT\_GREEN@{LIGHT\_GREEN}}
+\index{LIGHT\_GREEN@{LIGHT\_GREEN}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_GREEN}{LIGHT\_GREEN}}
+{\footnotesize\ttfamily \#define LIGHT\+\_\+\+GREEN~"{}\textbackslash{}033\mbox{[}38;5;120m"{}}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00197}{197}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba}\label{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba} 
+\index{fractol.h@{fractol.h}!LIGHT\_RED@{LIGHT\_RED}}
+\index{LIGHT\_RED@{LIGHT\_RED}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{LIGHT\_RED}{LIGHT\_RED}}
+{\footnotesize\ttfamily \#define LIGHT\+\_\+\+RED~"{}\textbackslash{}033\mbox{[}38;5;203m"{}}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00195}{195}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}\label{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14} 
+\index{fractol.h@{fractol.h}!MAX\_ITERATIONS@{MAX\_ITERATIONS}}
+\index{MAX\_ITERATIONS@{MAX\_ITERATIONS}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ITERATIONS}{MAX\_ITERATIONS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ITERATIONS~75}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00193}{193}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}\label{fractol_8h_ab702106cf3b3e96750b6845ded4e0299} 
+\index{fractol.h@{fractol.h}!RESET@{RESET}}
+\index{RESET@{RESET}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{RESET}{RESET}}
+{\footnotesize\ttfamily \#define RESET~"{}\textbackslash{}033\mbox{[}0m"{}}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00194}{194}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}\label{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d} 
+\index{fractol.h@{fractol.h}!WIDTH@{WIDTH}}
+\index{WIDTH@{WIDTH}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{WIDTH}{WIDTH}}
+{\footnotesize\ttfamily \#define WIDTH~800}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00188}{188}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f}\label{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f} 
+\index{fractol.h@{fractol.h}!ZOOM\_IN@{ZOOM\_IN}}
+\index{ZOOM\_IN@{ZOOM\_IN}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{ZOOM\_IN}{ZOOM\_IN}}
+{\footnotesize\ttfamily \#define ZOOM\+\_\+\+IN~1.\+1}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00190}{190}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+\Hypertarget{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb}\label{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb} 
+\index{fractol.h@{fractol.h}!ZOOM\_OUT@{ZOOM\_OUT}}
+\index{ZOOM\_OUT@{ZOOM\_OUT}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{ZOOM\_OUT}{ZOOM\_OUT}}
+{\footnotesize\ttfamily \#define ZOOM\+\_\+\+OUT~0.\+9}
+
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00191}{191}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{fractol_8h_ab9cfae5f88a2c51a1b5d39245e0dcaed}\label{fractol_8h_ab9cfae5f88a2c51a1b5d39245e0dcaed} 
+\index{fractol.h@{fractol.h}!t\_atod\_data@{t\_atod\_data}}
+\index{t\_atod\_data@{t\_atod\_data}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_atod\_data}{t\_atod\_data}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__atod__data}{s\+\_\+atod\+\_\+data}} \mbox{\hyperlink{fractol_8h_ab9cfae5f88a2c51a1b5d39245e0dcaed}{t\+\_\+atod\+\_\+data}}}
+
+
+
+Helper structure for string-\/to-\/double conversion. 
+
+\Hypertarget{fractol_8h_a43da74144dd0bc8864f91dfed33bd6bf}\label{fractol_8h_a43da74144dd0bc8864f91dfed33bd6bf} 
+\index{fractol.h@{fractol.h}!t\_color@{t\_color}}
+\index{t\_color@{t\_color}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_color}{t\_color}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__color}{s\+\_\+color}} \mbox{\hyperlink{fractol_8h_a43da74144dd0bc8864f91dfed33bd6bf}{t\+\_\+color}}}
+
+
+
+Represents an RGB color. 
+
+\Hypertarget{fractol_8h_ab6761e1fd55084307b894e7fb9301183}\label{fractol_8h_ab6761e1fd55084307b894e7fb9301183} 
+\index{fractol.h@{fractol.h}!t\_complex\_index@{t\_complex\_index}}
+\index{t\_complex\_index@{t\_complex\_index}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_complex\_index}{t\_complex\_index}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55}{e\+\_\+complex\+\_\+index}} \mbox{\hyperlink{fractol_8h_ab6761e1fd55084307b894e7fb9301183}{t\+\_\+complex\+\_\+index}}}
+
+
+
+Indices for complex numbers (real and imaginary) 
+
+\Hypertarget{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}\label{fractol_8h_a24e28e95867f9681b9d87781b1caa65b} 
+\index{fractol.h@{fractol.h}!t\_data@{t\_data}}
+\index{t\_data@{t\_data}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_data}{t\_data}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__data}{s\+\_\+data}} \mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}}}
+
+
+
+Data structure for fractal rendering. 
+
+\Hypertarget{fractol_8h_a87e2208c89c44020c05fae234f5d17d7}\label{fractol_8h_a87e2208c89c44020c05fae234f5d17d7} 
+\index{fractol.h@{fractol.h}!t\_fractal\_type@{t\_fractal\_type}}
+\index{t\_fractal\_type@{t\_fractal\_type}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_fractal\_type}{t\_fractal\_type}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12}{e\+\_\+fractal\+\_\+type}} \mbox{\hyperlink{fractol_8h_a87e2208c89c44020c05fae234f5d17d7}{t\+\_\+fractal\+\_\+type}}}
+
+\Hypertarget{fractol_8h_a2e791bec888de17dac932dc1f31b3797}\label{fractol_8h_a2e791bec888de17dac932dc1f31b3797} 
+\index{fractol.h@{fractol.h}!t\_number\_flags@{t\_number\_flags}}
+\index{t\_number\_flags@{t\_number\_flags}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_number\_flags}{t\_number\_flags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1b}{e\+\_\+number\+\_\+flags}} \mbox{\hyperlink{fractol_8h_a2e791bec888de17dac932dc1f31b3797}{t\+\_\+number\+\_\+flags}}}
+
+
+
+Flags for validating numbers. 
+
+\Hypertarget{fractol_8h_a28da728f4eaa09c08c9c92968b1126c5}\label{fractol_8h_a28da728f4eaa09c08c9c92968b1126c5} 
+\index{fractol.h@{fractol.h}!t\_offset\_index@{t\_offset\_index}}
+\index{t\_offset\_index@{t\_offset\_index}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_offset\_index}{t\_offset\_index}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6}{e\+\_\+offset\+\_\+index}} \mbox{\hyperlink{fractol_8h_a28da728f4eaa09c08c9c92968b1126c5}{t\+\_\+offset\+\_\+index}}}
+
+
+
+Indices for offsets in the x and y directions. 
+
+\Hypertarget{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}\label{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d} 
+\index{fractol.h@{fractol.h}!t\_render\_vars@{t\_render\_vars}}
+\index{t\_render\_vars@{t\_render\_vars}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_render\_vars}{t\_render\_vars}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs__render__vars}{s\+\_\+render\+\_\+vars}} \mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}}}
+
+
+
+Variables used for fractal rendering calculations. 
+
+\Hypertarget{fractol_8h_acc52c36a8d0ef83a52f4bd64e75379d9}\label{fractol_8h_acc52c36a8d0ef83a52f4bd64e75379d9} 
+\index{fractol.h@{fractol.h}!t\_scale\_index@{t\_scale\_index}}
+\index{t\_scale\_index@{t\_scale\_index}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{t\_scale\_index}{t\_scale\_index}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad}{e\+\_\+scale\+\_\+index}} \mbox{\hyperlink{fractol_8h_acc52c36a8d0ef83a52f4bd64e75379d9}{t\+\_\+scale\+\_\+index}}}
+
+
+
+Indices for scaling factors in the x and y directions. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55}\label{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55} 
+\index{fractol.h@{fractol.h}!e\_complex\_index@{e\_complex\_index}}
+\index{e\_complex\_index@{e\_complex\_index}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{e\_complex\_index}{e\_complex\_index}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55}{e\+\_\+complex\+\_\+index}}}
+
+
+
+Indices for complex numbers (real and imaginary) 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPLEX\_RE@{COMPLEX\_RE}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!COMPLEX\_RE@{COMPLEX\_RE}}}\Hypertarget{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}\label{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233} 
+COMPLEX\+\_\+\+RE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPLEX\_IM@{COMPLEX\_IM}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!COMPLEX\_IM@{COMPLEX\_IM}}}\Hypertarget{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}\label{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245} 
+COMPLEX\+\_\+\+IM&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00050}{50}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}},}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}},}
+\DoxyCodeLine{00054\ \}\ \ \ \mbox{\hyperlink{fractol_8h_ab6761e1fd55084307b894e7fb9301183}{t\_complex\_index}};}
+
+\end{DoxyCode}
+\Hypertarget{fractol_8h_a581490c368c73129213a8e3006762b1b}\label{fractol_8h_a581490c368c73129213a8e3006762b1b} 
+\index{fractol.h@{fractol.h}!e\_err\_msg@{e\_err\_msg}}
+\index{e\_err\_msg@{e\_err\_msg}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{e\_err\_msg}{e\_err\_msg}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1b}{e\+\_\+err\+\_\+msg}}}
+
+
+
+Error messages used for input validation. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NO\_TYPE@{NO\_TYPE}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!NO\_TYPE@{NO\_TYPE}}}\Hypertarget{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc}\label{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc} 
+NO\+\_\+\+TYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_TYPE@{INVALID\_TYPE}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!INVALID\_TYPE@{INVALID\_TYPE}}}\Hypertarget{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546}\label{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546} 
+INVALID\+\_\+\+TYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JULIA\_ARGS@{JULIA\_ARGS}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!JULIA\_ARGS@{JULIA\_ARGS}}}\Hypertarget{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7}\label{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7} 
+JULIA\+\_\+\+ARGS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JULIA\_NUM@{JULIA\_NUM}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!JULIA\_NUM@{JULIA\_NUM}}}\Hypertarget{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68}\label{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68} 
+JULIA\+\_\+\+NUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MANDELBROT\_ARGS@{MANDELBROT\_ARGS}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!MANDELBROT\_ARGS@{MANDELBROT\_ARGS}}}\Hypertarget{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97}\label{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97} 
+MANDELBROT\+\_\+\+ARGS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00068}{68}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc}{NO\_TYPE}},}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546}{INVALID\_TYPE}},}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7}{JULIA\_ARGS}},}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68}{JULIA\_NUM}},}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97}{MANDELBROT\_ARGS}},}
+\DoxyCodeLine{00075\ \};}
+
+\end{DoxyCode}
+\Hypertarget{fractol_8h_a1062913c9edc7196b03714d4b329be12}\label{fractol_8h_a1062913c9edc7196b03714d4b329be12} 
+\index{fractol.h@{fractol.h}!e\_fractal\_type@{e\_fractal\_type}}
+\index{e\_fractal\_type@{e\_fractal\_type}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{e\_fractal\_type}{e\_fractal\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12}{e\+\_\+fractal\+\_\+type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MANDELBROT@{MANDELBROT}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!MANDELBROT@{MANDELBROT}}}\Hypertarget{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}\label{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7} 
+MANDELBROT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JULIA@{JULIA}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!JULIA@{JULIA}}}\Hypertarget{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}\label{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41} 
+JULIA&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00023}{23}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{MANDELBROT}},}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{JULIA}},}
+\DoxyCodeLine{00027\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a87e2208c89c44020c05fae234f5d17d7}{t\_fractal\_type}};}
+
+\end{DoxyCode}
+\Hypertarget{fractol_8h_a19064498c6efed3153a2d9de768b0b1b}\label{fractol_8h_a19064498c6efed3153a2d9de768b0b1b} 
+\index{fractol.h@{fractol.h}!e\_number\_flags@{e\_number\_flags}}
+\index{e\_number\_flags@{e\_number\_flags}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{e\_number\_flags}{e\_number\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1b}{e\+\_\+number\+\_\+flags}}}
+
+
+
+Flags for validating numbers. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAS\_DIGIT@{HAS\_DIGIT}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!HAS\_DIGIT@{HAS\_DIGIT}}}\Hypertarget{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}\label{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d} 
+HAS\+\_\+\+DIGIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HAS\_POINT@{HAS\_POINT}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!HAS\_POINT@{HAS\_POINT}}}\Hypertarget{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}\label{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e} 
+HAS\+\_\+\+POINT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00059}{59}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}},}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}},}
+\DoxyCodeLine{00063\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a2e791bec888de17dac932dc1f31b3797}{t\_number\_flags}};}
+
+\end{DoxyCode}
+\Hypertarget{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6}\label{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6} 
+\index{fractol.h@{fractol.h}!e\_offset\_index@{e\_offset\_index}}
+\index{e\_offset\_index@{e\_offset\_index}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{e\_offset\_index}{e\_offset\_index}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6}{e\+\_\+offset\+\_\+index}}}
+
+
+
+Indices for offsets in the x and y directions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OFFSET\_X@{OFFSET\_X}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!OFFSET\_X@{OFFSET\_X}}}\Hypertarget{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}\label{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80} 
+OFFSET\+\_\+X&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OFFSET\_Y@{OFFSET\_Y}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!OFFSET\_Y@{OFFSET\_Y}}}\Hypertarget{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}\label{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f} 
+OFFSET\+\_\+Y&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00032}{32}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}},}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}},}
+\DoxyCodeLine{00036\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a28da728f4eaa09c08c9c92968b1126c5}{t\_offset\_index}};}
+
+\end{DoxyCode}
+\Hypertarget{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad}\label{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad} 
+\index{fractol.h@{fractol.h}!e\_scale\_index@{e\_scale\_index}}
+\index{e\_scale\_index@{e\_scale\_index}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{e\_scale\_index}{e\_scale\_index}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad}{e\+\_\+scale\+\_\+index}}}
+
+
+
+Indices for scaling factors in the x and y directions. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCALE\_X@{SCALE\_X}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!SCALE\_X@{SCALE\_X}}}\Hypertarget{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}\label{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9} 
+SCALE\+\_\+X&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCALE\_Y@{SCALE\_Y}!fractol.h@{fractol.h}}\index{fractol.h@{fractol.h}!SCALE\_Y@{SCALE\_Y}}}\Hypertarget{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}\label{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4} 
+SCALE\+\_\+Y&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{fractol_8h_source_l00041}{41}} of file \mbox{\hyperlink{fractol_8h_source}{fractol.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}},}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}},}
+\DoxyCodeLine{00045\ \}\ \ \ \mbox{\hyperlink{fractol_8h_acc52c36a8d0ef83a52f4bd64e75379d9}{t\_scale\_index}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{fractol_8h_af87a6532ce68469fef69f9c207960094}\label{fractol_8h_af87a6532ce68469fef69f9c207960094} 
+\index{fractol.h@{fractol.h}!calculate\_color@{calculate\_color}}
+\index{calculate\_color@{calculate\_color}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_color()}{calculate\_color()}}
+{\footnotesize\ttfamily int calculate\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{iterations }\end{DoxyParamCaption})}
+
+
+
+Calculates the color based on the number of iterations. 
+
+Calculates the color based on the number of iterations.
+
+This function determines the color of each pixel in the fractal by mapping the iteration count (how many steps we are needed to reach a threshold) to a color gradient.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item The function decides the color of each pooint in the fractal, creating the beautiful patterns you see based on how "{}complex"{} the point is.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em iterations} & Number of iterations required for the opint to "{}escape"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the calculated color as an integer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00131}{131}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{double}\ \ it\_count;}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ base\_gray;}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{structs__color}{t\_color}}\ \ color;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ it\_count\ =\ (double)iterations\ /\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}};}
+\DoxyCodeLine{00138\ \ \ \ \ base\_gray\ =\ (30\ +\ 190\ *\ (it\_count\ *\ (1\ -\/\ 0.2\ *\ it\_count)));}
+\DoxyCodeLine{00139\ \ \ \ \ color.\mbox{\hyperlink{structs__color_a251e854381c6945efbbffc33796e6035}{r}}\ =\ base\_gray\ -\/\ (5\ *\ (1\ -\/\ it\_count)\ *\ it\_count\ *\ it\_count);}
+\DoxyCodeLine{00140\ \ \ \ \ color.g\ =\ base\_gray\ -\/\ (10\ *\ (1\ -\/\ it\_count)\ *\ (1\ -\/\ it\_count));}
+\DoxyCodeLine{00141\ \ \ \ \ color.b\ =\ base\_gray\ -\/\ (15\ *\ (1\ -\/\ it\_count)\ *\ it\_count);}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordflow}{return}\ ((0xFF\ <<\ 24)\ |\ (color.r\ <<\ 16)\ |\ (color.g\ <<\ 8)\ |\ color.b);}
+\DoxyCodeLine{00143\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_af87a6532ce68469fef69f9c207960094_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_af548b6205acd0da6696adf5b79aa23a3}\label{fractol_8h_af548b6205acd0da6696adf5b79aa23a3} 
+\index{fractol.h@{fractol.h}!calculate\_scales\_and\_limits@{calculate\_scales\_and\_limits}}
+\index{calculate\_scales\_and\_limits@{calculate\_scales\_and\_limits}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{calculate\_scales\_and\_limits()}{calculate\_scales\_and\_limits()}}
+{\footnotesize\ttfamily void calculate\+\_\+scales\+\_\+and\+\_\+limits (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}}]{vars,  }\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Calculates scales and limits for rendering fractals. 
+
+Calculates scales and limits for rendering fractals.
+
+This function determines how the fractal is scaled and positioned on the screen. It computes the scale factors for each pixel and establishes the starting points ffor the real and imaginary part of the fractal based on the zoom level and offsets.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item Think of it as setting the "{}zoom"{} and "{}pam"{} for the fractal to display it correctly on the screen.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars} & Pointer to the rendering variables structure. \\
+\hline
+{\em data} & Pointer to the main data structure containing fractal information. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00052}{52}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{00055\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{00056\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}];}
+\DoxyCodeLine{00057\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}];}
+\DoxyCodeLine{00058\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ =\ (uint32\_t\ *)data-\/>\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}}-\/>pixels;}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_af548b6205acd0da6696adf5b79aa23a3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}\label{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d} 
+\index{fractol.h@{fractol.h}!fr\_putstr\_fd@{fr\_putstr\_fd}}
+\index{fr\_putstr\_fd@{fr\_putstr\_fd}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{fr\_putstr\_fd()}{fr\_putstr\_fd()}}
+{\footnotesize\ttfamily int fr\+\_\+putstr\+\_\+fd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Writes a string to a file descriptor. 
+
+Writes a string to a file descriptor. 
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00109}{109}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00116\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00117\ \ \ \ \ count\ =\ 0;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i])}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ count\ +=\ write(fd,\ \&s[i++],\ 1);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ (count);}
+\DoxyCodeLine{00121\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_aba5be72a261c5846a5d6e7b315548d33}\label{fractol_8h_aba5be72a261c5846a5d6e7b315548d33} 
+\index{fractol.h@{fractol.h}!ft\_atod@{ft\_atod}}
+\index{ft\_atod@{ft\_atod}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{ft\_atod()}{ft\_atod()}}
+{\footnotesize\ttfamily double ft\+\_\+atod (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Converts a string to a double. 
+
+Converts a string to a double. 
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00019}{19}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{structs__atod__data}{t\_atod\_data}}\ \ d;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ =\ 0.0;}
+\DoxyCodeLine{00024\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{fraction}}\ =\ 0.0;}
+\DoxyCodeLine{00025\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{divisor}}\ =\ 10.0;}
+\DoxyCodeLine{00026\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{sign}}\ =\ 1;}
+\DoxyCodeLine{00027\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ 32\ ||\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ >=\ 9\ \&\&\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ <=\ 13))}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ \textcolor{charliteral}{'-\/'}\ ||\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ \textcolor{charliteral}{'+'})}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++]\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{sign}}\ =\ -\/1;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ =\ d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ *\ 10.0\ +\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{fraction}}\ +=\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ -\/\ \textcolor{charliteral}{'0'})\ /\ d.\mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{divisor}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{divisor}}\ *=\ 10.0;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ (d.\mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{sign}}\ *\ (d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ +\ d.\mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{fraction}}));}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{fractol_8h_aba5be72a261c5846a5d6e7b315548d33_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}\label{fractol_8h_a1f2ff2312e5994560c9537cd9173be94} 
+\index{fractol.h@{fractol.h}!ft\_strcmp@{ft\_strcmp}}
+\index{ft\_strcmp@{ft\_strcmp}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{ft\_strcmp()}{ft\_strcmp()}}
+{\footnotesize\ttfamily int ft\+\_\+strcmp (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Compares two strings. 
+
+
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00051}{51}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{while}\ (s1[i]\ ==\ s2[i]\ \&\&\ s1[i])}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ (s1[i]\ -\/\ s2[i]);}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_a1f2ff2312e5994560c9537cd9173be94_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_aa40f0dfb0dfb158de3f6f8b98f0de3ec}\label{fractol_8h_aa40f0dfb0dfb158de3f6f8b98f0de3ec} 
+\index{fractol.h@{fractol.h}!handle\_key@{handle\_key}}
+\index{handle\_key@{handle\_key}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{handle\_key()}{handle\_key()}}
+{\footnotesize\ttfamily void handle\+\_\+key (\begin{DoxyParamCaption}\item[{mlx\+\_\+key\+\_\+data\+\_\+t}]{keydata,  }\item[{void \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+
+
+Handles key inputs. 
+
+
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00064}{64}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{structs__data}{t\_data}}\ \ \ \ *data;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ data\ =\ (\mbox{\hyperlink{structs__data}{t\_data}}\ *)param;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_ESCAPE)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ mlx\_close\_window(data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_W)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}]\ -\/=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_S)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}]\ +=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_A)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}]\ -\/=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_D)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}]\ +=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_UP)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f}{ZOOM\_IN}};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_DOWN)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb}{ZOOM\_OUT}};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ <\ 1e-\/5)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ =\ 1e-\/5;}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{render\_fractal}}(data);}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_aa40f0dfb0dfb158de3f6f8b98f0de3ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{fractol_8h_aa40f0dfb0dfb158de3f6f8b98f0de3ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_ace17996cda407bf3eb3480f07ccdd107}\label{fractol_8h_ace17996cda407bf3eb3480f07ccdd107} 
+\index{fractol.h@{fractol.h}!handle\_scroll@{handle\_scroll}}
+\index{handle\_scroll@{handle\_scroll}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{handle\_scroll()}{handle\_scroll()}}
+{\footnotesize\ttfamily void handle\+\_\+scroll (\begin{DoxyParamCaption}\item[{double}]{xdelta,  }\item[{double}]{ydelta,  }\item[{void \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+
+
+Handles scroll inputs. 
+
+Handles scroll inputs. 
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00091}{91}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{structs__data}{t\_data}}\ \ \ \ *data;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ (void)xdelta;}
+\DoxyCodeLine{00096\ \ \ \ \ data\ =\ (\mbox{\hyperlink{structs__data}{t\_data}}\ *)param;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (ydelta\ >\ 0)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f}{ZOOM\_IN}};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb}{ZOOM\_OUT}};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ <\ 1e-\/5)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ =\ 1e-\/5;}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{render\_fractal}}(data);}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_ace17996cda407bf3eb3480f07ccdd107_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{fractol_8h_ace17996cda407bf3eb3480f07ccdd107_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_aa136a596dce9e2897d5eb0805a5a459f}\label{fractol_8h_aa136a596dce9e2897d5eb0805a5a459f} 
+\index{fractol.h@{fractol.h}!precompute\_coords@{precompute\_coords}}
+\index{precompute\_coords@{precompute\_coords}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{precompute\_coords()}{precompute\_coords()}}
+{\footnotesize\ttfamily int precompute\+\_\+coords (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{c\+\_\+re,  }\item[{double \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{c\+\_\+im,  }\item[{\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}}]{vars }\end{DoxyParamCaption})}
+
+
+
+Precomputes coordinates for fractal rendering. 
+
+Precomputes coordinates for fractal rendering.
+
+This function calculates the real and imaginary parts of the fractal for each pixel on the screen, storing them in arrays for quick access during rendering. It ensures that every point is prepared for the fractal calculations.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item Imagine this as creating a "{}grid"{} of points where the fractal will be drawn. This points tell the program where to caalculate the colors.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+\_\+re} & Pointer to the array storing real coordinates. \\
+\hline
+{\em c\+\_\+im} & Pointer to the array storing imaginary coordinates. \\
+\hline
+{\em vars} & Pointer to the rendering variables structure. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 1 on success, or 0 if memory allocation fails. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00078}{78}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ *c\_re\ =\ (\textcolor{keywordtype}{double}\ *)malloc(\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00083\ \ \ \ \ *c\_im\ =\ (\textcolor{keywordtype}{double}\ *)malloc(\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*c\_re)\ ||\ !(*c\_im))}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free(*c\_re),\ free(*c\_im),\ 0);}
+\DoxyCodeLine{00086\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ (*c\_re)[i]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ i\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{00089\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ (*c\_im)[i]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ i\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{00093\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_aa136a596dce9e2897d5eb0805a5a459f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_a6010a48038dd00722649b2e7ad69668d}\label{fractol_8h_a6010a48038dd00722649b2e7ad69668d} 
+\index{fractol.h@{fractol.h}!render\_fractal@{render\_fractal}}
+\index{render\_fractal@{render\_fractal}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{render\_fractal()}{render\_fractal()}}
+{\footnotesize\ttfamily void render\+\_\+fractal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Render the specified fractal. 
+
+Render the specified fractal.
+
+This function selects the appropiate rendering algorithm based on the fractal type chosen by the user (Julia or Mandelbrot) and renders it on the screen.
+
+For non-\/technical users\+:
+\begin{DoxyItemize}
+\item Depending on the type of fractal (Julia or Mandelbrot), this function draws the chosen fractal pattern for you to see.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the main data structure containing fractal and rendering details. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{calcs_8c_source_l00108}{108}} of file \mbox{\hyperlink{calcs_8c_source}{calcs.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ ==\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{JULIA}})}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}{render\_julia}}(data);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ ==\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{MANDELBROT}})}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_ac4c610e75a028afb898607ea03e80b30}{render\_mandelbrot}}(data);}
+\DoxyCodeLine{00114\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_a6010a48038dd00722649b2e7ad69668d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_a6010a48038dd00722649b2e7ad69668d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}\label{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650} 
+\index{fractol.h@{fractol.h}!render\_julia@{render\_julia}}
+\index{render\_julia@{render\_julia}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{render\_julia()}{render\_julia()}}
+{\footnotesize\ttfamily void render\+\_\+julia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Renders the Julia fractal. 
+
+Renders the Julia fractal.
+
+This function handles the full rendering process for the Julia set by iterating through all rows of the screen, rendering each row sequentially.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Setup\+:}}
+\begin{DoxyItemize}
+\item Calculates the scaling and starting coordinates based on the zoom level and positional offsets provided by the user.
+\end{DoxyItemize}
+\item {\bfseries{Row-\/by-\/\+Row Rendering\+:}}
+\begin{DoxyItemize}
+\item For each row on the screen ({\ttfamily y} coordinate), the corresponding imaginary coordinate is computed.
+\item The row is passed to {\ttfamily render\+\_\+julia\+\_\+row}, which handles the pixel-\/by-\/pixel rendering.
+\end{DoxyItemize}
+\item {\bfseries{Full Image Construction\+:}}
+\begin{DoxyItemize}
+\item The ffunction processes every row until the entire fractal is rendered.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the main fractal data structure, including rendering details such as zoom, offsets, and fractal paarameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{julia_8c_source_l00165}{165}} of file \mbox{\hyperlink{julia_8c_source}{julia.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{00171\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ vars.\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ y\ *\ vars.\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\_julia\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{fractol_8h_ac4c610e75a028afb898607ea03e80b30}\label{fractol_8h_ac4c610e75a028afb898607ea03e80b30} 
+\index{fractol.h@{fractol.h}!render\_mandelbrot@{render\_mandelbrot}}
+\index{render\_mandelbrot@{render\_mandelbrot}!fractol.h@{fractol.h}}
+\doxysubsubsection{\texorpdfstring{render\_mandelbrot()}{render\_mandelbrot()}}
+{\footnotesize\ttfamily void render\+\_\+mandelbrot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Render the Mandelbrot fractal. 
+
+Render the Mandelbrot fractal. 
+
+Definition at line \mbox{\hyperlink{mandelbrot_8c_source_l00115}{115}} of file \mbox{\hyperlink{mandelbrot_8c_source}{mandelbrot.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00116\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_re;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_im;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\&precomputed\_c\_re,\ \&precomputed\_c\_im,\ \&vars))}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{00125\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{00127\ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ precomputed\_c\_im[y];}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ \ \ \ \ free(precomputed\_c\_re);}
+\DoxyCodeLine{00132\ \ \ \ \ free(precomputed\_c\_im);}
+\DoxyCodeLine{00133\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_ac4c610e75a028afb898607ea03e80b30_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{fractol_8h_ac4c610e75a028afb898607ea03e80b30_icgraph}
+\end{center}
+\end{figure}

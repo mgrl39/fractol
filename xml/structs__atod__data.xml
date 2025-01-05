@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structs__atod__data" kind="struct" language="C++" prot="public">
+    <compoundname>s_atod_data</compoundname>
+    <includes refid="fractol_8h" local="no">fractol.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int s_atod_data::i</definition>
+        <argsstring></argsstring>
+        <name>i</name>
+        <qualifiedname>s_atod_data::i</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="123" column="4" bodyfile="fractol.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" compoundref="utils_8c" startline="19" endline="46">ft_atod</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int s_atod_data::sign</definition>
+        <argsstring></argsstring>
+        <name>sign</name>
+        <qualifiedname>s_atod_data::sign</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="124" column="4" bodyfile="fractol.h" bodystart="124" bodyend="-1"/>
+        <referencedby refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" compoundref="utils_8c" startline="19" endline="46">ft_atod</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_atod_data::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <qualifiedname>s_atod_data::result</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="125" column="7" bodyfile="fractol.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" compoundref="utils_8c" startline="19" endline="46">ft_atod</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_atod_data::divisor</definition>
+        <argsstring></argsstring>
+        <name>divisor</name>
+        <qualifiedname>s_atod_data::divisor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="126" column="7" bodyfile="fractol.h" bodystart="126" bodyend="-1"/>
+        <referencedby refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" compoundref="utils_8c" startline="19" endline="46">ft_atod</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double s_atod_data::fraction</definition>
+        <argsstring></argsstring>
+        <name>fraction</name>
+        <qualifiedname>s_atod_data::fraction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="127" column="7" bodyfile="fractol.h" bodystart="127" bodyend="-1"/>
+        <referencedby refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" compoundref="utils_8c" startline="19" endline="46">ft_atod</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Helper structure for string-to-double conversion. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>s_atod_data</label>
+        <link refid="structs__atod__data"/>
+      </node>
+    </collaborationgraph>
+    <location file="fractol.h" line="121" column="1" bodyfile="fractol.h" bodystart="122" bodyend="128"/>
+    <listofallmembers>
+      <member refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" prot="public" virt="non-virtual"><scope>s_atod_data</scope><name>divisor</name></member>
+      <member refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" prot="public" virt="non-virtual"><scope>s_atod_data</scope><name>fraction</name></member>
+      <member refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" prot="public" virt="non-virtual"><scope>s_atod_data</scope><name>i</name></member>
+      <member refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" prot="public" virt="non-virtual"><scope>s_atod_data</scope><name>result</name></member>
+      <member refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" prot="public" virt="non-virtual"><scope>s_atod_data</scope><name>sign</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

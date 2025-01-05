@@ -6,12 +6,48 @@
 /*   By: meghribe <meghribe@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/24 19:20:48 by meghribe          #+#    #+#             */
-/*   Updated: 2025/01/04 12:39:52 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/01/05 14:17:32 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
+/**
+ * @file mandelbrot.c
+ * @brief Implementation of the Mandelbrot set rendering.
+ *
+ * This file contains all the functions necessary to compute and render the
+ * Mandelbrot set fractal.
+ * The Mandelbrot set is a visual representation off a mathematical formula
+ * applied to complex numbers. THe complexity and beauty of its patterns arise
+ * from how quickly or slowly each point "escapes" beyond a defined boundary.
+ *
+ * ### For Technical Users:
+ * - **Core Algorithm:** The Mandelbrot set uses the formula `z = z^2 + c`,
+ *   where:
+ *   - `z` starts at (0, 0) for every point.
+ *   - `c` is the complex number corresponding to the pixel's position on the
+ *   screen.
+ *   - Iterations continue until `|z|2 > 4` (escape condition) or the maximum
+ *   	number of iterations is reached.
+ * - **Optimization:**
+ *   - **Escape Checks:** Early checks prevent unnecessary calculations for
+ *   points.
+ *   - **Precomputed Coordinates:** Reduces redundant computations of pixel
+ *   	coordinates.
+ *   - **Row-Based Rendering:** Processes the fractal row by row for efficient
+ *   	memory and rendering operations.
+ *   - **Color Mapping:** The number of iteerations determines the color of
+ *   	each pixexl, creating vibrant and intricaate fractal patterns.
+ *
+ * ### For Non-Technical Users:
+ * - **What is the Mandelbrot Set?**
+ *   The Mandelbrot set is a mathematical design created by repeatedly
+ *   applying a simple formula to point on a grid. Points that "escape"
+ *   quickly create bright colors, while points that stay "trapped"
+ *   generate the darker areas of the fractal.
+ *
+ */
 /**
  * @brief Computes the next iteration for a single point in the Mandelbrot set.
  */

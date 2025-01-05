@@ -1,0 +1,9 @@
+<map id="fractol.h" name="fractol.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="153,5,229,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,132,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,33,102,74,99,69,170,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="156,79,227,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,31,194,65,189,65,189,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="251,79,321,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,29,261,68,258,72,205,33"/>
+</map>

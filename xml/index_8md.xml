@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="index_8md" kind="file" language="Markdown">
+    <compoundname>index.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;/br&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;./assets/logo.png&quot;<sp/>alt=&quot;42MLX_Logo&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;<sp/>style=&quot;margin-top:<sp/>8px;&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;sub&gt;Written<sp/>by<sp/>&lt;a<sp/>href=&quot;https://portfolio.w2wizard.dev/&quot;&gt;W2.Wizard&lt;/a&gt;<sp/>for<sp/>the<sp/>42<sp/>Network&lt;/sub&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/br&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;h1&gt;Welcome<sp/>to<sp/>the<sp/>MLX42<sp/>documentation&lt;/h1&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Introduction</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>is<sp/>a<sp/>performant,<sp/>easy<sp/>to<sp/>use,<sp/>cross-platform<sp/>windowing<sp/>library<sp/>to<sp/>create</highlight></codeline>
+<codeline><highlight class="normal">graphical<sp/>applications<sp/>without<sp/>having<sp/>to<sp/>work<sp/>directly<sp/>with<sp/>the<sp/>native<sp/>Windowing<sp/></highlight></codeline>
+<codeline><highlight class="normal">Framework<sp/>of<sp/>the<sp/>given<sp/>operating<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Additionally<sp/>it<sp/>provides<sp/>primitive<sp/>tools<sp/>for<sp/>drawing<sp/>onto<sp/>the<sp/>window<sp/>such<sp/>as</highlight></codeline>
+<codeline><highlight class="normal">displaying<sp/>images<sp/>from<sp/>disk<sp/>or<sp/>creating<sp/>a<sp/>drawing<sp/>surface<sp/>to<sp/>draw<sp/>pixels<sp/>on.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Toc</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>[Basics](./Basics.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Colors](./Colors.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Functions](./Functions.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Hooks](./Hooks.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Images](./Images.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Input](./Input.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Shaders](./Shaders.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[Textures](./Textures.md)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>[XPM42](./XPM42.md)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Support</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Currently<sp/>supported<sp/>operating<sp/>systems:</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Operating<sp/>system<sp/><sp/>|<sp/>Version<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|------------------<sp/>|---------------------------------------------<sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`Windows<sp/>NT`<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Windows<sp/>7<sp/>-<sp/>Windows<sp/>11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`MacOS`<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Mojave<sp/>-<sp/>Monterey<sp/>(Including<sp/>Apple<sp/>Silicon)<sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`Linux`<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Anything<sp/>running<sp/>X11<sp/>/<sp/>Wayland<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Initialization</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>very<sp/>first<sp/>step<sp/>for<sp/>initialization<sp/>is<sp/>to<sp/>execute<sp/>the<sp/>mlx_init<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal">It<sp/>is<sp/>responsible<sp/>for<sp/>setting<sp/>up<sp/>the<sp/>GLFW<sp/>windowing<sp/>library<sp/>which<sp/></highlight></codeline>
+<codeline><highlight class="normal">creates<sp/>a<sp/>connection<sp/>between<sp/>your<sp/>software<sp/>and<sp/>the<sp/>display.<sp/>It<sp/>also<sp/>loads<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>function<sp/>pointers,<sp/>compiling<sp/>the<sp/>shaders<sp/>and<sp/>more.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>returns<sp/>a<sp/>mlx_t*<sp/>which<sp/>is<sp/>a<sp/>structure<sp/>containing<sp/>the<sp/>current<sp/>window<sp/>instance.</highlight></codeline>
+<codeline><highlight class="normal">With<sp/>this<sp/>instance<sp/>you<sp/>can<sp/>manipulate,<sp/>hook<sp/>onto<sp/>and<sp/>control<sp/>what<sp/>happens<sp/>inside<sp/></highlight></codeline>
+<codeline><highlight class="normal">your<sp/>window<sp/>instance.<sp/>For<sp/>example<sp/>you<sp/>would<sp/>use<sp/>it<sp/>to<sp/>send<sp/>graphical<sp/>instructions<sp/>such<sp/>as<sp/></highlight></codeline>
+<codeline><highlight class="normal">creating<sp/>an<sp/>image,<sp/>which<sp/>is<sp/>used<sp/>to<sp/>display<sp/>pixel<sp/>data.<sp/>You<sp/>can<sp/>also<sp/>detect<sp/>key</highlight></codeline>
+<codeline><highlight class="normal">interactions<sp/>such<sp/>as<sp/>checking<sp/>if<sp/>the<sp/>W,<sp/>A,<sp/>S<sp/>or<sp/>D<sp/>key<sp/>is<sp/>currently<sp/>being<sp/>pressed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Function<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|-------------------|--------------------------------------------------------------|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`mlx_init()`<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Initialize<sp/>and<sp/>run<sp/>a<sp/>new<sp/>window<sp/>instance.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`mlx_loop()`<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Keep<sp/>the<sp/>window<sp/>open<sp/>as<sp/>long<sp/>as<sp/>a<sp/>shutdown<sp/>is<sp/>not<sp/>requested.<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`mlx_terminate()`<sp/>|<sp/>Destroy<sp/>and<sp/>clean<sp/>up<sp/>all<sp/>images<sp/>and<sp/>mlx<sp/>resources.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>mlx_init()<sp/>fails<sp/>to<sp/>set<sp/>up<sp/>the<sp/>connection<sp/>to<sp/>the<sp/>graphical<sp/>system,<sp/>it<sp/>will</highlight></codeline>
+<codeline><highlight class="normal">return<sp/>NULL,<sp/>otherwise<sp/>a<sp/>non-null<sp/>pointer<sp/>is<sp/>returned<sp/>as<sp/>a<sp/>handle<sp/>for<sp/>the<sp/>window.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Linking</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>use<sp/>the<sp/>functions<sp/>in<sp/>MLX,<sp/>you&apos;ll<sp/>need<sp/>to<sp/>link<sp/>it<sp/>with<sp/>your<sp/>application.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>do<sp/>this,<sp/>simply<sp/>add<sp/>the<sp/>following<sp/>arguments<sp/>at<sp/>the<sp/>linking<sp/>stage:</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Operating<sp/>System<sp/>|<sp/>Flags<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|------------------|---------------------------------------------------------------|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`Windows<sp/>NT`<sp/><sp/><sp/><sp/><sp/>|<sp/>-lglfw3<sp/>-lopengl32<sp/>-lgdi32<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`MacOS`<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-lglfw(3)<sp/>-framework<sp/>Cocoa<sp/>-framework<sp/>OpenGL<sp/>-framework<sp/>IOKit<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`Linux`<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-ldl<sp/>-lglfw(3)<sp/>-pthread<sp/>-lm<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**NOTE:<sp/>For<sp/>some<sp/>UNIX<sp/>systems<sp/>the<sp/>flag<sp/>for<sp/>glfw<sp/>might<sp/>be<sp/>with<sp/>or<sp/>without<sp/>a<sp/>3<sp/>at<sp/>the<sp/>end.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Build<sp/>options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">When<sp/>building<sp/>MLX42<sp/>you<sp/>can<sp/>pass<sp/>certain<sp/>build<sp/>options<sp/>to<sp/>cmake.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>options<sp/>are<sp/>passed<sp/>as<sp/>follows<sp/>`cmake<sp/>-DDEBUG=1<sp/>-DGLFW_FETCH=0`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Available<sp/>options</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>`DEBUG`:<sp/>Enables<sp/>assertion<sp/>macros<sp/>and<sp/>compiles<sp/>with<sp/>-g<sp/>in<sp/>order<sp/>for<sp/>debugging<sp/>with<sp/>lldb.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>`GLFW_FETCH`:<sp/>Fetches<sp/>GLFW<sp/>if<sp/>it<sp/>can&apos;t<sp/>be<sp/>found<sp/>on<sp/>the<sp/>system<sp/>at<sp/>all,<sp/>allows<sp/>you<sp/>to<sp/>then<sp/>install<sp/>it<sp/>with<sp/>`sudo<sp/>make<sp/>install`<sp/>under<sp/>the<sp/>`build/_deps`<sp/>folder.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Debugging</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX<sp/>was<sp/>designed<sp/>with<sp/>ease<sp/>of<sp/>debugging<sp/>in<sp/>mind,<sp/>therefore<sp/>if<sp/>the<sp/>project<sp/>is<sp/>built<sp/>with</highlight></codeline>
+<codeline><highlight class="normal">**cmake<sp/>-DDEBUG=1**<sp/>it<sp/>will<sp/>keep<sp/>in<sp/>the<sp/>assertion<sp/>macros<sp/>and<sp/>notify<sp/>you<sp/>of<sp/>any<sp/>bad<sp/>input</highlight></codeline>
+<codeline><highlight class="normal">given<sp/>to<sp/>functions.<sp/>Additionally<sp/>it<sp/>comes<sp/>with<sp/>its<sp/>own<sp/>runtime<sp/>error<sp/>checking<sp/>via</highlight></codeline>
+<codeline><highlight class="normal">**mlx_errno**<sp/>and<sp/>**mlx_strerror**<sp/>to<sp/>properly<sp/>identify<sp/>what<sp/>went<sp/>wrong<sp/>during<sp/>the<sp/>runtime</highlight></codeline>
+<codeline><highlight class="normal">of<sp/>the<sp/>library.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Notes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Keep<sp/>in<sp/>mind<sp/>that<sp/>while<sp/>technically<sp/>MLX42</highlight></codeline>
+<codeline><highlight class="normal">does<sp/>support<sp/>multiple<sp/>window<sp/>instances<sp/>it<sp/>currently<sp/>has<sp/>no<sp/>functional<sp/>support<sp/>for</highlight></codeline>
+<codeline><highlight class="normal">it.<sp/>That<sp/>is,<sp/>no<sp/>proper<sp/>way<sp/>of<sp/>handling<sp/>multiple<sp/>windows.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>F.A.Q</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;It&apos;S<sp/>NoT<sp/>In<sp/>ThE<sp/>SuBjeCt!&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>So<sp/>what?<sp/>Subjects<sp/>can<sp/>change<sp/>and<sp/>so<sp/>if<sp/>something<sp/>is<sp/>not<sp/>working<sp/>correctly<sp/>it<sp/>should<sp/>be<sp/>replaced.<sp/>Sure<sp/>you<sp/>can<sp/>argue<sp/>this<sp/>point<sp/>but<sp/>you<sp/>can<sp/>also<sp/>be<sp/>the<sp/>reason<sp/>that<sp/>it<sp/>CAN<sp/>be<sp/>in<sp/>the<sp/>subject<sp/>instead.<sp/>Have<sp/>an<sp/>open<sp/>mind<sp/>:)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Ok,<sp/>so,<sp/>can<sp/>I<sp/>use<sp/>it<sp/>?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>Officially,<sp/>_no_.<sp/>However,<sp/>ask<sp/>your<sp/>head<sp/>of<sp/>studies<sp/>first<sp/>about<sp/>using<sp/>it,<sp/>see<sp/>what<sp/>they<sp/>think.<sp/>Some<sp/>students<sp/>might<sp/>be<sp/>evangelical<sp/>enthusiasts<sp/>about<sp/>what<sp/>is<sp/>stated<sp/>in<sp/>the<sp/>subject<sp/>and<sp/>are<sp/>technically<sp/>in<sp/>every<sp/>right<sp/>to<sp/>fail<sp/>you<sp/>as<sp/>long<sp/>as<sp/>this<sp/>library<sp/>is<sp/>not<sp/>endorsed,<sp/>if<sp/>you<sp/>were<sp/>to<sp/>ask<sp/>me<sp/>(W2)<sp/>then<sp/>yes<sp/>why<sp/>not?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Is<sp/>it<sp/>faster?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>From<sp/>my<sp/>personal<sp/>projects<sp/>there<sp/>was<sp/>a<sp/>considerable<sp/>performance<sp/>gain,<sp/>especially<sp/>when<sp/>compiled<sp/>with<sp/>`-Ofast`.<sp/>Projects<sp/>such<sp/>as<sp/>FDF<sp/>could<sp/>rotate<sp/>their<sp/>maps<sp/>mindblowingly<sp/>smooth<sp/>and<sp/>even<sp/>larger<sp/>maps<sp/>with<sp/>a<sp/>width<sp/>and<sp/>height<sp/>of<sp/>1000+<sp/>points<sp/>moved/rotated<sp/>relatively<sp/>smooth,<sp/>so<sp/>in<sp/>short,<sp/>yes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Can<sp/>I<sp/>just<sp/>drag<sp/>and<sp/>drop<sp/>it<sp/>into<sp/>my<sp/>old<sp/>project<sp/>and<sp/>just<sp/>not<sp/>do<sp/>anything?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>No.<sp/>That&apos;s<sp/>not<sp/>how<sp/>libraries<sp/>work.<sp/>Sure<sp/>they<sp/>target<sp/>and<sp/>do<sp/>sort<sp/>of<sp/>the<sp/>same<sp/>thing<sp/>but<sp/>the<sp/>functions<sp/>each<sp/>library<sp/>provides<sp/>are<sp/>too<sp/>different,<sp/>even<sp/>a<sp/>little<sp/>bit<sp/>in<sp/>terms<sp/>of<sp/>behavior.<sp/>And<sp/>no<sp/>there<sp/>is<sp/>no<sp/>easy<sp/>way<sp/>to<sp/>convert<sp/>from<sp/>the<sp/>&quot;old&quot;<sp/>to<sp/>the<sp/>&quot;new&quot;<sp/>it<sp/>will<sp/>be<sp/>somewhat<sp/>tedious<sp/>work.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;We<sp/>should<sp/>be<sp/>able<sp/>to<sp/>deal<sp/>with<sp/>the<sp/>fact<sp/>that<sp/>MiniLibX<sp/>is<sp/>not<sp/>perfect,<sp/>it<sp/>is<sp/>by<sp/>design<sp/>and<sp/>makes<sp/>us<sp/>better<sp/>programmers.&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>Struggle<sp/>does<sp/>bring<sp/>out<sp/>the<sp/>best<sp/>in<sp/>most<sp/>people<sp/>but<sp/>it<sp/>is<sp/>also<sp/>not<sp/>ideal<sp/>in<sp/>this<sp/>case.<sp/>I<sp/>think<sp/>so<sp/>at<sp/>least,<sp/>that<sp/>it&apos;s<sp/>really<sp/>expected<sp/>that<sp/>libraries<sp/>that<sp/>are<sp/>publicly<sp/>available<sp/>should<sp/>be<sp/>usable,<sp/>stable,<sp/>easy<sp/>to<sp/>use<sp/>and<sp/>well<sp/>documented.<sp/>Nobody<sp/>uses<sp/>a<sp/>library<sp/>because<sp/>it<sp/>is<sp/>annoying<sp/>to<sp/>work<sp/>with<sp/>and<sp/>afterwards<sp/>think<sp/>to<sp/>themselves<sp/>they<sp/>have<sp/>learned<sp/>something<sp/>after<sp/>they<sp/>are<sp/>done<sp/>struggling.<sp/>The<sp/>only<sp/>thing<sp/>people<sp/>learn<sp/>from<sp/>this<sp/>is<sp/>how<sp/>to<sp/>navigate<sp/>around<sp/>the<sp/>shortcomings<sp/>instead.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Why<sp/>not<sp/>use<sp/>some<sp/>other<sp/>library?<sp/>Why<sp/>this<sp/>one<sp/>and<sp/>not<sp/>any<sp/>other<sp/>library.&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>It<sp/>is<sp/>your<sp/>choice<sp/>what<sp/>to<sp/>use!<sp/>I<sp/>wrote<sp/>this<sp/>in<sp/>my<sp/>free<sp/>time<sp/>in<sp/>an<sp/>attempt<sp/>to<sp/>introduce<sp/>some<sp/>good<sp/>change<sp/>and<sp/>to<sp/>improve<sp/>the<sp/>learning<sp/>experience<sp/>at<sp/>42.<sp/>If<sp/>you<sp/>don&apos;t<sp/>like<sp/>my<sp/>library<sp/>at<sp/>least<sp/>let<sp/>me<sp/>know<sp/>what<sp/>it<sp/>is<sp/>so<sp/>I<sp/>can<sp/>improve<sp/>on<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Do<sp/>you<sp/>hate<sp/>MiniLibX?<sp/>Is<sp/>this<sp/>some<sp/>personal<sp/>vendetta,<sp/>do<sp/>you<sp/>work<sp/>for<sp/>the<sp/>CIA<sp/>?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>No,<sp/>I<sp/>just<sp/>want<sp/>to<sp/>improve<sp/>42,<sp/>that&apos;s<sp/>it.</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/index.md"/>
+  </compounddef>
+</doxygen>

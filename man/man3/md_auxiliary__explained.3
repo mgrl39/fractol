@@ -1,0 +1,460 @@
+.TH "md_auxiliary__explained" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_auxiliary__explained \- Funciones Auxiliares 
+.PP
+ Este archivo documenta las funciones auxiliares utilizadas en el proyecto\&. Estas funciones son clave para manejar tareas como salida de texto, manipulación de cadenas y conversión de datos\&.
+.SH "1\&. ft_strcmp"
+.PP
+.SS "Definición"
+.PP
+.nf
+int ft_strcmp(const char *s1, const char *s2)
+{
+    int i;
+
+    i = 0;
+    while (s1[i] == s2[i] && s1[i])
+        i++;
+    return (s1[i] \- s2[i]);
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+\fCft_strcmp\fP compara dos cadenas de texto (\fCs1\fP y \fCs2\fP) carácter por carácter\&. Si ambas cadenas son idénticas, devuelve \fC0\fP\&. Si no, devuelve la diferencia numérica entre los valores ASCII del primer par de caracteres diferentes\&.
+.SS "Parámetros"
+.IP "\(bu" 2
+\fCconst char *s1\fP: Puntero a la primera cadena de texto que se desea comparar\&.
+.IP "\(bu" 2
+\fCconst char *s2\fP: Puntero a la segunda cadena de texto que se desea comparar\&.
+.PP
+.SS "Retorno"
+.IP "\(bu" 2
+Devuelve \fC0\fP si las cadenas son iguales\&.
+.IP "\(bu" 2
+Devuelve un valor positivo si \fCs1\fP es mayor que \fCs2\fP (el primer carácter diferente en \fCs1\fP tiene un valor ASCII mayor que en \fCs2\fP)\&.
+.IP "\(bu" 2
+Devuelve un valor negativo si \fCs1\fP es menor que \fCs2\fP (el primer carácter diferente en \fCs1\fP tiene un valor ASCII menor que en \fCs2\fP)\&.
+.PP
+.SS "Detalles del funcionamiento"
+.IP "1." 4
+Iteración carácter por carácter:
+.IP "  \(bu" 4
+Compara los caracteres correspondientes de \fCs1\fP y \fCs2\fP hasta que encuentra una diferencia o llega al final de una de las cadenas\&.
+.PP
+
+.IP "2." 4
+Verificación de igualdad:
+.IP "  \(bu" 4
+Si los caracteres son iguales, sigue comparando\&.
+.IP "  \(bu" 4
+Si encuentra un carácter diferente, calcula y devuelve la diferencia entre sus valores ASCII\&.
+.PP
+
+.IP "3." 4
+Cadena más corta:
+.IP "  \(bu" 4
+Si una cadena termina antes que la otra, la función considera que la más corta es 'menor'\&.
+.PP
+
+.PP
+.SS "Ejemplo de uso"
+\fBEs el encargado de detectar si han indicado \fCmandelbrot\fP o \fCjulia\fP\fP
+.SS "¿Por qué es útil?"
+Esta función es esencial para la comparación de cadenas en algoritmos como la ordenación de palabras alfabéticamente, búsqueda en bases de datos, o cualquier otra operación que requiera conocer el orden relativo entre dos cadenas de texto\&.
+.SH "2\&. fr_putstr_fd"
+.PP
+.SS "Definición"
+.PP
+.nf
+int fr_putstr_fd(char *s, int fd)
+{
+    int i;
+    int count;
+
+    if (!s)
+        return (0);
+    i = 0;
+    count = 0;
+    while (s[i])
+        count += write(fd, &s[i++], 1);
+    return (count);
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+\fCfr_putstr_fd\fP escribe una cadena de texto (\fCs\fP) en un descriptor de archivo (\fCfd\fP)\&. Es similar a \fCputs\fP pero con la capacidad de escribir en cualquier descriptor de archivo, como salida estándar (1) o error estándar (2)\&.
+.SS "Parámetros"
+.IP "\(bu" 2
+\fCchar *s\fP: Puntero a la cadena de texto que se desea escribir\&.
+.IP "\(bu" 2
+\fCint fd\fP: Descriptor de archivo donde se escribe la cadena:
+.IP "  \(bu" 4
+\fC1\fP para salida estándar (\fCstdout\fP)\&.
+.IP "  \(bu" 4
+\fC2\fP para salida de error (\fCstderr\fP)\&.
+.PP
+
+.PP
+.SS "Retorno"
+Devuelve el número total de caracteres escritos\&. Si la cadena es \fCNULL\fP, devuelve \fC0\fP\&.
+.SS "Detalles del funcionamiento"
+.IP "1." 4
+Validación inicial:
+.IP "  \(bu" 4
+Si la cadena \fCs\fP es \fCNULL\fP, la función retorna \fC0\fP inmediatamente\&.
+.PP
+
+.IP "2." 4
+Iteración y escritura:
+.IP "  \(bu" 4
+Recorre la cadena carácter por carácter usando un índice (\fCi\fP)\&.
+.IP "  \(bu" 4
+Escribe cada carácter en el descriptor de archivo usando \fCwrite\fP\&.
+.IP "  \(bu" 4
+Incrementa un contador (\fCcount\fP) con el número de bytes escritos\&.
+.PP
+
+.IP "3." 4
+Devolución:
+.IP "  \(bu" 4
+Retorna el valor acumulado en \fCcount\fP, que representa el total de caracteres escritos\&.
+.PP
+
+.PP
+.SS "Ejemplo de uso"
+\fBEs el encargado de imprimir los errores cuando no indican los parametros correctamente\&.\fP
+.SS "¿Por qué es útil?"
+Esta función simplifica la escritura en descriptores de archivo, permitiendo imprimir mensajes personalizados en la salida estándar o en la salida de error, sin necesidad de gestionar directamente \fCwrite\fP\&.
+.SH "3\&. is_valid_number"
+.PP
+.SS "Definición"
+.PP
+.nf
+static int  is_valid_number(const char *str)
+{
+    int i;
+    int valid_status[2];
+
+    i = 0;
+    valid_status[HAS_DIGIT] = 0;
+    valid_status[HAS_POINT] = 0;
+    while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+        i++;
+    if (str[i] == '\-' || str[i] == '+')
+        i++;
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        valid_status[HAS_DIGIT] = 1;
+        i++;
+    }
+    if (str[i] == '\&.')
+    {
+        valid_status[HAS_POINT] = 1;
+        i++;
+    }
+    if (valid_status[HAS_POINT] && (str[i] < '0' || str[i] > '9'))
+        return (0);
+    while (str[i] >= '0' && str[i] <= '9')
+        i++;
+    return (valid_status[HAS_DIGIT] && str[i] == '\\0');
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+\fCis_valid_number\fP verifica si una cadena de texto representa un número válido\&. Esto incluye números enteros y de punto flotante con signo opcional\&.
+.SS "Parámetros"
+.IP "\(bu" 2
+\fCconst char *str\fP: Puntero a la cadena de texto que se desea validar\&.
+.PP
+.SS "Retorno"
+.IP "\(bu" 2
+Devuelve \fC1\fP si la cadena es un número válido\&.
+.IP "\(bu" 2
+Devuelve \fC0\fP si la cadena no es válida como número\&.
+.PP
+.SS "Detalles del funcionamiento"
+.IP "1." 4
+Ignora los espacios iniciales y caracteres de control\&.
+.IP "2." 4
+Permite un signo (\fC+\fP o \fC-\fP) al inicio\&.
+.IP "3." 4
+Verifica que la cadena contenga al menos un dígito antes o después de un punto decimal (\fC\&.\fP)\&.
+.IP "4." 4
+Si hay un punto decimal, asegura que le sigan dígitos\&.
+.IP "5." 4
+Comprueba que no haya caracteres adicionales después del número\&.
+.PP
+.SS "Ejemplo de uso"
+\fBEs el encargado de validar que las coordenadas pasadas para \fCjulia\fP sean números correctos\&.\fP
+.SS "¿Por qué es útil?"
+Esta función asegura que los parámetros numéricos proporcionados por el usuario sean válidos, evitando errores en cálculos posteriores\&.
+.SH "4\&. calculate_color"
+.PP
+.SS "Definición"
+.PP
+.nf
+int calculate_color(int iterations)
+{
+    double  t;
+    int     base_gray;
+    t_color color;
+
+    t = (double)iterations / MAX_ITERATIONS;
+    base_gray = (30 + 190 * (t * (1 \- 0\&.2 * t)));
+    color\&.r = base_gray \- (5 * (1 \- t) * t * t);
+    color\&.g = base_gray \- (10 * (1 \- t) * (1 \- t));
+    color\&.b = base_gray \- (15 * (1 \- t) * t);
+    return ((0xFF << 24) | (color\&.r << 16) | (color\&.g << 8) | color\&.b);
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+\fCcalculate_color\fP genera un color basado en el número de iteraciones realizadas para un píxel en el fractal\&. Produce un gradiente suave para mejorar la apariencia visual del fractal\&.
+.SS "Parámetros"
+.IP "\(bu" 2
+\fCint iterations\fP: Número de iteraciones para el píxel actual\&.
+.PP
+.SS "Retorno"
+.IP "\(bu" 2
+Devuelve el color calculado en formato ARGB (Alpha-Red-Green-Blue)\&.
+.PP
+.SS "Detalles del funcionamiento"
+.IP "1." 4
+\fBCálculo del factor \fCt\fP:\fP
+.IP "  \(bu" 4
+Normaliza el número de iteraciones (\fCiterations\fP) al rango \fC[0, 1]\fP dividiéndolo por el máximo permitido (\fCMAX_ITERATIONS\fP)\&.
+.PP
+
+.IP "2." 4
+\fBBase gris:\fP
+.IP "  \(bu" 4
+Calcula una base de gris a partir de \fCt\fP, ajustando el brillo para crear un efecto de gradiente\&. 
+.PP
+.nf
+base_gray = (30 + 190 * (t * (1 \- 0\&.2 * t)));
+
+.fi
+.PP
+ \fCt\fP se ajusta para crear una curva suave mediante la fórmula: \fCt * ( 1 - 0\&.2 * t)\fP\&. Esto gnera una transición fluida en el gradiente\&.
+.PP
+
+.IP "3." 4
+\fBComponentes RGB:\fP
+.IP "  \(bu" 4
+Ajusta cada componente (\fCr\fP, \fCg\fP, \fCb\fP) para añadir variaciones de color dependiendo del nivel de iteración\&. 
+.PP
+.nf
+color\&.r = base_gray \- (5 * (1 \- t) * t * t);
+color\&.g = base_gray \- (10 * (1 \- t) * (1 \- t));
+color\&.b = base_gray \- (15 * (1 \- t) * t);
+
+.fi
+.PP
+.IP "    \(bu" 6
+Cada componente tiene una fórmula ligeramente diferente para generar colors distintivos y visualmente agradables:
+.IP "      \(bu" 8
+El rojo depende más de t^3 (potencia alta)\&.
+.IP "      \(bu" 8
+El azul se ajusta con (1 - t)^2 (mas dominante en el rango medio)\&.
+.IP "      \(bu" 8
+El azul usa una combinación de (1 - t) y t para un efeco más suave\&.
+.PP
+
+.PP
+
+.PP
+
+.IP "4." 4
+\fBFormato ARGB:\fP
+.IP "  \(bu" 4
+Combina los componentes en un entero de 32 bits con un canal Alpha completamente opaco (\fC0xFF\fP)\&. 
+.PP
+.nf
+return (0xFF << 24 | (color\&.r << 16) | (color\&.g << 8) | color\&.b);
+
+.fi
+.PP
+
+.IP "  \(bu" 4
+La función empaqueta los componentes en un entero en formato ARGB (Alpha, Red, Green, Blue):
+.IP "    \(bu" 6
+\fC0xFF << 24\fP -> Fija el canal alfa a 255 (completamente opaco)\&.
+.IP "    \(bu" 6
+\fC(color\&.r << 16)\fP -> Inserta el componente rojo en los bits altos\&.
+.IP "    \(bu" 6
+\fC(color\&.g << 8)\fP -> Inserta el componente verde\&.
+.IP "    \(bu" 6
+\fCcolor\&.b\fP -> Inserta el componente azul\&.
+.PP
+
+.PP
+
+.PP
+.SS "Ejemplo de uso"
+\fBEs el encargado de calcular el color de cada píxel en función de su número de iteraciones\&.\fP
+.SS "¿Por qué es útil?"
+Esta función mejora significativamente la representación visual del fractal, permitiendo distinguir las diferentes áreas según su comportamiento iterativo y creando una experiencia más atractiva para el usuario\&.
+.SH "5\&. calculate_scales_and_limits"
+.PP
+.SS "Definición"
+.PP
+.nf
+void calculate_scales_and_limits(t_render_vars *vars, t_data *data)
+{
+    vars\->scale[SCALE_X] = 4\&.0 / (WIDTH * data\->zoom);
+    vars\->scale[SCALE_Y] = 4\&.0 / (HEIGHT * data\->zoom);
+    vars\->start[COMPLEX_RE] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_X];
+    vars\->start[COMPLEX_IM] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_Y];
+    vars\->pixels = (uint32_t *)data\->img\->pixels;
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+La función \fCcalculate_scales_and_limits\fP calcula las escalas y límites del plano complejo que se usarán para renderizar el fractal en la ventana gráfica\&. Estos valores permiten traducir cada píxel de la pantalla a un número complejo, lo que es esencial para los cálculos iterativos del fractal\&.
+.SS "Parámetros"
+.IP "\(bu" 2
+\fCt_render_vars *vars\fP: Estructura donde se almacenan las escalas, los límites iniciales del plano complejo, y un puntero al buffer de píxeles\&.
+.IP "\(bu" 2
+\fCt_data *data\fP: Contiene la información del fractal, como el nivel de zoom y el desplazamiento actual\&.
+.PP
+.PP
+.PP
+.SS "Detalles del funcionamiento"
+.SS "1\&. Cálculo de las escalas"
+.PP
+.nf
+vars\->scale[SCALE_X] = 4\&.0 / (WIDTH * data\->zoom);
+vars\->scale[SCALE_Y] = 4\&.0 / (HEIGHT * data\->zoom);
+.fi
+.PP
+.PP
+.IP "\(bu" 2
+\fB¿Por qué 4\&.0?\fP
+.IP "  \(bu" 4
+El plano complejo inicial tiene un rango estándar de \fC[-2\&.0, +2\&.0]\fP en ambos ejes (real e imaginario)\&. Este rango totaliza una longitud de \fC4\&.0\fP\&.
+.PP
+
+.IP "\(bu" 2
+\fB¿Qué hace la escala?\fP - La escala indica cuánto representa cada píxel en el plano complejo\&. Por ejemplo: - Con \fCzoom = 1\&.0\fP, cada píxel representa \fC4\&.0 / WIDTH\fP\&.
+.IP "  \(bu" 4
+Con \fCzoom = 2\&.0\fP, la escala es más pequeña, permitiendo un mayor detalle al acercarse\&.
+.PP
+
+.PP
+.PP
+.PP
+.SS "2\&. Cálculo de los límites iniciales"
+.PP
+.nf
+vars\->start[COMPLEX_RE] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_X];
+vars\->start[COMPLEX_IM] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_Y];
+.fi
+.PP
+.PP
+.IP "\(bu" 2
+\fB¿Por qué -2\&.0?\fP
+.IP "  \(bu" 4
+La esquina superior izquierda del rango inicial del fractal comienza en \fC(-2\&.0, -2\&.0)\fP en el plano complejo\&. Este punto corresponde al primer píxel de la ventana gráfica\&.
+.PP
+
+.IP "\(bu" 2
+\fBZoom y desplazamiento:\fP
+.IP "  \(bu" 4
+El \fCzoom\fP ajusta el tamaño del rango visible del fractal\&.
+.IP "  \(bu" 4
+El desplazamiento (\fCdata->offset\fP) permite mover el rango visible del fractal a diferentes partes del plano complejo\&.
+.PP
+
+.PP
+.PP
+.PP
+.SS "3\&. Asignación del buffer de píxeles"
+.PP
+.nf
+vars\->pixels = (uint32_t *)data\->img\->pixels;
+.fi
+.PP
+.PP
+.IP "\(bu" 2
+\fB¿Qué es \fCdata->img->pixels\fP?\fP
+.IP "  \(bu" 4
+Es un puntero al área de memoria donde se almacenan los colores de cada píxel que se renderizarán en la ventana gráfica\&.
+.PP
+
+.IP "\(bu" 2
+\fB¿Por qué se castea a \fCuint32_t\fP?\fP
+.IP "  \(bu" 4
+Los píxeles están representados como enteros de 32 bits (ARGB: Alpha, Red, Green, Blue)\&. Castearlos a \fCuint32_t\fP facilita modificar el color de cada píxel de manera eficiente\&.
+.PP
+
+.PP
+.PP
+.PP
+.SS "Ejemplo práctico"
+.SS "Supongamos:"
+.IP "\(bu" 2
+\fBVentana gráfica:\fP \fCWIDTH = 800\fP, \fCHEIGHT = 800\fP\&.
+.IP "\(bu" 2
+\fBZoom inicial:\fP \fC1\&.0\fP\&.
+.IP "\(bu" 2
+\fBDesplazamiento inicial:\fP \fC[OFFSET_X, OFFSET_Y] = [0\&.0, 0\&.0]\fP\&.
+.PP
+.SS "Resultado:"
+.IP "1." 4
+\fBEscalas:\fP 
+.PP
+.nf
+scale[SCALE_X] = 4\&.0 / 800 = 0\&.005
+scale[SCALE_Y] = 4\&.0 / 800 = 0\&.005
+
+.fi
+.PP
+
+.IP "2." 4
+\fBLímites iniciales:\fP 
+.PP
+.nf
+start[COMPLEX_RE] = \-2\&.0 + 0\&.0 = \-2\&.0
+start[COMPLEX_IM] = \-2\&.0 + 0\&.0 = \-2\&.0
+
+.fi
+.PP
+
+.IP "3." 4
+\fBBuffer de píxeles:\fP
+.IP "  \(bu" 4
+\fCvars->pixels\fP apunta al inicio del buffer de memoria donde se almacenan los colores de los píxeles\&.
+.PP
+
+.PP
+.PP
+.PP
+.SS "Importancia de esta función"
+.IP "1." 4
+\fBTraducción entre píxeles y el plano complejo:\fP
+.IP "  \(bu" 4
+Cada píxel de la pantalla se corresponde con un número complejo en el plano\&. Esta función establece esa correspondencia de manera precisa\&.
+.PP
+
+.IP "2." 4
+\fBAdaptabilidad al zoom y desplazamiento:\fP
+.IP "  \(bu" 4
+Permite acercarse o alejarse del fractal ajustando las escalas, y desplazarse por diferentes partes del fractal modificando los límites\&.
+.PP
+
+.IP "3." 4
+\fBEficiencia:\fP
+.IP "  \(bu" 4
+Precalcular las escalas y los límites evita realizar estos cálculos para cada píxel, mejorando el rendimiento del renderizado\&.
+.PP
+
+.IP "4." 4
+\fB¿Por qué es crucial?\fP
+.IP "  \(bu" 4
+Sin estas escalas y límites, sería imposible generar el fractal correctamente\&. Los fractales son gráficos basados en números complejos, y esta función conecta el mundo 'físico' de los píxeles con el mundo 'matemático' del plano complejo\&. 
+.PP
+
+.PP
+

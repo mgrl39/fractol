@@ -1,0 +1,163 @@
+\doxysection{Window Class Reference}
+\hypertarget{classWindow}{}\label{classWindow}\index{Window@{Window}}
+
+
+{\ttfamily \#include $<$Window\+Fixture.\+hpp$>$}
+
+
+
+Inheritance diagram for Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classWindow__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Window\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classWindow__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classWindow_a853c1fb2e3d27366fb37892161d17014}{Set\+Up}} () \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{override}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classWindow_a8f4f7c0ab925c5ab5667e607dd3b6c9e}{Tear\+Down}} () \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{override}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWindow_a4d88b01a1031fff3a377881d9f38d946}{mlx}} = \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{nullptr}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{constexpr}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classWindow_ac9adbe37d0371165d372a18557f4568c}{name}} = "{}MLX42"{}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{classWindow_a82c7215f26823feea34f1eb4787b7fe1}{height}} = 400
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{classWindow_a1ac0c095feefd6b84ab62d832004c219}{width}} = 400
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{WindowFixture_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{WindowFixture_8hpp_source}{Window\+Fixture.\+hpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classWindow_a853c1fb2e3d27366fb37892161d17014}\label{classWindow_a853c1fb2e3d27366fb37892161d17014} 
+\index{Window@{Window}!SetUp@{SetUp}}
+\index{SetUp@{SetUp}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{SetUp()}{SetUp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Window\+::\+Set\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{WindowFixture_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{WindowFixture_8hpp_source}{Window\+Fixture.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00021\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ error\ code\ as\ it\ is\ shared\ between\ tests}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}\ =\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a72eecffc4e044413e45e9b5bfb1feda8}{mlx\_set\_setting}}(\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0a30034ccde62debe94d62f61f50ab5cc4}{MLX\_HEADLESS}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_EQ}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}},\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}});}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{MLX42_8h_a32988a5ce7aaa25a448b61b0ac410cec}{mlx\_init}}(\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}},\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}},\ \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_NE}}(\mbox{\hyperlink{structmlx}{mlx}},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_EQ}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}},\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}});}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWindow_a853c1fb2e3d27366fb37892161d17014_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classWindow_a8f4f7c0ab925c5ab5667e607dd3b6c9e}\label{classWindow_a8f4f7c0ab925c5ab5667e607dd3b6c9e} 
+\index{Window@{Window}!TearDown@{TearDown}}
+\index{TearDown@{TearDown}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{TearDown()}{TearDown()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Window\+::\+Tear\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{WindowFixture_8hpp_source_l00031}{31}} of file \mbox{\hyperlink{WindowFixture_8hpp_source}{Window\+Fixture.\+hpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_NE}}(\mbox{\hyperlink{structmlx}{mlx}},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_afa6aa2f79f9fc81735bdf3b92421f9ca}{mlx\_terminate}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_EQ}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}},\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}});}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classWindow_a8f4f7c0ab925c5ab5667e607dd3b6c9e_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{classWindow_a82c7215f26823feea34f1eb4787b7fe1}\label{classWindow_a82c7215f26823feea34f1eb4787b7fe1} 
+\index{Window@{Window}!height@{height}}
+\index{height@{height}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} Window\+::height = 400\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{WindowFixture_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{WindowFixture_8hpp_source}{Window\+Fixture.\+hpp}}.
+
+\Hypertarget{classWindow_a4d88b01a1031fff3a377881d9f38d946}\label{classWindow_a4d88b01a1031fff3a377881d9f38d946} 
+\index{Window@{Window}!mlx@{mlx}}
+\index{mlx@{mlx}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{mlx}{mlx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}}\texorpdfstring{$\ast$}{*} Window\+::mlx = \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{nullptr}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{WindowFixture_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{WindowFixture_8hpp_source}{Window\+Fixture.\+hpp}}.
+
+\Hypertarget{classWindow_ac9adbe37d0371165d372a18557f4568c}\label{classWindow_ac9adbe37d0371165d372a18557f4568c} 
+\index{Window@{Window}!name@{name}}
+\index{name@{name}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{constexpr}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}\texorpdfstring{$\ast$}{*} Window\+::name = "{}MLX42"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{WindowFixture_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{WindowFixture_8hpp_source}{Window\+Fixture.\+hpp}}.
+
+\Hypertarget{classWindow_a1ac0c095feefd6b84ab62d832004c219}\label{classWindow_a1ac0c095feefd6b84ab62d832004c219} 
+\index{Window@{Window}!width@{width}}
+\index{width@{width}!Window@{Window}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} Window\+::width = 400\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{WindowFixture_8hpp_source_l00018}{18}} of file \mbox{\hyperlink{WindowFixture_8hpp_source}{Window\+Fixture.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MLX42/tests/\mbox{\hyperlink{WindowFixture_8hpp}{Window\+Fixture.\+hpp}}\end{DoxyCompactItemize}

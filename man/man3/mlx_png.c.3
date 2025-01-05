@@ -1,0 +1,60 @@
+.TH "MLX42/src/textures/mlx_png.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/textures/mlx_png.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmlx_texture_t\fP * \fBmlx_load_png\fP (\fBconst\fP \fBchar\fP *\fBpath\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBmlx_texture_t\fP * mlx_load_png (\fBconst\fP \fBchar\fP * path)"
+Decode/load a PNG file into a buffer\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP Path to the PNG file\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+If successful the texture data is returned, else NULL\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_png\&.c\fP\&..PP
+.nf
+18 {
+19     MLX_NONNULL(path);
+20 
+21     mlx_texture_t* image;
+22     if (!(image = malloc(sizeof(mlx_texture_t))))
+23         return ((void*)mlx_error(MLX_MEMFAIL));
+24 
+25     uint32_t error;
+26     image\->bytes_per_pixel = BPP;
+27     if ((error = lodepng_decode32_file(&image\->pixels, &image\->width, &image\->height, path)))
+28     {
+29         free(image);
+30         // Explicitly print error on purpose
+31         fprintf(stderr, "MLX42: LodePNG: %s\\n", lodepng_error_text(error));
+32         return ((void*)mlx_error(MLX_INVPNG));
+33     }
+34     return (image);
+35 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Images_8md" kind="file" language="Markdown">
+    <compoundname>Images.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Images</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Images<sp/>are<sp/>like<sp/>a<sp/>canvas<sp/>for<sp/>a<sp/>painting,<sp/>they<sp/>are<sp/>used<sp/>to<sp/>display<sp/>pixel<sp/>information<sp/>onto<sp/>the<sp/>window<sp/>and<sp/>work<sp/>with<sp/>something<sp/>called<sp/>instances.</highlight></codeline>
+<codeline><highlight class="normal">Instances<sp/>are<sp/>copies<sp/>of<sp/>the<sp/>canvas<sp/>and<sp/>let<sp/>you<sp/>display<sp/>an<sp/>image<sp/>multiple<sp/>times<sp/>throughout<sp/>the<sp/>window.<sp/>The<sp/>idea<sp/>behind<sp/>it<sp/>is<sp/>that<sp/>you<sp/>already<sp/></highlight></codeline>
+<codeline><highlight class="normal">have<sp/>the<sp/>pixel<sp/>information<sp/>in<sp/>memory<sp/>and<sp/>you<sp/>can<sp/>simply<sp/>create<sp/>duplicates<sp/>everywhere.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Each<sp/>instance<sp/>has<sp/>an<sp/>X,<sp/>Y<sp/>and<sp/>Z<sp/>parameter<sp/>to<sp/>determine<sp/>their<sp/>position<sp/>and<sp/>depth.</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>change<sp/>in<sp/>the<sp/>image&apos;s<sp/>buffer<sp/>results<sp/>in<sp/>a<sp/>change<sp/>for<sp/>all<sp/>currently<sp/>displayed<sp/>instances.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>image<sp/>on<sp/>its<sp/>own<sp/>is<sp/>very<sp/>simple:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>An<sp/>image<sp/>with<sp/>an<sp/>individual<sp/>buffer<sp/>that<sp/>can<sp/>be<sp/>rendered.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Any<sp/>value<sp/>can<sp/>be<sp/>modified<sp/>except<sp/>the<sp/>width/height<sp/>and<sp/>context.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>width<sp/>The<sp/>width<sp/>of<sp/>the<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>height<sp/>The<sp/>height<sp/>of<sp/>the<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>pixels<sp/>The<sp/>literal<sp/>pixel<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>instances<sp/>An<sp/>instance<sp/>carries<sp/>the<sp/>X,<sp/>Y,<sp/>Z<sp/>location<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>count<sp/>The<sp/>element<sp/>count<sp/>of<sp/>the<sp/>instances<sp/>array.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>enabled<sp/>If<sp/>true<sp/>the<sp/>image<sp/>is<sp/>drawn<sp/>onto<sp/>the<sp/>screen,<sp/>else<sp/>it&apos;s<sp/>not.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>context<sp/>Abstracted<sp/>OpenGL<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>struct<sp/>mlx_image</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>uint32_t<sp/><sp/>width;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>uint32_t<sp/><sp/>height;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pixels;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_instance_t*<sp/>instances;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bool<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>enabled;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context;</highlight></codeline>
+<codeline><highlight class="normal">}<sp/><sp/><sp/>mlx_image_t;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>display<sp/>the<sp/>image<sp/>all<sp/>that<sp/>is<sp/>needed<sp/>is<sp/>to<sp/>call<sp/>the<sp/>`mlx_image_to_window`<sp/>function<sp/>to<sp/>create<sp/>a<sp/>new<sp/>copy/instance:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;unistd.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;memory.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;MLX42/MLX42.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>WIDTH<sp/>5120</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>HEIGHT<sp/>2880</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>error(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>puts(mlx_strerror(mlx_errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Start<sp/>mlx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>&quot;Test&quot;,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!mlx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Create<sp/>a<sp/>new<sp/>image</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_image_t*<sp/>img<sp/>=<sp/>mlx_new_image(mlx,<sp/>512,<sp/>512);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!img)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Set<sp/>every<sp/>pixel<sp/>to<sp/>white</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>memset(img-&gt;pixels,<sp/>255,<sp/>img-&gt;width<sp/>*<sp/>img-&gt;height<sp/>*<sp/>sizeof(int32_t));</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Display<sp/>an<sp/>instance<sp/>of<sp/>the<sp/>image</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_image_to_window(mlx,<sp/>img,<sp/>0,<sp/>0)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Optional,<sp/>terminate<sp/>will<sp/>clean<sp/>up<sp/>any<sp/>leftovers,<sp/>this<sp/>is<sp/>just<sp/>to<sp/>demonstrate.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_delete_image(mlx,<sp/>img);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">After<sp/>we<sp/>have<sp/>put<sp/>an<sp/>instance<sp/>of<sp/>an<sp/>image<sp/>onto<sp/>the<sp/>window<sp/>we<sp/>can<sp/>simply<sp/>change<sp/>the<sp/>position<sp/>of<sp/>the<sp/>image<sp/>at<sp/>any<sp/>time</highlight></codeline>
+<codeline><highlight class="normal">we<sp/>want<sp/>it<sp/>to<sp/>be<sp/>moved:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Modify<sp/>the<sp/>x<sp/>&amp;<sp/>y<sp/>position<sp/>of<sp/>an<sp/>already<sp/>existing<sp/>instance.</highlight></codeline>
+<codeline><highlight class="normal">img-&gt;instances[0].x<sp/>+=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal">img-&gt;instances[0].y<sp/>+=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Transparency</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>regards<sp/>to<sp/>transparency,<sp/>aka<sp/>the<sp/>`z`<sp/>value,<sp/>use<sp/>`mlx_set_instance_depth`<sp/>to<sp/>set<sp/>the<sp/>z/depth<sp/>value<sp/>of<sp/>the<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>z<sp/>value<sp/>determines<sp/>the<sp/>depth<sp/>of<sp/>the<sp/>image,<sp/>as<sp/>in,<sp/>is<sp/>it<sp/>in<sp/>the<sp/>foreground<sp/>or<sp/>background.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>two<sp/>instances<sp/>are<sp/>on<sp/>the<sp/>same<sp/>z<sp/>layer<sp/>and<sp/>are<sp/>transparent,<sp/>the<sp/>transparency<sp/>breaks<sp/>and<sp/>the<sp/>instances<sp/>cut<sp/>off<sp/>each<sp/>other.</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>prevent<sp/>this<sp/>by<sp/>default<sp/>any<sp/>new<sp/>instances<sp/>put<sp/>onto<sp/>window<sp/>will<sp/>be<sp/>on<sp/>their<sp/>own<sp/>layer.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Internals</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>noticeable<sp/>feature<sp/>of<sp/>MLX42<sp/>is<sp/>that<sp/>it<sp/>partly<sp/>takes<sp/>care<sp/>of<sp/>the<sp/>rendering<sp/>for<sp/>you,<sp/>that<sp/>is,<sp/>after<sp/>you&apos;ve<sp/>created<sp/>your<sp/>image<sp/>you<sp/>just<sp/>display<sp/>it<sp/></highlight></codeline>
+<codeline><highlight class="normal">and<sp/>after<sp/>that<sp/>feel<sp/>free<sp/>to<sp/>modify<sp/>it<sp/>without<sp/>having<sp/>to<sp/>re-put<sp/>it<sp/>onto<sp/>the<sp/>window.<sp/>In<sp/>short<sp/>MLX<sp/>takes<sp/>care<sp/>of<sp/>updating<sp/>your<sp/>images<sp/>at<sp/>all<sp/>times.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Internally<sp/>this<sp/>is<sp/>done<sp/>via<sp/>a<sp/>render<sp/>queue,<sp/>anytime<sp/>the<sp/>`mlx_image_to_window`<sp/>function<sp/>is<sp/>used,<sp/>a<sp/>new<sp/>entry<sp/>is<sp/>added<sp/>to<sp/>a<sp/>linked<sp/>list.</highlight></codeline>
+<codeline><highlight class="normal">Every<sp/>frame<sp/>MLX<sp/>will<sp/>iterate<sp/>over<sp/>this<sp/>linked<sp/>list<sp/>and<sp/>execute<sp/>a<sp/>drawcall<sp/>to<sp/>draw<sp/>that<sp/>image<sp/>onto<sp/>the<sp/>window.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Common<sp/>functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Creates<sp/>a<sp/>whole<sp/>new<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal">mlx_image_t*<sp/>mlx_new_image(mlx_t*<sp/>mlx,<sp/>uint16_t<sp/>width,<sp/>uint16_t<sp/>height)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Creates<sp/>a<sp/>new<sp/>instance/copy<sp/>of<sp/>an<sp/>already<sp/>existing<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>mlx_image_to_window(mlx_image_t*<sp/>img,<sp/>int32_t<sp/>x,<sp/>int32_t<sp/>y)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Deletes<sp/>an<sp/>image<sp/>and<sp/>removes<sp/>it<sp/>from<sp/>the<sp/>render<sp/>queue.</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>mlx_delete_image(mlx*<sp/>mlx,<sp/>mlx_image_t*<sp/>image)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Images.md"/>
+  </compounddef>
+</doxygen>

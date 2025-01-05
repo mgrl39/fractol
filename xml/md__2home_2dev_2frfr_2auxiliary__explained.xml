@@ -1,0 +1,447 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md__2home_2dev_2frfr_2auxiliary__explained" kind="page">
+    <compoundname>md__2home_2dev_2frfr_2auxiliary__explained</compoundname>
+    <title>Funciones Auxiliares</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md0"/> Este archivo documenta las funciones auxiliares utilizadas en el proyecto. Estas funciones son clave para manejar tareas como salida de texto, manipulación de cadenas y conversión de datos.</para>
+<sect1 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md1">
+<title>1. ft_strcmp</title>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md2">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s2)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(s1[i]<sp/>==<sp/>s2[i]<sp/>&amp;&amp;<sp/>s1[i])</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(s1[i]<sp/>-<sp/>s2[i]);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md3">
+<title>¿Qué hace esta función?</title>
+<para><computeroutput>ft_strcmp</computeroutput> compara dos cadenas de texto (<computeroutput>s1</computeroutput> y <computeroutput>s2</computeroutput>) carácter por carácter. Si ambas cadenas son idénticas, devuelve <computeroutput>0</computeroutput>. Si no, devuelve la diferencia numérica entre los valores ASCII del primer par de caracteres diferentes.</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md4">
+<title>Parámetros</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>const char *s1</computeroutput>: Puntero a la primera cadena de texto que se desea comparar.</para>
+</listitem><listitem><para><computeroutput>const char *s2</computeroutput>: Puntero a la segunda cadena de texto que se desea comparar.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md5">
+<title>Retorno</title>
+<para><itemizedlist>
+<listitem><para>Devuelve <computeroutput>0</computeroutput> si las cadenas son iguales.</para>
+</listitem><listitem><para>Devuelve un valor positivo si <computeroutput>s1</computeroutput> es mayor que <computeroutput>s2</computeroutput> (el primer carácter diferente en <computeroutput>s1</computeroutput> tiene un valor ASCII mayor que en <computeroutput>s2</computeroutput>).</para>
+</listitem><listitem><para>Devuelve un valor negativo si <computeroutput>s1</computeroutput> es menor que <computeroutput>s2</computeroutput> (el primer carácter diferente en <computeroutput>s1</computeroutput> tiene un valor ASCII menor que en <computeroutput>s2</computeroutput>).</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md6">
+<title>Detalles del funcionamiento</title>
+<para><orderedlist>
+<listitem><para>Iteración carácter por carácter:<itemizedlist>
+<listitem><para>Compara los caracteres correspondientes de <computeroutput>s1</computeroutput> y <computeroutput>s2</computeroutput> hasta que encuentra una diferencia o llega al final de una de las cadenas.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Verificación de igualdad:<itemizedlist>
+<listitem><para>Si los caracteres son iguales, sigue comparando.</para>
+</listitem><listitem><para>Si encuentra un carácter diferente, calcula y devuelve la diferencia entre sus valores ASCII.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Cadena más corta:<itemizedlist>
+<listitem><para>Si una cadena termina antes que la otra, la función considera que la más corta es &quot;menor&quot;.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md7">
+<title>Ejemplo de uso</title>
+<para><bold>Es el encargado de detectar si han indicado <computeroutput>mandelbrot</computeroutput> o <computeroutput>julia</computeroutput></bold></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md8">
+<title>¿Por qué es útil?</title>
+<para>Esta función es esencial para la comparación de cadenas en algoritmos como la ordenación de palabras alfabéticamente, búsqueda en bases de datos, o cualquier otra operación que requiera conocer el orden relativo entre dos cadenas de texto.</para>
+</sect2>
+</sect1>
+<sect1 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md9">
+<title>2. fr_putstr_fd</title>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md10">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!s)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(s[i])</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>+=<sp/>write(fd,<sp/>&amp;s[i++],<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(count);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md11">
+<title>¿Qué hace esta función?</title>
+<para><computeroutput>fr_putstr_fd</computeroutput> escribe una cadena de texto (<computeroutput>s</computeroutput>) en un descriptor de archivo (<computeroutput>fd</computeroutput>). Es similar a <computeroutput>puts</computeroutput> pero con la capacidad de escribir en cualquier descriptor de archivo, como salida estándar (1) o error estándar (2).</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md12">
+<title>Parámetros</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>char *s</computeroutput>: Puntero a la cadena de texto que se desea escribir.</para>
+</listitem><listitem><para><computeroutput>int fd</computeroutput>: Descriptor de archivo donde se escribe la cadena:<itemizedlist>
+<listitem><para><computeroutput>1</computeroutput> para salida estándar (<computeroutput>stdout</computeroutput>).</para>
+</listitem><listitem><para><computeroutput>2</computeroutput> para salida de error (<computeroutput>stderr</computeroutput>).</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md13">
+<title>Retorno</title>
+<para>Devuelve el número total de caracteres escritos. Si la cadena es <computeroutput>NULL</computeroutput>, devuelve <computeroutput>0</computeroutput>.</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md14">
+<title>Detalles del funcionamiento</title>
+<para><orderedlist>
+<listitem><para>Validación inicial:<itemizedlist>
+<listitem><para>Si la cadena <computeroutput>s</computeroutput> es <computeroutput>NULL</computeroutput>, la función retorna <computeroutput>0</computeroutput> inmediatamente.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Iteración y escritura:<itemizedlist>
+<listitem><para>Recorre la cadena carácter por carácter usando un índice (<computeroutput>i</computeroutput>).</para>
+</listitem><listitem><para>Escribe cada carácter en el descriptor de archivo usando <computeroutput>write</computeroutput>.</para>
+</listitem><listitem><para>Incrementa un contador (<computeroutput>count</computeroutput>) con el número de bytes escritos.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para>Devolución:<itemizedlist>
+<listitem><para>Retorna el valor acumulado en <computeroutput>count</computeroutput>, que representa el total de caracteres escritos.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md15">
+<title>Ejemplo de uso</title>
+<para><bold>Es el encargado de imprimir los errores cuando no indican los parametros correctamente.</bold></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md16">
+<title>¿Por qué es útil?</title>
+<para>Esta función simplifica la escritura en descriptores de archivo, permitiendo imprimir mensajes personalizados en la salida estándar o en la salida de error, sin necesidad de gestionar directamente <computeroutput>write</computeroutput>.</para>
+</sect2>
+</sect1>
+<sect1 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md17">
+<title>3. is_valid_number</title>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md18">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="main_8c_1a3443f98f251000405fbc46a7951deaa9" kindref="member">is_valid_number</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valid_status[2];</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kindref="member">HAS_DIGIT</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kindref="member">HAS_POINT</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[i]<sp/>==<sp/>32<sp/>||<sp/>(str[i]<sp/>&gt;=<sp/>9<sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/>13))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>||<sp/>str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[i]<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kindref="member">HAS_DIGIT</ref>]<sp/>=<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kindref="member">HAS_POINT</ref>]<sp/>=<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kindref="member">HAS_POINT</ref>]<sp/>&amp;&amp;<sp/>(str[i]<sp/>&lt;<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>||<sp/>str[i]<sp/>&gt;<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[i]<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kindref="member">HAS_DIGIT</ref>]<sp/>&amp;&amp;<sp/>str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md19">
+<title>¿Qué hace esta función?</title>
+<para><computeroutput>is_valid_number</computeroutput> verifica si una cadena de texto representa un número válido. Esto incluye números enteros y de punto flotante con signo opcional.</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md20">
+<title>Parámetros</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>const char *str</computeroutput>: Puntero a la cadena de texto que se desea validar.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md21">
+<title>Retorno</title>
+<para><itemizedlist>
+<listitem><para>Devuelve <computeroutput>1</computeroutput> si la cadena es un número válido.</para>
+</listitem><listitem><para>Devuelve <computeroutput>0</computeroutput> si la cadena no es válida como número.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md22">
+<title>Detalles del funcionamiento</title>
+<para><orderedlist>
+<listitem><para>Ignora los espacios iniciales y caracteres de control.</para>
+</listitem><listitem><para>Permite un signo (<computeroutput>+</computeroutput> o <computeroutput>-</computeroutput>) al inicio.</para>
+</listitem><listitem><para>Verifica que la cadena contenga al menos un dígito antes o después de un punto decimal (<computeroutput>.</computeroutput>).</para>
+</listitem><listitem><para>Si hay un punto decimal, asegura que le sigan dígitos.</para>
+</listitem><listitem><para>Comprueba que no haya caracteres adicionales después del número.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md23">
+<title>Ejemplo de uso</title>
+<para><bold>Es el encargado de validar que las coordenadas pasadas para <computeroutput>julia</computeroutput> sean números correctos.</bold></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md24">
+<title>¿Por qué es útil?</title>
+<para>Esta función asegura que los parámetros numéricos proporcionados por el usuario sean válidos, evitando errores en cálculos posteriores.</para>
+</sect2>
+</sect1>
+<sect1 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md25">
+<title>4. calculate_color</title>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md26">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iterations)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>t;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>base_gray;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__color" kindref="compound">t_color</ref><sp/>color;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>(double)iterations<sp/>/<sp/><ref refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kindref="member">MAX_ITERATIONS</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>base_gray<sp/>=<sp/>(30<sp/>+<sp/>190<sp/>*<sp/>(t<sp/>*<sp/>(1<sp/>-<sp/>0.2<sp/>*<sp/>t)));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.<ref refid="structs__color_1a251e854381c6945efbbffc33796e6035" kindref="member">r</ref><sp/>=<sp/>base_gray<sp/>-<sp/>(5<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t<sp/>*<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.g<sp/>=<sp/>base_gray<sp/>-<sp/>(10<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>(1<sp/>-<sp/>t));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.b<sp/>=<sp/>base_gray<sp/>-<sp/>(15<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((0xFF<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>(color.r<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(color.g<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>color.b);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md27">
+<title>¿Qué hace esta función?</title>
+<para><computeroutput>calculate_color</computeroutput> genera un color basado en el número de iteraciones realizadas para un píxel en el fractal. Produce un gradiente suave para mejorar la apariencia visual del fractal.</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md28">
+<title>Parámetros</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>int iterations</computeroutput>: Número de iteraciones para el píxel actual.</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md29">
+<title>Retorno</title>
+<para><itemizedlist>
+<listitem><para>Devuelve el color calculado en formato ARGB (Alpha-Red-Green-Blue).</para>
+</listitem></itemizedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md30">
+<title>Detalles del funcionamiento</title>
+<para><orderedlist>
+<listitem><para><bold>Cálculo del factor <computeroutput>t</computeroutput>:</bold><itemizedlist>
+<listitem><para>Normaliza el número de iteraciones (<computeroutput>iterations</computeroutput>) al rango <computeroutput>[0, 1]</computeroutput> dividiéndolo por el máximo permitido (<computeroutput>MAX_ITERATIONS</computeroutput>).</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Base gris:</bold><itemizedlist>
+<listitem><para>Calcula una base de gris a partir de <computeroutput>t</computeroutput>, ajustando el brillo para crear un efecto de gradiente. <programlisting filename=".c"><codeline><highlight class="normal">base_gray<sp/>=<sp/>(30<sp/>+<sp/>190<sp/>*<sp/>(t<sp/>*<sp/>(1<sp/>-<sp/>0.2<sp/>*<sp/>t)));</highlight></codeline>
+</programlisting> <computeroutput>t</computeroutput> se ajusta para crear una curva suave mediante la fórmula: <computeroutput>t * ( 1 - 0.2 * t)</computeroutput>. Esto gnera una transición fluida en el gradiente.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Componentes RGB:</bold><itemizedlist>
+<listitem><para>Ajusta cada componente (<computeroutput>r</computeroutput>, <computeroutput>g</computeroutput>, <computeroutput>b</computeroutput>) para añadir variaciones de color dependiendo del nivel de iteración. <programlisting filename=".c"><codeline><highlight class="normal">color.r<sp/>=<sp/>base_gray<sp/>-<sp/>(5<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t<sp/>*<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal">color.g<sp/>=<sp/>base_gray<sp/>-<sp/>(10<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>(1<sp/>-<sp/>t));</highlight></codeline>
+<codeline><highlight class="normal">color.b<sp/>=<sp/>base_gray<sp/>-<sp/>(15<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t);</highlight></codeline>
+</programlisting><itemizedlist>
+<listitem><para>Cada componente tiene una fórmula ligeramente diferente para generar colors distintivos y visualmente agradables:<itemizedlist>
+<listitem><para>El rojo depende más de t^3 (potencia alta).</para>
+</listitem><listitem><para>El azul se ajusta con (1 - t)^2 (mas dominante en el rango medio).</para>
+</listitem><listitem><para>El azul usa una combinación de (1 - t) y t para un efeco más suave.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Formato ARGB:</bold><itemizedlist>
+<listitem><para>Combina los componentes en un entero de 32 bits con un canal Alpha completamente opaco (<computeroutput>0xFF</computeroutput>). <programlisting filename=".c"><codeline><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0xFF<sp/>&lt;&lt;<sp/>24<sp/>|<sp/>(color.r<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(color.g<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>color.b);</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>La función empaqueta los componentes en un entero en formato ARGB (Alpha, Red, Green, Blue):<itemizedlist>
+<listitem><para><computeroutput>0xFF &lt;&lt; 24</computeroutput> -&gt; Fija el canal alfa a 255 (completamente opaco).</para>
+</listitem><listitem><para><computeroutput>(color.r &lt;&lt; 16)</computeroutput> -&gt; Inserta el componente rojo en los bits altos.</para>
+</listitem><listitem><para><computeroutput>(color.g &lt;&lt; 8)</computeroutput> -&gt; Inserta el componente verde.</para>
+</listitem><listitem><para><computeroutput>color.b</computeroutput> -&gt; Inserta el componente azul.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md31">
+<title>Ejemplo de uso</title>
+<para><bold>Es el encargado de calcular el color de cada píxel en función de su número de iteraciones.</bold></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md32">
+<title>¿Por qué es útil?</title>
+<para>Esta función mejora significativamente la representación visual del fractal, permitiendo distinguir las diferentes áreas según su comportamiento iterativo y creando una experiencia más atractiva para el usuario.</para>
+</sect2>
+</sect1>
+<sect1 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md33">
+<title>5. calculate_scales_and_limits</title>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md34">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" kindref="member">calculate_scales_and_limits</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>]<sp/>=<sp/>4.0<sp/>/<sp/>(<ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref><sp/>*<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" kindref="member">SCALE_Y</ref>]<sp/>=<sp/>4.0<sp/>/<sp/>(<ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref><sp/>*<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>+<sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" kindref="member">OFFSET_X</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>+<sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" kindref="member">OFFSET_Y</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" kindref="member">pixels</ref><sp/>=<sp/>(uint32_t<sp/>*)data-&gt;<ref refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" kindref="member">img</ref>-&gt;pixels;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md35">
+<title>¿Qué hace esta función?</title>
+<para>La función <computeroutput>calculate_scales_and_limits</computeroutput> calcula las escalas y límites del plano complejo que se usarán para renderizar el fractal en la ventana gráfica. Estos valores permiten traducir cada píxel de la pantalla a un número complejo, lo que es esencial para los cálculos iterativos del fractal.</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md36">
+<title>Parámetros</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>t_render_vars *vars</computeroutput>: Estructura donde se almacenan las escalas, los límites iniciales del plano complejo, y un puntero al buffer de píxeles.</para>
+</listitem><listitem><para><computeroutput>t_data *data</computeroutput>: Contiene la información del fractal, como el nivel de zoom y el desplazamiento actual.</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md38">
+<title>Detalles del funcionamiento</title>
+<sect3 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md39">
+<title>1. Cálculo de las escalas</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">vars-&gt;scale[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>]<sp/>=<sp/>4.0<sp/>/<sp/>(<ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref><sp/>*<sp/>data-&gt;zoom);</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;scale[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" kindref="member">SCALE_Y</ref>]<sp/>=<sp/>4.0<sp/>/<sp/>(<ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref><sp/>*<sp/>data-&gt;zoom);</highlight></codeline>
+</programlisting></para>
+<para><itemizedlist>
+<listitem><para><bold>¿Por qué 4.0?</bold><itemizedlist>
+<listitem><para>El plano complejo inicial tiene un rango estándar de <computeroutput>[-2.0, +2.0]</computeroutput> en ambos ejes (real e imaginario). Este rango totaliza una longitud de <computeroutput>4.0</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>¿Qué hace la escala?</bold> - La escala indica cuánto representa cada píxel en el plano complejo. Por ejemplo: - Con <computeroutput>zoom = 1.0</computeroutput>, cada píxel representa <computeroutput>4.0 / WIDTH</computeroutput>.<itemizedlist>
+<listitem><para>Con <computeroutput>zoom = 2.0</computeroutput>, la escala es más pequeña, permitiendo un mayor detalle al acercarse.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md41">
+<title>2. Cálculo de los límites iniciales</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">vars-&gt;start[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;zoom<sp/>+<sp/>data-&gt;offset[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" kindref="member">OFFSET_X</ref>];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;start[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;zoom<sp/>+<sp/>data-&gt;offset[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" kindref="member">OFFSET_Y</ref>];</highlight></codeline>
+</programlisting></para>
+<para><itemizedlist>
+<listitem><para><bold>¿Por qué -2.0?</bold><itemizedlist>
+<listitem><para>La esquina superior izquierda del rango inicial del fractal comienza en <computeroutput>(-2.0, -2.0)</computeroutput> en el plano complejo. Este punto corresponde al primer píxel de la ventana gráfica.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Zoom y desplazamiento:</bold><itemizedlist>
+<listitem><para>El <computeroutput>zoom</computeroutput> ajusta el tamaño del rango visible del fractal.</para>
+</listitem><listitem><para>El desplazamiento (<computeroutput>data-&gt;offset</computeroutput>) permite mover el rango visible del fractal a diferentes partes del plano complejo.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md43">
+<title>3. Asignación del buffer de píxeles</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">vars-&gt;pixels<sp/>=<sp/>(uint32_t<sp/>*)data-&gt;img-&gt;pixels;</highlight></codeline>
+</programlisting></para>
+<para><itemizedlist>
+<listitem><para><bold>¿Qué es <computeroutput>data-&gt;img-&gt;pixels</computeroutput>?</bold><itemizedlist>
+<listitem><para>Es un puntero al área de memoria donde se almacenan los colores de cada píxel que se renderizarán en la ventana gráfica.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>¿Por qué se castea a <computeroutput>uint32_t</computeroutput>?</bold><itemizedlist>
+<listitem><para>Los píxeles están representados como enteros de 32 bits (ARGB: Alpha, Red, Green, Blue). Castearlos a <computeroutput>uint32_t</computeroutput> facilita modificar el color de cada píxel de manera eficiente.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md45">
+<title>Ejemplo práctico</title>
+<sect3 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md46">
+<title>Supongamos:</title>
+<para><itemizedlist>
+<listitem><para><bold>Ventana gráfica:</bold> <computeroutput>WIDTH = 800</computeroutput>, <computeroutput>HEIGHT = 800</computeroutput>.</para>
+</listitem><listitem><para><bold>Zoom inicial:</bold> <computeroutput>1.0</computeroutput>.</para>
+</listitem><listitem><para><bold>Desplazamiento inicial:</bold> <computeroutput>[OFFSET_X, OFFSET_Y] = [0.0, 0.0]</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md47">
+<title>Resultado:</title>
+<para><orderedlist>
+<listitem><para><bold>Escalas:</bold> <programlisting filename=".plaintext"><codeline><highlight class="normal">scale[SCALE_X]<sp/>=<sp/>4.0<sp/>/<sp/>800<sp/>=<sp/>0.005</highlight></codeline>
+<codeline><highlight class="normal">scale[SCALE_Y]<sp/>=<sp/>4.0<sp/>/<sp/>800<sp/>=<sp/>0.005</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para><bold>Límites iniciales:</bold> <programlisting filename=".plaintext"><codeline><highlight class="normal">start[COMPLEX_RE]<sp/>=<sp/>-2.0<sp/>+<sp/>0.0<sp/>=<sp/>-2.0</highlight></codeline>
+<codeline><highlight class="normal">start[COMPLEX_IM]<sp/>=<sp/>-2.0<sp/>+<sp/>0.0<sp/>=<sp/>-2.0</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para><bold>Buffer de píxeles:</bold><itemizedlist>
+<listitem><para><computeroutput>vars-&gt;pixels</computeroutput> apunta al inicio del buffer de memoria donde se almacenan los colores de los píxeles.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2auxiliary__explained_1autotoc_md49">
+<title>Importancia de esta función</title>
+<para><orderedlist>
+<listitem><para><bold>Traducción entre píxeles y el plano complejo:</bold><itemizedlist>
+<listitem><para>Cada píxel de la pantalla se corresponde con un número complejo en el plano. Esta función establece esa correspondencia de manera precisa.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Adaptabilidad al zoom y desplazamiento:</bold><itemizedlist>
+<listitem><para>Permite acercarse o alejarse del fractal ajustando las escalas, y desplazarse por diferentes partes del fractal modificando los límites.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Eficiencia:</bold><itemizedlist>
+<listitem><para>Precalcular las escalas y los límites evita realizar estos cálculos para cada píxel, mejorando el rendimiento del renderizado.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>¿Por qué es crucial?</bold><itemizedlist>
+<listitem><para>Sin estas escalas y límites, sería imposible generar el fractal correctamente. Los fractales son gráficos basados en números complejos, y esta función conecta el mundo &quot;físico&quot; de los píxeles con el mundo &quot;matemático&quot; del plano complejo. </para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="/home/dev/frfr/auxiliary_explained.md"/>
+  </compounddef>
+</doxygen>

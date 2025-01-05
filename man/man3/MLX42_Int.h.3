@@ -1,0 +1,775 @@
+.TH "MLX42/include/MLX42/MLX42_Int.h" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/include/MLX42/MLX42_Int.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42\&.h'\fP
+.br
+\fC#include 'lodepng/lodepng\&.h'\fP
+.br
+\fC#include 'glad/glad\&.h'\fP
+.br
+\fC#include 'KHR/khrplatform\&.h'\fP
+.br
+\fC#include <GLFW/glfw3\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <memory\&.h>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include <ctype\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdarg\&.h>\fP
+.br
+\fC#include <assert\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBvertex\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_list\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_srcoll\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_mouse\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_cursor\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_close\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_resize\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_key\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_hook\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_ctx\fP"
+.br
+.ti -1c
+.RI "struct \fBdraw_queue\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_image_ctx\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_NO_COMPILE_ALLOCATORS\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBMLX_SWAP_INTERVAL\fP   1"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBMLX_BATCH_SIZE\fP   12000"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBBPP\fP   \fBsizeof\fP(\fBint32_t\fP) /* \fBOnly\fP \fBsupport\fP \fBRGBA\fP */"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBGETLINE_BUFF\fP   1280"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBMLX_MAX_STRING\fP   512 /* \fBArbitrary\fP \fBstring\fP \fBlimit\fP */"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBMLX_ASSERT\fP(\fBcond\fP,  \fBmsg\fP)   \fBassert\fP(\fBcond\fP && \fBmsg\fP);"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBMLX_NONNULL\fP(\fBvar\fP)   \fBMLX_ASSERT\fP(\fBvar\fP, 'Value \fBcan\fP'\fBt\fP \fBbe\fP \fBnull'\fP); /* \fBAssert\fP \fBinstead\fP \fBof\fP \fBattribute\fP */"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBvertex\fP \fBvertex_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_list\fP \fBmlx_list_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_srcoll\fP \fBmlx_scroll_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_mouse\fP \fBmlx_mouse_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_cursor\fP \fBmlx_cursor_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_close\fP \fBmlx_close_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_resize\fP \fBmlx_resize_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_key\fP \fBmlx_key_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_hook\fP \fBmlx_hook_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_ctx\fP \fBmlx_ctx_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBdraw_queue\fP \fBdraw_queue_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_image_ctx\fP \fBmlx_image_ctx_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBmlx_lstnew\fP (\fBvoid\fP *content)"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBmlx_lstlast\fP (\fBmlx_list_t\fP *\fBlst\fP)"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_lstsize\fP (\fBmlx_list_t\fP *\fBlst\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_lstclear\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBvoid\fP(*\fBdel\fP)(\fBvoid\fP *))"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_lstadd_back\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBmlx_list_t\fP *\fBnew\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_lstadd_front\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBmlx_list_t\fP *\fBnew\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBmlx_lstremove\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBvoid\fP *\fBvalue\fP, \fBbool\fP(*\fBcomp\fP)(\fBvoid\fP *, \fBvoid\fP *))"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_sort_renderqueue\fP (\fBmlx_list_t\fP **\fBlst\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_equal_image\fP (\fBvoid\fP *\fBlstcontent\fP, \fBvoid\fP *\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_equal_inst\fP (\fBvoid\fP *\fBlstcontent\fP, \fBvoid\fP *\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_draw_pixel\fP (\fBuint8_t\fP *\fBpixel\fP, \fBuint32_t\fP \fBcolor\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_error\fP (\fBmlx_errno_t\fP \fBval\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_freen\fP (\fBint32_t\fP \fBcount\fP,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_update_matrix\fP (\fBconst\fP \fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_draw_instance\fP (\fBmlx_ctx_t\fP *\fBmlx\fP, \fBmlx_image_t\fP *\fBimg\fP, \fBmlx_instance_t\fP *\fBinstance\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_flush_batch\fP (\fBmlx_ctx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_getline\fP (\fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBout_size\fP, \fBFILE\fP *\fBfile\fP)"
+.br
+.ti -1c
+.RI "\fBuint32_t\fP \fBmlx_rgba_to_mono\fP (\fBuint32_t\fP \fBcolor\fP)"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_atoi_base\fP (\fBconst\fP \fBchar\fP *\fBstr\fP, \fBint32_t\fP \fBbase\fP)"
+.br
+.ti -1c
+.RI "\fBuint64_t\fP \fBmlx_fnv_hash\fP (\fBchar\fP *\fBstr\fP, \fBsize_t\fP \fBlen\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBconst\fP \fBchar\fP * \fBvert_shader\fP"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBchar\fP * \fBfrag_shader\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBsort_queue\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_settings\fP [\fBMLX_SETTINGS_MAX\fP]"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#\fBdefine\fP BPP   \fBsizeof\fP(\fBint32_t\fP) /* \fBOnly\fP \fBsupport\fP \fBRGBA\fP */"
+
+.PP
+Definition at line \fB42\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "#\fBdefine\fP GETLINE_BUFF   1280"
+
+.PP
+Definition at line \fB43\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_NO_COMPILE_ALLOCATORS"
+
+.PP
+Definition at line \fB15\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "#\fBdefine\fP MLX_ASSERT(\fBcond\fP, \fBmsg\fP)   \fBassert\fP(\fBcond\fP && \fBmsg\fP);"
+
+.PP
+Definition at line \fB45\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "#\fBdefine\fP MLX_BATCH_SIZE   12000"
+
+.PP
+Definition at line \fB40\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "#\fBdefine\fP MLX_MAX_STRING   512 /* \fBArbitrary\fP \fBstring\fP \fBlimit\fP */"
+
+.PP
+Definition at line \fB44\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "#\fBdefine\fP MLX_NONNULL(\fBvar\fP)   \fBMLX_ASSERT\fP(\fBvar\fP, 'Value \fBcan\fP'\fBt\fP \fBbe\fP \fBnull'\fP); /* \fBAssert\fP \fBinstead\fP \fBof\fP \fBattribute\fP */"
+
+.PP
+Definition at line \fB46\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "#\fBdefine\fP MLX_SWAP_INTERVAL   1"
+
+.PP
+Definition at line \fB37\fP of file \fBMLX42_Int\&.h\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBtypedef\fP \fBstruct\fP \fBdraw_queue\fP \fBdraw_queue_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_close\fP \fBmlx_close_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_ctx\fP \fBmlx_ctx_t\fP"
+For rendering we need to store most of OpenGL's stuff such as the vertex array object, vertex buffer object & the shader program as well as hooks and the zdepth level\&.
+.PP
+Additionally we represent draw calls with a linked list queue that points to the image and the index of its instance\&. Again, instances only carry XYZ data, so coupled with the image it lets us know where to draw a copy of the image\&.
+.PP
+Texture contexts are kept in a struct alongside the capacity of the array of instances, since the array is realloced like a vector\&. 
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_cursor\fP \fBmlx_cursor_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_hook\fP \fBmlx_hook_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_image_ctx\fP \fBmlx_image_ctx_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_key\fP \fBmlx_key_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_list\fP \fBmlx_list_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_mouse\fP \fBmlx_mouse_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_resize\fP \fBmlx_resize_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_srcoll\fP \fBmlx_scroll_t\fP"
+There are 2 types of hooks, special and generics\&.
+.PP
+Specials: Specials are specific callback functions to a specific action such as window resizing or key presses\&. These are attached to the callbacks of glfw\&. In case MLX itself needs the callback we call the specials in that callback since there can only ever be a single callback\&.
+.PP
+Generics: Generics are MLX42 specific hooks and can have multiple hooks at the same time, these are executed every frame and can be used as an alternative for keypresses or animations for instance\&.
+.PP
+NOTE: Hooks could be achieved with va_args to have any amount of args sized functor but we can't/don't want to let the user deal with va_args and having to look up what args are what, etc\&.\&.\&.
+.PP
+We want to keep it straightforward with functors already describing what params they have\&. 
+.SS "\fBtypedef\fP \fBstruct\fP \fBvertex\fP \fBvertex_t\fP"
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBint32_t\fP mlx_atoi_base (\fBconst\fP \fBchar\fP * str, \fBint32_t\fP base)"
+
+.SS "\fBvoid\fP mlx_draw_instance (\fBmlx_ctx_t\fP * mlx, \fBmlx_image_t\fP * img, \fBmlx_instance_t\fP * instance)"
+Internal function to draw a single instance of an image to the screen\&. 
+.PP
+Definition at line \fB63\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+64 {
+65     float w = (float) img\->width;
+66     float h = (float) img\->height;
+67     float x = (float) instance\->x;
+68     float y = (float) instance\->y;
+69     float z = (float) instance\->z;
+70     int8_t tex = mlx_bind_texture(mlx, img);
+71 
+72     vertex_t vertices[6] = {
+73             (vertex_t){x, y, z, 0\&.f, 0\&.f, tex},
+74             (vertex_t){x + w, y + h, z, 1\&.f, 1\&.f, tex},
+75             (vertex_t){x + w, y, z, 1\&.f, 0\&.f, tex},
+76             (vertex_t){x, y, z, 0\&.f, 0\&.f, tex},
+77             (vertex_t){x, y + h, z, 0\&.f, 1\&.f, tex},
+78             (vertex_t){x + w, y + h, z, 1\&.f, 1\&.f, tex},
+79     };
+80     memmove(mlx\->batch_vertices + mlx\->batch_size, vertices, sizeof(vertices));
+81     mlx\->batch_size += 6;
+82 
+83     if (mlx\->batch_size >= MLX_BATCH_SIZE)
+84         mlx_flush_batch(mlx);
+85 }
+.fi
+
+.SS "\fBvoid\fP mlx_draw_pixel (\fBuint8_t\fP * pixel, \fBuint32_t\fP color)"
+
+.PP
+Definition at line \fB16\fP of file \fBmlx_put_pixel\&.c\fP\&..PP
+.nf
+17 {
+18     *(pixel++) = (uint8_t)(color >> 24);
+19     *(pixel++) = (uint8_t)(color >> 16);
+20     *(pixel++) = (uint8_t)(color >> 8);
+21     *(pixel++) = (uint8_t)(color & 0xFF);
+22 }
+.fi
+
+.SS "\fBbool\fP mlx_equal_image (\fBvoid\fP * lstcontent, \fBvoid\fP * value)"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_compare\&.c\fP\&..PP
+.nf
+18 {
+19     const mlx_image_t* lcontent = lstcontent;
+20     const mlx_image_t* lvalue = value;
+21 
+22     return (lcontent == lvalue);
+23 }
+.fi
+
+.SS "\fBbool\fP mlx_equal_inst (\fBvoid\fP * lstcontent, \fBvoid\fP * value)"
+
+.PP
+Definition at line \fB25\fP of file \fBmlx_compare\&.c\fP\&..PP
+.nf
+26 {
+27     const draw_queue_t* lcontent = lstcontent;
+28     const mlx_image_t* lvalue = value;
+29 
+30     return (lcontent\->image == lvalue);
+31 }
+.fi
+
+.SS "\fBbool\fP mlx_error (\fBmlx_errno_t\fP val)"
+Functions to set the error number, simply for convenience\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIval\fP The error value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Always false 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBmlx_error\&.c\fP\&..PP
+.nf
+44 {
+45     mlx_errno = val;
+46 #ifndef NDEBUG
+47     fprintf(stderr, "MLX42: %s", mlx_strerror(mlx_errno));
+48 #endif
+49     return (false);
+50 }
+.fi
+
+.SS "\fBvoid\fP mlx_flush_batch (\fBmlx_ctx_t\fP * mlx)"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+18 {
+19     if (mlx\->batch_size <= 0)
+20         return;
+21 
+22     glBindBuffer(GL_ARRAY_BUFFER, mlx\->vbo);
+23     glBufferData(GL_ARRAY_BUFFER, mlx\->batch_size * sizeof(vertex_t), mlx\->batch_vertices, GL_STATIC_DRAW);
+24     glDrawArrays(GL_TRIANGLES, 0, mlx\->batch_size);
+25 
+26     mlx\->batch_size = 0;
+27     memset(mlx\->bound_textures, 0, sizeof(mlx\->bound_textures));
+28 }
+.fi
+
+.SS "\fBuint64_t\fP mlx_fnv_hash (\fBchar\fP * str, \fBsize_t\fP len)"
+String hashing algorithm using FNV-1a\&. Source: https://bit.ly/3JcRGHa
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP The string to hash 
+.br
+\fIlen\fP The length of the string\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The hashed output\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+69 {
+70     const uint64_t fnv_prime = 0x100000001b3;
+71     const uint64_t fnv_offset = 0xcbf29ce484222325;
+72     uint64_t hash = fnv_offset;
+73 
+74     for (size_t i = 0; i < len; i++)
+75     {
+76         hash ^= str[i];
+77         hash *= fnv_prime;
+78     }
+79     return (hash);
+80 }
+.fi
+
+.SS "\fBbool\fP mlx_freen (\fBint32_t\fP count,  \&.\&.\&.)"
+Utility function that lets you free x amount of pointers\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcount\fP The amount of args provided\&. 
+.br
+\fI\&.\&.\&.\fP Any form of pointer\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+False, this is simply for convenience when necessary\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB89\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+90 {
+91     va_list args;
+92 
+93     va_start(args, count);
+94     for (int32_t i = 0; i < count; i++)
+95         free(va_arg(args, void*));
+96     va_end(args);
+97     return (false);
+98 }
+.fi
+
+.SS "\fBbool\fP mlx_getline (\fBchar\fP ** out, \fBsize_t\fP * out_size, \fBFILE\fP * file)"
+Function to read a file stream line by line, reusing the same output pointer\&. Since the same output pointer is reused it should only be freed once, either on success or failure\&. This function is made to be somewhat similar to getline\&. Getline can't be used directly since it's not standard and therefore not available on all platforms\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIout\fP Pointer to store output string\&. 
+.br
+\fIout_size\fP Pointer to store output strings length\&. 
+.br
+\fIfile\fP File stream to read from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if line was read, false if EOF was reached or an error occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB28\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+29 {
+30     MLX_NONNULL(out);
+31     MLX_NONNULL(out_size);
+32     MLX_NONNULL(file);
+33 
+34     size_t size = 0;
+35     char* temp = NULL;
+36     static char BUFF[GETLINE_BUFF + 1]; // Add space for '\\0'
+37 
+38     if (*out) *out[0] = '\\0';
+39 
+40     while (fgets(BUFF, sizeof(BUFF), file))
+41     {
+42         size += strlen(BUFF);
+43         if (!(temp = realloc(*out, sizeof(char) * size + 1)))
+44             return (false);
+45         if (*out == NULL)
+46             memset(temp, '\\0', size);
+47         temp[size] = '\\0';
+48 
+49         *out = temp;
+50         *out_size = size;
+51 
+52         strncat(*out, BUFF, size);
+53         if (strrchr(BUFF, '\\n'))
+54             return (true);
+55         memset(BUFF, '\\0', sizeof(BUFF));
+56     }
+57     return (size);
+58 }
+.fi
+
+.SS "\fBvoid\fP mlx_lstadd_back (\fBmlx_list_t\fP ** lst, \fBmlx_list_t\fP * new)"
+
+.PP
+Definition at line \fB67\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+68 {
+69     if (!lst || !new)
+70         return;
+71     if (!*lst)
+72         *lst = new;
+73     else
+74     {
+75         mlx_list_t* temp = mlx_lstlast(*lst);
+76         new\->prev = temp;
+77         temp\->next = new;
+78     }
+79 }
+.fi
+
+.SS "\fBvoid\fP mlx_lstadd_front (\fBmlx_list_t\fP ** lst, \fBmlx_list_t\fP * new)"
+
+.PP
+Definition at line \fB81\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+82 {
+83     if (!lst || !new)
+84         return;
+85     if ((*lst) != NULL)
+86         (*lst)\->prev = new;
+87     new\->next = *lst;
+88     new\->prev = NULL;
+89     *lst = new;
+90 }
+.fi
+
+.SS "\fBvoid\fP mlx_lstclear (\fBmlx_list_t\fP ** lst, \fBvoid\fP(*)(\fBvoid\fP *) del)"
+
+.PP
+Definition at line \fB33\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+34 {
+35     mlx_list_t* next_lst;
+36 
+37     while (*lst != NULL)
+38     {
+39         next_lst = (*lst)\->next;
+40         mlx_lstdelone(*lst, del);
+41         *lst = next_lst;
+42     }
+43 }
+.fi
+
+.SS "\fBmlx_list_t\fP * mlx_lstlast (\fBmlx_list_t\fP * lst)"
+
+.PP
+Definition at line \fB58\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+59 {
+60     if (!lst)
+61         return (NULL);
+62     while (lst\->next)
+63         lst = lst\->next;
+64     return (lst);
+65 }
+.fi
+
+.SS "\fBmlx_list_t\fP * mlx_lstnew (\fBvoid\fP * content)"
+All sorts of internal functions shared in the library that should not be accessible to the user! No touch! 
+.PP
+Definition at line \fB45\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+46 {
+47     mlx_list_t* out = NULL;
+48 
+49     if ((out = malloc(sizeof(mlx_list_t))))
+50     {
+51         out\->content = content;
+52         out\->next = NULL;
+53         out\->prev = NULL;
+54     }
+55     return (out);
+56 }
+.fi
+
+.SS "\fBmlx_list_t\fP * mlx_lstremove (\fBmlx_list_t\fP ** lst, \fBvoid\fP * value, \fBbool\fP(*)(\fBvoid\fP *, \fBvoid\fP *) comp)"
+Removes the specified content from the list, if found\&. Also fixes any relinking that might be needed\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIlst\fP The list 
+.br
+\fIcomp\fP Function to check if the content and value are the same\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The removed element, clean up as you wish\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB100\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+101 {
+102     mlx_list_t* lstcpy = *lst;
+103 
+104     while (lstcpy && !comp(lstcpy\->content, value))
+105         lstcpy = lstcpy\->next;
+106     if (lstcpy == NULL)
+107         return (NULL);
+108     if (lstcpy == *lst)
+109         *lst = lstcpy\->next;
+110     if (lstcpy\->next != NULL)
+111         lstcpy\->next\->prev = lstcpy\->prev;
+112     if (lstcpy\->prev != NULL)
+113         lstcpy\->prev\->next = lstcpy\->next;
+114     return (lstcpy);
+115 }
+.fi
+
+.SS "\fBint32_t\fP mlx_lstsize (\fBmlx_list_t\fP * lst)"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+18 {
+19     int32_t i;
+20 
+21     for (i = 0; lst != NULL; i++)
+22         lst = lst\->next;
+23     return (i);
+24 }
+.fi
+
+.SS "\fBuint32_t\fP mlx_rgba_to_mono (\fBuint32_t\fP color)"
+Converts an RGBA value to a monochrome/grayscale value\&. It does so using specific weights for each channel\&.
+.PP
+\fBSee also\fP
+.RS 4
+https://goodcalculators.com/rgb-to-grayscale-conversion-calculator/
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP The input RGBA value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The rgba value converted to a grayscale color\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB109\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+110 {
+111     const uint8_t r = 0\&.299f * ((color >> 24) & 0xFF);
+112     const uint8_t g = 0\&.587f * ((color >> 16) & 0xFF);
+113     const uint8_t b = 0\&.114f * ((color >> 8) & 0xFF);
+114     const uint8_t y = r + g + b;
+115 
+116     return (y << 24 | y << 16 | y << 8 | (color & 0xFF));
+117 }
+.fi
+
+.SS "\fBvoid\fP mlx_sort_renderqueue (\fBmlx_list_t\fP ** lst)"
+Okay-ish sorting algorithm to sort the render queue / doubly linked list\&. We need to do this to fix transparency\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIlst\fP The render queue\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB161\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+162 {
+163     mlx_list_t* sorted = NULL;
+164     mlx_list_t* lstcpy = *lst;
+165 
+166     while (lstcpy != NULL)
+167     {
+168         mlx_list_t* next = lstcpy\->next;
+169 
+170         // Separate entry out of list and insert it back but sorted\&.
+171         lstcpy\->prev = lstcpy\->next = NULL;
+172         mlx_insertsort(&sorted, lstcpy);
+173         lstcpy = next;
+174     }
+175     *lst = sorted;
+176 }
+.fi
+
+.SS "\fBvoid\fP mlx_update_matrix (\fBconst\fP \fBmlx_t\fP * mlx)"
+Recalculate the view projection matrix, used by images for screen pos Reference: https://bit.ly/3KuHOu1 (Matrix View Projection) In case the setting to stretch the image is set, we maintain the width and height but not the depth\&.
+.PP
+Definition at line \fB21\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+22 {
+23     const mlx_ctx_t* mlxctx = mlx\->context;
+24     const float depth = mlxctx\->zdepth;
+25 
+26     /**
+27      * In case the setting to stretch the image is set, we maintain the width and height but not
+28      * the depth\&.
+29      */
+30     const float width = mlx_settings[MLX_STRETCH_IMAGE] ? mlxctx\->initialWidth : mlx\->width;
+31     const float height = mlx_settings[MLX_STRETCH_IMAGE] ? mlxctx\->initialHeight : mlx\->height;
+32 
+33     const float matrix[16] = {
+34         2\&.f / width, 0, 0, 0,
+35         0, 2\&.f / \-(height), 0, 0,
+36         0, 0, \-2\&.f / (depth \- \-depth), 0,
+37         \-1, \-(height / \-height),
+38         \-((depth + \-depth) / (depth \- \-depth)), 1
+39     };
+40 
+41     glUniformMatrix4fv(glGetUniformLocation(mlxctx\->shaderprogram, "ProjMatrix"), 1, GL_FALSE, matrix);
+42 }
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBconst\fP \fBchar\fP* frag_shader\fC [extern]\fP"
+
+.SS "\fBint32_t\fP \fBmlx_settings\fP[\fBMLX_SETTINGS_MAX\fP]\fC [extern]\fP"
+
+.PP
+Definition at line \fB157\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+157 {false, false, false, true, false};
+.fi
+
+.SS "\fBbool\fP sort_queue\fC [extern]\fP"
+
+.PP
+Definition at line \fB159\fP of file \fBmlx_init\&.c\fP\&.
+.SS "\fBconst\fP \fBchar\fP* vert_shader\fC [extern]\fP"
+The shader code is extracted from the shader files and converted to a \&.c file as a single string at compile time\&. This keeps shader files external but still integrated into the program letting you use the executable anywhere without having to take the shaders with you\&.
+.PP
+Most modern frameworks like \&.NET do this by having resource files instead\&.
+.PP
+See: https://bit.ly/3LJYG0r 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

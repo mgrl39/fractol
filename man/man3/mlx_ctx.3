@@ -1,0 +1,155 @@
+.TH "mlx_ctx" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mlx_ctx
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MLX42_Int\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBGLuint\fP \fBvao\fP"
+.br
+.ti -1c
+.RI "\fBGLuint\fP \fBvbo\fP"
+.br
+.ti -1c
+.RI "\fBGLuint\fP \fBshaderprogram\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBinitialWidth\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBinitialHeight\fP"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBhooks\fP"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBimages\fP"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBrender_queue\fP"
+.br
+.ti -1c
+.RI "\fBmlx_scroll_t\fP \fBscroll_hook\fP"
+.br
+.ti -1c
+.RI "\fBmlx_mouse_t\fP \fBmouse_hook\fP"
+.br
+.ti -1c
+.RI "\fBmlx_cursor_t\fP \fBcursor_hook\fP"
+.br
+.ti -1c
+.RI "\fBmlx_key_t\fP \fBkey_hook\fP"
+.br
+.ti -1c
+.RI "\fBmlx_resize_t\fP \fBresize_hook\fP"
+.br
+.ti -1c
+.RI "\fBmlx_close_t\fP \fBclose_hook\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBzdepth\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBbound_textures\fP [16]"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBbatch_size\fP"
+.br
+.ti -1c
+.RI "\fBvertex_t\fP \fBbatch_vertices\fP [\fBMLX_BATCH_SIZE\fP]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+For rendering we need to store most of OpenGL's stuff such as the vertex array object, vertex buffer object & the shader program as well as hooks and the zdepth level\&.
+.PP
+Additionally we represent draw calls with a linked list queue that points to the image and the index of its instance\&. Again, instances only carry XYZ data, so coupled with the image it lets us know where to draw a copy of the image\&.
+.PP
+Texture contexts are kept in a struct alongside the capacity of the array of instances, since the array is realloced like a vector\&. 
+.PP
+Definition at line \fB172\fP of file \fBMLX42_Int\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBint32_t\fP mlx_ctx::batch_size"
+
+.PP
+Definition at line \fB194\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBvertex_t\fP mlx_ctx::batch_vertices[\fBMLX_BATCH_SIZE\fP]"
+
+.PP
+Definition at line \fB195\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_ctx::bound_textures[16]"
+
+.PP
+Definition at line \fB193\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_close_t\fP mlx_ctx::close_hook"
+
+.PP
+Definition at line \fB190\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_cursor_t\fP mlx_ctx::cursor_hook"
+
+.PP
+Definition at line \fB187\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_list_t\fP* mlx_ctx::hooks"
+
+.PP
+Definition at line \fB181\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_list_t\fP* mlx_ctx::images"
+
+.PP
+Definition at line \fB182\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_ctx::initialHeight"
+
+.PP
+Definition at line \fB179\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_ctx::initialWidth"
+
+.PP
+Definition at line \fB178\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_key_t\fP mlx_ctx::key_hook"
+
+.PP
+Definition at line \fB188\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_mouse_t\fP mlx_ctx::mouse_hook"
+
+.PP
+Definition at line \fB186\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_list_t\fP* mlx_ctx::render_queue"
+
+.PP
+Definition at line \fB183\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_resize_t\fP mlx_ctx::resize_hook"
+
+.PP
+Definition at line \fB189\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBmlx_scroll_t\fP mlx_ctx::scroll_hook"
+
+.PP
+Definition at line \fB185\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBGLuint\fP mlx_ctx::shaderprogram"
+
+.PP
+Definition at line \fB176\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBGLuint\fP mlx_ctx::vao"
+
+.PP
+Definition at line \fB174\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBGLuint\fP mlx_ctx::vbo"
+
+.PP
+Definition at line \fB175\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_ctx::zdepth"
+
+.PP
+Definition at line \fB192\fP of file \fBMLX42_Int\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

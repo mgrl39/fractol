@@ -1,0 +1,53 @@
+\doxysection{Makefile}
+\hypertarget{Makefile_source}{}\label{Makefile_source}\mbox{\hyperlink{Makefile}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00001}00001\ \#\ ****************************************************************************\ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00002}00002\ \#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00003}00003\ \#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00004}00004\ \#\ \ \ \ Makefile\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00005}00005\ \#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00006}00006\ \#\ \ \ \ By:\ meghribe\ <meghribe@student.42barcelon\ \ \ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00007}00007\ \#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00008}00008\ \#\ \ \ \ Created:\ 2024/12/29\ 04:15:44\ by\ meghribe\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00009}00009\ \#\ \ \ \ Updated:\ 2025/01/04\ 02:40:31\ by\ meghribe\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00010}00010\ \#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00011}00011\ \#\ ****************************************************************************\ \#}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00013}00013\ NAME\ :=\ fractol}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00015}00015\ CC\ :=\ cc}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00016}00016\ CFLAGS\ :=\ -\/Wall\ -\/Wextra\ -\/Werror\ -\/O3\ -\/fsanitize=address\ -\/g}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00017}00017\ INCLUDES\ :=\ -\/I\ .\ -\/I\ ./MLX42/include}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00019}00019\ SRCS\ :=\ main.c\ calcs.c\ mandelbrot.c\ julia.c\ utils.c\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00020}00020\ OBJS\ :=\ \$(SRCS:.c=.o)}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00022}00022\ MLX\ :=\ ./MLX42}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00023}00023\ LIBMLX\ :=\ \$(MLX)/build/libmlx42.a}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00024}00024\ LIBS\ :=\ \$(LIBMLX)\ -\/ldl\ -\/lglfw\ -\/lm}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00026}00026\ all:\ \$(NAME)}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00028}00028\ \$(NAME):\ \$(OBJS)}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00029}00029\ \ \ \ \ cmake\ -\/B\ \$(MLX)/build\ \$(MLX)}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00030}00030\ \ \ \ \ cmake\ -\/-\/build\ \$(MLX)/build\ -\/j4}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00031}00031\ \ \ \ \ \$(CC)\ \$(CFLAGS)\ \$(OBJS)\ \$(LIBS)\ -\/o\ \$(NAME)}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00034}00034\ \%.o:\ \%.c\ Makefile\ fractol.h}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00035}00035\ \ \ \ \ \$(CC)\ \$(CFLAGS)\ \$(INCLUDES)\ -\/c\ \$<\ -\/o\ \$@}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00037}00037\ clean:}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00038}00038\ \ \ \ \ rm\ -\/f\ \$(OBJS)}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00039}00039\ \ \ \ \ @if\ [\ -\/d\ \$(MLX)/build\ ];\ then\ cmake\ -\/-\/build\ \$(MLX)/build\ -\/-\/target\ clean;\ fi}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00041}00041\ fclean:\ clean}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00042}00042\ \ \ \ \ rm\ -\/f\ \$(NAME)}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00043}00043\ \ \ \ \ @if\ [\ -\/d\ \$(MLX)/build\ ];\ then\ rm\ -\/rf\ \$(MLX)/build;\ fi}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00045}00045\ re:\ fclean\ all}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00047}00047\ .PHONY:\ all\ clean\ fclean\ re}
+\DoxyCodeLine{\Hypertarget{Makefile_source_l00048}00048\ }
+
+\end{DoxyCode}

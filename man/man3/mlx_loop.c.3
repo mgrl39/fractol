@@ -1,0 +1,175 @@
+.TH "MLX42/src/mlx_loop.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_loop.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_exec_loop_hooks\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_render_images\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_loop_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBvoid\fP(*\fBf\fP)(\fBvoid\fP *), \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_loop\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvoid\fP mlx_exec_loop_hooks (\fBmlx_t\fP * mlx)\fC [static]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_loop\&.c\fP\&..PP
+.nf
+18 {
+19     const mlx_ctx_t* mlxctx = mlx\->context;
+20 
+21     mlx_list_t* lstcpy = mlxctx\->hooks;
+22     while (lstcpy && !glfwWindowShouldClose(mlx\->window))
+23     {
+24         mlx_hook_t* hook = ((mlx_hook_t*)lstcpy\->content);
+25         hook\->func(hook\->param);
+26         lstcpy = lstcpy\->next;
+27     }
+28 }
+.fi
+
+.SS "\fBvoid\fP mlx_loop (\fBmlx_t\fP * mlx)"
+Initializes the rendering of MLX, this function won't return until mlx_close_window is called, meaning it will loop until the user requests that the window should close\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB93\fP of file \fBmlx_loop\&.c\fP\&..PP
+.nf
+94 {
+95     MLX_NONNULL(mlx);
+96 
+97     double start, oldstart = 0;
+98     while (!glfwWindowShouldClose(mlx\->window))
+99     {
+100         start = glfwGetTime();
+101         mlx\->delta_time = start \- oldstart;
+102         oldstart = start;
+103     
+104         glClearColor(0\&.2f, 0\&.2f, 0\&.2f, 1\&.0f);
+105         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+106         glfwGetWindowSize(mlx\->window, &(mlx\->width), &(mlx\->height));
+107 
+108         if ((mlx\->width > 1 || mlx\->height > 1))
+109             mlx_update_matrix(mlx);
+110 
+111         mlx_exec_loop_hooks(mlx);
+112         mlx_render_images(mlx);
+113         mlx_flush_batch(mlx\->context);
+114 
+115         glfwSwapBuffers(mlx\->window);
+116         glfwPollEvents();
+117     }
+118 }
+.fi
+
+.SS "\fBbool\fP mlx_loop_hook (\fBmlx_t\fP * mlx, \fBvoid\fP(*)(\fBvoid\fP *) f, \fBvoid\fP * param)"
+Generic loop hook for any custom hooks to add to the main loop\&. Executes a function per frame, so be careful\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIf\fP The function\&. 
+.br
+\fIparam\fP The parameter to pass on to the function\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Whether or not the hook was added successfully\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB70\fP of file \fBmlx_loop\&.c\fP\&..PP
+.nf
+71 {
+72     MLX_NONNULL(mlx);
+73     MLX_NONNULL(f);
+74 
+75     mlx_hook_t* hook;
+76     if (!(hook = malloc(sizeof(mlx_hook_t))))
+77         return (mlx_error(MLX_MEMFAIL));
+78 
+79     mlx_list_t* lst;
+80     if (!(lst = mlx_lstnew(hook)))
+81     {
+82         free(hook);
+83         return (mlx_error(MLX_MEMFAIL));
+84     }
+85     hook\->func = f;
+86     hook\->param = param;
+87     const mlx_ctx_t *mlxctx = mlx\->context;
+88     mlx_lstadd_back((mlx_list_t**)(&mlxctx\->hooks), lst);
+89     return (true);
+90 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_render_images (\fBmlx_t\fP * mlx)\fC [static]\fP"
+
+.PP
+Definition at line \fB30\fP of file \fBmlx_loop\&.c\fP\&..PP
+.nf
+31 {
+32     mlx_ctx_t* mlxctx = mlx\->context;
+33     mlx_list_t* imglst = mlxctx\->images;
+34 
+35     if (sort_queue)
+36     {
+37         sort_queue = false;
+38         mlx_sort_renderqueue(&mlxctx\->render_queue);
+39     }
+40 
+41     // Upload image textures to GPU
+42     while (imglst)
+43     {
+44         mlx_image_t* image;
+45         if (!(image = imglst\->content)) {
+46             mlx_error(MLX_INVIMG);
+47             return;
+48         }
+49 
+50         glBindTexture(GL_TEXTURE_2D, ((mlx_image_ctx_t*)image\->context)\->texture);
+51         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image\->width, image\->height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image\->pixels);
+52         imglst = imglst\->next;
+53     }
+54 
+55     // Execute draw calls
+56     mlx_list_t* render_queue = mlxctx\->render_queue;
+57     while (render_queue)
+58     {
+59         draw_queue_t* drawcall = render_queue\->content;
+60         mlx_instance_t* instance =  &drawcall\->image\->instances[drawcall\->instanceid];
+61 
+62         if (drawcall && drawcall\->image\->enabled && instance\->enabled)
+63             mlx_draw_instance(mlx\->context, drawcall\->image, instance);
+64         render_queue = render_queue\->next;
+65     }
+66 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

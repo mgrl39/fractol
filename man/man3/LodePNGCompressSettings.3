@@ -1,0 +1,86 @@
+.TH "LodePNGCompressSettings" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LodePNGCompressSettings
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lodepng\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBunsigned\fP \fBbtype\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBuse_lz77\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBwindowsize\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBminmatch\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBnicematch\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlazymatching\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP(* \fBcustom_zlib\fP )(\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGCompressSettings\fP *)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP(* \fBcustom_deflate\fP )(\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGCompressSettings\fP *)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBvoid\fP * \fBcustom_context\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB351\fP of file \fBlodepng\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBunsigned\fP LodePNGCompressSettings::btype"
+
+.PP
+Definition at line \fB353\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBconst\fP \fBvoid\fP* LodePNGCompressSettings::custom_context"
+
+.PP
+Definition at line \fB371\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP(* LodePNGCompressSettings::custom_deflate) (\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGCompressSettings\fP *)"
+
+.PP
+Definition at line \fB367\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP(* LodePNGCompressSettings::custom_zlib) (\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGCompressSettings\fP *)"
+
+.PP
+Definition at line \fB361\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGCompressSettings::lazymatching"
+
+.PP
+Definition at line \fB358\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGCompressSettings::minmatch"
+
+.PP
+Definition at line \fB356\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGCompressSettings::nicematch"
+
+.PP
+Definition at line \fB357\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGCompressSettings::use_lz77"
+
+.PP
+Definition at line \fB354\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGCompressSettings::windowsize"
+
+.PP
+Definition at line \fB355\fP of file \fBlodepng\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

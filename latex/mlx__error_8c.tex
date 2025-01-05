@@ -1,0 +1,168 @@
+\doxysection{MLX42/src/utils/mlx\+\_\+error.c File Reference}
+\hypertarget{mlx__error_8c}{}\label{mlx__error_8c}\index{MLX42/src/utils/mlx\_error.c@{MLX42/src/utils/mlx\_error.c}}
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+error.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__error_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\+\_\+error}} (\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}} \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}{mlx\+\_\+strerror}} (\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}} \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mlx__error_8c_a326bf6bcd93f9b7b585fab097e8dcf1f}{mlx\+\_\+errors}} \mbox{[}\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b}{MLX\+\_\+\+ERRMAX}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f}\label{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f} 
+\index{mlx\_error.c@{mlx\_error.c}!mlx\_error@{mlx\_error}}
+\index{mlx\_error@{mlx\_error}!mlx\_error.c@{mlx\_error.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_error()}{mlx\_error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+Functions to set the error number, simply for convenience.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The error value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Always false 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__error_8c_source_l00043}{43}} of file \mbox{\hyperlink{mlx__error_8c_source}{mlx\+\_\+error.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}\ =\ \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}};}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifndef\ NDEBUG}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fprintf}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{stderr}},\ \textcolor{stringliteral}{"{}MLX42:\ \%s"{}},\ \mbox{\hyperlink{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}\label{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171} 
+\index{mlx\_error.c@{mlx\_error.c}!mlx\_strerror@{mlx\_strerror}}
+\index{mlx\_strerror@{mlx\_strerror}!mlx\_error.c@{mlx\_error.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_strerror()}{mlx\_strerror()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} mlx\+\_\+strerror (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}}}]{val }\end{DoxyParamCaption})}
+
+Gets the english description of the error code.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em val} & The error code. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The error string that describes the error code. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__error_8c_source_l00054}{54}} of file \mbox{\hyperlink{mlx__error_8c_source}{mlx\+\_\+error.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}\ >=\ 0,\ \textcolor{stringliteral}{"{}Index\ must\ be\ positive"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}\ <\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b}{MLX\_ERRMAX}},\ \textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{mlx__error_8c_a326bf6bcd93f9b7b585fab097e8dcf1f}{mlx\_errors}}[\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}]);}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mlx__error_8c_a326bf6bcd93f9b7b585fab097e8dcf1f}\label{mlx__error_8c_a326bf6bcd93f9b7b585fab097e8dcf1f} 
+\index{mlx\_error.c@{mlx\_error.c}!mlx\_errors@{mlx\_errors}}
+\index{mlx\_errors@{mlx\_errors}!mlx\_error.c@{mlx\_error.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_errors}{mlx\_errors}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}\texorpdfstring{$\ast$}{*} mlx\+\_\+errors\mbox{[}\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b}{MLX\+\_\+\+ERRMAX}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}No\ Errors"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}File\ has\ invalid\ extension"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}PNG\ file\ is\ invalid\ or\ corrupted"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}XPM42\ file\ is\ invalid\ or\ corrupted"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}The\ specified\ X\ or\ Y\ positions\ are\ out\ of\ bounds"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}The\ specified\ Width\ or\ Height\ dimensions\ are\ out\ of\ bounds"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}The\ provided\ image\ is\ invalid,\ might\ indicate\ mismanagement\ of\ images"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ vertex\ shader."{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ fragment\ shader."{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ shaders."{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ allocate\ memory"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLAD"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLFW"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ create\ window"{}},}
+\DoxyCodeLine{\ \ \ \ \textcolor{stringliteral}{"{}String\ is\ too\ big\ to\ be\ drawn"{}},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{mlx__error_8c_source_l00018}{18}} of file \mbox{\hyperlink{mlx__error_8c_source}{mlx\+\_\+error.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{stringliteral}{"{}No\ Errors"{}},}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{stringliteral}{"{}File\ has\ invalid\ extension"{}},}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file"{}},}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{stringliteral}{"{}PNG\ file\ is\ invalid\ or\ corrupted"{}},}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{stringliteral}{"{}XPM42\ file\ is\ invalid\ or\ corrupted"{}},}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{stringliteral}{"{}The\ specified\ X\ or\ Y\ positions\ are\ out\ of\ bounds"{}},}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{stringliteral}{"{}The\ specified\ Width\ or\ Height\ dimensions\ are\ out\ of\ bounds"{}},}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{stringliteral}{"{}The\ provided\ image\ is\ invalid,\ might\ indicate\ mismanagement\ of\ images"{}},}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ vertex\ shader."{}},}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ fragment\ shader."{}},}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ shaders."{}},}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ allocate\ memory"{}},}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLAD"{}},}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLFW"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ create\ window"{}},}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{stringliteral}{"{}String\ is\ too\ big\ to\ be\ drawn"{}},}
+\DoxyCodeLine{00035\ \};}
+
+\end{DoxyCode}

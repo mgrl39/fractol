@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__texture_8c" kind="file" language="C++">
+    <compoundname>mlx_texture.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/textures/mlx_texture.c</label>
+        <link refid="mlx__texture_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__texture_8c_1a140fd59feca1fefb31944cf074fc4c87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+        <definition>mlx_image_t * mlx_texture_to_image</definition>
+        <argsstring>(mlx_t *mlx, mlx_texture_t *texture)</argsstring>
+        <name>mlx_texture_to_image</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1abf95030dc43b4fba22354fb4ae0089a5" kindref="member">mlx_texture_t</ref> *</type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts a given texture to an image.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to use to create the image from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mlx_image_t* The image created from the texture. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_texture.c" line="17" column="13" bodyfile="MLX42/src/textures/mlx_texture.c" bodystart="17" bodyend="35"/>
+        <references refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" compoundref="mlx__images_8c" startline="161" endline="202">mlx_new_image</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="structmlx_1a3a11be0a71d7c8dd0c329e1caa230a50" compoundref="MLX42_8h" startline="364">mlx::width</references>
+      </memberdef>
+      <memberdef kind="function" id="mlx__texture_8c_1ae065852b98e9a3facb2eb5f69ac280a1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_delete_texture</definition>
+        <argsstring>(mlx_texture_t *texture)</argsstring>
+        <name>mlx_delete_texture</name>
+        <param>
+          <type><ref refid="MLX42_8h_1abf95030dc43b4fba22354fb4ae0089a5" kindref="member">mlx_texture_t</ref> *</type>
+          <declname>texture</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deletes a texture by freeing its allocated data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture to free. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_texture.c" line="37" column="6" bodyfile="MLX42/src/textures/mlx_texture.c" bodystart="37" bodyend="42"/>
+        <references refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" compoundref="mlx__utils_8c" startline="89" endline="98">mlx_freen</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_texture.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2022/02/17<sp/>01:02:24<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2023/03/09<sp/>11:03:47<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Public<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="MLX42_8h_1a140fd59feca1fefb31944cf074fc4c87" refkind="member"><highlight class="normal"><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="mlx__texture_8c_1a140fd59feca1fefb31944cf074fc4c87" kindref="member">mlx_texture_to_image</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="structmlx__texture" kindref="compound">mlx_texture_t</ref>*<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>);</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref><sp/>=<sp/><ref refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" kindref="member">mlx_new_image</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;<ref refid="structmlx_1a3a11be0a71d7c8dd0c329e1caa230a50" kindref="member">width</ref>,<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;height);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref><sp/>==<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixelx</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixeli</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;height;<sp/>i++)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixelx</ref><sp/>=<sp/>&amp;<ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;pixels[(i<sp/>*<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;width)<sp/>*<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;bytes_per_pixel];</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixeli</ref><sp/>=<sp/>&amp;<ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>-&gt;pixels[(i<sp/>*<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>-&gt;width)<sp/>*<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;bytes_per_pixel];</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">memmove</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixeli</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixelx</ref>,<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;width<sp/>*<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;bytes_per_pixel);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="MLX42_8h_1ae065852b98e9a3facb2eb5f69ac280a1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__texture_8c_1ae065852b98e9a3facb2eb5f69ac280a1" kindref="member">mlx_delete_texture</ref>(<ref refid="structmlx__texture" kindref="compound">mlx_texture_t</ref>*<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(2,<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>-&gt;pixels,<sp/><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/textures/mlx_texture.c"/>
+  </compounddef>
+</doxygen>

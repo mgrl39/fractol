@@ -1,0 +1,66 @@
+.TH "mlx_texture" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mlx_texture
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MLX42\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBuint32_t\fP \fBwidth\fP"
+.br
+.ti -1c
+.RI "\fBuint32_t\fP \fBheight\fP"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP \fBbytes_per_pixel\fP"
+.br
+.ti -1c
+.RI "\fBuint8_t\fP * \fBpixels\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base object for disk loaded textures\&. It contains rudementary information about the texture\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP The width of the texture\&. 
+.br
+\fIheight\fP The height of the texture\&. 
+.br
+\fIpixels\fP The literal pixel data\&. 
+.br
+\fIbytes_per_pixel\fP The amount of bytes in a pixel, always 4\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB263\fP of file \fBMLX42\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBuint8_t\fP mlx_texture::bytes_per_pixel"
+
+.PP
+Definition at line \fB267\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBuint32_t\fP mlx_texture::height"
+
+.PP
+Definition at line \fB266\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBuint8_t\fP* mlx_texture::pixels"
+
+.PP
+Definition at line \fB268\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBuint32_t\fP mlx_texture::width"
+
+.PP
+Definition at line \fB265\fP of file \fBMLX42\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

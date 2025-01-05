@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Textures_8md" kind="file" language="Markdown">
+    <compoundname>Textures.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Textures</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Textures<sp/>are<sp/>disk<sp/>loaded<sp/>images<sp/>stored<sp/>in<sp/>memory<sp/>and<sp/>hold<sp/>a<sp/>buffer<sp/>of<sp/>pixel<sp/>data<sp/>along<sp/>with<sp/>information<sp/></highlight></codeline>
+<codeline><highlight class="normal">about<sp/>the<sp/>image<sp/>such<sp/>as<sp/>width,<sp/>height,<sp/>and<sp/>bytes<sp/>per<sp/>pixel.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Textures<sp/>on<sp/>their<sp/>own<sp/>are<sp/>not<sp/>displayed<sp/>to<sp/>the<sp/>screen<sp/>but<sp/>have<sp/>to<sp/>be<sp/>displayed<sp/>using<sp/>[Images](./Images.md).</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>do<sp/>so<sp/>you<sp/>can<sp/>use<sp/>the<sp/>`mlx_texture_to_image`<sp/>function<sp/>that<sp/>creates<sp/>an<sp/>image<sp/>large<sp/>enough<sp/>to<sp/>store<sp/>the<sp/></highlight></codeline>
+<codeline><highlight class="normal">texture<sp/>which<sp/>then<sp/>can<sp/>be<sp/>displayed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Textures<sp/>vs<sp/>Images</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>might<sp/>be<sp/>a<sp/>bit<sp/>of<sp/>confusion<sp/>at<sp/>first<sp/>between<sp/>what<sp/>an<sp/>image<sp/>and<sp/>a<sp/>texture<sp/>is.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Textures:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Can<sp/>be<sp/>interpreted<sp/>as<sp/>a<sp/>painter&apos;s<sp/>&quot;color<sp/>palette&quot;.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Created<sp/>by<sp/>loading<sp/>an<sp/>image<sp/>file<sp/>FROM<sp/>disk.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Simply<sp/>contain<sp/>the<sp/>pixels,<sp/>width,<sp/>height<sp/>and<sp/>bytes<sp/>per<sp/>pixel<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Do<sp/>not<sp/>get<sp/>displayed<sp/>on<sp/>the<sp/>window<sp/>directly.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Images:</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Can<sp/>be<sp/>interpreted<sp/>as<sp/>a<sp/>painter&apos;s<sp/>&quot;canvas&quot;.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Can<sp/>be<sp/>created<sp/>FROM<sp/>a<sp/>texture<sp/>or<sp/>an<sp/>empty<sp/>buffer!</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Carries<sp/>more<sp/>information<sp/>besides<sp/>what<sp/>the<sp/>image<sp/>buffer<sp/>is<sp/>such<sp/>as<sp/>instance<sp/>count.</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>Also<sp/>holds<sp/>pixel<sp/>data<sp/>but<sp/>is<sp/>shared<sp/>among<sp/>its<sp/>instances,<sp/>it<sp/>is<sp/>not<sp/>loaded<sp/>from<sp/>disk<sp/>but<sp/>stored<sp/>in<sp/>memory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>summarize,<sp/>in<sp/>order<sp/>to<sp/>display<sp/>a<sp/>sprite<sp/>image<sp/>onto<sp/>our<sp/>window<sp/>we<sp/>would<sp/>first<sp/>load<sp/>the<sp/>texture<sp/>from<sp/></highlight></codeline>
+<codeline><highlight class="normal">disk<sp/>into<sp/>our<sp/>memory<sp/>and<sp/>store<sp/>the<sp/>information<sp/>in<sp/>a<sp/>`mlx_texture_t*`.<sp/>After<sp/>that<sp/>we<sp/>create<sp/>a<sp/>new<sp/>`mlx_image_t*`<sp/></highlight></codeline>
+<codeline><highlight class="normal">based<sp/>on<sp/>the<sp/>information<sp/>given<sp/>by<sp/>the<sp/>texture<sp/>and<sp/>then<sp/>we<sp/>can<sp/>display<sp/>our<sp/>image<sp/>onto<sp/>the<sp/>window.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Below<sp/>is<sp/>a<sp/>small<sp/>code<sp/>example<sp/>of<sp/>how<sp/>this<sp/>would<sp/>be<sp/>achieved:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```C</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;unistd.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;MLX42/MLX42.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>WIDTH<sp/>512</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>HEIGHT<sp/>512</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>error(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>puts(mlx_strerror(mlx_errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Start<sp/>mlx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>&quot;Test&quot;,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!mlx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Try<sp/>to<sp/>load<sp/>the<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_texture_t*<sp/>texture<sp/>=<sp/>mlx_load_png(&quot;./temp/sus.png&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!texture)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Convert<sp/>texture<sp/>to<sp/>a<sp/>displayable<sp/>image</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_image_t*<sp/>img<sp/>=<sp/>mlx_texture_to_image(mlx,<sp/>texture);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!img)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Display<sp/>the<sp/>image</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_image_to_window(mlx,<sp/>img,<sp/>0,<sp/>0)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Optional,<sp/>terminate<sp/>will<sp/>clean<sp/>up<sp/>any<sp/>leftovers,<sp/>this<sp/>is<sp/>just<sp/>to<sp/>demonstrate.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_delete_image(mlx,<sp/>img);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_delete_texture(texture);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Textures.md"/>
+  </compounddef>
+</doxygen>

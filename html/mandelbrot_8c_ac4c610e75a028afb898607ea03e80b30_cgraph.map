@@ -1,0 +1,18 @@
+<map id="render_mandelbrot" name="render_mandelbrot">
+<area shape="rect" id="Node000001" title="Renders the Mandelbrot set fractal." alt="" coords="5,70,152,95"/>
+<area shape="rect" id="Node000002" href="$calcs_8c.html#af548b6205acd0da6696adf5b79aa23a3" title="Calculates the scales and starting points for the fractal rendering." alt="" coords="209,5,369,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,67,201,46,203,52,127,73"/>
+<area shape="rect" id="Node000003" href="$calcs_8c.html#aa136a596dce9e2897d5eb0805a5a459f" title="Precomputes the coordinates for each pixel in the fractal." alt="" coords="213,70,364,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,80,200,80,200,85,153,85"/>
+<area shape="rect" id="Node000004" href="$mandelbrot_8c.html#a41962ad3e954759faba4734b566ba90e" title="Renders a single row of the Mandelbrot set." alt="" coords="200,119,377,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,93,221,114,220,119,133,98"/>
+<area shape="rect" id="Node000005" href="$calcs_8c.html#af87a6532ce68469fef69f9c207960094" title="Calculates the color of a pixel based on how many iterations it takes to &quot;escape&quot;." alt="" coords="697,94,817,119"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="345,117,425,104,562,98,683,100,683,105,562,103,426,109,345,122"/>
+<area shape="rect" id="Node000006" href="$mandelbrot_8c.html#af0b8186beab597df25a8f56717d0cb44" title="Performs an early scape check for a point in the Mandelbrot set." alt="" coords="425,119,620,145"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="377,129,412,129,412,135,377,135"/>
+<area shape="rect" id="Node000007" href="$mandelbrot_8c.html#acedaf5af2ba2cbe5b5efefb43b1068d4" title="Performs the iterations for a single point in the Mandelbrot set." alt="" coords="439,169,606,194"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="350,142,449,163,448,168,349,147"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="620,119,683,112,683,117,620,124"/>
+<area shape="rect" id="Node000008" href="$mandelbrot_8c.html#adb033de8daea75468f78428253a261cf" title="Computes the next iteration for a single point in the Mandelbrot set." alt="" coords="668,169,845,194"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="606,179,654,179,654,184,606,184"/>
+</map>

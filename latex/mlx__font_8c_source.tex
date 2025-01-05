@@ -1,0 +1,86 @@
+\doxysection{mlx\+\_\+font.\+c}
+\hypertarget{mlx__font_8c_source}{}\label{mlx__font_8c_source}\index{MLX42/src/font/mlx\_font.c@{MLX42/src/font/mlx\_font.c}}
+\mbox{\hyperlink{mlx__font_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ::::::::\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ mlx\_font.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ W2Wizard\ <main@w2wizard.dev>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2022/02/22\ 12:01:37\ by\ W2Wizard\ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2022/06/27\ 19:53:36\ by\ lde-\/la-\/h\ \ \ \ \ \ \#\#\#\#\#\#\#\#\ \ \ odam.nl\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{font_8h}{font.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MLX42__Int_8h}{MLX42/MLX42\_Int.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00016}00016\ \textcolor{comment}{//=\ Private\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00017}00017\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00018}00018\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00019}00019\ \textcolor{comment}{\ *\ Does\ the\ actual\ copying\ of\ pixels\ form\ the\ atlas\ buffer\ to\ the}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00020}00020\ \textcolor{comment}{\ *\ image\ buffer.}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00021}00021\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00022}00022\ \textcolor{comment}{\ *\ Skips\ any\ non-\/printable\ characters.}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00023}00023\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00024}00024\ \textcolor{comment}{\ *\ @param\ image\ The\ image\ to\ draw\ on.}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00025}00025\ \textcolor{comment}{\ *\ @param\ texture\ The\ font\_atlas.}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00026}00026\ \textcolor{comment}{\ *\ @param\ texoffset\ The\ character\ texture\ X\ offset.}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00027}00027\ \textcolor{comment}{\ *\ @param\ imgoffset\ The\ image\ X\ offset.}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00028}00028\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00029}\mbox{\hyperlink{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b}{00029}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b}{mlx\_draw\_char}}(\mbox{\hyperlink{structmlx__image}{mlx\_image\_t}}*\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{texoffset}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}})}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{texoffset}}\ <\ 0)}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}};}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}};}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\_t}}\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ =\ 0;\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <\ \mbox{\hyperlink{font_8h_a33f4fac49f2a5e27e2857eb27f054510}{FONT\_HEIGHT}};\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}++)}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}}\ =\ \&\mbox{\hyperlink{font_8h_aaac44d7ed095252ce671d33ae53adc70}{font\_atlas}}.\mbox{\hyperlink{structs__font_a210dbb07e24bfaf3e8ad5ab899363bfe}{pixels}}[(\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ *\ \mbox{\hyperlink{font_8h_aaac44d7ed095252ce671d33ae53adc70}{font\_atlas}}.\mbox{\hyperlink{structs__font_a759ef1ac84fa8677e5df4e10531d52f1}{width}}\ +\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{texoffset}})\ *\ \mbox{\hyperlink{MLX42__Int_8h_a8f40226da14df1fe52cd78fcda4ec5cb}{BPP}}];}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}}\ =\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>pixels\ +\ ((\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ *\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>width\ +\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}})\ *\ \mbox{\hyperlink{MLX42__Int_8h_a8f40226da14df1fe52cd78fcda4ec5cb}{BPP}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00040}00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{memcpy}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}},\ \mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}}\ *\ \mbox{\hyperlink{MLX42__Int_8h_a8f40226da14df1fe52cd78fcda4ec5cb}{BPP}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00041}00041\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00044}00044\ \textcolor{comment}{//=\ Public\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00046}\mbox{\hyperlink{MLX42_8h_a32147f4dab05c010e259546dd2407b66}{00046}}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__texture}{mlx\_texture\_t}}*\ \mbox{\hyperlink{mlx__font_8c_a32147f4dab05c010e259546dd2407b66}{mlx\_get\_font}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00047}00047\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__texture}{mlx\_texture\_t}}*)\&\mbox{\hyperlink{font_8h_aaac44d7ed095252ce671d33ae53adc70}{font\_atlas}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00049}00049\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00051}\mbox{\hyperlink{MLX42_8h_acbe9b61e9dd84efb36ed5a71faae79a9}{00051}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{mlx__font_8c_acbe9b61e9dd84efb36ed5a71faae79a9}{mlx\_get\_texoffset}}(\textcolor{keywordtype}{char}\ c)}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00052}00052\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00053}00053\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{\_isprint}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{isprint}}(c);}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//\ NOTE:\ Cheesy\ branchless\ operation\ :D}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00056}00056\ \ \ \ \ \textcolor{comment}{//\ +2\ To\ skip\ line\ separator\ in\ texture}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{return}\ (-\/1\ *\ !\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{\_isprint}}\ +\ ((\mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}}\ +\ 2)\ *\ (c\ -\/\ 32))\ *\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{\_isprint}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00060}\mbox{\hyperlink{MLX42_8h_a3c7e4790683c2dbc5159cb3a18c22e0b}{00060}}\ \mbox{\hyperlink{structmlx__image}{mlx\_image\_t}}*\ \mbox{\hyperlink{mlx__font_8c_a3c7e4790683c2dbc5159cb3a18c22e0b}{mlx\_put\_string}}(\mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00061}00061\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00062}00062\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00063}00063\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00065}00065\ \ \ \ \ \mbox{\hyperlink{structmlx__image}{mlx\_image\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}};}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00066}00066\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strlen}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}}\ >\ \mbox{\hyperlink{MLX42__Int_8h_a8cbe78424988489343e990ccd93ef86f}{MLX\_MAX\_STRING}})}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{void}*)\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a0d1211ffb4bf537150b83f3d56ed948f}{MLX\_STRTOOBIG}}));\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}}\ =\ \mbox{\hyperlink{MLX42_8h_abe515cadb9b88a9d064383da276c2467}{mlx\_new\_image}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}}\ *\ \mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}},\ \mbox{\hyperlink{font_8h_a33f4fac49f2a5e27e2857eb27f054510}{FONT\_HEIGHT}})))}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//\ Draw\ the\ text\ itself}}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00073}00073\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}};\ i++,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}}\ +=\ \mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}})}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b}{mlx\_draw\_char}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}},\ \mbox{\hyperlink{mlx__font_8c_acbe9b61e9dd84efb36ed5a71faae79a9}{mlx\_get\_texoffset}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}}[i]),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_a06dbfde4fce913678e09b0af263b0c06}{mlx\_image\_to\_window}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}},\ \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42_8h_a997cfd3dd07ea85a91df958ae0d1e7b5}{mlx\_delete\_image}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}}),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00079}00079\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}});}
+\DoxyCodeLine{\Hypertarget{mlx__font_8c_source_l00080}00080\ \}}
+
+\end{DoxyCode}

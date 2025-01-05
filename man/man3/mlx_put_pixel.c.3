@@ -1,0 +1,69 @@
+.TH "MLX42/src/mlx_put_pixel.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_put_pixel.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_draw_pixel\fP (\fBuint8_t\fP *\fBpixel\fP, \fBuint32_t\fP \fBcolor\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_put_pixel\fP (\fBmlx_image_t\fP *\fBimage\fP, \fBuint32_t\fP \fBx\fP, \fBuint32_t\fP \fBy\fP, \fBuint32_t\fP \fBcolor\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP mlx_draw_pixel (\fBuint8_t\fP * pixel, \fBuint32_t\fP color)"
+
+.PP
+Definition at line \fB16\fP of file \fBmlx_put_pixel\&.c\fP\&..PP
+.nf
+17 {
+18     *(pixel++) = (uint8_t)(color >> 24);
+19     *(pixel++) = (uint8_t)(color >> 16);
+20     *(pixel++) = (uint8_t)(color >> 8);
+21     *(pixel++) = (uint8_t)(color & 0xFF);
+22 }
+.fi
+
+.SS "\fBvoid\fP mlx_put_pixel (\fBmlx_image_t\fP * image, \fBuint32_t\fP x, \fBuint32_t\fP y, \fBuint32_t\fP color)"
+Sets / puts a pixel onto an image\&.
+.PP
+NOTE: It is considered undefined behaviour when putting a pixel beyond the bounds of an image\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIimage\fP The MLX instance handle\&. 
+.br
+\fIx\fP The X coordinate position\&. 
+.br
+\fIy\fP The Y coordinate position\&. 
+.br
+\fIcolor\fP The color value to put\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBmlx_put_pixel\&.c\fP\&..PP
+.nf
+27 {
+28     MLX_NONNULL(image);
+29     MLX_ASSERT(x < image\->width, "Pixel is out of bounds");
+30     MLX_ASSERT(y < image\->height, "Pixel is out of bounds");
+31 
+32     uint8_t* pixelstart = &image\->pixels[(y * image\->width + x) * BPP];
+33     mlx_draw_pixel(pixelstart, color);
+34 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

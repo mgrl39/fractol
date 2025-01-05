@@ -1,0 +1,208 @@
+.TH "calcs.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+calcs.c \- Core calculations for fractal rendering\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fractol\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcalculate_scales_and_limits\fP (\fBt_render_vars\fP *vars, \fBt_data\fP *data)"
+.br
+.RI "Calculates the scales and starting points for the fractal rendering\&. "
+.ti -1c
+.RI "int \fBprecompute_coords\fP (double **c_re, double **c_im, \fBt_render_vars\fP *vars)"
+.br
+.RI "Precomputes the coordinates for each pixel in the fractal\&. "
+.ti -1c
+.RI "void \fBrender_fractal\fP (\fBt_data\fP *data)"
+.br
+.RI "Renders the chosen fractal on the screen\&. "
+.ti -1c
+.RI "int \fBcalculate_color\fP (int iterations)"
+.br
+.RI "Calculates the color of a pixel based on how many iterations it takes to 'escape'\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Core calculations for fractal rendering\&. 
+
+This file contains the functions responsible for performing the core calculations required to render fractals\&. It handles:
+.IP "\(bu" 2
+Scaling and positioning the fractal within the rendering window\&.
+.IP "\(bu" 2
+Precomputing the coordinates ffor each pixel to optimize rendering performance\&.
+.IP "\(bu" 2
+Rendering the fractal by delegating to specific algorithms (Julia or Mandelbrot)\&.
+.IP "\(bu" 2
+Mapping iteration counts to colors for visually representing fractal complexity\&.
+.PP
+For non-technical users:
+.IP "  \(bu" 4
+This file performs the 'math magic' that powers the fractal visuals, calculating where and howw the fractal is drawn and colored on the screen\&. 
+.PP
+
+.PP
+
+.PP
+Definition in file \fBcalcs\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "int calculate_color (int iterations)"
+
+.PP
+Calculates the color of a pixel based on how many iterations it takes to 'escape'\&. Calculates the color based on the number of iterations\&.
+.PP
+This function determines the color of each pixel in the fractal by mapping the iteration count (how many steps we are needed to reach a threshold) to a color gradient\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+The function decides the color of each pooint in the fractal, creating the beautiful patterns you see based on how 'complex' the point is\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIiterations\fP Number of iterations required for the opint to 'escape'\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns the calculated color as an integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+132 {
+133     double  it_count;
+134     int     base_gray;
+135     t_color color;
+136 
+137     it_count = (double)iterations / MAX_ITERATIONS;
+138     base_gray = (30 + 190 * (it_count * (1 \- 0\&.2 * it_count)));
+139     color\&.r = base_gray \- (5 * (1 \- it_count) * it_count * it_count);
+140     color\&.g = base_gray \- (10 * (1 \- it_count) * (1 \- it_count));
+141     color\&.b = base_gray \- (15 * (1 \- it_count) * it_count);
+142     return ((0xFF << 24) | (color\&.r << 16) | (color\&.g << 8) | color\&.b);
+143 }
+.fi
+
+.SS "void calculate_scales_and_limits (\fBt_render_vars\fP * vars, \fBt_data\fP * data)"
+
+.PP
+Calculates the scales and starting points for the fractal rendering\&. Calculates scales and limits for rendering fractals\&.
+.PP
+This function determines how the fractal is scaled and positioned on the screen\&. It computes the scale factors for each pixel and establishes the starting points ffor the real and imaginary part of the fractal based on the zoom level and offsets\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+Think of it as setting the 'zoom' and 'pam' for the fractal to display it correctly on the screen\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIvars\fP Pointer to the rendering variables structure\&. 
+.br
+\fIdata\fP Pointer to the main data structure containing fractal information\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB52\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+53 {
+54     vars\->scale[SCALE_X] = 4\&.0 / (WIDTH * data\->zoom);
+55     vars\->scale[SCALE_Y] = 4\&.0 / (HEIGHT * data\->zoom);
+56     vars\->start[COMPLEX_RE] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_X];
+57     vars\->start[COMPLEX_IM] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_Y];
+58     vars\->pixels = (uint32_t *)data\->img\->pixels;
+59 }
+.fi
+
+.SS "int precompute_coords (double ** c_re, double ** c_im, \fBt_render_vars\fP * vars)"
+
+.PP
+Precomputes the coordinates for each pixel in the fractal\&. Precomputes coordinates for fractal rendering\&.
+.PP
+This function calculates the real and imaginary parts of the fractal for each pixel on the screen, storing them in arrays for quick access during rendering\&. It ensures that every point is prepared for the fractal calculations\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+Imagine this as creating a 'grid' of points where the fractal will be drawn\&. This points tell the program where to caalculate the colors\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIc_re\fP Pointer to the array storing real coordinates\&. 
+.br
+\fIc_im\fP Pointer to the array storing imaginary coordinates\&. 
+.br
+\fIvars\fP Pointer to the rendering variables structure\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 1 on success, or 0 if memory allocation fails\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+79 {
+80     int i;
+81 
+82     *c_re = (double *)malloc(WIDTH * sizeof(double));
+83     *c_im = (double *)malloc(HEIGHT * sizeof(double));
+84     if (!(*c_re) || !(*c_im))
+85         return (free(*c_re), free(*c_im), 0);
+86     i = \-1;
+87     while (++i < WIDTH)
+88         (*c_re)[i] = vars\->start[COMPLEX_RE] + i * vars\->scale[SCALE_X];
+89     i = \-1;
+90     while (++i < HEIGHT)
+91         (*c_im)[i] = vars\->start[COMPLEX_IM] + i * vars\->scale[SCALE_Y];
+92     return (1);
+93 }
+.fi
+
+.SS "void render_fractal (\fBt_data\fP * data)"
+
+.PP
+Renders the chosen fractal on the screen\&. Render the specified fractal\&.
+.PP
+This function selects the appropiate rendering algorithm based on the fractal type chosen by the user (Julia or Mandelbrot) and renders it on the screen\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+Depending on the type of fractal (Julia or Mandelbrot), this function draws the chosen fractal pattern for you to see\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP Pointer to the main data structure containing fractal and rendering details\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+109 {
+110     if (data\->fractal_type == JULIA)
+111         render_julia(data);
+112     else if (data\->fractal_type == MANDELBROT)
+113         render_mandelbrot(data);
+114 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

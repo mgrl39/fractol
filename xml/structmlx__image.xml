@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__image" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_image</compoundname>
+    <includes refid="MLX42_8h" local="no">MLX42.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__image_1adbe62016a5eae7f41c63e79b10253c23" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>const uint32_t mlx_image::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>mlx_image::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="342" column="15" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__image_1aeb67ac9d5e339f441c10aa68950ceb72" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>const uint32_t mlx_image::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>mlx_image::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="343" column="15" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__image_1a08b12d731991bae6f4e0f3cdd290afc4" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref> *</type>
+        <definition>uint8_t* mlx_image::pixels</definition>
+        <argsstring></argsstring>
+        <name>pixels</name>
+        <qualifiedname>mlx_image::pixels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="344" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__image_1abc0bfee5c4ead586c8aa86479758e6de" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1adc36bf24a0d926ad690b9a0993bb80d2" kindref="member">mlx_instance_t</ref> *</type>
+        <definition>mlx_instance_t* mlx_image::instances</definition>
+        <argsstring></argsstring>
+        <name>instances</name>
+        <qualifiedname>mlx_image::instances</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="345" column="15" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__image_1a58d1790928d2c67f5305a8d3be05bd1e" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t mlx_image::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <qualifiedname>mlx_image::count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="346" column="7" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="346" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__image_1afd8b0b66a404f61ff0b76e2a0621899d" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>bool mlx_image::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <qualifiedname>mlx_image::enabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="347" column="5" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="347" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__image_1a81032f152c61592d2e0e0d2155dc6b30" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_image::context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <qualifiedname>mlx_image::context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="348" column="5" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="348" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An image with an individual buffer that can be rendered. Any value can be modified except the width/height and context.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the image. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the image. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pixels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The literal pixel data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>instances</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An instance carrying the X, Y and Z location data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The element count of the instances array. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true the image is drawn onto the screen, else it&apos;s not. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Abstracted OpenGL data. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_image</label>
+        <link refid="structmlx__image"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+instances</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>mlx_instance</label>
+        <link refid="structmlx__instance"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42.h" line="340" column="1" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="341" bodyend="349"/>
+    <listofallmembers>
+      <member refid="structmlx__image_1a81032f152c61592d2e0e0d2155dc6b30" prot="public" virt="non-virtual"><scope>mlx_image</scope><name>context</name></member>
+      <member refid="structmlx__image_1a58d1790928d2c67f5305a8d3be05bd1e" prot="public" virt="non-virtual"><scope>mlx_image</scope><name>count</name></member>
+      <member refid="structmlx__image_1afd8b0b66a404f61ff0b76e2a0621899d" prot="public" virt="non-virtual"><scope>mlx_image</scope><name>enabled</name></member>
+      <member refid="structmlx__image_1aeb67ac9d5e339f441c10aa68950ceb72" prot="public" virt="non-virtual"><scope>mlx_image</scope><name>height</name></member>
+      <member refid="structmlx__image_1abc0bfee5c4ead586c8aa86479758e6de" prot="public" virt="non-virtual"><scope>mlx_image</scope><name>instances</name></member>
+      <member refid="structmlx__image_1a08b12d731991bae6f4e0f3cdd290afc4" prot="public" virt="non-virtual"><scope>mlx_image</scope><name>pixels</name></member>
+      <member refid="structmlx__image_1adbe62016a5eae7f41c63e79b10253c23" prot="public" virt="non-virtual"><scope>mlx_image</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,325 @@
+.TH "MLX42/src/mlx_window.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_window.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_update_matrix\fP (\fBconst\fP \fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_resize_callback\fP (\fBGLFWwindow\fP *window, \fBint32_t\fP \fBwidth\fP, \fBint32_t\fP \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_close_callback\fP (\fBGLFWwindow\fP *window)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_close_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_closefunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_resize_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_resizefunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_icon\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_texture_t\fP *\fBimage\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBxpos\fP, \fBint32_t\fP \fBypos\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_get_window_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP *\fBxpos\fP, \fBint32_t\fP *\fBypos\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_size\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBnew_width\fP, \fBint32_t\fP \fBnew_height\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_limit\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBmin_w\fP, \fBint32_t\fP \fBmin_h\fP, \fBint32_t\fP \fBmax_w\fP, \fBint32_t\fP \fBmax_h\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_title\fP (\fBmlx_t\fP *\fBmlx\fP, \fBconst\fP \fBchar\fP *\fBtitle\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvoid\fP mlx_close_callback (\fBGLFWwindow\fP * window)\fC [static]\fP"
+
+.PP
+Definition at line \fB53\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+54 {
+55     const mlx_t* mlx = glfwGetWindowUserPointer(window);
+56     const mlx_close_t close_hook = ((mlx_ctx_t*)mlx\->context)\->close_hook;
+57 
+58     close_hook\&.func(close_hook\&.param);
+59 }
+.fi
+
+.SS "\fBvoid\fP mlx_close_hook (\fBmlx_t\fP * mlx, \fBmlx_closefunc\fP func, \fBvoid\fP * param)"
+This function sets the close callback, which is called in attempt to close the window device such as a close window widget used in the window bar\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The close callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+64 {
+65     MLX_NONNULL(mlx);
+66     MLX_NONNULL(func);
+67 
+68     mlx_ctx_t* mlxctx = mlx\->context;
+69     mlxctx\->close_hook\&.func = func;
+70     mlxctx\->close_hook\&.param = param;
+71     glfwSetWindowCloseCallback(mlx\->window, mlx_close_callback);
+72 }
+.fi
+
+.SS "\fBvoid\fP mlx_get_window_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP * xpos, \fBint32_t\fP * ypos)"
+Gets the window's position\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIxpos\fP The x position\&. 
+.br
+\fIypos\fP The y position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB106\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+107 {
+108     MLX_NONNULL(mlx);
+109     MLX_NONNULL(xpos);
+110     MLX_NONNULL(ypos);
+111 
+112     glfwGetWindowPos(mlx\->window, xpos, ypos);
+113 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_resize_callback (\fBGLFWwindow\fP * window, \fBint32_t\fP width, \fBint32_t\fP height)\fC [static]\fP"
+
+.PP
+Definition at line \fB44\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+45 {
+46     const mlx_t* mlx = glfwGetWindowUserPointer(window);
+47     const mlx_ctx_t* mlxctx = mlx\->context;
+48 
+49     if (mlxctx\->resize_hook\&.func)
+50         mlxctx\->resize_hook\&.func(width, height, mlxctx\->resize_hook\&.param);
+51 }
+.fi
+
+.SS "\fBvoid\fP mlx_resize_hook (\fBmlx_t\fP * mlx, \fBmlx_resizefunc\fP func, \fBvoid\fP * param)"
+This function sets the resize callback, which is called when the window is resized
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The resize callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB74\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+75 {
+76     MLX_NONNULL(mlx);
+77     MLX_NONNULL(func);
+78 
+79     mlx_ctx_t* mlxctx = mlx\->context;
+80     mlxctx\->resize_hook\&.func = func;
+81     mlxctx\->resize_hook\&.param = param;
+82     glfwSetWindowSizeCallback(mlx\->window, mlx_resize_callback);
+83 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_icon (\fBmlx_t\fP * mlx, \fBmlx_texture_t\fP * image)"
+Lets you set a custom image as the program icon\&.
+.PP
+NOTE: In MacOS this function does nothing, you should use the bundles icon to set the dock bar icon\&. 
+.PP
+\fBSee also\fP
+.RS 4
+: https://9to5mac.com/2021/11/08/change-mac-icons/ 
+.PP
+: https://github.com/glfw/glfw/issues/2041
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIimage\fP The image to use as icon\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB85\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+86 {
+87     MLX_NONNULL(mlx);
+88     MLX_NONNULL(image);
+89 
+90     const GLFWimage icon = {
+91         \&.width = image\->width,
+92         \&.height = image\->height,
+93         \&.pixels = image\->pixels
+94     };
+95 
+96     glfwSetWindowIcon(mlx\->window, 1, &icon);
+97 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_limit (\fBmlx_t\fP * mlx, \fBint32_t\fP min_w, \fBint32_t\fP min_h, \fBint32_t\fP max_w, \fBint32_t\fP max_h)"
+Sets the size limits of the specified window\&. Will force the window to not be resizable past or below the given values\&.
+.PP
+Pass -1 for no limit to any of the min/max parameters to ignore that boundary\&. For instance if you want a min window size but the max window size can be whatever\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fImin_w\fP The min width of the window\&. 
+.br
+\fImax_w\fP The max width of the window\&. 
+.br
+\fImin_h\fP The min height of the window\&. 
+.br
+\fImax_h\fP The max height of the window\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB124\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+125 {
+126     MLX_NONNULL(mlx);
+127 
+128     glfwSetWindowSizeLimits(mlx\->window, min_w, min_h, max_w, max_h);
+129 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP xpos, \fBint32_t\fP ypos)"
+Sets the window's position\&.
+.PP
+Do not use this function to move an already visible window unless you have very good reasons for doing so, as it will confuse and annoy the user\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIxpos\fP The x position\&. 
+.br
+\fIypos\fP The y position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB99\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+100 {
+101     MLX_NONNULL(mlx);
+102 
+103     glfwSetWindowPos(mlx\->window, xpos, ypos);
+104 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_size (\fBmlx_t\fP * mlx, \fBint32_t\fP new_width, \fBint32_t\fP new_height)"
+Changes the window size to the newly specified values\&. Use this to update the window width and height values in the mlx handle\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fInew_width\fP The new desired width\&. 
+.br
+\fInew_height\fP The new desired height\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB115\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+116 {
+117     MLX_NONNULL(mlx);
+118 
+119     mlx\->width = new_width;
+120     mlx\->height = new_height;
+121     glfwSetWindowSize(mlx\->window, new_width, new_height);
+122 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_title (\fBmlx_t\fP * mlx, \fBconst\fP \fBchar\fP * title)"
+Sets the title of the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fItitle\fP The window title\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+132 {
+133     MLX_NONNULL(mlx);
+134     MLX_NONNULL(title);
+135 
+136     glfwSetWindowTitle(mlx\->window, title);
+137 }
+.fi
+
+.SS "\fBvoid\fP mlx_update_matrix (\fBconst\fP \fBmlx_t\fP * mlx)"
+Recalculate the view projection matrix, used by images for screen pos Reference: https://bit.ly/3KuHOu1 (Matrix View Projection) In case the setting to stretch the image is set, we maintain the width and height but not the depth\&.
+.PP
+Definition at line \fB21\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+22 {
+23     const mlx_ctx_t* mlxctx = mlx\->context;
+24     const float depth = mlxctx\->zdepth;
+25 
+26     /**
+27      * In case the setting to stretch the image is set, we maintain the width and height but not
+28      * the depth\&.
+29      */
+30     const float width = mlx_settings[MLX_STRETCH_IMAGE] ? mlxctx\->initialWidth : mlx\->width;
+31     const float height = mlx_settings[MLX_STRETCH_IMAGE] ? mlxctx\->initialHeight : mlx\->height;
+32 
+33     const float matrix[16] = {
+34         2\&.f / width, 0, 0, 0,
+35         0, 2\&.f / \-(height), 0, 0,
+36         0, 0, \-2\&.f / (depth \- \-depth), 0,
+37         \-1, \-(height / \-height),
+38         \-((depth + \-depth) / (depth \- \-depth)), 1
+39     };
+40 
+41     glUniformMatrix4fv(glGetUniformLocation(mlxctx\->shaderprogram, "ProjMatrix"), 1, GL_FALSE, matrix);
+42 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

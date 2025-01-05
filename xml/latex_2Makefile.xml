@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="latex_2Makefile" kind="file" language="C++">
+    <compoundname>Makefile</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">LATEX_CMD?=pdflatex</highlight></codeline>
+<codeline><highlight class="normal">MKIDX_CMD?=makeindex</highlight></codeline>
+<codeline><highlight class="normal">BIBTEX_CMD?=bibtex</highlight></codeline>
+<codeline><highlight class="normal">LATEX_COUNT?=8</highlight></codeline>
+<codeline><highlight class="normal">MANUAL_FILE?=refman</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">all:<sp/>$(MANUAL_FILE).pdf</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">pdf:<sp/>$(MANUAL_FILE).pdf</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">$(MANUAL_FILE).pdf:<sp/>clean<sp/>$(MANUAL_FILE).tex</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(LATEX_CMD)<sp/>$(MANUAL_FILE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(MKIDX_CMD)<sp/>$(MANUAL_FILE).idx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(LATEX_CMD)<sp/>$(MANUAL_FILE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>latex_count=$(LATEX_COUNT)<sp/>;<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>grep<sp/>-E<sp/>-s<sp/>&apos;Rerun<sp/>(LaTeX|to<sp/>get<sp/>cross-references<sp/>right|to<sp/>get<sp/>bibliographical<sp/>references<sp/>right)&apos;<sp/>$(MANUAL_FILE).log<sp/>&amp;&amp;<sp/>[<sp/>$$latex_count<sp/>-gt<sp/>0<sp/>]<sp/>;\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>do<sp/>\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>echo<sp/>&quot;Rerunning<sp/>latex....&quot;<sp/>;\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>$(LATEX_CMD)<sp/>$(MANUAL_FILE)<sp/>;\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>latex_count=`expr<sp/>$$latex_count<sp/>-<sp/>1`<sp/>;\</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>done</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(MKIDX_CMD)<sp/>$(MANUAL_FILE).idx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(LATEX_CMD)<sp/>$(MANUAL_FILE)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">clean:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rm<sp/>-f<sp/>*.ps<sp/>*.dvi<sp/>*.aux<sp/>*.toc<sp/>*.idx<sp/>*.ind<sp/>*.ilg<sp/>*.log<sp/>*.out<sp/>*.brf<sp/>*.blg<sp/>*.bbl<sp/>$(MANUAL_FILE).pdf</highlight></codeline>
+    </programlisting>
+    <location file="/home/dev/frfr/latex/Makefile"/>
+  </compounddef>
+</doxygen>

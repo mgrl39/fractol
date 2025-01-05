@@ -1,0 +1,137 @@
+\doxysection{mlx\+\_\+image Struct Reference}
+\hypertarget{structmlx__image}{}\label{structmlx__image}\index{mlx\_image@{mlx\_image}}
+
+
+{\ttfamily \#include $<$MLX42.\+h$>$}
+
+
+
+Collaboration diagram for mlx\+\_\+image\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{structmlx__image__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} \mbox{\hyperlink{structmlx__image_adbe62016a5eae7f41c63e79b10253c23}{width}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} \mbox{\hyperlink{structmlx__image_aeb67ac9d5e339f441c10aa68950ceb72}{height}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmlx__image_a08b12d731991bae6f4e0f3cdd290afc4}{pixels}}
+\item 
+\mbox{\hyperlink{MLX42_8h_adc36bf24a0d926ad690b9a0993bb80d2}{mlx\+\_\+instance\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmlx__image_abc0bfee5c4ead586c8aa86479758e6de}{instances}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{structmlx__image_a58d1790928d2c67f5305a8d3be05bd1e}{count}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{structmlx__image_afd8b0b66a404f61ff0b76e2a0621899d}{enabled}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmlx__image_a81032f152c61592d2e0e0d2155dc6b30}{context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An image with an individual buffer that can be rendered. Any value can be modified except the width/height and context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & The width of the image. \\
+\hline
+{\em height} & The height of the image. \\
+\hline
+{\em pixels} & The literal pixel data. \\
+\hline
+{\em instances} & An instance carrying the X, Y and Z location data. \\
+\hline
+{\em count} & The element count of the instances array. \\
+\hline
+{\em enabled} & If true the image is drawn onto the screen, else it\textquotesingle{}s not. \\
+\hline
+{\em context} & Abstracted Open\+GL data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00340}{340}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structmlx__image_a81032f152c61592d2e0e0d2155dc6b30}\label{structmlx__image_a81032f152c61592d2e0e0d2155dc6b30} 
+\index{mlx\_image@{mlx\_image}!context@{context}}
+\index{context@{context}!mlx\_image@{mlx\_image}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}\texorpdfstring{$\ast$}{*} mlx\+\_\+image\+::context}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00348}{348}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+\Hypertarget{structmlx__image_a58d1790928d2c67f5305a8d3be05bd1e}\label{structmlx__image_a58d1790928d2c67f5305a8d3be05bd1e} 
+\index{mlx\_image@{mlx\_image}!count@{count}}
+\index{count@{count}!mlx\_image@{mlx\_image}}
+\doxysubsubsection{\texorpdfstring{count}{count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} mlx\+\_\+image\+::count}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00346}{346}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+\Hypertarget{structmlx__image_afd8b0b66a404f61ff0b76e2a0621899d}\label{structmlx__image_afd8b0b66a404f61ff0b76e2a0621899d} 
+\index{mlx\_image@{mlx\_image}!enabled@{enabled}}
+\index{enabled@{enabled}!mlx\_image@{mlx\_image}}
+\doxysubsubsection{\texorpdfstring{enabled}{enabled}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+image\+::enabled}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00347}{347}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+\Hypertarget{structmlx__image_aeb67ac9d5e339f441c10aa68950ceb72}\label{structmlx__image_aeb67ac9d5e339f441c10aa68950ceb72} 
+\index{mlx\_image@{mlx\_image}!height@{height}}
+\index{height@{height}!mlx\_image@{mlx\_image}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} mlx\+\_\+image\+::height}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00343}{343}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+\Hypertarget{structmlx__image_abc0bfee5c4ead586c8aa86479758e6de}\label{structmlx__image_abc0bfee5c4ead586c8aa86479758e6de} 
+\index{mlx\_image@{mlx\_image}!instances@{instances}}
+\index{instances@{instances}!mlx\_image@{mlx\_image}}
+\doxysubsubsection{\texorpdfstring{instances}{instances}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MLX42_8h_adc36bf24a0d926ad690b9a0993bb80d2}{mlx\+\_\+instance\+\_\+t}}\texorpdfstring{$\ast$}{*} mlx\+\_\+image\+::instances}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00345}{345}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+\Hypertarget{structmlx__image_a08b12d731991bae6f4e0f3cdd290afc4}\label{structmlx__image_a08b12d731991bae6f4e0f3cdd290afc4} 
+\index{mlx\_image@{mlx\_image}!pixels@{pixels}}
+\index{pixels@{pixels}!mlx\_image@{mlx\_image}}
+\doxysubsubsection{\texorpdfstring{pixels}{pixels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\+\_\+t}}\texorpdfstring{$\ast$}{*} mlx\+\_\+image\+::pixels}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00344}{344}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+\Hypertarget{structmlx__image_adbe62016a5eae7f41c63e79b10253c23}\label{structmlx__image_adbe62016a5eae7f41c63e79b10253c23} 
+\index{mlx\_image@{mlx\_image}!width@{width}}
+\index{width@{width}!mlx\_image@{mlx\_image}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} mlx\+\_\+image\+::width}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42_8h_source_l00342}{342}} of file \mbox{\hyperlink{MLX42_8h_source}{MLX42.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MLX42/include/\+MLX42/\mbox{\hyperlink{MLX42_8h}{MLX42.\+h}}\end{DoxyCompactItemize}

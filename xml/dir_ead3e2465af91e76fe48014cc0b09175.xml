@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_ead3e2465af91e76fe48014cc0b09175" kind="dir">
+    <compoundname>MLX42/lib/png</compoundname>
+    <innerfile refid="lodepng_8c">lodepng.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/lib/png/"/>
+  </compounddef>
+</doxygen>

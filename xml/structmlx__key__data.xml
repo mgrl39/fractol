@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__key__data" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_key_data</compoundname>
+    <includes refid="MLX42_8h" local="no">MLX42.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__key__data_1a3f800a855c5007c21a16eabbe71780c5" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1a384f75c85cf2a9ede19f2f5ec80cf817" kindref="member">keys_t</ref></type>
+        <definition>keys_t mlx_key_data::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <qualifiedname>mlx_key_data::key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="322" column="7" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="322" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__key__data_1a1cef9b0787e380755b67118f6e14c909" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1a75c31c434d25bd8e8bc7e1353046d35a" kindref="member">action_t</ref></type>
+        <definition>action_t mlx_key_data::action</definition>
+        <argsstring></argsstring>
+        <name>action</name>
+        <qualifiedname>mlx_key_data::action</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="323" column="9" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="323" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__key__data_1ae70d868c1a66d57ef6970c660622538b" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_key_data::os_key</definition>
+        <argsstring></argsstring>
+        <name>os_key</name>
+        <qualifiedname>mlx_key_data::os_key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="324" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__key__data_1a57775054b178cbf3961a5d48483a2abc" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1ae76f7645c0b6b1ecbfb542e0aba5cd83" kindref="member">modifier_key_t</ref></type>
+        <definition>modifier_key_t mlx_key_data::modifier</definition>
+        <argsstring></argsstring>
+        <name>modifier</name>
+        <qualifiedname>mlx_key_data::modifier</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="325" column="15" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="325" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Key function callback data. Data related to the mlx_key_hook function</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key that was pressed. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>action</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The action that was done with the key. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>os_key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The os_key is unique for every key, and will have a different value/keycode depending on the platform. They may be consistent on different platforms. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>modifier</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The modifier key that was pressed, 0 if no key was pressed. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_key_data</label>
+        <link refid="structmlx__key__data"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42.h" line="320" column="1" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="321" bodyend="326"/>
+    <listofallmembers>
+      <member refid="structmlx__key__data_1a1cef9b0787e380755b67118f6e14c909" prot="public" virt="non-virtual"><scope>mlx_key_data</scope><name>action</name></member>
+      <member refid="structmlx__key__data_1a3f800a855c5007c21a16eabbe71780c5" prot="public" virt="non-virtual"><scope>mlx_key_data</scope><name>key</name></member>
+      <member refid="structmlx__key__data_1a57775054b178cbf3961a5d48483a2abc" prot="public" virt="non-virtual"><scope>mlx_key_data</scope><name>modifier</name></member>
+      <member refid="structmlx__key__data_1ae70d868c1a66d57ef6970c660622538b" prot="public" virt="non-virtual"><scope>mlx_key_data</scope><name>os_key</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

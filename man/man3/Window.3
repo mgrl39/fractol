@@ -1,0 +1,97 @@
+.TH "Window" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Window
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <WindowFixture\&.hpp>\fP
+.PP
+Inherits testing::Test\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP \fBSetUp\fP () \fBoverride\fP"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBTearDown\fP () \fBoverride\fP"
+.br
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBmlx_t\fP * \fBmlx\fP = \fBnullptr\fP"
+.br
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBconstexpr\fP \fBconst\fP \fBchar\fP * \fBname\fP = 'MLX42'"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBconst\fP \fBint32_t\fP \fBheight\fP = 400"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBconst\fP \fBint32_t\fP \fBwidth\fP = 400"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB11\fP of file \fBWindowFixture\&.hpp\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBvoid\fP Window::SetUp ()\fC [inline]\fP, \fC [override]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB20\fP of file \fBWindowFixture\&.hpp\fP\&..PP
+.nf
+21     {
+22         // reset error code as it is shared between tests
+23         mlx_errno = MLX_SUCCESS;
+24         mlx_set_setting(MLX_HEADLESS, true);
+25         ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+26         mlx = mlx_init(width, height, name, false);
+27         ASSERT_NE(mlx, nullptr);
+28         ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+29     }
+.fi
+
+.SS "\fBvoid\fP Window::TearDown ()\fC [inline]\fP, \fC [override]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB31\fP of file \fBWindowFixture\&.hpp\fP\&..PP
+.nf
+32     {
+33         ASSERT_NE(mlx, nullptr);
+34         mlx_terminate(mlx);
+35         ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+36     }
+.fi
+
+.SH "Field Documentation"
+.PP 
+.SS "\fBconst\fP \fBint32_t\fP Window::height = 400\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBWindowFixture\&.hpp\fP\&.
+.SS "\fBmlx_t\fP* Window::mlx = \fBnullptr\fP\fC [protected]\fP"
+
+.PP
+Definition at line \fB14\fP of file \fBWindowFixture\&.hpp\fP\&.
+.SS "\fBconstexpr\fP \fBconst\fP \fBchar\fP* Window::name = 'MLX42'\fC [static]\fP, \fC [constexpr]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB16\fP of file \fBWindowFixture\&.hpp\fP\&.
+.SS "\fBconst\fP \fBint32_t\fP Window::width = 400\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line \fB18\fP of file \fBWindowFixture\&.hpp\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

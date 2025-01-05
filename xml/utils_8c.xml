@@ -1,0 +1,307 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="utils_8c" kind="file" language="C++">
+    <compoundname>utils.c</compoundname>
+    <includes refid="fractol_8h" local="yes">fractol.h</includes>
+    <includes local="no">unistd.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>fractol.h</label>
+        <link refid="fractol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>utils.c</label>
+        <link refid="utils_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+      </node>
+      <node id="4">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+      <node id="6">
+        <label>unistd.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="utils_8c_1aba5be72a261c5846a5d6e7b315548d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ft_atod</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>ft_atod</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Converts a string to a floating-point number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts a string to a double. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="utils.c" line="19" column="7" bodyfile="utils.c" bodystart="19" bodyend="46"/>
+        <references refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" compoundref="fractol_8h" startline="126">s_atod_data::divisor</references>
+        <references refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" compoundref="fractol_8h" startline="127">s_atod_data::fraction</references>
+        <references refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" compoundref="fractol_8h" startline="123">s_atod_data::i</references>
+        <references refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" compoundref="fractol_8h" startline="125">s_atod_data::result</references>
+        <references refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" compoundref="fractol_8h" startline="124">s_atod_data::sign</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="utils_8c_1a1f2ff2312e5994560c9537cd9173be94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_strcmp</definition>
+        <argsstring>(const char *s1, const char *s2)</argsstring>
+        <name>ft_strcmp</name>
+        <param>
+          <type>const char *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+<para>Compares two strings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="utils.c" line="51" column="4" bodyfile="utils.c" bodystart="51" bodyend="59"/>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+        <referencedby refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" compoundref="main_8c" startline="122" endline="148">validate_arguments</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="utils_8c_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handle_key</definition>
+        <argsstring>(mlx_key_data_t keydata, void *param)</argsstring>
+        <name>handle_key</name>
+        <param>
+          <type>mlx_key_data_t</type>
+          <declname>keydata</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+<para>Handles key inputs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="utils.c" line="64" column="5" bodyfile="utils.c" bodystart="64" bodyend="86"/>
+        <references refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" compoundref="fractol_8h" startline="96">s_data::mlx</references>
+        <references refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" compoundref="fractol_8h" startline="95">s_data::offset</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" compoundref="fractol_8h" startline="34">OFFSET_X</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" compoundref="fractol_8h" startline="35">OFFSET_Y</references>
+        <references refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</references>
+        <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
+        <references refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" compoundref="fractol_8h" startline="190">ZOOM_IN</references>
+        <references refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" compoundref="fractol_8h" startline="191">ZOOM_OUT</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="utils_8c_1ace17996cda407bf3eb3480f07ccdd107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handle_scroll</definition>
+        <argsstring>(double xdelta, double ydelta, void *param)</argsstring>
+        <name>handle_scroll</name>
+        <param>
+          <type>double</type>
+          <declname>xdelta</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ydelta</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+<para>Handles mouse scroll input for zooming. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Handles scroll inputs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="utils.c" line="91" column="5" bodyfile="utils.c" bodystart="91" bodyend="104"/>
+        <references refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</references>
+        <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
+        <references refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" compoundref="fractol_8h" startline="190">ZOOM_IN</references>
+        <references refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" compoundref="fractol_8h" startline="191">ZOOM_OUT</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="utils_8c_1a36c588cff7b2e8e39224a1f6105fa39d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fr_putstr_fd</definition>
+        <argsstring>(char *s, int fd)</argsstring>
+        <name>fr_putstr_fd</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+<para>Writes a string to a file descriptor and returns. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes a string to a file descriptor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="utils.c" line="109" column="4" bodyfile="utils.c" bodystart="109" bodyend="121"/>
+        <referencedby refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" compoundref="main_8c" startline="87" endline="104">exit_with_error</referencedby>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>utils.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>meghribe<sp/>&lt;meghribe@student.42barcelon<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/12/07<sp/>17:32:45<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2025/01/04<sp/>16:33:38<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fractol_8h" kindref="compound">fractol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="16"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Converts<sp/>a<sp/>string<sp/>to<sp/>a<sp/>floating-point<sp/>number.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="utils_8c_1aba5be72a261c5846a5d6e7b315548d33" kindref="member">ft_atod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__atod__data" kindref="compound">t_atod_data</ref><sp/>d;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" kindref="member">result</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" kindref="member">fraction</ref><sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" kindref="member">divisor</ref><sp/>=<sp/>10.0;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" kindref="member">sign</ref><sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>==<sp/>32<sp/>||<sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>&gt;=<sp/>9<sp/>&amp;&amp;<sp/>str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>&lt;=<sp/>13))</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>++;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>||<sp/>str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>++]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" kindref="member">sign</ref><sp/>=<sp/>-1;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" kindref="member">result</ref><sp/>=<sp/>d.<ref refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" kindref="member">result</ref><sp/>*<sp/>10.0<sp/>+<sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>++]<sp/>-<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>++;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" kindref="member">fraction</ref><sp/>+=<sp/>(str[d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>]<sp/>-<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal">)<sp/>/<sp/>d.<ref refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" kindref="member">divisor</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" kindref="member">divisor</ref><sp/>*=<sp/>10.0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>d.<ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>++;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(d.<ref refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" kindref="member">sign</ref><sp/>*<sp/>(d.<ref refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" kindref="member">result</ref><sp/>+<sp/>d.<ref refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" kindref="member">fraction</ref>));</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="48"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Compares<sp/>two<sp/>strings.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="utils_8c_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s2)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(s1[i]<sp/>==<sp/>s2[i]<sp/>&amp;&amp;<sp/>s1[i])</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(s1[i]<sp/>-<sp/>s2[i]);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Handles<sp/>keyboard<sp/>input.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="utils_8c_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" kindref="member">handle_key</ref>(mlx_key_data_t<sp/>keydata,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*param)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/><sp/>*data;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>data<sp/>=<sp/>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*)param;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keydata.key<sp/>==<sp/>MLX_KEY_ESCAPE)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_close_window(data-&gt;<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keydata.key<sp/>==<sp/>MLX_KEY_W)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" kindref="member">OFFSET_Y</ref>]<sp/>-=<sp/>0.1<sp/>/<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keydata.key<sp/>==<sp/>MLX_KEY_S)</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" kindref="member">OFFSET_Y</ref>]<sp/>+=<sp/>0.1<sp/>/<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keydata.key<sp/>==<sp/>MLX_KEY_A)</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" kindref="member">OFFSET_X</ref>]<sp/>-=<sp/>0.1<sp/>/<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keydata.key<sp/>==<sp/>MLX_KEY_D)</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" kindref="member">OFFSET_X</ref>]<sp/>+=<sp/>0.1<sp/>/<sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keydata.key<sp/>==<sp/>MLX_KEY_UP)</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>*=<sp/><ref refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" kindref="member">ZOOM_IN</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(keydata.key<sp/>==<sp/>MLX_KEY_DOWN)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>*=<sp/><ref refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" kindref="member">ZOOM_OUT</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>&lt;<sp/>1e-5)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>=<sp/>1e-5;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" kindref="member">render_fractal</ref>(data);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Handles<sp/>mouse<sp/>scroll<sp/>input<sp/>for<sp/>zooming.</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="utils_8c_1ace17996cda407bf3eb3480f07ccdd107" kindref="member">handle_scroll</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xdelta,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ydelta,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*param)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/><sp/>*data;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>(void)xdelta;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>data<sp/>=<sp/>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*)param;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ydelta<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>*=<sp/><ref refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" kindref="member">ZOOM_IN</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>*=<sp/><ref refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" kindref="member">ZOOM_OUT</ref>;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>&lt;<sp/>1e-5)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>=<sp/>1e-5;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" kindref="member">render_fractal</ref>(data);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Writes<sp/>a<sp/>string<sp/>to<sp/>a<sp/>file<sp/>descriptor<sp/>and<sp/>returns<sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="utils_8c_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!s)</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(s[i])</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>+=<sp/>write(fd,<sp/>&amp;s[i++],<sp/>1);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(count);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="utils.c"/>
+  </compounddef>
+</doxygen>

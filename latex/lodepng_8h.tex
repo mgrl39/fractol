@@ -1,0 +1,1060 @@
+\doxysection{MLX42/include/lodepng/lodepng.h File Reference}
+\hypertarget{lodepng_8h}{}\label{lodepng_8h}\index{MLX42/include/lodepng/lodepng.h@{MLX42/include/lodepng/lodepng.h}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for lodepng.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{lodepng_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lodepng_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}}
+\item 
+struct \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}}
+\item 
+struct \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}}
+\item 
+struct \mbox{\hyperlink{structLodePNGTime}{Lode\+PNGTime}}
+\item 
+struct \mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}}
+\item 
+struct \mbox{\hyperlink{structLodePNGDecoderSettings}{Lode\+PNGDecoder\+Settings}}
+\item 
+struct \mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}}
+\item 
+struct \mbox{\hyperlink{structLodePNGEncoderSettings}{Lode\+PNGEncoder\+Settings}}
+\item 
+struct \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_a66c036f5e0213ff2cc380bab4486738d}{LODEPNG\+\_\+\+COMPILE\+\_\+\+ZLIB}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_af557b37dd9fcaed5be60c0b143e54b38}{LODEPNG\+\_\+\+COMPILE\+\_\+\+PNG}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_a823441da1dd5ddf7282d1f3bca124938}{LODEPNG\+\_\+\+COMPILE\+\_\+\+DECODER}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_a2285c1e239bc24607901ad98e8ebb7eb}{LODEPNG\+\_\+\+COMPILE\+\_\+\+ENCODER}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_af8e782a2a5642d12dba9aa38a7a00133}{LODEPNG\+\_\+\+COMPILE\+\_\+\+DISK}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_a32282377bca2e3e43bcf16aa9daa8554}{LODEPNG\+\_\+\+COMPILE\+\_\+\+ANCILLARY\+\_\+\+CHUNKS}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_a17778a07a7c374034f826e359744cc5b}{LODEPNG\+\_\+\+COMPILE\+\_\+\+ERROR\+\_\+\+TEXT}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_ad66391e2a2f41b1628c6926d401bd6ce}{LODEPNG\+\_\+\+COMPILE\+\_\+\+ALLOCATORS}}
+\item 
+\#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} \mbox{\hyperlink{lodepng_8h_a1399b7df68e0358d67907e648f41c510}{LODEPNG\+\_\+\+COMPILE\+\_\+\+CRC}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{enum}} \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} \mbox{\hyperlink{lodepng_8h_aeb20f58ed9dbcb534bae30f05a79f0a5}{Lode\+PNGColor\+Type}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \mbox{\hyperlink{lodepng_8h_a7d5d22aab76370293dd43cb348630f33}{Lode\+PNGDecompress\+Settings}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \mbox{\hyperlink{lodepng_8h_a0f335a24ea8c0500860d582fbfeb1c38}{Lode\+PNGCompress\+Settings}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \mbox{\hyperlink{lodepng_8h_a8311042f05584567db96143811fe706d}{Lode\+PNGColor\+Mode}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGTime}{Lode\+PNGTime}} \mbox{\hyperlink{lodepng_8h_a4892d17f5e08bac94a4f7a052fdcd816}{Lode\+PNGTime}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \mbox{\hyperlink{lodepng_8h_a2b202fb988cf2b881266a26cf081f016}{Lode\+PNGInfo}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGDecoderSettings}{Lode\+PNGDecoder\+Settings}} \mbox{\hyperlink{lodepng_8h_a09fd723b8bbc750eeec5cb22e04530f1}{Lode\+PNGDecoder\+Settings}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{enum}} \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f}{Lode\+PNGFilter\+Strategy}} \mbox{\hyperlink{lodepng_8h_af06a75c0d744d7f99814dd607a3b798d}{Lode\+PNGFilter\+Strategy}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}} \mbox{\hyperlink{lodepng_8h_acfea24109b86e348320636a5df7fa0d6}{Lode\+PNGColor\+Stats}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGEncoderSettings}{Lode\+PNGEncoder\+Settings}} \mbox{\hyperlink{lodepng_8h_ac388ae9b29b361e55c967009b65a6369}{Lode\+PNGEncoder\+Settings}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \mbox{\hyperlink{lodepng_8h_a23316369c1c2a1e76f0205fd4b482117}{Lode\+PNGState}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} \{ \newline
+\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a57b93d657f1794967620870e03643a6b}{LCT\+\_\+\+GREY}} = 0
+, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a47e389fe1e3e64ed4a22964d5e151894}{LCT\+\_\+\+RGB}} = 2
+, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a002c3ac8ce7ee8560249f034a3949c4c}{LCT\+\_\+\+PALETTE}} = 3
+, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a61da4464d66b2f215f7fc03c20c2418c}{LCT\+\_\+\+GREY\+\_\+\+ALPHA}} = 4
+, \newline
+\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102af31451c4b991a3b3c764e983c77fa26e}{LCT\+\_\+\+RGBA}} = 6
+, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102aa1e3ef8483d30e47c979a595d83a6ec4}{LCT\+\_\+\+MAX\+\_\+\+OCTET\+\_\+\+VALUE}} = 255
+ \}
+\item 
+enum \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f}{Lode\+PNGFilter\+Strategy}} \{ \newline
+\mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa95592a70a6850eff5a730ab6cd0344d8}{LFS\+\_\+\+ZERO}} = 0
+, \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fae0ec71ea2f843194a27cd38a62289aac}{LFS\+\_\+\+ONE}} = 1
+, \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fad6a42239671c359d83a337376272f1f1}{LFS\+\_\+\+TWO}} = 2
+, \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3f175c084b5cf4e0f7d7736b19eef551}{LFS\+\_\+\+THREE}} = 3
+, \newline
+\mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac6a0b7c205fdcec44356f2d6787b9bc3}{LFS\+\_\+\+FOUR}} = 4
+, \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac536539c215333def413f43c8b060b03}{LFS\+\_\+\+MINSUM}}
+, \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254faa9160c3f9ed4e2a1ea3ec32e81f572a0}{LFS\+\_\+\+ENTROPY}}
+, \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa4cda3cf50239032689e5f5ec3c209531}{LFS\+\_\+\+BRUTE\+\_\+\+FORCE}}
+, \newline
+\mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3cea29523d6a09283fec1c24ada6fd6b}{LFS\+\_\+\+PREDEFINED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a623138ad43ce7eae0346e4324ba1f14e}{lodepng\+\_\+decode\+\_\+memory}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}}, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} colortype, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} bitdepth)
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a67c3a7ee81836f6e5c9ba6487a1b38f5}{lodepng\+\_\+decode32}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ad7df6a47afc81f1854cf5a23471cf96b}{lodepng\+\_\+decode24}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a6eec335315ecb6182292ebd37ef02b4a}{lodepng\+\_\+decode\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}}, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} colortype, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} bitdepth)
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a3eca27e18f0e71cf1c21e1c1f5ff4aab}{lodepng\+\_\+decode32\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_aadc99e713f6408d391dfa140d8e95b96}{lodepng\+\_\+decode24\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ada7bc92db6e9f8906a1fc85caa0b17aa}{lodepng\+\_\+encode\+\_\+memory}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} colortype, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} bitdepth)
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a75d7f3e4e388b74b7b5214c76c66382f}{lodepng\+\_\+encode32}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a4100642d70071029967c16afd72193ff}{lodepng\+\_\+encode24}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a009ac38098765fcae32c9d91770b94df}{lodepng\+\_\+encode\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} colortype, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} bitdepth)
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a018a3bd975fb886cdf1f6f544f2882e4}{lodepng\+\_\+encode32\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a4f8f383c22ceb7c22b1cc7e774f0bad2}{lodepng\+\_\+encode24\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_acbd8698f07faa837c59ca004a7ad2ef4}{lodepng\+\_\+error\+\_\+text}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{code}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_ab752d2ce31fb7e6fe1a27b559d3097ad}{lodepng\+\_\+decompress\+\_\+settings\+\_\+init}} (\mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a6fbd123f5a5f3abbf7149ad3ffba9e57}{lodepng\+\_\+compress\+\_\+settings\+\_\+init}} (\mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a66345d4cdab130c6cbd3166d7a0a5257}{lodepng\+\_\+color\+\_\+mode\+\_\+init}} (\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_ab1c7709a984d5842ab314cf5d2dc2dcc}{lodepng\+\_\+color\+\_\+mode\+\_\+cleanup}} (\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a7801819a161b96f65259680126e270f1}{lodepng\+\_\+color\+\_\+mode\+\_\+copy}} (\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{dest}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}})
+\item 
+\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \mbox{\hyperlink{lodepng_8h_a411f09f0c642dae12c92f3af9d37a4c8}{lodepng\+\_\+color\+\_\+mode\+\_\+make}} (\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} colortype, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} bitdepth)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a2aa729ce82079627789a0f8961c82f5e}{lodepng\+\_\+palette\+\_\+clear}} (\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a05bf6fac7afc9025bbcb9f5f9f1b0027}{lodepng\+\_\+palette\+\_\+add}} (\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{glad_8h_abe08814c2f72843fde4d8df41440d5a0}{r}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{glad_8h_a9cd653b1648845554169fbc3a3f6d37a}{g}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a83344b5c8c5839ca42858dd3578220ef}{lodepng\+\_\+get\+\_\+bpp}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_abca559f31bf69eabc23c09a8a4c80b93}{lodepng\+\_\+get\+\_\+channels}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ae0e6996e4aa9ac225f228b2253269127}{lodepng\+\_\+is\+\_\+greyscale\+\_\+type}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_aa255d9a2e4054fc2888bf7670dac4107}{lodepng\+\_\+is\+\_\+alpha\+\_\+type}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ad9b8eca971e9d01d55ced928b26a53c5}{lodepng\+\_\+is\+\_\+palette\+\_\+type}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a4e89e0d7e13e0f3c098c4cf326cc5014}{lodepng\+\_\+has\+\_\+palette\+\_\+alpha}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a93f12a150968449f016fe93decc1e074}{lodepng\+\_\+can\+\_\+have\+\_\+alpha}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{lodepng_8h_a5861bf2c5a7c8976ea2dd6d21e8d58bd}{lodepng\+\_\+get\+\_\+raw\+\_\+size}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_ae50c1ddde2fa8004b46da433f3e20974}{lodepng\+\_\+info\+\_\+init}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_ad4b9dc33569e24062e077f5a69ead178}{lodepng\+\_\+info\+\_\+cleanup}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a14a4dc4c26e03acb5ab36880aacbd85a}{lodepng\+\_\+info\+\_\+copy}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{dest}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a10c9cfd9edf86fc8e21d5f69d81238d0}{lodepng\+\_\+add\+\_\+text}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a533d58c161de45096b83c44bbaa95e93}{lodepng\+\_\+clear\+\_\+text}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_aad7cb0e06093d0111bd599a279360f98}{lodepng\+\_\+add\+\_\+itext}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}key, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{langtag}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{transkey}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_aea7d8c2bb2adaf028ec143c08a53f815}{lodepng\+\_\+clear\+\_\+itext}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_aeaa684595223a1a737d80f30a00dacca}{lodepng\+\_\+set\+\_\+icc}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{profile}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{profile\+\_\+size}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a16318170d8eae1b4ca0f970fe2c34e48}{lodepng\+\_\+clear\+\_\+icc}} (\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{info}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_abd20ba96aa7a2e3d782204c604baab09}{lodepng\+\_\+convert}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mode\+\_\+out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mode\+\_\+in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a9220280c647e2a90a9b05d20038f1c6d}{lodepng\+\_\+decoder\+\_\+settings\+\_\+init}} (\mbox{\hyperlink{structLodePNGDecoderSettings}{Lode\+PNGDecoder\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a8262a8a17b785f72034b585ae13aafcf}{lodepng\+\_\+color\+\_\+stats\+\_\+init}} (\mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{stats}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ae9121db6bfaefbdc00c9963934511e74}{lodepng\+\_\+compute\+\_\+color\+\_\+stats}} (\mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{stats}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mode\+\_\+in}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a874763ad14a0c84d41d0819212407a5a}{lodepng\+\_\+encoder\+\_\+settings\+\_\+init}} (\mbox{\hyperlink{structLodePNGEncoderSettings}{Lode\+PNGEncoder\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_ae3ee1eb944467fbbc1cf939328dd6a57}{lodepng\+\_\+state\+\_\+init}} (\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{state}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a74109bf9860e2eb4bfa872ab8cf0f000}{lodepng\+\_\+state\+\_\+cleanup}} (\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{state}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a87514bea6f324553184e48794a0ec3fc}{lodepng\+\_\+state\+\_\+copy}} (\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{dest}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a70adabd588a9a27dcc9eb4322f6c3b3f}{lodepng\+\_\+decode}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{state}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a0bee70fa0a93ca4463b35a3ceb9910e3}{lodepng\+\_\+inspect}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{state}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a0285afa60b6263b9c6854424fffbf010}{lodepng\+\_\+inspect\+\_\+chunk}} (\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{state}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pos}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a90e82b0ccc75cfb27ccc9756c8d96f07}{lodepng\+\_\+encode}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afb1b07e1b25035d41d60fb2c03d507e6}{w}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}, \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{state}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ad52897a6aecee7dde053c468c6bedda2}{lodepng\+\_\+chunk\+\_\+length}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a2ccd8bef4daad75002f72308a5cbd0dc}{lodepng\+\_\+chunk\+\_\+type}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}\mbox{[}5\mbox{]}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{lodepng_8h_a5153305d442f8332326ef332316b06be}{lodepng\+\_\+chunk\+\_\+type\+\_\+equals}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{lodepng_8h_aabe8616184aa2adaa2a74ad989e6fb41}{lodepng\+\_\+chunk\+\_\+ancillary}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{lodepng_8h_a2695e1f9d3dee3f82a89f47a6dc7c517}{lodepng\+\_\+chunk\+\_\+private}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{lodepng_8h_a2e09963fb4b4eb4ee7789d40b9080250}{lodepng\+\_\+chunk\+\_\+safetocopy}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_a5ff4c53cd6b48a87dd34ef69a5496904}{lodepng\+\_\+chunk\+\_\+data}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_a5e315b2a33544b8877e432adcc09e8e0}{lodepng\+\_\+chunk\+\_\+data\+\_\+const}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a02091d970921c7b94c4e63821785f97a}{lodepng\+\_\+chunk\+\_\+check\+\_\+crc}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{lodepng_8h_a5ea8918bcdd67d62af9735faa5d03b1b}{lodepng\+\_\+chunk\+\_\+generate\+\_\+crc}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_a1c4c98f2b3ab0e7f59f06b14e9207860}{lodepng\+\_\+chunk\+\_\+next}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_a8b132cd1680aaa36dd93eb4200978f57}{lodepng\+\_\+chunk\+\_\+next\+\_\+const}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_a21711ffefd0f5e0a664a9c722b9dac4f}{lodepng\+\_\+chunk\+\_\+find}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}\mbox{[}5\mbox{]})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_ae816cc281b06ab2ece341c2f57ee65e1}{lodepng\+\_\+chunk\+\_\+find\+\_\+const}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}\mbox{[}5\mbox{]})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ac5a9e38fc392fc26897610a6d824cc21}{lodepng\+\_\+chunk\+\_\+append}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{chunk}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_aac9fb41d4e214c0561be436751ffcab0}{lodepng\+\_\+chunk\+\_\+create}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{length}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a1608496525479b21a6faeaa69285156f}{lodepng\+\_\+crc32}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a5d24de6b2c5970e2458e5aeb80907dfe}{buf}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a9c2f61923ad2ce3d47354923ba6df62d}{lodepng\+\_\+inflate}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_ae66b9c1eeb9c44572bd381a94485e157}{lodepng\+\_\+zlib\+\_\+decompress}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a72d4240c44c9ba1814dae814c7d80eb1}{lodepng\+\_\+zlib\+\_\+compress}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a82c0c408213e5bbb4a8d0edbaeffc97f}{lodepng\+\_\+huffman\+\_\+code\+\_\+lengths}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a205839cdabf5987bfd70e0a072d5b6f7}{lengths}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{frequencies}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{numcodes}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{maxbitlen}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a6f5f070e236aaf9b1809e34b467f3225}{lodepng\+\_\+deflate}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{in}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{insize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{settings}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_af0b16abca7a6a20ff4980e9f04374c90}{lodepng\+\_\+load\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{outsize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{lodepng_8h_a837bf136ff32ee3efed5df4105ccedf7}{lodepng\+\_\+save\+\_\+file}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{buffersize}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{filename}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lodepng_8h_a8b5b5e358236bf8112bd6e58ae8da1b2}{LODEPNG\+\_\+\+VERSION\+\_\+\+STRING}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \mbox{\hyperlink{lodepng_8h_aab7a41a03154aa8d9ef65f2d434641b6}{lodepng\+\_\+default\+\_\+decompress\+\_\+settings}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \mbox{\hyperlink{lodepng_8h_a0b5cf190f94f8f11ed5c0abb3504ad86}{lodepng\+\_\+default\+\_\+compress\+\_\+settings}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{lodepng_8h_ad66391e2a2f41b1628c6926d401bd6ce}\label{lodepng_8h_ad66391e2a2f41b1628c6926d401bd6ce} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_ALLOCATORS@{LODEPNG\_COMPILE\_ALLOCATORS}}
+\index{LODEPNG\_COMPILE\_ALLOCATORS@{LODEPNG\_COMPILE\_ALLOCATORS}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_ALLOCATORS}{LODEPNG\_COMPILE\_ALLOCATORS}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+ALLOCATORS}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00091}{91}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_a32282377bca2e3e43bcf16aa9daa8554}\label{lodepng_8h_a32282377bca2e3e43bcf16aa9daa8554} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_ANCILLARY\_CHUNKS@{LODEPNG\_COMPILE\_ANCILLARY\_CHUNKS}}
+\index{LODEPNG\_COMPILE\_ANCILLARY\_CHUNKS@{LODEPNG\_COMPILE\_ANCILLARY\_CHUNKS}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_ANCILLARY\_CHUNKS}{LODEPNG\_COMPILE\_ANCILLARY\_CHUNKS}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+ANCILLARY\+\_\+\+CHUNKS}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00075}{75}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_a1399b7df68e0358d67907e648f41c510}\label{lodepng_8h_a1399b7df68e0358d67907e648f41c510} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_CRC@{LODEPNG\_COMPILE\_CRC}}
+\index{LODEPNG\_COMPILE\_CRC@{LODEPNG\_COMPILE\_CRC}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_CRC}{LODEPNG\_COMPILE\_CRC}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+CRC}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00102}{102}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_a823441da1dd5ddf7282d1f3bca124938}\label{lodepng_8h_a823441da1dd5ddf7282d1f3bca124938} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_DECODER@{LODEPNG\_COMPILE\_DECODER}}
+\index{LODEPNG\_COMPILE\_DECODER@{LODEPNG\_COMPILE\_DECODER}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_DECODER}{LODEPNG\_COMPILE\_DECODER}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+DECODER}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00056}{56}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_af8e782a2a5642d12dba9aa38a7a00133}\label{lodepng_8h_af8e782a2a5642d12dba9aa38a7a00133} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_DISK@{LODEPNG\_COMPILE\_DISK}}
+\index{LODEPNG\_COMPILE\_DISK@{LODEPNG\_COMPILE\_DISK}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_DISK}{LODEPNG\_COMPILE\_DISK}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+DISK}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00068}{68}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_a2285c1e239bc24607901ad98e8ebb7eb}\label{lodepng_8h_a2285c1e239bc24607901ad98e8ebb7eb} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_ENCODER@{LODEPNG\_COMPILE\_ENCODER}}
+\index{LODEPNG\_COMPILE\_ENCODER@{LODEPNG\_COMPILE\_ENCODER}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_ENCODER}{LODEPNG\_COMPILE\_ENCODER}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+ENCODER}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00062}{62}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_a17778a07a7c374034f826e359744cc5b}\label{lodepng_8h_a17778a07a7c374034f826e359744cc5b} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_ERROR\_TEXT@{LODEPNG\_COMPILE\_ERROR\_TEXT}}
+\index{LODEPNG\_COMPILE\_ERROR\_TEXT@{LODEPNG\_COMPILE\_ERROR\_TEXT}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_ERROR\_TEXT}{LODEPNG\_COMPILE\_ERROR\_TEXT}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+ERROR\+\_\+\+TEXT}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00082}{82}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_af557b37dd9fcaed5be60c0b143e54b38}\label{lodepng_8h_af557b37dd9fcaed5be60c0b143e54b38} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_PNG@{LODEPNG\_COMPILE\_PNG}}
+\index{LODEPNG\_COMPILE\_PNG@{LODEPNG\_COMPILE\_PNG}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_PNG}{LODEPNG\_COMPILE\_PNG}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+PNG}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00050}{50}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_a66c036f5e0213ff2cc380bab4486738d}\label{lodepng_8h_a66c036f5e0213ff2cc380bab4486738d} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_COMPILE\_ZLIB@{LODEPNG\_COMPILE\_ZLIB}}
+\index{LODEPNG\_COMPILE\_ZLIB@{LODEPNG\_COMPILE\_ZLIB}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_COMPILE\_ZLIB}{LODEPNG\_COMPILE\_ZLIB}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{define}} LODEPNG\+\_\+\+COMPILE\+\_\+\+ZLIB}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00044}{44}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{lodepng_8h_a8311042f05584567db96143811fe706d}\label{lodepng_8h_a8311042f05584567db96143811fe706d} 
+\index{lodepng.h@{lodepng.h}!LodePNGColorMode@{LodePNGColorMode}}
+\index{LodePNGColorMode@{LodePNGColorMode}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGColorMode}{LodePNGColorMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}}}
+
+\Hypertarget{lodepng_8h_acfea24109b86e348320636a5df7fa0d6}\label{lodepng_8h_acfea24109b86e348320636a5df7fa0d6} 
+\index{lodepng.h@{lodepng.h}!LodePNGColorStats@{LodePNGColorStats}}
+\index{LodePNGColorStats@{LodePNGColorStats}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGColorStats}{LodePNGColorStats}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}} \mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}}}
+
+\Hypertarget{lodepng_8h_aeb20f58ed9dbcb534bae30f05a79f0a5}\label{lodepng_8h_aeb20f58ed9dbcb534bae30f05a79f0a5} 
+\index{lodepng.h@{lodepng.h}!LodePNGColorType@{LodePNGColorType}}
+\index{LodePNGColorType@{LodePNGColorType}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGColorType}{LodePNGColorType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{enum}} \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}} \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}}}
+
+\Hypertarget{lodepng_8h_a0f335a24ea8c0500860d582fbfeb1c38}\label{lodepng_8h_a0f335a24ea8c0500860d582fbfeb1c38} 
+\index{lodepng.h@{lodepng.h}!LodePNGCompressSettings@{LodePNGCompressSettings}}
+\index{LodePNGCompressSettings@{LodePNGCompressSettings}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGCompressSettings}{LodePNGCompressSettings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}}}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00350}{350}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_a09fd723b8bbc750eeec5cb22e04530f1}\label{lodepng_8h_a09fd723b8bbc750eeec5cb22e04530f1} 
+\index{lodepng.h@{lodepng.h}!LodePNGDecoderSettings@{LodePNGDecoderSettings}}
+\index{LodePNGDecoderSettings@{LodePNGDecoderSettings}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGDecoderSettings}{LodePNGDecoderSettings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGDecoderSettings}{Lode\+PNGDecoder\+Settings}} \mbox{\hyperlink{structLodePNGDecoderSettings}{Lode\+PNGDecoder\+Settings}}}
+
+\Hypertarget{lodepng_8h_a7d5d22aab76370293dd43cb348630f33}\label{lodepng_8h_a7d5d22aab76370293dd43cb348630f33} 
+\index{lodepng.h@{lodepng.h}!LodePNGDecompressSettings@{LodePNGDecompressSettings}}
+\index{LodePNGDecompressSettings@{LodePNGDecompressSettings}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGDecompressSettings}{LodePNGDecompressSettings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}}}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00313}{313}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+\Hypertarget{lodepng_8h_ac388ae9b29b361e55c967009b65a6369}\label{lodepng_8h_ac388ae9b29b361e55c967009b65a6369} 
+\index{lodepng.h@{lodepng.h}!LodePNGEncoderSettings@{LodePNGEncoderSettings}}
+\index{LodePNGEncoderSettings@{LodePNGEncoderSettings}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGEncoderSettings}{LodePNGEncoderSettings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGEncoderSettings}{Lode\+PNGEncoder\+Settings}} \mbox{\hyperlink{structLodePNGEncoderSettings}{Lode\+PNGEncoder\+Settings}}}
+
+\Hypertarget{lodepng_8h_af06a75c0d744d7f99814dd607a3b798d}\label{lodepng_8h_af06a75c0d744d7f99814dd607a3b798d} 
+\index{lodepng.h@{lodepng.h}!LodePNGFilterStrategy@{LodePNGFilterStrategy}}
+\index{LodePNGFilterStrategy@{LodePNGFilterStrategy}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGFilterStrategy}{LodePNGFilterStrategy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{enum}} \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f}{Lode\+PNGFilter\+Strategy}} \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f}{Lode\+PNGFilter\+Strategy}}}
+
+\Hypertarget{lodepng_8h_a2b202fb988cf2b881266a26cf081f016}\label{lodepng_8h_a2b202fb988cf2b881266a26cf081f016} 
+\index{lodepng.h@{lodepng.h}!LodePNGInfo@{LodePNGInfo}}
+\index{LodePNGInfo@{LodePNGInfo}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGInfo}{LodePNGInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}}}
+
+\Hypertarget{lodepng_8h_a23316369c1c2a1e76f0205fd4b482117}\label{lodepng_8h_a23316369c1c2a1e76f0205fd4b482117} 
+\index{lodepng.h@{lodepng.h}!LodePNGState@{LodePNGState}}
+\index{LodePNGState@{LodePNGState}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGState}{LodePNGState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}}}
+
+\Hypertarget{lodepng_8h_a4892d17f5e08bac94a4f7a052fdcd816}\label{lodepng_8h_a4892d17f5e08bac94a4f7a052fdcd816} 
+\index{lodepng.h@{lodepng.h}!LodePNGTime@{LodePNGTime}}
+\index{LodePNGTime@{LodePNGTime}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGTime}{LodePNGTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{typedef}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{struct}} \mbox{\hyperlink{structLodePNGTime}{Lode\+PNGTime}} \mbox{\hyperlink{structLodePNGTime}{Lode\+PNGTime}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}\label{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102} 
+\index{lodepng.h@{lodepng.h}!LodePNGColorType@{LodePNGColorType}}
+\index{LodePNGColorType@{LodePNGColorType}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGColorType}{LodePNGColorType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{enum}} \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCT\_GREY@{LCT\_GREY}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LCT\_GREY@{LCT\_GREY}}}\Hypertarget{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a57b93d657f1794967620870e03643a6b}\label{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a57b93d657f1794967620870e03643a6b} 
+LCT\+\_\+\+GREY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCT\_RGB@{LCT\_RGB}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LCT\_RGB@{LCT\_RGB}}}\Hypertarget{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a47e389fe1e3e64ed4a22964d5e151894}\label{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a47e389fe1e3e64ed4a22964d5e151894} 
+LCT\+\_\+\+RGB&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCT\_PALETTE@{LCT\_PALETTE}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LCT\_PALETTE@{LCT\_PALETTE}}}\Hypertarget{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a002c3ac8ce7ee8560249f034a3949c4c}\label{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a002c3ac8ce7ee8560249f034a3949c4c} 
+LCT\+\_\+\+PALETTE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCT\_GREY\_ALPHA@{LCT\_GREY\_ALPHA}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LCT\_GREY\_ALPHA@{LCT\_GREY\_ALPHA}}}\Hypertarget{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a61da4464d66b2f215f7fc03c20c2418c}\label{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a61da4464d66b2f215f7fc03c20c2418c} 
+LCT\+\_\+\+GREY\+\_\+\+ALPHA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCT\_RGBA@{LCT\_RGBA}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LCT\_RGBA@{LCT\_RGBA}}}\Hypertarget{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102af31451c4b991a3b3c764e983c77fa26e}\label{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102af31451c4b991a3b3c764e983c77fa26e} 
+LCT\+\_\+\+RGBA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LCT\_MAX\_OCTET\_VALUE@{LCT\_MAX\_OCTET\_VALUE}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LCT\_MAX\_OCTET\_VALUE@{LCT\_MAX\_OCTET\_VALUE}}}\Hypertarget{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102aa1e3ef8483d30e47c979a595d83a6ec4}\label{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102aa1e3ef8483d30e47c979a595d83a6ec4} 
+LCT\+\_\+\+MAX\+\_\+\+OCTET\+\_\+\+VALUE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00121}{121}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a57b93d657f1794967620870e03643a6b}{LCT\_GREY}}\ =\ 0,\ \textcolor{comment}{/*grayscale:\ 1,2,4,8,16\ bit*/}}
+\DoxyCodeLine{00123\ \ \ \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a47e389fe1e3e64ed4a22964d5e151894}{LCT\_RGB}}\ =\ 2,\ \textcolor{comment}{/*RGB:\ 8,16\ bit*/}}
+\DoxyCodeLine{00124\ \ \ \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a002c3ac8ce7ee8560249f034a3949c4c}{LCT\_PALETTE}}\ =\ 3,\ \textcolor{comment}{/*palette:\ 1,2,4,8\ bit*/}}
+\DoxyCodeLine{00125\ \ \ \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102a61da4464d66b2f215f7fc03c20c2418c}{LCT\_GREY\_ALPHA}}\ =\ 4,\ \textcolor{comment}{/*grayscale\ with\ alpha:\ 8,16\ bit*/}}
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102af31451c4b991a3b3c764e983c77fa26e}{LCT\_RGBA}}\ =\ 6,\ \textcolor{comment}{/*RGB\ with\ alpha:\ 8,16\ bit*/}}
+\DoxyCodeLine{00127\ \ \ \textcolor{comment}{/*LCT\_MAX\_OCTET\_VALUE\ lets\ the\ compiler\ allow\ this\ enum\ to\ represent\ any\ invalid}}
+\DoxyCodeLine{00128\ \textcolor{comment}{\ \ byte\ value\ from\ 0\ to\ 255\ that\ could\ be\ present\ in\ an\ invalid\ PNG\ file\ header.\ Do}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ not\ use,\ compare\ with\ or\ set\ the\ name\ LCT\_MAX\_OCTET\_VALUE,\ instead\ either\ use}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ \ the\ valid\ color\ type\ names\ above,\ or\ numeric\ values\ like\ 1\ or\ 7\ when\ checking\ for}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ \ particular\ disallowed\ color\ type\ byte\ values,\ or\ cast\ to\ integer\ to\ print\ it.*/}}
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102aa1e3ef8483d30e47c979a595d83a6ec4}{LCT\_MAX\_OCTET\_VALUE}}\ =\ 255}
+\DoxyCodeLine{00133\ \}\ \mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{LodePNGColorType}};}
+
+\end{DoxyCode}
+\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f} 
+\index{lodepng.h@{lodepng.h}!LodePNGFilterStrategy@{LodePNGFilterStrategy}}
+\index{LodePNGFilterStrategy@{LodePNGFilterStrategy}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LodePNGFilterStrategy}{LodePNGFilterStrategy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{enum}} \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f}{Lode\+PNGFilter\+Strategy}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_ZERO@{LFS\_ZERO}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_ZERO@{LFS\_ZERO}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa95592a70a6850eff5a730ab6cd0344d8}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa95592a70a6850eff5a730ab6cd0344d8} 
+LFS\+\_\+\+ZERO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_ONE@{LFS\_ONE}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_ONE@{LFS\_ONE}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fae0ec71ea2f843194a27cd38a62289aac}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fae0ec71ea2f843194a27cd38a62289aac} 
+LFS\+\_\+\+ONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_TWO@{LFS\_TWO}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_TWO@{LFS\_TWO}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fad6a42239671c359d83a337376272f1f1}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fad6a42239671c359d83a337376272f1f1} 
+LFS\+\_\+\+TWO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_THREE@{LFS\_THREE}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_THREE@{LFS\_THREE}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3f175c084b5cf4e0f7d7736b19eef551}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3f175c084b5cf4e0f7d7736b19eef551} 
+LFS\+\_\+\+THREE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_FOUR@{LFS\_FOUR}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_FOUR@{LFS\_FOUR}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac6a0b7c205fdcec44356f2d6787b9bc3}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac6a0b7c205fdcec44356f2d6787b9bc3} 
+LFS\+\_\+\+FOUR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_MINSUM@{LFS\_MINSUM}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_MINSUM@{LFS\_MINSUM}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac536539c215333def413f43c8b060b03}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac536539c215333def413f43c8b060b03} 
+LFS\+\_\+\+MINSUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_ENTROPY@{LFS\_ENTROPY}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_ENTROPY@{LFS\_ENTROPY}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254faa9160c3f9ed4e2a1ea3ec32e81f572a0}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254faa9160c3f9ed4e2a1ea3ec32e81f572a0} 
+LFS\+\_\+\+ENTROPY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_BRUTE\_FORCE@{LFS\_BRUTE\_FORCE}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_BRUTE\_FORCE@{LFS\_BRUTE\_FORCE}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa4cda3cf50239032689e5f5ec3c209531}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa4cda3cf50239032689e5f5ec3c209531} 
+LFS\+\_\+\+BRUTE\+\_\+\+FORCE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LFS\_PREDEFINED@{LFS\_PREDEFINED}!lodepng.h@{lodepng.h}}\index{lodepng.h@{lodepng.h}!LFS\_PREDEFINED@{LFS\_PREDEFINED}}}\Hypertarget{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3cea29523d6a09283fec1c24ada6fd6b}\label{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3cea29523d6a09283fec1c24ada6fd6b} 
+LFS\+\_\+\+PREDEFINED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{lodepng_8h_source_l00767}{767}} of file \mbox{\hyperlink{lodepng_8h_source}{lodepng.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00767\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00768\ \ \ \textcolor{comment}{/*every\ filter\ at\ zero*/}}
+\DoxyCodeLine{00769\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa95592a70a6850eff5a730ab6cd0344d8}{LFS\_ZERO}}\ =\ 0,}
+\DoxyCodeLine{00770\ \ \ \textcolor{comment}{/*every\ filter\ at\ 1,\ 2,\ 3\ or\ 4\ (path),\ unlike\ LFS\_ZERO\ not\ a\ good\ choice,\ but\ for\ testing*/}}
+\DoxyCodeLine{00771\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fae0ec71ea2f843194a27cd38a62289aac}{LFS\_ONE}}\ =\ 1,}
+\DoxyCodeLine{00772\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fad6a42239671c359d83a337376272f1f1}{LFS\_TWO}}\ =\ 2,}
+\DoxyCodeLine{00773\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3f175c084b5cf4e0f7d7736b19eef551}{LFS\_THREE}}\ =\ 3,}
+\DoxyCodeLine{00774\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac6a0b7c205fdcec44356f2d6787b9bc3}{LFS\_FOUR}}\ =\ 4,}
+\DoxyCodeLine{00775\ \ \ \textcolor{comment}{/*Use\ filter\ that\ gives\ minimum\ sum,\ as\ described\ in\ the\ official\ PNG\ filter\ heuristic.*/}}
+\DoxyCodeLine{00776\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fac536539c215333def413f43c8b060b03}{LFS\_MINSUM}},}
+\DoxyCodeLine{00777\ \ \ \textcolor{comment}{/*Use\ the\ filter\ type\ that\ gives\ smallest\ Shannon\ entropy\ for\ this\ scanline.\ Depending}}
+\DoxyCodeLine{00778\ \textcolor{comment}{\ \ on\ the\ image,\ this\ is\ better\ or\ worse\ than\ minsum.*/}}
+\DoxyCodeLine{00779\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254faa9160c3f9ed4e2a1ea3ec32e81f572a0}{LFS\_ENTROPY}},}
+\DoxyCodeLine{00780\ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00781\ \textcolor{comment}{\ \ Brute-\/force-\/search\ PNG\ filters\ by\ compressing\ each\ filter\ for\ each\ scanline.}}
+\DoxyCodeLine{00782\ \textcolor{comment}{\ \ Experimental,\ very\ slow,\ and\ only\ rarely\ gives\ better\ compression\ than\ MINSUM.}}
+\DoxyCodeLine{00783\ \textcolor{comment}{\ \ */}}
+\DoxyCodeLine{00784\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa4cda3cf50239032689e5f5ec3c209531}{LFS\_BRUTE\_FORCE}},}
+\DoxyCodeLine{00785\ \ \ \textcolor{comment}{/*use\ predefined\_filters\ buffer:\ you\ specify\ the\ filter\ type\ for\ each\ scanline*/}}
+\DoxyCodeLine{00786\ \ \ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254fa3cea29523d6a09283fec1c24ada6fd6b}{LFS\_PREDEFINED}}}
+\DoxyCodeLine{00787\ \}\ \mbox{\hyperlink{lodepng_8h_ad5215c95d5bedc9103d8e6490398254f}{LodePNGFilterStrategy}};}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{lodepng_8h_aad7cb0e06093d0111bd599a279360f98}\label{lodepng_8h_aad7cb0e06093d0111bd599a279360f98} 
+\index{lodepng.h@{lodepng.h}!lodepng\_add\_itext@{lodepng\_add\_itext}}
+\index{lodepng\_add\_itext@{lodepng\_add\_itext}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_add\_itext()}{lodepng\_add\_itext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+add\+\_\+itext (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{key,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{langtag,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{transkey,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a10c9cfd9edf86fc8e21d5f69d81238d0}\label{lodepng_8h_a10c9cfd9edf86fc8e21d5f69d81238d0} 
+\index{lodepng.h@{lodepng.h}!lodepng\_add\_text@{lodepng\_add\_text}}
+\index{lodepng\_add\_text@{lodepng\_add\_text}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_add\_text()}{lodepng\_add\_text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+add\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{key,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a93f12a150968449f016fe93decc1e074}\label{lodepng_8h_a93f12a150968449f016fe93decc1e074} 
+\index{lodepng.h@{lodepng.h}!lodepng\_can\_have\_alpha@{lodepng\_can\_have\_alpha}}
+\index{lodepng\_can\_have\_alpha@{lodepng\_can\_have\_alpha}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_can\_have\_alpha()}{lodepng\_can\_have\_alpha()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+can\+\_\+have\+\_\+alpha (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_aabe8616184aa2adaa2a74ad989e6fb41}\label{lodepng_8h_aabe8616184aa2adaa2a74ad989e6fb41} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_ancillary@{lodepng\_chunk\_ancillary}}
+\index{lodepng\_chunk\_ancillary@{lodepng\_chunk\_ancillary}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_ancillary()}{lodepng\_chunk\_ancillary()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} lodepng\+\_\+chunk\+\_\+ancillary (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ac5a9e38fc392fc26897610a6d824cc21}\label{lodepng_8h_ac5a9e38fc392fc26897610a6d824cc21} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_append@{lodepng\_chunk\_append}}
+\index{lodepng\_chunk\_append@{lodepng\_chunk\_append}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_append()}{lodepng\_chunk\_append()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+chunk\+\_\+append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a02091d970921c7b94c4e63821785f97a}\label{lodepng_8h_a02091d970921c7b94c4e63821785f97a} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_check\_crc@{lodepng\_chunk\_check\_crc}}
+\index{lodepng\_chunk\_check\_crc@{lodepng\_chunk\_check\_crc}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_check\_crc()}{lodepng\_chunk\_check\_crc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+chunk\+\_\+check\+\_\+crc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_aac9fb41d4e214c0561be436751ffcab0}\label{lodepng_8h_aac9fb41d4e214c0561be436751ffcab0} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_create@{lodepng\_chunk\_create}}
+\index{lodepng\_chunk\_create@{lodepng\_chunk\_create}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_create()}{lodepng\_chunk\_create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+chunk\+\_\+create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{length,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{type,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a5ff4c53cd6b48a87dd34ef69a5496904}\label{lodepng_8h_a5ff4c53cd6b48a87dd34ef69a5496904} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_data@{lodepng\_chunk\_data}}
+\index{lodepng\_chunk\_data@{lodepng\_chunk\_data}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_data()}{lodepng\_chunk\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} lodepng\+\_\+chunk\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a5e315b2a33544b8877e432adcc09e8e0}\label{lodepng_8h_a5e315b2a33544b8877e432adcc09e8e0} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_data\_const@{lodepng\_chunk\_data\_const}}
+\index{lodepng\_chunk\_data\_const@{lodepng\_chunk\_data\_const}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_data\_const()}{lodepng\_chunk\_data\_const()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} lodepng\+\_\+chunk\+\_\+data\+\_\+const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a21711ffefd0f5e0a664a9c722b9dac4f}\label{lodepng_8h_a21711ffefd0f5e0a664a9c722b9dac4f} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_find@{lodepng\_chunk\_find}}
+\index{lodepng\_chunk\_find@{lodepng\_chunk\_find}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_find()}{lodepng\_chunk\_find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} lodepng\+\_\+chunk\+\_\+find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{end,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{type\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ae816cc281b06ab2ece341c2f57ee65e1}\label{lodepng_8h_ae816cc281b06ab2ece341c2f57ee65e1} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_find\_const@{lodepng\_chunk\_find\_const}}
+\index{lodepng\_chunk\_find\_const@{lodepng\_chunk\_find\_const}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_find\_const()}{lodepng\_chunk\_find\_const()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} lodepng\+\_\+chunk\+\_\+find\+\_\+const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{end,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{type\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a5ea8918bcdd67d62af9735faa5d03b1b}\label{lodepng_8h_a5ea8918bcdd67d62af9735faa5d03b1b} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_generate\_crc@{lodepng\_chunk\_generate\_crc}}
+\index{lodepng\_chunk\_generate\_crc@{lodepng\_chunk\_generate\_crc}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_generate\_crc()}{lodepng\_chunk\_generate\_crc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+chunk\+\_\+generate\+\_\+crc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ad52897a6aecee7dde053c468c6bedda2}\label{lodepng_8h_ad52897a6aecee7dde053c468c6bedda2} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_length@{lodepng\_chunk\_length}}
+\index{lodepng\_chunk\_length@{lodepng\_chunk\_length}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_length()}{lodepng\_chunk\_length()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+chunk\+\_\+length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a1c4c98f2b3ab0e7f59f06b14e9207860}\label{lodepng_8h_a1c4c98f2b3ab0e7f59f06b14e9207860} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_next@{lodepng\_chunk\_next}}
+\index{lodepng\_chunk\_next@{lodepng\_chunk\_next}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_next()}{lodepng\_chunk\_next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} lodepng\+\_\+chunk\+\_\+next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{end }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a8b132cd1680aaa36dd93eb4200978f57}\label{lodepng_8h_a8b132cd1680aaa36dd93eb4200978f57} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_next\_const@{lodepng\_chunk\_next\_const}}
+\index{lodepng\_chunk\_next\_const@{lodepng\_chunk\_next\_const}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_next\_const()}{lodepng\_chunk\_next\_const()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} lodepng\+\_\+chunk\+\_\+next\+\_\+const (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{end }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a2695e1f9d3dee3f82a89f47a6dc7c517}\label{lodepng_8h_a2695e1f9d3dee3f82a89f47a6dc7c517} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_private@{lodepng\_chunk\_private}}
+\index{lodepng\_chunk\_private@{lodepng\_chunk\_private}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_private()}{lodepng\_chunk\_private()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} lodepng\+\_\+chunk\+\_\+private (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a2e09963fb4b4eb4ee7789d40b9080250}\label{lodepng_8h_a2e09963fb4b4eb4ee7789d40b9080250} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_safetocopy@{lodepng\_chunk\_safetocopy}}
+\index{lodepng\_chunk\_safetocopy@{lodepng\_chunk\_safetocopy}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_safetocopy()}{lodepng\_chunk\_safetocopy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} lodepng\+\_\+chunk\+\_\+safetocopy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a2ccd8bef4daad75002f72308a5cbd0dc}\label{lodepng_8h_a2ccd8bef4daad75002f72308a5cbd0dc} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_type@{lodepng\_chunk\_type}}
+\index{lodepng\_chunk\_type@{lodepng\_chunk\_type}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_type()}{lodepng\_chunk\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+chunk\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{type\mbox{[}5\mbox{]},  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a5153305d442f8332326ef332316b06be}\label{lodepng_8h_a5153305d442f8332326ef332316b06be} 
+\index{lodepng.h@{lodepng.h}!lodepng\_chunk\_type\_equals@{lodepng\_chunk\_type\_equals}}
+\index{lodepng\_chunk\_type\_equals@{lodepng\_chunk\_type\_equals}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_chunk\_type\_equals()}{lodepng\_chunk\_type\_equals()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} lodepng\+\_\+chunk\+\_\+type\+\_\+equals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{chunk,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{type }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a16318170d8eae1b4ca0f970fe2c34e48}\label{lodepng_8h_a16318170d8eae1b4ca0f970fe2c34e48} 
+\index{lodepng.h@{lodepng.h}!lodepng\_clear\_icc@{lodepng\_clear\_icc}}
+\index{lodepng\_clear\_icc@{lodepng\_clear\_icc}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_clear\_icc()}{lodepng\_clear\_icc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+clear\+\_\+icc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_aea7d8c2bb2adaf028ec143c08a53f815}\label{lodepng_8h_aea7d8c2bb2adaf028ec143c08a53f815} 
+\index{lodepng.h@{lodepng.h}!lodepng\_clear\_itext@{lodepng\_clear\_itext}}
+\index{lodepng\_clear\_itext@{lodepng\_clear\_itext}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_clear\_itext()}{lodepng\_clear\_itext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+clear\+\_\+itext (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a533d58c161de45096b83c44bbaa95e93}\label{lodepng_8h_a533d58c161de45096b83c44bbaa95e93} 
+\index{lodepng.h@{lodepng.h}!lodepng\_clear\_text@{lodepng\_clear\_text}}
+\index{lodepng\_clear\_text@{lodepng\_clear\_text}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_clear\_text()}{lodepng\_clear\_text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+clear\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ab1c7709a984d5842ab314cf5d2dc2dcc}\label{lodepng_8h_ab1c7709a984d5842ab314cf5d2dc2dcc} 
+\index{lodepng.h@{lodepng.h}!lodepng\_color\_mode\_cleanup@{lodepng\_color\_mode\_cleanup}}
+\index{lodepng\_color\_mode\_cleanup@{lodepng\_color\_mode\_cleanup}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_color\_mode\_cleanup()}{lodepng\_color\_mode\_cleanup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+color\+\_\+mode\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a7801819a161b96f65259680126e270f1}\label{lodepng_8h_a7801819a161b96f65259680126e270f1} 
+\index{lodepng.h@{lodepng.h}!lodepng\_color\_mode\_copy@{lodepng\_color\_mode\_copy}}
+\index{lodepng\_color\_mode\_copy@{lodepng\_color\_mode\_copy}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_color\_mode\_copy()}{lodepng\_color\_mode\_copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+color\+\_\+mode\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{source }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a66345d4cdab130c6cbd3166d7a0a5257}\label{lodepng_8h_a66345d4cdab130c6cbd3166d7a0a5257} 
+\index{lodepng.h@{lodepng.h}!lodepng\_color\_mode\_init@{lodepng\_color\_mode\_init}}
+\index{lodepng\_color\_mode\_init@{lodepng\_color\_mode\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_color\_mode\_init()}{lodepng\_color\_mode\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+color\+\_\+mode\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a411f09f0c642dae12c92f3af9d37a4c8}\label{lodepng_8h_a411f09f0c642dae12c92f3af9d37a4c8} 
+\index{lodepng.h@{lodepng.h}!lodepng\_color\_mode\_make@{lodepng\_color\_mode\_make}}
+\index{lodepng\_color\_mode\_make@{lodepng\_color\_mode\_make}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_color\_mode\_make()}{lodepng\_color\_mode\_make()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} lodepng\+\_\+color\+\_\+mode\+\_\+make (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}}}]{colortype,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{bitdepth }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a8262a8a17b785f72034b585ae13aafcf}\label{lodepng_8h_a8262a8a17b785f72034b585ae13aafcf} 
+\index{lodepng.h@{lodepng.h}!lodepng\_color\_stats\_init@{lodepng\_color\_stats\_init}}
+\index{lodepng\_color\_stats\_init@{lodepng\_color\_stats\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_color\_stats\_init()}{lodepng\_color\_stats\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+color\+\_\+stats\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}} \texorpdfstring{$\ast$}{*}}]{stats }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a6fbd123f5a5f3abbf7149ad3ffba9e57}\label{lodepng_8h_a6fbd123f5a5f3abbf7149ad3ffba9e57} 
+\index{lodepng.h@{lodepng.h}!lodepng\_compress\_settings\_init@{lodepng\_compress\_settings\_init}}
+\index{lodepng\_compress\_settings\_init@{lodepng\_compress\_settings\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_compress\_settings\_init()}{lodepng\_compress\_settings\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+compress\+\_\+settings\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ae9121db6bfaefbdc00c9963934511e74}\label{lodepng_8h_ae9121db6bfaefbdc00c9963934511e74} 
+\index{lodepng.h@{lodepng.h}!lodepng\_compute\_color\_stats@{lodepng\_compute\_color\_stats}}
+\index{lodepng\_compute\_color\_stats@{lodepng\_compute\_color\_stats}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_compute\_color\_stats()}{lodepng\_compute\_color\_stats()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+compute\+\_\+color\+\_\+stats (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGColorStats}{Lode\+PNGColor\+Stats}} \texorpdfstring{$\ast$}{*}}]{stats,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{mode\+\_\+in }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_abd20ba96aa7a2e3d782204c604baab09}\label{lodepng_8h_abd20ba96aa7a2e3d782204c604baab09} 
+\index{lodepng.h@{lodepng.h}!lodepng\_convert@{lodepng\_convert}}
+\index{lodepng\_convert@{lodepng\_convert}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_convert()}{lodepng\_convert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+convert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{mode\+\_\+out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{mode\+\_\+in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a1608496525479b21a6faeaa69285156f}\label{lodepng_8h_a1608496525479b21a6faeaa69285156f} 
+\index{lodepng.h@{lodepng.h}!lodepng\_crc32@{lodepng\_crc32}}
+\index{lodepng\_crc32@{lodepng\_crc32}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_crc32()}{lodepng\_crc32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+crc32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{len }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a70adabd588a9a27dcc9eb4322f6c3b3f}\label{lodepng_8h_a70adabd588a9a27dcc9eb4322f6c3b3f} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decode@{lodepng\_decode}}
+\index{lodepng\_decode@{lodepng\_decode}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decode()}{lodepng\_decode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+decode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ad7df6a47afc81f1854cf5a23471cf96b}\label{lodepng_8h_ad7df6a47afc81f1854cf5a23471cf96b} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decode24@{lodepng\_decode24}}
+\index{lodepng\_decode24@{lodepng\_decode24}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decode24()}{lodepng\_decode24()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+decode24 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_aadc99e713f6408d391dfa140d8e95b96}\label{lodepng_8h_aadc99e713f6408d391dfa140d8e95b96} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decode24\_file@{lodepng\_decode24\_file}}
+\index{lodepng\_decode24\_file@{lodepng\_decode24\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decode24\_file()}{lodepng\_decode24\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+decode24\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a67c3a7ee81836f6e5c9ba6487a1b38f5}\label{lodepng_8h_a67c3a7ee81836f6e5c9ba6487a1b38f5} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decode32@{lodepng\_decode32}}
+\index{lodepng\_decode32@{lodepng\_decode32}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decode32()}{lodepng\_decode32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+decode32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a3eca27e18f0e71cf1c21e1c1f5ff4aab}\label{lodepng_8h_a3eca27e18f0e71cf1c21e1c1f5ff4aab} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decode32\_file@{lodepng\_decode32\_file}}
+\index{lodepng\_decode32\_file@{lodepng\_decode32\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decode32\_file()}{lodepng\_decode32\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+decode32\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{lodepng_8h_a3eca27e18f0e71cf1c21e1c1f5ff4aab_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lodepng_8h_a6eec335315ecb6182292ebd37ef02b4a}\label{lodepng_8h_a6eec335315ecb6182292ebd37ef02b4a} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decode\_file@{lodepng\_decode\_file}}
+\index{lodepng\_decode\_file@{lodepng\_decode\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decode\_file()}{lodepng\_decode\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+decode\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}}}]{colortype,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{bitdepth }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a623138ad43ce7eae0346e4324ba1f14e}\label{lodepng_8h_a623138ad43ce7eae0346e4324ba1f14e} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decode\_memory@{lodepng\_decode\_memory}}
+\index{lodepng\_decode\_memory@{lodepng\_decode\_memory}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decode\_memory()}{lodepng\_decode\_memory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+decode\+\_\+memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize,  }\item[{\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}}}]{colortype,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{bitdepth }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a9220280c647e2a90a9b05d20038f1c6d}\label{lodepng_8h_a9220280c647e2a90a9b05d20038f1c6d} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decoder\_settings\_init@{lodepng\_decoder\_settings\_init}}
+\index{lodepng\_decoder\_settings\_init@{lodepng\_decoder\_settings\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decoder\_settings\_init()}{lodepng\_decoder\_settings\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+decoder\+\_\+settings\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGDecoderSettings}{Lode\+PNGDecoder\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ab752d2ce31fb7e6fe1a27b559d3097ad}\label{lodepng_8h_ab752d2ce31fb7e6fe1a27b559d3097ad} 
+\index{lodepng.h@{lodepng.h}!lodepng\_decompress\_settings\_init@{lodepng\_decompress\_settings\_init}}
+\index{lodepng\_decompress\_settings\_init@{lodepng\_decompress\_settings\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_decompress\_settings\_init()}{lodepng\_decompress\_settings\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+decompress\+\_\+settings\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a6f5f070e236aaf9b1809e34b467f3225}\label{lodepng_8h_a6f5f070e236aaf9b1809e34b467f3225} 
+\index{lodepng.h@{lodepng.h}!lodepng\_deflate@{lodepng\_deflate}}
+\index{lodepng\_deflate@{lodepng\_deflate}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_deflate()}{lodepng\_deflate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+deflate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a90e82b0ccc75cfb27ccc9756c8d96f07}\label{lodepng_8h_a90e82b0ccc75cfb27ccc9756c8d96f07} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encode@{lodepng\_encode}}
+\index{lodepng\_encode@{lodepng\_encode}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encode()}{lodepng\_encode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+encode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h,  }\item[{\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a4100642d70071029967c16afd72193ff}\label{lodepng_8h_a4100642d70071029967c16afd72193ff} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encode24@{lodepng\_encode24}}
+\index{lodepng\_encode24@{lodepng\_encode24}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encode24()}{lodepng\_encode24()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+encode24 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a4f8f383c22ceb7c22b1cc7e774f0bad2}\label{lodepng_8h_a4f8f383c22ceb7c22b1cc7e774f0bad2} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encode24\_file@{lodepng\_encode24\_file}}
+\index{lodepng\_encode24\_file@{lodepng\_encode24\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encode24\_file()}{lodepng\_encode24\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+encode24\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a75d7f3e4e388b74b7b5214c76c66382f}\label{lodepng_8h_a75d7f3e4e388b74b7b5214c76c66382f} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encode32@{lodepng\_encode32}}
+\index{lodepng\_encode32@{lodepng\_encode32}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encode32()}{lodepng\_encode32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+encode32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a018a3bd975fb886cdf1f6f544f2882e4}\label{lodepng_8h_a018a3bd975fb886cdf1f6f544f2882e4} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encode32\_file@{lodepng\_encode32\_file}}
+\index{lodepng\_encode32\_file@{lodepng\_encode32\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encode32\_file()}{lodepng\_encode32\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+encode32\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a009ac38098765fcae32c9d91770b94df}\label{lodepng_8h_a009ac38098765fcae32c9d91770b94df} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encode\_file@{lodepng\_encode\_file}}
+\index{lodepng\_encode\_file@{lodepng\_encode\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encode\_file()}{lodepng\_encode\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+encode\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h,  }\item[{\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}}}]{colortype,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{bitdepth }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ada7bc92db6e9f8906a1fc85caa0b17aa}\label{lodepng_8h_ada7bc92db6e9f8906a1fc85caa0b17aa} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encode\_memory@{lodepng\_encode\_memory}}
+\index{lodepng\_encode\_memory@{lodepng\_encode\_memory}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encode\_memory()}{lodepng\_encode\_memory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+encode\+\_\+memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h,  }\item[{\mbox{\hyperlink{lodepng_8h_a8f763b6ae712d9802dec37019dfa0102}{Lode\+PNGColor\+Type}}}]{colortype,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{bitdepth }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a874763ad14a0c84d41d0819212407a5a}\label{lodepng_8h_a874763ad14a0c84d41d0819212407a5a} 
+\index{lodepng.h@{lodepng.h}!lodepng\_encoder\_settings\_init@{lodepng\_encoder\_settings\_init}}
+\index{lodepng\_encoder\_settings\_init@{lodepng\_encoder\_settings\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_encoder\_settings\_init()}{lodepng\_encoder\_settings\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+encoder\+\_\+settings\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGEncoderSettings}{Lode\+PNGEncoder\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_acbd8698f07faa837c59ca004a7ad2ef4}\label{lodepng_8h_acbd8698f07faa837c59ca004a7ad2ef4} 
+\index{lodepng.h@{lodepng.h}!lodepng\_error\_text@{lodepng\_error\_text}}
+\index{lodepng\_error\_text@{lodepng\_error\_text}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_error\_text()}{lodepng\_error\_text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*} lodepng\+\_\+error\+\_\+text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{code }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{lodepng_8h_acbd8698f07faa837c59ca004a7ad2ef4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{lodepng_8h_a83344b5c8c5839ca42858dd3578220ef}\label{lodepng_8h_a83344b5c8c5839ca42858dd3578220ef} 
+\index{lodepng.h@{lodepng.h}!lodepng\_get\_bpp@{lodepng\_get\_bpp}}
+\index{lodepng\_get\_bpp@{lodepng\_get\_bpp}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_get\_bpp()}{lodepng\_get\_bpp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+get\+\_\+bpp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_abca559f31bf69eabc23c09a8a4c80b93}\label{lodepng_8h_abca559f31bf69eabc23c09a8a4c80b93} 
+\index{lodepng.h@{lodepng.h}!lodepng\_get\_channels@{lodepng\_get\_channels}}
+\index{lodepng\_get\_channels@{lodepng\_get\_channels}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_get\_channels()}{lodepng\_get\_channels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+get\+\_\+channels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a5861bf2c5a7c8976ea2dd6d21e8d58bd}\label{lodepng_8h_a5861bf2c5a7c8976ea2dd6d21e8d58bd} 
+\index{lodepng.h@{lodepng.h}!lodepng\_get\_raw\_size@{lodepng\_get\_raw\_size}}
+\index{lodepng\_get\_raw\_size@{lodepng\_get\_raw\_size}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_get\_raw\_size()}{lodepng\_get\_raw\_size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} lodepng\+\_\+get\+\_\+raw\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{h,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{color }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a4e89e0d7e13e0f3c098c4cf326cc5014}\label{lodepng_8h_a4e89e0d7e13e0f3c098c4cf326cc5014} 
+\index{lodepng.h@{lodepng.h}!lodepng\_has\_palette\_alpha@{lodepng\_has\_palette\_alpha}}
+\index{lodepng\_has\_palette\_alpha@{lodepng\_has\_palette\_alpha}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_has\_palette\_alpha()}{lodepng\_has\_palette\_alpha()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+has\+\_\+palette\+\_\+alpha (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a82c0c408213e5bbb4a8d0edbaeffc97f}\label{lodepng_8h_a82c0c408213e5bbb4a8d0edbaeffc97f} 
+\index{lodepng.h@{lodepng.h}!lodepng\_huffman\_code\_lengths@{lodepng\_huffman\_code\_lengths}}
+\index{lodepng\_huffman\_code\_lengths@{lodepng\_huffman\_code\_lengths}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_huffman\_code\_lengths()}{lodepng\_huffman\_code\_lengths()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+huffman\+\_\+code\+\_\+lengths (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{lengths,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{frequencies,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{numcodes,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{maxbitlen }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a9c2f61923ad2ce3d47354923ba6df62d}\label{lodepng_8h_a9c2f61923ad2ce3d47354923ba6df62d} 
+\index{lodepng.h@{lodepng.h}!lodepng\_inflate@{lodepng\_inflate}}
+\index{lodepng\_inflate@{lodepng\_inflate}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_inflate()}{lodepng\_inflate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+inflate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ad4b9dc33569e24062e077f5a69ead178}\label{lodepng_8h_ad4b9dc33569e24062e077f5a69ead178} 
+\index{lodepng.h@{lodepng.h}!lodepng\_info\_cleanup@{lodepng\_info\_cleanup}}
+\index{lodepng\_info\_cleanup@{lodepng\_info\_cleanup}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_info\_cleanup()}{lodepng\_info\_cleanup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+info\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a14a4dc4c26e03acb5ab36880aacbd85a}\label{lodepng_8h_a14a4dc4c26e03acb5ab36880aacbd85a} 
+\index{lodepng.h@{lodepng.h}!lodepng\_info\_copy@{lodepng\_info\_copy}}
+\index{lodepng\_info\_copy@{lodepng\_info\_copy}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_info\_copy()}{lodepng\_info\_copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+info\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{source }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ae50c1ddde2fa8004b46da433f3e20974}\label{lodepng_8h_ae50c1ddde2fa8004b46da433f3e20974} 
+\index{lodepng.h@{lodepng.h}!lodepng\_info\_init@{lodepng\_info\_init}}
+\index{lodepng\_info\_init@{lodepng\_info\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_info\_init()}{lodepng\_info\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+info\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a0bee70fa0a93ca4463b35a3ceb9910e3}\label{lodepng_8h_a0bee70fa0a93ca4463b35a3ceb9910e3} 
+\index{lodepng.h@{lodepng.h}!lodepng\_inspect@{lodepng\_inspect}}
+\index{lodepng\_inspect@{lodepng\_inspect}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_inspect()}{lodepng\_inspect()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+inspect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{w,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \texorpdfstring{$\ast$}{*}}]{h,  }\item[{\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a0285afa60b6263b9c6854424fffbf010}\label{lodepng_8h_a0285afa60b6263b9c6854424fffbf010} 
+\index{lodepng.h@{lodepng.h}!lodepng\_inspect\_chunk@{lodepng\_inspect\_chunk}}
+\index{lodepng\_inspect\_chunk@{lodepng\_inspect\_chunk}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_inspect\_chunk()}{lodepng\_inspect\_chunk()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+inspect\+\_\+chunk (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{state,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{pos,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_aa255d9a2e4054fc2888bf7670dac4107}\label{lodepng_8h_aa255d9a2e4054fc2888bf7670dac4107} 
+\index{lodepng.h@{lodepng.h}!lodepng\_is\_alpha\_type@{lodepng\_is\_alpha\_type}}
+\index{lodepng\_is\_alpha\_type@{lodepng\_is\_alpha\_type}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_is\_alpha\_type()}{lodepng\_is\_alpha\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+is\+\_\+alpha\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ae0e6996e4aa9ac225f228b2253269127}\label{lodepng_8h_ae0e6996e4aa9ac225f228b2253269127} 
+\index{lodepng.h@{lodepng.h}!lodepng\_is\_greyscale\_type@{lodepng\_is\_greyscale\_type}}
+\index{lodepng\_is\_greyscale\_type@{lodepng\_is\_greyscale\_type}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_is\_greyscale\_type()}{lodepng\_is\_greyscale\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+is\+\_\+greyscale\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ad9b8eca971e9d01d55ced928b26a53c5}\label{lodepng_8h_ad9b8eca971e9d01d55ced928b26a53c5} 
+\index{lodepng.h@{lodepng.h}!lodepng\_is\_palette\_type@{lodepng\_is\_palette\_type}}
+\index{lodepng\_is\_palette\_type@{lodepng\_is\_palette\_type}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_is\_palette\_type()}{lodepng\_is\_palette\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+is\+\_\+palette\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_af0b16abca7a6a20ff4980e9f04374c90}\label{lodepng_8h_af0b16abca7a6a20ff4980e9f04374c90} 
+\index{lodepng.h@{lodepng.h}!lodepng\_load\_file@{lodepng\_load\_file}}
+\index{lodepng\_load\_file@{lodepng\_load\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_load\_file()}{lodepng\_load\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+load\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a05bf6fac7afc9025bbcb9f5f9f1b0027}\label{lodepng_8h_a05bf6fac7afc9025bbcb9f5f9f1b0027} 
+\index{lodepng.h@{lodepng.h}!lodepng\_palette\_add@{lodepng\_palette\_add}}
+\index{lodepng\_palette\_add@{lodepng\_palette\_add}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_palette\_add()}{lodepng\_palette\_add()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+palette\+\_\+add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{r,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{g,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{b,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{a }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a2aa729ce82079627789a0f8961c82f5e}\label{lodepng_8h_a2aa729ce82079627789a0f8961c82f5e} 
+\index{lodepng.h@{lodepng.h}!lodepng\_palette\_clear@{lodepng\_palette\_clear}}
+\index{lodepng\_palette\_clear@{lodepng\_palette\_clear}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_palette\_clear()}{lodepng\_palette\_clear()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+palette\+\_\+clear (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGColorMode}{Lode\+PNGColor\+Mode}} \texorpdfstring{$\ast$}{*}}]{info }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a837bf136ff32ee3efed5df4105ccedf7}\label{lodepng_8h_a837bf136ff32ee3efed5df4105ccedf7} 
+\index{lodepng.h@{lodepng.h}!lodepng\_save\_file@{lodepng\_save\_file}}
+\index{lodepng\_save\_file@{lodepng\_save\_file}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_save\_file()}{lodepng\_save\_file()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+save\+\_\+file (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{buffer,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{buffersize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{filename }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_aeaa684595223a1a737d80f30a00dacca}\label{lodepng_8h_aeaa684595223a1a737d80f30a00dacca} 
+\index{lodepng.h@{lodepng.h}!lodepng\_set\_icc@{lodepng\_set\_icc}}
+\index{lodepng\_set\_icc@{lodepng\_set\_icc}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_set\_icc()}{lodepng\_set\_icc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+set\+\_\+icc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGInfo}{Lode\+PNGInfo}} \texorpdfstring{$\ast$}{*}}]{info,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{name,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{profile,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}}}]{profile\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a74109bf9860e2eb4bfa872ab8cf0f000}\label{lodepng_8h_a74109bf9860e2eb4bfa872ab8cf0f000} 
+\index{lodepng.h@{lodepng.h}!lodepng\_state\_cleanup@{lodepng\_state\_cleanup}}
+\index{lodepng\_state\_cleanup@{lodepng\_state\_cleanup}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_state\_cleanup()}{lodepng\_state\_cleanup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+state\+\_\+cleanup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a87514bea6f324553184e48794a0ec3fc}\label{lodepng_8h_a87514bea6f324553184e48794a0ec3fc} 
+\index{lodepng.h@{lodepng.h}!lodepng\_state\_copy@{lodepng\_state\_copy}}
+\index{lodepng\_state\_copy@{lodepng\_state\_copy}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_state\_copy()}{lodepng\_state\_copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+state\+\_\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{dest,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{source }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ae3ee1eb944467fbbc1cf939328dd6a57}\label{lodepng_8h_ae3ee1eb944467fbbc1cf939328dd6a57} 
+\index{lodepng.h@{lodepng.h}!lodepng\_state\_init@{lodepng\_state\_init}}
+\index{lodepng\_state\_init@{lodepng\_state\_init}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_state\_init()}{lodepng\_state\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} lodepng\+\_\+state\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structLodePNGState}{Lode\+PNGState}} \texorpdfstring{$\ast$}{*}}]{state }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_a72d4240c44c9ba1814dae814c7d80eb1}\label{lodepng_8h_a72d4240c44c9ba1814dae814c7d80eb1} 
+\index{lodepng.h@{lodepng.h}!lodepng\_zlib\_compress@{lodepng\_zlib\_compress}}
+\index{lodepng\_zlib\_compress@{lodepng\_zlib\_compress}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_zlib\_compress()}{lodepng\_zlib\_compress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+zlib\+\_\+compress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+\Hypertarget{lodepng_8h_ae66b9c1eeb9c44572bd381a94485e157}\label{lodepng_8h_ae66b9c1eeb9c44572bd381a94485e157} 
+\index{lodepng.h@{lodepng.h}!lodepng\_zlib\_decompress@{lodepng\_zlib\_decompress}}
+\index{lodepng\_zlib\_decompress@{lodepng\_zlib\_decompress}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_zlib\_decompress()}{lodepng\_zlib\_decompress()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} lodepng\+\_\+zlib\+\_\+decompress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{outsize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{unsigned}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{in,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{insize,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} \texorpdfstring{$\ast$}{*}}]{settings }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{lodepng_8h_a0b5cf190f94f8f11ed5c0abb3504ad86}\label{lodepng_8h_a0b5cf190f94f8f11ed5c0abb3504ad86} 
+\index{lodepng.h@{lodepng.h}!lodepng\_default\_compress\_settings@{lodepng\_default\_compress\_settings}}
+\index{lodepng\_default\_compress\_settings@{lodepng\_default\_compress\_settings}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_default\_compress\_settings}{lodepng\_default\_compress\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGCompressSettings}{Lode\+PNGCompress\+Settings}} lodepng\+\_\+default\+\_\+compress\+\_\+settings\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{lodepng_8h_aab7a41a03154aa8d9ef65f2d434641b6}\label{lodepng_8h_aab7a41a03154aa8d9ef65f2d434641b6} 
+\index{lodepng.h@{lodepng.h}!lodepng\_default\_decompress\_settings@{lodepng\_default\_decompress\_settings}}
+\index{lodepng\_default\_decompress\_settings@{lodepng\_default\_decompress\_settings}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{lodepng\_default\_decompress\_settings}{lodepng\_default\_decompress\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{structLodePNGDecompressSettings}{Lode\+PNGDecompress\+Settings}} lodepng\+\_\+default\+\_\+decompress\+\_\+settings\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{lodepng_8h_a8b5b5e358236bf8112bd6e58ae8da1b2}\label{lodepng_8h_a8b5b5e358236bf8112bd6e58ae8da1b2} 
+\index{lodepng.h@{lodepng.h}!LODEPNG\_VERSION\_STRING@{LODEPNG\_VERSION\_STRING}}
+\index{LODEPNG\_VERSION\_STRING@{LODEPNG\_VERSION\_STRING}!lodepng.h@{lodepng.h}}
+\doxysubsubsection{\texorpdfstring{LODEPNG\_VERSION\_STRING}{LODEPNG\_VERSION\_STRING}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}\texorpdfstring{$\ast$}{*} LODEPNG\+\_\+\+VERSION\+\_\+\+STRING\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Definition at line \mbox{\hyperlink{lodepng_8c_source_l00047}{47}} of file \mbox{\hyperlink{lodepng_8c_source}{lodepng.\+c}}.
+

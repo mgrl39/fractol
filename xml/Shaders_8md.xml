@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Shaders_8md" kind="file" language="Markdown">
+    <compoundname>Shaders.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Shaders</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>computer<sp/>graphics,<sp/>a<sp/>shader<sp/>is<sp/>a<sp/>type<sp/>of<sp/>computer<sp/>program<sp/>used<sp/>for<sp/>shading<sp/>in<sp/>3D/2D<sp/>scenes<sp/>(the<sp/>production<sp/>of<sp/>appropriate<sp/>levels<sp/>of<sp/>light,<sp/>darkness,<sp/>and<sp/>color<sp/>in<sp/>a<sp/>rendered<sp/>image).<sp/>MLX42<sp/>exposes<sp/>the<sp/>shaders<sp/>and<sp/>compiles<sp/>them<sp/>into<sp/>the<sp/>library<sp/>for<sp/>portability.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```glsl</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Example<sp/>of<sp/>shader<sp/>code,<sp/>GLSL<sp/>is<sp/>similar<sp/>to<sp/>C<sp/>but<sp/>not<sp/>quite.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#version<sp/>330<sp/>core</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">layout(location<sp/>=<sp/>0)<sp/>in<sp/>vec3<sp/>aPos;</highlight></codeline>
+<codeline><highlight class="normal">layout(location<sp/>=<sp/>1)<sp/>in<sp/>vec2<sp/>aTexCoord;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">out<sp/>vec2<sp/>TexCoord;</highlight></codeline>
+<codeline><highlight class="normal">uniform<sp/>mat4<sp/>ProjMatrix;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>main()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>gl_Position<sp/>=<sp/>ProjMatrix<sp/>*<sp/>vec4(aPos,<sp/>1.0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>TexCoord<sp/>=<sp/>aTexCoord;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Beware</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Shaders<sp/>aren&apos;t<sp/>really<sp/>meant<sp/>to<sp/>be<sp/>used<sp/>by<sp/>students<sp/>but<sp/>are<sp/>more<sp/>there<sp/>for<sp/>the<sp/>convenience<sp/>of<sp/>developers.<sp/>(though<sp/>some<sp/>advanced<sp/>students<sp/>might<sp/>make<sp/>some<sp/>use<sp/>of<sp/>them)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Compilation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Shaders<sp/>are<sp/>converted<sp/>into<sp/>a<sp/>`.c`<sp/>appropriate<sp/>format<sp/>and<sp/>then<sp/>compiled<sp/>into<sp/>the<sp/>library<sp/>and<sp/>referenced<sp/>via<sp/>a<sp/>`extern`<sp/>global<sp/>variable<sp/>appropriately<sp/>named<sp/>`vert_shader`<sp/>&amp;<sp/>`frag_shader`.<sp/>The<sp/>reason<sp/>this<sp/>is<sp/>done<sp/>is<sp/>to<sp/>keep<sp/>the<sp/>final<sp/>game/executable<sp/>portable,<sp/>that<sp/>is<sp/>being<sp/>able<sp/>to<sp/>use<sp/>it<sp/>at<sp/>any<sp/>given<sp/>location<sp/>within<sp/>a<sp/>filesystem,<sp/>while<sp/>still<sp/>being<sp/>easy<sp/>to<sp/>work<sp/>on<sp/>the<sp/>shaders<sp/>instead<sp/>of<sp/>having<sp/>to<sp/>mess<sp/>with<sp/>it<sp/>in<sp/>the<sp/>`.c`<sp/>files<sp/>directly.<sp/></highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Shaders.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,311 @@
+.TH "MLX42/src/mlx_init.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_init.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBframebuffer_callback\fP (\fBGLFWwindow\fP *window, \fBint\fP \fBwidth\fP, \fBint\fP \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBbool\fP \fBmlx_create_buffers\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBuint32_t\fP \fBmlx_compile_shader\fP (\fBconst\fP \fBchar\fP *\fBcode\fP, \fBint32_t\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBbool\fP \fBmlx_init_render\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_t\fP * \fBmlx_init\fP (\fBint32_t\fP \fBwidth\fP, \fBint32_t\fP \fBheight\fP, \fBconst\fP \fBchar\fP *\fBtitle\fP, \fBbool\fP \fBresize\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_setting\fP (\fBmlx_settings_t\fP \fBsetting\fP, \fBint32_t\fP \fBvalue\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_settings\fP [\fBMLX_SETTINGS_MAX\fP] = {\fBfalse\fP, \fBfalse\fP, \fBfalse\fP, \fBtrue\fP, \fBfalse\fP}"
+.br
+.ti -1c
+.RI "\fBmlx_errno_t\fP \fBmlx_errno\fP = \fBMLX_SUCCESS\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBsort_queue\fP = \fBfalse\fP"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvoid\fP framebuffer_callback (\fBGLFWwindow\fP * window, \fBint\fP width, \fBint\fP height)\fC [static]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+18 {
+19     (void)window;
+20     glViewport(0, 0, width, height);
+21 }
+.fi
+
+.SS "\fBstatic\fP \fBuint32_t\fP mlx_compile_shader (\fBconst\fP \fBchar\fP * code, \fBint32_t\fP type)\fC [static]\fP"
+Compiles the given shader source code of a given shader type\&. Returns shader object via param\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcode\fP The shader source code\&. 
+.br
+\fIType\fP GL_VERTEX_SHADER, GL_FRAGMENT_SHADER, GL_GEOMETRY_SHADER, \&.\&.\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Non-zero on success, else 0\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+79 {
+80     GLuint shader;
+81     int32_t success;
+82     char infolog[512] = {0};
+83 
+84     if (!code || (shader = glCreateShader(type)) == 0) 
+85         return (0);
+86 
+87     GLint len = strlen(code);
+88     glShaderSource(shader, 1, &code, &len);
+89     glCompileShader(shader);
+90     glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
+91     if (!success)
+92     {
+93         glGetShaderInfoLog(shader, sizeof(infolog), NULL, infolog);
+94         fprintf(stderr, "%s", infolog);
+95         glDeleteShader(shader);
+96         return (0);
+97     }
+98     return (shader);
+99 }
+.fi
+
+.SS "\fBstatic\fP \fBbool\fP mlx_create_buffers (\fBmlx_t\fP * mlx)\fC [static]\fP"
+
+.PP
+Definition at line \fB23\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+24 {
+25     mlx_ctx_t* mlxctx = mlx\->context;
+26 
+27     mlxctx\->zdepth = 0;
+28     glActiveTexture(GL_TEXTURE0);
+29     glGenVertexArrays(1, &(mlxctx\->vao));
+30     glGenBuffers(1, &(mlxctx\->vbo));
+31     glBindVertexArray(mlxctx\->vao);
+32     glBindBuffer(GL_ARRAY_BUFFER, mlxctx\->vbo);
+33 
+34     // Vertex XYZ coordinates
+35     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(vertex_t), NULL);
+36     glEnableVertexAttribArray(0);
+37 
+38     // UV Coordinates
+39     glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(vertex_t), (void *)(sizeof(float) * 3));
+40     glEnableVertexAttribArray(1);
+41 
+42     // Texture index
+43     glVertexAttribIPointer(2, 1, GL_BYTE, sizeof(vertex_t), (void *)(sizeof(float) * 5));
+44     glEnableVertexAttribArray(2);
+45 
+46     glEnable(GL_BLEND);
+47     glEnable(GL_DEPTH_TEST);
+48     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+49 
+50     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture0"), 0);
+51     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture1"), 1);
+52     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture2"), 2);
+53     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture3"), 3);
+54     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture4"), 4);
+55     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture5"), 5);
+56     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture6"), 6);
+57     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture7"), 7);
+58     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture8"), 8);
+59     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture9"), 9);
+60     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture10"), 10);
+61     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture11"), 11);
+62     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture12"), 12);
+63     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture13"), 13);
+64     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture14"), 14);
+65     glUniform1i(glGetUniformLocation(mlxctx\->shaderprogram, "Texture15"), 15);
+66 
+67     return (true);
+68 }
+.fi
+
+.SS "\fBmlx_t\fP * mlx_init (\fBint32_t\fP width, \fBint32_t\fP height, \fBconst\fP \fBchar\fP * title, \fBbool\fP resize)"
+Initializes a new MLX42 Instance\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP The width of the window\&. 
+.br
+\fIheight\fP The height of the window\&. 
+.br
+\fItitle\fP The title of the window\&. 
+.br
+\fIresize\fP Enable window resizing\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Ptr to the MLX handle or null on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB161\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+162 {
+163     MLX_NONNULL(title);
+164     MLX_ASSERT(width > 0, "Window width must be positive");
+165     MLX_ASSERT(height > 0, "Window height must be positive");
+166 
+167     bool init;
+168     mlx_t* mlx;
+169     if (!(init = glfwInit()))
+170         return ((void*)mlx_error(MLX_GLFWFAIL));
+171     if (!(mlx = calloc(1, sizeof(mlx_t))))
+172         return ((void*)mlx_error(MLX_MEMFAIL));
+173     if (!(mlx\->context = calloc(1, sizeof(mlx_ctx_t))))
+174         return (free(mlx), (void*)mlx_error(MLX_MEMFAIL));
+175 
+176     mlx_ctx_t* const mlxctx = mlx\->context;
+177     mlx\->width = width;
+178     mlx\->height = height;
+179     mlxctx\->initialWidth = width;
+180     mlxctx\->initialHeight = height;
+181 
+182     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+183     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+184     glfwWindowHint(GLFW_MAXIMIZED, mlx_settings[MLX_MAXIMIZED]);
+185     glfwWindowHint(GLFW_DECORATED, mlx_settings[MLX_DECORATED]);
+186     glfwWindowHint(GLFW_VISIBLE, !mlx_settings[MLX_HEADLESS]);
+187     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+188 #ifdef __APPLE__
+189     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+190 #endif
+191     glfwWindowHint(GLFW_RESIZABLE, resize);
+192     if (!(mlx\->window = glfwCreateWindow(width, height, title, mlx_settings[MLX_FULLSCREEN] ? glfwGetPrimaryMonitor() : NULL, NULL)))
+193         return (mlx_terminate(mlx), (void*)mlx_error(MLX_WINFAIL));
+194     if (!mlx_init_render(mlx) || !mlx_create_buffers(mlx))
+195         return (mlx_terminate(mlx), NULL);
+196     return (mlx);
+197 }
+.fi
+
+.SS "\fBstatic\fP \fBbool\fP mlx_init_render (\fBmlx_t\fP * mlx)\fC [static]\fP"
+
+.PP
+Definition at line \fB101\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+102 {
+103     uint32_t vshader = 0;
+104     uint32_t fshader = 0;
+105     char infolog[512] = {0};
+106     mlx_ctx_t* mlxctx = mlx\->context;
+107 
+108     glfwMakeContextCurrent(mlx\->window);
+109     glfwSetFramebufferSizeCallback(mlx\->window, framebuffer_callback);
+110     glfwSetWindowUserPointer(mlx\->window, mlx);
+111     glfwSwapInterval(MLX_SWAP_INTERVAL);
+112 
+113     // Load all OpenGL function pointers
+114     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+115         return (mlx_error(MLX_GLADFAIL));
+116 
+117     if (!(vshader = mlx_compile_shader(vert_shader, GL_VERTEX_SHADER)))
+118         return (mlx_error(MLX_VERTFAIL));
+119     if (!(fshader = mlx_compile_shader(frag_shader, GL_FRAGMENT_SHADER)))
+120         return (mlx_error(MLX_FRAGFAIL));
+121     if (!(mlxctx\->shaderprogram = glCreateProgram()))
+122     {
+123         glDeleteShader(fshader);
+124         glDeleteShader(vshader);
+125         return (mlx_error(MLX_SHDRFAIL));
+126     }
+127     glAttachShader(mlxctx\->shaderprogram, vshader);
+128     glAttachShader(mlxctx\->shaderprogram, fshader);
+129     glLinkProgram(mlxctx\->shaderprogram);
+130 
+131     glDeleteShader(vshader);
+132     glDeleteShader(fshader);
+133     glDetachShader(mlxctx\->shaderprogram, vshader);
+134     glDetachShader(mlxctx\->shaderprogram, fshader);
+135 
+136     int32_t success;
+137     glGetProgramiv(mlxctx\->shaderprogram, GL_LINK_STATUS, &success);
+138     if (!success)
+139     {
+140         glGetProgramInfoLog(mlxctx\->shaderprogram, sizeof(infolog), NULL, infolog);
+141         fprintf(stderr, "%s", infolog);
+142         return (mlx_error(MLX_SHDRFAIL));
+143     }
+144     glUseProgram(mlxctx\->shaderprogram);
+145 
+146     for (size_t i = 0; i < 16; i++)
+147         mlxctx\->bound_textures[i] = 0;
+148 
+149     return (true);
+150 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_setting (\fBmlx_settings_t\fP setting, \fBint32_t\fP value)"
+Set a setting for MLX42\&. Settings can manipulate the core behaviour of the engine\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP The settings value, See mlx_settings_t type\&. 
+.br
+\fIvalue\fP Settings value to determine the state of the setting\&. Can be a boolean or an enum / macro\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB199\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+200 {
+201     MLX_ASSERT(setting >= 0 && setting < MLX_SETTINGS_MAX, "Invalid settings value");
+202     mlx_settings[setting] = value;
+203 }
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBmlx_errno_t\fP \fBmlx_errno\fP = \fBMLX_SUCCESS\fP"
+
+.PP
+Definition at line \fB158\fP of file \fBmlx_init\&.c\fP\&.
+.SS "\fBint32_t\fP \fBmlx_settings\fP[\fBMLX_SETTINGS_MAX\fP] = {\fBfalse\fP, \fBfalse\fP, \fBfalse\fP, \fBtrue\fP, \fBfalse\fP}"
+
+.PP
+Definition at line \fB157\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+157 {false, false, false, true, false};
+.fi
+
+.SS "\fBbool\fP sort_queue = \fBfalse\fP"
+
+.PP
+Definition at line \fB159\fP of file \fBmlx_init\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

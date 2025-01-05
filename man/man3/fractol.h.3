@@ -1,0 +1,749 @@
+.TH "fractol.h" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+fractol.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42\&.h'\fP
+.br
+\fC#include <limits\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBs_color\fP"
+.br
+.RI "Represents an RGB color\&. "
+.ti -1c
+.RI "struct \fBs_data\fP"
+.br
+.RI "Data structure for fractal rendering\&. "
+.ti -1c
+.RI "struct \fBs_render_vars\fP"
+.br
+.RI "Variables used for fractal rendering calculations\&. "
+.ti -1c
+.RI "struct \fBs_atod_data\fP"
+.br
+.RI "Helper structure for string-to-double conversion\&. "
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBWIDTH\fP   800"
+.br
+.ti -1c
+.RI "#define \fBHEIGHT\fP   \fBWIDTH\fP"
+.br
+.ti -1c
+.RI "#define \fBZOOM_IN\fP   1\&.1"
+.br
+.ti -1c
+.RI "#define \fBZOOM_OUT\fP   0\&.9"
+.br
+.ti -1c
+.RI "#define \fBFRACTAL_LIMIT\fP   4\&.0"
+.br
+.ti -1c
+.RI "#define \fBMAX_ITERATIONS\fP   75"
+.br
+.ti -1c
+.RI "#define \fBRESET\fP   '\\033[0m'"
+.br
+.ti -1c
+.RI "#define \fBLIGHT_RED\fP   '\\033[38;5;203m'"
+.br
+.ti -1c
+.RI "#define \fBLIGHT_GOLD\fP   '\\033[38;5;220m'"
+.br
+.ti -1c
+.RI "#define \fBLIGHT_GREEN\fP   '\\033[38;5;120m'"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef enum \fBe_fractal_type\fP \fBt_fractal_type\fP"
+.br
+.ti -1c
+.RI "typedef enum \fBe_offset_index\fP \fBt_offset_index\fP"
+.br
+.RI "Indices for offsets in the x and y directions\&. "
+.ti -1c
+.RI "typedef enum \fBe_scale_index\fP \fBt_scale_index\fP"
+.br
+.RI "Indices for scaling factors in the x and y directions\&. "
+.ti -1c
+.RI "typedef enum \fBe_complex_index\fP \fBt_complex_index\fP"
+.br
+.RI "Indices for complex numbers (real and imaginary) "
+.ti -1c
+.RI "typedef enum \fBe_number_flags\fP \fBt_number_flags\fP"
+.br
+.RI "Flags for validating numbers\&. "
+.ti -1c
+.RI "typedef struct \fBs_color\fP \fBt_color\fP"
+.br
+.RI "Represents an RGB color\&. "
+.ti -1c
+.RI "typedef struct \fBs_data\fP \fBt_data\fP"
+.br
+.RI "Data structure for fractal rendering\&. "
+.ti -1c
+.RI "typedef struct \fBs_render_vars\fP \fBt_render_vars\fP"
+.br
+.RI "Variables used for fractal rendering calculations\&. "
+.ti -1c
+.RI "typedef struct \fBs_atod_data\fP \fBt_atod_data\fP"
+.br
+.RI "Helper structure for string-to-double conversion\&. "
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBe_fractal_type\fP { \fBMANDELBROT\fP, \fBJULIA\fP }"
+.br
+.ti -1c
+.RI "enum \fBe_offset_index\fP { \fBOFFSET_X\fP, \fBOFFSET_Y\fP }"
+.br
+.RI "Indices for offsets in the x and y directions\&. "
+.ti -1c
+.RI "enum \fBe_scale_index\fP { \fBSCALE_X\fP, \fBSCALE_Y\fP }"
+.br
+.RI "Indices for scaling factors in the x and y directions\&. "
+.ti -1c
+.RI "enum \fBe_complex_index\fP { \fBCOMPLEX_RE\fP, \fBCOMPLEX_IM\fP }"
+.br
+.RI "Indices for complex numbers (real and imaginary) "
+.ti -1c
+.RI "enum \fBe_number_flags\fP { \fBHAS_DIGIT\fP, \fBHAS_POINT\fP }"
+.br
+.RI "Flags for validating numbers\&. "
+.ti -1c
+.RI "enum \fBe_err_msg\fP { \fBNO_TYPE\fP, \fBINVALID_TYPE\fP, \fBJULIA_ARGS\fP, \fBJULIA_NUM\fP, \fBMANDELBROT_ARGS\fP }"
+.br
+.RI "Error messages used for input validation\&. "
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBcalculate_scales_and_limits\fP (\fBt_render_vars\fP *vars, \fBt_data\fP *data)"
+.br
+.RI "Calculates scales and limits for rendering fractals\&. "
+.ti -1c
+.RI "int \fBprecompute_coords\fP (double **c_re, double **c_im, \fBt_render_vars\fP *vars)"
+.br
+.RI "Precomputes coordinates for fractal rendering\&. "
+.ti -1c
+.RI "int \fBcalculate_color\fP (int iterations)"
+.br
+.RI "Calculates the color based on the number of iterations\&. "
+.ti -1c
+.RI "double \fBft_atod\fP (const char *str)"
+.br
+.RI "Converts a string to a double\&. "
+.ti -1c
+.RI "int \fBft_strcmp\fP (const char *s1, const char *s2)"
+.br
+.RI "Compares two strings\&. "
+.ti -1c
+.RI "int \fBfr_putstr_fd\fP (char *s, int fd)"
+.br
+.RI "Writes a string to a file descriptor\&. "
+.ti -1c
+.RI "void \fBrender_fractal\fP (\fBt_data\fP *data)"
+.br
+.RI "Render the specified fractal\&. "
+.ti -1c
+.RI "void \fBrender_mandelbrot\fP (\fBt_data\fP *data)"
+.br
+.RI "Render the Mandelbrot fractal\&. "
+.ti -1c
+.RI "void \fBrender_julia\fP (\fBt_data\fP *data)"
+.br
+.RI "Renders the Julia fractal\&. "
+.ti -1c
+.RI "void \fBhandle_key\fP (mlx_key_data_t keydata, void *param)"
+.br
+.RI "Handles key inputs\&. "
+.ti -1c
+.RI "void \fBhandle_scroll\fP (double xdelta, double ydelta, void *param)"
+.br
+.RI "Handles scroll inputs\&. "
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define FRACTAL_LIMIT   4\&.0"
+
+.PP
+Definition at line \fB192\fP of file \fBfractol\&.h\fP\&.
+.SS "#define HEIGHT   \fBWIDTH\fP"
+
+.PP
+Definition at line \fB189\fP of file \fBfractol\&.h\fP\&.
+.SS "#define LIGHT_GOLD   '\\033[38;5;220m'"
+
+.PP
+Definition at line \fB196\fP of file \fBfractol\&.h\fP\&.
+.SS "#define LIGHT_GREEN   '\\033[38;5;120m'"
+
+.PP
+Definition at line \fB197\fP of file \fBfractol\&.h\fP\&.
+.SS "#define LIGHT_RED   '\\033[38;5;203m'"
+
+.PP
+Definition at line \fB195\fP of file \fBfractol\&.h\fP\&.
+.SS "#define MAX_ITERATIONS   75"
+
+.PP
+Definition at line \fB193\fP of file \fBfractol\&.h\fP\&.
+.SS "#define RESET   '\\033[0m'"
+
+.PP
+Definition at line \fB194\fP of file \fBfractol\&.h\fP\&.
+.SS "#define WIDTH   800"
+
+.PP
+Definition at line \fB188\fP of file \fBfractol\&.h\fP\&.
+.SS "#define ZOOM_IN   1\&.1"
+
+.PP
+Definition at line \fB190\fP of file \fBfractol\&.h\fP\&.
+.SS "#define ZOOM_OUT   0\&.9"
+
+.PP
+Definition at line \fB191\fP of file \fBfractol\&.h\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBs_atod_data\fP \fBt_atod_data\fP"
+
+.PP
+Helper structure for string-to-double conversion\&. 
+.SS "typedef struct \fBs_color\fP \fBt_color\fP"
+
+.PP
+Represents an RGB color\&. 
+.SS "typedef enum \fBe_complex_index\fP \fBt_complex_index\fP"
+
+.PP
+Indices for complex numbers (real and imaginary) 
+.SS "typedef struct \fBs_data\fP \fBt_data\fP"
+
+.PP
+Data structure for fractal rendering\&. 
+.SS "typedef enum \fBe_fractal_type\fP \fBt_fractal_type\fP"
+
+.SS "typedef enum \fBe_number_flags\fP \fBt_number_flags\fP"
+
+.PP
+Flags for validating numbers\&. 
+.SS "typedef enum \fBe_offset_index\fP \fBt_offset_index\fP"
+
+.PP
+Indices for offsets in the x and y directions\&. 
+.SS "typedef struct \fBs_render_vars\fP \fBt_render_vars\fP"
+
+.PP
+Variables used for fractal rendering calculations\&. 
+.SS "typedef enum \fBe_scale_index\fP \fBt_scale_index\fP"
+
+.PP
+Indices for scaling factors in the x and y directions\&. 
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBe_complex_index\fP"
+
+.PP
+Indices for complex numbers (real and imaginary) 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fICOMPLEX_RE \fP\fP
+.TP
+\fB\fICOMPLEX_IM \fP\fP
+.PP
+Definition at line \fB50\fP of file \fBfractol\&.h\fP\&..PP
+.nf
+51 {
+52     COMPLEX_RE,
+53     COMPLEX_IM,
+54 }   t_complex_index;
+.fi
+
+.SS "enum \fBe_err_msg\fP"
+
+.PP
+Error messages used for input validation\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fINO_TYPE \fP\fP
+.TP
+\fB\fIINVALID_TYPE \fP\fP
+.TP
+\fB\fIJULIA_ARGS \fP\fP
+.TP
+\fB\fIJULIA_NUM \fP\fP
+.TP
+\fB\fIMANDELBROT_ARGS \fP\fP
+.PP
+Definition at line \fB68\fP of file \fBfractol\&.h\fP\&..PP
+.nf
+69 {
+70     NO_TYPE,
+71     INVALID_TYPE,
+72     JULIA_ARGS,
+73     JULIA_NUM,
+74     MANDELBROT_ARGS,
+75 };
+.fi
+
+.SS "enum \fBe_fractal_type\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMANDELBROT \fP\fP
+.TP
+\fB\fIJULIA \fP\fP
+.PP
+Definition at line \fB23\fP of file \fBfractol\&.h\fP\&..PP
+.nf
+24 {
+25     MANDELBROT,
+26     JULIA,
+27 }   t_fractal_type;
+.fi
+
+.SS "enum \fBe_number_flags\fP"
+
+.PP
+Flags for validating numbers\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIHAS_DIGIT \fP\fP
+.TP
+\fB\fIHAS_POINT \fP\fP
+.PP
+Definition at line \fB59\fP of file \fBfractol\&.h\fP\&..PP
+.nf
+60 {
+61     HAS_DIGIT,
+62     HAS_POINT,
+63 }   t_number_flags;
+.fi
+
+.SS "enum \fBe_offset_index\fP"
+
+.PP
+Indices for offsets in the x and y directions\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIOFFSET_X \fP\fP
+.TP
+\fB\fIOFFSET_Y \fP\fP
+.PP
+Definition at line \fB32\fP of file \fBfractol\&.h\fP\&..PP
+.nf
+33 {
+34     OFFSET_X,
+35     OFFSET_Y,
+36 }   t_offset_index;
+.fi
+
+.SS "enum \fBe_scale_index\fP"
+
+.PP
+Indices for scaling factors in the x and y directions\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fISCALE_X \fP\fP
+.TP
+\fB\fISCALE_Y \fP\fP
+.PP
+Definition at line \fB41\fP of file \fBfractol\&.h\fP\&..PP
+.nf
+42 {
+43     SCALE_X,
+44     SCALE_Y,
+45 }   t_scale_index;
+.fi
+
+.SH "Function Documentation"
+.PP 
+.SS "int calculate_color (int iterations)"
+
+.PP
+Calculates the color based on the number of iterations\&. Calculates the color based on the number of iterations\&.
+.PP
+This function determines the color of each pixel in the fractal by mapping the iteration count (how many steps we are needed to reach a threshold) to a color gradient\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+The function decides the color of each pooint in the fractal, creating the beautiful patterns you see based on how 'complex' the point is\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIiterations\fP Number of iterations required for the opint to 'escape'\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns the calculated color as an integer\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+132 {
+133     double  it_count;
+134     int     base_gray;
+135     t_color color;
+136 
+137     it_count = (double)iterations / MAX_ITERATIONS;
+138     base_gray = (30 + 190 * (it_count * (1 \- 0\&.2 * it_count)));
+139     color\&.r = base_gray \- (5 * (1 \- it_count) * it_count * it_count);
+140     color\&.g = base_gray \- (10 * (1 \- it_count) * (1 \- it_count));
+141     color\&.b = base_gray \- (15 * (1 \- it_count) * it_count);
+142     return ((0xFF << 24) | (color\&.r << 16) | (color\&.g << 8) | color\&.b);
+143 }
+.fi
+
+.SS "void calculate_scales_and_limits (\fBt_render_vars\fP * vars, \fBt_data\fP * data)"
+
+.PP
+Calculates scales and limits for rendering fractals\&. Calculates scales and limits for rendering fractals\&.
+.PP
+This function determines how the fractal is scaled and positioned on the screen\&. It computes the scale factors for each pixel and establishes the starting points ffor the real and imaginary part of the fractal based on the zoom level and offsets\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+Think of it as setting the 'zoom' and 'pam' for the fractal to display it correctly on the screen\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIvars\fP Pointer to the rendering variables structure\&. 
+.br
+\fIdata\fP Pointer to the main data structure containing fractal information\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB52\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+53 {
+54     vars\->scale[SCALE_X] = 4\&.0 / (WIDTH * data\->zoom);
+55     vars\->scale[SCALE_Y] = 4\&.0 / (HEIGHT * data\->zoom);
+56     vars\->start[COMPLEX_RE] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_X];
+57     vars\->start[COMPLEX_IM] = \-2\&.0 / data\->zoom + data\->offset[OFFSET_Y];
+58     vars\->pixels = (uint32_t *)data\->img\->pixels;
+59 }
+.fi
+
+.SS "int fr_putstr_fd (char * s, int fd)"
+
+.PP
+Writes a string to a file descriptor\&. Writes a string to a file descriptor\&. 
+.PP
+Definition at line \fB109\fP of file \fButils\&.c\fP\&..PP
+.nf
+110 {
+111     int i;
+112     int count;
+113 
+114     if (!s)
+115         return (0);
+116     i = 0;
+117     count = 0;
+118     while (s[i])
+119         count += write(fd, &s[i++], 1);
+120     return (count);
+121 }
+.fi
+
+.SS "double ft_atod (const char * str)"
+
+.PP
+Converts a string to a double\&. Converts a string to a double\&. 
+.PP
+Definition at line \fB19\fP of file \fButils\&.c\fP\&..PP
+.nf
+20 {
+21     t_atod_data d;
+22 
+23     d\&.result = 0\&.0;
+24     d\&.fraction = 0\&.0;
+25     d\&.divisor = 10\&.0;
+26     d\&.sign = 1;
+27     d\&.i = 0;
+28     while (str[d\&.i] == 32 || (str[d\&.i] >= 9 && str[d\&.i] <= 13))
+29         d\&.i++;
+30     if (str[d\&.i] == '\-' || str[d\&.i] == '+')
+31         if (str[d\&.i++] == '\-')
+32             d\&.sign = \-1;
+33     while (str[d\&.i] >= '0' && str[d\&.i] <= '9')
+34         d\&.result = d\&.result * 10\&.0 + (str[d\&.i++] \- '0');
+35     if (str[d\&.i] == '\&.')
+36     {
+37         d\&.i++;
+38         while (str[d\&.i] >= '0' && str[d\&.i] <= '9')
+39         {
+40             d\&.fraction += (str[d\&.i] \- '0') / d\&.divisor;
+41             d\&.divisor *= 10\&.0;
+42             d\&.i++;
+43         }
+44     }
+45     return (d\&.sign * (d\&.result + d\&.fraction));
+46 }
+.fi
+
+.SS "int ft_strcmp (const char * s1, const char * s2)"
+
+.PP
+Compares two strings\&. 
+.PP
+Definition at line \fB51\fP of file \fButils\&.c\fP\&..PP
+.nf
+52 {
+53     int i;
+54 
+55     i = 0;
+56     while (s1[i] == s2[i] && s1[i])
+57         i++;
+58     return (s1[i] \- s2[i]);
+59 }
+.fi
+
+.SS "void handle_key (mlx_key_data_t keydata, void * param)"
+
+.PP
+Handles key inputs\&. 
+.PP
+Definition at line \fB64\fP of file \fButils\&.c\fP\&..PP
+.nf
+65 {
+66     t_data  *data;
+67 
+68     data = (t_data *)param;
+69     if (keydata\&.key == MLX_KEY_ESCAPE)
+70         mlx_close_window(data\->mlx);
+71     else if (keydata\&.key == MLX_KEY_W)
+72         data\->offset[OFFSET_Y] \-= 0\&.1 / data\->zoom;
+73     else if (keydata\&.key == MLX_KEY_S)
+74         data\->offset[OFFSET_Y] += 0\&.1 / data\->zoom;
+75     else if (keydata\&.key == MLX_KEY_A)
+76         data\->offset[OFFSET_X] \-= 0\&.1 / data\->zoom;
+77     else if (keydata\&.key == MLX_KEY_D)
+78         data\->offset[OFFSET_X] += 0\&.1 / data\->zoom;
+79     else if (keydata\&.key == MLX_KEY_UP)
+80         data\->zoom *= ZOOM_IN;
+81     else if (keydata\&.key == MLX_KEY_DOWN)
+82         data\->zoom *= ZOOM_OUT;
+83     if (data\->zoom < 1e\-5)
+84         data\->zoom = 1e\-5;
+85     render_fractal(data);
+86 }
+.fi
+
+.SS "void handle_scroll (double xdelta, double ydelta, void * param)"
+
+.PP
+Handles scroll inputs\&. Handles scroll inputs\&. 
+.PP
+Definition at line \fB91\fP of file \fButils\&.c\fP\&..PP
+.nf
+92 {
+93     t_data  *data;
+94 
+95     (void)xdelta;
+96     data = (t_data *)param;
+97     if (ydelta > 0)
+98         data\->zoom *= ZOOM_IN;
+99     else
+100         data\->zoom *= ZOOM_OUT;
+101     if (data\->zoom < 1e\-5)
+102         data\->zoom = 1e\-5;
+103     render_fractal(data);
+104 }
+.fi
+
+.SS "int precompute_coords (double ** c_re, double ** c_im, \fBt_render_vars\fP * vars)"
+
+.PP
+Precomputes coordinates for fractal rendering\&. Precomputes coordinates for fractal rendering\&.
+.PP
+This function calculates the real and imaginary parts of the fractal for each pixel on the screen, storing them in arrays for quick access during rendering\&. It ensures that every point is prepared for the fractal calculations\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+Imagine this as creating a 'grid' of points where the fractal will be drawn\&. This points tell the program where to caalculate the colors\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIc_re\fP Pointer to the array storing real coordinates\&. 
+.br
+\fIc_im\fP Pointer to the array storing imaginary coordinates\&. 
+.br
+\fIvars\fP Pointer to the rendering variables structure\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns 1 on success, or 0 if memory allocation fails\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB78\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+79 {
+80     int i;
+81 
+82     *c_re = (double *)malloc(WIDTH * sizeof(double));
+83     *c_im = (double *)malloc(HEIGHT * sizeof(double));
+84     if (!(*c_re) || !(*c_im))
+85         return (free(*c_re), free(*c_im), 0);
+86     i = \-1;
+87     while (++i < WIDTH)
+88         (*c_re)[i] = vars\->start[COMPLEX_RE] + i * vars\->scale[SCALE_X];
+89     i = \-1;
+90     while (++i < HEIGHT)
+91         (*c_im)[i] = vars\->start[COMPLEX_IM] + i * vars\->scale[SCALE_Y];
+92     return (1);
+93 }
+.fi
+
+.SS "void render_fractal (\fBt_data\fP * data)"
+
+.PP
+Render the specified fractal\&. Render the specified fractal\&.
+.PP
+This function selects the appropiate rendering algorithm based on the fractal type chosen by the user (Julia or Mandelbrot) and renders it on the screen\&.
+.PP
+For non-technical users:
+.IP "\(bu" 2
+Depending on the type of fractal (Julia or Mandelbrot), this function draws the chosen fractal pattern for you to see\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP Pointer to the main data structure containing fractal and rendering details\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB108\fP of file \fBcalcs\&.c\fP\&..PP
+.nf
+109 {
+110     if (data\->fractal_type == JULIA)
+111         render_julia(data);
+112     else if (data\->fractal_type == MANDELBROT)
+113         render_mandelbrot(data);
+114 }
+.fi
+
+.SS "void render_julia (\fBt_data\fP * data)"
+
+.PP
+Renders the Julia fractal\&. Renders the Julia fractal\&.
+.PP
+This function handles the full rendering process for the Julia set by iterating through all rows of the screen, rendering each row sequentially\&.
+.PP
+.IP "\(bu" 2
+\fBSetup:\fP
+.IP "  \(bu" 4
+Calculates the scaling and starting coordinates based on the zoom level and positional offsets provided by the user\&.
+.PP
+
+.IP "\(bu" 2
+\fBRow-by-Row Rendering:\fP
+.IP "  \(bu" 4
+For each row on the screen (\fCy\fP coordinate), the corresponding imaginary coordinate is computed\&.
+.IP "  \(bu" 4
+The row is passed to \fCrender_julia_row\fP, which handles the pixel-by-pixel rendering\&.
+.PP
+
+.IP "\(bu" 2
+\fBFull Image Construction:\fP
+.IP "  \(bu" 4
+The ffunction processes every row until the entire fractal is rendered\&.
+.PP
+
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP Pointer to the main fractal data structure, including rendering details such as zoom, offsets, and fractal paarameters\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB165\fP of file \fBjulia\&.c\fP\&..PP
+.nf
+166 {
+167     t_render_vars   vars;
+168     int             y;
+169 
+170     calculate_scales_and_limits(&vars, data);
+171     y = 0;
+172     while (y < HEIGHT)
+173     {
+174         vars\&.c_im = vars\&.start[COMPLEX_IM] + y * vars\&.scale[SCALE_Y];
+175         render_julia_row(&vars, data, y++);
+176     }
+177 }
+.fi
+
+.SS "void render_mandelbrot (\fBt_data\fP * data)"
+
+.PP
+Render the Mandelbrot fractal\&. Render the Mandelbrot fractal\&. 
+.PP
+Definition at line \fB115\fP of file \fBmandelbrot\&.c\fP\&..PP
+.nf
+116 {
+117     t_render_vars   vars;
+118     double          *precomputed_c_re;
+119     double          *precomputed_c_im;
+120     int             y;
+121 
+122     calculate_scales_and_limits(&vars, data);
+123     if (!precompute_coords(&precomputed_c_re, &precomputed_c_im, &vars))
+124         return ;
+125     y = 0;
+126     while (y < HEIGHT)
+127     {
+128         vars\&.c_im = precomputed_c_im[y];
+129         render_mandelbrot_row(&vars, data, y++);
+130     }
+131     free(precomputed_c_re);
+132     free(precomputed_c_im);
+133 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

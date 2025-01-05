@@ -1,0 +1,1133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="fractol_8h" kind="file" language="C++">
+    <compoundname>fractol.h</compoundname>
+    <includes local="yes">MLX42/MLX42.h</includes>
+    <includes local="no">limits.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includedby refid="calcs_8c" local="yes">calcs.c</includedby>
+    <includedby refid="julia_8c" local="yes">julia.c</includedby>
+    <includedby refid="main_8c" local="yes">main.c</includedby>
+    <includedby refid="mandelbrot_8c" local="yes">mandelbrot.c</includedby>
+    <includedby refid="utils_8c" local="yes">utils.c</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>fractol.h</label>
+        <link refid="fractol_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42.h</label>
+      </node>
+      <node id="3">
+        <label>limits.h</label>
+      </node>
+      <node id="4">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>calcs.c</label>
+        <link refid="calcs_8c"/>
+      </node>
+      <node id="1">
+        <label>fractol.h</label>
+        <link refid="fractol_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>julia.c</label>
+        <link refid="julia_8c"/>
+      </node>
+      <node id="4">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="5">
+        <label>mandelbrot.c</label>
+        <link refid="mandelbrot_8c"/>
+      </node>
+      <node id="6">
+        <label>utils.c</label>
+        <link refid="utils_8c"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structs__color" prot="public">s_color</innerclass>
+    <innerclass refid="structs__data" prot="public">s_data</innerclass>
+    <innerclass refid="structs__render__vars" prot="public">s_render_vars</innerclass>
+    <innerclass refid="structs__atod__data" prot="public">s_atod_data</innerclass>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" prot="public" static="no">
+        <name>WIDTH</name>
+        <initializer>800</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="188" column="10" bodyfile="fractol.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" prot="public" static="no">
+        <name>HEIGHT</name>
+        <initializer><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="189" column="10" bodyfile="fractol.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" prot="public" static="no">
+        <name>ZOOM_IN</name>
+        <initializer>1.1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="190" column="10" bodyfile="fractol.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" prot="public" static="no">
+        <name>ZOOM_OUT</name>
+        <initializer>0.9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="191" column="10" bodyfile="fractol.h" bodystart="191" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1a7a1f70b32a536263893f6dd2d2770ad7" prot="public" static="no">
+        <name>FRACTAL_LIMIT</name>
+        <initializer>4.0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="192" column="10" bodyfile="fractol.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" prot="public" static="no">
+        <name>MAX_ITERATIONS</name>
+        <initializer>75</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="193" column="10" bodyfile="fractol.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" prot="public" static="no">
+        <name>RESET</name>
+        <initializer>&quot;\033[0m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="194" column="10" bodyfile="fractol.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" prot="public" static="no">
+        <name>LIGHT_RED</name>
+        <initializer>&quot;\033[38;5;203m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="195" column="10" bodyfile="fractol.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" prot="public" static="no">
+        <name>LIGHT_GOLD</name>
+        <initializer>&quot;\033[38;5;220m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="196" column="10" bodyfile="fractol.h" bodystart="196" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="fractol_8h_1a5a7142ee95ebc63218ed3aac2ae06b13" prot="public" static="no">
+        <name>LIGHT_GREEN</name>
+        <initializer>&quot;\033[38;5;120m&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="197" column="10" bodyfile="fractol.h" bodystart="197" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="fractol_8h_1a1062913c9edc7196b03714d4b329be12" prot="public" static="no" strong="no">
+        <type></type>
+        <name>e_fractal_type</name>
+        <enumvalue id="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" prot="public">
+          <name>MANDELBROT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" prot="public">
+          <name>JULIA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="23" column="1" bodyfile="fractol.h" bodystart="24" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="enum" id="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>e_offset_index</name>
+        <enumvalue id="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" prot="public">
+          <name>OFFSET_X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" prot="public">
+          <name>OFFSET_Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Indices for offsets in the x and y directions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="32" column="1" bodyfile="fractol.h" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="enum" id="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dad" prot="public" static="no" strong="no">
+        <type></type>
+        <name>e_scale_index</name>
+        <enumvalue id="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" prot="public">
+          <name>SCALE_X</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" prot="public">
+          <name>SCALE_Y</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Indices for scaling factors in the x and y directions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="41" column="1" bodyfile="fractol.h" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="enum" id="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55" prot="public" static="no" strong="no">
+        <type></type>
+        <name>e_complex_index</name>
+        <enumvalue id="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" prot="public">
+          <name>COMPLEX_RE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" prot="public">
+          <name>COMPLEX_IM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Indices for complex numbers (real and imaginary) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="50" column="1" bodyfile="fractol.h" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="enum" id="fractol_8h_1a19064498c6efed3153a2d9de768b0b1b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>e_number_flags</name>
+        <enumvalue id="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" prot="public">
+          <name>HAS_DIGIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" prot="public">
+          <name>HAS_POINT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Flags for validating numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="59" column="1" bodyfile="fractol.h" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="enum" id="fractol_8h_1a581490c368c73129213a8e3006762b1b" prot="public" static="no" strong="no">
+        <type></type>
+        <name>e_err_msg</name>
+        <enumvalue id="fractol_8h_1a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc" prot="public">
+          <name>NO_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546" prot="public">
+          <name>INVALID_TYPE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7" prot="public">
+          <name>JULIA_ARGS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68" prot="public">
+          <name>JULIA_NUM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="fractol_8h_1a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97" prot="public">
+          <name>MANDELBROT_ARGS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Error messages used for input validation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="68" column="1" bodyfile="fractol.h" bodystart="69" bodyend="75"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="fractol_8h_1a87e2208c89c44020c05fae234f5d17d7" prot="public" static="no">
+        <type>enum <ref refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12" kindref="member">e_fractal_type</ref></type>
+        <definition>typedef enum e_fractal_type t_fractal_type</definition>
+        <argsstring></argsstring>
+        <name>t_fractal_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="27" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1a28da728f4eaa09c08c9c92968b1126c5" prot="public" static="no">
+        <type>enum <ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6" kindref="member">e_offset_index</ref></type>
+        <definition>typedef enum e_offset_index t_offset_index</definition>
+        <argsstring></argsstring>
+        <name>t_offset_index</name>
+        <briefdescription>
+<para>Indices for offsets in the x and y directions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="36" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1acc52c36a8d0ef83a52f4bd64e75379d9" prot="public" static="no">
+        <type>enum <ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dad" kindref="member">e_scale_index</ref></type>
+        <definition>typedef enum e_scale_index t_scale_index</definition>
+        <argsstring></argsstring>
+        <name>t_scale_index</name>
+        <briefdescription>
+<para>Indices for scaling factors in the x and y directions. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="45" column="14"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1ab6761e1fd55084307b894e7fb9301183" prot="public" static="no">
+        <type>enum <ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55" kindref="member">e_complex_index</ref></type>
+        <definition>typedef enum e_complex_index t_complex_index</definition>
+        <argsstring></argsstring>
+        <name>t_complex_index</name>
+        <briefdescription>
+<para>Indices for complex numbers (real and imaginary) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="54" column="16"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1a2e791bec888de17dac932dc1f31b3797" prot="public" static="no">
+        <type>enum <ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1b" kindref="member">e_number_flags</ref></type>
+        <definition>typedef enum e_number_flags t_number_flags</definition>
+        <argsstring></argsstring>
+        <name>t_number_flags</name>
+        <briefdescription>
+<para>Flags for validating numbers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="63" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1a43da74144dd0bc8864f91dfed33bd6bf" prot="public" static="no">
+        <type>struct <ref refid="structs__color" kindref="compound">s_color</ref></type>
+        <definition>typedef struct s_color t_color</definition>
+        <argsstring></argsstring>
+        <name>t_color</name>
+        <briefdescription>
+<para>Represents an RGB color. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="86" column="8"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" prot="public" static="no">
+        <type>struct <ref refid="structs__data" kindref="compound">s_data</ref></type>
+        <definition>typedef struct s_data t_data</definition>
+        <argsstring></argsstring>
+        <name>t_data</name>
+        <briefdescription>
+<para>Data structure for fractal rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="99" column="7"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" prot="public" static="no">
+        <type>struct <ref refid="structs__render__vars" kindref="compound">s_render_vars</ref></type>
+        <definition>typedef struct s_render_vars t_render_vars</definition>
+        <argsstring></argsstring>
+        <name>t_render_vars</name>
+        <briefdescription>
+<para>Variables used for fractal rendering calculations. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="116" column="14"/>
+      </memberdef>
+      <memberdef kind="typedef" id="fractol_8h_1ab9cfae5f88a2c51a1b5d39245e0dcaed" prot="public" static="no">
+        <type>struct <ref refid="structs__atod__data" kindref="compound">s_atod_data</ref></type>
+        <definition>typedef struct s_atod_data t_atod_data</definition>
+        <argsstring></argsstring>
+        <name>t_atod_data</name>
+        <briefdescription>
+<para>Helper structure for string-to-double conversion. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="128" column="12"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="fractol_8h_1af548b6205acd0da6696adf5b79aa23a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void calculate_scales_and_limits</definition>
+        <argsstring>(t_render_vars *vars, t_data *data)</argsstring>
+        <name>calculate_scales_and_limits</name>
+        <param>
+          <type><ref refid="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" kindref="member">t_render_vars</ref> *</type>
+          <declname>vars</declname>
+        </param>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Calculates scales and limits for rendering fractals. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates scales and limits for rendering fractals.</para>
+<para>This function determines how the fractal is scaled and positioned on the screen. It computes the scale factors for each pixel and establishes the starting points ffor the real and imaginary part of the fractal based on the zoom level and offsets.</para>
+<para>For non-technical users:<itemizedlist>
+<listitem><para>Think of it as setting the &quot;zoom&quot; and &quot;pam&quot; for the fractal to display it correctly on the screen.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vars</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the rendering variables structure. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the main data structure containing fractal information. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="134" column="5" bodyfile="calcs.c" bodystart="52" bodyend="59" declfile="fractol.h" declline="134" declcolumn="5"/>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
+        <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
+        <references refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" compoundref="fractol_8h" startline="97">s_data::img</references>
+        <references refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" compoundref="fractol_8h" startline="95">s_data::offset</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" compoundref="fractol_8h" startline="34">OFFSET_X</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" compoundref="fractol_8h" startline="35">OFFSET_Y</references>
+        <references refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" compoundref="fractol_8h" startline="114">s_render_vars::pixels</references>
+        <references refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" compoundref="fractol_8h" startline="107">s_render_vars::scale</references>
+        <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" compoundref="fractol_8h" startline="43">SCALE_X</references>
+        <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" compoundref="fractol_8h" startline="44">SCALE_Y</references>
+        <references refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" compoundref="fractol_8h" startline="108">s_render_vars::start</references>
+        <references refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" compoundref="fractol_8h" startline="188">WIDTH</references>
+        <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
+        <referencedby refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</referencedby>
+        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1aa136a596dce9e2897d5eb0805a5a459f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int precompute_coords</definition>
+        <argsstring>(double **c_re, double **c_im, t_render_vars *vars)</argsstring>
+        <name>precompute_coords</name>
+        <param>
+          <type>double **</type>
+          <declname>c_re</declname>
+        </param>
+        <param>
+          <type>double **</type>
+          <declname>c_im</declname>
+        </param>
+        <param>
+          <type><ref refid="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" kindref="member">t_render_vars</ref> *</type>
+          <declname>vars</declname>
+        </param>
+        <briefdescription>
+<para>Precomputes coordinates for fractal rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Precomputes coordinates for fractal rendering.</para>
+<para>This function calculates the real and imaginary parts of the fractal for each pixel on the screen, storing them in arrays for quick access during rendering. It ensures that every point is prepared for the fractal calculations.</para>
+<para>For non-technical users:<itemizedlist>
+<listitem><para>Imagine this as creating a &quot;grid&quot; of points where the fractal will be drawn. This points tell the program where to caalculate the colors.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>c_re</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing real coordinates. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c_im</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the array storing imaginary coordinates. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>vars</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the rendering variables structure. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns 1 on success, or 0 if memory allocation fails. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="139" column="4" bodyfile="calcs.c" bodystart="78" bodyend="93" declfile="fractol.h" declline="139" declcolumn="4"/>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
+        <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
+        <references refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" compoundref="fractol_8h" startline="107">s_render_vars::scale</references>
+        <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" compoundref="fractol_8h" startline="43">SCALE_X</references>
+        <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" compoundref="fractol_8h" startline="44">SCALE_Y</references>
+        <references refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" compoundref="fractol_8h" startline="108">s_render_vars::start</references>
+        <references refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" compoundref="fractol_8h" startline="188">WIDTH</references>
+        <referencedby refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1af87a6532ce68469fef69f9c207960094" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int calculate_color</definition>
+        <argsstring>(int iterations)</argsstring>
+        <name>calculate_color</name>
+        <param>
+          <type>int</type>
+          <declname>iterations</declname>
+        </param>
+        <briefdescription>
+<para>Calculates the color based on the number of iterations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Calculates the color based on the number of iterations.</para>
+<para>This function determines the color of each pixel in the fractal by mapping the iteration count (how many steps we are needed to reach a threshold) to a color gradient.</para>
+<para>For non-technical users:<itemizedlist>
+<listitem><para>The function decides the color of each pooint in the fractal, creating the beautiful patterns you see based on how &quot;complex&quot; the point is.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of iterations required for the opint to &quot;escape&quot;. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns the calculated color as an integer. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="144" column="4" bodyfile="calcs.c" bodystart="131" bodyend="143" declfile="fractol.h" declline="144" declcolumn="4"/>
+        <references refid="structs__color_1a0710590bfa61f9db131e534589070ac8" compoundref="fractol_8h" startline="85">s_color::b</references>
+        <references refid="structs__color_1a6d246ab8c311f6f86da2f9aa129b98d9" compoundref="fractol_8h" startline="84">s_color::g</references>
+        <references refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" compoundref="fractol_8h" startline="193">MAX_ITERATIONS</references>
+        <references refid="structs__color_1a251e854381c6945efbbffc33796e6035" compoundref="fractol_8h" startline="83">s_color::r</references>
+        <referencedby refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" compoundref="mandelbrot_8c" startline="61" endline="80">mandelbrot_escape_check</referencedby>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+        <referencedby refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ft_atod</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>ft_atod</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Converts a string to a double. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts a string to a double. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="149" column="7" bodyfile="utils.c" bodystart="19" bodyend="46" declfile="fractol.h" declline="149" declcolumn="7"/>
+        <references refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" compoundref="fractol_8h" startline="126">s_atod_data::divisor</references>
+        <references refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" compoundref="fractol_8h" startline="127">s_atod_data::fraction</references>
+        <references refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" compoundref="fractol_8h" startline="123">s_atod_data::i</references>
+        <references refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" compoundref="fractol_8h" startline="125">s_atod_data::result</references>
+        <references refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" compoundref="fractol_8h" startline="124">s_atod_data::sign</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int ft_strcmp</definition>
+        <argsstring>(const char *s1, const char *s2)</argsstring>
+        <name>ft_strcmp</name>
+        <param>
+          <type>const char *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>s2</declname>
+        </param>
+        <briefdescription>
+<para>Compares two strings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="154" column="4" bodyfile="utils.c" bodystart="51" bodyend="59" declfile="fractol.h" declline="154" declcolumn="4"/>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+        <referencedby refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" compoundref="main_8c" startline="122" endline="148">validate_arguments</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int fr_putstr_fd</definition>
+        <argsstring>(char *s, int fd)</argsstring>
+        <name>fr_putstr_fd</name>
+        <param>
+          <type>char *</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>fd</declname>
+        </param>
+        <briefdescription>
+<para>Writes a string to a file descriptor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Writes a string to a file descriptor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="159" column="4" bodyfile="utils.c" bodystart="109" bodyend="121" declfile="fractol.h" declline="159" declcolumn="4"/>
+        <referencedby refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" compoundref="main_8c" startline="87" endline="104">exit_with_error</referencedby>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1a6010a48038dd00722649b2e7ad69668d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void render_fractal</definition>
+        <argsstring>(t_data *data)</argsstring>
+        <name>render_fractal</name>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Render the specified fractal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Render the specified fractal.</para>
+<para>This function selects the appropiate rendering algorithm based on the fractal type chosen by the user (Julia or Mandelbrot) and renders it on the screen.</para>
+<para>For non-technical users:<itemizedlist>
+<listitem><para>Depending on the type of fractal (Julia or Mandelbrot), this function draws the chosen fractal pattern for you to see.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the main data structure containing fractal and rendering details. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="165" column="5" bodyfile="calcs.c" bodystart="108" bodyend="114" declfile="fractol.h" declline="165" declcolumn="5"/>
+        <references refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" compoundref="fractol_8h" startline="98">s_data::fractal_type</references>
+        <references refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" compoundref="fractol_8h" startline="26">JULIA</references>
+        <references refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" compoundref="fractol_8h" startline="25">MANDELBROT</references>
+        <references refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</references>
+        <references refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" compoundref="mandelbrot_8c" startline="115" endline="133">render_mandelbrot</references>
+        <referencedby refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</referencedby>
+        <referencedby refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" compoundref="utils_8c" startline="91" endline="104">handle_scroll</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void render_mandelbrot</definition>
+        <argsstring>(t_data *data)</argsstring>
+        <name>render_mandelbrot</name>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Render the Mandelbrot fractal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Render the Mandelbrot fractal. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="170" column="5" bodyfile="mandelbrot.c" bodystart="115" bodyend="133" declfile="fractol.h" declline="170" declcolumn="5"/>
+        <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
+        <references refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</references>
+        <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
+        <references refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" compoundref="calcs_8c" startline="78" endline="93">precompute_coords</references>
+        <references refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" compoundref="mandelbrot_8c" startline="85" endline="110">render_mandelbrot_row</references>
+        <referencedby refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void render_julia</definition>
+        <argsstring>(t_data *data)</argsstring>
+        <name>render_julia</name>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Renders the Julia fractal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renders the Julia fractal.</para>
+<para>This function handles the full rendering process for the Julia set by iterating through all rows of the screen, rendering each row sequentially.</para>
+<para><itemizedlist>
+<listitem><para><bold>Setup:</bold><itemizedlist>
+<listitem><para>Calculates the scaling and starting coordinates based on the zoom level and positional offsets provided by the user.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Row-by-Row Rendering:</bold><itemizedlist>
+<listitem><para>For each row on the screen (<computeroutput>y</computeroutput> coordinate), the corresponding imaginary coordinate is computed.</para>
+</listitem><listitem><para>The row is passed to <computeroutput>render_julia_row</computeroutput>, which handles the pixel-by-pixel rendering.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Full Image Construction:</bold><itemizedlist>
+<listitem><para>The ffunction processes every row until the entire fractal is rendered.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the main fractal data structure, including rendering details such as zoom, offsets, and fractal paarameters. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="175" column="5" bodyfile="julia.c" bodystart="165" bodyend="177" declfile="fractol.h" declline="175" declcolumn="5"/>
+        <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
+        <references refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
+        <references refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</references>
+        <references refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" compoundref="fractol_8h" startline="107">s_render_vars::scale</references>
+        <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" compoundref="fractol_8h" startline="44">SCALE_Y</references>
+        <references refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" compoundref="fractol_8h" startline="108">s_render_vars::start</references>
+        <referencedby refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handle_key</definition>
+        <argsstring>(mlx_key_data_t keydata, void *param)</argsstring>
+        <name>handle_key</name>
+        <param>
+          <type>mlx_key_data_t</type>
+          <declname>keydata</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+<para>Handles key inputs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="180" column="5" bodyfile="utils.c" bodystart="64" bodyend="86" declfile="fractol.h" declline="180" declcolumn="5"/>
+        <references refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" compoundref="fractol_8h" startline="96">s_data::mlx</references>
+        <references refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" compoundref="fractol_8h" startline="95">s_data::offset</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" compoundref="fractol_8h" startline="34">OFFSET_X</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" compoundref="fractol_8h" startline="35">OFFSET_Y</references>
+        <references refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</references>
+        <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
+        <references refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" compoundref="fractol_8h" startline="190">ZOOM_IN</references>
+        <references refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" compoundref="fractol_8h" startline="191">ZOOM_OUT</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handle_scroll</definition>
+        <argsstring>(double xdelta, double ydelta, void *param)</argsstring>
+        <name>handle_scroll</name>
+        <param>
+          <type>double</type>
+          <declname>xdelta</declname>
+        </param>
+        <param>
+          <type>double</type>
+          <declname>ydelta</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+<para>Handles scroll inputs. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Handles scroll inputs. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="185" column="5" bodyfile="utils.c" bodystart="91" bodyend="104" declfile="fractol.h" declline="185" declcolumn="5"/>
+        <references refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</references>
+        <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
+        <references refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" compoundref="fractol_8h" startline="190">ZOOM_IN</references>
+        <references refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" compoundref="fractol_8h" startline="191">ZOOM_OUT</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>fractol.h<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>meghribe<sp/>&lt;meghribe@student.42barcelon<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/12/23<sp/>19:53:33<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2025/01/04<sp/>13:25:50<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FRACTOL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>FRACTOL_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-----------------------------<sp/>Includes<sp/>-----------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&quot;MLX42/MLX42.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;limits.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>---------------------------<sp/>Enumerations<sp/>--------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Fractal<sp/>types<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12" kindref="member">e_fractal_type</ref></highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25" refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" kindref="member">MANDELBROT</ref>,</highlight></codeline>
+<codeline lineno="26" refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" kindref="member">JULIA</ref>,</highlight></codeline>
+<codeline lineno="27" refid="fractol_8h_1a87e2208c89c44020c05fae234f5d17d7" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1a87e2208c89c44020c05fae234f5d17d7" kindref="member">t_fractal_type</ref>;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="29"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Indices<sp/>for<sp/>offsets<sp/>in<sp/>the<sp/>x<sp/>and<sp/>y<sp/>directions.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6" kindref="member">e_offset_index</ref></highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34" refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" kindref="member">OFFSET_X</ref>,</highlight></codeline>
+<codeline lineno="35" refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" kindref="member">OFFSET_Y</ref>,</highlight></codeline>
+<codeline lineno="36" refid="fractol_8h_1a28da728f4eaa09c08c9c92968b1126c5" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1a28da728f4eaa09c08c9c92968b1126c5" kindref="member">t_offset_index</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="38"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Indices<sp/>for<sp/>scaling<sp/>factors<sp/>in<sp/>the<sp/>x<sp/>and<sp/>y<sp/>directions.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41" refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dad" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dad" kindref="member">e_scale_index</ref></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="43" refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>,</highlight></codeline>
+<codeline lineno="44" refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" kindref="member">SCALE_Y</ref>,</highlight></codeline>
+<codeline lineno="45" refid="fractol_8h_1acc52c36a8d0ef83a52f4bd64e75379d9" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1acc52c36a8d0ef83a52f4bd64e75379d9" kindref="member">t_scale_index</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="47"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Indices<sp/>for<sp/>complex<sp/>numbers<sp/>(real<sp/>and<sp/>imaginary)<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55" kindref="member">e_complex_index</ref></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="52" refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>,</highlight></codeline>
+<codeline lineno="53" refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>,</highlight></codeline>
+<codeline lineno="54" refid="fractol_8h_1ab6761e1fd55084307b894e7fb9301183" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1ab6761e1fd55084307b894e7fb9301183" kindref="member">t_complex_index</ref>;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="56"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Flags<sp/>for<sp/>validating<sp/>numbers.</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1b" kindref="member">e_number_flags</ref></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="61" refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kindref="member">HAS_DIGIT</ref>,</highlight></codeline>
+<codeline lineno="62" refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kindref="member">HAS_POINT</ref>,</highlight></codeline>
+<codeline lineno="63" refid="fractol_8h_1a2e791bec888de17dac932dc1f31b3797" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1a2e791bec888de17dac932dc1f31b3797" kindref="member">t_number_flags</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="65"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Error<sp/>messages<sp/>used<sp/>for<sp/>input<sp/>validation.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="fractol_8h_1a581490c368c73129213a8e3006762b1b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1b" kindref="member">e_err_msg</ref></highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70" refid="fractol_8h_1a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc" kindref="member">NO_TYPE</ref>,</highlight></codeline>
+<codeline lineno="71" refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546" kindref="member">INVALID_TYPE</ref>,</highlight></codeline>
+<codeline lineno="72" refid="fractol_8h_1a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7" kindref="member">JULIA_ARGS</ref>,</highlight></codeline>
+<codeline lineno="73" refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68" kindref="member">JULIA_NUM</ref>,</highlight></codeline>
+<codeline lineno="74" refid="fractol_8h_1a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97" kindref="member">MANDELBROT_ARGS</ref>,</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>-------------------------<sp/>Structures<sp/>Definitions<sp/>------------------------<sp/>*/</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="78"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Represents<sp/>an<sp/>RGB<sp/>color.</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="structs__color" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structs__color" kindref="compound">s_color</ref></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83" refid="structs__color_1a251e854381c6945efbbffc33796e6035" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structs__color_1a251e854381c6945efbbffc33796e6035" kindref="member">r</ref>;</highlight></codeline>
+<codeline lineno="84" refid="structs__color_1a6d246ab8c311f6f86da2f9aa129b98d9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structs__color_1a6d246ab8c311f6f86da2f9aa129b98d9" kindref="member">g</ref>;</highlight></codeline>
+<codeline lineno="85" refid="structs__color_1a0710590bfa61f9db131e534589070ac8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structs__color_1a0710590bfa61f9db131e534589070ac8" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="86" refid="fractol_8h_1a43da74144dd0bc8864f91dfed33bd6bf" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1a43da74144dd0bc8864f91dfed33bd6bf" kindref="member">t_color</ref>;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="88"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Data<sp/>structure<sp/>for<sp/>fractal<sp/>rendering</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="structs__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structs__data" kindref="compound">s_data</ref></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="93" refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref>;</highlight></codeline>
+<codeline lineno="94" refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[2];</highlight></codeline>
+<codeline lineno="95" refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[2];</highlight></codeline>
+<codeline lineno="96" refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>;</highlight></codeline>
+<codeline lineno="97" refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_image_t<sp/><sp/><sp/><sp/><sp/>*<ref refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" kindref="member">img</ref>;</highlight></codeline>
+<codeline lineno="98" refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a87e2208c89c44020c05fae234f5d17d7" kindref="member">t_fractal_type</ref><sp/><sp/><ref refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" kindref="member">fractal_type</ref>;</highlight></codeline>
+<codeline lineno="99" refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="101"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Variables<sp/>used<sp/>for<sp/>fractal<sp/>rendering<sp/>calculations.</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="structs__render__vars" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structs__render__vars" kindref="compound">s_render_vars</ref></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106" refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>;</highlight></codeline>
+<codeline lineno="107" refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[2];</highlight></codeline>
+<codeline lineno="108" refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[2];</highlight></codeline>
+<codeline lineno="109" refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[2];</highlight></codeline>
+<codeline lineno="110" refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[2];</highlight></codeline>
+<codeline lineno="111" refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[2];</highlight></codeline>
+<codeline lineno="112" refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kindref="member">c_re_centered</ref>;</highlight></codeline>
+<codeline lineno="113" refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
+<codeline lineno="114" refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/>*<ref refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" kindref="member">pixels</ref>;</highlight></codeline>
+<codeline lineno="115" refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><sp/><sp/><sp/>*<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref>;</highlight></codeline>
+<codeline lineno="116" refid="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" kindref="member">t_render_vars</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="118"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Helper<sp/>structure<sp/>for<sp/>string-to-double<sp/>conversion.</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="structs__atod__data" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structs__atod__data" kindref="compound">s_atod_data</ref></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123" refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kindref="member">i</ref>;</highlight></codeline>
+<codeline lineno="124" refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" kindref="member">sign</ref>;</highlight></codeline>
+<codeline lineno="125" refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="126" refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" kindref="member">divisor</ref>;</highlight></codeline>
+<codeline lineno="127" refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" kindref="member">fraction</ref>;</highlight></codeline>
+<codeline lineno="128" refid="fractol_8h_1ab9cfae5f88a2c51a1b5d39245e0dcaed" refkind="member"><highlight class="normal">}<sp/><sp/><sp/><ref refid="fractol_8h_1ab9cfae5f88a2c51a1b5d39245e0dcaed" kindref="member">t_atod_data</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>----------------------------<sp/>Function<sp/>Prototypes<sp/>------------------------<sp/>*/</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="131"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="132"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Calculates<sp/>scales<sp/>and<sp/>limits<sp/>for<sp/>rendering<sp/>fractals.</highlight></codeline>
+<codeline lineno="133"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1af548b6205acd0da6696adf5b79aa23a3" kindref="member">calculate_scales_and_limits</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="136"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="137"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Precomputes<sp/>coordinates<sp/>for<sp/>fractal<sp/>rendering.</highlight></codeline>
+<codeline lineno="138"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1aa136a596dce9e2897d5eb0805a5a459f" kindref="member">precompute_coords</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>**c_re,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>**c_im,<sp/><ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="141"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="142"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Calculates<sp/>the<sp/>color<sp/>based<sp/>on<sp/>the<sp/>number<sp/>of<sp/>iterations.</highlight></codeline>
+<codeline lineno="143"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>iterations);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="146"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Converts<sp/>a<sp/>string<sp/>to<sp/>a<sp/>double.</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/><ref refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" kindref="member">ft_atod</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="151"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Compares<sp/>two<sp/>strings.</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s2);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="156"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Writes<sp/>a<sp/>string<sp/>to<sp/>a<sp/>file<sp/>descriptor.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*s,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>fd);</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Renderers<sp/>*/</highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="162"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Render<sp/>the<sp/>specified<sp/>fractal.</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a6010a48038dd00722649b2e7ad69668d" kindref="member">render_fractal</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="167"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="168"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Render<sp/>the<sp/>Mandelbrot<sp/>fractal.</highlight></codeline>
+<codeline lineno="169"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" kindref="member">render_mandelbrot</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="172"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="173"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Renders<sp/>the<sp/>Julia<sp/>fractal.</highlight></codeline>
+<codeline lineno="174"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" kindref="member">render_julia</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="177"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="178"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Handles<sp/>key<sp/>inputs.</highlight></codeline>
+<codeline lineno="179"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" kindref="member">handle_key</ref>(mlx_key_data_t<sp/>keydata,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*param);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="182"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="183"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Handles<sp/>scroll<sp/>inputs.</highlight></codeline>
+<codeline lineno="184"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" kindref="member">handle_scroll</ref>(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>xdelta,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>ydelta,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*param);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>----------------------------<sp/>Constants<sp/>----------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188" refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>WIDTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>800</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189" refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>HEIGHT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>WIDTH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190" refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>ZOOM_IN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1.1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191" refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>ZOOM_OUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192" refid="fractol_8h_1a7a1f70b32a536263893f6dd2d2770ad7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>FRACTAL_LIMIT<sp/><sp/><sp/><sp/><sp/><sp/>4.0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193" refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>MAX_ITERATIONS<sp/><sp/><sp/><sp/><sp/>75</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>RESET<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;\033[0m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIGHT_RED<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;\033[38;5;203m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196" refid="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIGHT_GOLD<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;\033[38;5;220m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="fractol_8h_1a5a7142ee95ebc63218ed3aac2ae06b13" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>define<sp/>LIGHT_GREEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&quot;\033[38;5;120m&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="fractol.h"/>
+  </compounddef>
+</doxygen>

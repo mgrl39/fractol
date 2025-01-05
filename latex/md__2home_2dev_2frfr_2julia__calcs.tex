@@ -1,0 +1,307 @@
+\chapter{Calculos de Julia}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs}{}\label{md__2home_2dev_2frfr_2julia__calcs}\index{Calculos de Julia@{Calculos de Julia}}
+\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md50}%
+\Hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md50}%
+ Este archivo documenta las funciones responsables de realizar los cálculos necesarios para la generación y renderización de fractales. Estas funciones gestionan aspectos como las escalas, los límites y el mapeo de píxeles a coordenadas del plano complejo.
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md52}{}\doxysection{\texorpdfstring{1. julia\+\_\+iterations}{1. julia\_iterations}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md52}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md53}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md53}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{julia\_iterations}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ temp\_z\_re;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ <=\ 4.0\ \&\&}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ <\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ temp\_z\_re\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ temp\_z\_re\ -\/=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ temp\_z\_re\ +=\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 2.0\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ temp\_z\_re;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}++;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md54}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md54}
+Esta función realiza las iteraciones necesarias para determinar si un punto del plano complejo pertenece al conjunto de Julia. Calcula repetidamente la fórmula iterativa de Julia\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_n+1\ =\ (z\_n\ *\ z\_n)\ +\ c}
+
+\end{DoxyCode}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md55}{}\doxysubsubsection{\texorpdfstring{Parámetros\+:}{Parámetros:}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md55}
+
+\begin{DoxyItemize}
+\item {\ttfamily vars}\+: Contiene las variables de renderizado, como las coordenadas del punto y el número de iteraciones.
+\item {\ttfamily data}\+: Contiene información del fractal, incluyendo la constante {\ttfamily c} utilizada para el cálculo.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md57}{}\doxysubsection{\texorpdfstring{Detalles del Funcionamiento}{Detalles del Funcionamiento}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md57}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md58}{}\doxysubsubsection{\texorpdfstring{1. Condición de escape}{1. Condición de escape}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md58}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ <=\ 4.0}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item El fractal considera que un punto "{}escapa"{} si la suma de los cuadrados de sus partes real e imaginaria es mayor que {\ttfamily 4}.
+\end{DoxyItemize}
+
+Ejemplo\+: Si {\ttfamily z = 1 + 1i}, entonces\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{|z|\string^2\ =\ (1\ *\ 1)\ +\ (1\ *\ 1)\ =\ 2}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md60}{}\doxysubsubsection{\texorpdfstring{2. Actualización del valor de $<$tt$>$z$<$/tt$>$}{2. Actualización del valor de <tt>z</tt>}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md60}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{temp\_z\_re\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ -\/\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 2.0\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ temp\_z\_re;}
+
+\end{DoxyCode}
+
+
+La fórmula completa en código sería\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_real\ =\ (z\_real\string^2)\ -\/\ (z\_imag\string^2)\ +\ c\_real}
+\DoxyCodeLine{z\_imag\ =\ 2\ *\ z\_real\ *\ z\_imag\ +\ c\_imag}
+
+\end{DoxyCode}
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md62}{}\doxysubsection{\texorpdfstring{Ejemplo de Iteraciones}{Ejemplo de Iteraciones}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md62}
+Supongamos\+:
+\begin{DoxyItemize}
+\item {\ttfamily z = 0 + 0i}
+\item {\ttfamily c = 0.\+285 -\/ 0.\+01i}
+\item Máximo de iteraciones\+: 10
+\end{DoxyItemize}
+
+{\bfseries{Iteraciones\+:}}
+\begin{DoxyEnumerate}
+\item {\ttfamily z\+\_\+1 = (0 \texorpdfstring{$\ast$}{*} 0 -\/ 0 \texorpdfstring{$\ast$}{*} 0 + 0.\+285) + (2 \texorpdfstring{$\ast$}{*} 0 \texorpdfstring{$\ast$}{*} 0 -\/ 0.\+01)i = 0.\+285 -\/ 0.\+01i}
+\item Repetir con {\ttfamily z\+\_\+1}.
+\end{DoxyEnumerate}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md63}{}\doxysection{\texorpdfstring{2. render\+\_\+julia\+\_\+row}{2. render\_julia\_row}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md63}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md64}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md64}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\_julia\_row}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ x\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{julia\_iterations}}(vars,\ data);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ +\ y\ *\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ +\ x;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ *vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md65}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md65}
+La función {\ttfamily render\+\_\+julia\+\_\+row} renderiza una fila completa del fractal de Julia. Realiza las siguientes acciones para cada píxel en la fila\+:
+
+
+\begin{DoxyEnumerate}
+\item Calcula el número complejo inicial {\ttfamily z} para el píxel actual en función de las coordenadas del píxel y la escala.
+\item Ejecuta el algoritmo de iteraciones de Julia para determinar el número de iteraciones necesarias para que el punto escape.
+\item Usa el número de iteraciones para determinar el color del píxel mediante la función {\ttfamily calculate\+\_\+color}.
+\item Guarda el color calculado en el buffer de píxeles.
+\end{DoxyEnumerate}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md66}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md66}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Puntero a la estructura que contiene variables utilizadas en el proceso de renderizado, como las escalas, las coordenadas iniciales, y el buffer de píxeles.
+\item {\ttfamily t\+\_\+data \texorpdfstring{$\ast$}{*}data}\+: Puntero a la estructura que contiene los datos del fractal, como la constante del conjunto de Julia y el nivel de zoom.
+\item {\ttfamily int y}\+: Índice de la fila (coordenada {\ttfamily y}) que se está renderizando.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md68}{}\doxysubsection{\texorpdfstring{Detalles del funcionamiento}{Detalles del funcionamiento}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md68}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md69}{}\doxysubsubsection{\texorpdfstring{1. Cálculo de la coordenada real inicial del píxel}{1. Cálculo de la coordenada real inicial del píxel}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md69}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ x\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Convierte la posición del píxel en la pantalla ({\ttfamily x}) a una coordenada real en el plano complejo.
+\item La fórmula es\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{c\_re\ =\ start[COMPLEX\_RE]\ +\ x\ *\ scale[SCALE\_X]}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md70}{}\doxysubsubsection{\texorpdfstring{2. Inicialización del número complejo $<$tt$>$z$<$/tt$>$}{2. Inicialización del número complejo <tt>z</tt>}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md70}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0];}
+\DoxyCodeLine{vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Asigna la parte real de {\ttfamily z} al valor calculado en el paso anterior.
+\item Asigna la parte imaginaria de {\ttfamily z} a {\ttfamily vars-\/\texorpdfstring{$>$}{>}c\+\_\+im}, que corresponde a la fila actual.
+\end{DoxyItemize}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md71}{}\doxysubsubsection{\texorpdfstring{3. Ejecución del algoritmo de iteraciones de Julia}{3. Ejecución del algoritmo de iteraciones de Julia}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md71}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{julia\_iterations}}(vars,\ data);}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Llama a la función {\ttfamily julia\+\_\+iterations} para determinar cuántas iteraciones son necesarias para que el punto escape.
+\end{DoxyItemize}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md72}{}\doxysubsubsection{\texorpdfstring{4. Cálculo del color del píxel}{4. Cálculo del color del píxel}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md72}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{*vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}});}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Usa el número de iteraciones calculado para asignar un color al píxel.
+\item El resultado se almacena en el buffer de píxeles ({\ttfamily vars-\/\texorpdfstring{$>$}{>}pixels}).
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md74}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md74}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md75}{}\doxysubsubsection{\texorpdfstring{Supongamos\+:}{Supongamos:}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md75}
+
+\begin{DoxyItemize}
+\item Coordenada del píxel\+: {\ttfamily (x, y) = (100, 50)}
+\item Inicio del plano complejo\+: {\ttfamily start\mbox{[}COMPLEX\+\_\+\+RE\mbox{]} = -\/2.\+0}
+\item Escala\+: {\ttfamily scale\mbox{[}SCALE\+\_\+X\mbox{]} = 0.\+005}
+\item Resultado\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{c\_re\ =\ -\/2.0\ +\ 100\ *\ 0.005\ =\ -\/1.5}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md76}{}\doxysection{\texorpdfstring{3. render\+\_\+julia}{3. render\_julia}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md76}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md77}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md77}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}{render\_julia}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ vars;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ y;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{\ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ vars.\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ y\ *\ vars.\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\_julia\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md78}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md78}
+La función {\ttfamily render\+\_\+julia} renderiza el fractal completo del conjunto de Julia. Procesa fila por fila y delega el cálculo de cada fila a la función {\ttfamily render\+\_\+julia\+\_\+row}.\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md79}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md79}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+data \texorpdfstring{$\ast$}{*}data}\+: Puntero a la estructura que contiene los datos del fractal, como el nivel de zoom, el desplazamiento, y la constante del conjunto de Julia.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md81}{}\doxysubsection{\texorpdfstring{Detalles del funcionamiento}{Detalles del funcionamiento}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md81}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md82}{}\doxysubsubsection{\texorpdfstring{1. Configuración inicial}{1. Configuración inicial}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md82}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Calcula las escalas y los límites del plano complejo que se usarán para renderizar el fractal.
+\end{DoxyItemize}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md83}{}\doxysubsubsection{\texorpdfstring{2. Iteración sobre cada fila}{2. Iteración sobre cada fila}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md83}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ vars.\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ y\ *\ vars.\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\_julia\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Recorre cada fila ({\ttfamily y}) de la imagen.
+\item Para cada fila\+:
+\begin{DoxyEnumerate}
+\item Calcula la coordenada imaginaria inicial ({\ttfamily c\+\_\+im}) de la fila. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{c\_im\ =\ start[COMPLEX\_IM]\ +\ y\ *\ scale[SCALE\_Y]}
+
+\end{DoxyCode}
+
+\item Llama a {\ttfamily render\+\_\+julia\+\_\+row} para renderizar todos los píxeles de la fila.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md85}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md85}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md86}{}\doxysubsubsection{\texorpdfstring{Supongamos\+:}{Supongamos:}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md86}
+
+\begin{DoxyItemize}
+\item Altura de la ventana\+: {\ttfamily HEIGHT = 800}
+\item Inicio del plano complejo\+: {\ttfamily start\mbox{[}COMPLEX\+\_\+\+IM\mbox{]} = -\/2.\+0}
+\item Escala\+: {\ttfamily scale\mbox{[}SCALE\+\_\+Y\mbox{]} = 0.\+005}
+\end{DoxyItemize}\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md87}{}\doxysubsubsection{\texorpdfstring{Resultado para la fila $<$tt$>$y = 100$<$/tt$>$\+:}{Resultado para la fila <tt>y = 100</tt>:}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md87}
+
+\begin{DoxyEnumerate}
+\item Coordenada imaginaria inicial\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{c\_im\ =\ -\/2.0\ +\ 100\ *\ 0.005\ =\ -\/1.5}
+
+\end{DoxyCode}
+
+\item La fila completa se renderiza llamando a {\ttfamily render\+\_\+julia\+\_\+row}.
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md__2home_2dev_2frfr_2julia__calcs_autotoc_md89}{}\doxysubsection{\texorpdfstring{Importancia del Proceso Completo}{Importancia del Proceso Completo}}\label{md__2home_2dev_2frfr_2julia__calcs_autotoc_md89}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Estructura Modular\+:}}
+\begin{DoxyItemize}
+\item Separar la renderización en filas facilita la comprensión y el mantenimiento del código.
+\end{DoxyItemize}
+\item {\bfseries{Reutilización de Cálculos\+:}}
+\begin{DoxyItemize}
+\item Los cálculos iniciales de escala y límites optimizan el proceso de renderizado.
+\end{DoxyItemize}
+\item {\bfseries{Flexibilidad\+:}}
+\begin{DoxyItemize}
+\item La separación por filas permite implementar técnicas como renderizado paralelo para mejorar el rendimiento.
+\end{DoxyItemize}
+\item {\bfseries{Conexión entre Coordenadas\+:}}
+\begin{DoxyItemize}
+\item Traduce las coordenadas del plano complejo a píxeles en la ventana gráfica de manera precisa. 
+\end{DoxyItemize}
+\end{DoxyEnumerate}

@@ -1,0 +1,428 @@
+\doxysection{MLX42/src/mlx\+\_\+init.c File Reference}
+\hypertarget{mlx__init_8c}{}\label{mlx__init_8c}\index{MLX42/src/mlx\_init.c@{MLX42/src/mlx\_init.c}}
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+init.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__init_8c_a2d36bb2949fea5c676c821c1da1bbb32}{framebuffer\+\_\+callback}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int}} \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int}} \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__init_8c_a6c46003ab2517553e8b627bc16d5b5b3}{mlx\+\_\+create\+\_\+buffers}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} \mbox{\hyperlink{mlx__init_8c_a937c3acdc6fffc84f970821514efacba}{mlx\+\_\+compile\+\_\+shader}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{code}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__init_8c_a8a415365a708f01e9a44e964d94dad2a}{mlx\+\_\+init\+\_\+render}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}})
+\item 
+\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mlx__init_8c_a32988a5ce7aaa25a448b61b0ac410cec}{mlx\+\_\+init}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{title}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{resize}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__init_8c_a72eecffc4e044413e45e9b5bfb1feda8}{mlx\+\_\+set\+\_\+setting}} (\mbox{\hyperlink{MLX42_8h_a08ab6151d2a0f0ceed8a483f481e060e}{mlx\+\_\+settings\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{setting}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{mlx__init_8c_afb11d9a58954731e14b111c77125b17d}{mlx\+\_\+settings}} \mbox{[}\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0aa8410ccb904597cdf2c80cf7a7bb084b}{MLX\+\_\+\+SETTINGS\+\_\+\+MAX}}\mbox{]} = \{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{true}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}\}
+\item 
+\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}} \mbox{\hyperlink{mlx__init_8c_a5c57992d991a7e81aa592d67726f9900}{mlx\+\_\+errno}} = \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\+\_\+\+SUCCESS}}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__init_8c_ab1f31200953135a9601bfb65ed495bd4}{sort\+\_\+queue}} = \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__init_8c_a2d36bb2949fea5c676c821c1da1bbb32}\label{mlx__init_8c_a2d36bb2949fea5c676c821c1da1bbb32} 
+\index{mlx\_init.c@{mlx\_init.c}!framebuffer\_callback@{framebuffer\_callback}}
+\index{framebuffer\_callback@{framebuffer\_callback}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{framebuffer\_callback()}{framebuffer\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} framebuffer\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int}}}]{width,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int}}}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00017}{17}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})window;}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab54b002beb984f066acd0dd7fff469dc}{glViewport}}(0,\ 0,\ \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}},\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}});}
+\DoxyCodeLine{00021\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{mlx__init_8c_a2d36bb2949fea5c676c821c1da1bbb32_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c_a2d36bb2949fea5c676c821c1da1bbb32_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__init_8c_a937c3acdc6fffc84f970821514efacba}\label{mlx__init_8c_a937c3acdc6fffc84f970821514efacba} 
+\index{mlx\_init.c@{mlx\_init.c}!mlx\_compile\_shader@{mlx\_compile\_shader}}
+\index{mlx\_compile\_shader@{mlx\_compile\_shader}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_compile\_shader()}{mlx\_compile\_shader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} mlx\+\_\+compile\+\_\+shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{code,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Compiles the given shader source code of a given shader type. Returns shader object via param.
+
+
+\begin{DoxyParams}{Parameters}
+{\em code} & The shader source code. \\
+\hline
+{\em Type} & GL\+\_\+\+VERTEX\+\_\+\+SHADER, GL\+\_\+\+FRAGMENT\+\_\+\+SHADER, GL\+\_\+\+GEOMETRY\+\_\+\+SHADER, ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/zero on success, else 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00078}{78}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{glad_8h_a68c4714e43d8e827d80759f9cb864f3c}{GLuint}}\ \mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}};}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{success}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}}[512]\ =\ \{0\};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{code}}\ ||\ (\mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}}\ =\ \mbox{\hyperlink{glad_8h_a4d3447ff3caf454bc686968fbe5f04bf}{glCreateShader}}(\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}))\ ==\ 0)\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{glad_8h_acebcc1c5663f14ebde1d16831e5fed94}{GLint}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strlen}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{code}});}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{glad_8h_a369ec108462c247e3028edc9070117a0}{glShaderSource}}(\mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}},\ 1,\ \&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{code}},\ \&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}});}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{glad_8h_acf7a528ef1ef237d2a7676dcb0f22473}{glCompileShader}}(\mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}});}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{glad_8h_ae7002efbed794728b79205427b3ccc66}{glGetShaderiv}}(\mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}},\ \mbox{\hyperlink{glad_8h_a8b14cf3c9445c50aabe5c7d21b31d215}{GL\_COMPILE\_STATUS}},\ \&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{success}});}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{success}})}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_a3058fd84744eb41e33773ad2b1a8c184}{glGetShaderInfoLog}}(\mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}}),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}});}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fprintf}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{stderr}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}});}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ac012d7614801ed69d643ad388dcfc768}{glDeleteShader}}(\mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}});}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_a57b2a96adb1d51204909a82d861e395e}{shader}});}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c_a937c3acdc6fffc84f970821514efacba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__init_8c_a6c46003ab2517553e8b627bc16d5b5b3}\label{mlx__init_8c_a6c46003ab2517553e8b627bc16d5b5b3} 
+\index{mlx\_init.c@{mlx\_init.c}!mlx\_create\_buffers@{mlx\_create\_buffers}}
+\index{mlx\_create\_buffers@{mlx\_create\_buffers}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_create\_buffers()}{mlx\_create\_buffers()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+create\+\_\+buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00023}{23}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>zdepth\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{glad_8h_af15266b67de988f5ddf442bbbdd1b3fc}{glActiveTexture}}(\mbox{\hyperlink{glad_8h_a16cc91096144fc7048b45e2add14915b}{GL\_TEXTURE0}});}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{glad_8h_a71a2d01a12606fc26c1a28dba23dfce2}{glGenVertexArrays}}(1,\ \&(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>vao));}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{glad_8h_a1b33d322b89d94ad4938461db0a0424a}{glGenBuffers}}(1,\ \&(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>vbo));}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{glad_8h_a4c13098a615d32e7f04aa4105149564f}{glBindVertexArray}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>vao);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3b3a3f8200f094b781e9f61e2f19fc50}{glBindBuffer}}(\mbox{\hyperlink{glad_8h_a7180045dcb52b22af2cd0366026bc3ed}{GL\_ARRAY\_BUFFER}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>vbo);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Vertex\ XYZ\ coordinates}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{glad_8h_a8afadc1fe36886688a02097cc63a17cb}{glVertexAttribPointer}}(0,\ 3,\ \mbox{\hyperlink{glad_8h_a6d19915d4237cb559505bd3e5dcfcf3c}{GL\_FLOAT}},\ \mbox{\hyperlink{glad_8h_abca6d43f43fae31f49dcb883b2f301f6}{GL\_FALSE}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structvertex}{vertex\_t}}),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}});}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{glad_8h_a6e8ee482001ee8fb9b3d4851116779b4}{glEnableVertexAttribArray}}(0);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{comment}{//\ UV\ Coordinates}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{glad_8h_a8afadc1fe36886688a02097cc63a17cb}{glVertexAttribPointer}}(1,\ 2,\ \mbox{\hyperlink{glad_8h_a6d19915d4237cb559505bd3e5dcfcf3c}{GL\_FLOAT}},\ \mbox{\hyperlink{glad_8h_abca6d43f43fae31f49dcb883b2f301f6}{GL\_FALSE}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structvertex}{vertex\_t}}),\ (\textcolor{keywordtype}{void}\ *)(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})\ *\ 3));}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{glad_8h_a6e8ee482001ee8fb9b3d4851116779b4}{glEnableVertexAttribArray}}(1);}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{comment}{//\ Texture\ index}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{glad_8h_a4c19069a22ebd709443b65a9c170be49}{glVertexAttribIPointer}}(2,\ 1,\ \mbox{\hyperlink{glad_8h_a66f452ef2a3d3a1f92e38d9fd6e3f8ec}{GL\_BYTE}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structvertex}{vertex\_t}}),\ (\textcolor{keywordtype}{void}\ *)(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{float})\ *\ 5));}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{glad_8h_a6e8ee482001ee8fb9b3d4851116779b4}{glEnableVertexAttribArray}}(2);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3f7fa0df22505dd09a24a4e1e74eca09}{glEnable}}(\mbox{\hyperlink{glad_8h_aa290e8f9ee6f6862778355aa22bb0b13}{GL\_BLEND}});}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{glad_8h_a3f7fa0df22505dd09a24a4e1e74eca09}{glEnable}}(\mbox{\hyperlink{glad_8h_a4ccf1dc093190cc3798b9abea3655f98}{GL\_DEPTH\_TEST}});}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{glad_8h_afbdb5d9533b5a5ed6c66f4ee46025e66}{glBlendFunc}}(\mbox{\hyperlink{glad_8h_a51e6c75d54b3a9fb93fbc880463c212c}{GL\_SRC\_ALPHA}},\ \mbox{\hyperlink{glad_8h_aa3926eb5e008f14829baa8d72435215f}{GL\_ONE\_MINUS\_SRC\_ALPHA}});}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture0"{}}),\ 0);}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture1"{}}),\ 1);}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture2"{}}),\ 2);}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture3"{}}),\ 3);}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture4"{}}),\ 4);}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture5"{}}),\ 5);}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture6"{}}),\ 6);}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture7"{}}),\ 7);}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture8"{}}),\ 8);}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture9"{}}),\ 9);}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture10"{}}),\ 10);}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture11"{}}),\ 11);}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture12"{}}),\ 12);}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture13"{}}),\ 13);}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture14"{}}),\ 14);}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{glad_8h_abf9380e68d38f458f86a54870846026e}{glUniform1i}}(\mbox{\hyperlink{glad_8h_a10106e4be90a66213839645cf12770f9}{glGetUniformLocation}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{stringliteral}{"{}Texture15"{}}),\ 15);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c_a6c46003ab2517553e8b627bc16d5b5b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__init_8c_a32988a5ce7aaa25a448b61b0ac410cec}\label{mlx__init_8c_a32988a5ce7aaa25a448b61b0ac410cec} 
+\index{mlx\_init.c@{mlx\_init.c}!mlx\_init@{mlx\_init}}
+\index{mlx\_init@{mlx\_init}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_init()}{mlx\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*} mlx\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{width,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{height,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{title,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}}}]{resize }\end{DoxyParamCaption})}
+
+Initializes a new MLX42 Instance.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em width} & The width of the window. \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & The height of the window. \\
+\hline
+\mbox{\texttt{ in}}  & {\em title} & The title of the window. \\
+\hline
+\mbox{\texttt{ in}}  & {\em resize} & Enable window resizing. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ptr to the MLX handle or null on failure. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00161}{161}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{title}});}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}\ >\ 0,\ \textcolor{stringliteral}{"{}Window\ width\ must\ be\ positive"{}});}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}\ >\ 0,\ \textcolor{stringliteral}{"{}Window\ height\ must\ be\ positive"{}});}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{init}};}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}};}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{init}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwInit}}()))}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{void}*)\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a82ecc744e1981eb96f3f43e9cef92473}{MLX\_GLFWFAIL}}));}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{calloc}}(1,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structmlx}{mlx\_t}}))))}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{void}*)\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980}{MLX\_MEMFAIL}}));}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{calloc}}(1,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}))))}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{free}}(\mbox{\hyperlink{structmlx}{mlx}}),\ (\textcolor{keywordtype}{void}*)\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980}{MLX\_MEMFAIL}}));}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a3a11be0a71d7c8dd0c329e1caa230a50}{width}}\ =\ \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}};}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_aaad5daa3b9d2466e0de9732f8ff434ee}{height}}\ =\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}};}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>initialWidth\ =\ \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}};}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>initialHeight\ =\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_CONTEXT\_VERSION\_MAJOR}},\ 3);}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_CONTEXT\_VERSION\_MINOR}},\ 3);}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_MAXIMIZED}},\ \mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0}{mlx\_settings}}[\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0a108ca23a8603fdb304eb8f0fde0b8d22}{MLX\_MAXIMIZED}}]);}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_DECORATED}},\ \mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0}{mlx\_settings}}[\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0a08b97db0c4d6b90f8a2ce46a0bceca48}{MLX\_DECORATED}}]);}
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_VISIBLE}},\ !\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0}{mlx\_settings}}[\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0a30034ccde62debe94d62f61f50ab5cc4}{MLX\_HEADLESS}}]);}
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_OPENGL\_PROFILE}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_OPENGL\_CORE\_PROFILE}});}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#ifdef\ \_\_APPLE\_\_}}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_OPENGL\_FORWARD\_COMPAT}},\ \mbox{\hyperlink{glad_8h_a06316bc3c17db78ce93419fb208945ba}{GL\_TRUE}});}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwWindowHint}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_RESIZABLE}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{resize}});}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwCreateWindow}}(\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}},\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{title}},\ \mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0}{mlx\_settings}}[\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0a5f69703364bd6ccc583df37c210bdc21}{MLX\_FULLSCREEN}}]\ ?\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetPrimaryMonitor}}()\ :\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}})))}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{return}}\ (\mbox{\hyperlink{MLX42_8h_afa6aa2f79f9fc81735bdf3b92421f9ca}{mlx\_terminate}}(\mbox{\hyperlink{structmlx}{mlx}}),\ (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}*)\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a80d089ca1670c8c27cf93c8a6c61f1fe}{MLX\_WINFAIL}}));}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{mlx__init_8c_a8a415365a708f01e9a44e964d94dad2a}{mlx\_init\_render}}(\mbox{\hyperlink{structmlx}{mlx}})\ ||\ !\mbox{\hyperlink{mlx__init_8c_a6c46003ab2517553e8b627bc16d5b5b3}{mlx\_create\_buffers}}(\mbox{\hyperlink{structmlx}{mlx}}))}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42_8h_afa6aa2f79f9fc81735bdf3b92421f9ca}{mlx\_terminate}}(\mbox{\hyperlink{structmlx}{mlx}}),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}});}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00197\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c_a32988a5ce7aaa25a448b61b0ac410cec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c_a32988a5ce7aaa25a448b61b0ac410cec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__init_8c_a8a415365a708f01e9a44e964d94dad2a}\label{mlx__init_8c_a8a415365a708f01e9a44e964d94dad2a} 
+\index{mlx\_init.c@{mlx\_init.c}!mlx\_init\_render@{mlx\_init\_render}}
+\index{mlx\_init\_render@{mlx\_init\_render}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_init\_render()}{mlx\_init\_render()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+init\+\_\+render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00101}{101}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vshader}}\ =\ 0;}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fshader}}\ =\ 0;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}}[512]\ =\ \{0\};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwMakeContextCurrent}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}});}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetFramebufferSizeCallback}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \mbox{\hyperlink{mlx__init_8c_a2d36bb2949fea5c676c821c1da1bbb32}{framebuffer\_callback}});}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetWindowUserPointer}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSwapInterval}}(\mbox{\hyperlink{MLX42__Int_8h_adaf3857c9e523a8ee63bb4a8ffe37cbb}{MLX\_SWAP\_INTERVAL}});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{comment}{//\ Load\ all\ OpenGL\ function\ pointers}}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_a1f34fdf1c2f94c05c53d2a1cd3d80537}{gladLoadGLLoader}}((\mbox{\hyperlink{glad_8h_ac9b3f60b06b74bc7f3ac9249c876bdeb}{GLADloadproc}})\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetProcAddress}}))}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a6f1062cf9b8999e5f3ff41b81e2f498b}{MLX\_GLADFAIL}}));}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vshader}}\ =\ \mbox{\hyperlink{mlx__init_8c_a937c3acdc6fffc84f970821514efacba}{mlx\_compile\_shader}}(\mbox{\hyperlink{MLX42__Int_8h_ab7dfbd72052a2e0eeba9d018d2c63ec8}{vert\_shader}},\ \mbox{\hyperlink{glad_8h_aceb29bc16e885f956eb9e351a7dd6276}{GL\_VERTEX\_SHADER}})))}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a69c22d915e7587c6d31708afc6093431}{MLX\_VERTFAIL}}));}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fshader}}\ =\ \mbox{\hyperlink{mlx__init_8c_a937c3acdc6fffc84f970821514efacba}{mlx\_compile\_shader}}(\mbox{\hyperlink{MLX42__Int_8h_acaa1fa3befcad4f14216112bc2115ad6}{frag\_shader}},\ \mbox{\hyperlink{glad_8h_a1a0294662b50921555cae95fb20740d4}{GL\_FRAGMENT\_SHADER}})))}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a327ef6c987a0ef2df4b98040fba114aa}{MLX\_FRAGFAIL}}));}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram\ =\ \mbox{\hyperlink{glad_8h_acf9d728f2b2be42fbc2fe6dada8bcd2b}{glCreateProgram}}()))}
+\DoxyCodeLine{00122\ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ac012d7614801ed69d643ad388dcfc768}{glDeleteShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fshader}});}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ac012d7614801ed69d643ad388dcfc768}{glDeleteShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vshader}});}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a4267998072c54e684d768530376aebf9}{MLX\_SHDRFAIL}}));}
+\DoxyCodeLine{00126\ \ \ \ \ \}}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{glad_8h_a0cb06d612b3358bfaadbbefd7c51f1cc}{glAttachShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vshader}});}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{glad_8h_a0cb06d612b3358bfaadbbefd7c51f1cc}{glAttachShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fshader}});}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{glad_8h_ad241352c6eee6e79f09942ef0771db47}{glLinkProgram}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{glad_8h_ac012d7614801ed69d643ad388dcfc768}{glDeleteShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vshader}});}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{glad_8h_ac012d7614801ed69d643ad388dcfc768}{glDeleteShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fshader}});}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{glad_8h_afa5b8f96b52bc2825da63335dcabb07d}{glDetachShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vshader}});}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{glad_8h_afa5b8f96b52bc2825da63335dcabb07d}{glDetachShader}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fshader}});}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{success}};}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{glad_8h_a511181ed70d9d4cf7463a0ffe39f836d}{glGetProgramiv}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \mbox{\hyperlink{glad_8h_ae644ef6b281c9378fa49d9b1ccefaf31}{GL\_LINK\_STATUS}},\ \&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{success}});}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{success}})}
+\DoxyCodeLine{00139\ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ad0eeab6a26c94a0b78c04aac628e5ab5}{glGetProgramInfoLog}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram,\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}}),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fprintf}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{stderr}},\ \textcolor{stringliteral}{"{}\%s"{}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{infolog}});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a4267998072c54e684d768530376aebf9}{MLX\_SHDRFAIL}}));}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{glad_8h_ad8e40c882d63c4671dea2ca2dfcf3046}{glUseProgram}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>shaderprogram);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ 16;\ i++)}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>bound\_textures[i]\ =\ 0;}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{00150\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c_a8a415365a708f01e9a44e964d94dad2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__init_8c_a8a415365a708f01e9a44e964d94dad2a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__init_8c_a72eecffc4e044413e45e9b5bfb1feda8}\label{mlx__init_8c_a72eecffc4e044413e45e9b5bfb1feda8} 
+\index{mlx\_init.c@{mlx\_init.c}!mlx\_set\_setting@{mlx\_set\_setting}}
+\index{mlx\_set\_setting@{mlx\_set\_setting}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_set\_setting()}{mlx\_set\_setting()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+set\+\_\+setting (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_a08ab6151d2a0f0ceed8a483f481e060e}{mlx\+\_\+settings\+\_\+t}}}]{setting,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{value }\end{DoxyParamCaption})}
+
+Set a setting for MLX42. Settings can manipulate the core behaviour of the engine.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em setting} & The settings value, See mlx\+\_\+settings\+\_\+t type. \\
+\hline
+\mbox{\texttt{ in}}  & {\em value} & Settings value to determine the state of the setting. Can be a boolean or an enum / macro. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00199}{199}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00200\ \{}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{setting}}\ >=\ 0\ \&\&\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{setting}}\ <\ \mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0aa8410ccb904597cdf2c80cf7a7bb084b}{MLX\_SETTINGS\_MAX}},\ \textcolor{stringliteral}{"{}Invalid\ settings\ value"{}});}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0}{mlx\_settings}}[\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{setting}}]\ =\ \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}};}
+\DoxyCodeLine{00203\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{mlx__init_8c_a72eecffc4e044413e45e9b5bfb1feda8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{mlx__init_8c_a5c57992d991a7e81aa592d67726f9900}\label{mlx__init_8c_a5c57992d991a7e81aa592d67726f9900} 
+\index{mlx\_init.c@{mlx\_init.c}!mlx\_errno@{mlx\_errno}}
+\index{mlx\_errno@{mlx\_errno}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_errno}{mlx\_errno}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\+\_\+errno\+\_\+t}} \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\+\_\+errno}} = \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\+\_\+\+SUCCESS}}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00158}{158}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+\Hypertarget{mlx__init_8c_afb11d9a58954731e14b111c77125b17d}\label{mlx__init_8c_afb11d9a58954731e14b111c77125b17d} 
+\index{mlx\_init.c@{mlx\_init.c}!mlx\_settings@{mlx\_settings}}
+\index{mlx\_settings@{mlx\_settings}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_settings}{mlx\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0}{mlx\+\_\+settings}}\mbox{[}\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0aa8410ccb904597cdf2c80cf7a7bb084b}{MLX\+\_\+\+SETTINGS\+\_\+\+MAX}}\mbox{]} = \{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{true}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}\}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00157}{157}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \{\textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{false},\ \textcolor{keyword}{true},\ \textcolor{keyword}{false}\};}
+
+\end{DoxyCode}
+\Hypertarget{mlx__init_8c_ab1f31200953135a9601bfb65ed495bd4}\label{mlx__init_8c_ab1f31200953135a9601bfb65ed495bd4} 
+\index{mlx\_init.c@{mlx\_init.c}!sort\_queue@{sort\_queue}}
+\index{sort\_queue@{sort\_queue}!mlx\_init.c@{mlx\_init.c}}
+\doxysubsubsection{\texorpdfstring{sort\_queue}{sort\_queue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} sort\+\_\+queue = \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{false}}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__init_8c_source_l00159}{159}} of file \mbox{\hyperlink{mlx__init_8c_source}{mlx\+\_\+init.\+c}}.
+

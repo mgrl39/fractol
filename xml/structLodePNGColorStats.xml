@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLodePNGColorStats" kind="struct" language="C++" prot="public">
+    <compoundname>LodePNGColorStats</compoundname>
+    <includes refid="lodepng_8h" local="no">lodepng.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLodePNGColorStats_1add4c44f18dcafae2c07914bd0faffc01" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGColorStats::colored</definition>
+        <argsstring></argsstring>
+        <name>colored</name>
+        <qualifiedname>LodePNGColorStats::colored</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="793" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="793" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1a162ce4d4ee804a0136814ba469c82294" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGColorStats::key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <qualifiedname>LodePNGColorStats::key</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="794" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="794" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1af802f883e579161b78e210052bbbfb48" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">short</ref></type>
+        <definition>unsigned short LodePNGColorStats::key_r</definition>
+        <argsstring></argsstring>
+        <name>key_r</name>
+        <qualifiedname>LodePNGColorStats::key_r</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="795" column="18" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="795" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1ae334ca1cbfbb36f27addb801cfecc867" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">short</ref></type>
+        <definition>unsigned short LodePNGColorStats::key_g</definition>
+        <argsstring></argsstring>
+        <name>key_g</name>
+        <qualifiedname>LodePNGColorStats::key_g</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="796" column="18" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="796" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1a33724b799caf608319113a946c91406d" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">short</ref></type>
+        <definition>unsigned short LodePNGColorStats::key_b</definition>
+        <argsstring></argsstring>
+        <name>key_b</name>
+        <qualifiedname>LodePNGColorStats::key_b</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="797" column="18" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="797" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1af81e4a84aa3d94849736b6689643c101" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGColorStats::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <qualifiedname>LodePNGColorStats::alpha</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="798" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="798" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1aa63f09d5c0252962f3739cf296678bce" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGColorStats::numcolors</definition>
+        <argsstring></argsstring>
+        <name>numcolors</name>
+        <qualifiedname>LodePNGColorStats::numcolors</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="799" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="799" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1a7eda029397c945602ecf49d5277c936e" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref></type>
+        <definition>unsigned char LodePNGColorStats::palette[1024]</definition>
+        <argsstring>[1024]</argsstring>
+        <name>palette</name>
+        <qualifiedname>LodePNGColorStats::palette</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="800" column="17" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="800" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1a8db59a808dc9f57ccaba638be2a2946d" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGColorStats::bits</definition>
+        <argsstring></argsstring>
+        <name>bits</name>
+        <qualifiedname>LodePNGColorStats::bits</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="801" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="801" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1a9919718b21a89c1c8cb7f393ff80f696" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t LodePNGColorStats::numpixels</definition>
+        <argsstring></argsstring>
+        <name>numpixels</name>
+        <qualifiedname>LodePNGColorStats::numpixels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="802" column="10" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="802" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1ad6de0a38622538aace50a99ff5f63854" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGColorStats::allow_palette</definition>
+        <argsstring></argsstring>
+        <name>allow_palette</name>
+        <qualifiedname>LodePNGColorStats::allow_palette</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="805" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="805" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGColorStats_1a97c2e4db5de999cd92c1eabcdf80d431" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGColorStats::allow_greyscale</definition>
+        <argsstring></argsstring>
+        <name>allow_greyscale</name>
+        <qualifiedname>LodePNGColorStats::allow_greyscale</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="806" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="806" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LodePNGColorStats</label>
+        <link refid="structLodePNGColorStats"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/lodepng/lodepng.h" line="792" column="1" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="792" bodyend="807"/>
+    <listofallmembers>
+      <member refid="structLodePNGColorStats_1a97c2e4db5de999cd92c1eabcdf80d431" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>allow_greyscale</name></member>
+      <member refid="structLodePNGColorStats_1ad6de0a38622538aace50a99ff5f63854" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>allow_palette</name></member>
+      <member refid="structLodePNGColorStats_1af81e4a84aa3d94849736b6689643c101" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>alpha</name></member>
+      <member refid="structLodePNGColorStats_1a8db59a808dc9f57ccaba638be2a2946d" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>bits</name></member>
+      <member refid="structLodePNGColorStats_1add4c44f18dcafae2c07914bd0faffc01" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>colored</name></member>
+      <member refid="structLodePNGColorStats_1a162ce4d4ee804a0136814ba469c82294" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>key</name></member>
+      <member refid="structLodePNGColorStats_1a33724b799caf608319113a946c91406d" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>key_b</name></member>
+      <member refid="structLodePNGColorStats_1ae334ca1cbfbb36f27addb801cfecc867" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>key_g</name></member>
+      <member refid="structLodePNGColorStats_1af802f883e579161b78e210052bbbfb48" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>key_r</name></member>
+      <member refid="structLodePNGColorStats_1aa63f09d5c0252962f3739cf296678bce" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>numcolors</name></member>
+      <member refid="structLodePNGColorStats_1a9919718b21a89c1c8cb7f393ff80f696" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>numpixels</name></member>
+      <member refid="structLodePNGColorStats_1a7eda029397c945602ecf49d5277c936e" prot="public" virt="non-virtual"><scope>LodePNGColorStats</scope><name>palette</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

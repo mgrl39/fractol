@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structs__color" kind="struct" language="C++" prot="public">
+    <compoundname>s_color</compoundname>
+    <includes refid="fractol_8h" local="no">fractol.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__color_1a251e854381c6945efbbffc33796e6035" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int s_color::r</definition>
+        <argsstring></argsstring>
+        <name>r</name>
+        <qualifiedname>s_color::r</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="83" column="4" bodyfile="fractol.h" bodystart="83" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" compoundref="calcs_8c" startline="131" endline="143">calculate_color</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__color_1a6d246ab8c311f6f86da2f9aa129b98d9" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int s_color::g</definition>
+        <argsstring></argsstring>
+        <name>g</name>
+        <qualifiedname>s_color::g</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="84" column="4" bodyfile="fractol.h" bodystart="84" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" compoundref="calcs_8c" startline="131" endline="143">calculate_color</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__color_1a0710590bfa61f9db131e534589070ac8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int s_color::b</definition>
+        <argsstring></argsstring>
+        <name>b</name>
+        <qualifiedname>s_color::b</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="fractol.h" line="85" column="4" bodyfile="fractol.h" bodystart="85" bodyend="-1"/>
+        <referencedby refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" compoundref="calcs_8c" startline="131" endline="143">calculate_color</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents an RGB color. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>s_color</label>
+        <link refid="structs__color"/>
+      </node>
+    </collaborationgraph>
+    <location file="fractol.h" line="81" column="1" bodyfile="fractol.h" bodystart="82" bodyend="86"/>
+    <listofallmembers>
+      <member refid="structs__color_1a0710590bfa61f9db131e534589070ac8" prot="public" virt="non-virtual"><scope>s_color</scope><name>b</name></member>
+      <member refid="structs__color_1a6d246ab8c311f6f86da2f9aa129b98d9" prot="public" virt="non-virtual"><scope>s_color</scope><name>g</name></member>
+      <member refid="structs__color_1a251e854381c6945efbbffc33796e6035" prot="public" virt="non-virtual"><scope>s_color</scope><name>r</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

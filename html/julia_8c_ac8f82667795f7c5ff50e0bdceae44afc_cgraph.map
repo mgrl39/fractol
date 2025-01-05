@@ -1,0 +1,7 @@
+<map id="render_julia_row" name="render_julia_row">
+<area shape="rect" id="Node000001" title="Renders a single row of the Julia set." alt="" coords="5,31,136,56"/>
+<area shape="rect" id="Node000002" href="$calcs_8c.html#af87a6532ce68469fef69f9c207960094" title="Calculates the color of a pixel based on how many iterations it takes to &quot;escape&quot;." alt="" coords="184,5,304,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,31,170,26,171,31,136,36"/>
+<area shape="rect" id="Node000003" href="$julia_8c.html#a06a8d464c822682fafa59d5a404516bb" title="Performs the iterations for a signle point in the Julia set." alt="" coords="185,55,303,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="136,50,171,55,171,60,136,55"/>
+</map>

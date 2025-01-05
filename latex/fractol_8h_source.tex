@@ -1,0 +1,204 @@
+\doxysection{fractol.\+h}
+\hypertarget{fractol_8h_source}{}\label{fractol_8h_source}\mbox{\hyperlink{fractol_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00004}00004\ \textcolor{comment}{/*\ \ \ fractol.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ meghribe\ <meghribe@student.42barcelon\ \ \ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2024/12/23\ 19:53:33\ by\ meghribe\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/01/04\ 13:25:50\ by\ meghribe\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00013}00013\ \textcolor{preprocessor}{\#ifndef\ FRACTOL\_H}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00014}00014\ \textcolor{preprocessor}{\#\ define\ FRACTOL\_H}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00016}00016\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00017}00017\ \textcolor{preprocessor}{\#\ include\ "{}MLX42/MLX42.h"{}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00018}00018\ \textcolor{preprocessor}{\#\ include\ <limits.h>}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00019}00019\ \textcolor{preprocessor}{\#\ include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00021}00021\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Enumerations\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00022}00022\ \textcolor{comment}{/*\ Fractal\ types\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00023}\mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12}{00023}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12}{e\_fractal\_type}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00024}00024\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00025}\mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{00025}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{MANDELBROT}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00026}\mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{00026}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{JULIA}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00027}\mbox{\hyperlink{fractol_8h_a87e2208c89c44020c05fae234f5d17d7}{00027}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a87e2208c89c44020c05fae234f5d17d7}{t\_fractal\_type}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00028}00028\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00029}00029\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00030}00030\ \textcolor{comment}{\ *\ @brief\ Indices\ for\ offsets\ in\ the\ x\ and\ y\ directions.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00031}00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00032}\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6}{00032}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6}{e\_offset\_index}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00034}\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{00034}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00035}\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{00035}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00036}\mbox{\hyperlink{fractol_8h_a28da728f4eaa09c08c9c92968b1126c5}{00036}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a28da728f4eaa09c08c9c92968b1126c5}{t\_offset\_index}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00037}00037\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00038}00038\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00039}00039\ \textcolor{comment}{\ *\ @brief\ Indices\ for\ scaling\ factors\ in\ the\ x\ and\ y\ directions.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00040}00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00041}\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad}{00041}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dad}{e\_scale\_index}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00042}00042\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00043}\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{00043}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00044}\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{00044}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00045}\mbox{\hyperlink{fractol_8h_acc52c36a8d0ef83a52f4bd64e75379d9}{00045}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_acc52c36a8d0ef83a52f4bd64e75379d9}{t\_scale\_index}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00046}00046\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00047}00047\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00048}00048\ \textcolor{comment}{\ *\ @brief\ Indices\ for\ complex\ numbers\ (real\ and\ imaginary)\ }}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00049}00049\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00050}\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55}{00050}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55}{e\_complex\_index}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00051}00051\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00052}\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{00052}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00053}\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{00053}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00054}\mbox{\hyperlink{fractol_8h_ab6761e1fd55084307b894e7fb9301183}{00054}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_ab6761e1fd55084307b894e7fb9301183}{t\_complex\_index}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00055}00055\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00056}00056\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00057}00057\ \textcolor{comment}{\ *\ @brief\ Flags\ for\ validating\ numbers.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00058}00058\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00059}\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1b}{00059}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1b}{e\_number\_flags}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00060}00060\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00061}\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{00061}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00062}\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{00062}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00063}\mbox{\hyperlink{fractol_8h_a2e791bec888de17dac932dc1f31b3797}{00063}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a2e791bec888de17dac932dc1f31b3797}{t\_number\_flags}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00064}00064\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00065}00065\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00066}00066\ \textcolor{comment}{\ *\ @brief\ Error\ messages\ used\ for\ input\ validation.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00067}00067\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00068}\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1b}{00068}}\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1b}{e\_err\_msg}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00070}\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc}{00070}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc}{NO\_TYPE}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00071}\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546}{00071}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546}{INVALID\_TYPE}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00072}\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7}{00072}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7}{JULIA\_ARGS}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00073}\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68}{00073}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68}{JULIA\_NUM}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00074}\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97}{00074}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97}{MANDELBROT\_ARGS}},}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00075}00075\ \};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00077}00077\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Structures\ Definitions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00078}00078\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00079}00079\ \textcolor{comment}{\ *\ @brief\ Represents\ an\ RGB\ color.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00080}00080\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00081}\mbox{\hyperlink{structs__color}{00081}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__color}{s\_color}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00082}00082\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00083}\mbox{\hyperlink{structs__color_a251e854381c6945efbbffc33796e6035}{00083}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__color_a251e854381c6945efbbffc33796e6035}{r}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00084}\mbox{\hyperlink{structs__color_a6d246ab8c311f6f86da2f9aa129b98d9}{00084}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__color_a6d246ab8c311f6f86da2f9aa129b98d9}{g}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00085}\mbox{\hyperlink{structs__color_a0710590bfa61f9db131e534589070ac8}{00085}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structs__color_a0710590bfa61f9db131e534589070ac8}{b}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00086}\mbox{\hyperlink{fractol_8h_a43da74144dd0bc8864f91dfed33bd6bf}{00086}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a43da74144dd0bc8864f91dfed33bd6bf}{t\_color}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00087}00087\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00088}00088\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00089}00089\ \textcolor{comment}{\ *\ @brief\ Data\ structure\ for\ fractal\ rendering}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00090}00090\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00091}\mbox{\hyperlink{structs__data}{00091}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__data}{s\_data}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00092}00092\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00093}\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{00093}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00094}\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{00094}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[2];}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00095}\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{00095}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[2];}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00096}\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{00096}}\ \ \ \ \ mlx\_t\ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00097}\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{00097}}\ \ \ \ \ mlx\_image\_t\ \ \ \ \ *\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00098}\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{00098}}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a87e2208c89c44020c05fae234f5d17d7}{t\_fractal\_type}}\ \ \ \ \mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00099}\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{00099}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\_data}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00100}00100\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00101}00101\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00102}00102\ \textcolor{comment}{\ *\ @brief\ Variables\ used\ for\ fractal\ rendering\ calculations.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00103}00103\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00104}\mbox{\hyperlink{structs__render__vars}{00104}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__render__vars}{s\_render\_vars}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00105}00105\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00106}\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{00106}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00107}\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{00107}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[2];}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00108}\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{00108}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[2];}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00109}\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{00109}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[2];}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00110}\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{00110}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[2];}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00111}\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{00111}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[2];}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00112}\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{00112}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00113}\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{00113}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00114}\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{00114}}\ \ \ \ \ uint32\_t\ \ \ \ *\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00115}\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{00115}}\ \ \ \ \ uint32\_t\ \ \ \ *\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00116}\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{00116}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\_render\_vars}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00117}00117\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00118}00118\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00119}00119\ \textcolor{comment}{\ *\ @brief\ Helper\ structure\ for\ string-\/to-\/double\ conversion.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00120}00120\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00121}\mbox{\hyperlink{structs__atod__data}{00121}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structs__atod__data}{s\_atod\_data}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00122}00122\ \{}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00123}\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{00123}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00124}\mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{00124}}\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{sign}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00125}\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{00125}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00126}\mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{00126}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{divisor}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00127}\mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{00127}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{fraction}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00128}\mbox{\hyperlink{fractol_8h_ab9cfae5f88a2c51a1b5d39245e0dcaed}{00128}}\ \}\ \ \ \mbox{\hyperlink{fractol_8h_ab9cfae5f88a2c51a1b5d39245e0dcaed}{t\_atod\_data}};}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00130}00130\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Function\ Prototypes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00131}00131\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00132}00132\ \textcolor{comment}{\ *\ @brief\ Calculates\ scales\ and\ limits\ for\ rendering\ fractals.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00133}00133\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00134}00134\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00135}00135\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00136}00136\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00137}00137\ \textcolor{comment}{\ *\ @brief\ Precomputes\ coordinates\ for\ fractal\ rendering.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00138}00138\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00139}00139\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\textcolor{keywordtype}{double}\ **c\_re,\ \textcolor{keywordtype}{double}\ **c\_im,\ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00140}00140\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00141}00141\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00142}00142\ \textcolor{comment}{\ *\ @brief\ Calculates\ the\ color\ based\ on\ the\ number\ of\ iterations.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00143}00143\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00144}00144\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(\textcolor{keywordtype}{int}\ iterations);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00145}00145\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00146}00146\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00147}00147\ \textcolor{comment}{\ *\ @brief\ Converts\ a\ string\ to\ a\ double.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00148}00148\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00149}00149\ \textcolor{keywordtype}{double}\ \ \mbox{\hyperlink{fractol_8h_aba5be72a261c5846a5d6e7b315548d33}{ft\_atod}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00150}00150\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00151}00151\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00152}00152\ \textcolor{comment}{\ *\ @brief\ Compares\ two\ strings.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00153}00153\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00154}00154\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}{ft\_strcmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s2);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00155}00155\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00156}00156\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00157}00157\ \textcolor{comment}{\ *\ @brief\ Writes\ a\ string\ to\ a\ file\ descriptor.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00158}00158\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00159}00159\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{int}\ fd);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00161}00161\ \textcolor{comment}{/*\ Renderers\ */}\textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00162}00162\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00163}00163\ \textcolor{comment}{\ *\ @brief\ Render\ the\ specified\ fractal.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00164}00164\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00165}00165\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_a6010a48038dd00722649b2e7ad69668d}{render\_fractal}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00166}00166\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00167}00167\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00168}00168\ \textcolor{comment}{\ *\ @brief\ Render\ the\ Mandelbrot\ fractal.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00169}00169\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00170}00170\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_ac4c610e75a028afb898607ea03e80b30}{render\_mandelbrot}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00171}00171\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00172}00172\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00173}00173\ \textcolor{comment}{\ *\ @brief\ Renders\ the\ Julia\ fractal.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00174}00174\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00175}00175\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}{render\_julia}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00176}00176\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00177}00177\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00178}00178\ \textcolor{comment}{\ *\ @brief\ Handles\ key\ inputs.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00179}00179\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00180}00180\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_aa40f0dfb0dfb158de3f6f8b98f0de3ec}{handle\_key}}(mlx\_key\_data\_t\ keydata,\ \textcolor{keywordtype}{void}\ *param);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00181}00181\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00182}00182\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00183}00183\ \textcolor{comment}{\ *\ @brief\ Handles\ scroll\ inputs.}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00184}00184\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00185}00185\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_ace17996cda407bf3eb3480f07ccdd107}{handle\_scroll}}(\textcolor{keywordtype}{double}\ xdelta,\ \textcolor{keywordtype}{double}\ ydelta,\ \textcolor{keywordtype}{void}\ *param);}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00187}00187\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ Constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00188}\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{00188}}\ \textcolor{preprocessor}{\#\ define\ WIDTH\ \ \ \ \ \ \ \ \ \ \ \ \ \ 800}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00189}\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{00189}}\ \textcolor{preprocessor}{\#\ define\ HEIGHT\ \ \ \ \ \ \ \ \ \ \ \ \ WIDTH}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00190}\mbox{\hyperlink{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f}{00190}}\ \textcolor{preprocessor}{\#\ define\ ZOOM\_IN\ \ \ \ \ \ \ \ \ \ \ \ 1.1}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00191}\mbox{\hyperlink{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb}{00191}}\ \textcolor{preprocessor}{\#\ define\ ZOOM\_OUT\ \ \ \ \ \ \ \ \ \ \ 0.9}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00192}\mbox{\hyperlink{fractol_8h_a7a1f70b32a536263893f6dd2d2770ad7}{00192}}\ \textcolor{preprocessor}{\#\ define\ FRACTAL\_LIMIT\ \ \ \ \ \ 4.0}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00193}\mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{00193}}\ \textcolor{preprocessor}{\#\ define\ MAX\_ITERATIONS\ \ \ \ \ 75}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00194}\mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{00194}}\ \textcolor{preprocessor}{\#\ define\ RESET\ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[0m"{}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00195}\mbox{\hyperlink{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba}{00195}}\ \textcolor{preprocessor}{\#\ define\ LIGHT\_RED\ \ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[38;5;203m"{}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00196}\mbox{\hyperlink{fractol_8h_af0506fcfa991103f2a0747bb5c041c06}{00196}}\ \textcolor{preprocessor}{\#\ define\ LIGHT\_GOLD\ \ \ \ \ \ \ \ \ "{}\(\backslash\)033[38;5;220m"{}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00197}\mbox{\hyperlink{fractol_8h_a5a7142ee95ebc63218ed3aac2ae06b13}{00197}}\ \textcolor{preprocessor}{\#\ define\ LIGHT\_GREEN\ \ \ \ \ \ \ \ "{}\(\backslash\)033[38;5;120m"{}}}
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00198}00198\ }
+\DoxyCodeLine{\Hypertarget{fractol_8h_source_l00199}00199\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

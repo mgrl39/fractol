@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structs__font" kind="struct" language="C++" prot="public">
+    <compoundname>s_font</compoundname>
+    <includes refid="font_8h" local="no">font.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structs__font_1a759ef1ac84fa8677e5df4e10531d52f1" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>uint32_t s_font::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>s_font::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/font/font.h" line="22" column="9" bodyfile="MLX42/src/font/font.h" bodystart="22" bodyend="-1"/>
+        <referencedby refid="mlx__font_8c_1aaa302d6dd83e59468fb906706e37f60b" compoundref="mlx__font_8c" startline="29" endline="42">mlx_draw_char</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structs__font_1a95dd5d066ebfb13a3a7ea48a382a1483" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>uint32_t s_font::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>s_font::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/font/font.h" line="23" column="9" bodyfile="MLX42/src/font/font.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structs__font_1ae19e5fc256a43f4aaa571d7b42165604" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>uint32_t s_font::bpp</definition>
+        <argsstring></argsstring>
+        <name>bpp</name>
+        <qualifiedname>s_font::bpp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/font/font.h" line="24" column="9" bodyfile="MLX42/src/font/font.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structs__font_1a210dbb07e24bfaf3e8ad5ab899363bfe" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+        <definition>char* s_font::pixels</definition>
+        <argsstring></argsstring>
+        <name>pixels</name>
+        <qualifiedname>s_font::pixels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/font/font.h" line="25" column="5" bodyfile="MLX42/src/font/font.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="mlx__font_8c_1aaa302d6dd83e59468fb906706e37f60b" compoundref="mlx__font_8c" startline="29" endline="42">mlx_draw_char</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>s_font</label>
+        <link refid="structs__font"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/src/font/font.h" line="20" column="8" bodyfile="MLX42/src/font/font.h" bodystart="21" bodyend="26"/>
+    <listofallmembers>
+      <member refid="structs__font_1ae19e5fc256a43f4aaa571d7b42165604" prot="public" virt="non-virtual"><scope>s_font</scope><name>bpp</name></member>
+      <member refid="structs__font_1a95dd5d066ebfb13a3a7ea48a382a1483" prot="public" virt="non-virtual"><scope>s_font</scope><name>height</name></member>
+      <member refid="structs__font_1a210dbb07e24bfaf3e8ad5ab899363bfe" prot="public" virt="non-virtual"><scope>s_font</scope><name>pixels</name></member>
+      <member refid="structs__font_1a759ef1ac84fa8677e5df4e10531d52f1" prot="public" virt="non-virtual"><scope>s_font</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

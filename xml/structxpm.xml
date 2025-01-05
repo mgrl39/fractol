@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structxpm" kind="struct" language="C++" prot="public">
+    <compoundname>xpm</compoundname>
+    <includes refid="MLX42_8h" local="no">MLX42.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structxpm_1a96490cfed326fc5a3a9750e586041519" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1abf95030dc43b4fba22354fb4ae0089a5" kindref="member">mlx_texture_t</ref></type>
+        <definition>mlx_texture_t xpm::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <qualifiedname>xpm::texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="281" column="14" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="281" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1a38fb289ba874f2fdf04145e808c60e2a" compoundref="mlx__xpm42_8c" startline="203" endline="208">mlx_delete_xpm42</referencedby>
+        <referencedby refid="MLX42_8h_1a4e43a95dd957b6771633389dc650003d" compoundref="mlx__xpm42_8c" startline="181" endline="201">mlx_load_xpm42</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structxpm_1a132cb1a4f1d6653dd409178f5a91c408" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t xpm::color_count</definition>
+        <argsstring></argsstring>
+        <name>color_count</name>
+        <qualifiedname>xpm::color_count</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="282" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="282" bodyend="-1"/>
+        <referencedby refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" compoundref="mlx__xpm42_8c" startline="132" endline="147">mlx_read_table</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structxpm_1aaa705a156b21449c4d57f6183eb02c91" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t xpm::cpp</definition>
+        <argsstring></argsstring>
+        <name>cpp</name>
+        <qualifiedname>xpm::cpp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="283" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="283" bodyend="-1"/>
+        <referencedby refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" compoundref="mlx__xpm42_8c" startline="64" endline="84">mlx_insert_xpm_entry</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref></type>
+        <definition>char xpm::mode</definition>
+        <argsstring></argsstring>
+        <name>mode</name>
+        <qualifiedname>xpm::mode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="284" column="5" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="284" bodyend="-1"/>
+        <referencedby refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" compoundref="mlx__xpm42_8c" startline="64" endline="84">mlx_insert_xpm_entry</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Struct containing data regarding an XPM image.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>texture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The texture data of the XPM. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>color_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of colors available. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>cpp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of characters per pixel. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color mode, either (c)olor or (m)onochrome. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>mlx_texture</label>
+        <link refid="structmlx__texture"/>
+      </node>
+      <node id="1">
+        <label>xpm</label>
+        <link refid="structxpm"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+texture</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42.h" line="279" column="1" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="280" bodyend="285"/>
+    <listofallmembers>
+      <member refid="structxpm_1a132cb1a4f1d6653dd409178f5a91c408" prot="public" virt="non-virtual"><scope>xpm</scope><name>color_count</name></member>
+      <member refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" prot="public" virt="non-virtual"><scope>xpm</scope><name>cpp</name></member>
+      <member refid="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" prot="public" virt="non-virtual"><scope>xpm</scope><name>mode</name></member>
+      <member refid="structxpm_1a96490cfed326fc5a3a9750e586041519" prot="public" virt="non-virtual"><scope>xpm</scope><name>texture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

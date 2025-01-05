@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLodePNGEncoderSettings" kind="struct" language="C++" prot="public">
+    <compoundname>LodePNGEncoderSettings</compoundname>
+    <includes refid="lodepng_8h" local="no">lodepng.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a2c5928b4172c75e27de467870f2ff946" prot="public" static="no" mutable="no">
+        <type><ref refid="structLodePNGCompressSettings" kindref="compound">LodePNGCompressSettings</ref></type>
+        <definition>LodePNGCompressSettings LodePNGEncoderSettings::zlibsettings</definition>
+        <argsstring></argsstring>
+        <name>zlibsettings</name>
+        <qualifiedname>LodePNGEncoderSettings::zlibsettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="819" column="27" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="819" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a1203b8db6532c9ff4a5c8ee692cd327a" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGEncoderSettings::auto_convert</definition>
+        <argsstring></argsstring>
+        <name>auto_convert</name>
+        <qualifiedname>LodePNGEncoderSettings::auto_convert</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="821" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="821" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a0d82e8f2fabcb6cebbc54b80922945f1" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGEncoderSettings::filter_palette_zero</definition>
+        <argsstring></argsstring>
+        <name>filter_palette_zero</name>
+        <qualifiedname>LodePNGEncoderSettings::filter_palette_zero</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="827" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="827" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a5e18e4eb941763a2e3e6c65ee9f0729c" prot="public" static="no" mutable="no">
+        <type><ref refid="lodepng_8h_1ad5215c95d5bedc9103d8e6490398254f" kindref="member">LodePNGFilterStrategy</ref></type>
+        <definition>LodePNGFilterStrategy LodePNGEncoderSettings::filter_strategy</definition>
+        <argsstring></argsstring>
+        <name>filter_strategy</name>
+        <qualifiedname>LodePNGEncoderSettings::filter_strategy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="830" column="25" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="830" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a4446f87b5283f25664802a1be037e76e" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+        <definition>const unsigned char* LodePNGEncoderSettings::predefined_filters</definition>
+        <argsstring></argsstring>
+        <name>predefined_filters</name>
+        <qualifiedname>LodePNGEncoderSettings::predefined_filters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="835" column="23" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="835" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a04dc9622ccd1d7c74c56291409aa512a" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGEncoderSettings::force_palette</definition>
+        <argsstring></argsstring>
+        <name>force_palette</name>
+        <qualifiedname>LodePNGEncoderSettings::force_palette</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="843" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="843" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a893aa542aa7c122c32ee36dd716fbcb2" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGEncoderSettings::add_id</definition>
+        <argsstring></argsstring>
+        <name>add_id</name>
+        <qualifiedname>LodePNGEncoderSettings::add_id</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="846" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="846" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGEncoderSettings_1a6ffdcb8e85a65ea208fe027be072d710" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGEncoderSettings::text_compression</definition>
+        <argsstring></argsstring>
+        <name>text_compression</name>
+        <qualifiedname>LodePNGEncoderSettings::text_compression</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="848" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="848" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>LodePNGCompressSettings</label>
+        <link refid="structLodePNGCompressSettings"/>
+      </node>
+      <node id="1">
+        <label>LodePNGEncoderSettings</label>
+        <link refid="structLodePNGEncoderSettings"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+zlibsettings</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/lodepng/lodepng.h" line="818" column="1" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="818" bodyend="850"/>
+    <listofallmembers>
+      <member refid="structLodePNGEncoderSettings_1a893aa542aa7c122c32ee36dd716fbcb2" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>add_id</name></member>
+      <member refid="structLodePNGEncoderSettings_1a1203b8db6532c9ff4a5c8ee692cd327a" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>auto_convert</name></member>
+      <member refid="structLodePNGEncoderSettings_1a0d82e8f2fabcb6cebbc54b80922945f1" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>filter_palette_zero</name></member>
+      <member refid="structLodePNGEncoderSettings_1a5e18e4eb941763a2e3e6c65ee9f0729c" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>filter_strategy</name></member>
+      <member refid="structLodePNGEncoderSettings_1a04dc9622ccd1d7c74c56291409aa512a" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>force_palette</name></member>
+      <member refid="structLodePNGEncoderSettings_1a4446f87b5283f25664802a1be037e76e" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>predefined_filters</name></member>
+      <member refid="structLodePNGEncoderSettings_1a6ffdcb8e85a65ea208fe027be072d710" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>text_compression</name></member>
+      <member refid="structLodePNGEncoderSettings_1a2c5928b4172c75e27de467870f2ff946" prot="public" virt="non-virtual"><scope>LodePNGEncoderSettings</scope><name>zlibsettings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

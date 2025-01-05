@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_b06d24d59dc76f92a34175294a0488e4" kind="dir">
+    <compoundname>MLX42/tests</compoundname>
+    <innerfile refid="tests_8cpp">tests.cpp</innerfile>
+    <innerfile refid="WindowFixture_8hpp">WindowFixture.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/tests/"/>
+  </compounddef>
+</doxygen>

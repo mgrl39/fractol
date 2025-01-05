@@ -1,0 +1,193 @@
+.TH "julia.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+julia.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fractol\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBjulia_iterations\fP (\fBt_render_vars\fP *vars, \fBt_data\fP *data)"
+.br
+.RI "Performs the iterations for a signle point in the Julia set\&. "
+.ti -1c
+.RI "static void \fBrender_julia_row\fP (\fBt_render_vars\fP *vars, \fBt_data\fP *data, int y)"
+.br
+.RI "Renders a single row of the Julia set\&. "
+.ti -1c
+.RI "void \fBrender_julia\fP (\fBt_data\fP *data)"
+.br
+.RI "Renders the Julia set fractal\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static void julia_iterations (\fBt_render_vars\fP * vars, \fBt_data\fP * data)\fC [static]\fP"
+
+.PP
+Performs the iterations for a signle point in the Julia set\&. This function applies the Julia set formula iteratively to determine whether a given point escapes the threshold\&. The number of iterations taken before escape determines the point's color\&.
+.PP
+.IP "\(bu" 2
+\fBCore Algorithm:\fP The formula \fCz = z^2 + c\fP is applied, where:
+.IP "  \(bu" 4
+\fCz\fP is a complex number, represented by real (\fCz_re\fP) and imaginary (\fCz_im\fP) parts\&.
+.IP "  \(bu" 4
+\fCc\fP is a constant defined by the user (real and imaginary parts)\&.
+.PP
+
+.IP "\(bu" 2
+\fBBounding Condition:\fP The iteerations stop when:
+.IP "  \(bu" 4
+The sum of the squares of the real and imaginary parts exceeds 4\&.0\&.
+.IP "  \(bu" 4
+The maximum number of iterations (\fCMAX_ITERATIONS\fP) is reached\&.
+.PP
+
+.IP "\(bu" 2
+\fBOptimization:\fP Squared values (\fCz_re^2\fP and \fCz_im^2\fP) are cached to avoid redundant calculations\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIvars\fP Pointer to the structure holding rendering variables (e\&.g\&., \fCz\fP and \fCiterations\fP)\&. @params data Pointer to the main fractal data, including the Julia constant (\fCc\fP)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB84\fP of file \fBjulia\&.c\fP\&..PP
+.nf
+85 {
+86     double  temp_z_re;
+87 
+88     vars\->iterations = 0;
+89     while (vars\->z_squared[COMPLEX_RE] + vars\->z_squared[COMPLEX_IM] <= 4\&.0 && \\
+90             vars\->iterations < MAX_ITERATIONS)
+91     {
+92         temp_z_re = vars\->z_squared[COMPLEX_RE];
+93         temp_z_re \-= vars\->z_squared[COMPLEX_IM];
+94         temp_z_re += data\->c[COMPLEX_RE];
+95         vars\->z[COMPLEX_IM] = 2\&.0 * vars\->z[COMPLEX_RE] * \\
+96             vars\->z[COMPLEX_IM] + data\->c[COMPLEX_IM];
+97         vars\->z[COMPLEX_RE] = temp_z_re;
+98         vars\->z_squared[COMPLEX_RE] = vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_RE];
+99         vars\->z_squared[COMPLEX_IM] = vars\->z[COMPLEX_IM] * vars\->z[COMPLEX_IM];
+100         vars\->iterations++;
+101     }
+102 }
+.fi
+
+.SS "void render_julia (\fBt_data\fP * data)"
+
+.PP
+Renders the Julia set fractal\&. Renders the Julia fractal\&.
+.PP
+This function handles the full rendering process for the Julia set by iterating through all rows of the screen, rendering each row sequentially\&.
+.PP
+.IP "\(bu" 2
+\fBSetup:\fP
+.IP "  \(bu" 4
+Calculates the scaling and starting coordinates based on the zoom level and positional offsets provided by the user\&.
+.PP
+
+.IP "\(bu" 2
+\fBRow-by-Row Rendering:\fP
+.IP "  \(bu" 4
+For each row on the screen (\fCy\fP coordinate), the corresponding imaginary coordinate is computed\&.
+.IP "  \(bu" 4
+The row is passed to \fCrender_julia_row\fP, which handles the pixel-by-pixel rendering\&.
+.PP
+
+.IP "\(bu" 2
+\fBFull Image Construction:\fP
+.IP "  \(bu" 4
+The ffunction processes every row until the entire fractal is rendered\&.
+.PP
+
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP Pointer to the main fractal data structure, including rendering details such as zoom, offsets, and fractal paarameters\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB165\fP of file \fBjulia\&.c\fP\&..PP
+.nf
+166 {
+167     t_render_vars   vars;
+168     int             y;
+169 
+170     calculate_scales_and_limits(&vars, data);
+171     y = 0;
+172     while (y < HEIGHT)
+173     {
+174         vars\&.c_im = vars\&.start[COMPLEX_IM] + y * vars\&.scale[SCALE_Y];
+175         render_julia_row(&vars, data, y++);
+176     }
+177 }
+.fi
+
+.SS "static void render_julia_row (\fBt_render_vars\fP * vars, \fBt_data\fP * data, int y)\fC [static]\fP"
+
+.PP
+Renders a single row of the Julia set\&. This function processes one row of the pixel in the Juliaa set by iterating through each pixel, applying the Juliaa set formula, and determining its color\&.
+.PP
+.IP "\(bu" 2
+\fBCoordinate Mapping:\fP
+.IP "  \(bu" 4
+Each pixel is mapped to a complex number (\fCz\fP) based on its position and the scaling factors calculated from the zoom and offsets\&.
+.PP
+
+.IP "\(bu" 2
+\fBIteration and Coloring:\fP
+.IP "  \(bu" 4
+The Julia set formula is applied iteratively for each pixel\&.
+.IP "  \(bu" 4
+The number of iterations is used to calculate the pixel's color\&.
+.PP
+
+.IP "\(bu" 2
+\fBRow Processing:\fP Each pixel in the row is processed sequentially, and the result is stored in the image buffer\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIvars\fP Pointer to the rendering variables structure (e\&.g\&., pixel and scaling)\&. 
+.br
+\fIdata\fP Pointer to the main fractal data\&. 
+.br
+\fIy\fP The current row index being processed (0 for the first row, up to \fCHEIGHT - 1\fP)\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB126\fP of file \fBjulia\&.c\fP\&..PP
+.nf
+127 {
+128     int x;
+129 
+130     x = 0;
+131     while (x < WIDTH)
+132     {
+133         vars\->c_re[0] = vars\->start[COMPLEX_RE] + x * vars\->scale[SCALE_X];
+134         vars\->z[COMPLEX_RE] = vars\->c_re[0];
+135         vars\->z[COMPLEX_IM] = vars\->c_im;
+136         vars\->z_squared[COMPLEX_RE] = vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_RE];
+137         vars\->z_squared[COMPLEX_IM] = vars\->z[COMPLEX_IM] * vars\->z[COMPLEX_IM];
+138         julia_iterations(vars, data);
+139         vars\->row = vars\->pixels + y * WIDTH + x;
+140         *vars\->row = calculate_color(vars\->iterations);
+141         x++;
+142     }
+143 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

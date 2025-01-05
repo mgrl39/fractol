@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_2e19c031ff13f949ea0e4f22629af210" kind="dir">
+    <compoundname>MLX42/src/textures</compoundname>
+    <innerfile refid="mlx__png_8c">mlx_png.c</innerfile>
+    <innerfile refid="mlx__texture_8c">mlx_texture.c</innerfile>
+    <innerfile refid="mlx__xpm42_8c">mlx_xpm42.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/src/textures/"/>
+  </compounddef>
+</doxygen>

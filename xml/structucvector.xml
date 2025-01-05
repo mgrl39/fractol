@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structucvector" kind="struct" language="C++" prot="public">
+    <compoundname>ucvector</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structucvector_1ace794c5713208c5a20f21762cd87c919" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+        <definition>unsigned char* ucvector::data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <qualifiedname>ucvector::data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/lib/png/lodepng.c" line="263" column="17" bodyfile="MLX42/lib/png/lodepng.c" bodystart="263" bodyend="-1"/>
+        <referencedby refid="lodepng_8c_1a60a049b22568cd14fac6be2e13e89264" compoundref="lodepng_8c" startline="288" endline="293">ucvector_init</referencedby>
+        <referencedby refid="lodepng_8c_1a425d1b818abf2c2c221449f5bbbe6b60" compoundref="lodepng_8c" startline="269" endline="280">ucvector_reserve</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structucvector_1a27c99c34de0c5b3ca0c242d402c69499" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t ucvector::size</definition>
+        <argsstring></argsstring>
+        <name>size</name>
+        <qualifiedname>ucvector::size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/lib/png/lodepng.c" line="264" column="10" bodyfile="MLX42/lib/png/lodepng.c" bodystart="264" bodyend="-1"/>
+        <referencedby refid="lodepng_8c_1ae4e2da90ae4abb858852f211eb28d622" compoundref="lodepng_8c" startline="283" endline="286">ucvector_resize</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structucvector_1a235168baac13f0c78bd3e309dc170f90" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t ucvector::allocsize</definition>
+        <argsstring></argsstring>
+        <name>allocsize</name>
+        <qualifiedname>ucvector::allocsize</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/lib/png/lodepng.c" line="265" column="10" bodyfile="MLX42/lib/png/lodepng.c" bodystart="265" bodyend="-1"/>
+        <referencedby refid="lodepng_8c_1a425d1b818abf2c2c221449f5bbbe6b60" compoundref="lodepng_8c" startline="269" endline="280">ucvector_reserve</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>ucvector</label>
+        <link refid="structucvector"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/lib/png/lodepng.c" line="262" column="1" bodyfile="MLX42/lib/png/lodepng.c" bodystart="262" bodyend="266"/>
+    <listofallmembers>
+      <member refid="structucvector_1a235168baac13f0c78bd3e309dc170f90" prot="public" virt="non-virtual"><scope>ucvector</scope><name>allocsize</name></member>
+      <member refid="structucvector_1ace794c5713208c5a20f21762cd87c919" prot="public" virt="non-virtual"><scope>ucvector</scope><name>data</name></member>
+      <member refid="structucvector_1a27c99c34de0c5b3ca0c242d402c69499" prot="public" virt="non-virtual"><scope>ucvector</scope><name>size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

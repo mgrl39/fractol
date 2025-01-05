@@ -1,0 +1,13 @@
+<map id="fr_putstr_fd" name="fr_putstr_fd">
+<area shape="rect" id="Node000001" title="Writes a string to a file descriptor and returns." alt="" coords="476,49,573,75"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a2b8d2884ae79f1a4148a72db584e88f9" title="Prints an error message and terminates the program." alt="" coords="308,24,428,49"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="462,55,428,49,429,44,463,49"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#af11254df8693917e711076d34d657214" title="Initializes the MLX42 rendering environment." alt="" coords="117,75,251,100"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="463,69,252,85,251,80,462,64"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the fractal rendering program." alt="" coords="5,25,60,51"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="307,24,260,15,184,8,108,15,61,29,59,24,108,10,184,3,260,10,308,18"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a9350b6f05ff8d1ac8cd5deca133fd37f" title="Validates the command&#45;line arguments for fractal rendering." alt="" coords="108,25,260,51"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="294,40,260,40,260,35,294,35"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="94,41,60,41,60,35,94,35"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="129,73,107,66,59,50,61,45,109,61,131,68"/>
+</map>

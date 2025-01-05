@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__hook" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_hook</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__hook_1a26251cb8b37e5786c050619f4fb79573" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_hook::param</definition>
+        <argsstring></argsstring>
+        <name>param</name>
+        <qualifiedname>mlx_hook::param</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="152" column="5" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__hook_1a7fbfd2762f6637ca4f28fcae5d98ef89" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref>(*</type>
+        <definition>void(* mlx_hook::func) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>func</name>
+        <qualifiedname>mlx_hook::func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="153" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="153" bodyend="-1"/>
+        <referencedby refid="mlx__loop_8c_1ace92e4090704e7df7224295f6d83d7b6" compoundref="mlx__loop_8c" startline="17" endline="28">mlx_exec_loop_hooks</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_hook</label>
+        <link refid="structmlx__hook"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="150" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="151" bodyend="154"/>
+    <listofallmembers>
+      <member refid="structmlx__hook_1a7fbfd2762f6637ca4f28fcae5d98ef89" prot="public" virt="non-virtual"><scope>mlx_hook</scope><name>func</name></member>
+      <member refid="structmlx__hook_1a26251cb8b37e5786c050619f4fb79573" prot="public" virt="non-virtual"><scope>mlx_hook</scope><name>param</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

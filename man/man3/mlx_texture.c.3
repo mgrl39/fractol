@@ -1,0 +1,84 @@
+.TH "MLX42/src/textures/mlx_texture.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/textures/mlx_texture.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmlx_image_t\fP * \fBmlx_texture_to_image\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_texture_t\fP *\fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_delete_texture\fP (\fBmlx_texture_t\fP *\fBtexture\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP mlx_delete_texture (\fBmlx_texture_t\fP * texture)"
+Deletes a texture by freeing its allocated data\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItexture\fP The texture to free\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB37\fP of file \fBmlx_texture\&.c\fP\&..PP
+.nf
+38 {
+39     MLX_NONNULL(texture);
+40 
+41     mlx_freen(2, texture\->pixels, texture);
+42 }
+.fi
+
+.SS "\fBmlx_image_t\fP * mlx_texture_to_image (\fBmlx_t\fP * mlx, \fBmlx_texture_t\fP * texture)"
+Converts a given texture to an image\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fItexture\fP The texture to use to create the image from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+mlx_image_t* The image created from the texture\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_texture\&.c\fP\&..PP
+.nf
+18 {
+19     MLX_NONNULL(mlx);
+20     MLX_NONNULL(texture);
+21 
+22     mlx_image_t* image = mlx_new_image(mlx, texture\->width, texture\->height);
+23     if (image == NULL)
+24         return (NULL);
+25 
+26     uint8_t* pixelx;
+27     uint8_t* pixeli;
+28     for (uint32_t i = 0; i < texture\->height; i++)
+29     {
+30         pixelx = &texture\->pixels[(i * texture\->width) * texture\->bytes_per_pixel];
+31         pixeli = &image\->pixels[(i * image\->width) * texture\->bytes_per_pixel];
+32         memmove(pixeli, pixelx, texture\->width * texture\->bytes_per_pixel);
+33     }
+34     return (image);
+35 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

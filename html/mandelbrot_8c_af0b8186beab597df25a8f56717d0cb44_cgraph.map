@@ -1,0 +1,5 @@
+<map id="mandelbrot_escape_check" name="mandelbrot_escape_check">
+<area shape="rect" id="Node000001" title="Performs an early scape check for a point in the Mandelbrot set." alt="" coords="5,5,200,31"/>
+<area shape="rect" id="Node000002" href="$calcs_8c.html#af87a6532ce68469fef69f9c207960094" title="Calculates the color of a pixel based on how many iterations it takes to &quot;escape&quot;." alt="" coords="248,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,15,234,15,234,21,201,21"/>
+</map>

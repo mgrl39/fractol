@@ -1,0 +1,570 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes refid="fractol_8h" local="yes">fractol.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>fractol.h</label>
+        <link refid="fractol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>main.c</label>
+        <link refid="main_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+      </node>
+      <node id="4">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="main_8c_1a3443f98f251000405fbc46a7951deaa9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>static int is_valid_number</definition>
+        <argsstring>(const char *str)</argsstring>
+        <name>is_valid_number</name>
+        <param>
+          <type>const char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>Validates if a string represents a valid number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks iff the input string is a valid number, considering:<itemizedlist>
+<listitem><para>Optional leading spaces or tabs.</para>
+</listitem><listitem><para>An optional sign (+/-).</para>
+</listitem><listitem><para>At least one digit.</para>
+</listitem><listitem><para>At most one decimal point with digits before or after it. Invalid cases include multiple decimal points, invalid characters, or empty strings.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input string to validate </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>1 if the string is a valid number, 0 otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="47" column="11" bodyfile="main.c" bodystart="47" bodyend="74"/>
+        <references refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" compoundref="fractol_8h" startline="61">HAS_DIGIT</references>
+        <references refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" compoundref="fractol_8h" startline="62">HAS_POINT</references>
+        <referencedby refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" compoundref="main_8c" startline="122" endline="148">validate_arguments</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void exit_with_error</definition>
+        <argsstring>(const char *message, char *argv[])</argsstring>
+        <name>exit_with_error</name>
+        <param>
+          <type>const char *</type>
+          <declname>message</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Prints an error message and terminates the program. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function displays an error, the correct usage off the program, and list of available fractal types with examples. It then terminates the program with a failure status.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command-line arguments, used to show the program name in usage examples. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="87" column="12" bodyfile="main.c" bodystart="87" bodyend="104"/>
+        <references refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" compoundref="utils_8c" startline="109" endline="121">fr_putstr_fd</references>
+        <references refid="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" compoundref="fractol_8h" startline="196">LIGHT_GOLD</references>
+        <references refid="fractol_8h_1a5a7142ee95ebc63218ed3aac2ae06b13" compoundref="fractol_8h" startline="197">LIGHT_GREEN</references>
+        <references refid="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" compoundref="fractol_8h" startline="195">LIGHT_RED</references>
+        <references refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" compoundref="fractol_8h" startline="194">RESET</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+        <referencedby refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" compoundref="main_8c" startline="122" endline="148">validate_arguments</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void validate_arguments</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>validate_arguments</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Validates the command-line arguments for fractal rendering. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function checks that the user has specified a valid fractal type and the correct parameters. The supported fractals and their requirements are:<itemizedlist>
+<listitem><para><computeroutput>mandelbrot</computeroutput>: No additional arguments.</para>
+</listitem><listitem><para><computeroutput>julia</computeroutput>: Requires exactly two valid numbers representing the real and imaginary part of the parameter.</para>
+</listitem></itemizedlist>
+</para>
+<para>If the arguments are invalid, the function calls <computeroutput><ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error()</ref></computeroutput> to display an appropiate error message and terminate the program.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of command-line arguments passed to the program. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of command-line argument strings. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="122" column="12" bodyfile="main.c" bodystart="122" bodyend="148"/>
+        <references refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" compoundref="main_8c" startline="87" endline="104">exit_with_error</references>
+        <references refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="utils_8c" startline="51" endline="59">ft_strcmp</references>
+        <references refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546" compoundref="fractol_8h" startline="71">INVALID_TYPE</references>
+        <references refid="main_8c_1a3443f98f251000405fbc46a7951deaa9" compoundref="main_8c" startline="47" endline="74">is_valid_number</references>
+        <references refid="fractol_8h_1a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7" compoundref="fractol_8h" startline="72">JULIA_ARGS</references>
+        <references refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68" compoundref="fractol_8h" startline="73">JULIA_NUM</references>
+        <references refid="fractol_8h_1a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97" compoundref="fractol_8h" startline="74">MANDELBROT_ARGS</references>
+        <references refid="fractol_8h_1a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc" compoundref="fractol_8h" startline="70">NO_TYPE</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1af11254df8693917e711076d34d657214" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void initialize_window</definition>
+        <argsstring>(t_data *data, char *argv[])</argsstring>
+        <name>initialize_window</name>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Initializes the MLX42 rendering environment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets up the environment for rendering fractals by:<itemizedlist>
+<listitem><para>Creating an MLX42 window with thee given title.</para>
+</listitem><listitem><para>Allocating an image buffer for rendering.</para>
+</listitem><listitem><para>Setting initial offsets and zoom level for the fractal.</para>
+</listitem></itemizedlist>
+</para>
+<para>If Julia set parameters (<computeroutput>c[COMPLEX_RE]</computeroutput> or <computeroutput>c[COMPLEX_IM]</computeroutput>) are outside the range [-2.0, 2.0], it issues a warning about potential visual effects. The function terminates the program in case of initialization failures.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the data structure containing fractal information, offsets, zoom, and MLX42 resources. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of argument strings, where argv[1] is used as the window title. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="167" column="12" bodyfile="main.c" bodystart="167" bodyend="194"/>
+        <references refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" compoundref="fractol_8h" startline="94">s_data::c</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
+        <references refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" compoundref="utils_8c" startline="109" endline="121">fr_putstr_fd</references>
+        <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
+        <references refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" compoundref="fractol_8h" startline="97">s_data::img</references>
+        <references refid="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" compoundref="fractol_8h" startline="196">LIGHT_GOLD</references>
+        <references refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" compoundref="fractol_8h" startline="96">s_data::mlx</references>
+        <references refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" compoundref="fractol_8h" startline="95">s_data::offset</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" compoundref="fractol_8h" startline="34">OFFSET_X</references>
+        <references refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" compoundref="fractol_8h" startline="35">OFFSET_Y</references>
+        <references refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" compoundref="fractol_8h" startline="194">RESET</references>
+        <references refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" compoundref="fractol_8h" startline="188">WIDTH</references>
+        <references refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" compoundref="fractol_8h" startline="93">s_data::zoom</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="215" endline="241">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(int argc, char *argv[])</argsstring>
+        <name>main</name>
+        <param>
+          <type>int</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+<para>Main entry point for the fractal rendering program. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function orchestrates the entire fractal rendering process by:<itemizedlist>
+<listitem><para>Validating the command-line arguments to ensure correct fractal type and parameters.</para>
+</listitem><listitem><para>Initializing the fractal type, including Julia parameters if applicable.</para>
+</listitem><listitem><para>Setting up the MLX42 rendering environment, including the window and image buffer.</para>
+</listitem><listitem><para>Rendering the chosen fractal based on the input parameters.</para>
+</listitem><listitem><para>Configuring event hooks for used interaction (keyboard and scroll events).</para>
+</listitem><listitem><para>Starting the main event loop for continuous interaction and updates.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Number of arguments passed to the program. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Array of argument strings, including the program name and input parameters. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns <computeroutput>EXIT_SUCCESS</computeroutput> on successful execution, or terminates on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="main.c" line="215" column="4" bodyfile="main.c" bodystart="215" bodyend="241"/>
+        <references refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" compoundref="fractol_8h" startline="94">s_data::c</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
+        <references refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" compoundref="main_8c" startline="87" endline="104">exit_with_error</references>
+        <references refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" compoundref="fractol_8h" startline="98">s_data::fractal_type</references>
+        <references refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" compoundref="utils_8c" startline="19" endline="46">ft_atod</references>
+        <references refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" compoundref="utils_8c" startline="51" endline="59">ft_strcmp</references>
+        <references refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</references>
+        <references refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" compoundref="utils_8c" startline="91" endline="104">handle_scroll</references>
+        <references refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="167" endline="194">initialize_window</references>
+        <references refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" compoundref="fractol_8h" startline="26">JULIA</references>
+        <references refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" compoundref="fractol_8h" startline="25">MANDELBROT</references>
+        <references refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" compoundref="fractol_8h" startline="96">s_data::mlx</references>
+        <references refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</references>
+        <references refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" compoundref="main_8c" startline="122" endline="148">validate_arguments</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Entry point for the Fractol application. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file contains the main function and orchestrates the entire fractal rendering process. It handles:<itemizedlist>
+<listitem><para>Command-line argument validation to ensure correct input.</para>
+</listitem><listitem><para>Initialization of the fractal type and parameters (Julia or Mandelbrot)</para>
+</listitem><listitem><para>Setuup of the rendering environment using the MLX42 graphics liibrary, including the creation of the window and image bufffer.</para>
+</listitem><listitem><para>Fractal rendering based on the user-specified parameters.</para>
+</listitem><listitem><para>Configuration of interactivee event hooks for keyboard and scroll inputs.</para>
+</listitem><listitem><para>Continuous updates through the main event loop.</para>
+</listitem></itemizedlist>
+</para>
+<para>The program terminates gracefully on completion or reports error for invalid inputs. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>main.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>meghribe<sp/>&lt;meghribe@student.42barcelon<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2025/01/04<sp/>12:47:18<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2025/01/05<sp/>12:54:03<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fractol_8h" kindref="compound">fractol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>@file<sp/>main.c</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Entry<sp/>point<sp/>for<sp/>the<sp/>Fractol<sp/>application.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>contains<sp/>the<sp/>main<sp/>function<sp/>and<sp/>orchestrates<sp/>the<sp/>entire<sp/>fractal</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>rendering<sp/>process.<sp/>It<sp/>handles:</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>-<sp/>Command-line<sp/>argument<sp/>validation<sp/>to<sp/>ensure<sp/>correct<sp/>input.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>-<sp/>Initialization<sp/>of<sp/>the<sp/>fractal<sp/>type<sp/>and<sp/>parameters<sp/>(Julia<sp/>or<sp/>Mandelbrot)</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>-<sp/>Setuup<sp/>of<sp/>the<sp/>rendering<sp/>environment<sp/>using<sp/>the<sp/>MLX42<sp/>graphics<sp/>liibrary,</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/>including<sp/>the<sp/>creation<sp/>of<sp/>the<sp/>window<sp/>and<sp/>image<sp/>bufffer.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>-<sp/>Fractal<sp/>rendering<sp/>based<sp/>on<sp/>the<sp/>user-specified<sp/>parameters.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>-<sp/>Configuration<sp/>of<sp/>interactivee<sp/>event<sp/>hooks<sp/>for<sp/>keyboard<sp/>and<sp/>scroll<sp/>inputs.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>-<sp/>Continuous<sp/>updates<sp/>through<sp/>the<sp/>main<sp/>event<sp/>loop.</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>The<sp/>program<sp/>terminates<sp/>gracefully<sp/>on<sp/>completion<sp/>or<sp/>reports<sp/>error<sp/>for<sp/>invalid</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>inputs.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="33"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Validates<sp/>if<sp/>a<sp/>string<sp/>represents<sp/>a<sp/>valid<sp/>number.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>checks<sp/>iff<sp/>the<sp/>input<sp/>string<sp/>is<sp/>a<sp/>valid<sp/>number,<sp/>considering:</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>-<sp/>Optional<sp/>leading<sp/>spaces<sp/>or<sp/>tabs.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>-<sp/>An<sp/>optional<sp/>sign<sp/>(+/-).</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/>-<sp/>At<sp/>least<sp/>one<sp/>digit.</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>-<sp/>At<sp/>most<sp/>one<sp/>decimal<sp/>point<sp/>with<sp/>digits<sp/>before<sp/>or<sp/>after<sp/>it.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>Invalid<sp/>cases<sp/>include<sp/>multiple<sp/>decimal<sp/>points,<sp/>invalid<sp/>characters,<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/>or<sp/>empty<sp/>strings.</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/>@param<sp/>str<sp/>Input<sp/>string<sp/>to<sp/>validate</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>@return<sp/>1<sp/>if<sp/>the<sp/>string<sp/>is<sp/>a<sp/>valid<sp/>number,<sp/>0<sp/>otherwise.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47" refid="main_8c_1a3443f98f251000405fbc46a7951deaa9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><ref refid="main_8c_1a3443f98f251000405fbc46a7951deaa9" kindref="member">is_valid_number</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*str)</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>valid_status[2];</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kindref="member">HAS_DIGIT</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kindref="member">HAS_POINT</ref>]<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[i]<sp/>==<sp/>32<sp/>||<sp/>(str[i]<sp/>&gt;=<sp/>9<sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/>13))</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>||<sp/>str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[i]<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kindref="member">HAS_DIGIT</ref>]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;.&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kindref="member">HAS_POINT</ref>]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kindref="member">HAS_POINT</ref>]<sp/>&amp;&amp;<sp/>(str[i]<sp/>&lt;<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>||<sp/>str[i]<sp/>&gt;<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(str[i]<sp/>&gt;=<sp/></highlight><highlight class="charliteral">&apos;0&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/></highlight><highlight class="charliteral">&apos;9&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(valid_status[<ref refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kindref="member">HAS_DIGIT</ref>]<sp/>&amp;&amp;<sp/>str[i]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="76"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Prints<sp/>an<sp/>error<sp/>message<sp/>and<sp/>terminates<sp/>the<sp/>program.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>displays<sp/>an<sp/>error,<sp/>the<sp/>correct<sp/>usage<sp/>off<sp/>the<sp/>program,<sp/>and</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>list<sp/>of<sp/>available<sp/>fractal<sp/>types<sp/>with<sp/>examples.<sp/>It<sp/>then<sp/>terminates<sp/>the</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>program<sp/>with<sp/>a<sp/>failure<sp/>status.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>@param<sp/>message<sp/>Error<sp/>message<sp/>to<sp/>display.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/>@param<sp/>argv<sp/>Command-line<sp/>arguments,<sp/>used<sp/>to<sp/>show<sp/>the<sp/>program<sp/>name<sp/>in</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>usage<sp/>examples.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*message,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" kindref="member">LIGHT_RED</ref><sp/></highlight><highlight class="stringliteral">&quot;Error:<sp/>&quot;</highlight><highlight class="normal">,<sp/>2);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>((</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*)message,<sp/>2);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" kindref="member">LIGHT_RED</ref><sp/></highlight><highlight class="stringliteral">&quot;Usage:<sp/>&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a5a7142ee95ebc63218ed3aac2ae06b13" kindref="member">LIGHT_GREEN</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(argv[0],<sp/>2);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>&lt;fractal_type&gt;<sp/>[parameters]\n&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" kindref="member">LIGHT_RED</ref><sp/></highlight><highlight class="stringliteral">&quot;Available<sp/>fractal<sp/>types:\n&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" kindref="member">LIGHT_GOLD</ref><sp/></highlight><highlight class="stringliteral">&quot;\tmandelbrot&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="stringliteral">&quot;\t\tDisplays<sp/>the<sp/>Mandelbrot<sp/>set.\n&quot;</highlight><highlight class="normal">,<sp/>2);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" kindref="member">LIGHT_GOLD</ref><sp/></highlight><highlight class="stringliteral">&quot;\tjulia<sp/>[c_re<sp/>c_im]&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="stringliteral">&quot;\tDisplays<sp/>the<sp/>Julia<sp/>set.\n&quot;</highlight><highlight class="normal">,<sp/>2);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" kindref="member">LIGHT_RED</ref><sp/></highlight><highlight class="stringliteral">&quot;Example:<sp/>&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1a5a7142ee95ebc63218ed3aac2ae06b13" kindref="member">LIGHT_GREEN</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(argv[0],<sp/>2);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>julia<sp/>0.285<sp/>-0.01\n&quot;</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref>,<sp/>2);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="106"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Validates<sp/>the<sp/>command-line<sp/>arguments<sp/>for<sp/>fractal<sp/>rendering.</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>checks<sp/>that<sp/>the<sp/>user<sp/>has<sp/>specified<sp/>a<sp/>valid<sp/>fractal<sp/>type</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*<sp/>and<sp/>the<sp/>correct<sp/>parameters.<sp/>The<sp/>supported<sp/>fractals<sp/>and<sp/>their<sp/>requirements</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>are:</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/>-<sp/>`mandelbrot`:<sp/>No<sp/>additional<sp/>arguments.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/>-<sp/>`julia`:<sp/>Requires<sp/>exactly<sp/>two<sp/>valid<sp/>numbers<sp/>representing<sp/>the<sp/>real<sp/>and</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/><sp/><sp/>imaginary<sp/>part<sp/>of<sp/>the<sp/>parameter.</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/>If<sp/>the<sp/>arguments<sp/>are<sp/>invalid,<sp/>the<sp/>function<sp/>calls<sp/>`exit_with_error()`<sp/>to</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>display<sp/>an<sp/>appropiate<sp/>error<sp/>message<sp/>and<sp/>terminate<sp/>the<sp/>program.</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*<sp/>@param<sp/>argc<sp/>Number<sp/>of<sp/>command-line<sp/>arguments<sp/>passed<sp/>to<sp/>the<sp/>program.</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@param<sp/>argv<sp/>Array<sp/>of<sp/>command-line<sp/>argument<sp/>strings.</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" kindref="member">validate_arguments</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*e_msg[5];</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc" kindref="member">NO_TYPE</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>fractal<sp/>type<sp/>specified.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546" kindref="member">INVALID_TYPE</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Invalid<sp/>fractal<sp/>type.<sp/>Use<sp/>&apos;julia&apos;<sp/>or<sp/>&apos;mandelbrot&apos;.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7" kindref="member">JULIA_ARGS</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Julia<sp/>needs:<sp/>&apos;julia<sp/>&lt;c_re&gt;<sp/>&lt;c_im&gt;&apos;.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68" kindref="member">JULIA_NUM</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Julia<sp/>parameters<sp/>must<sp/>be<sp/>valid<sp/>numbers.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97" kindref="member">MANDELBROT_ARGS</ref>]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Mandelbrot<sp/>needs:<sp/>&apos;mandelbrot&apos;.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>&lt;<sp/>2)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc" kindref="member">NO_TYPE</ref>],<sp/>argv);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(argv[1],<sp/></highlight><highlight class="stringliteral">&quot;mandelbrot&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>!=<sp/>2)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97" kindref="member">MANDELBROT_ARGS</ref>],<sp/>argv);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(argv[1],<sp/></highlight><highlight class="stringliteral">&quot;julia&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(argc<sp/>!=<sp/>4)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7" kindref="member">JULIA_ARGS</ref>],<sp/>argv);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="main_8c_1a3443f98f251000405fbc46a7951deaa9" kindref="member">is_valid_number</ref>(argv[2])<sp/>||<sp/>!<ref refid="main_8c_1a3443f98f251000405fbc46a7951deaa9" kindref="member">is_valid_number</ref>(argv[3]))</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68" kindref="member">JULIA_NUM</ref>],<sp/>argv);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(e_msg[<ref refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546" kindref="member">INVALID_TYPE</ref>],<sp/>argv);</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="150"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Initializes<sp/>the<sp/>MLX42<sp/>rendering<sp/>environment.</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>sets<sp/>up<sp/>the<sp/>environment<sp/>for<sp/>rendering<sp/>fractals<sp/>by:</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>-<sp/>Creating<sp/>an<sp/>MLX42<sp/>window<sp/>with<sp/>thee<sp/>given<sp/>title.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/>-<sp/>Allocating<sp/>an<sp/>image<sp/>buffer<sp/>for<sp/>rendering.</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>-<sp/>Setting<sp/>initial<sp/>offsets<sp/>and<sp/>zoom<sp/>level<sp/>for<sp/>the<sp/>fractal.</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/>If<sp/>Julia<sp/>set<sp/>parameters<sp/>(`c[COMPLEX_RE]`<sp/>or<sp/>`c[COMPLEX_IM]`)<sp/>are<sp/>outside</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>the<sp/>range<sp/>[-2.0,<sp/>2.0],<sp/>it<sp/>issues<sp/>a<sp/>warning<sp/>about<sp/>potential<sp/>visual<sp/>effects.</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/>The<sp/>function<sp/>terminates<sp/>the<sp/>program<sp/>in<sp/>case<sp/>of<sp/>initialization<sp/>failures.</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>@param<sp/>data<sp/>Pointer<sp/>to<sp/>the<sp/>data<sp/>structure<sp/>containing<sp/>fractal<sp/>information,</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/><sp/>offsets,<sp/>zoom,<sp/>and<sp/>MLX42<sp/>resources.</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*<sp/>@param<sp/>argv<sp/>Array<sp/>of<sp/>argument<sp/>strings,<sp/>where<sp/>argv[1]<sp/>is<sp/>used<sp/>as<sp/>the<sp/>window<sp/></highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/>*<sp/>title.</highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="main_8c_1af11254df8693917e711076d34d657214" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1af11254df8693917e711076d34d657214" kindref="member">initialize_window</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>&gt;<sp/>2.0<sp/>||<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>&lt;<sp/>-2</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>||<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>&gt;<sp/>2.0<sp/>||<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>&lt;<sp/>-2))</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" kindref="member">LIGHT_GOLD</ref><sp/></highlight><highlight class="stringliteral">&quot;Warning:<sp/>The<sp/>values<sp/>for<sp/>Julia<sp/>are&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>outside<sp/>the<sp/>common<sp/>range<sp/>[-2.0,<sp/>2.0]\n&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(<ref refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kindref="member">RESET</ref><sp/></highlight><highlight class="stringliteral">&quot;This<sp/>may<sp/>produce<sp/>unusual<sp/>or&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kindref="member">fr_putstr_fd</ref>(</highlight><highlight class="stringliteral">&quot;<sp/>less<sp/>interesting<sp/>fractals.\n&quot;</highlight><highlight class="normal">,<sp/>1);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref><sp/>=<sp/>mlx_init(<ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref>,<sp/><ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref>,<sp/>argv[1],<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!data-&gt;<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>)</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit<sp/>(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" kindref="member">img</ref><sp/>=<sp/>mlx_new_image(data-&gt;<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>,<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref>,<sp/><ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref>);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!data-&gt;<ref refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" kindref="member">img</ref>)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_terminate(data-&gt;<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit<sp/>(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(mlx_image_to_window(data-&gt;<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>,<sp/>data-&gt;<ref refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" kindref="member">img</ref>,<sp/>0,<sp/>0)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_terminate(data-&gt;<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>);</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit<sp/>(EXIT_FAILURE);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" kindref="member">OFFSET_X</ref>]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kindref="member">offset</ref>[<ref refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" kindref="member">OFFSET_Y</ref>]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/>data-&gt;<ref refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kindref="member">zoom</ref><sp/>=<sp/>1.0;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="196"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="197"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Main<sp/>entry<sp/>point<sp/>for<sp/>the<sp/>fractal<sp/>rendering<sp/>program.</highlight></codeline>
+<codeline lineno="198"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="199"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>orchestrates<sp/>the<sp/>entire<sp/>fractal<sp/>rendering<sp/>process<sp/>by:</highlight></codeline>
+<codeline lineno="200"><highlight class="comment"><sp/>*<sp/>-<sp/>Validating<sp/>the<sp/>command-line<sp/>arguments<sp/>to<sp/>ensure<sp/>correct<sp/>fractal<sp/>type</highlight></codeline>
+<codeline lineno="201"><highlight class="comment"><sp/>*<sp/><sp/><sp/>and<sp/>parameters.</highlight></codeline>
+<codeline lineno="202"><highlight class="comment"><sp/>*<sp/>-<sp/>Initializing<sp/>the<sp/>fractal<sp/>type,<sp/>including<sp/>Julia<sp/>parameters<sp/>if<sp/>applicable.</highlight></codeline>
+<codeline lineno="203"><highlight class="comment"><sp/>*<sp/>-<sp/>Setting<sp/>up<sp/>the<sp/>MLX42<sp/>rendering<sp/>environment,<sp/>including<sp/>the<sp/>window</highlight></codeline>
+<codeline lineno="204"><highlight class="comment"><sp/>*<sp/><sp/><sp/>and<sp/>image<sp/>buffer.</highlight></codeline>
+<codeline lineno="205"><highlight class="comment"><sp/>*<sp/>-<sp/>Rendering<sp/>the<sp/>chosen<sp/>fractal<sp/>based<sp/>on<sp/>the<sp/>input<sp/>parameters.</highlight></codeline>
+<codeline lineno="206"><highlight class="comment"><sp/>*<sp/>-<sp/>Configuring<sp/>event<sp/>hooks<sp/>for<sp/>used<sp/>interaction<sp/>(keyboard<sp/>and<sp/>scroll<sp/>events).</highlight></codeline>
+<codeline lineno="207"><highlight class="comment"><sp/>*<sp/>-<sp/>Starting<sp/>the<sp/>main<sp/>event<sp/>loop<sp/>for<sp/>continuous<sp/>interaction<sp/>and<sp/>updates.</highlight></codeline>
+<codeline lineno="208"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="209"><highlight class="comment"><sp/>*<sp/>@param<sp/>argc<sp/>Number<sp/>of<sp/>arguments<sp/>passed<sp/>to<sp/>the<sp/>program.</highlight></codeline>
+<codeline lineno="210"><highlight class="comment"><sp/>*<sp/>@param<sp/>argv<sp/>Array<sp/>of<sp/>argument<sp/>strings,<sp/>including<sp/>the<sp/>program<sp/>name<sp/>and<sp/>input<sp/></highlight></codeline>
+<codeline lineno="211"><highlight class="comment"><sp/>*<sp/><sp/>parameters.</highlight></codeline>
+<codeline lineno="212"><highlight class="comment"><sp/>*<sp/>@return<sp/>Returns<sp/>`EXIT_SUCCESS`<sp/>on<sp/>successful<sp/>execution,<sp/></highlight></codeline>
+<codeline lineno="213"><highlight class="comment"><sp/>*<sp/><sp/>or<sp/>terminates<sp/>on<sp/>error.</highlight></codeline>
+<codeline lineno="214"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215" refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" kindref="member">main</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>argc,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*argv[])</highlight></codeline>
+<codeline lineno="216"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/><sp/>data;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>*error;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" kindref="member">validate_arguments</ref>(argc,<sp/>argv);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(argv[1],<sp/></highlight><highlight class="stringliteral">&quot;julia&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Julia<sp/>parameters<sp/>must<sp/>be<sp/>valid<sp/>numbers.&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data.<ref refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" kindref="member">fractal_type</ref><sp/>=<sp/><ref refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" kindref="member">JULIA</ref>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data.<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/><ref refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" kindref="member">ft_atod</ref>(argv[2]);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data.<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/><ref refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" kindref="member">ft_atod</ref>(argv[3]);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>&gt;<sp/>INT_MAX<sp/>||<sp/>data.<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>&lt;<sp/>INT_MIN)</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(error,<sp/>argv),<sp/>1);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(data.<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>&gt;<sp/>INT_MAX<sp/>||<sp/>data.<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>&lt;<sp/>INT_MIN)</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kindref="member">exit_with_error</ref>(error,<sp/>argv),<sp/>1);</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" kindref="member">ft_strcmp</ref>(argv[1],<sp/></highlight><highlight class="stringliteral">&quot;mandelbrot&quot;</highlight><highlight class="normal">)<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data.<ref refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" kindref="member">fractal_type</ref><sp/>=<sp/><ref refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" kindref="member">MANDELBROT</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1af11254df8693917e711076d34d657214" kindref="member">initialize_window</ref>(&amp;data,<sp/>argv);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" kindref="member">render_fractal</ref>(&amp;data);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_key_hook(data.<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>,<sp/><ref refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" kindref="member">handle_key</ref>,<sp/>&amp;data);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_scroll_hook(data.<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>,<sp/><ref refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" kindref="member">handle_scroll</ref>,<sp/>&amp;data);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(data.<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(data.<ref refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kindref="member">mlx</ref>);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="main.c"/>
+  </compounddef>
+</doxygen>

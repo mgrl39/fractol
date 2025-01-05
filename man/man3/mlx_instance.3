@@ -1,0 +1,70 @@
+.TH "mlx_instance" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mlx_instance
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MLX42\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBint32_t\fP \fBx\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBy\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBz\fP"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBenabled\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+An image instance can be summarized as just a simple x, y & z coordinate\&.
+.PP
+Coordinates start from the top left of the screen at 0,0 and increase towards the bottom right\&.
+.PP
+NOTE: To change the z value, use mlx_set_instance_depth!
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The x location\&. 
+.br
+\fIy\fP The y location\&. 
+.br
+\fIz\fP The z depth, controls if the image is on the fore or background\&. 
+.br
+\fIenabled\fP If true, the instance is drawn, else it's not\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB301\fP of file \fBMLX42\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBbool\fP mlx_instance::enabled"
+
+.PP
+Definition at line \fB306\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_instance::x"
+
+.PP
+Definition at line \fB303\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_instance::y"
+
+.PP
+Definition at line \fB304\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_instance::z"
+
+.PP
+Definition at line \fB305\fP of file \fBMLX42\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

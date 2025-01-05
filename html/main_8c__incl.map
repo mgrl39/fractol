@@ -1,0 +1,11 @@
+<map id="main.c" name="main.c">
+<area shape="rect" id="Node000001" title="Entry point for the Fractol application." alt="" coords="158,5,225,31"/>
+<area shape="rect" id="Node000002" href="$fractol_8h.html" title=" " alt="" coords="153,79,229,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,31,194,65,189,65,189,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,152,132,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="173,106,102,147,99,143,170,102"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="156,152,227,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="194,104,194,138,189,138,189,104"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="251,152,321,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="208,102,261,141,258,146,205,106"/>
+</map>

@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__xpm42_8c" kind="file" language="C++">
+    <compoundname>mlx_xpm42.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/textures/mlx_xpm42.c</label>
+        <link refid="mlx__xpm42_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref></type>
+        <definition>static uint8_t mlx_parse_hex_channel</definition>
+        <argsstring>(char *channel)</argsstring>
+        <name>mlx_parse_hex_channel</name>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+          <declname>channel</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>XPM is an obscure image format which can&apos;t seem to make up its mind whether it wants to be written in C code or not.</para>
+<para><ulink url="https://en.wikipedia.org/wiki/X_PixMap">https://en.wikipedia.org/wiki/X_PixMap</ulink></para>
+<para>This might anger some but instead I decided to write my own image format, very similar to XPM2, which seems to be the better option between the 3 versions. The only difference is in the header which carries the file type, width, height, color count and finally color type aka &apos;c&apos; for RGBA8 or &apos;m&apos; for monochrome output.</para>
+<para>The changes, in my opinion, very much simplify the XPM format into something literally anybody can use without much guessing as to what does what.</para>
+<para>Additionally with the C style format, the idea is that you simply include it directly into the compilation of the program (since it&apos;s just C).</para>
+<para>As convenient as this is, I just find it hideous especially the XPM3 variant. By sticking to the XPM style format, conversion should be very easy and straightforward to this format however. Parses HEX color channel e.g: &quot;0F&quot;</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>channel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The 2 character string to parse. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Int value of the channel. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_xpm42.c" line="48" column="16" bodyfile="MLX42/src/textures/mlx_xpm42.c" bodystart="48" bodyend="52"/>
+        <referencedby refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" compoundref="mlx__xpm42_8c" startline="64" endline="84">mlx_insert_xpm_entry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>static bool mlx_insert_xpm_entry</definition>
+        <argsstring>(xpm_t *xpm, char *line, uint32_t *ctable, size_t s)</argsstring>
+        <name>mlx_insert_xpm_entry</name>
+        <param>
+          <type><ref refid="MLX42_8h_1a8cfb3a30d601c592ed845f9453b81e0e" kindref="member">xpm_t</ref> *</type>
+          <declname>xpm</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref> *</type>
+          <declname>ctable</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Parses the XPM color value entry e.g: &quot;.X #00FF00FF&quot; into the color table while also verifying the format.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xpm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The XPM. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The line to parse. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color hash table. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the hash table </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True or false depending on if it successfully parsed the line. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_xpm42.c" line="64" column="13" bodyfile="MLX42/src/textures/mlx_xpm42.c" bodystart="64" bodyend="84"/>
+        <references refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" compoundref="MLX42_8h" startline="283">xpm::cpp</references>
+        <references refid="MLX42__Int_8h_1ab31a068c9000789a7999bfc1ea34709b" compoundref="mlx__utils_8c" startline="68" endline="80">mlx_fnv_hash</references>
+        <references refid="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" compoundref="mlx__xpm42_8c" startline="48" endline="52">mlx_parse_hex_channel</references>
+        <references refid="MLX42__Int_8h_1ad58d85c71babb51bf426e72a9b87efa0" compoundref="mlx__utils_8c" startline="109" endline="117">mlx_rgba_to_mono</references>
+        <references refid="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" compoundref="MLX42_8h" startline="284">xpm::mode</references>
+        <referencedby refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" compoundref="mlx__xpm42_8c" startline="132" endline="147">mlx_read_table</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>static bool mlx_read_data</definition>
+        <argsstring>(xpm_t *xpm, FILE *file, uint32_t *ctable, size_t s)</argsstring>
+        <name>mlx_read_data</name>
+        <param>
+          <type><ref refid="MLX42_8h_1a8cfb3a30d601c592ed845f9453b81e0e" kindref="member">xpm_t</ref> *</type>
+          <declname>xpm</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref> *</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref> *</type>
+          <declname>ctable</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+          <declname>s</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the pixel data line by line and then processes each pixel by hashing the characters and looking it up from the color table.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>xpm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The XPM. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The filepath to the XPM42 file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ctable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The color hash table. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size of the hash table. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True or false depending on if it successfully parsed the line. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_xpm42.c" line="96" column="13" bodyfile="MLX42/src/textures/mlx_xpm42.c" bodystart="96" bodyend="119"/>
+        <references refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" compoundref="MLX42__Int_8h" startline="42">BPP</references>
+        <references refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" compoundref="MLX42_8h" startline="283">xpm::cpp</references>
+        <references refid="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" compoundref="MLX42_8h" startline="266">mlx_texture::height</references>
+        <references refid="MLX42__Int_8h_1a8cbde9c5d99f600c5c4016bda5b40592" compoundref="mlx__put__pixel_8c" startline="16" endline="22">mlx_draw_pixel</references>
+        <references refid="MLX42__Int_8h_1ab31a068c9000789a7999bfc1ea34709b" compoundref="mlx__utils_8c" startline="68" endline="80">mlx_fnv_hash</references>
+        <references refid="MLX42__Int_8h_1afeec80312b6f8a8755b798ed12721cd8" compoundref="mlx__utils_8c" startline="28" endline="58">mlx_getline</references>
+        <references refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" compoundref="MLX42_8h" startline="268">mlx_texture::pixels</references>
+        <references refid="structxpm_1a96490cfed326fc5a3a9750e586041519" compoundref="MLX42_8h" startline="281">xpm::texture</references>
+        <references refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" compoundref="MLX42_8h" startline="265">mlx_texture::width</references>
+        <referencedby refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" compoundref="mlx__xpm42_8c" startline="132" endline="147">mlx_read_table</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>static bool mlx_read_table</definition>
+        <argsstring>(xpm_t *xpm, FILE *file)</argsstring>
+        <name>mlx_read_table</name>
+        <param>
+          <type><ref refid="MLX42_8h_1a8cfb3a30d601c592ed845f9453b81e0e" kindref="member">xpm_t</ref> *</type>
+          <declname>xpm</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref> *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For quick lookups we basically create a stack allocated lookup table with every ascii character in it. This should help avoid a <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">O(n)</ref> case and give us a <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">O(1)</ref> for very fast look ups.</para>
+<para>Downside is we still need to iterate over each pixel to solve its color. So I hope this makes it at least a bit faster.</para>
+<para>TODO: This buffer might be way to big! Do actual collision checks, for now just straight up raw dog this. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_xpm42.c" line="132" column="13" bodyfile="MLX42/src/textures/mlx_xpm42.c" bodystart="132" bodyend="147"/>
+        <references refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" compoundref="MLX42__Int_8h" startline="42">BPP</references>
+        <references refid="structxpm_1a132cb1a4f1d6653dd409178f5a91c408" compoundref="MLX42_8h" startline="282">xpm::color_count</references>
+        <references refid="MLX42__Int_8h_1afeec80312b6f8a8755b798ed12721cd8" compoundref="mlx__utils_8c" startline="28" endline="58">mlx_getline</references>
+        <references refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" compoundref="mlx__xpm42_8c" startline="64" endline="84">mlx_insert_xpm_entry</references>
+        <references refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</references>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>static bool mlx_read_xpm_header</definition>
+        <argsstring>(xpm_t *xpm, FILE *file)</argsstring>
+        <name>mlx_read_xpm_header</name>
+        <param>
+          <type><ref refid="MLX42_8h_1a8cfb3a30d601c592ed845f9453b81e0e" kindref="member">xpm_t</ref> *</type>
+          <declname>xpm</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref> *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the XPM42 file header which usually consists of a file type declaration of &quot;!XPM42&quot; followed by the next line containing image information such as width, height, unique color count and finally the color mode. Which is either c for Color or m for Monochrome. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_xpm42.c" line="156" column="13" bodyfile="MLX42/src/textures/mlx_xpm42.c" bodystart="156" bodyend="177"/>
+        <references refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" compoundref="MLX42__Int_8h" startline="42">BPP</references>
+        <references refid="structmlx__texture_1ace1ae58e45824a91a75d8f6bf525aed3" compoundref="MLX42_8h" startline="267">mlx_texture::bytes_per_pixel</references>
+        <references refid="structxpm_1a132cb1a4f1d6653dd409178f5a91c408" compoundref="MLX42_8h" startline="282">xpm::color_count</references>
+        <references refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" compoundref="MLX42_8h" startline="283">xpm::cpp</references>
+        <references refid="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" compoundref="MLX42_8h" startline="266">mlx_texture::height</references>
+        <references refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" compoundref="mlx__xpm42_8c" startline="132" endline="147">mlx_read_table</references>
+        <references refid="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" compoundref="MLX42_8h" startline="284">xpm::mode</references>
+        <references refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" compoundref="MLX42_8h" startline="268">mlx_texture::pixels</references>
+        <references refid="structxpm_1a96490cfed326fc5a3a9750e586041519" compoundref="MLX42_8h" startline="281">xpm::texture</references>
+        <references refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" compoundref="MLX42_8h" startline="265">mlx_texture::width</references>
+        <referencedby refid="MLX42_8h_1a4e43a95dd957b6771633389dc650003d" compoundref="mlx__xpm42_8c" startline="181" endline="201">mlx_load_xpm42</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__xpm42_8c_1a4e43a95dd957b6771633389dc650003d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="MLX42_8h_1a8cfb3a30d601c592ed845f9453b81e0e" kindref="member">xpm_t</ref> *</type>
+        <definition>xpm_t * mlx_load_xpm42</definition>
+        <argsstring>(const char *path)</argsstring>
+        <name>mlx_load_xpm42</name>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Loads an XPM42 texture from the given file path.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The file path to the XPM texture. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The XPM texture struct containing its information. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_xpm42.c" line="181" column="7" bodyfile="MLX42/src/textures/mlx_xpm42.c" bodystart="181" bodyend="201"/>
+        <references refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" compoundref="mlx__error_8c" startline="43" endline="50">mlx_error</references>
+        <references refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" compoundref="mlx__utils_8c" startline="89" endline="98">mlx_freen</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0e31cefc8561cfb7fec335976fba78e1" compoundref="MLX42_8h" startline="373">MLX_INVEXT</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a2be3c4887589af0992784f68151843db" compoundref="MLX42_8h" startline="374">MLX_INVFILE</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a3dc0fadab61c9135b7afb4da56109f7d" compoundref="MLX42_8h" startline="376">MLX_INVXPM</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" compoundref="MLX42_8h" startline="383">MLX_MEMFAIL</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</references>
+        <references refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" compoundref="MLX42_8h" startline="268">mlx_texture::pixels</references>
+        <references refid="structxpm_1a96490cfed326fc5a3a9750e586041519" compoundref="MLX42_8h" startline="281">xpm::texture</references>
+      </memberdef>
+      <memberdef kind="function" id="mlx__xpm42_8c_1a38fb289ba874f2fdf04145e808c60e2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_delete_xpm42</definition>
+        <argsstring>(xpm_t *xpm)</argsstring>
+        <name>mlx_delete_xpm42</name>
+        <param>
+          <type><ref refid="MLX42_8h_1a8cfb3a30d601c592ed845f9453b81e0e" kindref="member">xpm_t</ref> *</type>
+          <declname>xpm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deletes an XPM42 texture by freeing its allocated data.</para>
+<para>This will not remove any already drawn XPMs, it simply deletes the XPM buffer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">xpm</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The xpm texture to delete. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/textures/mlx_xpm42.c" line="203" column="6" bodyfile="MLX42/src/textures/mlx_xpm42.c" bodystart="203" bodyend="208"/>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" compoundref="MLX42_8h" startline="268">mlx_texture::pixels</references>
+        <references refid="structxpm_1a96490cfed326fc5a3a9750e586041519" compoundref="MLX42_8h" startline="281">xpm::texture</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_xpm42.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2021/12/28<sp/>03:42:29<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2022/06/27<sp/>19:58:33<sp/>by<sp/>lde-la-h<sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>XPM<sp/>is<sp/>an<sp/>obscure<sp/>image<sp/>format<sp/>which<sp/>can&apos;t<sp/>seem<sp/>to<sp/>make<sp/>up<sp/>its<sp/>mind</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>whether<sp/>it<sp/>wants<sp/>to<sp/>be<sp/>written<sp/>in<sp/>C<sp/>code<sp/>or<sp/>not.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>https://en.wikipedia.org/wiki/X_PixMap</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>This<sp/>might<sp/>anger<sp/>some<sp/>but<sp/>instead<sp/>I<sp/>decided<sp/>to<sp/>write<sp/>my<sp/>own</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>image<sp/>format,<sp/>very<sp/>similar<sp/>to<sp/>XPM2,<sp/>which<sp/>seems<sp/>to<sp/>be<sp/>the<sp/>better</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>option<sp/>between<sp/>the<sp/>3<sp/>versions.<sp/>The<sp/>only<sp/>difference<sp/>is<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>header<sp/>which<sp/>carries<sp/>the<sp/>file<sp/>type,<sp/>width,<sp/>height,<sp/>color<sp/>count</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>and<sp/>finally<sp/>color<sp/>type<sp/>aka<sp/>&apos;c&apos;<sp/>for<sp/>RGBA8<sp/>or<sp/>&apos;m&apos;<sp/>for<sp/>monochrome</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>output.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>The<sp/>changes,<sp/>in<sp/>my<sp/>opinion,<sp/>very<sp/>much<sp/>simplify<sp/>the<sp/>XPM<sp/>format</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>into<sp/>something<sp/>literally<sp/>anybody<sp/>can<sp/>use<sp/>without<sp/>much<sp/>guessing</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>as<sp/>to<sp/>what<sp/>does<sp/>what.</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>Additionally<sp/>with<sp/>the<sp/>C<sp/>style<sp/>format,<sp/>the<sp/>idea<sp/>is<sp/>that<sp/>you<sp/>simply<sp/>include</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>it<sp/>directly<sp/>into<sp/>the<sp/>compilation<sp/>of<sp/>the<sp/>program<sp/>(since<sp/>it&apos;s<sp/>just<sp/>C).</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>As<sp/>convenient<sp/>as<sp/>this<sp/>is,<sp/>I<sp/>just<sp/>find<sp/>it<sp/>hideous<sp/>especially<sp/>the<sp/>XPM3<sp/>variant.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>By<sp/>sticking<sp/>to<sp/>the<sp/>XPM<sp/>style<sp/>format,<sp/>conversion<sp/>should<sp/>be<sp/>very<sp/>easy<sp/>and<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>straightforward<sp/>to<sp/>this<sp/>format<sp/>however.</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Private<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="42"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>Parses<sp/>HEX<sp/>color<sp/>channel<sp/>e.g:<sp/>&quot;0F&quot;</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/>@param<sp/>channel<sp/>The<sp/>2<sp/>character<sp/>string<sp/>to<sp/>parse.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>@return<sp/>Int<sp/>value<sp/>of<sp/>the<sp/>channel.</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref><sp/><ref refid="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" kindref="member">mlx_parse_hex_channel</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">channel</ref>)<sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp_chan</ref>[]<sp/>=<sp/>{<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">channel</ref>[0],<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">channel</ref>[1],<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">strtol</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp_chan</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>,<sp/>16));</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="54"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>Parses<sp/>the<sp/>XPM<sp/>color<sp/>value<sp/>entry<sp/>e.g:<sp/>&quot;.X<sp/>#00FF00FF&quot;</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>into<sp/>the<sp/>color<sp/>table<sp/>while<sp/>also<sp/>verifying<sp/>the<sp/>format.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>@param<sp/>xpm<sp/>The<sp/>XPM.</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>@param<sp/>line<sp/>The<sp/>line<sp/>to<sp/>parse.</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>@param<sp/>ctable<sp/>The<sp/>color<sp/>hash<sp/>table.</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>@param<sp/>s<sp/>Size<sp/>of<sp/>the<sp/>hash<sp/>table</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>@return<sp/>True<sp/>or<sp/>false<sp/>depending<sp/>on<sp/>if<sp/>it<sp/>successfully<sp/>parsed<sp/>the<sp/>line.</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" kindref="member">mlx_insert_xpm_entry</ref>(<ref refid="structxpm" kindref="compound">xpm_t</ref>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>,<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1af1b1d5edfea6a34daee7389b1b5810ad" kindref="member">s</ref>)</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>uintptr<sp/>because<sp/>windows<sp/>likes<sp/>to<sp/>complain...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>the<sp/>length<sp/>of<sp/>the<sp/>Pixel<sp/>string<sp/>by<sp/>checking<sp/>backwards<sp/>for<sp/>the<sp/>first</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>occurrence<sp/>of<sp/>a<sp/>space<sp/>and<sp/>then<sp/>check<sp/>the<sp/>distance<sp/>by<sp/>comparing<sp/>with<sp/>cpp.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(((<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uintptr_t</ref>)<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">strrchr</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>,<sp/></highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">)<sp/>-<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uintptr_t</ref>)<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>)<sp/>!=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint64_t</ref>)<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref>)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">isspace</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>[<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref>])<sp/>||<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>[<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref><sp/>+<sp/>1]<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;#&apos;</highlight><highlight class="normal"><sp/>||<sp/>!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">isalnum</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>[<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref><sp/>+<sp/>2]))</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">start_offset</ref><sp/>=<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref><sp/>+<sp/>2;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>|=<sp/><ref refid="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" kindref="member">mlx_parse_hex_channel</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref><sp/>+<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">start_offset</ref>)<sp/>&lt;&lt;<sp/>24;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>|=<sp/><ref refid="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" kindref="member">mlx_parse_hex_channel</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref><sp/>+<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">start_offset</ref><sp/>+<sp/>2)<sp/>&lt;&lt;<sp/>16;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>|=<sp/><ref refid="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" kindref="member">mlx_parse_hex_channel</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref><sp/>+<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">start_offset</ref><sp/>+<sp/>4)<sp/>&lt;&lt;<sp/>8;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>|=<sp/><ref refid="mlx__xpm42_8c_1a503a49accc6347aeb47f226fd7c738c3" kindref="member">mlx_parse_hex_channel</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref><sp/>+<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">start_offset</ref><sp/>+<sp/>6);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref><sp/>=<sp/><ref refid="MLX42__Int_8h_1ab31a068c9000789a7999bfc1ea34709b" kindref="member">mlx_fnv_hash</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>,<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref>)<sp/>%<sp/><ref refid="glad_8h_1af1b1d5edfea6a34daee7389b1b5810ad" kindref="member">s</ref>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>[<ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>]<sp/>=<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" kindref="member">mode</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;m&apos;</highlight><highlight class="normal"><sp/>?<sp/><ref refid="MLX42__Int_8h_1ad58d85c71babb51bf426e72a9b87efa0" kindref="member">mlx_rgba_to_mono</ref>(<ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref>)<sp/>:<sp/><ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref>;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="86"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>Retrieves<sp/>the<sp/>pixel<sp/>data<sp/>line<sp/>by<sp/>line<sp/>and<sp/>then<sp/>processes<sp/>each<sp/>pixel</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*<sp/>by<sp/>hashing<sp/>the<sp/>characters<sp/>and<sp/>looking<sp/>it<sp/>up<sp/>from<sp/>the<sp/>color<sp/>table.</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/>*<sp/>@param<sp/>xpm<sp/>The<sp/>XPM.</highlight></codeline>
+<codeline lineno="91"><highlight class="comment"><sp/>*<sp/>@param<sp/>file<sp/>The<sp/>filepath<sp/>to<sp/>the<sp/>XPM42<sp/>file.</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/>*<sp/>@param<sp/>ctable<sp/>The<sp/>color<sp/>hash<sp/>table.</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>@param<sp/>s<sp/>Size<sp/>of<sp/>the<sp/>hash<sp/>table.</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>@return<sp/>True<sp/>or<sp/>false<sp/>depending<sp/>on<sp/>if<sp/>it<sp/>successfully<sp/>parsed<sp/>the<sp/>line.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" kindref="member">mlx_read_data</ref>(<ref refid="structxpm" kindref="compound">xpm_t</ref>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1af1b1d5edfea6a34daee7389b1b5810ad" kindref="member">s</ref>)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line_len</ref>;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int64_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">y_xpm</ref><sp/>=<sp/>0;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">y_xpm</ref><sp/>&lt;<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" kindref="member">height</ref>;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">y_xpm</ref>++)</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="MLX42__Int_8h_1afeec80312b6f8a8755b798ed12721cd8" kindref="member">mlx_getline</ref>(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>,<sp/>&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line_len</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>))</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>[<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line_len</ref><sp/>-<sp/>1]<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line_len</ref>--;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line_len</ref><sp/>!=<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" kindref="member">width</ref><sp/>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref>)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>Copy<sp/>pixel<sp/>by<sp/>pixel<sp/>as<sp/>we<sp/>need<sp/>to<sp/>retrieve<sp/>the<sp/>hash<sp/>table.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int64_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">x_xpm</ref><sp/>=<sp/>0,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">x_line</ref><sp/>=<sp/>0;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">x_xpm</ref><sp/>&lt;<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" kindref="member">width</ref>;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">x_xpm</ref>++,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">x_line</ref><sp/>+=<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref>)</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixelstart</ref><sp/>=<sp/>&amp;<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" kindref="member">pixels</ref>[(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">y_xpm</ref><sp/>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" kindref="member">width</ref><sp/>+<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">x_xpm</ref>)<sp/>*<sp/><ref refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" kindref="member">BPP</ref>];</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a8cbde9c5d99f600c5c4016bda5b40592" kindref="member">mlx_draw_pixel</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">pixelstart</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>[<ref refid="MLX42__Int_8h_1ab31a068c9000789a7999bfc1ea34709b" kindref="member">mlx_fnv_hash</ref>(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>[<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">x_line</ref>],<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref>)<sp/>%<sp/><ref refid="glad_8h_1af1b1d5edfea6a34daee7389b1b5810ad" kindref="member">s</ref>]);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="121"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>For<sp/>quick<sp/>lookups<sp/>we<sp/>basically<sp/>create<sp/>a<sp/>stack<sp/>allocated<sp/>lookup</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>table<sp/>with<sp/>every<sp/>ascii<sp/>character<sp/>in<sp/>it.<sp/>This<sp/>should<sp/>help<sp/>avoid<sp/>a<sp/>O(n)</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>case<sp/>and<sp/>give<sp/>us<sp/>a<sp/>O(1)<sp/>for<sp/>very<sp/>fast<sp/>look<sp/>ups.</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="126"><highlight class="comment"><sp/>*<sp/>Downside<sp/>is<sp/>we<sp/>still<sp/>need<sp/>to<sp/>iterate<sp/>over<sp/>each<sp/>pixel<sp/>to<sp/>solve<sp/>its<sp/>color.</highlight></codeline>
+<codeline lineno="127"><highlight class="comment"><sp/>*<sp/>So<sp/>I<sp/>hope<sp/>this<sp/>makes<sp/>it<sp/>at<sp/>least<sp/>a<sp/>bit<sp/>faster.</highlight></codeline>
+<codeline lineno="128"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="129"><highlight class="comment"><sp/>*<sp/>TODO:<sp/>This<sp/>buffer<sp/>might<sp/>be<sp/>way<sp/>to<sp/>big!<sp/>Do<sp/>actual<sp/>collision<sp/>checks,<sp/></highlight></codeline>
+<codeline lineno="130"><highlight class="comment"><sp/>*<sp/>for<sp/>now<sp/>just<sp/>straight<sp/>up<sp/>raw<sp/>dog<sp/>this.</highlight></codeline>
+<codeline lineno="131"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" kindref="member">mlx_read_table</ref>(<ref refid="structxpm" kindref="compound">xpm_t</ref>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line_len</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>[<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">UINT16_MAX</ref>]<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a132cb1a4f1d6653dd409178f5a91c408" kindref="member">color_count</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="MLX42__Int_8h_1afeec80312b6f8a8755b798ed12721cd8" kindref="member">mlx_getline</ref>(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>,<sp/>&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line_len</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>))</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" kindref="member">mlx_insert_xpm_entry</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>,<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>)<sp/>/<sp/><ref refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" kindref="member">BPP</ref>)))</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">line</ref>);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" kindref="member">mlx_read_data</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>,<sp/>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctable</ref>)<sp/>/<sp/><ref refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" kindref="member">BPP</ref>)));</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="149"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*<sp/>Reads<sp/>the<sp/>XPM42<sp/>file<sp/>header<sp/>which<sp/>usually<sp/>consists<sp/>of<sp/>a</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/>file<sp/>type<sp/>declaration<sp/>of<sp/>&quot;!XPM42&quot;<sp/>followed<sp/>by<sp/>the<sp/>next<sp/>line</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/>containing<sp/>image<sp/>information<sp/>such<sp/>as<sp/>width,<sp/>height,<sp/>unique<sp/>color</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/>count<sp/>and<sp/>finally<sp/>the<sp/>color<sp/>mode.<sp/>Which<sp/>is<sp/>either<sp/>c<sp/>for<sp/>Color<sp/>or</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>m<sp/>for<sp/>Monochrome.</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" kindref="member">mlx_read_xpm_header</ref>(<ref refid="structxpm" kindref="compound">xpm_t</ref>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>)</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">flagc</ref>;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>[64]<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Check<sp/>file<sp/>type<sp/>dec...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fgets</ref>(<ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>),<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>))</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">strncmp</ref>(<ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>,<sp/></highlight><highlight class="stringliteral">&quot;!XPM42\n&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>))<sp/>!=<sp/>0)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Get<sp/>header<sp/>info<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fgets</ref>(<ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>),<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>))</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">flagc</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">sscanf</ref>(<ref refid="glad_8h_1a3667f558219c90437106b544a3ca00b8" kindref="member">buffer</ref>,<sp/></highlight><highlight class="stringliteral">&quot;%i<sp/>%i<sp/>%i<sp/>%i<sp/>%c\n&quot;</highlight><highlight class="normal">,<sp/>&amp;<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" kindref="member">width</ref>,<sp/>&amp;<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" kindref="member">height</ref>,<sp/>&amp;<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a132cb1a4f1d6653dd409178f5a91c408" kindref="member">color_count</ref>,<sp/>&amp;<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref>,<sp/>&amp;<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" kindref="member">mode</ref>);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">flagc &lt; 4 || xpm-&gt;</ref><ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>.width<sp/>&gt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">INT16_MAX</ref><sp/>||<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" kindref="member">height</ref><sp/>&gt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">INT16_MAX</ref><sp/>||<sp/>\</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>!(<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" kindref="member">mode</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;c&apos;</highlight><highlight class="normal"><sp/>||<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a3825c3d9580183d413e5ca1d6fe905a5" kindref="member">mode</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;m&apos;</highlight><highlight class="normal">)<sp/>||<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1aaa705a156b21449c4d57f6183eb02c91" kindref="member">cpp</ref><sp/>&gt;<sp/>10)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1ace1ae58e45824a91a75d8f6bf525aed3" kindref="member">bytes_per_pixel</ref><sp/>=<sp/><ref refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" kindref="member">BPP</ref>;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" kindref="member">pixels</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">calloc</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" kindref="member">width</ref><sp/>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" kindref="member">height</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref>));</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" kindref="member">pixels</ref><sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref><sp/>?<sp/><ref refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" kindref="member">mlx_read_table</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>)<sp/>:<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Public<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="MLX42_8h_1a4e43a95dd957b6771633389dc650003d" refkind="member"><highlight class="normal"><ref refid="structxpm" kindref="compound">xpm_t</ref>*<sp/><ref refid="mlx__xpm42_8c_1a4e43a95dd957b6771633389dc650003d" kindref="member">mlx_load_xpm42</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">path</ref>)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structxpm" kindref="compound">xpm_t</ref>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">path</ref>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">strstr</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">path</ref>,<sp/></highlight><highlight class="stringliteral">&quot;.xpm42&quot;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0e31cefc8561cfb7fec335976fba78e1" kindref="member">MLX_INVEXT</ref>));</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fopen</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">path</ref>,<sp/></highlight><highlight class="stringliteral">&quot;r&quot;</highlight><highlight class="normal">)))</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a2be3c4887589af0992784f68151843db" kindref="member">MLX_INVFILE</ref>));</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="structxpm" kindref="compound">xpm</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">calloc</ref>(1,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structxpm" kindref="compound">xpm_t</ref>))))</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" kindref="member">MLX_MEMFAIL</ref>));</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" kindref="member">mlx_read_xpm_header</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>))</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(2,<sp/><ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" kindref="member">pixels</ref>,<sp/><ref refid="structxpm" kindref="compound">xpm</ref>);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a3dc0fadab61c9135b7afb4da56109f7d" kindref="member">MLX_INVXPM</ref>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structxpm" kindref="compound">xpm</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fclose</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="structxpm" kindref="compound">xpm</ref>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203" refid="MLX42_8h_1a38fb289ba874f2fdf04145e808c60e2a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__xpm42_8c_1a38fb289ba874f2fdf04145e808c60e2a" kindref="member">mlx_delete_xpm42</ref>(<ref refid="structxpm" kindref="compound">xpm_t</ref>*<sp/><ref refid="structxpm" kindref="compound">xpm</ref>)</highlight></codeline>
+<codeline lineno="204"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>);</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>-&gt;<ref refid="structxpm_1a96490cfed326fc5a3a9750e586041519" kindref="member">texture</ref>.<ref refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" kindref="member">pixels</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="structxpm" kindref="compound">xpm</ref>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/textures/mlx_xpm42.c"/>
+  </compounddef>
+</doxygen>

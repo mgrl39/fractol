@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLodePNGState" kind="struct" language="C++" prot="public">
+    <compoundname>LodePNGState</compoundname>
+    <includes refid="lodepng_8h" local="no">lodepng.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLodePNGState_1abd2c38ffc68f04b0e4159e1f97ba1f76" prot="public" static="no" mutable="no">
+        <type><ref refid="structLodePNGDecoderSettings" kindref="compound">LodePNGDecoderSettings</ref></type>
+        <definition>LodePNGDecoderSettings LodePNGState::decoder</definition>
+        <argsstring></argsstring>
+        <name>decoder</name>
+        <qualifiedname>LodePNGState::decoder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="860" column="26" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="860" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGState_1ac63d91db835129d02eb83bbe81de347e" prot="public" static="no" mutable="no">
+        <type><ref refid="structLodePNGEncoderSettings" kindref="compound">LodePNGEncoderSettings</ref></type>
+        <definition>LodePNGEncoderSettings LodePNGState::encoder</definition>
+        <argsstring></argsstring>
+        <name>encoder</name>
+        <qualifiedname>LodePNGState::encoder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="863" column="26" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="863" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGState_1a597bc08de787147474d43adf8b6ceacf" prot="public" static="no" mutable="no">
+        <type><ref refid="structLodePNGColorMode" kindref="compound">LodePNGColorMode</ref></type>
+        <definition>LodePNGColorMode LodePNGState::info_raw</definition>
+        <argsstring></argsstring>
+        <name>info_raw</name>
+        <qualifiedname>LodePNGState::info_raw</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="865" column="20" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="865" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGState_1a08d9ac43c995fcf34d72b1d37047b6fa" prot="public" static="no" mutable="no">
+        <type><ref refid="structLodePNGInfo" kindref="compound">LodePNGInfo</ref></type>
+        <definition>LodePNGInfo LodePNGState::info_png</definition>
+        <argsstring></argsstring>
+        <name>info_png</name>
+        <qualifiedname>LodePNGState::info_png</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="866" column="15" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="866" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGState_1a1a00a050da588cf3c2b7a6252bebb0cd" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGState::error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <qualifiedname>LodePNGState::error</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="867" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="867" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="6">
+        <label>LodePNGColorMode</label>
+        <link refid="structLodePNGColorMode"/>
+      </node>
+      <node id="5">
+        <label>LodePNGCompressSettings</label>
+        <link refid="structLodePNGCompressSettings"/>
+      </node>
+      <node id="2">
+        <label>LodePNGDecoderSettings</label>
+        <link refid="structLodePNGDecoderSettings"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+zlibsettings</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>LodePNGDecompressSettings</label>
+        <link refid="structLodePNGDecompressSettings"/>
+      </node>
+      <node id="4">
+        <label>LodePNGEncoderSettings</label>
+        <link refid="structLodePNGEncoderSettings"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+zlibsettings</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>LodePNGInfo</label>
+        <link refid="structLodePNGInfo"/>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+color</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+time</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>LodePNGState</label>
+        <link refid="structLodePNGState"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+decoder</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+encoder</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+info_raw</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+info_png</edgelabel>
+        </childnode>
+      </node>
+      <node id="8">
+        <label>LodePNGTime</label>
+        <link refid="structLodePNGTime"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/lodepng/lodepng.h" line="858" column="1" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="858" bodyend="868"/>
+    <listofallmembers>
+      <member refid="structLodePNGState_1abd2c38ffc68f04b0e4159e1f97ba1f76" prot="public" virt="non-virtual"><scope>LodePNGState</scope><name>decoder</name></member>
+      <member refid="structLodePNGState_1ac63d91db835129d02eb83bbe81de347e" prot="public" virt="non-virtual"><scope>LodePNGState</scope><name>encoder</name></member>
+      <member refid="structLodePNGState_1a1a00a050da588cf3c2b7a6252bebb0cd" prot="public" virt="non-virtual"><scope>LodePNGState</scope><name>error</name></member>
+      <member refid="structLodePNGState_1a08d9ac43c995fcf34d72b1d37047b6fa" prot="public" virt="non-virtual"><scope>LodePNGState</scope><name>info_png</name></member>
+      <member refid="structLodePNGState_1a597bc08de787147474d43adf8b6ceacf" prot="public" virt="non-virtual"><scope>LodePNGState</scope><name>info_raw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

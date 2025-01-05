@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespacexpm3__conv" kind="namespace" language="Python">
+    <compoundname>xpm3_conv</compoundname>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespacexpm3__conv_1a2ff4e88f02862607ab7c142719ae7c3b" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">dict</ref></type>
+        <definition>dict xpm3_conv.colours</definition>
+        <argsstring></argsstring>
+        <name>colours</name>
+        <qualifiedname>xpm3_conv.colours</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tools/xpm3_conv.py" line="18" column="1" bodyfile="MLX42/tools/xpm3_conv.py" bodystart="18" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="namespacexpm3__conv_1a71be0e4d60aae570fb979ec9a691e24f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>xpm3_conv.main</definition>
+        <argsstring>()</argsstring>
+        <name>main</name>
+        <qualifiedname>xpm3_conv.main</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tools/xpm3_conv.py" line="774" column="1" bodyfile="MLX42/tools/xpm3_conv.py" bodystart="774" bodyend="813"/>
+        <references refid="namespacexpm3__conv_1a71be0e4d60aae570fb979ec9a691e24f" compoundref="xpm3__conv_8py" startline="774" endline="813">main</references>
+        <referencedby refid="namespacexpm3__conv_1a71be0e4d60aae570fb979ec9a691e24f" compoundref="xpm3__conv_8py" startline="774" endline="813">main</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/tools/xpm3_conv.py" line="1" column="1"/>
+  </compounddef>
+</doxygen>

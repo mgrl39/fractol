@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Functions_8md" kind="file" language="Markdown">
+    <compoundname>Functions.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Functions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>list<sp/>of<sp/>all<sp/>functions<sp/>can<sp/>be<sp/>found<sp/>here:<sp/>[Functions](https://bit.ly/3aWZL7C)</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Functions.md"/>
+  </compounddef>
+</doxygen>

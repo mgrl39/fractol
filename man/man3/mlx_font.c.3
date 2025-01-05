@@ -1,0 +1,159 @@
+.TH "MLX42/src/font/mlx_font.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/font/mlx_font.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'font\&.h'\fP
+.br
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_draw_char\fP (\fBmlx_image_t\fP *\fBimage\fP, \fBint32_t\fP \fBtexoffset\fP, \fBint32_t\fP \fBimgoffset\fP)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBmlx_texture_t\fP * \fBmlx_get_font\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_get_texoffset\fP (\fBchar\fP c)"
+.br
+.ti -1c
+.RI "\fBmlx_image_t\fP * \fBmlx_put_string\fP (\fBmlx_t\fP *\fBmlx\fP, \fBconst\fP \fBchar\fP *\fBstr\fP, \fBint32_t\fP \fBx\fP, \fBint32_t\fP \fBy\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvoid\fP mlx_draw_char (\fBmlx_image_t\fP * image, \fBint32_t\fP texoffset, \fBint32_t\fP imgoffset)\fC [static]\fP"
+Does the actual copying of pixels form the atlas buffer to the image buffer\&.
+.PP
+Skips any non-printable characters\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIimage\fP The image to draw on\&. 
+.br
+\fItexture\fP The font_atlas\&. 
+.br
+\fItexoffset\fP The character texture X offset\&. 
+.br
+\fIimgoffset\fP The image X offset\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB29\fP of file \fBmlx_font\&.c\fP\&..PP
+.nf
+30 {
+31     if (texoffset < 0)
+32         return;
+33 
+34     char* pixelx;
+35     uint8_t* pixeli;
+36     for (uint32_t y = 0; y < FONT_HEIGHT; y++)
+37     {
+38         pixelx = &font_atlas\&.pixels[(y * font_atlas\&.width + texoffset) * BPP];
+39         pixeli = image\->pixels + ((y * image\->width + imgoffset) * BPP);
+40         memcpy(pixeli, pixelx, FONT_WIDTH * BPP);
+41     }
+42 }
+.fi
+
+.SS "\fBconst\fP \fBmlx_texture_t\fP * mlx_get_font (\fBvoid\fP)"
+Retrieve the texture data for the built-in font\&.
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the built-in font texture\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBmlx_font\&.c\fP\&..PP
+.nf
+47 {
+48     return ((const mlx_texture_t*)&font_atlas);
+49 }
+.fi
+
+.SS "\fBint32_t\fP mlx_get_texoffset (\fBchar\fP c)"
+This function lets you retrieve the X offset of the given char in the font texture\&.
+.PP
+NOTE: A single character is 10 * 20 in pixels!
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP The character to get the offset from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Non-negative if found or -1 if not found\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB51\fP of file \fBmlx_font\&.c\fP\&..PP
+.nf
+52 {
+53     const bool _isprint = isprint(c);
+54 
+55     // NOTE: Cheesy branchless operation :D
+56     // +2 To skip line separator in texture
+57     return (\-1 * !_isprint + ((FONT_WIDTH + 2) * (c \- 32)) * _isprint);
+58 }
+.fi
+
+.SS "\fBmlx_image_t\fP * mlx_put_string (\fBmlx_t\fP * mlx, \fBconst\fP \fBchar\fP * str, \fBint32_t\fP x, \fBint32_t\fP y)"
+Draws a string on an image and then outputs it to the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIstr\fP The string to draw\&. 
+.br
+\fIx\fP The X location\&. 
+.br
+\fIy\fP The Y location\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Image ptr to the string\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBmlx_font\&.c\fP\&..PP
+.nf
+61 {
+62     MLX_NONNULL(mlx);
+63     MLX_NONNULL(str);
+64 
+65     mlx_image_t* strimage;
+66     const size_t len = strlen(str);
+67     if (len > MLX_MAX_STRING)
+68         return ((void*)mlx_error(MLX_STRTOOBIG));   
+69     if (!(strimage = mlx_new_image(mlx, len * FONT_WIDTH, FONT_HEIGHT)))
+70         return (NULL);
+71 
+72     // Draw the text itself
+73     int32_t imgoffset = 0;
+74     for (size_t i = 0; i < len; i++, imgoffset += FONT_WIDTH)
+75         mlx_draw_char(strimage, mlx_get_texoffset(str[i]), imgoffset);
+76 
+77     if (mlx_image_to_window(mlx, strimage, x, y) == \-1)
+78         return (mlx_delete_image(mlx, strimage), NULL);
+79     return (strimage);
+80 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

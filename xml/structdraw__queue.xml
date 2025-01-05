@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structdraw__queue" kind="struct" language="C++" prot="public">
+    <compoundname>draw_queue</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdraw__queue_1a3c7f53e044c7080d62563c8ce8f855f9" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+        <definition>mlx_image_t* draw_queue::image</definition>
+        <argsstring></argsstring>
+        <name>image</name>
+        <qualifiedname>draw_queue::image</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="201" column="12" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="201" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdraw__queue_1a9a2da7fe2ada509336f50f5da87439b7" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t draw_queue::instanceid</definition>
+        <argsstring></argsstring>
+        <name>instanceid</name>
+        <qualifiedname>draw_queue::instanceid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="202" column="8" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="202" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>draw_queue</label>
+        <link refid="structdraw__queue"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+image</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>mlx_image</label>
+        <link refid="structmlx__image"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+instances</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>mlx_instance</label>
+        <link refid="structmlx__instance"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="199" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="200" bodyend="203"/>
+    <listofallmembers>
+      <member refid="structdraw__queue_1a3c7f53e044c7080d62563c8ce8f855f9" prot="public" virt="non-virtual"><scope>draw_queue</scope><name>image</name></member>
+      <member refid="structdraw__queue_1a9a2da7fe2ada509336f50f5da87439b7" prot="public" virt="non-virtual"><scope>draw_queue</scope><name>instanceid</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

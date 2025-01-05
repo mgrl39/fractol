@@ -1,0 +1,55 @@
+\doxysection{mlx\+\_\+keys.\+c}
+\hypertarget{mlx__keys_8c_source}{}\label{mlx__keys_8c_source}\index{MLX42/src/mlx\_keys.c@{MLX42/src/mlx\_keys.c}}
+\mbox{\hyperlink{mlx__keys_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ::::::::\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ mlx\_keys.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ W2Wizard\ <main@w2wizard.dev>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2022/01/01\ 21:06:45\ by\ W2Wizard\ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2023/02/13\ 12:24:40\ by\ W2Wizard\ \ \ \ \ \ \#\#\#\#\#\#\#\#\ \ \ odam.nl\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MLX42__Int_8h}{MLX42/MLX42\_Int.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00015}00015\ \textcolor{comment}{//=\ Private\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00017}\mbox{\hyperlink{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c}{00017}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c}{mlx\_key\_callback}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}}*\ window,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ key,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{scancode}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{MLX42_8h_a2f4ab7bf743142dae2e459aa18f9f1d4}{action}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mods}})}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetWindowUserPointer}}(window);}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00020}00020\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__key}{mlx\_key\_t}}\ key\_hook\ =\ ((\mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*)\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}})-\/>key\_hook;}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__key__data}{mlx\_key\_data\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{callback\_data}}\ =\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00022}00022\ \ \ \ \ \ \ \ \ key,}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a2f4ab7bf743142dae2e459aa18f9f1d4}{action}},}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{scancode}},}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mods}},}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00026}00026\ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00028}00028\ \ \ \ \ key\_hook.\mbox{\hyperlink{structmlx__key_ac1d4cfe703545783836ec98c03ea7311}{func}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{callback\_data}},\ key\_hook.\mbox{\hyperlink{structmlx__key_a68754b86a374dcae2f7bb7ae14fef889}{param}});}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00029}00029\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00031}00031\ \textcolor{comment}{//=\ Public\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00033}\mbox{\hyperlink{MLX42_8h_a4d6d36f9bc5b957e080c2a5422882270}{00033}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mlx__keys_8c_a4d6d36f9bc5b957e080c2a5422882270}{mlx\_key\_hook}}(\mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42_8h_ad6d21f88160d8a2a180419e7f4cc9b5f}{mlx\_keyfunc}}\ \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}},\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00034}00034\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00035}00035\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00036}00036\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}});}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>key\_hook.func\ =\ \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}};}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>key\_hook.param\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00041}00041\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetKeyCallback}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \mbox{\hyperlink{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c}{mlx\_key\_callback}});}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00044}\mbox{\hyperlink{MLX42_8h_aeca3680814ced1c4e67603419a2b3b8e}{00044}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mlx__keys_8c_aeca3680814ced1c4e67603419a2b3b8e}{mlx\_is\_key\_down}}(\mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{MLX42_8h_a384f75c85cf2a9ede19f2f5ec80cf817}{keys\_t}}\ key)}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00045}00045\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00046}00046\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetKey}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ key)\ ==\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_PRESS}});}
+\DoxyCodeLine{\Hypertarget{mlx__keys_8c_source_l00049}00049\ \}}
+
+\end{DoxyCode}

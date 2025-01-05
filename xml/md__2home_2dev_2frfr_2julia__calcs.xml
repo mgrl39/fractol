@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md__2home_2dev_2frfr_2julia__calcs" kind="page">
+    <compoundname>md__2home_2dev_2frfr_2julia__calcs</compoundname>
+    <title>Calculos de Julia</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md50"/> Este archivo documenta las funciones responsables de realizar los cálculos necesarios para la generación y renderización de fractales. Estas funciones gestionan aspectos como las escalas, los límites y el mapeo de píxeles a coordenadas del plano complejo.</para>
+<para><hruler/>
+</para>
+<sect1 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md52">
+<title>1. julia_iterations</title>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md53">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" kindref="member">julia_iterations</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>temp_z_re;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>&lt;=<sp/>4.0<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>&lt;<sp/><ref refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kindref="member">MAX_ITERATIONS</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>-=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>+=<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>2.0<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>temp_z_re;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md54">
+<title>¿Qué hace esta función?</title>
+<para>Esta función realiza las iteraciones necesarias para determinar si un punto del plano complejo pertenece al conjunto de Julia. Calcula repetidamente la fórmula iterativa de Julia:</para>
+<para><programlisting filename=".plaintext"><codeline><highlight class="normal">z_n+1<sp/>=<sp/>(z_n<sp/>*<sp/>z_n)<sp/>+<sp/>c</highlight></codeline>
+</programlisting></para>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md55">
+<title>Parámetros:</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>vars</computeroutput>: Contiene las variables de renderizado, como las coordenadas del punto y el número de iteraciones.</para>
+</listitem><listitem><para><computeroutput>data</computeroutput>: Contiene información del fractal, incluyendo la constante <computeroutput>c</computeroutput> utilizada para el cálculo.</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md57">
+<title>Detalles del Funcionamiento</title>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md58">
+<title>1. Condición de escape</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>&lt;=<sp/>4.0</highlight></codeline>
+</programlisting></para>
+<para><itemizedlist>
+<listitem><para>El fractal considera que un punto &quot;escapa&quot; si la suma de los cuadrados de sus partes real e imaginaria es mayor que <computeroutput>4</computeroutput>.</para>
+</listitem></itemizedlist>
+</para>
+<para>Ejemplo: Si <computeroutput>z = 1 + 1i</computeroutput>, entonces: <programlisting filename=".plaintext"><codeline><highlight class="normal">|z|^2<sp/>=<sp/>(1<sp/>*<sp/>1)<sp/>+<sp/>(1<sp/>*<sp/>1)<sp/>=<sp/>2</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md60">
+<title>2. Actualización del valor de &lt;tt&gt;z&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">temp_z_re<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>-<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>2.0<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>temp_z_re;</highlight></codeline>
+</programlisting></para>
+<para>La fórmula completa en código sería: <programlisting filename=".plaintext"><codeline><highlight class="normal">z_real<sp/>=<sp/>(z_real^2)<sp/>-<sp/>(z_imag^2)<sp/>+<sp/>c_real</highlight></codeline>
+<codeline><highlight class="normal">z_imag<sp/>=<sp/>2<sp/>*<sp/>z_real<sp/>*<sp/>z_imag<sp/>+<sp/>c_imag</highlight></codeline>
+</programlisting></para>
+<para><hruler/>
+</para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md62">
+<title>Ejemplo de Iteraciones</title>
+<para>Supongamos:<itemizedlist>
+<listitem><para><computeroutput>z = 0 + 0i</computeroutput></para>
+</listitem><listitem><para><computeroutput>c = 0.285 - 0.01i</computeroutput></para>
+</listitem><listitem><para>Máximo de iteraciones: 10</para>
+</listitem></itemizedlist>
+</para>
+<para><bold>Iteraciones:</bold><orderedlist>
+<listitem><para><computeroutput>z_1 = (0 * 0 - 0 * 0 + 0.285) + (2 * 0 * 0 - 0.01)i = 0.285 - 0.01i</computeroutput></para>
+</listitem><listitem><para>Repetir con <computeroutput>z_1</computeroutput>.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+</sect1>
+<sect1 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md63">
+<title>2. render_julia_row</title>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md64">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" kindref="member">render_julia_row</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" kindref="member">julia_iterations</ref>(vars,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref><sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" kindref="member">pixels</ref><sp/>+<sp/>y<sp/>*<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref><sp/>+<sp/>x;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref><sp/>=<sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md65">
+<title>¿Qué hace esta función?</title>
+<para>La función <computeroutput>render_julia_row</computeroutput> renderiza una fila completa del fractal de Julia. Realiza las siguientes acciones para cada píxel en la fila:</para>
+<para><orderedlist>
+<listitem><para>Calcula el número complejo inicial <computeroutput>z</computeroutput> para el píxel actual en función de las coordenadas del píxel y la escala.</para>
+</listitem><listitem><para>Ejecuta el algoritmo de iteraciones de Julia para determinar el número de iteraciones necesarias para que el punto escape.</para>
+</listitem><listitem><para>Usa el número de iteraciones para determinar el color del píxel mediante la función <computeroutput>calculate_color</computeroutput>.</para>
+</listitem><listitem><para>Guarda el color calculado en el buffer de píxeles.</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md66">
+<title>Parámetros</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>t_render_vars *vars</computeroutput>: Puntero a la estructura que contiene variables utilizadas en el proceso de renderizado, como las escalas, las coordenadas iniciales, y el buffer de píxeles.</para>
+</listitem><listitem><para><computeroutput>t_data *data</computeroutput>: Puntero a la estructura que contiene los datos del fractal, como la constante del conjunto de Julia y el nivel de zoom.</para>
+</listitem><listitem><para><computeroutput>int y</computeroutput>: Índice de la fila (coordenada <computeroutput>y</computeroutput>) que se está renderizando.</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md68">
+<title>Detalles del funcionamiento</title>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md69">
+<title>1. Cálculo de la coordenada real inicial del píxel</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>];</highlight></codeline>
+</programlisting><itemizedlist>
+<listitem><para>Convierte la posición del píxel en la pantalla (<computeroutput>x</computeroutput>) a una coordenada real en el plano complejo.</para>
+</listitem><listitem><para>La fórmula es: <programlisting><codeline><highlight class="normal">c_re<sp/>=<sp/>start[COMPLEX_RE]<sp/>+<sp/>x<sp/>*<sp/>scale[SCALE_X]</highlight></codeline>
+</programlisting></para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md70">
+<title>2. Inicialización del número complejo &lt;tt&gt;z&lt;/tt&gt;</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
+</programlisting><itemizedlist>
+<listitem><para>Asigna la parte real de <computeroutput>z</computeroutput> al valor calculado en el paso anterior.</para>
+</listitem><listitem><para>Asigna la parte imaginaria de <computeroutput>z</computeroutput> a <computeroutput>vars-&gt;c_im</computeroutput>, que corresponde a la fila actual.</para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md71">
+<title>3. Ejecución del algoritmo de iteraciones de Julia</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" kindref="member">julia_iterations</ref>(vars,<sp/>data);</highlight></codeline>
+</programlisting><itemizedlist>
+<listitem><para>Llama a la función <computeroutput>julia_iterations</computeroutput> para determinar cuántas iteraciones son necesarias para que el punto escape.</para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md72">
+<title>4. Cálculo del color del píxel</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">*vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref><sp/>=<sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>);</highlight></codeline>
+</programlisting><itemizedlist>
+<listitem><para>Usa el número de iteraciones calculado para asignar un color al píxel.</para>
+</listitem><listitem><para>El resultado se almacena en el buffer de píxeles (<computeroutput>vars-&gt;pixels</computeroutput>).</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md74">
+<title>Ejemplo Práctico</title>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md75">
+<title>Supongamos:</title>
+<para><itemizedlist>
+<listitem><para>Coordenada del píxel: <computeroutput>(x, y) = (100, 50)</computeroutput></para>
+</listitem><listitem><para>Inicio del plano complejo: <computeroutput>start[COMPLEX_RE] = -2.0</computeroutput></para>
+</listitem><listitem><para>Escala: <computeroutput>scale[SCALE_X] = 0.005</computeroutput></para>
+</listitem><listitem><para>Resultado: <programlisting filename=".plaintext"><codeline><highlight class="normal">c_re<sp/>=<sp/>-2.0<sp/>+<sp/>100<sp/>*<sp/>0.005<sp/>=<sp/>-1.5</highlight></codeline>
+</programlisting></para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md76">
+<title>3. render_julia</title>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md77">
+<title>Definición</title>
+<para><programlisting filename=".c"><codeline><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" kindref="member">render_julia</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>vars;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" kindref="member">calculate_scales_and_limits</ref>(&amp;vars,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(y<sp/>&lt;<sp/><ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars.<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>=<sp/>vars.<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+<sp/>y<sp/>*<sp/>vars.<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" kindref="member">SCALE_Y</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" kindref="member">render_julia_row</ref>(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting></para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md78">
+<title>¿Qué hace esta función?</title>
+<para>La función <computeroutput>render_julia</computeroutput> renderiza el fractal completo del conjunto de Julia. Procesa fila por fila y delega el cálculo de cada fila a la función <computeroutput>render_julia_row</computeroutput>.</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md79">
+<title>Parámetros</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>t_data *data</computeroutput>: Puntero a la estructura que contiene los datos del fractal, como el nivel de zoom, el desplazamiento, y la constante del conjunto de Julia.</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md81">
+<title>Detalles del funcionamiento</title>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md82">
+<title>1. Configuración inicial</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal"><ref refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" kindref="member">calculate_scales_and_limits</ref>(&amp;vars,<sp/>data);</highlight></codeline>
+</programlisting><itemizedlist>
+<listitem><para>Calcula las escalas y los límites del plano complejo que se usarán para renderizar el fractal.</para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md83">
+<title>2. Iteración sobre cada fila</title>
+<para><programlisting filename=".c"><codeline><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(y<sp/>&lt;<sp/><ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref>)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars.<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>=<sp/>vars.<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+<sp/>y<sp/>*<sp/>vars.<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" kindref="member">SCALE_Y</ref>];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" kindref="member">render_julia_row</ref>(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting><itemizedlist>
+<listitem><para>Recorre cada fila (<computeroutput>y</computeroutput>) de la imagen.</para>
+</listitem><listitem><para>Para cada fila:<orderedlist>
+<listitem><para>Calcula la coordenada imaginaria inicial (<computeroutput>c_im</computeroutput>) de la fila. <programlisting filename=".plaintext"><codeline><highlight class="normal">c_im<sp/>=<sp/>start[COMPLEX_IM]<sp/>+<sp/>y<sp/>*<sp/>scale[SCALE_Y]</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Llama a <computeroutput>render_julia_row</computeroutput> para renderizar todos los píxeles de la fila.</para>
+</listitem></orderedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md85">
+<title>Ejemplo Práctico</title>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md86">
+<title>Supongamos:</title>
+<para><itemizedlist>
+<listitem><para>Altura de la ventana: <computeroutput>HEIGHT = 800</computeroutput></para>
+</listitem><listitem><para>Inicio del plano complejo: <computeroutput>start[COMPLEX_IM] = -2.0</computeroutput></para>
+</listitem><listitem><para>Escala: <computeroutput>scale[SCALE_Y] = 0.005</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</sect3>
+<sect3 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md87">
+<title>Resultado para la fila &lt;tt&gt;y = 100&lt;/tt&gt;:</title>
+<para><orderedlist>
+<listitem><para>Coordenada imaginaria inicial: <programlisting filename=".plaintext"><codeline><highlight class="normal">c_im<sp/>=<sp/>-2.0<sp/>+<sp/>100<sp/>*<sp/>0.005<sp/>=<sp/>-1.5</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>La fila completa se renderiza llamando a <computeroutput>render_julia_row</computeroutput>.</para>
+</listitem></orderedlist>
+</para>
+<para><hruler/>
+</para>
+</sect3>
+</sect2>
+<sect2 id="md__2home_2dev_2frfr_2julia__calcs_1autotoc_md89">
+<title>Importancia del Proceso Completo</title>
+<para><orderedlist>
+<listitem><para><bold>Estructura Modular:</bold><itemizedlist>
+<listitem><para>Separar la renderización en filas facilita la comprensión y el mantenimiento del código.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Reutilización de Cálculos:</bold><itemizedlist>
+<listitem><para>Los cálculos iniciales de escala y límites optimizan el proceso de renderizado.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Flexibilidad:</bold><itemizedlist>
+<listitem><para>La separación por filas permite implementar técnicas como renderizado paralelo para mejorar el rendimiento.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Conexión entre Coordenadas:</bold><itemizedlist>
+<listitem><para>Traduce las coordenadas del plano complejo a píxeles en la ventana gráfica de manera precisa. </para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="/home/dev/frfr/julia_calcs.md"/>
+  </compounddef>
+</doxygen>

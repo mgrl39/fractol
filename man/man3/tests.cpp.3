@@ -1,0 +1,188 @@
+.TH "MLX42/tests/tests.cpp" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/tests/tests.cpp
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'WindowFixture\&.hpp'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTEST_F\fP (\fBWindow\fP, \fBBasic\fP)"
+.br
+.ti -1c
+.RI "\fBTEST\fP (\fBMWindow\fP, \fBSettings\fP)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBWindow\fP, \fBSingleImage\fP)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBWindow\fP, \fBMultipleImages\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBft_draw\fP (\fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBTEST_F\fP (\fBWindow\fP, \fBstringTortureTest\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvoid\fP ft_draw (\fBvoid\fP * param)\fC [static]\fP"
+
+.PP
+Definition at line \fB89\fP of file \fBtests\&.cpp\fP\&..PP
+.nf
+90 {
+91     static char buf[256];
+92     static int32_t count = 0;
+93     static mlx_image_t* img = nullptr;
+94     mlx_t* mlx = (mlx_t*)param;
+95 
+96     if (img == nullptr) 
+97     {
+98         mlx_delete_image(mlx, img);
+99         ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+100     }
+101 
+102     // Cheap itoa lol
+103     memset(buf, '\\0', sizeof(buf));
+104     snprintf(buf, sizeof(buf), "%d", count);
+105     
+106     img = mlx_put_string(mlx, buf, 0, 0);
+107     ASSERT_NE(img, nullptr);
+108     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+109 
+110     if (count >= 420)
+111     {
+112         mlx_close_window(mlx);
+113         ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+114     }
+115     count++;
+116 }
+.fi
+
+.SS "TEST (\fBMWindow\fP, \fBSettings\fP)"
+
+.PP
+Definition at line \fB25\fP of file \fBtests\&.cpp\fP\&..PP
+.nf
+26 {
+27     mlx_errno = MLX_SUCCESS;
+28     mlx_set_setting(MLX_STRETCH_IMAGE, true);
+29     mlx_set_setting(MLX_MAXIMIZED, true);
+30     mlx_set_setting(MLX_DECORATED, true);
+31     mlx_set_setting(MLX_FULLSCREEN, true);
+32     
+33     mlx_set_setting(MLX_HEADLESS, true);
+34     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+35     mlx_t *mlx = mlx_init(400, 400, "MLX42", false);
+36     ASSERT_NE(mlx, nullptr);
+37     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+38 
+39     mlx_terminate(mlx);
+40     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+41 
+42     // Set all settings to default
+43     mlx_set_setting(MLX_STRETCH_IMAGE, false);
+44     mlx_set_setting(MLX_FULLSCREEN, false);
+45     mlx_set_setting(MLX_MAXIMIZED, false);
+46     mlx_set_setting(MLX_DECORATED, true);
+47 }
+.fi
+
+.SS "TEST_F (\fBWindow\fP, \fBBasic\fP)"
+
+.PP
+Definition at line \fB18\fP of file \fBtests\&.cpp\fP\&..PP
+.nf
+19 {
+20     // Basic window is already tested in the fixture
+21 }
+.fi
+
+.SS "TEST_F (\fBWindow\fP, \fBMultipleImages\fP)"
+
+.PP
+Definition at line \fB63\fP of file \fBtests\&.cpp\fP\&..PP
+.nf
+64 {
+65     mlx_image_t* img1 = mlx_new_image(mlx, Window::width / 2, Window::height / 2);
+66     ASSERT_NE(img1, nullptr);
+67     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+68 
+69     mlx_image_t* img2 = mlx_new_image(mlx, Window::width, Window::height);
+70     ASSERT_NE(img2, nullptr);
+71     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+72     
+73     int32_t val1 = mlx_image_to_window(mlx, img1, Window::width / 4, Window::height / 4);
+74     EXPECT_GE(val1, 0);
+75     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+76 
+77     int32_t val2 = mlx_image_to_window(mlx, img2, 0, 0);
+78     EXPECT_GE(val2, 0);
+79     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+80 
+81     mlx_delete_image(mlx, img1);
+82     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+83 
+84     mlx_delete_image(mlx, img2);
+85     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+86 }
+.fi
+
+.SS "TEST_F (\fBWindow\fP, \fBSingleImage\fP)"
+
+.PP
+Definition at line \fB49\fP of file \fBtests\&.cpp\fP\&..PP
+.nf
+50 {
+51     mlx_image_t* img = mlx_new_image(mlx, Window::width / 2, Window::height / 2);
+52     ASSERT_NE(img, nullptr);
+53     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+54     
+55     int32_t val = mlx_image_to_window(mlx, img, Window::width / 4 , Window::height / 4);
+56     EXPECT_GE(val, 0);
+57     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+58 
+59     mlx_delete_image(mlx, img);
+60     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+61 }
+.fi
+
+.SS "TEST_F (\fBWindow\fP, \fBstringTortureTest\fP)"
+
+.PP
+Definition at line \fB118\fP of file \fBtests\&.cpp\fP\&..PP
+.nf
+119 {
+120     mlx_image_t *img = mlx_new_image(mlx, Window::width / 2, Window::height / 2);
+121     ASSERT_NE(img, nullptr);
+122     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+123 
+124     memset(img\->pixels, 255, sizeof(int32_t) * img\->width * img\->height);
+125 
+126     int32_t val_window = mlx_image_to_window(mlx, img, Window::width / 4 , Window::height / 4);
+127     EXPECT_GE(val_window, 0);
+128     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+129 
+130     bool val_hook = mlx_loop_hook(mlx, ft_draw, mlx);
+131     EXPECT_EQ(val_hook, true);
+132     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+133     
+134     mlx_loop(mlx);
+135     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+136 
+137     mlx_delete_image(mlx, img);
+138     ASSERT_EQ(mlx_errno, MLX_SUCCESS);
+139 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

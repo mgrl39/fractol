@@ -1,0 +1,244 @@
+.TH "MLX42/src/mlx_mouse.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_mouse.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_scroll_cb\fP (\fBGLFWwindow\fP *window, \fBdouble\fP \fBxoffset\fP, \fBdouble\fP \fByoffset\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_mouse_cb\fP (\fBGLFWwindow\fP *window, \fBint32_t\fP \fBbutton\fP, \fBint32_t\fP \fBaction\fP, \fBint32_t\fP \fBmods\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_cursor_cb\fP (\fBGLFWwindow\fP *window, \fBdouble\fP \fBxpos\fP, \fBdouble\fP \fBypos\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_scroll_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_scrollfunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_mouse_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_mousefunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_cursor_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_cursorfunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_is_mouse_down\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmouse_key_t\fP key)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_mouse_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBx\fP, \fBint32_t\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_get_mouse_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP *\fBx\fP, \fBint32_t\fP *\fBy\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBvoid\fP mlx_cursor_cb (\fBGLFWwindow\fP * window, \fBdouble\fP xpos, \fBdouble\fP ypos)\fC [static]\fP"
+
+.PP
+Definition at line \fB33\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+34 {
+35     const mlx_t* mlx = glfwGetWindowUserPointer(window);
+36     const mlx_cursor_t cursor_hook = ((mlx_ctx_t*)mlx\->context)\->cursor_hook;
+37 
+38     cursor_hook\&.func(xpos, ypos, cursor_hook\&.param);
+39 }
+.fi
+
+.SS "\fBvoid\fP mlx_cursor_hook (\fBmlx_t\fP * mlx, \fBmlx_cursorfunc\fP func, \fBvoid\fP * param)"
+This function sets the cursor callback, which is called when the mouse position changes\&. Position is relative to the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The cursor callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB65\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+66 {
+67     MLX_NONNULL(mlx);
+68     MLX_NONNULL(func);
+69 
+70     mlx_ctx_t* const mlxctx = mlx\->context;
+71     mlxctx\->cursor_hook\&.func = func;
+72     mlxctx\->cursor_hook\&.param = param;
+73     glfwSetCursorPosCallback(mlx\->window, mlx_cursor_cb);
+74 }
+.fi
+
+.SS "\fBvoid\fP mlx_get_mouse_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP * x, \fBint32_t\fP * y)"
+Returns the current, relative, mouse cursor position on the window, starting from the top left corner\&.
+.PP
+Negative values or values greater than window width or height indicate that it is outside the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIx\fP The position\&. 
+.br
+\fIy\fP The position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB90\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+91 {
+92     MLX_NONNULL(mlx);
+93     MLX_NONNULL(x);
+94     MLX_NONNULL(y);
+95 
+96     double xd, yd;
+97     glfwGetCursorPos(mlx\->window, &xd, &yd);
+98     *x = (int32_t)xd;
+99     *y = (int32_t)yd;
+100 }
+.fi
+
+.SS "\fBbool\fP mlx_is_mouse_down (\fBmlx_t\fP * mlx, \fBmouse_key_t\fP key)"
+Checks whether a mouse button is pressed or not\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIkey\fP A specific mouse key\&. e\&.g MLX_MOUSE_BUTTON_0 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True or false if the mouse key is down or not\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB76\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+77 {
+78     MLX_NONNULL(mlx);
+79 
+80     return (glfwGetMouseButton(mlx\->window, key) == GLFW_PRESS);
+81 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_mouse_cb (\fBGLFWwindow\fP * window, \fBint32_t\fP button, \fBint32_t\fP action, \fBint32_t\fP mods)\fC [static]\fP"
+
+.PP
+Definition at line \fB25\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+26 {
+27     const mlx_t* mlx = glfwGetWindowUserPointer(window);
+28     const mlx_mouse_t mouse_hook = ((mlx_ctx_t*)mlx\->context)\->mouse_hook;
+29 
+30     mouse_hook\&.func(button, action, mods, mouse_hook\&.param);
+31 }
+.fi
+
+.SS "\fBvoid\fP mlx_mouse_hook (\fBmlx_t\fP * mlx, \fBmlx_mousefunc\fP func, \fBvoid\fP * param)"
+This function sets the mouse callback, which is called when a mouse does any sort of action such as pressing a key\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The mouse callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+55 {
+56     MLX_NONNULL(mlx);
+57     MLX_NONNULL(func);
+58 
+59     mlx_ctx_t* const mlxctx = mlx\->context;
+60     mlxctx\->mouse_hook\&.func = func;
+61     mlxctx\->mouse_hook\&.param = param;
+62     glfwSetMouseButtonCallback(mlx\->window, mlx_mouse_cb);
+63 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_scroll_cb (\fBGLFWwindow\fP * window, \fBdouble\fP xoffset, \fBdouble\fP yoffset)\fC [static]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+18 {
+19     const mlx_t* mlx = glfwGetWindowUserPointer(window);
+20     const mlx_scroll_t scroll_hook = ((mlx_ctx_t*)mlx\->context)\->scroll_hook;
+21 
+22     scroll_hook\&.func(xoffset, yoffset, scroll_hook\&.param);
+23 }
+.fi
+
+.SS "\fBvoid\fP mlx_scroll_hook (\fBmlx_t\fP * mlx, \fBmlx_scrollfunc\fP func, \fBvoid\fP * param)"
+This function sets the scroll callback, which is called when a scrolling device is used, such as a mouse wheel\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The scroll wheel callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+44 {
+45     MLX_NONNULL(mlx);
+46     MLX_NONNULL(func);
+47 
+48     mlx_ctx_t* const mlxctx = mlx\->context;
+49     mlxctx\->scroll_hook\&.func = func;
+50     mlxctx\->scroll_hook\&.param = param;
+51     glfwSetScrollCallback(mlx\->window, mlx_scroll_cb);
+52 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_mouse_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP x, \fBint32_t\fP y)"
+Sets the mouse position\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIpos\fP The position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB83\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+84 {
+85     MLX_NONNULL(mlx);
+86 
+87     glfwSetCursorPos(mlx\->window, (double)x, (double)y);
+88 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

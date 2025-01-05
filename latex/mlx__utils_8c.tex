@@ -1,0 +1,277 @@
+\doxysection{MLX42/src/utils/mlx\+\_\+utils.c File Reference}
+\hypertarget{mlx__utils_8c}{}\label{mlx__utils_8c}\index{MLX42/src/utils/mlx\_utils.c@{MLX42/src/utils/mlx\_utils.c}}
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+utils.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__utils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__utils_8c_afeec80312b6f8a8755b798ed12721cd8}{mlx\+\_\+getline}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out\+\_\+size}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{FILE}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{file}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint64\+\_\+t}} \mbox{\hyperlink{mlx__utils_8c_ab31a068c9000789a7999bfc1ea34709b}{mlx\+\_\+fnv\+\_\+hash}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__utils_8c_a93b4ce5ceae0d22c22c6c9125c052616}{mlx\+\_\+freen}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}},...)
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} \mbox{\hyperlink{mlx__utils_8c_ad58d85c71babb51bf426e72a9b87efa0}{mlx\+\_\+rgba\+\_\+to\+\_\+mono}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} \mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}} \mbox{\hyperlink{mlx__utils_8c_adbaabb0ba6fb3adf119e026bb4a386bf}{mlx\+\_\+get\+\_\+time}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__utils_8c_a2cbce835d52e89e37e4bb410ceea776d}{mlx\+\_\+focus}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__utils_8c_ab31a068c9000789a7999bfc1ea34709b}\label{mlx__utils_8c_ab31a068c9000789a7999bfc1ea34709b} 
+\index{mlx\_utils.c@{mlx\_utils.c}!mlx\_fnv\_hash@{mlx\_fnv\_hash}}
+\index{mlx\_fnv\_hash@{mlx\_fnv\_hash}!mlx\_utils.c@{mlx\_utils.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_fnv\_hash()}{mlx\_fnv\_hash()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint64\+\_\+t}} mlx\+\_\+fnv\+\_\+hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{str,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}}}]{len }\end{DoxyParamCaption})}
+
+String hashing algorithm using FNV-\/1a. Source\+: \href{https://bit.ly/3JcRGHa}{\texttt{ https\+://bit.\+ly/3\+Jc\+RGHa}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to hash \\
+\hline
+{\em len} & The length of the string. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The hashed output. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__utils_8c_source_l00068}{68}} of file \mbox{\hyperlink{mlx__utils_8c_source}{mlx\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint64\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fnv\_prime}}\ =\ 0x100000001b3;}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint64\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fnv\_offset}}\ =\ 0xcbf29ce484222325;}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint64\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{hash}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fnv\_offset}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}};\ i++)}
+\DoxyCodeLine{00075\ \ \ \ \ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{hash}}\ \string^=\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}}[i];}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{hash}}\ *=\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fnv\_prime}};}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{hash}});}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__utils_8c_ab31a068c9000789a7999bfc1ea34709b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__utils_8c_a2cbce835d52e89e37e4bb410ceea776d}\label{mlx__utils_8c_a2cbce835d52e89e37e4bb410ceea776d} 
+\index{mlx\_utils.c@{mlx\_utils.c}!mlx\_focus@{mlx\_focus}}
+\index{mlx\_focus@{mlx\_focus}!mlx\_utils.c@{mlx\_utils.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_focus()}{mlx\_focus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+focus (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx }\end{DoxyParamCaption})}
+
+This function brings the specified window to front and sets input focus.
+
+Do not use this function to steal focus from other applications unless you are certain that is what the user wants. Focus stealing can be extremely disruptive.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__utils_8c_source_l00126}{126}} of file \mbox{\hyperlink{mlx__utils_8c_source}{mlx\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwFocusWindow}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}});}
+\DoxyCodeLine{00131\ \}}
+
+\end{DoxyCode}
+\Hypertarget{mlx__utils_8c_a93b4ce5ceae0d22c22c6c9125c052616}\label{mlx__utils_8c_a93b4ce5ceae0d22c22c6c9125c052616} 
+\index{mlx\_utils.c@{mlx\_utils.c}!mlx\_freen@{mlx\_freen}}
+\index{mlx\_freen@{mlx\_freen}!mlx\_utils.c@{mlx\_utils.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_freen()}{mlx\_freen()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+freen (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{count,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Utility function that lets you free x amount of pointers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & The amount of args provided. \\
+\hline
+{\em ...} & Any form of pointer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False, this is simply for convenience when necessary. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__utils_8c_source_l00089}{89}} of file \mbox{\hyperlink{mlx__utils_8c_source}{mlx\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{va\_list}}\ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{args}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{va\_start}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{args}},\ \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}});}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}};\ i++)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{free}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{va\_arg}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{args}},\ \textcolor{keywordtype}{void}*));}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{va\_end}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{args}});}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00098\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__utils_8c_a93b4ce5ceae0d22c22c6c9125c052616_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__utils_8c_adbaabb0ba6fb3adf119e026bb4a386bf}\label{mlx__utils_8c_adbaabb0ba6fb3adf119e026bb4a386bf} 
+\index{mlx\_utils.c@{mlx\_utils.c}!mlx\_get\_time@{mlx\_get\_time}}
+\index{mlx\_get\_time@{mlx\_get\_time}!mlx\_utils.c@{mlx\_utils.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_get\_time()}{mlx\_get\_time()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}} mlx\+\_\+get\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Gets the elapsed time since MLX was initialized.
+
+\begin{DoxyReturn}{Returns}
+The amount of time elapsed in seconds. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__utils_8c_source_l00121}{121}} of file \mbox{\hyperlink{mlx__utils_8c_source}{mlx\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00122\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetTime}}());}
+\DoxyCodeLine{00124\ \}}
+
+\end{DoxyCode}
+\Hypertarget{mlx__utils_8c_afeec80312b6f8a8755b798ed12721cd8}\label{mlx__utils_8c_afeec80312b6f8a8755b798ed12721cd8} 
+\index{mlx\_utils.c@{mlx\_utils.c}!mlx\_getline@{mlx\_getline}}
+\index{mlx\_getline@{mlx\_getline}!mlx\_utils.c@{mlx\_utils.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_getline()}{mlx\_getline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+getline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{out,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{size\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{out\+\_\+size,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{FILE}} \texorpdfstring{$\ast$}{*}}]{file }\end{DoxyParamCaption})}
+
+Function to read a file stream line by line, reusing the same output pointer. Since the same output pointer is reused it should only be freed once, either on success or failure. This function is made to be somewhat similar to getline. Getline can\textquotesingle{}t be used directly since it\textquotesingle{}s not standard and therefore not available on all platforms.
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & Pointer to store output string. \\
+\hline
+{\em out\+\_\+size} & Pointer to store output strings length. \\
+\hline
+{\em file} & File stream to read from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if line was read, false if EOF was reached or an error occurred. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__utils_8c_source_l00028}{28}} of file \mbox{\hyperlink{mlx__utils_8c_source}{mlx\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}});}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out\_size}});}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{file}});}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{temp}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}}[\mbox{\hyperlink{MLX42__Int_8h_a6d56ab6e0a51019c64a776aa5ccf0350}{GETLINE\_BUFF}}\ +\ 1];\ \textcolor{comment}{//\ Add\ space\ for\ '\(\backslash\)0'}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{if}\ (*\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}})\ *\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}[0]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fgets}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}}),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{file}}))}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}\ +=\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strlen}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}});}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{temp}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{realloc}}(*\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}},\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})\ *\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}\ +\ 1)))}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (*\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}\ ==\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}})}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{memset}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{temp}},\ \textcolor{charliteral}{'\(\backslash\)0'},\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}});}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{temp}}[\mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}}]\ =\ \textcolor{charliteral}{'\(\backslash\)0'};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{temp}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out\_size}}\ =\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strncat}}(*\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{out}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}},\ \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strrchr}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}},\ \textcolor{charliteral}{'\(\backslash\)n'}))}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{true});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{memset}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}},\ \textcolor{charliteral}{'\(\backslash\)0'},\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{BUFF}}));}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}});}
+\DoxyCodeLine{00058\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__utils_8c_afeec80312b6f8a8755b798ed12721cd8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__utils_8c_ad58d85c71babb51bf426e72a9b87efa0}\label{mlx__utils_8c_ad58d85c71babb51bf426e72a9b87efa0} 
+\index{mlx\_utils.c@{mlx\_utils.c}!mlx\_rgba\_to\_mono@{mlx\_rgba\_to\_mono}}
+\index{mlx\_rgba\_to\_mono@{mlx\_rgba\_to\_mono}!mlx\_utils.c@{mlx\_utils.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_rgba\_to\_mono()}{mlx\_rgba\_to\_mono()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}} mlx\+\_\+rgba\+\_\+to\+\_\+mono (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\+\_\+t}}}]{color }\end{DoxyParamCaption})}
+
+Converts an RGBA value to a monochrome/grayscale value. It does so using specific weights for each channel.
+
+\begin{DoxySeeAlso}{See also}
+\href{https://goodcalculators.com/rgb-to-grayscale-conversion-calculator/}{\texttt{ https\+://goodcalculators.\+com/rgb-\/to-\/grayscale-\/conversion-\/calculator/}}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The input RGBA value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rgba value converted to a grayscale color. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__utils_8c_source_l00109}{109}} of file \mbox{\hyperlink{mlx__utils_8c_source}{mlx\+\_\+utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}\ \mbox{\hyperlink{glad_8h_abe08814c2f72843fde4d8df41440d5a0}{r}}\ =\ 0.299f\ *\ ((\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ >>\ 24)\ \&\ 0xFF);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}\ \mbox{\hyperlink{glad_8h_a9cd653b1648845554169fbc3a3f6d37a}{g}}\ =\ 0.587f\ *\ ((\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ >>\ 16)\ \&\ 0xFF);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}\ \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}\ =\ 0.114f\ *\ ((\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ >>\ 8)\ \&\ 0xFF);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ =\ \mbox{\hyperlink{glad_8h_abe08814c2f72843fde4d8df41440d5a0}{r}}\ +\ \mbox{\hyperlink{glad_8h_a9cd653b1648845554169fbc3a3f6d37a}{g}}\ +\ \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <<\ 24\ |\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <<\ 16\ |\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <<\ 8\ |\ (\mbox{\hyperlink{glad_8h_a69995a929d818b8b467d4593c24d98bc}{color}}\ \&\ 0xFF));}
+\DoxyCodeLine{00117\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__utils_8c_ad58d85c71babb51bf426e72a9b87efa0_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,343 @@
+.TH "md_julia__calcs" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_julia__calcs \- Calculos de Julia 
+.PP
+ Este archivo documenta las funciones responsables de realizar los cálculos necesarios para la generación y renderización de fractales\&. Estas funciones gestionan aspectos como las escalas, los límites y el mapeo de píxeles a coordenadas del plano complejo\&.
+.PP
+.PP
+.SH "1\&. julia_iterations"
+.PP
+.SS "Definición"
+.PP
+.nf
+static void julia_iterations(t_render_vars *vars, t_data *data)
+{
+    double temp_z_re;
+
+    vars\->iterations = 0;
+    while (vars\->z_squared[COMPLEX_RE] + vars\->z_squared[COMPLEX_IM] <= 4\&.0 &&
+           vars\->iterations < MAX_ITERATIONS)
+    {
+        temp_z_re = vars\->z_squared[COMPLEX_RE];
+        temp_z_re \-= vars\->z_squared[COMPLEX_IM];
+        temp_z_re += data\->c[COMPLEX_RE];
+        vars\->z[COMPLEX_IM] = 2\&.0 * vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_IM] + data\->c[COMPLEX_IM];
+        vars\->z[COMPLEX_RE] = temp_z_re;
+        vars\->z_squared[COMPLEX_RE] = vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_RE];
+        vars\->z_squared[COMPLEX_IM] = vars\->z[COMPLEX_IM] * vars\->z[COMPLEX_IM];
+        vars\->iterations++;
+    }
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+Esta función realiza las iteraciones necesarias para determinar si un punto del plano complejo pertenece al conjunto de Julia\&. Calcula repetidamente la fórmula iterativa de Julia:
+.PP
+.PP
+.nf
+z_n+1 = (z_n * z_n) + c
+.fi
+.PP
+.SS "Parámetros:"
+.IP "\(bu" 2
+\fCvars\fP: Contiene las variables de renderizado, como las coordenadas del punto y el número de iteraciones\&.
+.IP "\(bu" 2
+\fCdata\fP: Contiene información del fractal, incluyendo la constante \fCc\fP utilizada para el cálculo\&.
+.PP
+.PP
+.PP
+.SS "Detalles del Funcionamiento"
+.SS "1\&. Condición de escape"
+.PP
+.nf
+vars\->z_squared[COMPLEX_RE] + vars\->z_squared[COMPLEX_IM] <= 4\&.0
+.fi
+.PP
+.PP
+.IP "\(bu" 2
+El fractal considera que un punto 'escapa' si la suma de los cuadrados de sus partes real e imaginaria es mayor que \fC4\fP\&.
+.PP
+.PP
+Ejemplo: Si \fCz = 1 + 1i\fP, entonces: 
+.PP
+.nf
+|z|^2 = (1 * 1) + (1 * 1) = 2
+
+.fi
+.PP
+.PP
+.PP
+.SS "2\&. Actualización del valor de <tt>z</tt>"
+.PP
+.nf
+temp_z_re = vars\->z_squared[COMPLEX_RE] \- vars\->z_squared[COMPLEX_IM] + data\->c[COMPLEX_RE];
+vars\->z[COMPLEX_IM] = 2\&.0 * vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_IM] + data\->c[COMPLEX_IM];
+vars\->z[COMPLEX_RE] = temp_z_re;
+.fi
+.PP
+.PP
+La fórmula completa en código sería: 
+.PP
+.nf
+z_real = (z_real^2) \- (z_imag^2) + c_real
+z_imag = 2 * z_real * z_imag + c_imag
+
+.fi
+.PP
+.PP
+.PP
+.SS "Ejemplo de Iteraciones"
+Supongamos:
+.IP "\(bu" 2
+\fCz = 0 + 0i\fP
+.IP "\(bu" 2
+\fCc = 0\&.285 - 0\&.01i\fP
+.IP "\(bu" 2
+Máximo de iteraciones: 10
+.PP
+.PP
+\fBIteraciones:\fP
+.IP "1." 4
+\fCz_1 = (0 * 0 - 0 * 0 + 0\&.285) + (2 * 0 * 0 - 0\&.01)i = 0\&.285 - 0\&.01i\fP
+.IP "2." 4
+Repetir con \fCz_1\fP\&.
+.PP
+.SH "2\&. render_julia_row"
+.PP
+.SS "Definición"
+.PP
+.nf
+static void render_julia_row(t_render_vars *vars, t_data *data, int y)
+{
+    int x;
+
+    x = 0;
+    while (x < WIDTH)
+    {
+        vars\->c_re[0] = vars\->start[COMPLEX_RE] + x * vars\->scale[SCALE_X];
+        vars\->z[COMPLEX_RE] = vars\->c_re[0];
+        vars\->z[COMPLEX_IM] = vars\->c_im;
+        vars\->z_squared[COMPLEX_RE] = vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_RE];
+        vars\->z_squared[COMPLEX_IM] = vars\->z[COMPLEX_IM] * vars\->z[COMPLEX_IM];
+        julia_iterations(vars, data);
+        vars\->row = vars\->pixels + y * WIDTH + x;
+        *vars\->row = calculate_color(vars\->iterations);
+        x++;
+    }
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+La función \fCrender_julia_row\fP renderiza una fila completa del fractal de Julia\&. Realiza las siguientes acciones para cada píxel en la fila:
+.PP
+.IP "1." 4
+Calcula el número complejo inicial \fCz\fP para el píxel actual en función de las coordenadas del píxel y la escala\&.
+.IP "2." 4
+Ejecuta el algoritmo de iteraciones de Julia para determinar el número de iteraciones necesarias para que el punto escape\&.
+.IP "3." 4
+Usa el número de iteraciones para determinar el color del píxel mediante la función \fCcalculate_color\fP\&.
+.IP "4." 4
+Guarda el color calculado en el buffer de píxeles\&.
+.PP
+.SS "Parámetros"
+.IP "\(bu" 2
+\fCt_render_vars *vars\fP: Puntero a la estructura que contiene variables utilizadas en el proceso de renderizado, como las escalas, las coordenadas iniciales, y el buffer de píxeles\&.
+.IP "\(bu" 2
+\fCt_data *data\fP: Puntero a la estructura que contiene los datos del fractal, como la constante del conjunto de Julia y el nivel de zoom\&.
+.IP "\(bu" 2
+\fCint y\fP: Índice de la fila (coordenada \fCy\fP) que se está renderizando\&.
+.PP
+.PP
+.PP
+.SS "Detalles del funcionamiento"
+.SS "1\&. Cálculo de la coordenada real inicial del píxel"
+.PP
+.nf
+vars\->c_re[0] = vars\->start[COMPLEX_RE] + x * vars\->scale[SCALE_X];
+.fi
+.PP
+.IP "\(bu" 2
+Convierte la posición del píxel en la pantalla (\fCx\fP) a una coordenada real en el plano complejo\&.
+.IP "\(bu" 2
+La fórmula es: 
+.PP
+.nf
+c_re = start[COMPLEX_RE] + x * scale[SCALE_X]
+
+.fi
+.PP
+
+.PP
+.SS "2\&. Inicialización del número complejo <tt>z</tt>"
+.PP
+.nf
+vars\->z[COMPLEX_RE] = vars\->c_re[0];
+vars\->z[COMPLEX_IM] = vars\->c_im;
+.fi
+.PP
+.IP "\(bu" 2
+Asigna la parte real de \fCz\fP al valor calculado en el paso anterior\&.
+.IP "\(bu" 2
+Asigna la parte imaginaria de \fCz\fP a \fCvars->c_im\fP, que corresponde a la fila actual\&.
+.PP
+.SS "3\&. Ejecución del algoritmo de iteraciones de Julia"
+.PP
+.nf
+julia_iterations(vars, data);
+.fi
+.PP
+.IP "\(bu" 2
+Llama a la función \fCjulia_iterations\fP para determinar cuántas iteraciones son necesarias para que el punto escape\&.
+.PP
+.SS "4\&. Cálculo del color del píxel"
+.PP
+.nf
+*vars\->row = calculate_color(vars\->iterations);
+.fi
+.PP
+.IP "\(bu" 2
+Usa el número de iteraciones calculado para asignar un color al píxel\&.
+.IP "\(bu" 2
+El resultado se almacena en el buffer de píxeles (\fCvars->pixels\fP)\&.
+.PP
+.PP
+.PP
+.SS "Ejemplo Práctico"
+.SS "Supongamos:"
+.IP "\(bu" 2
+Coordenada del píxel: \fC(x, y) = (100, 50)\fP
+.IP "\(bu" 2
+Inicio del plano complejo: \fCstart[COMPLEX_RE] = -2\&.0\fP
+.IP "\(bu" 2
+Escala: \fCscale[SCALE_X] = 0\&.005\fP
+.IP "\(bu" 2
+Resultado: 
+.PP
+.nf
+c_re = \-2\&.0 + 100 * 0\&.005 = \-1\&.5
+
+.fi
+.PP
+
+.PP
+.SH "3\&. render_julia"
+.PP
+.SS "Definición"
+.PP
+.nf
+void render_julia(t_data *data)
+{
+    t_render_vars vars;
+    int y;
+
+    calculate_scales_and_limits(&vars, data);
+    y = 0;
+    while (y < HEIGHT)
+    {
+        vars\&.c_im = vars\&.start[COMPLEX_IM] + y * vars\&.scale[SCALE_Y];
+        render_julia_row(&vars, data, y++);
+    }
+}
+.fi
+.PP
+.SS "¿Qué hace esta función?"
+La función \fCrender_julia\fP renderiza el fractal completo del conjunto de Julia\&. Procesa fila por fila y delega el cálculo de cada fila a la función \fCrender_julia_row\fP\&.
+.SS "Parámetros"
+.IP "\(bu" 2
+\fCt_data *data\fP: Puntero a la estructura que contiene los datos del fractal, como el nivel de zoom, el desplazamiento, y la constante del conjunto de Julia\&.
+.PP
+.PP
+.PP
+.SS "Detalles del funcionamiento"
+.SS "1\&. Configuración inicial"
+.PP
+.nf
+calculate_scales_and_limits(&vars, data);
+.fi
+.PP
+.IP "\(bu" 2
+Calcula las escalas y los límites del plano complejo que se usarán para renderizar el fractal\&.
+.PP
+.SS "2\&. Iteración sobre cada fila"
+.PP
+.nf
+while (y < HEIGHT)
+{
+    vars\&.c_im = vars\&.start[COMPLEX_IM] + y * vars\&.scale[SCALE_Y];
+    render_julia_row(&vars, data, y++);
+}
+.fi
+.PP
+.IP "\(bu" 2
+Recorre cada fila (\fCy\fP) de la imagen\&.
+.IP "\(bu" 2
+Para cada fila:
+.IP "  1." 6
+Calcula la coordenada imaginaria inicial (\fCc_im\fP) de la fila\&. 
+.PP
+.nf
+c_im = start[COMPLEX_IM] + y * scale[SCALE_Y]
+
+.fi
+.PP
+
+.IP "  2." 6
+Llama a \fCrender_julia_row\fP para renderizar todos los píxeles de la fila\&.
+.PP
+
+.PP
+.PP
+.PP
+.SS "Ejemplo Práctico"
+.SS "Supongamos:"
+.IP "\(bu" 2
+Altura de la ventana: \fCHEIGHT = 800\fP
+.IP "\(bu" 2
+Inicio del plano complejo: \fCstart[COMPLEX_IM] = -2\&.0\fP
+.IP "\(bu" 2
+Escala: \fCscale[SCALE_Y] = 0\&.005\fP
+.PP
+.SS "Resultado para la fila <tt>y = 100</tt>:"
+.IP "1." 4
+Coordenada imaginaria inicial: 
+.PP
+.nf
+c_im = \-2\&.0 + 100 * 0\&.005 = \-1\&.5
+
+.fi
+.PP
+
+.IP "2." 4
+La fila completa se renderiza llamando a \fCrender_julia_row\fP\&.
+.PP
+.PP
+.PP
+.SS "Importancia del Proceso Completo"
+.IP "1." 4
+\fBEstructura Modular:\fP
+.IP "  \(bu" 4
+Separar la renderización en filas facilita la comprensión y el mantenimiento del código\&.
+.PP
+
+.IP "2." 4
+\fBReutilización de Cálculos:\fP
+.IP "  \(bu" 4
+Los cálculos iniciales de escala y límites optimizan el proceso de renderizado\&.
+.PP
+
+.IP "3." 4
+\fBFlexibilidad:\fP
+.IP "  \(bu" 4
+La separación por filas permite implementar técnicas como renderizado paralelo para mejorar el rendimiento\&.
+.PP
+
+.IP "4." 4
+\fBConexión entre Coordenadas:\fP
+.IP "  \(bu" 4
+Traduce las coordenadas del plano complejo a píxeles en la ventana gráfica de manera precisa\&. 
+.PP
+
+.PP
+

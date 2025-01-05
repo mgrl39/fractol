@@ -1,0 +1,345 @@
+.TH "LodePNGInfo" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LodePNGInfo
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lodepng\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBunsigned\fP \fBcompression_method\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBfilter_method\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBinterlace_method\fP"
+.br
+.ti -1c
+.RI "\fBLodePNGColorMode\fP \fBcolor\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBbackground_defined\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBbackground_r\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBbackground_g\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBbackground_b\fP"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBtext_num\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP ** \fBtext_keys\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP ** \fBtext_strings\fP"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBitext_num\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP ** \fBitext_keys\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP ** \fBitext_langtags\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP ** \fBitext_transkeys\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP ** \fBitext_strings\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBtime_defined\fP"
+.br
+.ti -1c
+.RI "\fBLodePNGTime\fP \fBtime\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBphys_defined\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBphys_x\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBphys_y\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBphys_unit\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBgama_defined\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBgama_gamma\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_defined\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_white_x\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_white_y\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_red_x\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_red_y\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_green_x\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_green_y\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_blue_x\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchrm_blue_y\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBsrgb_defined\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBsrgb_intent\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBiccp_defined\fP"
+.br
+.ti -1c
+.RI "\fBchar\fP * \fBiccp_name\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP * \fBiccp_profile\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBiccp_profile_size\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBsbit_defined\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBsbit_r\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBsbit_g\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBsbit_b\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBsbit_a\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP * \fBunknown_chunks_data\fP [3]"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBunknown_chunks_size\fP [3]"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB477\fP of file \fBlodepng\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBunsigned\fP LodePNGInfo::background_b"
+
+.PP
+Definition at line \fB513\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::background_defined"
+
+.PP
+Definition at line \fB510\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::background_g"
+
+.PP
+Definition at line \fB512\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::background_r"
+
+.PP
+Definition at line \fB511\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_blue_x"
+
+.PP
+Definition at line \fB585\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_blue_y"
+
+.PP
+Definition at line \fB586\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_defined"
+
+.PP
+Definition at line \fB578\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_green_x"
+
+.PP
+Definition at line \fB583\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_green_y"
+
+.PP
+Definition at line \fB584\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_red_x"
+
+.PP
+Definition at line \fB581\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_red_y"
+
+.PP
+Definition at line \fB582\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_white_x"
+
+.PP
+Definition at line \fB579\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::chrm_white_y"
+
+.PP
+Definition at line \fB580\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBLodePNGColorMode\fP LodePNGInfo::color"
+
+.PP
+Definition at line \fB482\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::compression_method"
+
+.PP
+Definition at line \fB479\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::filter_method"
+
+.PP
+Definition at line \fB480\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::gama_defined"
+
+.PP
+Definition at line \fB574\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::gama_gamma"
+
+.PP
+Definition at line \fB575\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::iccp_defined"
+
+.PP
+Definition at line \fB617\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBchar\fP* LodePNGInfo::iccp_name"
+
+.PP
+Definition at line \fB618\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP \fBchar\fP* LodePNGInfo::iccp_profile"
+
+.PP
+Definition at line \fB624\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::iccp_profile_size"
+
+.PP
+Definition at line \fB625\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::interlace_method"
+
+.PP
+Definition at line \fB481\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBchar\fP** LodePNGInfo::itext_keys"
+
+.PP
+Definition at line \fB548\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBchar\fP** LodePNGInfo::itext_langtags"
+
+.PP
+Definition at line \fB549\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBsize_t\fP LodePNGInfo::itext_num"
+
+.PP
+Definition at line \fB547\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBchar\fP** LodePNGInfo::itext_strings"
+
+.PP
+Definition at line \fB551\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBchar\fP** LodePNGInfo::itext_transkeys"
+
+.PP
+Definition at line \fB550\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::phys_defined"
+
+.PP
+Definition at line \fB558\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::phys_unit"
+
+.PP
+Definition at line \fB561\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::phys_x"
+
+.PP
+Definition at line \fB559\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::phys_y"
+
+.PP
+Definition at line \fB560\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::sbit_a"
+
+.PP
+Definition at line \fB664\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::sbit_b"
+
+.PP
+Definition at line \fB663\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::sbit_defined"
+
+.PP
+Definition at line \fB660\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::sbit_g"
+
+.PP
+Definition at line \fB662\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::sbit_r"
+
+.PP
+Definition at line \fB661\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::srgb_defined"
+
+.PP
+Definition at line \fB593\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::srgb_intent"
+
+.PP
+Definition at line \fB594\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBchar\fP** LodePNGInfo::text_keys"
+
+.PP
+Definition at line \fB536\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBsize_t\fP LodePNGInfo::text_num"
+
+.PP
+Definition at line \fB535\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBchar\fP** LodePNGInfo::text_strings"
+
+.PP
+Definition at line \fB537\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBLodePNGTime\fP LodePNGInfo::time"
+
+.PP
+Definition at line \fB555\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGInfo::time_defined"
+
+.PP
+Definition at line \fB554\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP \fBchar\fP* LodePNGInfo::unknown_chunks_data[3]"
+
+.PP
+Definition at line \fB686\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBsize_t\fP LodePNGInfo::unknown_chunks_size[3]"
+
+.PP
+Definition at line \fB687\fP of file \fBlodepng\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

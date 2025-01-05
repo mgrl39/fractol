@@ -1,0 +1,272 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="julia__calcs_8md" kind="file" language="Markdown">
+    <compoundname>julia_calcs.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Calculos<sp/>de<sp/>Julia</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Este<sp/>archivo<sp/>documenta<sp/>las<sp/>funciones<sp/>responsables<sp/>de<sp/>realizar<sp/>los<sp/>cálculos<sp/>necesarios<sp/>para<sp/>la<sp/>generación<sp/>y<sp/>renderización<sp/>de<sp/>fractales.<sp/>Estas<sp/>funciones<sp/>gestionan<sp/>aspectos<sp/>como<sp/>las<sp/>escalas,<sp/>los<sp/>límites<sp/>y<sp/>el<sp/>mapeo<sp/>de<sp/>píxeles<sp/>a<sp/>coordenadas<sp/>del<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>julia_iterations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>julia_iterations(t_render_vars<sp/>*vars,<sp/>t_data<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>temp_z_re;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;iterations<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(vars-&gt;z_squared[COMPLEX_RE]<sp/>+<sp/>vars-&gt;z_squared[COMPLEX_IM]<sp/>&lt;=<sp/>4.0<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;iterations<sp/>&lt;<sp/>MAX_ITERATIONS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>=<sp/>vars-&gt;z_squared[COMPLEX_RE];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>-=<sp/>vars-&gt;z_squared[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>+=<sp/>data-&gt;c[COMPLEX_RE];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_IM]<sp/>=<sp/>2.0<sp/>*<sp/>vars-&gt;z[COMPLEX_RE]<sp/>*<sp/>vars-&gt;z[COMPLEX_IM]<sp/>+<sp/>data-&gt;c[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_RE]<sp/>=<sp/>temp_z_re;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_RE]<sp/>=<sp/>vars-&gt;z[COMPLEX_RE]<sp/>*<sp/>vars-&gt;z[COMPLEX_RE];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_IM]<sp/>=<sp/>vars-&gt;z[COMPLEX_IM]<sp/>*<sp/>vars-&gt;z[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;iterations++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>realiza<sp/>las<sp/>iteraciones<sp/>necesarias<sp/>para<sp/>determinar<sp/>si<sp/>un<sp/>punto<sp/>del<sp/>plano<sp/>complejo<sp/>pertenece<sp/>al<sp/>conjunto<sp/>de<sp/>Julia.<sp/>Calcula<sp/>repetidamente<sp/>la<sp/>fórmula<sp/>iterativa<sp/>de<sp/>Julia:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```plaintext</highlight></codeline>
+<codeline><highlight class="normal">z_n+1<sp/>=<sp/>(z_n<sp/>*<sp/>z_n)<sp/>+<sp/>c</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Parámetros:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`vars`:<sp/>Contiene<sp/>las<sp/>variables<sp/>de<sp/>renderizado,<sp/>como<sp/>las<sp/>coordenadas<sp/>del<sp/>punto<sp/>y<sp/>el<sp/>número<sp/>de<sp/>iteraciones.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`data`:<sp/>Contiene<sp/>información<sp/>del<sp/>fractal,<sp/>incluyendo<sp/>la<sp/>constante<sp/>`c`<sp/>utilizada<sp/>para<sp/>el<sp/>cálculo.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>Funcionamiento</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Condición<sp/>de<sp/>escape</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;z_squared[COMPLEX_RE]<sp/>+<sp/>vars-&gt;z_squared[COMPLEX_IM]<sp/>&lt;=<sp/>4.0</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>fractal<sp/>considera<sp/>que<sp/>un<sp/>punto<sp/>&quot;escapa&quot;<sp/>si<sp/>la<sp/>suma<sp/>de<sp/>los<sp/>cuadrados<sp/>de<sp/>sus<sp/>partes<sp/>real<sp/>e<sp/>imaginaria<sp/>es<sp/>mayor<sp/>que<sp/>`4`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Ejemplo:<sp/>Si<sp/>`z<sp/>=<sp/>1<sp/>+<sp/>1i`,<sp/>entonces:</highlight></codeline>
+<codeline><highlight class="normal">```plaintext</highlight></codeline>
+<codeline><highlight class="normal">|z|^2<sp/>=<sp/>(1<sp/>*<sp/>1)<sp/>+<sp/>(1<sp/>*<sp/>1)<sp/>=<sp/>2</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Actualización<sp/>del<sp/>valor<sp/>de<sp/>`z`</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">temp_z_re<sp/>=<sp/>vars-&gt;z_squared[COMPLEX_RE]<sp/>-<sp/>vars-&gt;z_squared[COMPLEX_IM]<sp/>+<sp/>data-&gt;c[COMPLEX_RE];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;z[COMPLEX_IM]<sp/>=<sp/>2.0<sp/>*<sp/>vars-&gt;z[COMPLEX_RE]<sp/>*<sp/>vars-&gt;z[COMPLEX_IM]<sp/>+<sp/>data-&gt;c[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;z[COMPLEX_RE]<sp/>=<sp/>temp_z_re;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">La<sp/>fórmula<sp/>completa<sp/>en<sp/>código<sp/>sería:</highlight></codeline>
+<codeline><highlight class="normal">```plaintext</highlight></codeline>
+<codeline><highlight class="normal">z_real<sp/>=<sp/>(z_real^2)<sp/>-<sp/>(z_imag^2)<sp/>+<sp/>c_real</highlight></codeline>
+<codeline><highlight class="normal">z_imag<sp/>=<sp/>2<sp/>*<sp/>z_real<sp/>*<sp/>z_imag<sp/>+<sp/>c_imag</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>de<sp/>Iteraciones</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Supongamos:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`z<sp/>=<sp/>0<sp/>+<sp/>0i`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`c<sp/>=<sp/>0.285<sp/>-<sp/>0.01i`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Máximo<sp/>de<sp/>iteraciones:<sp/>10</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Iteraciones:**</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>`z_1<sp/>=<sp/>(0<sp/>*<sp/>0<sp/>-<sp/>0<sp/>*<sp/>0<sp/>+<sp/>0.285)<sp/>+<sp/>(2<sp/>*<sp/>0<sp/>*<sp/>0<sp/>-<sp/>0.01)i<sp/>=<sp/>0.285<sp/>-<sp/>0.01i`</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Repetir<sp/>con<sp/>`z_1`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>render_julia_row</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>render_julia_row(t_render_vars<sp/>*vars,<sp/>t_data<sp/>*data,<sp/>int<sp/>y)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>x;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(x<sp/>&lt;<sp/>WIDTH)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;c_re[0]<sp/>=<sp/>vars-&gt;start[COMPLEX_RE]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;scale[SCALE_X];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_RE]<sp/>=<sp/>vars-&gt;c_re[0];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_IM]<sp/>=<sp/>vars-&gt;c_im;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_RE]<sp/>=<sp/>vars-&gt;z[COMPLEX_RE]<sp/>*<sp/>vars-&gt;z[COMPLEX_RE];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_IM]<sp/>=<sp/>vars-&gt;z[COMPLEX_IM]<sp/>*<sp/>vars-&gt;z[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>julia_iterations(vars,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;row<sp/>=<sp/>vars-&gt;pixels<sp/>+<sp/>y<sp/>*<sp/>WIDTH<sp/>+<sp/>x;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*vars-&gt;row<sp/>=<sp/>calculate_color(vars-&gt;iterations);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">La<sp/>función<sp/>`render_julia_row`<sp/>renderiza<sp/>una<sp/>fila<sp/>completa<sp/>del<sp/>fractal<sp/>de<sp/>Julia.<sp/>Realiza<sp/>las<sp/>siguientes<sp/>acciones<sp/>para<sp/>cada<sp/>píxel<sp/>en<sp/>la<sp/>fila:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Calcula<sp/>el<sp/>número<sp/>complejo<sp/>inicial<sp/>`z`<sp/>para<sp/>el<sp/>píxel<sp/>actual<sp/>en<sp/>función<sp/>de<sp/>las<sp/>coordenadas<sp/>del<sp/>píxel<sp/>y<sp/>la<sp/>escala.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Ejecuta<sp/>el<sp/>algoritmo<sp/>de<sp/>iteraciones<sp/>de<sp/>Julia<sp/>para<sp/>determinar<sp/>el<sp/>número<sp/>de<sp/>iteraciones<sp/>necesarias<sp/>para<sp/>que<sp/>el<sp/>punto<sp/>escape.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Usa<sp/>el<sp/>número<sp/>de<sp/>iteraciones<sp/>para<sp/>determinar<sp/>el<sp/>color<sp/>del<sp/>píxel<sp/>mediante<sp/>la<sp/>función<sp/>`calculate_color`.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Guarda<sp/>el<sp/>color<sp/>calculado<sp/>en<sp/>el<sp/>buffer<sp/>de<sp/>píxeles.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`t_render_vars<sp/>*vars`:<sp/>Puntero<sp/>a<sp/>la<sp/>estructura<sp/>que<sp/>contiene<sp/>variables<sp/>utilizadas<sp/>en<sp/>el<sp/>proceso<sp/>de<sp/>renderizado,<sp/>como<sp/>las<sp/>escalas,<sp/>las<sp/>coordenadas<sp/>iniciales,<sp/>y<sp/>el<sp/>buffer<sp/>de<sp/>píxeles.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_data<sp/>*data`:<sp/>Puntero<sp/>a<sp/>la<sp/>estructura<sp/>que<sp/>contiene<sp/>los<sp/>datos<sp/>del<sp/>fractal,<sp/>como<sp/>la<sp/>constante<sp/>del<sp/>conjunto<sp/>de<sp/>Julia<sp/>y<sp/>el<sp/>nivel<sp/>de<sp/>zoom.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`int<sp/>y`:<sp/>Índice<sp/>de<sp/>la<sp/>fila<sp/>(coordenada<sp/>`y`)<sp/>que<sp/>se<sp/>está<sp/>renderizando.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>funcionamiento</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Cálculo<sp/>de<sp/>la<sp/>coordenada<sp/>real<sp/>inicial<sp/>del<sp/>píxel</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;c_re[0]<sp/>=<sp/>vars-&gt;start[COMPLEX_RE]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;scale[SCALE_X];</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Convierte<sp/>la<sp/>posición<sp/>del<sp/>píxel<sp/>en<sp/>la<sp/>pantalla<sp/>(`x`)<sp/>a<sp/>una<sp/>coordenada<sp/>real<sp/>en<sp/>el<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>La<sp/>fórmula<sp/>es:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>c_re<sp/>=<sp/>start[COMPLEX_RE]<sp/>+<sp/>x<sp/>*<sp/>scale[SCALE_X]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Inicialización<sp/>del<sp/>número<sp/>complejo<sp/>`z`</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;z[COMPLEX_RE]<sp/>=<sp/>vars-&gt;c_re[0];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;z[COMPLEX_IM]<sp/>=<sp/>vars-&gt;c_im;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Asigna<sp/>la<sp/>parte<sp/>real<sp/>de<sp/>`z`<sp/>al<sp/>valor<sp/>calculado<sp/>en<sp/>el<sp/>paso<sp/>anterior.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Asigna<sp/>la<sp/>parte<sp/>imaginaria<sp/>de<sp/>`z`<sp/>a<sp/>`vars-&gt;c_im`,<sp/>que<sp/>corresponde<sp/>a<sp/>la<sp/>fila<sp/>actual.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>3.<sp/>Ejecución<sp/>del<sp/>algoritmo<sp/>de<sp/>iteraciones<sp/>de<sp/>Julia</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">julia_iterations(vars,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Llama<sp/>a<sp/>la<sp/>función<sp/>`julia_iterations`<sp/>para<sp/>determinar<sp/>cuántas<sp/>iteraciones<sp/>son<sp/>necesarias<sp/>para<sp/>que<sp/>el<sp/>punto<sp/>escape.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>4.<sp/>Cálculo<sp/>del<sp/>color<sp/>del<sp/>píxel</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">*vars-&gt;row<sp/>=<sp/>calculate_color(vars-&gt;iterations);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Usa<sp/>el<sp/>número<sp/>de<sp/>iteraciones<sp/>calculado<sp/>para<sp/>asignar<sp/>un<sp/>color<sp/>al<sp/>píxel.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>resultado<sp/>se<sp/>almacena<sp/>en<sp/>el<sp/>buffer<sp/>de<sp/>píxeles<sp/>(`vars-&gt;pixels`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>Práctico</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Supongamos:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Coordenada<sp/>del<sp/>píxel:<sp/>`(x,<sp/>y)<sp/>=<sp/>(100,<sp/>50)`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Inicio<sp/>del<sp/>plano<sp/>complejo:<sp/>`start[COMPLEX_RE]<sp/>=<sp/>-2.0`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Escala:<sp/>`scale[SCALE_X]<sp/>=<sp/>0.005`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Resultado:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>```plaintext</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>c_re<sp/>=<sp/>-2.0<sp/>+<sp/>100<sp/>*<sp/>0.005<sp/>=<sp/>-1.5</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>render_julia</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>render_julia(t_data<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t_render_vars<sp/>vars;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>y;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>calculate_scales_and_limits(&amp;vars,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(y<sp/>&lt;<sp/>HEIGHT)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars.c_im<sp/>=<sp/>vars.start[COMPLEX_IM]<sp/>+<sp/>y<sp/>*<sp/>vars.scale[SCALE_Y];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>render_julia_row(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">La<sp/>función<sp/>`render_julia`<sp/>renderiza<sp/>el<sp/>fractal<sp/>completo<sp/>del<sp/>conjunto<sp/>de<sp/>Julia.<sp/>Procesa<sp/>fila<sp/>por<sp/>fila<sp/>y<sp/>delega<sp/>el<sp/>cálculo<sp/>de<sp/>cada<sp/>fila<sp/>a<sp/>la<sp/>función<sp/>`render_julia_row`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`t_data<sp/>*data`:<sp/>Puntero<sp/>a<sp/>la<sp/>estructura<sp/>que<sp/>contiene<sp/>los<sp/>datos<sp/>del<sp/>fractal,<sp/>como<sp/>el<sp/>nivel<sp/>de<sp/>zoom,<sp/>el<sp/>desplazamiento,<sp/>y<sp/>la<sp/>constante<sp/>del<sp/>conjunto<sp/>de<sp/>Julia.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>funcionamiento</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Configuración<sp/>inicial</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">calculate_scales_and_limits(&amp;vars,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Calcula<sp/>las<sp/>escalas<sp/>y<sp/>los<sp/>límites<sp/>del<sp/>plano<sp/>complejo<sp/>que<sp/>se<sp/>usarán<sp/>para<sp/>renderizar<sp/>el<sp/>fractal.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Iteración<sp/>sobre<sp/>cada<sp/>fila</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">while<sp/>(y<sp/>&lt;<sp/>HEIGHT)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars.c_im<sp/>=<sp/>vars.start[COMPLEX_IM]<sp/>+<sp/>y<sp/>*<sp/>vars.scale[SCALE_Y];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>render_julia_row(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Recorre<sp/>cada<sp/>fila<sp/>(`y`)<sp/>de<sp/>la<sp/>imagen.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Para<sp/>cada<sp/>fila:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>1.<sp/>Calcula<sp/>la<sp/>coordenada<sp/>imaginaria<sp/>inicial<sp/>(`c_im`)<sp/>de<sp/>la<sp/>fila.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>```plaintext</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>c_im<sp/>=<sp/>start[COMPLEX_IM]<sp/>+<sp/>y<sp/>*<sp/>scale[SCALE_Y]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>2.<sp/>Llama<sp/>a<sp/>`render_julia_row`<sp/>para<sp/>renderizar<sp/>todos<sp/>los<sp/>píxeles<sp/>de<sp/>la<sp/>fila.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>Práctico</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Supongamos:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Altura<sp/>de<sp/>la<sp/>ventana:<sp/>`HEIGHT<sp/>=<sp/>800`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Inicio<sp/>del<sp/>plano<sp/>complejo:<sp/>`start[COMPLEX_IM]<sp/>=<sp/>-2.0`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Escala:<sp/>`scale[SCALE_Y]<sp/>=<sp/>0.005`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Resultado<sp/>para<sp/>la<sp/>fila<sp/>`y<sp/>=<sp/>100`:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Coordenada<sp/>imaginaria<sp/>inicial:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```plaintext</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>c_im<sp/>=<sp/>-2.0<sp/>+<sp/>100<sp/>*<sp/>0.005<sp/>=<sp/>-1.5</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>La<sp/>fila<sp/>completa<sp/>se<sp/>renderiza<sp/>llamando<sp/>a<sp/>`render_julia_row`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Importancia<sp/>del<sp/>Proceso<sp/>Completo</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Estructura<sp/>Modular:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Separar<sp/>la<sp/>renderización<sp/>en<sp/>filas<sp/>facilita<sp/>la<sp/>comprensión<sp/>y<sp/>el<sp/>mantenimiento<sp/>del<sp/>código.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Reutilización<sp/>de<sp/>Cálculos:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Los<sp/>cálculos<sp/>iniciales<sp/>de<sp/>escala<sp/>y<sp/>límites<sp/>optimizan<sp/>el<sp/>proceso<sp/>de<sp/>renderizado.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Flexibilidad:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>La<sp/>separación<sp/>por<sp/>filas<sp/>permite<sp/>implementar<sp/>técnicas<sp/>como<sp/>renderizado<sp/>paralelo<sp/>para<sp/>mejorar<sp/>el<sp/>rendimiento.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/>**Conexión<sp/>entre<sp/>Coordenadas:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Traduce<sp/>las<sp/>coordenadas<sp/>del<sp/>plano<sp/>complejo<sp/>a<sp/>píxeles<sp/>en<sp/>la<sp/>ventana<sp/>gráfica<sp/>de<sp/>manera<sp/>precisa.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="julia_calcs.md"/>
+  </compounddef>
+</doxygen>

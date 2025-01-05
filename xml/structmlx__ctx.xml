@@ -1,0 +1,364 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__ctx" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_ctx</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__ctx_1aaac963399c5f80eba5e242b98c3c8eab" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a68c4714e43d8e827d80759f9cb864f3c" kindref="member">GLuint</ref></type>
+        <definition>GLuint mlx_ctx::vao</definition>
+        <argsstring></argsstring>
+        <name>vao</name>
+        <qualifiedname>mlx_ctx::vao</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="174" column="7" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="174" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1aa586a7fb342bc9940af17fc6d21b2437" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a68c4714e43d8e827d80759f9cb864f3c" kindref="member">GLuint</ref></type>
+        <definition>GLuint mlx_ctx::vbo</definition>
+        <argsstring></argsstring>
+        <name>vbo</name>
+        <qualifiedname>mlx_ctx::vbo</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="175" column="7" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="175" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1a594f3470da6281d6275ff81a69f05ec8" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a68c4714e43d8e827d80759f9cb864f3c" kindref="member">GLuint</ref></type>
+        <definition>GLuint mlx_ctx::shaderprogram</definition>
+        <argsstring></argsstring>
+        <name>shaderprogram</name>
+        <qualifiedname>mlx_ctx::shaderprogram</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="176" column="7" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1a13d38e423f8825fb0e9ef8772b9f26a8" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_ctx::initialWidth</definition>
+        <argsstring></argsstring>
+        <name>initialWidth</name>
+        <qualifiedname>mlx_ctx::initialWidth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="178" column="8" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="178" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1acca10751b3d9e463e62303791d317918" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_ctx::initialHeight</definition>
+        <argsstring></argsstring>
+        <name>initialHeight</name>
+        <qualifiedname>mlx_ctx::initialHeight</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="179" column="8" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1ac400f7d2927ae26c310535e9b0ed91d2" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+        <definition>mlx_list_t* mlx_ctx::hooks</definition>
+        <argsstring></argsstring>
+        <name>hooks</name>
+        <qualifiedname>mlx_ctx::hooks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="181" column="11" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1a99035083550f1e75b61062f9e8f7ef8f" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+        <definition>mlx_list_t* mlx_ctx::images</definition>
+        <argsstring></argsstring>
+        <name>images</name>
+        <qualifiedname>mlx_ctx::images</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="182" column="11" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1ab534d0d4d74f8654dd885071642f964d" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+        <definition>mlx_list_t* mlx_ctx::render_queue</definition>
+        <argsstring></argsstring>
+        <name>render_queue</name>
+        <qualifiedname>mlx_ctx::render_queue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="183" column="11" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1abccc80a9457d7d03a156cb2db71677ff" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1a46b8748315a363c32832e1c5c6a7031e" kindref="member">mlx_scroll_t</ref></type>
+        <definition>mlx_scroll_t mlx_ctx::scroll_hook</definition>
+        <argsstring></argsstring>
+        <name>scroll_hook</name>
+        <qualifiedname>mlx_ctx::scroll_hook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="185" column="13" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1ad363cf9e4e4d11381fa52d56086564b0" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1a9c30afbdeab4127b7939aa2f9a6a909f" kindref="member">mlx_mouse_t</ref></type>
+        <definition>mlx_mouse_t mlx_ctx::mouse_hook</definition>
+        <argsstring></argsstring>
+        <name>mouse_hook</name>
+        <qualifiedname>mlx_ctx::mouse_hook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="186" column="12" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="186" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1a50425df4798e1f1d79cb4b410d89fd99" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1a32fe39843d5e4dabbb4674843fdd4433" kindref="member">mlx_cursor_t</ref></type>
+        <definition>mlx_cursor_t mlx_ctx::cursor_hook</definition>
+        <argsstring></argsstring>
+        <name>cursor_hook</name>
+        <qualifiedname>mlx_ctx::cursor_hook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="187" column="13" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="187" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1a3902becd5330c2be44858c44d8391a29" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1a0f0c158446f470a24fa44398294b425d" kindref="member">mlx_key_t</ref></type>
+        <definition>mlx_key_t mlx_ctx::key_hook</definition>
+        <argsstring></argsstring>
+        <name>key_hook</name>
+        <qualifiedname>mlx_ctx::key_hook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="188" column="10" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="188" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1ae4daff49341e1ad6db6cc82cc23a617c" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1a438fce800fbc9241429bfb348155c27e" kindref="member">mlx_resize_t</ref></type>
+        <definition>mlx_resize_t mlx_ctx::resize_hook</definition>
+        <argsstring></argsstring>
+        <name>resize_hook</name>
+        <qualifiedname>mlx_ctx::resize_hook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="189" column="13" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1ada6e59ac8f2a5ba5a22195a3b0eefbc0" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1a156301fb2e43bf41b2682ae92afb917a" kindref="member">mlx_close_t</ref></type>
+        <definition>mlx_close_t mlx_ctx::close_hook</definition>
+        <argsstring></argsstring>
+        <name>close_hook</name>
+        <qualifiedname>mlx_ctx::close_hook</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="190" column="12" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="190" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1a989662d3de82fc1bdc81525c5c61fa69" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_ctx::zdepth</definition>
+        <argsstring></argsstring>
+        <name>zdepth</name>
+        <qualifiedname>mlx_ctx::zdepth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="192" column="8" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="192" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1a0d3d66eed968e714a8495988f96fb710" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_ctx::bound_textures[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>bound_textures</name>
+        <qualifiedname>mlx_ctx::bound_textures</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="193" column="8" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="193" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1ac497690484d3a0b2ae838f1ab21c05cb" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_ctx::batch_size</definition>
+        <argsstring></argsstring>
+        <name>batch_size</name>
+        <qualifiedname>mlx_ctx::batch_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="194" column="8" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="194" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__ctx_1ac011c1d7c7b3c1d914c508e340b59f48" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42__Int_8h_1a4795b67e29de6d25f5c89a5aec0c2833" kindref="member">vertex_t</ref></type>
+        <definition>vertex_t mlx_ctx::batch_vertices[MLX_BATCH_SIZE]</definition>
+        <argsstring>[MLX_BATCH_SIZE]</argsstring>
+        <name>batch_vertices</name>
+        <qualifiedname>mlx_ctx::batch_vertices</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="195" column="9" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>For rendering we need to store most of OpenGL&apos;s stuff such as the vertex array object, vertex buffer object &amp; the shader program as well as hooks and the zdepth level.</para>
+<para>Additionally we represent draw calls with a linked list queue that points to the image and the index of its instance. Again, instances only carry XYZ data, so coupled with the image it lets us know where to draw a copy of the image.</para>
+<para>Texture contexts are kept in a struct alongside the capacity of the array of instances, since the array is realloced like a vector. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>mlx_close</label>
+        <link refid="structmlx__close"/>
+      </node>
+      <node id="1">
+        <label>mlx_ctx</label>
+        <link refid="structmlx__ctx"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+hooks</edgelabel>
+          <edgelabel>+images</edgelabel>
+          <edgelabel>+render_queue</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+scroll_hook</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+mouse_hook</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+cursor_hook</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>+key_hook</edgelabel>
+        </childnode>
+        <childnode refid="8" relation="usage">
+          <edgelabel>+resize_hook</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>+close_hook</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>+batch_vertices</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>mlx_cursor</label>
+        <link refid="structmlx__cursor"/>
+      </node>
+      <node id="6">
+        <label>mlx_key</label>
+        <link refid="structmlx__key"/>
+        <childnode refid="7" relation="usage">
+          <edgelabel>+func</edgelabel>
+        </childnode>
+      </node>
+      <node id="7">
+        <label>mlx_key_data</label>
+        <link refid="structmlx__key__data"/>
+      </node>
+      <node id="2">
+        <label>mlx_list</label>
+        <link refid="structmlx__list"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+next</edgelabel>
+          <edgelabel>+prev</edgelabel>
+        </childnode>
+      </node>
+      <node id="4">
+        <label>mlx_mouse</label>
+        <link refid="structmlx__mouse"/>
+      </node>
+      <node id="8">
+        <label>mlx_resize</label>
+        <link refid="structmlx__resize"/>
+      </node>
+      <node id="3">
+        <label>mlx_srcoll</label>
+        <link refid="structmlx__srcoll"/>
+      </node>
+      <node id="10">
+        <label>vertex</label>
+        <link refid="structvertex"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="172" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="173" bodyend="196"/>
+    <listofallmembers>
+      <member refid="structmlx__ctx_1ac497690484d3a0b2ae838f1ab21c05cb" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>batch_size</name></member>
+      <member refid="structmlx__ctx_1ac011c1d7c7b3c1d914c508e340b59f48" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>batch_vertices</name></member>
+      <member refid="structmlx__ctx_1a0d3d66eed968e714a8495988f96fb710" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>bound_textures</name></member>
+      <member refid="structmlx__ctx_1ada6e59ac8f2a5ba5a22195a3b0eefbc0" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>close_hook</name></member>
+      <member refid="structmlx__ctx_1a50425df4798e1f1d79cb4b410d89fd99" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>cursor_hook</name></member>
+      <member refid="structmlx__ctx_1ac400f7d2927ae26c310535e9b0ed91d2" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>hooks</name></member>
+      <member refid="structmlx__ctx_1a99035083550f1e75b61062f9e8f7ef8f" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>images</name></member>
+      <member refid="structmlx__ctx_1acca10751b3d9e463e62303791d317918" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>initialHeight</name></member>
+      <member refid="structmlx__ctx_1a13d38e423f8825fb0e9ef8772b9f26a8" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>initialWidth</name></member>
+      <member refid="structmlx__ctx_1a3902becd5330c2be44858c44d8391a29" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>key_hook</name></member>
+      <member refid="structmlx__ctx_1ad363cf9e4e4d11381fa52d56086564b0" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>mouse_hook</name></member>
+      <member refid="structmlx__ctx_1ab534d0d4d74f8654dd885071642f964d" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>render_queue</name></member>
+      <member refid="structmlx__ctx_1ae4daff49341e1ad6db6cc82cc23a617c" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>resize_hook</name></member>
+      <member refid="structmlx__ctx_1abccc80a9457d7d03a156cb2db71677ff" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>scroll_hook</name></member>
+      <member refid="structmlx__ctx_1a594f3470da6281d6275ff81a69f05ec8" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>shaderprogram</name></member>
+      <member refid="structmlx__ctx_1aaac963399c5f80eba5e242b98c3c8eab" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>vao</name></member>
+      <member refid="structmlx__ctx_1aa586a7fb342bc9940af17fc6d21b2437" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>vbo</name></member>
+      <member refid="structmlx__ctx_1a989662d3de82fc1bdc81525c5c61fa69" prot="public" virt="non-virtual"><scope>mlx_ctx</scope><name>zdepth</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

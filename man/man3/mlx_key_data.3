@@ -1,0 +1,66 @@
+.TH "mlx_key_data" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mlx_key_data
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MLX42\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBkeys_t\fP \fBkey\fP"
+.br
+.ti -1c
+.RI "\fBaction_t\fP \fBaction\fP"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBos_key\fP"
+.br
+.ti -1c
+.RI "\fBmodifier_key_t\fP \fBmodifier\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Key function callback data\&. Data related to the mlx_key_hook function
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The key that was pressed\&. 
+.br
+\fIaction\fP The action that was done with the key\&. 
+.br
+\fIos_key\fP The os_key is unique for every key, and will have a different value/keycode depending on the platform\&. They may be consistent on different platforms\&. 
+.br
+\fImodifier\fP The modifier key that was pressed, 0 if no key was pressed\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB320\fP of file \fBMLX42\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBaction_t\fP mlx_key_data::action"
+
+.PP
+Definition at line \fB323\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBkeys_t\fP mlx_key_data::key"
+
+.PP
+Definition at line \fB322\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBmodifier_key_t\fP mlx_key_data::modifier"
+
+.PP
+Definition at line \fB325\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBint32_t\fP mlx_key_data::os_key"
+
+.PP
+Definition at line \fB324\fP of file \fBMLX42\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

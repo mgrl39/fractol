@@ -1,0 +1,255 @@
+\chapter{Calculos de Mandelbrot}
+\hypertarget{md_mandelbrot__calcs}{}\label{md_mandelbrot__calcs}\index{Calculos de Mandelbrot@{Calculos de Mandelbrot}}
+\label{md_mandelbrot__calcs_autotoc_md172}%
+\Hypertarget{md_mandelbrot__calcs_autotoc_md172}%
+ El archivo {\ttfamily \doxylink{mandelbrot_8c}{mandelbrot.\+c}} contiene la lógica necesaria para renderizar el conjunto de Mandelbrot en el proyecto Fractol. Este archivo incluye funciones para realizar iteraciones en puntos del plano complejo, optimizar las condiciones de escape y mapear los resultados a colores en los píxeles.\hypertarget{md_mandelbrot__calcs_autotoc_md173}{}\doxysection{\texorpdfstring{1. compute\+\_\+next\+\_\+iteration}{1. compute\_next\_iteration}}\label{md_mandelbrot__calcs_autotoc_md173}
+\hypertarget{md_mandelbrot__calcs_autotoc_md174}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md174}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mandelbrot_8c_adb033de8daea75468f78428253a261cf}{compute\_next\_iteration}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ temp\_z\_re;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ temp\_z\_re\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ -\/\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\ \ \ \ temp\_z\_re\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i];}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ (2.0\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]);}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ temp\_z\_re;}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_mandelbrot__calcs_autotoc_md175}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md175}
+Calcula la siguiente iteración de {\ttfamily z} usando la fórmula iterativa del conjunto de Mandelbrot\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_n+1\ =\ z\_n\string^2\ +\ c}
+
+\end{DoxyCode}
+
+
+{\bfseries{Explicación\+:}}
+\begin{DoxyItemize}
+\item Usa los valores actuales de {\ttfamily z} (parte real e imaginaria) y la constante {\ttfamily c} (coordenadas del píxel en el plano complejo).
+\item Actualiza los valores de {\ttfamily z} y los cuadrados de sus componentes para las próximas iteraciones.
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md176}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md176}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Contiene las variables necesarias para los cálculos, incluyendo {\ttfamily z}, {\ttfamily c}, y sus cuadrados.
+\item {\ttfamily int i}\+: Índice del punto en el conjunto de datos.
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md177}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md_mandelbrot__calcs_autotoc_md177}
+Supongamos\+:
+\begin{DoxyItemize}
+\item {\ttfamily z = 0 + 0i}
+\item {\ttfamily c = -\/0.\+75 + 0.\+1i}
+\end{DoxyItemize}
+
+{\bfseries{Iteraciones\+:}}
+\begin{DoxyEnumerate}
+\item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_1\_real\ =\ 0\string^2\ -\/\ 0\string^2\ +\ (-\/0.75)\ =\ -\/0.75}
+\DoxyCodeLine{z\_1\_imag\ =\ 2\ *\ 0\ *\ 0\ +\ 0.1\ =\ 0.1}
+
+\end{DoxyCode}
+
+\item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_2\_real\ =\ (-\/0.75)\string^2\ -\/\ (0.1)\string^2\ +\ (-\/0.75)\ =\ -\/0.1975}
+\DoxyCodeLine{z\_2\_imag\ =\ 2\ *\ (-\/0.75)\ *\ 0.1\ +\ 0.1\ =\ -\/0.05}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_mandelbrot__calcs_autotoc_md179}{}\doxysection{\texorpdfstring{2. mandelbrot\+\_\+iterations}{2. mandelbrot\_iterations}}\label{md_mandelbrot__calcs_autotoc_md179}
+\hypertarget{md_mandelbrot__calcs_autotoc_md180}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md180}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mandelbrot_8c_acedaf5af2ba2cbe5b5efefb43b1068d4}{mandelbrot\_iterations}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \textcolor{keywordtype}{int}\ i)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ current\_magnitude\_squared;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ escape\_radius\_squared;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ escape\_radius\_squared\ =\ 4.0;}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ 0.0;}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 0.0;}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (1)}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ current\_magnitude\_squared\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ current\_magnitude\_squared\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ >=\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current\_magnitude\_squared\ >\ escape\_radius\_squared)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ break\ ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_adb033de8daea75468f78428253a261cf}{compute\_next\_iteration}}(vars,\ i);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}++;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_mandelbrot__calcs_autotoc_md181}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md181}
+Determina si un punto pertenece al conjunto de Mandelbrot. Aplica iterativamente la fórmula hasta que\+:
+\begin{DoxyEnumerate}
+\item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{|z|\string^2\ >\ 4}
+
+\end{DoxyCode}
+ (El punto escapa del conjunto).
+\item Se alcanza el máximo de iteraciones ({\ttfamily MAX\+\_\+\+ITERATIONS}), lo que indica que el punto es parte del conjunto o está muy cercano.
+\end{DoxyEnumerate}\hypertarget{md_mandelbrot__calcs_autotoc_md182}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md182}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Variables necesarias para los cálculos, como {\ttfamily z}, {\ttfamily c}, y el número de iteraciones.
+\item {\ttfamily int i}\+: Índice del punto actual.
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md183}{}\doxysubsection{\texorpdfstring{Ejemplo Práctico}{Ejemplo Práctico}}\label{md_mandelbrot__calcs_autotoc_md183}
+Para {\ttfamily c = -\/0.\+75 + 0.\+1i}\+:
+\begin{DoxyEnumerate}
+\item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_0\ =\ 0\ +\ 0i}
+\DoxyCodeLine{|z|\string^2\ =\ 0}
+
+\end{DoxyCode}
+
+\item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_1\ =\ -\/0.75\ +\ 0.1i}
+\DoxyCodeLine{|z|\string^2\ =\ 0.5725}
+
+\end{DoxyCode}
+
+\item 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{z\_2\ =\ -\/0.1975\ -\/\ 0.05i}
+\DoxyCodeLine{|z|\string^2\ =\ 0.0413}
+
+\end{DoxyCode}
+
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_mandelbrot__calcs_autotoc_md185}{}\doxysection{\texorpdfstring{3. mandelbrot\+\_\+escape\+\_\+check}{3. mandelbrot\_escape\_check}}\label{md_mandelbrot__calcs_autotoc_md185}
+\hypertarget{md_mandelbrot__calcs_autotoc_md186}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md186}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{mandelbrot_8c_af0b8186beab597df25a8f56717d0cb44}{mandelbrot\_escape\_check}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \textcolor{keywordtype}{int}\ i,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ max\_color;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \ dist\_sq;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \ esc\_chk;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \ bound\_condition;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ max\_color\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(\mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}});}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ -\/\ 0.25;}
+\DoxyCodeLine{\ \ \ \ dist\_sq\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}};}
+\DoxyCodeLine{\ \ \ \ dist\_sq\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{\ \ \ \ esc\_chk\ =\ dist\_sq\ *\ (dist\_sq\ +\ vars-\/>\mbox{\hyperlink{structs__render__vars_aa6b2c1e48bbd07e7bd81edb6cff6f171}{c\_re\_centered}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ ((data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ >\ 1.0)\ \&\&\ (esc\_chk\ <\ 0.25\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i]\ =\ max\_color,\ 1);}
+\DoxyCodeLine{\ \ \ \ bound\_condition\ =\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ +\ 1)\ *\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[i]\ +\ 1);}
+\DoxyCodeLine{\ \ \ \ bound\_condition\ +=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (bound\_condition\ <\ 0.0625)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i]\ =\ max\_color,\ 1);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_mandelbrot__calcs_autotoc_md187}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md187}
+Optimiza la detección de puntos que están garantizados como parte del conjunto de Mandelbrot, evitando realizar todas las iteraciones.
+
+{\bfseries{Explicación\+:}}
+\begin{DoxyItemize}
+\item Comprueba si el punto está en regiones conocidas del conjunto usando condiciones geométricas predefinidas.
+\end{DoxyItemize}\hypertarget{md_mandelbrot__calcs_autotoc_md188}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md188}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Variables de cálculo.
+\item {\ttfamily int i}\+: Índice del punto.
+\item {\ttfamily t\+\_\+data \texorpdfstring{$\ast$}{*}data}\+: Información del fractal, como el nivel de zoom.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_mandelbrot__calcs_autotoc_md190}{}\doxysection{\texorpdfstring{4. render\+\_\+mandelbrot\+\_\+row}{4. render\_mandelbrot\_row}}\label{md_mandelbrot__calcs_autotoc_md190}
+\hypertarget{md_mandelbrot__calcs_autotoc_md191}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md191}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ x,\ i;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ +\ (y\ *\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ +\ x);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ x\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[1]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ (x\ +\ 1)\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ 2)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{mandelbrot_8c_af0b8186beab597df25a8f56717d0cb44}{mandelbrot\_escape\_check}}(vars,\ i,\ data))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ continue\ ;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_acedaf5af2ba2cbe5b5efefb43b1068d4}{mandelbrot\_iterations}}(vars,\ i);}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}[i++]\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}});}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ x\ +=\ 2;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_mandelbrot__calcs_autotoc_md192}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md192}
+Renderiza una fila completa del fractal\+:
+\begin{DoxyEnumerate}
+\item Calcula los valores de {\ttfamily c} para cada píxel.
+\item Aplica condiciones de escape rápidas.
+\item Realiza iteraciones para determinar el color del píxel.
+\end{DoxyEnumerate}\hypertarget{md_mandelbrot__calcs_autotoc_md193}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md193}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Variables de cálculo.
+\item {\ttfamily t\+\_\+data \texorpdfstring{$\ast$}{*}data}\+: Información del fractal.
+\item {\ttfamily int y}\+: Índice de la fila.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_mandelbrot__calcs_autotoc_md195}{}\doxysection{\texorpdfstring{5. render\+\_\+mandelbrot}{5. render\_mandelbrot}}\label{md_mandelbrot__calcs_autotoc_md195}
+\hypertarget{md_mandelbrot__calcs_autotoc_md196}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_mandelbrot__calcs_autotoc_md196}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fractol_8h_ac4c610e75a028afb898607ea03e80b30}{render\_mandelbrot}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ \ vars;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_re;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ *precomputed\_c\_im;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\&precomputed\_c\_re,\ \&precomputed\_c\_im,\ \&vars))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{\ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ precomputed\_c\_im[y];}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{mandelbrot_8c_a41962ad3e954759faba4734b566ba90e}{render\_mandelbrot\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ free(precomputed\_c\_re);}
+\DoxyCodeLine{\ \ \ \ free(precomputed\_c\_im);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_mandelbrot__calcs_autotoc_md197}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_mandelbrot__calcs_autotoc_md197}
+Renderiza el fractal completo fila por fila. Precomputa las coordenadas de los píxeles para optimizar el cálculo durante el proceso de renderizado.\hypertarget{md_mandelbrot__calcs_autotoc_md198}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_mandelbrot__calcs_autotoc_md198}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+data \texorpdfstring{$\ast$}{*}data}\+: Información del fractal. 
+\end{DoxyItemize}

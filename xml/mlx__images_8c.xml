@@ -1,0 +1,796 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__images_8c" kind="file" language="C++">
+    <compoundname>mlx_images.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/mlx_images.c</label>
+        <link refid="mlx__images_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__images_8c_1a1ed852c03c55e288332fed9019ce0fc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_flush_batch</definition>
+        <argsstring>(mlx_ctx_t *mlx)</argsstring>
+        <name>mlx_flush_batch</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1a59921834e496028968d99c4a006a7516" kindref="member">mlx_ctx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="17" column="6" bodyfile="MLX42/src/mlx_images.c" bodystart="17" bodyend="28"/>
+        <references refid="glad_8h_1a7180045dcb52b22af2cd0366026bc3ed" compoundref="glad_8h" startline="857">GL_ARRAY_BUFFER</references>
+        <references refid="glad_8h_1ab7dffdc215fbbe75b6ccacfecfc14648" compoundref="glad_8h" startline="871">GL_STATIC_DRAW</references>
+        <references refid="glad_8h_1a6079e7a02a59adad65eb953d9482b1ed" compoundref="glad_8h" startline="145">GL_TRIANGLES</references>
+        <references refid="glad_8h_1a3b3a3f8200f094b781e9f61e2f19fc50" compoundref="glad_8h" startline="3292">glBindBuffer</references>
+        <references refid="glad_8h_1a9419a03f5c46e2758f884e9c56d92b6a" compoundref="glad_8h" startline="3304">glBufferData</references>
+        <references refid="glad_8h_1a89377449aceadc060b577926b5413bd2" compoundref="glad_8h" startline="2871">glDrawArrays</references>
+        <referencedby refid="mlx__images_8c_1a0455987ae10955685b82b62eab3e20fd" compoundref="mlx__images_8c" startline="30" endline="57">mlx_bind_texture</referencedby>
+        <referencedby refid="MLX42__Int_8h_1a2c27c67cc0b297e0a0420a3074aa502c" compoundref="mlx__images_8c" startline="63" endline="85">mlx_draw_instance</referencedby>
+        <referencedby refid="MLX42_8h_1ac4bd53ff1f88113c67d2b020f1809512" compoundref="mlx__loop_8c" startline="93" endline="118">mlx_loop</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1a0455987ae10955685b82b62eab3e20fd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int8_t</ref></type>
+        <definition>static int8_t mlx_bind_texture</definition>
+        <argsstring>(mlx_ctx_t *mlx, mlx_image_t *img)</argsstring>
+        <name>mlx_bind_texture</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1a59921834e496028968d99c4a006a7516" kindref="member">mlx_ctx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+          <declname>img</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="30" column="15" bodyfile="MLX42/src/mlx_images.c" bodystart="30" bodyend="57"/>
+        <references refid="glad_8h_1a16cc91096144fc7048b45e2add14915b" compoundref="glad_8h" startline="705">GL_TEXTURE0</references>
+        <references refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" compoundref="glad_8h" startline="243">GL_TEXTURE_2D</references>
+        <references refid="glad_8h_1af15266b67de988f5ddf442bbbdd1b3fc" compoundref="glad_8h" startline="2981">glActiveTexture</references>
+        <references refid="glad_8h_1a987aecafceffb9afaef11412d42e605b" compoundref="glad_8h" startline="2901">glBindTexture</references>
+        <references refid="mlx__images_8c_1a1ed852c03c55e288332fed9019ce0fc0" compoundref="mlx__images_8c" startline="17" endline="28">mlx_flush_batch</references>
+        <referencedby refid="MLX42__Int_8h_1a2c27c67cc0b297e0a0420a3074aa502c" compoundref="mlx__images_8c" startline="63" endline="85">mlx_draw_instance</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1a2c27c67cc0b297e0a0420a3074aa502c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_draw_instance</definition>
+        <argsstring>(mlx_ctx_t *mlx, mlx_image_t *img, mlx_instance_t *instance)</argsstring>
+        <name>mlx_draw_instance</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1a59921834e496028968d99c4a006a7516" kindref="member">mlx_ctx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1adc36bf24a0d926ad690b9a0993bb80d2" kindref="member">mlx_instance_t</ref> *</type>
+          <declname>instance</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Internal function to draw a single instance of an image to the screen. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="63" column="6" bodyfile="MLX42/src/mlx_images.c" bodystart="63" bodyend="85"/>
+        <references refid="MLX42__Int_8h_1aab9cb94ead198758e2f9ff925ef0920b" compoundref="MLX42__Int_8h" startline="40">MLX_BATCH_SIZE</references>
+        <references refid="mlx__images_8c_1a0455987ae10955685b82b62eab3e20fd" compoundref="mlx__images_8c" startline="30" endline="57">mlx_bind_texture</references>
+        <references refid="mlx__images_8c_1a1ed852c03c55e288332fed9019ce0fc0" compoundref="mlx__images_8c" startline="17" endline="28">mlx_flush_batch</references>
+        <referencedby refid="mlx__loop_8c_1aaa7ba75154ec3bba6511cc7cb9625baa" compoundref="mlx__loop_8c" startline="30" endline="66">mlx_render_images</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1a8191539ebf00b641dee5842619d95845" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="MLX42_8h_1adc36bf24a0d926ad690b9a0993bb80d2" kindref="member">mlx_instance_t</ref> *</type>
+        <definition>mlx_instance_t * mlx_grow_instances</definition>
+        <argsstring>(mlx_image_t *img, bool *did_realloc)</argsstring>
+        <name>mlx_grow_instances</name>
+        <param>
+          <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref> *</type>
+          <declname>did_realloc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="87" column="16" bodyfile="MLX42/src/mlx_images.c" bodystart="87" bodyend="101"/>
+        <references refid="structmlx__image__ctx_1a252420965acb494a1937b6d2036043f3" compoundref="MLX42__Int_8h" startline="209">mlx_image_ctx::instances_capacity</references>
+        <referencedby refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" compoundref="mlx__images_8c" startline="121" endline="159">mlx_image_to_window</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1a0a80f6d9a729c77be48149e77b0faa8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_set_instance_depth</definition>
+        <argsstring>(mlx_instance_t *instance, int32_t zdepth)</argsstring>
+        <name>mlx_set_instance_depth</name>
+        <param>
+          <type><ref refid="MLX42_8h_1adc36bf24a0d926ad690b9a0993bb80d2" kindref="member">mlx_instance_t</ref> *</type>
+          <declname>instance</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>zdepth</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the depth / Z axis value of an instance.</para>
+<para>NOTE: Keep in mind that images that are on the same Z layer cut each other off. so if you don&apos;t see your image anymore make sure it&apos;s not conflicting by being on the same layer as another image.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">instance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The instance on which to change the depth. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">zdepth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new depth value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>NOTE: The reason why we don&apos;t sort directly is that the user might call this function multiple times in a row and we don&apos;t want to sort for every change. Pre-loop wise that is.</para>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="105" column="6" bodyfile="MLX42/src/mlx_images.c" bodystart="105" bodyend="119"/>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="MLX42__Int_8h_1ab1f31200953135a9601bfb65ed495bd4" compoundref="mlx__init_8c" startline="159">sort_queue</references>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1a06dbfde4fce913678e09b0af263b0c06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_image_to_window</definition>
+        <argsstring>(mlx_t *mlx, mlx_image_t *img, int32_t x, int32_t y)</argsstring>
+        <name>mlx_image_to_window</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Draws a new instance of an image, it will then share the same pixel buffer as the image.</para>
+<para>NOTE: Keep in mind that the instance array gets reallocated, try to store the return value to the instance! NOT the pointer! It will become invalid!</para>
+<para>WARNING: Try to display as few images on the window as possible, drawing too many images will cause a loss in performance!</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">img</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image to draw on the screen. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The X position. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The Y position. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Index to the instance, or -1 on failure. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="121" column="9" bodyfile="MLX42/src/mlx_images.c" bodystart="121" bodyend="159"/>
+        <references refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" compoundref="MLX42_8h" startline="363">mlx::context</references>
+        <references refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" compoundref="mlx__error_8c" startline="43" endline="50">mlx_error</references>
+        <references refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" compoundref="mlx__utils_8c" startline="89" endline="98">mlx_freen</references>
+        <references refid="mlx__images_8c_1a8191539ebf00b641dee5842619d95845" compoundref="mlx__images_8c" startline="87" endline="101">mlx_grow_instances</references>
+        <references refid="MLX42__Int_8h_1a3526094b6976d5e65ade883d3ed3d522" compoundref="mlx__list_8c" startline="81" endline="90">mlx_lstadd_front</references>
+        <references refid="MLX42__Int_8h_1acdd55bf29013651c970a5858f2d1dcfd" compoundref="mlx__list_8c" startline="45" endline="56">mlx_lstnew</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" compoundref="MLX42_8h" startline="383">MLX_MEMFAIL</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="MLX42__Int_8h_1ab1f31200953135a9601bfb65ed495bd4" compoundref="mlx__init_8c" startline="159">sort_queue</references>
+        <references refid="structmlx__instance_1a9b95bea19763667a6012218a68242c6c" compoundref="MLX42_8h" startline="303">mlx_instance::x</references>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="103" endline="130">initialize_window</referencedby>
+        <referencedby refid="MLX42_8h_1a3c7e4790683c2dbc5159cb3a18c22e0b" compoundref="mlx__font_8c" startline="60" endline="80">mlx_put_string</referencedby>
+        <referencedby refid="tests_8cpp_1a1f1e5623ca7f1155b035f979aa9cf58b" compoundref="tests_8cpp" startline="63" endline="86">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a91cc672d0a00ed4c9c957a7403d10c52" compoundref="tests_8cpp" startline="49" endline="61">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a0bea0b82a8268d65dc6d1a6f5a55750f" compoundref="tests_8cpp" startline="118" endline="139">TEST_F</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1abe515cadb9b88a9d064383da276c2467" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+        <definition>mlx_image_t * mlx_new_image</definition>
+        <argsstring>(mlx_t *mlx, uint32_t width, uint32_t height)</argsstring>
+        <name>mlx_new_image</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+          <declname>width</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+          <declname>height</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates and allocates a new image buffer.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired width of the image. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The desired height of the image. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to the image buffer, if it failed to allocate then NULL. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="161" column="13" bodyfile="MLX42/src/mlx_images.c" bodystart="161" bodyend="202"/>
+        <references refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" compoundref="MLX42_8h" startline="363">mlx::context</references>
+        <references refid="glad_8h_1ae90f81f48642444b4ba7fa5cacf40569" compoundref="glad_8h" startline="690">GL_CLAMP_TO_EDGE</references>
+        <references refid="glad_8h_1a7ec02582a9b1c390908a2230c8e26c0b" compoundref="glad_8h" startline="298">GL_NEAREST</references>
+        <references refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" compoundref="glad_8h" startline="243">GL_TEXTURE_2D</references>
+        <references refid="glad_8h_1acb47a41b5963d44826f44b7370bccc26" compoundref="glad_8h" startline="304">GL_TEXTURE_MAG_FILTER</references>
+        <references refid="glad_8h_1a173a2b2453322dd8d613df6cf2e72480" compoundref="glad_8h" startline="305">GL_TEXTURE_MIN_FILTER</references>
+        <references refid="glad_8h_1a23a0bc2909cc2f79fe7287aaa044e880" compoundref="glad_8h" startline="306">GL_TEXTURE_WRAP_S</references>
+        <references refid="glad_8h_1ac307a4772e1d3decd5b6f36192113ab6" compoundref="glad_8h" startline="307">GL_TEXTURE_WRAP_T</references>
+        <references refid="glad_8h_1a987aecafceffb9afaef11412d42e605b" compoundref="glad_8h" startline="2901">glBindTexture</references>
+        <references refid="glad_8h_1a82ac4415f852b8b5bfe7356202ca934e" compoundref="glad_8h" startline="2907">glGenTextures</references>
+        <references refid="glad_8h_1a5817fa85137822142b4951eacd0154e7" compoundref="glad_8h" startline="1976">glTexParameteri</references>
+        <references refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" compoundref="mlx__error_8c" startline="43" endline="50">mlx_error</references>
+        <references refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" compoundref="mlx__utils_8c" startline="89" endline="98">mlx_freen</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab932c5cc2d89b4ec7e20b9f8b105621e" compoundref="MLX42_8h" startline="378">MLX_INVDIM</references>
+        <references refid="MLX42__Int_8h_1a3526094b6976d5e65ade883d3ed3d522" compoundref="mlx__list_8c" startline="81" endline="90">mlx_lstadd_front</references>
+        <references refid="MLX42__Int_8h_1acdd55bf29013651c970a5858f2d1dcfd" compoundref="mlx__list_8c" startline="45" endline="56">mlx_lstnew</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" compoundref="MLX42_8h" startline="383">MLX_MEMFAIL</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="103" endline="130">initialize_window</referencedby>
+        <referencedby refid="MLX42_8h_1a3c7e4790683c2dbc5159cb3a18c22e0b" compoundref="mlx__font_8c" startline="60" endline="80">mlx_put_string</referencedby>
+        <referencedby refid="MLX42_8h_1a140fd59feca1fefb31944cf074fc4c87" compoundref="mlx__texture_8c" startline="17" endline="35">mlx_texture_to_image</referencedby>
+        <referencedby refid="tests_8cpp_1a1f1e5623ca7f1155b035f979aa9cf58b" compoundref="tests_8cpp" startline="63" endline="86">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a91cc672d0a00ed4c9c957a7403d10c52" compoundref="tests_8cpp" startline="49" endline="61">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a0bea0b82a8268d65dc6d1a6f5a55750f" compoundref="tests_8cpp" startline="118" endline="139">TEST_F</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1a997cfd3dd07ea85a91df958ae0d1e7b5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_delete_image</definition>
+        <argsstring>(mlx_t *mlx, mlx_image_t *image)</argsstring>
+        <name>mlx_delete_image</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Deleting an image will remove it from the render queue as well as any and all instances it might have. Additionally, just as extra measures sets all the data to NULL.</para>
+<para>If you simply wish to stop rendering an image without de-allocation set the &apos;enabled&apos; boolean in the image struct.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image to delete. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="204" column="6" bodyfile="MLX42/src/mlx_images.c" bodystart="204" bodyend="222"/>
+        <references refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" compoundref="MLX42_8h" startline="363">mlx::context</references>
+        <references refid="glad_8h_1aedf2546140e2c0f0e8d6f62e9998ae73" compoundref="glad_8h" startline="2904">glDeleteTextures</references>
+        <references refid="MLX42__Int_8h_1a6bf2c1e0c02394e613d8b61e7ad3d428" compoundref="mlx__compare_8c" startline="17" endline="23">mlx_equal_image</references>
+        <references refid="MLX42__Int_8h_1aa16bb5db4bd358d8482ee00b9c19ea6b" compoundref="mlx__compare_8c" startline="25" endline="31">mlx_equal_inst</references>
+        <references refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" compoundref="mlx__utils_8c" startline="89" endline="98">mlx_freen</references>
+        <references refid="MLX42__Int_8h_1a4771a982050b3e2468d6fb4a8de9ab70" compoundref="mlx__list_8c" startline="100" endline="115">mlx_lstremove</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <referencedby refid="tests_8cpp_1ae56913a43e3b5b5e85555bb584df8df2" compoundref="tests_8cpp" startline="89" endline="116">ft_draw</referencedby>
+        <referencedby refid="MLX42_8h_1a3c7e4790683c2dbc5159cb3a18c22e0b" compoundref="mlx__font_8c" startline="60" endline="80">mlx_put_string</referencedby>
+        <referencedby refid="tests_8cpp_1a1f1e5623ca7f1155b035f979aa9cf58b" compoundref="tests_8cpp" startline="63" endline="86">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a91cc672d0a00ed4c9c957a7403d10c52" compoundref="tests_8cpp" startline="49" endline="61">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a0bea0b82a8268d65dc6d1a6f5a55750f" compoundref="tests_8cpp" startline="118" endline="139">TEST_F</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__images_8c_1a38c0b46353a7c9a1e2b6222f2d7126eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>bool mlx_resize_image</definition>
+        <argsstring>(mlx_image_t *img, uint32_t nwidth, uint32_t nheight)</argsstring>
+        <name>mlx_resize_image</name>
+        <param>
+          <type><ref refid="MLX42_8h_1abc6cf404f5675c83f1e62fdbad192f2f" kindref="member">mlx_image_t</ref> *</type>
+          <declname>img</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+          <declname>nwidth</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+          <declname>nheight</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Allows you to resize an image, a new pixel buffer is allocated to fit &amp; the previous data is scaled to fit the new size.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">img</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The image to resize. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nwidth</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new width. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">nheight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new height. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if image was resized or false on error. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_images.c" line="224" column="6" bodyfile="MLX42/src/mlx_images.c" bodystart="224" bodyend="251"/>
+        <references refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" compoundref="MLX42__Int_8h" startline="42">BPP</references>
+        <references refid="glad_8h_1a9f2854f4a91a0d83d2d54cb8110bfca4" compoundref="glad_8h" startline="286">GL_RGBA</references>
+        <references refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" compoundref="glad_8h" startline="243">GL_TEXTURE_2D</references>
+        <references refid="glad_8h_1a80a33c79f69417372d65d2a65ca36d49" compoundref="glad_8h" startline="251">GL_UNSIGNED_BYTE</references>
+        <references refid="glad_8h_1a7da97095b562f67f161b50104776a66d" compoundref="glad_8h" startline="1985">glTexImage2D</references>
+        <references refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" compoundref="mlx__error_8c" startline="43" endline="50">mlx_error</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab932c5cc2d89b4ec7e20b9f8b105621e" compoundref="MLX42_8h" startline="378">MLX_INVDIM</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" compoundref="MLX42_8h" startline="383">MLX_MEMFAIL</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_images.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2021/12/28<sp/>02:29:06<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2023/03/30<sp/>16:36:39<sp/>by<sp/>ntamayo-<sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Private<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="MLX42__Int_8h_1a1ed852c03c55e288332fed9019ce0fc0" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__images_8c_1a1ed852c03c55e288332fed9019ce0fc0" kindref="member">mlx_flush_batch</ref>(<ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_size<sp/>&lt;=<sp/>0)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a3b3a3f8200f094b781e9f61e2f19fc50" kindref="member">glBindBuffer</ref>(<ref refid="glad_8h_1a7180045dcb52b22af2cd0366026bc3ed" kindref="member">GL_ARRAY_BUFFER</ref>,<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;vbo);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a9419a03f5c46e2758f884e9c56d92b6a" kindref="member">glBufferData</ref>(<ref refid="glad_8h_1a7180045dcb52b22af2cd0366026bc3ed" kindref="member">GL_ARRAY_BUFFER</ref>,<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_size<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structvertex" kindref="compound">vertex_t</ref>),<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_vertices,<sp/><ref refid="glad_8h_1ab7dffdc215fbbe75b6ccacfecfc14648" kindref="member">GL_STATIC_DRAW</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a89377449aceadc060b577926b5413bd2" kindref="member">glDrawArrays</ref>(<ref refid="glad_8h_1a6079e7a02a59adad65eb953d9482b1ed" kindref="member">GL_TRIANGLES</ref>,<sp/>0,<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_size);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_size<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">memset</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;bound_textures,<sp/>0,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;bound_textures));</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="mlx__images_8c_1a0455987ae10955685b82b62eab3e20fd" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int8_t</ref><sp/><ref refid="mlx__images_8c_1a0455987ae10955685b82b62eab3e20fd" kindref="member">mlx_bind_texture</ref>(<ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1acebcc1c5663f14ebde1d16831e5fed94" kindref="member">GLint</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">handle</ref><sp/>=<sp/>(<ref refid="glad_8h_1acebcc1c5663f14ebde1d16831e5fed94" kindref="member">GLint</ref>)((<ref refid="structmlx__image__ctx" kindref="compound">mlx_image_ctx_t</ref>*)<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;context)-&gt;<ref refid="glad_8h_1a0b57774cb59b667df4a205ae0b1a50e2" kindref="member">texture</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Attempt<sp/>to<sp/>bind<sp/>the<sp/>texture,<sp/>or<sp/>obtain<sp/>the<sp/>index<sp/>if<sp/>it<sp/>is<sp/>already<sp/>bound.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int8_t</ref><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>16;<sp/>i++)</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;bound_textures[i]<sp/>==<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">handle</ref>)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(i);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;bound_textures[i]<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;bound_textures[i]<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">handle</ref>;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1af15266b67de988f5ddf442bbbdd1b3fc" kindref="member">glActiveTexture</ref>(<ref refid="glad_8h_1a16cc91096144fc7048b45e2add14915b" kindref="member">GL_TEXTURE0</ref><sp/>+<sp/>i);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a987aecafceffb9afaef11412d42e605b" kindref="member">glBindTexture</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">handle</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(i);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>no<sp/>free<sp/>slot<sp/>was<sp/>found,<sp/>flush<sp/>the<sp/>batch<sp/>and<sp/>assign<sp/>the<sp/>texture<sp/>to<sp/>the<sp/>first<sp/>available<sp/>slot</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="mlx__images_8c_1a1ed852c03c55e288332fed9019ce0fc0" kindref="member">mlx_flush_batch</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;bound_textures[0]<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">handle</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1af15266b67de988f5ddf442bbbdd1b3fc" kindref="member">glActiveTexture</ref>(<ref refid="glad_8h_1a16cc91096144fc7048b45e2add14915b" kindref="member">GL_TEXTURE0</ref>);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a987aecafceffb9afaef11412d42e605b" kindref="member">glBindTexture</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">handle</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(0);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="59"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*<sp/>Internal<sp/>function<sp/>to<sp/>draw<sp/>a<sp/>single<sp/>instance<sp/>of<sp/>an<sp/>image</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>to<sp/>the<sp/>screen.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="MLX42__Int_8h_1a2c27c67cc0b297e0a0420a3074aa502c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__images_8c_1a2c27c67cc0b297e0a0420a3074aa502c" kindref="member">mlx_draw_instance</ref>(<ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>,<sp/><ref refid="structmlx__instance" kindref="compound">mlx_instance_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>)</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1afb1b07e1b25035d41d60fb2c03d507e6" kindref="member">w</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref>)<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;width;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1afa0fb1b5e976920c0abeff2dca3ed774" kindref="member">h</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref>)<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;height;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref>)<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>-&gt;x;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref>)<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>-&gt;y;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1a1c599441d9dece861ee2cd70e31ce120" kindref="member">z</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref>)<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>-&gt;z;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int8_t</ref><sp/>tex<sp/>=<sp/><ref refid="mlx__images_8c_1a0455987ae10955685b82b62eab3e20fd" kindref="member">mlx_bind_texture</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structvertex" kindref="compound">vertex_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">vertices</ref>[6]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="MLX42__Int_8h_1a4795b67e29de6d25f5c89a5aec0c2833" kindref="member">vertex_t</ref>){<ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref>,<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref>,<sp/><ref refid="glad_8h_1a1c599441d9dece861ee2cd70e31ce120" kindref="member">z</ref>,<sp/>0.f,<sp/>0.f,<sp/>tex},</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="MLX42__Int_8h_1a4795b67e29de6d25f5c89a5aec0c2833" kindref="member">vertex_t</ref>){<ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref><sp/>+<sp/><ref refid="glad_8h_1afb1b07e1b25035d41d60fb2c03d507e6" kindref="member">w</ref>,<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>+<sp/><ref refid="glad_8h_1afa0fb1b5e976920c0abeff2dca3ed774" kindref="member">h</ref>,<sp/><ref refid="glad_8h_1a1c599441d9dece861ee2cd70e31ce120" kindref="member">z</ref>,<sp/>1.f,<sp/>1.f,<sp/>tex},</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="MLX42__Int_8h_1a4795b67e29de6d25f5c89a5aec0c2833" kindref="member">vertex_t</ref>){<ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref><sp/>+<sp/><ref refid="glad_8h_1afb1b07e1b25035d41d60fb2c03d507e6" kindref="member">w</ref>,<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref>,<sp/><ref refid="glad_8h_1a1c599441d9dece861ee2cd70e31ce120" kindref="member">z</ref>,<sp/>1.f,<sp/>0.f,<sp/>tex},</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="MLX42__Int_8h_1a4795b67e29de6d25f5c89a5aec0c2833" kindref="member">vertex_t</ref>){<ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref>,<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref>,<sp/><ref refid="glad_8h_1a1c599441d9dece861ee2cd70e31ce120" kindref="member">z</ref>,<sp/>0.f,<sp/>0.f,<sp/>tex},</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="MLX42__Int_8h_1a4795b67e29de6d25f5c89a5aec0c2833" kindref="member">vertex_t</ref>){<ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref>,<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>+<sp/><ref refid="glad_8h_1afa0fb1b5e976920c0abeff2dca3ed774" kindref="member">h</ref>,<sp/><ref refid="glad_8h_1a1c599441d9dece861ee2cd70e31ce120" kindref="member">z</ref>,<sp/>0.f,<sp/>1.f,<sp/>tex},</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<ref refid="MLX42__Int_8h_1a4795b67e29de6d25f5c89a5aec0c2833" kindref="member">vertex_t</ref>){<ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref><sp/>+<sp/><ref refid="glad_8h_1afb1b07e1b25035d41d60fb2c03d507e6" kindref="member">w</ref>,<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>+<sp/><ref refid="glad_8h_1afa0fb1b5e976920c0abeff2dca3ed774" kindref="member">h</ref>,<sp/><ref refid="glad_8h_1a1c599441d9dece861ee2cd70e31ce120" kindref="member">z</ref>,<sp/>1.f,<sp/>1.f,<sp/>tex},</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">memmove</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_vertices<sp/>+<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_size,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">vertices</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">vertices</ref>));</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_size<sp/>+=<sp/>6;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;batch_size<sp/>&gt;=<sp/><ref refid="MLX42__Int_8h_1aab9cb94ead198758e2f9ff925ef0920b" kindref="member">MLX_BATCH_SIZE</ref>)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mlx__images_8c_1a1ed852c03c55e288332fed9019ce0fc0" kindref="member">mlx_flush_batch</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="mlx__images_8c_1a8191539ebf00b641dee5842619d95845" refkind="member"><highlight class="normal"><ref refid="structmlx__instance" kindref="compound">mlx_instance_t</ref>*<sp/><ref refid="mlx__images_8c_1a8191539ebf00b641dee5842619d95845" kindref="member">mlx_grow_instances</ref>(<ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">did_realloc</ref>)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__image__ctx" kindref="compound">mlx_image_ctx_t</ref>*<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctx</ref><sp/>=<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;context;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;count<sp/>&gt;=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctx</ref>-&gt;instances_capacity)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctx</ref>-&gt;instances_capacity<sp/>==<sp/>0)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctx</ref>-&gt;<ref refid="structmlx__image__ctx_1a252420965acb494a1937b6d2036043f3" kindref="member">instances_capacity</ref><sp/>=<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;count;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctx</ref>-&gt;instances_capacity<sp/>*=<sp/>2;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">did_realloc</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">realloc</ref>(<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ctx</ref>-&gt;instances_capacity<sp/>*<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structmlx__instance" kindref="compound">mlx_instance_t</ref>));</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">did_realloc</ref><sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Public<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="MLX42_8h_1a0a80f6d9a729c77be48149e77b0faa8c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__images_8c_1a0a80f6d9a729c77be48149e77b0faa8c" kindref="member">mlx_set_instance_depth</ref>(<ref refid="structmlx__instance" kindref="compound">mlx_instance_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/>zdepth)</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>-&gt;z<sp/>==<sp/>zdepth)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">instance</ref>-&gt;z<sp/>=<sp/>zdepth;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/><sp/>/**</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>NOTE:<sp/>The<sp/>reason<sp/>why<sp/>we<sp/>don&apos;t<sp/>sort<sp/>directly<sp/>is<sp/>that</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>the<sp/>user<sp/>might<sp/>call<sp/>this<sp/>function<sp/>multiple<sp/>times<sp/>in<sp/>a<sp/>row<sp/>and<sp/>we<sp/>don&apos;t</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*<sp/>want<sp/>to<sp/>sort<sp/>for<sp/>every<sp/>change.<sp/>Pre-loop<sp/>wise<sp/>that<sp/>is.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1ab1f31200953135a9601bfb65ed495bd4" kindref="member">sort_queue</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" refkind="member"><highlight class="normal"><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="mlx__images_8c_1a06dbfde4fce913678e09b0af263b0c06" kindref="member">mlx_image_to_window</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref>)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Allocate<sp/>buffers...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;count++;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">did_realloc</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__instance" kindref="compound">mlx_instance_t</ref>*<sp/>instances<sp/>=<sp/><ref refid="mlx__images_8c_1a8191539ebf00b641dee5842619d95845" kindref="member">mlx_grow_instances</ref>(<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>,<sp/>&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">did_realloc</ref>);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdraw__queue" kindref="compound">draw_queue_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">calloc</ref>(1,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structdraw__queue" kindref="compound">draw_queue_t</ref>));</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!instances<sp/>||<sp/>!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">did_realloc</ref>)</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(instances);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>),<sp/><ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" kindref="member">MLX_MEMFAIL</ref>),<sp/>-1);</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>data...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>-&gt;image<sp/>=<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>-&gt;instanceid<sp/>=<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;count<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances<sp/>=<sp/>instances;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances[<ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>].<ref refid="structmlx__instance_1a9b95bea19763667a6012218a68242c6c" kindref="member">x</ref><sp/>=<sp/><ref refid="glad_8h_1a78d5aac12144d7f8f26224e085394fbb" kindref="member">x</ref>;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances[<ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>].y<sp/>=<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref>;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>NOTE:<sp/>We<sp/>keep<sp/>updating<sp/>the<sp/>Z<sp/>for<sp/>the<sp/>convenience<sp/>of<sp/>the<sp/>user.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Always<sp/>update<sp/>Z<sp/>depth<sp/>to<sp/>prevent<sp/>overlapping<sp/>images<sp/>by<sp/>default.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances[<ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>].z<sp/>=<sp/>((<ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*)<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" kindref="member">context</ref>)-&gt;zdepth++;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances[<ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>].enabled<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>draw<sp/>call...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1ab1f31200953135a9601bfb65ed495bd4" kindref="member">sort_queue</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">templst</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">templst</ref><sp/>=<sp/><ref refid="MLX42__Int_8h_1acdd55bf29013651c970a5858f2d1dcfd" kindref="member">mlx_lstnew</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>)))</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a3526094b6976d5e65ade883d3ed3d522" kindref="member">mlx_lstadd_front</ref>(&amp;((<ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*)<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" kindref="member">context</ref>)-&gt;render_queue,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">templst</ref>);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1a57f14e05b1900f16a2da82ade47d0c6d" kindref="member">index</ref>);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(2,<sp/>instances,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>),<sp/><ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" kindref="member">MLX_MEMFAIL</ref>),<sp/>-1);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" refkind="member"><highlight class="normal"><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="mlx__images_8c_1abe515cadb9b88a9d064383da276c2467" kindref="member">mlx_new_image</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1a6879d830f164725df67adeeabca3ea47" kindref="member">width</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1a60075de22f90a1223dc0bea98d2ee4d5" kindref="member">height</ref>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1a6879d830f164725df67adeeabca3ea47" kindref="member">width</ref><sp/>||<sp/>!<ref refid="glad_8h_1a60075de22f90a1223dc0bea98d2ee4d5" kindref="member">height</ref><sp/>||<sp/><ref refid="glad_8h_1a6879d830f164725df67adeeabca3ea47" kindref="member">width</ref><sp/>&gt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">INT16_MAX</ref><sp/>||<sp/><ref refid="glad_8h_1a60075de22f90a1223dc0bea98d2ee4d5" kindref="member">height</ref><sp/>&gt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">INT16_MAX</ref>)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*)<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab932c5cc2d89b4ec7e20b9f8b105621e" kindref="member">MLX_INVDIM</ref>));</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref><sp/>=<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" kindref="member">context</ref>;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">calloc</ref>(1,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>));</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__image__ctx" kindref="compound">mlx_image_ctx_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newctx</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">calloc</ref>(1,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structmlx__image__ctx" kindref="compound">mlx_image_ctx_t</ref>));</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref><sp/>||<sp/>!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newctx</ref>)</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(2,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newctx</ref>);</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" kindref="member">MLX_MEMFAIL</ref>));</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>-&gt;enabled<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>-&gt;context<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newctx</ref>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>(*(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*)&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>-&gt;width)<sp/>=<sp/><ref refid="glad_8h_1a6879d830f164725df67adeeabca3ea47" kindref="member">width</ref>;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>(*(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*)&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>-&gt;height)<sp/>=<sp/><ref refid="glad_8h_1a60075de22f90a1223dc0bea98d2ee4d5" kindref="member">height</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>-&gt;pixels<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">calloc</ref>(<ref refid="glad_8h_1a6879d830f164725df67adeeabca3ea47" kindref="member">width</ref><sp/>*<sp/><ref refid="glad_8h_1a60075de22f90a1223dc0bea98d2ee4d5" kindref="member">height</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref>))))</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(2,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newctx</ref>);</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" kindref="member">MLX_MEMFAIL</ref>));</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newentry</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newentry</ref><sp/>=<sp/><ref refid="MLX42__Int_8h_1acdd55bf29013651c970a5858f2d1dcfd" kindref="member">mlx_lstnew</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>)))</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(3,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>-&gt;pixels,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>-&gt;context,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>);</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>((</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*)<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" kindref="member">MLX_MEMFAIL</ref>));</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Generate<sp/>OpenGL<sp/>texture</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a82ac4415f852b8b5bfe7356202ca934e" kindref="member">glGenTextures</ref>(1,<sp/>&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newctx</ref>-&gt;texture);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a987aecafceffb9afaef11412d42e605b" kindref="member">glBindTexture</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newctx</ref>-&gt;texture);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a5817fa85137822142b4951eacd0154e7" kindref="member">glTexParameteri</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/><ref refid="glad_8h_1a173a2b2453322dd8d613df6cf2e72480" kindref="member">GL_TEXTURE_MIN_FILTER</ref>,<sp/><ref refid="glad_8h_1a7ec02582a9b1c390908a2230c8e26c0b" kindref="member">GL_NEAREST</ref>);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a5817fa85137822142b4951eacd0154e7" kindref="member">glTexParameteri</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/><ref refid="glad_8h_1acb47a41b5963d44826f44b7370bccc26" kindref="member">GL_TEXTURE_MAG_FILTER</ref>,<sp/><ref refid="glad_8h_1a7ec02582a9b1c390908a2230c8e26c0b" kindref="member">GL_NEAREST</ref>);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a5817fa85137822142b4951eacd0154e7" kindref="member">glTexParameteri</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/><ref refid="glad_8h_1a23a0bc2909cc2f79fe7287aaa044e880" kindref="member">GL_TEXTURE_WRAP_S</ref>,<sp/><ref refid="glad_8h_1ae90f81f48642444b4ba7fa5cacf40569" kindref="member">GL_CLAMP_TO_EDGE</ref>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a5817fa85137822142b4951eacd0154e7" kindref="member">glTexParameteri</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/><ref refid="glad_8h_1ac307a4772e1d3decd5b6f36192113ab6" kindref="member">GL_TEXTURE_WRAP_T</ref>,<sp/><ref refid="glad_8h_1ae90f81f48642444b4ba7fa5cacf40569" kindref="member">GL_CLAMP_TO_EDGE</ref>);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a3526094b6976d5e65ade883d3ed3d522" kindref="member">mlx_lstadd_front</ref>((<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**)(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;images),<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newentry</ref>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">newimg</ref>);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="MLX42_8h_1a997cfd3dd07ea85a91df958ae0d1e7b5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__images_8c_1a997cfd3dd07ea85a91df958ae0d1e7b5" kindref="member">mlx_delete_image</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>)</highlight></codeline>
+<codeline lineno="205"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>);</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref><sp/>=<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" kindref="member">context</ref>;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Delete<sp/>all<sp/>instances<sp/>in<sp/>the<sp/>render<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">quelst</ref>;</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>((<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">quelst</ref><sp/>=<sp/><ref refid="MLX42__Int_8h_1a4771a982050b3e2468d6fb4a8de9ab70" kindref="member">mlx_lstremove</ref>(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;render_queue,<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>,<sp/>&amp;<ref refid="MLX42__Int_8h_1aa16bb5db4bd358d8482ee00b9c19ea6b" kindref="member">mlx_equal_inst</ref>)))</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(2,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">quelst</ref>-&gt;content,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">quelst</ref>);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">imglst</ref>;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">imglst</ref><sp/>=<sp/><ref refid="MLX42__Int_8h_1a4771a982050b3e2468d6fb4a8de9ab70" kindref="member">mlx_lstremove</ref>(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;images,<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>,<sp/>&amp;<ref refid="MLX42__Int_8h_1a6bf2c1e0c02394e613d8b61e7ad3d428" kindref="member">mlx_equal_image</ref>)))</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aedf2546140e2c0f0e8d6f62e9998ae73" kindref="member">glDeleteTextures</ref>(1,<sp/>&amp;((<ref refid="structmlx__image__ctx" kindref="compound">mlx_image_ctx_t</ref>*)<ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>-&gt;context)-&gt;texture);</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(5,<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>-&gt;pixels,<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>-&gt;instances,<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>-&gt;context,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">imglst</ref>,<sp/><ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref>);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224" refid="MLX42_8h_1a38c0b46353a7c9a1e2b6222f2d7126eb" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__images_8c_1a38c0b46353a7c9a1e2b6222f2d7126eb" kindref="member">mlx_resize_image</ref>(<ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref>)</highlight></codeline>
+<codeline lineno="225"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref><sp/>||<sp/>!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref><sp/>||<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref><sp/>&gt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">INT16_MAX</ref><sp/>||<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref><sp/>&gt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">INT16_MAX</ref>)</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab932c5cc2d89b4ec7e20b9f8b105621e" kindref="member">MLX_INVDIM</ref>));</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref><sp/>!=<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;width<sp/>||<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref><sp/>!=<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;height)</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">origin</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*)<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;pixels;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">wstep</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref>)<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;width<sp/>/<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref>;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">hstep</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref>)<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;height<sp/>/<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref>;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">tempbuff</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">calloc</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref><sp/>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref>,<sp/><ref refid="MLX42__Int_8h_1a8f40226da14df1fe52cd78fcda4ec5cb" kindref="member">BPP</ref>);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">tempbuff</ref>)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11a0670b9e8d64189a6810981b81534c980" kindref="member">MLX_MEMFAIL</ref>));</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;pixels<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">tempbuff</ref>;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a7da97095b562f67f161b50104776a66d" kindref="member">glTexImage2D</ref>(<ref refid="glad_8h_1ad4de17abefa73fa2ef53379f73b734be" kindref="member">GL_TEXTURE_2D</ref>,<sp/>0,<sp/><ref refid="glad_8h_1a9f2854f4a91a0d83d2d54cb8110bfca4" kindref="member">GL_RGBA</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref>,<sp/>0,<sp/><ref refid="glad_8h_1a9f2854f4a91a0d83d2d54cb8110bfca4" kindref="member">GL_RGBA</ref>,<sp/><ref refid="glad_8h_1a80a33c79f69417372d65d2a65ca36d49" kindref="member">GL_UNSIGNED_BYTE</ref>,<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;pixels);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">destin</ref><sp/>=<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*)<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;pixels;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1a1fb4b4dc7b41b62604a44f280bccbd54" kindref="member">j</ref><sp/>=<sp/>0;<sp/><ref refid="glad_8h_1a1fb4b4dc7b41b62604a44f280bccbd54" kindref="member">j</ref><sp/>&lt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref>;<sp/><ref refid="glad_8h_1a1fb4b4dc7b41b62604a44f280bccbd54" kindref="member">j</ref>++)</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">destin</ref>[<ref refid="glad_8h_1a1fb4b4dc7b41b62604a44f280bccbd54" kindref="member">j</ref><sp/>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref><sp/>+<sp/>i]<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">origin</ref>[(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>)(<ref refid="glad_8h_1a1fb4b4dc7b41b62604a44f280bccbd54" kindref="member">j</ref><sp/>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">hstep</ref>)<sp/>*<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;width<sp/>+<sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>)(i<sp/>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">wstep</ref>)];</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*)&amp;<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;width)<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nwidth</ref>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref>*)&amp;<ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;height)<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nheight</ref>;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">origin</ref>);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="251"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/mlx_images.c"/>
+  </compounddef>
+</doxygen>

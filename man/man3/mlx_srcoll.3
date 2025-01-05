@@ -1,0 +1,47 @@
+.TH "mlx_srcoll" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mlx_srcoll
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <MLX42_Int\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBvoid\fP * \fBparam\fP"
+.br
+.ti -1c
+.RI "\fBmlx_scrollfunc\fP \fBfunc\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+There are 2 types of hooks, special and generics\&.
+.PP
+Specials: Specials are specific callback functions to a specific action such as window resizing or key presses\&. These are attached to the callbacks of glfw\&. In case MLX itself needs the callback we call the specials in that callback since there can only ever be a single callback\&.
+.PP
+Generics: Generics are MLX42 specific hooks and can have multiple hooks at the same time, these are executed every frame and can be used as an alternative for keypresses or animations for instance\&.
+.PP
+NOTE: Hooks could be achieved with va_args to have any amount of args sized functor but we can't/don't want to let the user deal with va_args and having to look up what args are what, etc\&.\&.\&.
+.PP
+We want to keep it straightforward with functors already describing what params they have\&. 
+.PP
+Definition at line \fB114\fP of file \fBMLX42_Int\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBmlx_scrollfunc\fP mlx_srcoll::func"
+
+.PP
+Definition at line \fB117\fP of file \fBMLX42_Int\&.h\fP\&.
+.SS "\fBvoid\fP* mlx_srcoll::param"
+
+.PP
+Definition at line \fB116\fP of file \fBMLX42_Int\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

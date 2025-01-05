@@ -1,0 +1,231 @@
+\doxysection{julia.\+c File Reference}
+\hypertarget{julia_8c}{}\label{julia_8c}\index{julia.c@{julia.c}}
+{\ttfamily \#include "{}fractol.\+h"{}}\newline
+Include dependency graph for julia.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{julia_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{julia\+\_\+iterations}} (\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}vars, \mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Performs the iterations for a signle point in the Julia set. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\+\_\+julia\+\_\+row}} (\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}vars, \mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data, int y)
+\begin{DoxyCompactList}\small\item\em Renders a single row of the Julia set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{julia_8c_ac62d3b22b714b98af9c4faeac6e6e650}{render\+\_\+julia}} (\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Renders the Julia set fractal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{julia_8c_a06a8d464c822682fafa59d5a404516bb}\label{julia_8c_a06a8d464c822682fafa59d5a404516bb} 
+\index{julia.c@{julia.c}!julia\_iterations@{julia\_iterations}}
+\index{julia\_iterations@{julia\_iterations}!julia.c@{julia.c}}
+\doxysubsubsection{\texorpdfstring{julia\_iterations()}{julia\_iterations()}}
+{\footnotesize\ttfamily static void julia\+\_\+iterations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}}]{vars,  }\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Performs the iterations for a signle point in the Julia set. 
+
+This function applies the Julia set formula iteratively to determine whether a given point escapes the threshold. The number of iterations taken before escape determines the point\textquotesingle{}s color.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Core Algorithm\+:}} The formula {\ttfamily z = z\texorpdfstring{$^\wedge$}{\string^}2 + c} is applied, where\+:
+\begin{DoxyItemize}
+\item {\ttfamily z} is a complex number, represented by real ({\ttfamily z\+\_\+re}) and imaginary ({\ttfamily z\+\_\+im}) parts.
+\item {\ttfamily c} is a constant defined by the user (real and imaginary parts).
+\end{DoxyItemize}
+\item {\bfseries{Bounding Condition\+:}} The iteerations stop when\+:
+\begin{DoxyItemize}
+\item The sum of the squares of the real and imaginary parts exceeds 4.\+0.
+\item The maximum number of iterations ({\ttfamily MAX\+\_\+\+ITERATIONS}) is reached.
+\end{DoxyItemize}
+\item {\bfseries{Optimization\+:}} Squared values ({\ttfamily z\+\_\+re\texorpdfstring{$^\wedge$}{\string^}2} and {\ttfamily z\+\_\+im\texorpdfstring{$^\wedge$}{\string^}2}) are cached to avoid redundant calculations.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars} & Pointer to the structure holding rendering variables (e.\+g., {\ttfamily z} and {\ttfamily iterations}). @params data Pointer to the main fractal data, including the Julia constant ({\ttfamily c}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{julia_8c_source_l00084}{84}} of file \mbox{\hyperlink{julia_8c_source}{julia.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{double}\ \ temp\_z\_re;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ =\ 0;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordflow}{while}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ <=\ 4.0\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ <\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}})}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ temp\_z\_re\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ temp\_z\_re\ -\/=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ temp\_z\_re\ +=\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 2.0\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ \(\backslash\)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ temp\_z\_re;}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}++;}
+\DoxyCodeLine{00101\ \ \ \ \ \}}
+\DoxyCodeLine{00102\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{julia_8c_a06a8d464c822682fafa59d5a404516bb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{julia_8c_ac62d3b22b714b98af9c4faeac6e6e650}\label{julia_8c_ac62d3b22b714b98af9c4faeac6e6e650} 
+\index{julia.c@{julia.c}!render\_julia@{render\_julia}}
+\index{render\_julia@{render\_julia}!julia.c@{julia.c}}
+\doxysubsubsection{\texorpdfstring{render\_julia()}{render\_julia()}}
+{\footnotesize\ttfamily void render\+\_\+julia (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Renders the Julia set fractal. 
+
+Renders the Julia fractal.
+
+This function handles the full rendering process for the Julia set by iterating through all rows of the screen, rendering each row sequentially.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Setup\+:}}
+\begin{DoxyItemize}
+\item Calculates the scaling and starting coordinates based on the zoom level and positional offsets provided by the user.
+\end{DoxyItemize}
+\item {\bfseries{Row-\/by-\/\+Row Rendering\+:}}
+\begin{DoxyItemize}
+\item For each row on the screen ({\ttfamily y} coordinate), the corresponding imaginary coordinate is computed.
+\item The row is passed to {\ttfamily render\+\_\+julia\+\_\+row}, which handles the pixel-\/by-\/pixel rendering.
+\end{DoxyItemize}
+\item {\bfseries{Full Image Construction\+:}}
+\begin{DoxyItemize}
+\item The ffunction processes every row until the entire fractal is rendered.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the main fractal data structure, including rendering details such as zoom, offsets, and fractal paarameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{julia_8c_source_l00165}{165}} of file \mbox{\hyperlink{julia_8c_source}{julia.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00166\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{00171\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{00173\ \ \ \ \ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ vars.\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ y\ *\ vars.\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\_julia\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{00176\ \ \ \ \ \}}
+\DoxyCodeLine{00177\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{julia_8c_ac62d3b22b714b98af9c4faeac6e6e650_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{julia_8c_ac62d3b22b714b98af9c4faeac6e6e650_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}\label{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc} 
+\index{julia.c@{julia.c}!render\_julia\_row@{render\_julia\_row}}
+\index{render\_julia\_row@{render\_julia\_row}!julia.c@{julia.c}}
+\doxysubsubsection{\texorpdfstring{render\_julia\_row()}{render\_julia\_row()}}
+{\footnotesize\ttfamily static void render\+\_\+julia\+\_\+row (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{fractol_8h_a73bbfaa62c5d442e2541ea8e5626611d}{t\+\_\+render\+\_\+vars}} \texorpdfstring{$\ast$}{*}}]{vars,  }\item[{\mbox{\hyperlink{fractol_8h_a24e28e95867f9681b9d87781b1caa65b}{t\+\_\+data}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Renders a single row of the Julia set. 
+
+This function processes one row of the pixel in the Juliaa set by iterating through each pixel, applying the Juliaa set formula, and determining its color.
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Coordinate Mapping\+:}}
+\begin{DoxyItemize}
+\item Each pixel is mapped to a complex number ({\ttfamily z}) based on its position and the scaling factors calculated from the zoom and offsets.
+\end{DoxyItemize}
+\item {\bfseries{Iteration and Coloring\+:}}
+\begin{DoxyItemize}
+\item The Julia set formula is applied iteratively for each pixel.
+\item The number of iterations is used to calculate the pixel\textquotesingle{}s color.
+\end{DoxyItemize}
+\item {\bfseries{Row Processing\+:}} Each pixel in the row is processed sequentially, and the result is stored in the image buffer.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vars} & Pointer to the rendering variables structure (e.\+g., pixel and scaling). \\
+\hline
+{\em data} & Pointer to the main fractal data. \\
+\hline
+{\em y} & The current row index being processed (0 for the first row, up to {\ttfamily HEIGHT -\/ 1}). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{julia_8c_source_l00126}{126}} of file \mbox{\hyperlink{julia_8c_source}{julia.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{00132\ \ \ \ \ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ x\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0];}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{julia\_iterations}}(vars,\ data);}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ +\ y\ *\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ +\ x;}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ *vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc_icgraph}
+\end{center}
+\end{figure}

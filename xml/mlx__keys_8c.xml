@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__keys_8c" kind="file" language="C++">
+    <compoundname>mlx_keys.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/mlx_keys.c</label>
+        <link refid="mlx__keys_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>static void mlx_key_callback</definition>
+        <argsstring>(GLFWwindow *window, int32_t key, int32_t scancode, int32_t action, int32_t mods)</argsstring>
+        <name>mlx_key_callback</name>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">GLFWwindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>scancode</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>action</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>mods</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_keys.c" line="17" column="13" bodyfile="MLX42/src/mlx_keys.c" bodystart="17" bodyend="29"/>
+        <references refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" compoundref="MLX42_8h" startline="363">mlx::context</references>
+        <references refid="structmlx__key_1ac1d4cfe703545783836ec98c03ea7311" compoundref="MLX42__Int_8h" startline="147">mlx_key::func</references>
+        <references refid="structmlx__key_1a68754b86a374dcae2f7bb7ae14fef889" compoundref="MLX42__Int_8h" startline="146">mlx_key::param</references>
+        <referencedby refid="MLX42_8h_1a4d6d36f9bc5b957e080c2a5422882270" compoundref="mlx__keys_8c" startline="33" endline="42">mlx_key_hook</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__keys_8c_1a4d6d36f9bc5b957e080c2a5422882270" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_key_hook</definition>
+        <argsstring>(mlx_t *mlx, mlx_keyfunc func, void *param)</argsstring>
+        <name>mlx_key_hook</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1ad6d21f88160d8a2a180419e7f4cc9b5f" kindref="member">mlx_keyfunc</ref></type>
+          <declname>func</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+          <declname>param</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function sets the key callback, which is called when a key is pressed on the keyboard. Useful for single keypress detection.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">func</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The keypress callback function. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">param</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An additional optional parameter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_keys.c" line="33" column="6" bodyfile="MLX42/src/mlx_keys.c" bodystart="33" bodyend="42"/>
+        <references refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" compoundref="MLX42_8h" startline="363">mlx::context</references>
+        <references refid="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" compoundref="mlx__keys_8c" startline="17" endline="29">mlx_key_callback</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" compoundref="MLX42_8h" startline="362">mlx::window</references>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="139" endline="165">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__keys_8c_1aeca3680814ced1c4e67603419a2b3b8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>bool mlx_is_key_down</definition>
+        <argsstring>(mlx_t *mlx, keys_t key)</argsstring>
+        <name>mlx_is_key_down</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42_8h_1a384f75c85cf2a9ede19f2f5ec80cf817" kindref="member">keys_t</ref></type>
+          <declname>key</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true or false if the key is down or not.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The keycode to check, use MLX_KEY_... to specify! </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True or false if the key is down or not. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_keys.c" line="44" column="6" bodyfile="MLX42/src/mlx_keys.c" bodystart="44" bodyend="49"/>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" compoundref="MLX42_8h" startline="362">mlx::window</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_keys.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2022/01/01<sp/>21:06:45<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2023/02/13<sp/>12:24:40<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Private<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" kindref="member">mlx_key_callback</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">GLFWwindow</ref>*<sp/>window,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/>key,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">scancode</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="MLX42_8h_1a2f4ab7bf743142dae2e459aa18f9f1d4" kindref="member">action</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mods</ref>)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">glfwGetWindowUserPointer</ref>(window);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmlx__key" kindref="compound">mlx_key_t</ref><sp/>key_hook<sp/>=<sp/>((<ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*)<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" kindref="member">context</ref>)-&gt;key_hook;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structmlx__key__data" kindref="compound">mlx_key_data_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">callback_data</ref><sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>key,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42_8h_1a2f4ab7bf743142dae2e459aa18f9f1d4" kindref="member">action</ref>,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">scancode</ref>,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mods</ref>,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>key_hook.<ref refid="structmlx__key_1ac1d4cfe703545783836ec98c03ea7311" kindref="member">func</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">callback_data</ref>,<sp/>key_hook.<ref refid="structmlx__key_1a68754b86a374dcae2f7bb7ae14fef889" kindref="member">param</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Public<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="MLX42_8h_1a4d6d36f9bc5b957e080c2a5422882270" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__keys_8c_1a4d6d36f9bc5b957e080c2a5422882270" kindref="member">mlx_key_hook</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="MLX42_8h_1ad6d21f88160d8a2a180419e7f4cc9b5f" kindref="member">mlx_keyfunc</ref><sp/><ref refid="glad_8h_1a18ae3ab36a07e388833b568cfdfa90c8" kindref="member">func</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1aee283a859c061cfde8881e3d9f2a1cb2" kindref="member">param</ref>)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1a18ae3ab36a07e388833b568cfdfa90c8" kindref="member">func</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref><sp/>=<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" kindref="member">context</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;key_hook.func<sp/>=<sp/><ref refid="glad_8h_1a18ae3ab36a07e388833b568cfdfa90c8" kindref="member">func</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;key_hook.param<sp/>=<sp/><ref refid="glad_8h_1aee283a859c061cfde8881e3d9f2a1cb2" kindref="member">param</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">glfwSetKeyCallback</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" kindref="member">window</ref>,<sp/><ref refid="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" kindref="member">mlx_key_callback</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44" refid="MLX42_8h_1aeca3680814ced1c4e67603419a2b3b8e" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__keys_8c_1aeca3680814ced1c4e67603419a2b3b8e" kindref="member">mlx_is_key_down</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>,<sp/><ref refid="MLX42_8h_1a384f75c85cf2a9ede19f2f5ec80cf817" kindref="member">keys_t</ref><sp/>key)</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">glfwGetKey</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" kindref="member">window</ref>,<sp/>key)<sp/>==<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">GLFW_PRESS</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/mlx_keys.c"/>
+  </compounddef>
+</doxygen>

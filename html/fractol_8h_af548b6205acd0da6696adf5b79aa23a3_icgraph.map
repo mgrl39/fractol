@@ -1,0 +1,18 @@
+<map id="calculate_scales_and_limits" name="calculate_scales_and_limits">
+<area shape="rect" id="Node000001" title="Calculates scales and limits for rendering fractals." alt="" coords="620,49,780,89"/>
+<area shape="rect" id="Node000002" href="$julia_8c.html#ac62d3b22b714b98af9c4faeac6e6e650" title="Renders the Julia fractal." alt="" coords="449,31,548,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="606,59,548,52,549,47,606,54"/>
+<area shape="rect" id="Node000007" href="$mandelbrot_8c.html#ac4c610e75a028afb898607ea03e80b30" title="Render the Mandelbrot fractal." alt="" coords="425,80,572,105"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="607,82,573,87,572,81,606,77"/>
+<area shape="rect" id="Node000003" href="$calcs_8c.html#a6010a48038dd00722649b2e7ad69668d" title="Renders the chosen fractal on the screen." alt="" coords="264,56,377,81"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,55,378,63,377,58,435,50"/>
+<area shape="rect" id="Node000004" href="$utils_8c.html#aa40f0dfb0dfb158de3f6f8b98f0de3ec" title="Handles key inputs." alt="" coords="114,5,210,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="266,54,202,33,204,28,268,49"/>
+<area shape="rect" id="Node000005" href="$main_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Main entry point for the fractal rendering program." alt="" coords="5,56,60,81"/>
+<area shape="poly" id="edge7_Node000003_Node000005" title=" " alt="" coords="251,71,60,71,60,66,251,66"/>
+<area shape="rect" id="Node000006" href="$utils_8c.html#ace17996cda407bf3eb3480f07ccdd107" title="Handles scroll inputs." alt="" coords="108,107,216,132"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="268,88,204,109,202,104,266,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="117,38,61,61,59,56,115,33"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="115,104,59,82,61,77,117,99"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="411,84,377,79,378,74,412,78"/>
+</map>

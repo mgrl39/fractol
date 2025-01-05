@@ -1,0 +1,66 @@
+\doxysection{mlx\+\_\+error.\+c}
+\hypertarget{mlx__error_8c_source}{}\label{mlx__error_8c_source}\index{MLX42/src/utils/mlx\_error.c@{MLX42/src/utils/mlx\_error.c}}
+\mbox{\hyperlink{mlx__error_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ::::::::\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ mlx\_error.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ W2Wizard\ <main@w2wizard.dev>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2021/12/28\ 02:51:54\ by\ W2Wizard\ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2022/11/22\ 08:50:15\ by\ jvan-\/hal\ \ \ \ \ \ \#\#\#\#\#\#\#\#\ \ \ odam.nl\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MLX42__Int_8h}{MLX42/MLX42\_Int.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00015}00015\ \textcolor{comment}{//=\ Private\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00017}00017\ \textcolor{comment}{//\ English\ description\ of\ the\ error\ codes.}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00018}\mbox{\hyperlink{mlx__error_8c_a326bf6bcd93f9b7b585fab097e8dcf1f}{00018}}\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{mlx__error_8c_a326bf6bcd93f9b7b585fab097e8dcf1f}{mlx\_errors}}[\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b}{MLX\_ERRMAX}}]\ =\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00019}00019\ \ \ \ \ \textcolor{stringliteral}{"{}No\ Errors"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00020}00020\ \ \ \ \ \textcolor{stringliteral}{"{}File\ has\ invalid\ extension"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00021}00021\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ open\ the\ file"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00022}00022\ \ \ \ \ \textcolor{stringliteral}{"{}PNG\ file\ is\ invalid\ or\ corrupted"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00023}00023\ \ \ \ \ \textcolor{stringliteral}{"{}XPM42\ file\ is\ invalid\ or\ corrupted"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00024}00024\ \ \ \ \ \textcolor{stringliteral}{"{}The\ specified\ X\ or\ Y\ positions\ are\ out\ of\ bounds"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00025}00025\ \ \ \ \ \textcolor{stringliteral}{"{}The\ specified\ Width\ or\ Height\ dimensions\ are\ out\ of\ bounds"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00026}00026\ \ \ \ \ \textcolor{stringliteral}{"{}The\ provided\ image\ is\ invalid,\ might\ indicate\ mismanagement\ of\ images"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00027}00027\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ vertex\ shader."{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00028}00028\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ fragment\ shader."{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00029}00029\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ compile\ the\ shaders."{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00030}00030\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ allocate\ memory"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00031}00031\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLAD"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00032}00032\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ initialize\ GLFW"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00033}00033\ \ \ \ \ \textcolor{stringliteral}{"{}Failed\ to\ create\ window"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00034}00034\ \ \ \ \ \textcolor{stringliteral}{"{}String\ is\ too\ big\ to\ be\ drawn"{}},}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00035}00035\ \};}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00036}00036\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00037}00037\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00038}00038\ \textcolor{comment}{\ *\ Functions\ to\ set\ the\ error\ number,\ simply\ for\ convenience.}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00039}00039\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00040}00040\ \textcolor{comment}{\ *\ @param\ val\ The\ error\ value.}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00041}00041\ \textcolor{comment}{\ *\ @return\ Always\ false\ }}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00042}00042\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00043}\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{00043}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{mlx__error_8c_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\_errno\_t}}\ \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00044}00044\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}\ =\ \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}};}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00046}00046\ \textcolor{preprocessor}{\#ifndef\ NDEBUG}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00047}00047\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{fprintf}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{stderr}},\ \textcolor{stringliteral}{"{}MLX42:\ \%s"{}},\ \mbox{\hyperlink{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}));}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00048}00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00052}00052\ \textcolor{comment}{//=\ Public\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00054}\mbox{\hyperlink{MLX42_8h_a2d365ea2e3844959187b6978c6e05171}{00054}}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{mlx__error_8c_a2d365ea2e3844959187b6978c6e05171}{mlx\_strerror}}(\mbox{\hyperlink{MLX42_8h_a3e74738348a67c05c9b62a904a176042}{mlx\_errno\_t}}\ \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00055}00055\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}\ >=\ 0,\ \textcolor{stringliteral}{"{}Index\ must\ be\ positive"{}});}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00057}00057\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}\ <\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b}{MLX\_ERRMAX}},\ \textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{mlx__error_8c_a326bf6bcd93f9b7b585fab097e8dcf1f}{mlx\_errors}}[\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}]);}
+\DoxyCodeLine{\Hypertarget{mlx__error_8c_source_l00060}00060\ \}}
+
+\end{DoxyCode}

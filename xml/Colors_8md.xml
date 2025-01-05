@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Colors_8md" kind="file" language="Markdown">
+    <compoundname>Colors.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Colors</highlight></codeline>
+<codeline><highlight class="normal">Colors<sp/>are<sp/>a<sp/>fundamental<sp/>concept<sp/>in<sp/>graphics<sp/>programming.<sp/>A<sp/>common<sp/>color<sp/>model<sp/>is<sp/>RGBA,<sp/>which<sp/>MLX<sp/>uses<sp/>for<sp/>storing<sp/>and<sp/>displaying<sp/>images.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Composition</highlight></codeline>
+<codeline><highlight class="normal">Colors<sp/>are<sp/>commonly<sp/>represented<sp/>as<sp/>`4-byte`<sp/>integers.<sp/>This<sp/>4-byte<sp/>integer<sp/>is<sp/>a<sp/>grouping<sp/>of<sp/>four<sp/>individual<sp/>channels:<sp/>red,<sp/>green,<sp/>blue<sp/>and<sp/>alpha,<sp/>with<sp/>alpha<sp/>representing<sp/>transparency.<sp/>Additionally,<sp/>colors<sp/>are<sp/>usually<sp/>shown<sp/>in<sp/>hexadecimal<sp/>to<sp/>make<sp/>each<sp/>channel<sp/>value<sp/>identifiable:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Channel<sp/>|<sp/>Description<sp/><sp/><sp/>|<sp/>RGBA<sp/>representation</highlight></codeline>
+<codeline><highlight class="normal">:------:|:-------------:|:-------------------:</highlight></codeline>
+<codeline><highlight class="normal">`R`<sp/><sp/><sp/><sp/><sp/>|<sp/>Red<sp/>Channel<sp/><sp/><sp/>|<sp/>`0xFF000000`</highlight></codeline>
+<codeline><highlight class="normal">`G`<sp/><sp/><sp/><sp/><sp/>|<sp/>Green<sp/>Channel<sp/>|<sp/>`0x00FF0000`</highlight></codeline>
+<codeline><highlight class="normal">`B`<sp/><sp/><sp/><sp/><sp/>|<sp/>Blue<sp/>Channel<sp/><sp/>|<sp/>`0x0000FF00`</highlight></codeline>
+<codeline><highlight class="normal">`A`<sp/><sp/><sp/><sp/><sp/>|<sp/>Alpha<sp/>Channel<sp/>|<sp/>`0x000000FF`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Combining<sp/>these<sp/>four<sp/>channel<sp/>values<sp/>into<sp/>one<sp/>will<sp/>result<sp/>in<sp/>a<sp/>non-transparent,<sp/>white<sp/>color.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Encoding<sp/>&amp;<sp/>Decoding</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>set<sp/>each<sp/>channel&apos;s<sp/>byte<sp/>we<sp/>can<sp/>use<sp/>bit-shifting<sp/>operations.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A<sp/>function<sp/>that<sp/>combines<sp/>four<sp/>individual<sp/>channel<sp/>bytes<sp/>into<sp/>a<sp/>single<sp/>integer<sp/>using<sp/>bit-shifting<sp/>looks<sp/>like<sp/>this:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>&apos;Encodes&apos;<sp/>four<sp/>individual<sp/>bytes<sp/>into<sp/>an<sp/>int.</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>get_rgba(int<sp/>r,<sp/>int<sp/>g,<sp/>int<sp/>b,<sp/>int<sp/>a)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(r<sp/>&lt;&lt;<sp/>24<sp/>|<sp/>g<sp/>&lt;&lt;<sp/>16<sp/>|<sp/>b<sp/>&lt;&lt;<sp/>8<sp/>|<sp/>a);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">We<sp/>can<sp/>also<sp/>do<sp/>this<sp/>in<sp/>reverse<sp/>to<sp/>retrieve<sp/>each<sp/>individual<sp/>byte<sp/>again:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>the<sp/>red<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>get_r(int<sp/>rgba)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Move<sp/>3<sp/>bytes<sp/>to<sp/>the<sp/>right<sp/>and<sp/>mask<sp/>out<sp/>the<sp/>first<sp/>byte.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>((rgba<sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>the<sp/>green<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>get_g(int<sp/>rgba)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Move<sp/>2<sp/>bytes<sp/>to<sp/>the<sp/>right<sp/>and<sp/>mask<sp/>out<sp/>the<sp/>first<sp/>byte.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>((rgba<sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>the<sp/>blue<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>get_b(int<sp/>rgba)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Move<sp/>1<sp/>byte<sp/>to<sp/>the<sp/>right<sp/>and<sp/>mask<sp/>out<sp/>the<sp/>first<sp/>byte.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>((rgba<sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Get<sp/>the<sp/>alpha<sp/>channel.</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>get_a(int<sp/>rgba)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Move<sp/>0<sp/>bytes<sp/>to<sp/>the<sp/>right<sp/>and<sp/>mask<sp/>out<sp/>the<sp/>first<sp/>byte.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(rgba<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>this<sp/>small<sp/>example<sp/>we<sp/>will<sp/>create<sp/>a<sp/>white<sp/>image:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;MLX42/MLX42.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;string.h&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Bytes<sp/>Per<sp/>Pixel.<sp/>Since<sp/>each<sp/>pixel<sp/>is<sp/>represented<sp/>as<sp/>an<sp/>integer,<sp/>it<sp/>will<sp/>be<sp/>four<sp/>bytes<sp/>for<sp/>four<sp/>channels.</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>BPP<sp/>sizeof(int32_t)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Init<sp/>mlx<sp/>with<sp/>a<sp/>canvas<sp/>size<sp/>of<sp/>256x256<sp/>and<sp/>the<sp/>ability<sp/>to<sp/>resize<sp/>the<sp/>window.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx<sp/>=<sp/>mlx_init(256,<sp/>256,<sp/>&quot;MLX42&quot;,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!mlx)<sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Create<sp/>a<sp/>128x128<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_image_t*<sp/>img<sp/>=<sp/>mlx_new_image(mlx,<sp/>128,<sp/>128);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Set<sp/>the<sp/>channels<sp/>of<sp/>each<sp/>pixel<sp/>in<sp/>our<sp/>image<sp/>to<sp/>the<sp/>maximum<sp/>byte<sp/>value<sp/>of<sp/>255.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>memset(img-&gt;pixels,<sp/>255,<sp/>img-&gt;width<sp/>*<sp/>img-&gt;height<sp/>*<sp/>BPP);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Draw<sp/>the<sp/>image<sp/>at<sp/>coordinate<sp/>(0,<sp/>0).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_image_to_window(mlx,<sp/>img,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Run<sp/>the<sp/>main<sp/>loop<sp/>and<sp/>terminate<sp/>on<sp/>quit.<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Colors.md"/>
+  </compounddef>
+</doxygen>

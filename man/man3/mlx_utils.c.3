@@ -1,0 +1,224 @@
+.TH "MLX42/src/utils/mlx_utils.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/utils/mlx_utils.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBmlx_getline\fP (\fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBout_size\fP, \fBFILE\fP *\fBfile\fP)"
+.br
+.ti -1c
+.RI "\fBuint64_t\fP \fBmlx_fnv_hash\fP (\fBchar\fP *\fBstr\fP, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_freen\fP (\fBint32_t\fP \fBcount\fP,\&.\&.\&.)"
+.br
+.ti -1c
+.RI "\fBuint32_t\fP \fBmlx_rgba_to_mono\fP (\fBuint32_t\fP \fBcolor\fP)"
+.br
+.ti -1c
+.RI "\fBdouble\fP \fBmlx_get_time\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_focus\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBuint64_t\fP mlx_fnv_hash (\fBchar\fP * str, \fBsize_t\fP len)"
+String hashing algorithm using FNV-1a\&. Source: https://bit.ly/3JcRGHa
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP The string to hash 
+.br
+\fIlen\fP The length of the string\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The hashed output\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB68\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+69 {
+70     const uint64_t fnv_prime = 0x100000001b3;
+71     const uint64_t fnv_offset = 0xcbf29ce484222325;
+72     uint64_t hash = fnv_offset;
+73 
+74     for (size_t i = 0; i < len; i++)
+75     {
+76         hash ^= str[i];
+77         hash *= fnv_prime;
+78     }
+79     return (hash);
+80 }
+.fi
+
+.SS "\fBvoid\fP mlx_focus (\fBmlx_t\fP * mlx)"
+This function brings the specified window to front and sets input focus\&.
+.PP
+Do not use this function to steal focus from other applications unless you are certain that is what the user wants\&. Focus stealing can be extremely disruptive\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB126\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+127 {
+128     MLX_NONNULL(mlx);
+129 
+130     glfwFocusWindow(mlx\->window);
+131 }
+.fi
+
+.SS "\fBbool\fP mlx_freen (\fBint32_t\fP count,  \&.\&.\&.)"
+Utility function that lets you free x amount of pointers\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcount\fP The amount of args provided\&. 
+.br
+\fI\&.\&.\&.\fP Any form of pointer\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+False, this is simply for convenience when necessary\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB89\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+90 {
+91     va_list args;
+92 
+93     va_start(args, count);
+94     for (int32_t i = 0; i < count; i++)
+95         free(va_arg(args, void*));
+96     va_end(args);
+97     return (false);
+98 }
+.fi
+
+.SS "\fBdouble\fP mlx_get_time (\fBvoid\fP)"
+Gets the elapsed time since MLX was initialized\&.
+.PP
+\fBReturns\fP
+.RS 4
+The amount of time elapsed in seconds\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB121\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+122 {
+123     return (glfwGetTime());
+124 }
+.fi
+
+.SS "\fBbool\fP mlx_getline (\fBchar\fP ** out, \fBsize_t\fP * out_size, \fBFILE\fP * file)"
+Function to read a file stream line by line, reusing the same output pointer\&. Since the same output pointer is reused it should only be freed once, either on success or failure\&. This function is made to be somewhat similar to getline\&. Getline can't be used directly since it's not standard and therefore not available on all platforms\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIout\fP Pointer to store output string\&. 
+.br
+\fIout_size\fP Pointer to store output strings length\&. 
+.br
+\fIfile\fP File stream to read from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if line was read, false if EOF was reached or an error occurred\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB28\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+29 {
+30     MLX_NONNULL(out);
+31     MLX_NONNULL(out_size);
+32     MLX_NONNULL(file);
+33 
+34     size_t size = 0;
+35     char* temp = NULL;
+36     static char BUFF[GETLINE_BUFF + 1]; // Add space for '\\0'
+37 
+38     if (*out) *out[0] = '\\0';
+39 
+40     while (fgets(BUFF, sizeof(BUFF), file))
+41     {
+42         size += strlen(BUFF);
+43         if (!(temp = realloc(*out, sizeof(char) * size + 1)))
+44             return (false);
+45         if (*out == NULL)
+46             memset(temp, '\\0', size);
+47         temp[size] = '\\0';
+48 
+49         *out = temp;
+50         *out_size = size;
+51 
+52         strncat(*out, BUFF, size);
+53         if (strrchr(BUFF, '\\n'))
+54             return (true);
+55         memset(BUFF, '\\0', sizeof(BUFF));
+56     }
+57     return (size);
+58 }
+.fi
+
+.SS "\fBuint32_t\fP mlx_rgba_to_mono (\fBuint32_t\fP color)"
+Converts an RGBA value to a monochrome/grayscale value\&. It does so using specific weights for each channel\&.
+.PP
+\fBSee also\fP
+.RS 4
+https://goodcalculators.com/rgb-to-grayscale-conversion-calculator/
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fIcolor\fP The input RGBA value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The rgba value converted to a grayscale color\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB109\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+110 {
+111     const uint8_t r = 0\&.299f * ((color >> 24) & 0xFF);
+112     const uint8_t g = 0\&.587f * ((color >> 16) & 0xFF);
+113     const uint8_t b = 0\&.114f * ((color >> 8) & 0xFF);
+114     const uint8_t y = r + g + b;
+115 
+116     return (y << 24 | y << 16 | y << 8 | (color & 0xFF));
+117 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

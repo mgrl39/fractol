@@ -1,0 +1,182 @@
+\doxysection{julia.\+c}
+\hypertarget{julia_8c_source}{}\label{julia_8c_source}\mbox{\hyperlink{julia_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ julia.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ meghribe\ <meghribe@student.42barcelona.co\ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2024/12/24\ 19:09:26\ by\ meghribe\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/01/05\ 14:00:18\ by\ meghribe\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fractol_8h}{fractol.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00015}00015\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00016}00016\ \textcolor{comment}{\ *\ @file\ julia}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00017}00017\ \textcolor{comment}{\ *\ @brief\ Implementation\ of\ the\ Julia\ set\ rendering.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00018}00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00019}00019\ \textcolor{comment}{\ *\ This\ file\ handles\ all\ calculations\ and\ rendering\ logic\ for\ he\ Julia\ set}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00020}00020\ \textcolor{comment}{\ *\ \ fractal.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00021}00021\ \textcolor{comment}{\ *\ It\ contains\ functions\ that:}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ Perrform\ the\ iterative\ mathematical\ calculations\ for\ each\ point\ in\ the}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ Julia\ set.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ Render\ invidiaul\ rows\ of\ the\ fractal\ to\ optimize\ performance.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ Manage\ the\ rendering\ off\ the\ entire\ fractal\ based\ on\ user-\/defined}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00026}00026\ \textcolor{comment}{\ *\ \ \ parameters.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00027}00027\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00028}00028\ \textcolor{comment}{\ *\ \#\#\#\ For\ Technical\ Users:}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00029}00029\ \textcolor{comment}{\ *\ -\/\ **Core\ Alrogithm:**\ The\ Julia\ set\ is\ calculated\ iteratively\ using\ the}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00030}00030\ \textcolor{comment}{\ *\ \ \ formula:\ \`{}z\ =\ z\string^2\ +\ c`,\ where\ \`{}z`\ is\ a\ complex\ number\ and\ \`{}c`\ is}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00031}00031\ \textcolor{comment}{\ *\ \ \ a\ constant\ parameter.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00032}00032\ \textcolor{comment}{\ *\ \ \ The\ function\ computes\ whether\ each\ point\ "{}escapes"{}\ or\ remains\ bounded}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00033}00033\ \textcolor{comment}{\ *\ \ \ within\ a\ set\ threshold.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00034}00034\ \textcolor{comment}{\ *\ -\/\ **Optimization:**\ The\ fractal\ is\ rendered\ row\ by\ row\ to\ efficiently}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00035}00035\ \textcolor{comment}{\ *\ \ \ utilize\ memory\ and\ computational\ resources.\ Intermediate\ results\ like}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00036}00036\ \textcolor{comment}{\ *\ \ \ squared\ values\ are\ stored\ to\ avoid\ redundant\ calculations.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00037}00037\ \textcolor{comment}{\ *\ -\/\ **Color\ Mapping:**\ Each\ point's\ "{}escape\ time"{}\ determines\ its\ color,}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00038}00038\ \textcolor{comment}{\ *\ \ \ creating\ the\ fractal's\ visually\ striking\ patterns.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00039}00039\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00040}00040\ \textcolor{comment}{\ *\ \#\#\#\ For\ Non-\/Technical\ Users:}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00041}00041\ \textcolor{comment}{\ *\ -\/\ **What\ is\ the\ Julia\ Set?**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00042}00042\ \textcolor{comment}{\ *\ \ \ The\ Julia\ set\ is\ a\ mathematical\ pattern\ generated\ by\ repeatedly}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00043}00043\ \textcolor{comment}{\ *\ \ \ applying\ a\ formula\ to\ points\ on\ a\ grid.\ Some\ points\ "{}escape"{}\ quickly,}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00044}00044\ \textcolor{comment}{\ *\ \ \ while\ others\ stay\ trapped.\ The\ resulting\ image\ is\ mesmerizing,\ intricate}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00045}00045\ \textcolor{comment}{\ *\ \ \ design.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00046}00046\ \textcolor{comment}{\ *\ -\/\ **How\ does\ this\ file\ work?**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00047}00047\ \textcolor{comment}{\ *\ \ \ Think\ of\ this\ like\ as\ the\ "{}artist"{}\ responsible\ for\ drawing\ the\ Julia\ set.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00048}00048\ \textcolor{comment}{\ *\ \ \ It\ decides:}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00049}00049\ \textcolor{comment}{\ *\ \ \ -\/\ Where\ each\ point\ in\ the\ fractal\ goes\ on\ the\ screen.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00050}00050\ \textcolor{comment}{\ *\ \ \ -\/\ How\ many\ iterations\ it\ takes\ for\ each\ point\ to\ escape\ the\ threshold.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00051}00051\ \textcolor{comment}{\ *\ \ \ -\/\ What\ color\ each\ point\ should\ have\ based\ on\ its\ behavior.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00052}00052\ \textcolor{comment}{\ *\ -\/\ **Why\ is\ it\ row\ by\ row?**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00053}00053\ \textcolor{comment}{\ *\ \ \ Instead\ of\ drawing\ the\ entire\ image\ at\ once,\ this\ program\ works\ row\ by\ row}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00054}00054\ \textcolor{comment}{\ *\ \ \ for\ better\ performance,\ like\ filling\ in\ coloring\ book\ on\ line\ at\ a\ time}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00055}00055\ \textcolor{comment}{\ *\ \ \ Instead\ of\ drawing\ the\ entire\ image\ at\ once,\ this\ program\ works\ row\ by\ row}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00056}00056\ \textcolor{comment}{\ *\ \ \ for\ better\ performance,\ like\ filling\ in\ coloring\ book\ on\ line\ at\ a\ time.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00057}00057\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00058}00058\ \textcolor{comment}{\ *\ The\ Julia\ set\ is\ unique\ because\ its\ shape\ depends\ on\ the\ user-\/provided}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00059}00059\ \textcolor{comment}{\ *\ parameters.\ You\ can\ explore\ endless\ variations\ by\ tweaking\ the\ input\ values!}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00060}00060\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00061}00061\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00062}00062\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00063}00063\ \textcolor{comment}{\ *\ @brief\ Performs\ the\ iterations\ for\ a\ signle\ point\ in\ the\ Julia\ set.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00064}00064\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00065}00065\ \textcolor{comment}{\ *\ This\ function\ applies\ the\ Julia\ set\ formula\ iteratively\ to\ determine}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00066}00066\ \textcolor{comment}{\ *\ whether\ a\ given\ point\ escapes\ the\ threshold.\ The\ number\ of\ iterations\ taken}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00067}00067\ \textcolor{comment}{\ *\ before\ escape\ determines\ the\ point's\ color.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00068}00068\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00069}00069\ \textcolor{comment}{\ *\ -\/\ **Core\ Algorithm:**\ The\ formula\ \`{}z\ =\ z\string^2\ +\ c`\ is\ applied,\ where:}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00070}00070\ \textcolor{comment}{\ *\ \ \ -\/\ \`{}z`\ is\ a\ complex\ number,\ represented\ by\ real\ (`z\_re`)\ and\ }}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00071}00071\ \textcolor{comment}{\ *\ \ \ \ imaginary\ (`z\_im`)\ parts.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00072}00072\ \textcolor{comment}{\ *\ \ \ -\/\ \`{}c`\ is\ a\ constant\ defined\ by\ the\ user\ (real\ and\ imaginary\ parts).}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00073}00073\ \textcolor{comment}{\ *\ -\/\ **Bounding\ Condition:**\ The\ iteerations\ stop\ when:}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00074}00074\ \textcolor{comment}{\ *\ \ \ -\/\ The\ sum\ of\ the\ squares\ of\ the\ real\ and\ imaginary\ parts\ exceeds\ 4.0.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00075}00075\ \textcolor{comment}{\ *\ \ \ -\/\ The\ maximum\ number\ of\ iterations\ (`MAX\_ITERATIONS`)\ is\ reached.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00076}00076\ \textcolor{comment}{\ *\ -\/\ **Optimization:**\ Squared\ values\ (`z\_re\string^2`\ and\ \`{}z\_im\string^2`)\ are\ cached}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00077}00077\ \textcolor{comment}{\ *\ \ \ to\ avoid\ redundant\ calculations.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00078}00078\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00079}00079\ \textcolor{comment}{\ *\ @param\ vars\ Pointer\ to\ the\ structure\ holding\ rendering\ variables}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00080}00080\ \textcolor{comment}{\ *\ \ (e.g.,\ \`{}z`\ and\ \`{}iterations`).}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00081}00081\ \textcolor{comment}{\ *\ @params\ data\ Pointer\ to\ the\ main\ fractal\ data,\ including\ the\ Julia}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00082}00082\ \textcolor{comment}{\ *\ \ constant\ (`c`).}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00083}00083\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00084}\mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{00084}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{julia\_iterations}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{double}\ \ temp\_z\_re;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00088}00088\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{while}\ (vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ <=\ 4.0\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}\ <\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}})}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00091}00091\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ temp\_z\_re\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ temp\_z\_re\ -\/=\ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00094}00094\ \ \ \ \ \ \ \ \ temp\_z\_re\ +=\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ 2.0\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ \(\backslash\)}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ temp\_z\_re;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}}++;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00102}00102\ \}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00103}00103\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00104}00104\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00105}00105\ \textcolor{comment}{\ *\ @brief\ Renders\ a\ single\ row\ of\ the\ Julia\ set.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00106}00106\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00107}00107\ \textcolor{comment}{\ *\ This\ function\ processes\ one\ row\ of\ the\ pixel\ in\ the\ Juliaa\ set\ by\ iterating}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00108}00108\ \textcolor{comment}{\ *\ through\ each\ pixel,\ applying\ the\ Juliaa\ set\ formula,\ and\ determining\ its}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00109}00109\ \textcolor{comment}{\ *\ color.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00110}00110\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00111}00111\ \textcolor{comment}{\ *\ -\/\ **Coordinate\ Mapping:**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00112}00112\ \textcolor{comment}{\ *\ \ \ -\/\ Each\ pixel\ is\ mapped\ to\ a\ complex\ number\ (`z`)\ based\ on\ its\ position}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00113}00113\ \textcolor{comment}{\ *\ \ \ \ \ \ and\ the\ scaling\ factors\ calculated\ from\ the\ zoom\ and\ offsets.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00114}00114\ \textcolor{comment}{\ *\ -\/\ **Iteration\ and\ Coloring:**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00115}00115\ \textcolor{comment}{\ *\ \ \ -\/\ The\ Julia\ set\ formula\ is\ applied\ iteratively\ for\ each\ pixel.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00116}00116\ \textcolor{comment}{\ *\ \ \ -\/\ The\ number\ of\ iterations\ is\ used\ to\ calculate\ the\ pixel's\ color.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00117}00117\ \textcolor{comment}{\ *\ -\/\ **Row\ Processing:**\ Each\ pixel\ in\ the\ row\ is\ processed\ sequentially,}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00118}00118\ \textcolor{comment}{\ *\ \ \ and\ the\ result\ is\ stored\ in\ the\ image\ buffer.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00119}00119\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00120}00120\ \textcolor{comment}{\ *\ @param\ vars\ Pointer\ to\ the\ rendering\ variables\ structure\ (e.g.,\ pixel\ and}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00121}00121\ \textcolor{comment}{\ *\ \ scaling).}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00122}00122\ \textcolor{comment}{\ *\ @param\ data\ Pointer\ to\ the\ main\ fractal\ data.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00123}00123\ \textcolor{comment}{\ *\ @param\ y\ The\ current\ row\ index\ being\ processed\ (0\ for\ the\ first\ row,\ up\ to}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00124}00124\ \textcolor{comment}{\ *\ \`{}HEIGHT\ -\/\ 1`).}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00125}00125\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00126}\mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{00126}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\_julia\_row}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data,\ \textcolor{keywordtype}{int}\ y)}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00127}00127\ \{}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00128}00128\ \ \ \ \ \textcolor{keywordtype}{int}\ x;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00130}00130\ \ \ \ \ x\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{while}\ (x\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00132}00132\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00133}00133\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ x\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a6673853b0b178f5bcb6fb4d3660f10b6}{c\_re}}[0];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}};}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a03845e187059cd1b0b313ff324f9942e}{z\_squared}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_adf3486a0e1093b75ebe536aeaa1c34fc}{z}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00138}00138\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{julia_8c_a06a8d464c822682fafa59d5a404516bb}{julia\_iterations}}(vars,\ data);}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ +\ y\ *\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ +\ x;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ *vars-\/>\mbox{\hyperlink{structs__render__vars_a2653a5d2f79c285d9a4a26f0b2503e45}{row}}\ =\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(vars-\/>\mbox{\hyperlink{structs__render__vars_a5f47d1db1bc1c9c2d47804f17c24c4bf}{iterations}});}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ x++;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00143}00143\ \}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00144}00144\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00145}00145\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00146}00146\ \textcolor{comment}{\ *\ @brief\ Renders\ the\ Julia\ set\ fractal.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00147}00147\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00148}00148\ \textcolor{comment}{\ *\ This\ function\ handles\ the\ full\ rendering\ process\ for\ the\ Julia\ set\ by}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00149}00149\ \textcolor{comment}{\ *\ iterating\ through\ all\ rows\ of\ the\ screen,\ rendering\ each\ row\ sequentially.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00150}00150\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00151}00151\ \textcolor{comment}{\ *\ -\/\ **Setup:**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00152}00152\ \textcolor{comment}{\ *\ \ \ -\/\ Calculates\ the\ scaling\ and\ starting\ coordinates\ based\ on\ the\ zoom\ level}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00153}00153\ \textcolor{comment}{\ *\ \ \ \ \ \ and\ positional\ offsets\ provided\ by\ the\ user.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00154}00154\ \textcolor{comment}{\ *\ -\/\ **Row-\/by-\/Row\ Rendering:**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00155}00155\ \textcolor{comment}{\ *\ \ \ -\/\ For\ each\ row\ on\ the\ screen\ (`y`\ coordinate),\ the\ corresponding\ imaginary}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00156}00156\ \textcolor{comment}{\ *\ \ \ \ \ \ coordinate\ is\ computed.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00157}00157\ \textcolor{comment}{\ *\ \ \ -\/\ The\ row\ is\ passed\ to\ \`{}render\_julia\_row`,\ which\ handles\ the\ pixel-\/by-\/pixel}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00158}00158\ \textcolor{comment}{\ *\ \ \ rendering.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00159}00159\ \textcolor{comment}{\ *\ -\/\ **Full\ Image\ Construction:**}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00160}00160\ \textcolor{comment}{\ *\ \ \ -\/\ The\ ffunction\ processes\ every\ row\ until\ the\ entire\ fractal\ is\ rendered.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00161}00161\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00162}00162\ \textcolor{comment}{\ *\ @param\ data\ Pointer\ to\ the\ main\ fractal\ data\ structure,\ including\ rendering}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00163}00163\ \textcolor{comment}{\ *\ \ details\ such\ as\ zoom,\ offsets,\ and\ fractal\ paarameters.}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00164}00164\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00165}\mbox{\hyperlink{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}{00165}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{julia_8c_ac62d3b22b714b98af9c4faeac6e6e650}{render\_julia}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00166}00166\ \{}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00167}00167\ \ \ \ \ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ \ vars;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00168}00168\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ y;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00170}00170\ \ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\&vars,\ data);}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00171}00171\ \ \ \ \ y\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00172}00172\ \ \ \ \ \textcolor{keywordflow}{while}\ (y\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00173}00173\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00174}00174\ \ \ \ \ \ \ \ \ vars.\mbox{\hyperlink{structs__render__vars_a38d0efc46f2ec97abb42cc0d426fcb34}{c\_im}}\ =\ vars.\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ y\ *\ vars.\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00175}00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{julia_8c_ac8f82667795f7c5ff50e0bdceae44afc}{render\_julia\_row}}(\&vars,\ data,\ y++);}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{julia_8c_source_l00177}00177\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__utils_8c" kind="file" language="C++">
+    <compoundname>mlx_utils.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/utils/mlx_utils.c</label>
+        <link refid="mlx__utils_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__utils_8c_1afeec80312b6f8a8755b798ed12721cd8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>bool mlx_getline</definition>
+        <argsstring>(char **out, size_t *out_size, FILE *file)</argsstring>
+        <name>mlx_getline</name>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> **</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref> *</type>
+          <declname>out_size</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref> *</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to read a file stream line by line, reusing the same output pointer. Since the same output pointer is reused it should only be freed once, either on success or failure. This function is made to be somewhat similar to getline. Getline can&apos;t be used directly since it&apos;s not standard and therefore not available on all platforms.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store output string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out_size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store output strings length. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>File stream to read from. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line was read, false if EOF was reached or an error occurred. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_utils.c" line="28" column="6" bodyfile="MLX42/src/utils/mlx_utils.c" bodystart="28" bodyend="58"/>
+        <references refid="MLX42__Int_8h_1a6d56ab6e0a51019c64a776aa5ccf0350" compoundref="MLX42__Int_8h" startline="43">GETLINE_BUFF</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <referencedby refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a4010832b63f4b682ef1f02fb5203bfe1" compoundref="mlx__xpm42_8c" startline="132" endline="147">mlx_read_table</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__utils_8c_1ab31a068c9000789a7999bfc1ea34709b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint64_t</ref></type>
+        <definition>uint64_t mlx_fnv_hash</definition>
+        <argsstring>(char *str, size_t len)</argsstring>
+        <name>mlx_fnv_hash</name>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+          <declname>str</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+          <declname>len</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>String hashing algorithm using FNV-1a. Source: <ulink url="https://bit.ly/3JcRGHa">https://bit.ly/3JcRGHa</ulink></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>str</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to hash </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The hashed output. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_utils.c" line="68" column="10" bodyfile="MLX42/src/utils/mlx_utils.c" bodystart="68" bodyend="80"/>
+        <referencedby refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" compoundref="mlx__xpm42_8c" startline="64" endline="84">mlx_insert_xpm_entry</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__utils_8c_1a93b4ce5ceae0d22c22c6c9125c052616" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>bool mlx_freen</definition>
+        <argsstring>(int32_t count,...)</argsstring>
+        <name>mlx_freen</name>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>...</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Utility function that lets you free x amount of pointers.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of args provided. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>...</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Any form of pointer. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>False, this is simply for convenience when necessary. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_utils.c" line="89" column="6" bodyfile="MLX42/src/utils/mlx_utils.c" bodystart="89" bodyend="98"/>
+        <referencedby refid="MLX42_8h_1a997cfd3dd07ea85a91df958ae0d1e7b5" compoundref="mlx__images_8c" startline="204" endline="222">mlx_delete_image</referencedby>
+        <referencedby refid="MLX42_8h_1ae065852b98e9a3facb2eb5f69ac280a1" compoundref="mlx__texture_8c" startline="37" endline="42">mlx_delete_texture</referencedby>
+        <referencedby refid="mlx__exit_8c_1a9cb6cdcad0ae0d754857bdcfaf9065ef" compoundref="mlx__exit_8c" startline="17" endline="22">mlx_free_image</referencedby>
+        <referencedby refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" compoundref="mlx__images_8c" startline="121" endline="159">mlx_image_to_window</referencedby>
+        <referencedby refid="MLX42_8h_1a4e43a95dd957b6771633389dc650003d" compoundref="mlx__xpm42_8c" startline="181" endline="201">mlx_load_xpm42</referencedby>
+        <referencedby refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" compoundref="mlx__images_8c" startline="161" endline="202">mlx_new_image</referencedby>
+        <referencedby refid="MLX42_8h_1afa6aa2f79f9fc81735bdf3b92421f9ca" compoundref="mlx__exit_8c" startline="36" endline="50">mlx_terminate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__utils_8c_1ad58d85c71babb51bf426e72a9b87efa0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>uint32_t mlx_rgba_to_mono</definition>
+        <argsstring>(uint32_t color)</argsstring>
+        <name>mlx_rgba_to_mono</name>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts an RGBA value to a monochrome/grayscale value. It does so using specific weights for each channel.</para>
+<para><simplesect kind="see"><para><ulink url="https://goodcalculators.com/rgb-to-grayscale-conversion-calculator/">https://goodcalculators.com/rgb-to-grayscale-conversion-calculator/</ulink></para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>color</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The input RGBA value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The rgba value converted to a grayscale color. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_utils.c" line="109" column="10" bodyfile="MLX42/src/utils/mlx_utils.c" bodystart="109" bodyend="117"/>
+        <referencedby refid="mlx__xpm42_8c_1a2962ddf8fdeb94903d371dbb24bd9e9a" compoundref="mlx__xpm42_8c" startline="64" endline="84">mlx_insert_xpm_entry</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__utils_8c_1adbaabb0ba6fb3adf119e026bb4a386bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">double</ref></type>
+        <definition>double mlx_get_time</definition>
+        <argsstring>(void)</argsstring>
+        <name>mlx_get_time</name>
+        <param>
+          <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the elapsed time since MLX was initialized.</para>
+<para><simplesect kind="return"><para>The amount of time elapsed in seconds. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_utils.c" line="121" column="8" bodyfile="MLX42/src/utils/mlx_utils.c" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="mlx__utils_8c_1a2cbce835d52e89e37e4bb410ceea776d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_focus</definition>
+        <argsstring>(mlx_t *mlx)</argsstring>
+        <name>mlx_focus</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>This function brings the specified window to front and sets input focus.</para>
+<para>Do not use this function to steal focus from other applications unless you are certain that is what the user wants. Focus stealing can be extremely disruptive.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_utils.c" line="126" column="6" bodyfile="MLX42/src/utils/mlx_utils.c" bodystart="126" bodyend="131"/>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" compoundref="MLX42_8h" startline="362">mlx::window</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_utils.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2022/01/03<sp/>20:13:17<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2022/11/22<sp/>10:56:09<sp/>by<sp/>jvan-hal<sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Private<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="17"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>Function<sp/>to<sp/>read<sp/>a<sp/>file<sp/>stream<sp/>line<sp/>by<sp/>line,<sp/>reusing<sp/>the<sp/>same<sp/>output<sp/>pointer.</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>Since<sp/>the<sp/>same<sp/>output<sp/>pointer<sp/>is<sp/>reused<sp/>it<sp/>should<sp/>only<sp/>be<sp/>freed<sp/>once,<sp/>either<sp/>on<sp/>success<sp/>or<sp/>failure.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>is<sp/>made<sp/>to<sp/>be<sp/>somewhat<sp/>similar<sp/>to<sp/>getline.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>Getline<sp/>can&apos;t<sp/>be<sp/>used<sp/>directly<sp/>since<sp/>it&apos;s<sp/>not<sp/>standard<sp/>and<sp/>therefore<sp/>not<sp/>available<sp/>on<sp/>all<sp/>platforms.</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>@param<sp/>out<sp/>Pointer<sp/>to<sp/>store<sp/>output<sp/>string.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>@param<sp/>out_size<sp/>Pointer<sp/>to<sp/>store<sp/>output<sp/>strings<sp/>length.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>@param<sp/>file<sp/>File<sp/>stream<sp/>to<sp/>read<sp/>from.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>@return<sp/>True<sp/>if<sp/>line<sp/>was<sp/>read,<sp/>false<sp/>if<sp/>EOF<sp/>was<sp/>reached<sp/>or<sp/>an<sp/>error<sp/>occurred.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="MLX42__Int_8h_1afeec80312b6f8a8755b798ed12721cd8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__utils_8c_1afeec80312b6f8a8755b798ed12721cd8" kindref="member">mlx_getline</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">**<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out_size</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">FILE</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out_size</ref>);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>[<ref refid="MLX42__Int_8h_1a6d56ab6e0a51019c64a776aa5ccf0350" kindref="member">GETLINE_BUFF</ref><sp/>+<sp/>1];<sp/></highlight><highlight class="comment">//<sp/>Add<sp/>space<sp/>for<sp/>&apos;\0&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>)<sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>[0]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fgets</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>),<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref>))</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref><sp/>+=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">strlen</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">realloc</ref>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)<sp/>*<sp/><ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref><sp/>+<sp/>1)))</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref><sp/>==<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">memset</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref>,<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">,<sp/><ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref>[<ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref>]<sp/>=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref>;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out_size</ref><sp/>=<sp/><ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">strncat</ref>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>,<sp/><ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">strrchr</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>,<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">memset</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>,<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">BUFF</ref>));</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1adead0e00f1033fff2918e18853add2b1" kindref="member">size</ref>);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="60"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="61"><highlight class="comment"><sp/>*<sp/>String<sp/>hashing<sp/>algorithm<sp/>using<sp/>FNV-1a.</highlight></codeline>
+<codeline lineno="62"><highlight class="comment"><sp/>*<sp/>Source:<sp/>https://bit.ly/3JcRGHa</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*<sp/>@param<sp/>str<sp/>The<sp/>string<sp/>to<sp/>hash</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>@param<sp/>len<sp/>The<sp/>length<sp/>of<sp/>the<sp/>string.</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>@return<sp/>The<sp/>hashed<sp/>output.</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="MLX42__Int_8h_1ab31a068c9000789a7999bfc1ea34709b" refkind="member"><highlight class="normal"><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint64_t</ref><sp/><ref refid="mlx__utils_8c_1ab31a068c9000789a7999bfc1ea34709b" kindref="member">mlx_fnv_hash</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">str</ref>,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">len</ref>)</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint64_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fnv_prime</ref><sp/>=<sp/>0x100000001b3;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint64_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fnv_offset</ref><sp/>=<sp/>0xcbf29ce484222325;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint64_t</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">hash</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fnv_offset</ref>;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">len</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">hash</ref><sp/>^=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">str</ref>[i];</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">hash</ref><sp/>*=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fnv_prime</ref>;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">hash</ref>);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="82"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*<sp/>Utility<sp/>function<sp/>that<sp/>lets<sp/>you<sp/>free<sp/>x<sp/>amount<sp/>of<sp/>pointers.</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/>*<sp/>@param<sp/>count<sp/>The<sp/>amount<sp/>of<sp/>args<sp/>provided.</highlight></codeline>
+<codeline lineno="86"><highlight class="comment"><sp/>*<sp/>@param<sp/>...<sp/>Any<sp/>form<sp/>of<sp/>pointer.</highlight></codeline>
+<codeline lineno="87"><highlight class="comment"><sp/>*<sp/>@return<sp/>False,<sp/>this<sp/>is<sp/>simply<sp/>for<sp/>convenience<sp/>when<sp/>necessary.</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__utils_8c_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1a31eafbeac9256b106b6acfd78f305200" kindref="member">count</ref>,<sp/>...)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">va_list</ref><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">args</ref>;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">va_start</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">args</ref>,<sp/><ref refid="glad_8h_1a31eafbeac9256b106b6acfd78f305200" kindref="member">count</ref>);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="glad_8h_1a31eafbeac9256b106b6acfd78f305200" kindref="member">count</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">va_arg</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">args</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*));</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">va_end</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">args</ref>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="100"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="101"><highlight class="comment"><sp/>*<sp/>Converts<sp/>an<sp/>RGBA<sp/>value<sp/>to<sp/>a<sp/>monochrome/grayscale<sp/>value.</highlight></codeline>
+<codeline lineno="102"><highlight class="comment"><sp/>*<sp/>It<sp/>does<sp/>so<sp/>using<sp/>specific<sp/>weights<sp/>for<sp/>each<sp/>channel.</highlight></codeline>
+<codeline lineno="103"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="comment"><sp/>*<sp/>@see<sp/>https://goodcalculators.com/rgb-to-grayscale-conversion-calculator/</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*<sp/>@param<sp/>color<sp/>The<sp/>input<sp/>RGBA<sp/>value.</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>@return<sp/>The<sp/>rgba<sp/>value<sp/>converted<sp/>to<sp/>a<sp/>grayscale<sp/>color.</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="MLX42__Int_8h_1ad58d85c71babb51bf426e72a9b87efa0" refkind="member"><highlight class="normal"><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="mlx__utils_8c_1ad58d85c71babb51bf426e72a9b87efa0" kindref="member">mlx_rgba_to_mono</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref><sp/><ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref><sp/><ref refid="glad_8h_1abe08814c2f72843fde4d8df41440d5a0" kindref="member">r</ref><sp/>=<sp/>0.299f<sp/>*<sp/>((<ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>&gt;&gt;<sp/>24)<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref><sp/><ref refid="glad_8h_1a9cd653b1648845554169fbc3a3f6d37a" kindref="member">g</ref><sp/>=<sp/>0.587f<sp/>*<sp/>((<ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>&gt;&gt;<sp/>16)<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref><sp/><ref refid="glad_8h_1a6eba317e3cf44d6d26c04a5a8f197dcb" kindref="member">b</ref><sp/>=<sp/>0.114f<sp/>*<sp/>((<ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>&gt;&gt;<sp/>8)<sp/>&amp;<sp/>0xFF);</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref><sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>=<sp/><ref refid="glad_8h_1abe08814c2f72843fde4d8df41440d5a0" kindref="member">r</ref><sp/>+<sp/><ref refid="glad_8h_1a9cd653b1648845554169fbc3a3f6d37a" kindref="member">g</ref><sp/>+<sp/><ref refid="glad_8h_1a6eba317e3cf44d6d26c04a5a8f197dcb" kindref="member">b</ref>;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>&lt;&lt;<sp/>24<sp/>|<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>&lt;&lt;<sp/>16<sp/>|<sp/><ref refid="glad_8h_1a5e247fc24ceb70d83f6ad59149b8910a" kindref="member">y</ref><sp/>&lt;&lt;<sp/>8<sp/>|<sp/>(<ref refid="glad_8h_1a69995a929d818b8b467d4593c24d98bc" kindref="member">color</ref><sp/>&amp;<sp/>0xFF));</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Public<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="MLX42_8h_1adbaabb0ba6fb3adf119e026bb4a386bf" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="mlx__utils_8c_1adbaabb0ba6fb3adf119e026bb4a386bf" kindref="member">mlx_get_time</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">glfwGetTime</ref>());</highlight></codeline>
+<codeline lineno="124"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="MLX42_8h_1a2cbce835d52e89e37e4bb410ceea776d" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__utils_8c_1a2cbce835d52e89e37e4bb410ceea776d" kindref="member">mlx_focus</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">glfwFocusWindow</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" kindref="member">window</ref>);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/utils/mlx_utils.c"/>
+  </compounddef>
+</doxygen>

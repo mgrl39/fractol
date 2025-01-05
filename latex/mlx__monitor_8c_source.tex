@@ -1,0 +1,43 @@
+\doxysection{mlx\+\_\+monitor.\+c}
+\hypertarget{mlx__monitor_8c_source}{}\label{mlx__monitor_8c_source}\index{MLX42/src/mlx\_monitor.c@{MLX42/src/mlx\_monitor.c}}
+\mbox{\hyperlink{mlx__monitor_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ::::::::\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ mlx\_monitor.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ W2Wizard\ <main@w2wizard.dev>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2022/01/19\ 17:18:59\ by\ W2Wizard\ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2022/06/27\ 20:02:38\ by\ lde-\/la-\/h\ \ \ \ \ \ \#\#\#\#\#\#\#\#\ \ \ odam.nl\ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{MLX42__Int_8h}{MLX42/MLX42\_Int.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00015}00015\ \textcolor{comment}{//=\ Public\ =//}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00017}\mbox{\hyperlink{MLX42_8h_a5f5233dda4cabad7ec3744a81705c7b3}{00017}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{mlx__monitor_8c_a5f5233dda4cabad7ec3744a81705c7b3}{mlx\_get\_monitor\_size}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}*\ \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}*\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}})}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00018}00018\ \{}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00019}00019\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}\ >=\ 0,\ \textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00020}00020\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}});}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}});}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00023}00023\ \ \ \ \ *\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00024}00024\ \ \ \ \ *\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00025}00025\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00026}00026\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitor\_count}};}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00027}00027\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWmonitor}}**\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitors}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetMonitors}}(\&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitor\_count}});}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00028}00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}\ >\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitor\_count}}\ ||\ !\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitors}})}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00031}00031\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWvidmode}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}};}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetVideoMode}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitors}}[\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}])))}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}}-\/>width;}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}}-\/>height;}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mlx__monitor_8c_source_l00037}00037\ \}}
+
+\end{DoxyCode}

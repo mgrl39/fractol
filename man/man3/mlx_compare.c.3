@@ -1,0 +1,52 @@
+.TH "MLX42/src/utils/mlx_compare.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/utils/mlx_compare.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBmlx_equal_image\fP (\fBvoid\fP *\fBlstcontent\fP, \fBvoid\fP *\fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_equal_inst\fP (\fBvoid\fP *\fBlstcontent\fP, \fBvoid\fP *\fBvalue\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP mlx_equal_image (\fBvoid\fP * lstcontent, \fBvoid\fP * value)"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_compare\&.c\fP\&..PP
+.nf
+18 {
+19     const mlx_image_t* lcontent = lstcontent;
+20     const mlx_image_t* lvalue = value;
+21 
+22     return (lcontent == lvalue);
+23 }
+.fi
+
+.SS "\fBbool\fP mlx_equal_inst (\fBvoid\fP * lstcontent, \fBvoid\fP * value)"
+
+.PP
+Definition at line \fB25\fP of file \fBmlx_compare\&.c\fP\&..PP
+.nf
+26 {
+27     const draw_queue_t* lcontent = lstcontent;
+28     const mlx_image_t* lvalue = value;
+29 
+30     return (lcontent\->image == lvalue);
+31 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__texture" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_texture</compoundname>
+    <includes refid="MLX42_8h" local="no">MLX42.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>uint32_t mlx_texture::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>mlx_texture::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="265" column="9" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="265" bodyend="-1"/>
+        <referencedby refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint32_t</ref></type>
+        <definition>uint32_t mlx_texture::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>mlx_texture::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="266" column="9" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="266" bodyend="-1"/>
+        <referencedby refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__texture_1ace1ae58e45824a91a75d8f6bf525aed3" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref></type>
+        <definition>uint8_t mlx_texture::bytes_per_pixel</definition>
+        <argsstring></argsstring>
+        <name>bytes_per_pixel</name>
+        <qualifiedname>mlx_texture::bytes_per_pixel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="267" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="267" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1a010df0dc1115d0904bbe370cc51c7a56" compoundref="mlx__png_8c" startline="17" endline="35">mlx_load_png</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">uint8_t</ref> *</type>
+        <definition>uint8_t* mlx_texture::pixels</definition>
+        <argsstring></argsstring>
+        <name>pixels</name>
+        <qualifiedname>mlx_texture::pixels</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="268" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="268" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1a38fb289ba874f2fdf04145e808c60e2a" compoundref="mlx__xpm42_8c" startline="203" endline="208">mlx_delete_xpm42</referencedby>
+        <referencedby refid="MLX42_8h_1a4e43a95dd957b6771633389dc650003d" compoundref="mlx__xpm42_8c" startline="181" endline="201">mlx_load_xpm42</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a6941c4843dab31668cfab8f7490db24c" compoundref="mlx__xpm42_8c" startline="96" endline="119">mlx_read_data</referencedby>
+        <referencedby refid="mlx__xpm42_8c_1a302bd9cb989be26a1cbd98dbb7b8b9c6" compoundref="mlx__xpm42_8c" startline="156" endline="177">mlx_read_xpm_header</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Base object for disk loaded textures. It contains rudementary information about the texture.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the texture. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the texture. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pixels</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The literal pixel data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>bytes_per_pixel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of bytes in a pixel, always 4. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_texture</label>
+        <link refid="structmlx__texture"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42.h" line="263" column="1" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="264" bodyend="269"/>
+    <listofallmembers>
+      <member refid="structmlx__texture_1ace1ae58e45824a91a75d8f6bf525aed3" prot="public" virt="non-virtual"><scope>mlx_texture</scope><name>bytes_per_pixel</name></member>
+      <member refid="structmlx__texture_1a186b61240ba0d88b639c1a4e1c03b5cb" prot="public" virt="non-virtual"><scope>mlx_texture</scope><name>height</name></member>
+      <member refid="structmlx__texture_1a3aaf04c7798cf04bf39a36eb3fc8d2de" prot="public" virt="non-virtual"><scope>mlx_texture</scope><name>pixels</name></member>
+      <member refid="structmlx__texture_1a4a370e19f5f03c40fc2ac03ccb220b55" prot="public" virt="non-virtual"><scope>mlx_texture</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

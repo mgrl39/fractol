@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__error_8c" kind="file" language="C++">
+    <compoundname>mlx_error.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/utils/mlx_error.c</label>
+        <link refid="mlx__error_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="mlx__error_8c_1a326bf6bcd93f9b7b585fab097e8dcf1f" prot="public" static="yes" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+        <definition>const char* mlx_errors[MLX_ERRMAX]</definition>
+        <argsstring>[MLX_ERRMAX]</argsstring>
+        <name>mlx_errors</name>
+        <initializer>= {
+	&quot;No <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">Errors&quot;</ref>,
+	&quot;File <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">has</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">invalid</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">extension&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">open</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">the</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file&quot;</ref>,
+	&quot;PNG <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">is</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">invalid</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">or</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">corrupted&quot;</ref>,
+	&quot;XPM42 <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">file</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">is</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">invalid</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">or</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">corrupted&quot;</ref>,
+	&quot;The <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">specified</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">X</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">or</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">Y</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">positions</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">are</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">of</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bounds&quot;</ref>,
+	&quot;The <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">specified</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">Width</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">or</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">Height</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">dimensions</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">are</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">of</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bounds&quot;</ref>,
+	&quot;The <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">provided</ref> <ref refid="glad_8h_1a85495a7fedb50406e7c705a4e7ddba12" kindref="member">image</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">is</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">invalid</ref>, <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">might</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">indicate</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mismanagement</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">of</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">images&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">compile</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">the</ref> <ref refid="structvertex" kindref="compound">vertex</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">shader.&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">compile</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">the</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fragment</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">shader.&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">compile</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">the</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">shaders.&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">allocate</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">memory&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">initialize</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">GLAD&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">initialize</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">GLFW&quot;</ref>,
+	&quot;Failed <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">create</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">window&quot;</ref>,
+	&quot;String <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">is</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">too</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">big</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">to</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">be</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">drawn&quot;</ref>,
+}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_error.c" line="18" column="19" bodyfile="MLX42/src/utils/mlx_error.c" bodystart="18" bodyend="35"/>
+        <referencedby refid="MLX42_8h_1a2d365ea2e3844959187b6978c6e05171" compoundref="mlx__error_8c" startline="54" endline="60">mlx_strerror</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__error_8c_1a3b5d95cdf353faaaa691ef8b2041b94f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>bool mlx_error</definition>
+        <argsstring>(mlx_errno_t val)</argsstring>
+        <name>mlx_error</name>
+        <param>
+          <type><ref refid="MLX42_8h_1a3e74738348a67c05c9b62a904a176042" kindref="member">mlx_errno_t</ref></type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Functions to set the error number, simply for convenience.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error value. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Always false </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_error.c" line="43" column="6" bodyfile="MLX42/src/utils/mlx_error.c" bodystart="43" bodyend="50"/>
+        <references refid="mlx__error_8c_1a2d365ea2e3844959187b6978c6e05171" compoundref="mlx__error_8c" startline="54" endline="60">mlx_strerror</references>
+        <referencedby refid="MLX42_8h_1a655522e3e1ad1c0eb10ffe798ab0f383" compoundref="mlx__cursor_8c" startline="27" endline="41">mlx_create_cursor</referencedby>
+        <referencedby refid="MLX42_8h_1a758301bb6abb5a1320fd8f00c51e626e" compoundref="mlx__cursor_8c" startline="17" endline="25">mlx_create_std_cursor</referencedby>
+        <referencedby refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" compoundref="mlx__images_8c" startline="121" endline="159">mlx_image_to_window</referencedby>
+        <referencedby refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" compoundref="mlx__init_8c" startline="161" endline="197">mlx_init</referencedby>
+        <referencedby refid="mlx__init_8c_1a8a415365a708f01e9a44e964d94dad2a" compoundref="mlx__init_8c" startline="101" endline="150">mlx_init_render</referencedby>
+        <referencedby refid="MLX42_8h_1a010df0dc1115d0904bbe370cc51c7a56" compoundref="mlx__png_8c" startline="17" endline="35">mlx_load_png</referencedby>
+        <referencedby refid="MLX42_8h_1a4e43a95dd957b6771633389dc650003d" compoundref="mlx__xpm42_8c" startline="181" endline="201">mlx_load_xpm42</referencedby>
+        <referencedby refid="MLX42_8h_1afc772cc4204df8de0388e9bb38768d10" compoundref="mlx__loop_8c" startline="70" endline="90">mlx_loop_hook</referencedby>
+        <referencedby refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" compoundref="mlx__images_8c" startline="161" endline="202">mlx_new_image</referencedby>
+        <referencedby refid="MLX42_8h_1a3c7e4790683c2dbc5159cb3a18c22e0b" compoundref="mlx__font_8c" startline="60" endline="80">mlx_put_string</referencedby>
+        <referencedby refid="mlx__loop_8c_1aaa7ba75154ec3bba6511cc7cb9625baa" compoundref="mlx__loop_8c" startline="30" endline="66">mlx_render_images</referencedby>
+        <referencedby refid="MLX42_8h_1a38c0b46353a7c9a1e2b6222f2d7126eb" compoundref="mlx__images_8c" startline="224" endline="251">mlx_resize_image</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__error_8c_1a2d365ea2e3844959187b6978c6e05171" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+        <definition>const char * mlx_strerror</definition>
+        <argsstring>(mlx_errno_t val)</argsstring>
+        <name>mlx_strerror</name>
+        <param>
+          <type><ref refid="MLX42_8h_1a3e74738348a67c05c9b62a904a176042" kindref="member">mlx_errno_t</ref></type>
+          <declname>val</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the english description of the error code.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">val</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The error string that describes the error code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_error.c" line="54" column="12" bodyfile="MLX42/src/utils/mlx_error.c" bodystart="54" bodyend="60"/>
+        <references refid="MLX42__Int_8h_1acaa6ebdc9d544398d3ffaa40a75bdfbb" compoundref="MLX42__Int_8h" startline="45">MLX_ASSERT</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b" compoundref="MLX42_8h" startline="388">MLX_ERRMAX</references>
+        <references refid="mlx__error_8c_1a326bf6bcd93f9b7b585fab097e8dcf1f" compoundref="mlx__error_8c" startline="18" endline="35">mlx_errors</references>
+        <referencedby refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" compoundref="mlx__error_8c" startline="43" endline="50">mlx_error</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_error.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2021/12/28<sp/>02:51:54<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2022/11/22<sp/>08:50:15<sp/>by<sp/>jvan-hal<sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Private<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>English<sp/>description<sp/>of<sp/>the<sp/>error<sp/>codes.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="mlx__error_8c_1a326bf6bcd93f9b7b585fab097e8dcf1f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mlx__error_8c_1a326bf6bcd93f9b7b585fab097e8dcf1f" kindref="member">mlx_errors</ref>[<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b" kindref="member">MLX_ERRMAX</ref>]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;No<sp/>Errors&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;File<sp/>has<sp/>invalid<sp/>extension&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>open<sp/>the<sp/>file&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;PNG<sp/>file<sp/>is<sp/>invalid<sp/>or<sp/>corrupted&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;XPM42<sp/>file<sp/>is<sp/>invalid<sp/>or<sp/>corrupted&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;The<sp/>specified<sp/>X<sp/>or<sp/>Y<sp/>positions<sp/>are<sp/>out<sp/>of<sp/>bounds&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;The<sp/>specified<sp/>Width<sp/>or<sp/>Height<sp/>dimensions<sp/>are<sp/>out<sp/>of<sp/>bounds&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;The<sp/>provided<sp/>image<sp/>is<sp/>invalid,<sp/>might<sp/>indicate<sp/>mismanagement<sp/>of<sp/>images&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>compile<sp/>the<sp/>vertex<sp/>shader.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>compile<sp/>the<sp/>fragment<sp/>shader.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>compile<sp/>the<sp/>shaders.&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>allocate<sp/>memory&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize<sp/>GLAD&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>initialize<sp/>GLFW&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Failed<sp/>to<sp/>create<sp/>window&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;String<sp/>is<sp/>too<sp/>big<sp/>to<sp/>be<sp/>drawn&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="37"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>Functions<sp/>to<sp/>set<sp/>the<sp/>error<sp/>number,<sp/>simply<sp/>for<sp/>convenience.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*<sp/></highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>@param<sp/>val<sp/>The<sp/>error<sp/>value.</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>@return<sp/>Always<sp/>false<sp/></highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="MLX42__Int_8h_1a3b5d95cdf353faaaa691ef8b2041b94f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="mlx__error_8c_1a3b5d95cdf353faaaa691ef8b2041b94f" kindref="member">mlx_error</ref>(<ref refid="MLX42_8h_1a3e74738348a67c05c9b62a904a176042" kindref="member">mlx_errno_t</ref><sp/><ref refid="glad_8h_1aa857b95cc76669c2a9109239ef40a47c" kindref="member">val</ref>)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11" kindref="member">mlx_errno</ref><sp/>=<sp/><ref refid="glad_8h_1aa857b95cc76669c2a9109239ef40a47c" kindref="member">val</ref>;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>NDEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">fprintf</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">stderr</ref>,<sp/></highlight><highlight class="stringliteral">&quot;MLX42:<sp/>%s&quot;</highlight><highlight class="normal">,<sp/><ref refid="mlx__error_8c_1a2d365ea2e3844959187b6978c6e05171" kindref="member">mlx_strerror</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11" kindref="member">mlx_errno</ref>));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Public<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54" refid="MLX42_8h_1a2d365ea2e3844959187b6978c6e05171" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="mlx__error_8c_1a2d365ea2e3844959187b6978c6e05171" kindref="member">mlx_strerror</ref>(<ref refid="MLX42_8h_1a3e74738348a67c05c9b62a904a176042" kindref="member">mlx_errno_t</ref><sp/><ref refid="glad_8h_1aa857b95cc76669c2a9109239ef40a47c" kindref="member">val</ref>)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1acaa6ebdc9d544398d3ffaa40a75bdfbb" kindref="member">MLX_ASSERT</ref>(<ref refid="glad_8h_1aa857b95cc76669c2a9109239ef40a47c" kindref="member">val</ref><sp/>&gt;=<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;Index<sp/>must<sp/>be<sp/>positive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1acaa6ebdc9d544398d3ffaa40a75bdfbb" kindref="member">MLX_ASSERT</ref>(<ref refid="glad_8h_1aa857b95cc76669c2a9109239ef40a47c" kindref="member">val</ref><sp/>&lt;<sp/><ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ad33b66251494a0eddd0416327a95a11b" kindref="member">MLX_ERRMAX</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Index<sp/>out<sp/>of<sp/>bounds&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="mlx__error_8c_1a326bf6bcd93f9b7b585fab097e8dcf1f" kindref="member">mlx_errors</ref>[<ref refid="glad_8h_1aa857b95cc76669c2a9109239ef40a47c" kindref="member">val</ref>]);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/utils/mlx_error.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mandelbrot__calcs_8md" kind="file" language="Markdown">
+    <compoundname>mandelbrot_calcs.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Calculos<sp/>de<sp/>Mandelbrot</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">El<sp/>archivo<sp/>`mandelbrot.c`<sp/>contiene<sp/>la<sp/>lógica<sp/>necesaria<sp/>para<sp/>renderizar<sp/>el<sp/>conjunto<sp/>de<sp/>Mandelbrot<sp/>en<sp/>el<sp/>proyecto<sp/>Fractol.<sp/>Este<sp/>archivo<sp/>incluye<sp/>funciones<sp/>para<sp/>realizar<sp/>iteraciones<sp/>en<sp/>puntos<sp/>del<sp/>plano<sp/>complejo,<sp/>optimizar<sp/>las<sp/>condiciones<sp/>de<sp/>escape<sp/>y<sp/>mapear<sp/>los<sp/>resultados<sp/>a<sp/>colores<sp/>en<sp/>los<sp/>píxeles.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>compute_next_iteration</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>compute_next_iteration(t_render_vars<sp/>*vars,<sp/>int<sp/>i)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>temp_z_re;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>temp_z_re<sp/>=<sp/>vars-&gt;z_squared[COMPLEX_RE]<sp/>-<sp/>vars-&gt;z_squared[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>temp_z_re<sp/>+=<sp/>vars-&gt;c_re[i];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_IM]<sp/>=<sp/>(2.0<sp/>*<sp/>vars-&gt;z[COMPLEX_RE]<sp/>*<sp/>vars-&gt;z[COMPLEX_IM]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_IM]<sp/>+=<sp/>vars-&gt;c_im;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_RE]<sp/>=<sp/>temp_z_re;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_RE]<sp/>=<sp/>vars-&gt;z[COMPLEX_RE]<sp/>*<sp/>vars-&gt;z[COMPLEX_RE];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_IM]<sp/>=<sp/>vars-&gt;z[COMPLEX_IM]<sp/>*<sp/>vars-&gt;z[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Calcula<sp/>la<sp/>siguiente<sp/>iteración<sp/>de<sp/>`z`<sp/>usando<sp/>la<sp/>fórmula<sp/>iterativa<sp/>del<sp/>conjunto<sp/>de<sp/>Mandelbrot:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">z_n+1<sp/>=<sp/>z_n^2<sp/>+<sp/>c</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Explicación:**</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Usa<sp/>los<sp/>valores<sp/>actuales<sp/>de<sp/>`z`<sp/>(parte<sp/>real<sp/>e<sp/>imaginaria)<sp/>y<sp/>la<sp/>constante<sp/>`c`<sp/>(coordenadas<sp/>del<sp/>píxel<sp/>en<sp/>el<sp/>plano<sp/>complejo).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Actualiza<sp/>los<sp/>valores<sp/>de<sp/>`z`<sp/>y<sp/>los<sp/>cuadrados<sp/>de<sp/>sus<sp/>componentes<sp/>para<sp/>las<sp/>próximas<sp/>iteraciones.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_render_vars<sp/>*vars`:<sp/>Contiene<sp/>las<sp/>variables<sp/>necesarias<sp/>para<sp/>los<sp/>cálculos,<sp/>incluyendo<sp/>`z`,<sp/>`c`,<sp/>y<sp/>sus<sp/>cuadrados.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`int<sp/>i`:<sp/>Índice<sp/>del<sp/>punto<sp/>en<sp/>el<sp/>conjunto<sp/>de<sp/>datos.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>Práctico</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Supongamos:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`z<sp/>=<sp/>0<sp/>+<sp/>0i`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`c<sp/>=<sp/>-0.75<sp/>+<sp/>0.1i`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Iteraciones:**</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">z_1_real<sp/>=<sp/>0^2<sp/>-<sp/>0^2<sp/>+<sp/>(-0.75)<sp/>=<sp/>-0.75</highlight></codeline>
+<codeline><highlight class="normal">z_1_imag<sp/>=<sp/>2<sp/>*<sp/>0<sp/>*<sp/>0<sp/>+<sp/>0.1<sp/>=<sp/>0.1</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">z_2_real<sp/>=<sp/>(-0.75)^2<sp/>-<sp/>(0.1)^2<sp/>+<sp/>(-0.75)<sp/>=<sp/>-0.1975</highlight></codeline>
+<codeline><highlight class="normal">z_2_imag<sp/>=<sp/>2<sp/>*<sp/>(-0.75)<sp/>*<sp/>0.1<sp/>+<sp/>0.1<sp/>=<sp/>-0.05</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>mandelbrot_iterations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>mandelbrot_iterations(t_render_vars<sp/>*vars,<sp/>int<sp/>i)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>current_magnitude_squared;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/>escape_radius_squared;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>escape_radius_squared<sp/>=<sp/>4.0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_RE]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z[COMPLEX_IM]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_RE]<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;z_squared[COMPLEX_IM]<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;iterations<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(1)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_magnitude_squared<sp/>=<sp/>vars-&gt;z_squared[COMPLEX_RE];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current_magnitude_squared<sp/>+=<sp/>vars-&gt;z_squared[COMPLEX_IM];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(vars-&gt;iterations<sp/>&gt;=<sp/>MAX_ITERATIONS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(current_magnitude_squared<sp/>&gt;<sp/>escape_radius_squared)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>compute_next_iteration(vars,<sp/>i);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;iterations++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Determina<sp/>si<sp/>un<sp/>punto<sp/>pertenece<sp/>al<sp/>conjunto<sp/>de<sp/>Mandelbrot.<sp/>Aplica<sp/>iterativamente<sp/>la<sp/>fórmula<sp/>hasta<sp/>que:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">|z|^2<sp/>&gt;<sp/>4</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>(El<sp/>punto<sp/>escapa<sp/>del<sp/>conjunto).</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Se<sp/>alcanza<sp/>el<sp/>máximo<sp/>de<sp/>iteraciones<sp/>(`MAX_ITERATIONS`),<sp/>lo<sp/>que<sp/>indica<sp/>que<sp/>el<sp/>punto<sp/>es<sp/>parte<sp/>del<sp/>conjunto<sp/>o<sp/>está<sp/>muy<sp/>cercano.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_render_vars<sp/>*vars`:<sp/>Variables<sp/>necesarias<sp/>para<sp/>los<sp/>cálculos,<sp/>como<sp/>`z`,<sp/>`c`,<sp/>y<sp/>el<sp/>número<sp/>de<sp/>iteraciones.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`int<sp/>i`:<sp/>Índice<sp/>del<sp/>punto<sp/>actual.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>Práctico</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Para<sp/>`c<sp/>=<sp/>-0.75<sp/>+<sp/>0.1i`:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">z_0<sp/>=<sp/>0<sp/>+<sp/>0i</highlight></codeline>
+<codeline><highlight class="normal">|z|^2<sp/>=<sp/>0</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">z_1<sp/>=<sp/>-0.75<sp/>+<sp/>0.1i</highlight></codeline>
+<codeline><highlight class="normal">|z|^2<sp/>=<sp/>0.5725</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/></highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">z_2<sp/>=<sp/>-0.1975<sp/>-<sp/>0.05i</highlight></codeline>
+<codeline><highlight class="normal">|z|^2<sp/>=<sp/>0.0413</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>mandelbrot_escape_check</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>int<sp/><sp/>mandelbrot_escape_check(t_render_vars<sp/>*vars,<sp/>int<sp/>i,<sp/>t_data<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/>max_color;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/><sp/>dist_sq;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/><sp/>esc_chk;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/><sp/>bound_condition;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>max_color<sp/>=<sp/>calculate_color(MAX_ITERATIONS);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;c_re_centered<sp/>=<sp/>vars-&gt;c_re[i]<sp/>-<sp/>0.25;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dist_sq<sp/>=<sp/>vars-&gt;c_re_centered<sp/>*<sp/>vars-&gt;c_re_centered;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>dist_sq<sp/>+=<sp/>vars-&gt;c_im<sp/>*<sp/>vars-&gt;c_im;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>esc_chk<sp/>=<sp/>dist_sq<sp/>*<sp/>(dist_sq<sp/>+<sp/>vars-&gt;c_re_centered);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>((data-&gt;zoom<sp/>&gt;<sp/>1.0)<sp/>&amp;&amp;<sp/>(esc_chk<sp/>&lt;<sp/>0.25<sp/>*<sp/>vars-&gt;c_im<sp/>*<sp/>vars-&gt;c_im))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(vars-&gt;row[i]<sp/>=<sp/>max_color,<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bound_condition<sp/>=<sp/>(vars-&gt;c_re[i]<sp/>+<sp/>1)<sp/>*<sp/>(vars-&gt;c_re[i]<sp/>+<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>bound_condition<sp/>+=<sp/>vars-&gt;c_im<sp/>*<sp/>vars-&gt;c_im;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(bound_condition<sp/>&lt;<sp/>0.0625)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(vars-&gt;row[i]<sp/>=<sp/>max_color,<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(0);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Optimiza<sp/>la<sp/>detección<sp/>de<sp/>puntos<sp/>que<sp/>están<sp/>garantizados<sp/>como<sp/>parte<sp/>del<sp/>conjunto<sp/>de<sp/>Mandelbrot,<sp/>evitando<sp/>realizar<sp/>todas<sp/>las<sp/>iteraciones.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Explicación:**</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Comprueba<sp/>si<sp/>el<sp/>punto<sp/>está<sp/>en<sp/>regiones<sp/>conocidas<sp/>del<sp/>conjunto<sp/>usando<sp/>condiciones<sp/>geométricas<sp/>predefinidas.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_render_vars<sp/>*vars`:<sp/>Variables<sp/>de<sp/>cálculo.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`int<sp/>i`:<sp/>Índice<sp/>del<sp/>punto.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_data<sp/>*data`:<sp/>Información<sp/>del<sp/>fractal,<sp/>como<sp/>el<sp/>nivel<sp/>de<sp/>zoom.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>4.<sp/>render_mandelbrot_row</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>render_mandelbrot_row(t_render_vars<sp/>*vars,<sp/>t_data<sp/>*data,<sp/>int<sp/>y)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>x,<sp/>i;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(x<sp/>&lt;<sp/>WIDTH)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;row<sp/>=<sp/>vars-&gt;pixels<sp/>+<sp/>(y<sp/>*<sp/>WIDTH<sp/>+<sp/>x);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;c_re[0]<sp/>=<sp/>vars-&gt;start[COMPLEX_RE]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;scale[SCALE_X];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;c_re[1]<sp/>=<sp/>vars-&gt;start[COMPLEX_RE]<sp/>+<sp/>(x<sp/>+<sp/>1)<sp/>*<sp/>vars-&gt;scale[SCALE_X];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(i<sp/>&lt;<sp/>2)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(mandelbrot_escape_check(vars,<sp/>i,<sp/>data))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>continue<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mandelbrot_iterations(vars,<sp/>i);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;row[i++]<sp/>=<sp/>calculate_color(vars-&gt;iterations);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x<sp/>+=<sp/>2;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Renderiza<sp/>una<sp/>fila<sp/>completa<sp/>del<sp/>fractal:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Calcula<sp/>los<sp/>valores<sp/>de<sp/>`c`<sp/>para<sp/>cada<sp/>píxel.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Aplica<sp/>condiciones<sp/>de<sp/>escape<sp/>rápidas.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Realiza<sp/>iteraciones<sp/>para<sp/>determinar<sp/>el<sp/>color<sp/>del<sp/>píxel.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_render_vars<sp/>*vars`:<sp/>Variables<sp/>de<sp/>cálculo.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_data<sp/>*data`:<sp/>Información<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`int<sp/>y`:<sp/>Índice<sp/>de<sp/>la<sp/>fila.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>5.<sp/>render_mandelbrot</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/><sp/><sp/><sp/>render_mandelbrot(t_data<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t_render_vars<sp/><sp/><sp/>vars;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*precomputed_c_re;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*precomputed_c_im;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>calculate_scales_and_limits(&amp;vars,<sp/>data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!precompute_coords(&amp;precomputed_c_re,<sp/>&amp;precomputed_c_im,<sp/>&amp;vars))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(y<sp/>&lt;<sp/>HEIGHT)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars.c_im<sp/>=<sp/>precomputed_c_im[y];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>render_mandelbrot_row(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>free(precomputed_c_re);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>free(precomputed_c_im);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Renderiza<sp/>el<sp/>fractal<sp/>completo<sp/>fila<sp/>por<sp/>fila.<sp/>Precomputa<sp/>las<sp/>coordenadas<sp/>de<sp/>los<sp/>píxeles<sp/>para<sp/>optimizar<sp/>el<sp/>cálculo<sp/>durante<sp/>el<sp/>proceso<sp/>de<sp/>renderizado.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_data<sp/>*data`:<sp/>Información<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="mandelbrot_calcs.md"/>
+  </compounddef>
+</doxygen>

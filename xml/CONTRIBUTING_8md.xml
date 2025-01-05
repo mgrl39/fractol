@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="CONTRIBUTING_8md" kind="file" language="Markdown">
+    <compoundname>CONTRIBUTING.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>How<sp/>to<sp/>contribute<sp/>to<sp/>MLX42</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Read<sp/>the<sp/>wiki<sp/>for<sp/>repo<sp/>codestyle!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>any<sp/>questions,<sp/>suggestions<sp/>or<sp/>help<sp/>[Contact<sp/>Me](mailto:lde-la-h@student.codam.nl)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>**Found<sp/>a<sp/>bug?**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Avoid<sp/>opening<sp/>any<sp/>new<sp/>issues<sp/>without<sp/>having<sp/>checked<sp/>if<sp/>your<sp/>problem<sp/>has<sp/>already<sp/>been<sp/>reported.<sp/>If<sp/>there<sp/>are<sp/>no<sp/>currently<sp/>open<sp/>issues<sp/>that<sp/>fit<sp/>your<sp/>problem&apos;s<sp/>description,<sp/>feel<sp/>free<sp/>to<sp/>[add<sp/>it](https://github.com/W2Codam/MLX42/issues/new/choose).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>When<sp/>writing<sp/>an<sp/>issue<sp/>make<sp/>sure<sp/>to<sp/>include<sp/>a<sp/>clear<sp/>title<sp/>and<sp/>description<sp/>as<sp/>well<sp/>as<sp/>having<sp/>filled<sp/>out<sp/>all<sp/>the<sp/>necessary<sp/>information:<sp/>System<sp/>info,<sp/>OS,<sp/>OS-Version,<sp/>...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>If<sp/>possible<sp/>add<sp/>pictures<sp/>of<sp/>the<sp/>issue.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*<sp/>Maybe<sp/>fix<sp/>it<sp/>yourself<sp/>:D<sp/>?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contributing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Before<sp/>thinking<sp/>of<sp/>adding<sp/>a<sp/>contribution,<sp/>think.<sp/>Is<sp/>it<sp/>necessary?<sp/>Will<sp/>this<sp/>actually<sp/>be<sp/>a<sp/>useful/required<sp/>feature?<sp/>Is<sp/>your<sp/>implementation<sp/>good?</highlight></codeline>
+<codeline><highlight class="normal">Provide<sp/>clear<sp/>and<sp/>documented<sp/>explanation<sp/>as<sp/>to<sp/>what<sp/>was<sp/>changed.</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/CONTRIBUTING.md"/>
+  </compounddef>
+</doxygen>

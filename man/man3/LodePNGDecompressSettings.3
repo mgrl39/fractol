@@ -1,0 +1,65 @@
+.TH "LodePNGDecompressSettings" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LodePNGDecompressSettings
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <lodepng\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "\fBunsigned\fP \fBignore_adler32\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBignore_nlen\fP"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBmax_output_size\fP"
+.br
+.ti -1c
+.RI "\fBunsigned\fP(* \fBcustom_zlib\fP )(\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGDecompressSettings\fP *)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP(* \fBcustom_inflate\fP )(\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGDecompressSettings\fP *)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBvoid\fP * \fBcustom_context\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line \fB314\fP of file \fBlodepng\&.h\fP\&.
+.SH "Field Documentation"
+.PP 
+.SS "\fBconst\fP \fBvoid\fP* LodePNGDecompressSettings::custom_context"
+
+.PP
+Definition at line \fB338\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP(* LodePNGDecompressSettings::custom_inflate) (\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGDecompressSettings\fP *)"
+
+.PP
+Definition at line \fB334\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP(* LodePNGDecompressSettings::custom_zlib) (\fBunsigned\fP \fBchar\fP **, \fBsize_t\fP *, \fBconst\fP \fBunsigned\fP \fBchar\fP *, \fBsize_t\fP, \fBconst\fP \fBLodePNGDecompressSettings\fP *)"
+
+.PP
+Definition at line \fB328\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGDecompressSettings::ignore_adler32"
+
+.PP
+Definition at line \fB316\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBunsigned\fP LodePNGDecompressSettings::ignore_nlen"
+
+.PP
+Definition at line \fB317\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBsize_t\fP LodePNGDecompressSettings::max_output_size"
+
+.PP
+Definition at line \fB324\fP of file \fBlodepng\&.h\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

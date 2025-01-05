@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md_MLX42_2CONTRIBUTING" kind="page">
+    <compoundname>md_MLX42_2CONTRIBUTING</compoundname>
+    <title>How to contribute to MLX42</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md_MLX42_2CONTRIBUTING_1autotoc_md208"/> </para>
+<sect1 id="md_MLX42_2CONTRIBUTING_1autotoc_md209">
+<title>Read the wiki for repo codestyle!</title>
+<para>For any questions, suggestions or help <ulink url="mailto:lde-la-h@student.codam.nl">Contact Me</ulink></para>
+</sect1>
+<sect1 id="md_MLX42_2CONTRIBUTING_1autotoc_md210">
+<title>&lt;strong&gt;Found a bug?&lt;/strong&gt;</title>
+<para><itemizedlist>
+<listitem><para>Avoid opening any new issues without having checked if your problem has already been reported. If there are no currently open issues that fit your problem&apos;s description, feel free to <ulink url="https://github.com/W2Codam/MLX42/issues/new/choose">add it</ulink>.</para>
+</listitem><listitem><para>When writing an issue make sure to include a clear title and description as well as having filled out all the necessary information: System info, OS, OS-Version, ...</para>
+</listitem><listitem><para>If possible add pictures of the issue.</para>
+</listitem><listitem><para>Maybe fix it yourself :D ?</para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="md_MLX42_2CONTRIBUTING_1autotoc_md211">
+<title>Contributing</title>
+<para>Before thinking of adding a contribution, think. Is it necessary? Will this actually be a useful/required feature? Is your implementation good? Provide clear and documented explanation as to what was changed. </para>
+</sect1>
+    </detaileddescription>
+    <location file="MLX42/CONTRIBUTING.md"/>
+  </compounddef>
+</doxygen>

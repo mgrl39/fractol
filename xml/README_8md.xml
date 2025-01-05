@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="README_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Fractol:<sp/>A<sp/>Fractal<sp/>Visualization<sp/>Project</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Fractol<sp/>is<sp/>a<sp/>fractal<sp/>visualization<sp/>tool<sp/>written<sp/>in<sp/>C<sp/>that<sp/>leverages<sp/>the<sp/>MLX42<sp/>graphics<sp/>library<sp/>for<sp/>rendering<sp/>complex<sp/>and<sp/>stunning<sp/>fractals.<sp/>The<sp/>project<sp/>supports<sp/>the<sp/>generation<sp/>of<sp/>the<sp/>Mandelbrot<sp/>and<sp/>Julia<sp/>sets,<sp/>with<sp/>interactive<sp/>controls<sp/>for<sp/>zooming,<sp/>panning,<sp/>and<sp/>exploring<sp/>these<sp/>fascinating<sp/>mathematical<sp/>structures.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Overview</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Fractals<sp/>are<sp/>infinitely<sp/>complex<sp/>patterns<sp/>that<sp/>are<sp/>self-similar<sp/>across<sp/>different<sp/>scales.<sp/>They<sp/>are<sp/>created<sp/>by<sp/>repeating<sp/>a<sp/>simple<sp/>mathematical<sp/>process<sp/>over<sp/>and<sp/>over<sp/>in<sp/>an<sp/>ongoing<sp/>feedback<sp/>loop.<sp/>Fractol<sp/>uses<sp/>this<sp/>principle<sp/>to<sp/>generate<sp/>visually<sp/>captivating<sp/>fractal<sp/>images.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Supported<sp/>Fractals</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Mandelbrot<sp/>Set:<sp/>A<sp/>set<sp/>of<sp/>complex<sp/>numbers<sp/>that<sp/>do<sp/>not<sp/>diverge<sp/>when<sp/>iteratively<sp/>applied<sp/>to<sp/>the<sp/>equation<sp/>`z_(n+1)<sp/>=<sp/>z_n^2<sp/>+<sp/>c`,<sp/>starting<sp/>with<sp/>`z_0<sp/>=<sp/>0`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Julia<sp/>Set:<sp/>A<sp/>family<sp/>of<sp/>fractals<sp/>defined<sp/>for<sp/>a<sp/>fixed<sp/>complex<sp/>constant<sp/>`c`,<sp/>iterating<sp/>over<sp/>`z_(n+1)<sp/>=<sp/>z_n^2<sp/>+<sp/>c`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Mathematical<sp/>Foundation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Complex<sp/>Numbers</highlight></codeline>
+<codeline><highlight class="normal">Fractals<sp/>rely<sp/>on<sp/>complex<sp/>numbers,<sp/>which<sp/>have<sp/>two<sp/>components:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Real<sp/>part<sp/>(Re)**</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Imaginary<sp/>part<sp/>(Im)**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Complex<sp/>numbers<sp/>can<sp/>be<sp/>represented<sp/>as<sp/>`z<sp/>=<sp/>a<sp/>+<sp/>bi`,<sp/>where:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`a`<sp/>is<sp/>the<sp/>real<sp/>component.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`b`<sp/>is<sp/>the<sp/>imaginary<sp/>component.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`i`<sp/>is<sp/>the<sp/>square<sp/>root<sp/>of<sp/>-1.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Iteration<sp/>and<sp/>Divergence</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>fundamental<sp/>concept<sp/>in<sp/>fractal<sp/>generation<sp/>is<sp/>iteration:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Start<sp/>with<sp/>an<sp/>initial<sp/>complex<sp/>number<sp/>`z_0`.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Iteratively<sp/>apply<sp/>the<sp/>equation<sp/>`z_(n+1)<sp/>=<sp/>z_n^2<sp/>+<sp/>c`.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Stop<sp/>if<sp/>the<sp/>magnitude<sp/>of<sp/>`z`,<sp/>given<sp/>by<sp/>`|z|^2`,<sp/>is<sp/>greater<sp/>than<sp/>4<sp/>(escape<sp/>condition)<sp/>or<sp/>if<sp/>the<sp/>maximum<sp/>number<sp/>of<sp/>iterations<sp/>is<sp/>reached.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>number<sp/>of<sp/>iterations<sp/>before<sp/>escape<sp/>determines<sp/>the<sp/>color<sp/>of<sp/>a<sp/>pixel,<sp/>creating<sp/>the<sp/>fractal&apos;s<sp/>intricate<sp/>patterns.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Coordinate<sp/>Mapping</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>fractal<sp/>exists<sp/>in<sp/>the<sp/>complex<sp/>plane,<sp/>but<sp/>pixels<sp/>are<sp/>rendered<sp/>in<sp/>a<sp/>2D<sp/>screen<sp/>coordinate<sp/>system.<sp/>Fractol<sp/>maps<sp/>each<sp/>pixel<sp/>to<sp/>a<sp/>corresponding<sp/>complex<sp/>number<sp/>based<sp/>on:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>screen<sp/>resolution.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>zoom<sp/>level.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>viewport<sp/>offset.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Project<sp/>Structure</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Core<sp/>Files</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`main.c`:<sp/>Program<sp/>entry<sp/>point,<sp/>argument<sp/>validation,<sp/>and<sp/>MLX42<sp/>initialization.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`calcs.c`:<sp/>Core<sp/>calculations<sp/>for<sp/>fractal<sp/>scaling,<sp/>limits,<sp/>and<sp/>color<sp/>determination.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`julia.c`:<sp/>Logic<sp/>for<sp/>rendering<sp/>the<sp/>Julia<sp/>set.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`mandelbrot.c`:<sp/>Logic<sp/>for<sp/>rendering<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`utils.c`:<sp/>Helper<sp/>functions<sp/>for<sp/>input<sp/>handling,<sp/>number<sp/>parsing,<sp/>and<sp/>string<sp/>comparison.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`fractol.h`:<sp/>Header<sp/>file<sp/>containing<sp/>declarations,<sp/>structures,<sp/>and<sp/>constants.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Key<sp/>Concepts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Fractal<sp/>Rendering</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>**Scaling<sp/>and<sp/>Limits**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>The<sp/>`calculate_scales_and_limits`<sp/>function<sp/>determines<sp/>the<sp/>scales<sp/>and<sp/>starting<sp/>points<sp/>for<sp/>each<sp/>axis<sp/>of<sp/>the<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>The<sp/>scales<sp/>adjust<sp/>based<sp/>on<sp/>the<sp/>zoom<sp/>level<sp/>to<sp/>refine<sp/>the<sp/>detail<sp/>as<sp/>the<sp/>user<sp/>zooms<sp/>in<sp/>or<sp/>out.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Precomputed<sp/>Coordinates**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>The<sp/>`precompute_coords`<sp/>function<sp/>calculates<sp/>the<sp/>complex<sp/>coordinates<sp/>for<sp/>each<sp/>pixel<sp/>row<sp/>in<sp/>advance,<sp/>improving<sp/>efficiency.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Rendering**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>For<sp/>the<sp/>Julia<sp/>set<sp/>(`render_julia`)<sp/>and<sp/>Mandelbrot<sp/>set<sp/>(`render_mandelbrot`),<sp/>Fractol<sp/>iterates<sp/>through<sp/>each<sp/>pixel,<sp/>computes<sp/>whether<sp/>it<sp/>escapes,<sp/>and<sp/>assigns<sp/>a<sp/>color<sp/>based<sp/>on<sp/>the<sp/>number<sp/>of<sp/>iterations.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Color<sp/>Mapping</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>color<sp/>of<sp/>each<sp/>pixel<sp/>is<sp/>determined<sp/>by<sp/>the<sp/>number<sp/>of<sp/>iterations<sp/>before<sp/>escape.<sp/>A<sp/>smooth<sp/>gradient<sp/>effect<sp/>is<sp/>applied<sp/>using:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Normalized<sp/>Iterations:<sp/>Proportional<sp/>mapping<sp/>of<sp/>the<sp/>iteration<sp/>count<sp/>to<sp/>a<sp/>color<sp/>gradient.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>ARGB<sp/>Encoding:<sp/>Colors<sp/>are<sp/>represented<sp/>in<sp/>ARGB<sp/>format<sp/>for<sp/>rendering.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Interactive<sp/>Controls</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Keyboard**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Arrow<sp/>keys:<sp/>Pan<sp/>the<sp/>viewport.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>WASD:<sp/>Adjust<sp/>the<sp/>offset<sp/>in<sp/>finer<sp/>increments.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Escape:<sp/>Exit<sp/>the<sp/>application.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Up/Down:<sp/>Zoom<sp/>in/out.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Mouse**:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Scroll:<sp/>Zoom<sp/>in/out<sp/>at<sp/>the<sp/>cursor&apos;s<sp/>location.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>How<sp/>to<sp/>Use</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Build<sp/>and<sp/>Run</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Compile<sp/>the<sp/>project<sp/>using<sp/>`make`:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>make</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Run<sp/>the<sp/>program:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>./fractol<sp/>&lt;fractal_type&gt;<sp/>[parameters]</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>Example:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>./fractol<sp/>julia<sp/>0.285<sp/>-0.01</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Example<sp/>2:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```bash</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>./fractol<sp/>mandelbrot</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fractal<sp/>Types</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**mandelbrot**:<sp/>Generates<sp/>the<sp/>Mandelbrot<sp/>set.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**julia<sp/>`&lt;c_re&gt;<sp/>&lt;c_im&gt;`**:<sp/>Generates<sp/>a<sp/>Julia<sp/>set<sp/>with<sp/>the<sp/>given<sp/>complex<sp/>number.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Technical<sp/>Highlights</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Dynamic<sp/>Scaling</highlight></codeline>
+<codeline><highlight class="normal">Fractol<sp/>dynamically<sp/>adjusts<sp/>the<sp/>scale<sp/>of<sp/>the<sp/>fractal<sp/>based<sp/>on<sp/>the<sp/>zoom<sp/>level<sp/>and<sp/>screen<sp/>resolution,<sp/>ensuring<sp/>high-detail<sp/>rendering<sp/>at<sp/>any<sp/>zoom<sp/>level.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Early<sp/>Escape<sp/>Optimization</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>Mandelbrot<sp/>implementation<sp/>includes<sp/>early<sp/>escape<sp/>checks<sp/>for<sp/>points<sp/>within<sp/>known<sp/>regions<sp/>of<sp/>the<sp/>set,<sp/>significantly<sp/>speeding<sp/>up<sp/>rendering.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Multi-Precision<sp/>Calculations</highlight></codeline>
+<codeline><highlight class="normal">To<sp/>maintain<sp/>precision<sp/>during<sp/>deep<sp/>zoom<sp/>levels,<sp/>calculations<sp/>are<sp/>performed<sp/>using<sp/>double-precision<sp/>floating-point<sp/>numbers.</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

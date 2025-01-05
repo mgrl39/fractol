@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Makefile" kind="file" language="C++">
+    <compoundname>Makefile</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>****************************************************************************<sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/>Makefile<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/>By:<sp/>meghribe<sp/>&lt;meghribe@student.42barcelon<sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/>Created:<sp/>2024/12/29<sp/>04:15:44<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/>Updated:<sp/>2025/01/04<sp/>02:40:31<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>****************************************************************************<sp/>#</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">NAME<sp/>:=<sp/>fractol</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">CC<sp/>:=<sp/>cc</highlight></codeline>
+<codeline><highlight class="normal">CFLAGS<sp/>:=<sp/>-Wall<sp/>-Wextra<sp/>-Werror<sp/>-O3<sp/>-fsanitize=address<sp/>-g</highlight></codeline>
+<codeline><highlight class="normal">INCLUDES<sp/>:=<sp/>-I<sp/>.<sp/>-I<sp/>./MLX42/include</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">SRCS<sp/>:=<sp/>main.c<sp/>calcs.c<sp/>mandelbrot.c<sp/>julia.c<sp/>utils.c<sp/></highlight></codeline>
+<codeline><highlight class="normal">OBJS<sp/>:=<sp/>$(SRCS:.c=.o)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX<sp/>:=<sp/>./MLX42</highlight></codeline>
+<codeline><highlight class="normal">LIBMLX<sp/>:=<sp/>$(MLX)/build/libmlx42.a</highlight></codeline>
+<codeline><highlight class="normal">LIBS<sp/>:=<sp/>$(LIBMLX)<sp/>-ldl<sp/>-lglfw<sp/>-lm</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">all:<sp/>$(NAME)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">$(NAME):<sp/>$(OBJS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>-B<sp/>$(MLX)/build<sp/>$(MLX)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cmake<sp/>--build<sp/>$(MLX)/build<sp/>-j4</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(CC)<sp/>$(CFLAGS)<sp/>$(OBJS)<sp/>$(LIBS)<sp/>-o<sp/>$(NAME)</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">%.o:<sp/>%.c<sp/>Makefile<sp/>fractol.h</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>$(CC)<sp/>$(CFLAGS)<sp/>$(INCLUDES)<sp/>-c<sp/>$&lt;<sp/>-o<sp/>$@</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">clean:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rm<sp/>-f<sp/>$(OBJS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@if<sp/>[<sp/>-d<sp/>$(MLX)/build<sp/>];<sp/>then<sp/>cmake<sp/>--build<sp/>$(MLX)/build<sp/>--target<sp/>clean;<sp/>fi</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">fclean:<sp/>clean</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>rm<sp/>-f<sp/>$(NAME)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@if<sp/>[<sp/>-d<sp/>$(MLX)/build<sp/>];<sp/>then<sp/>rm<sp/>-rf<sp/>$(MLX)/build;<sp/>fi</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">re:<sp/>fclean<sp/>all</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">.PHONY:<sp/>all<sp/>clean<sp/>fclean<sp/>re</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="Makefile"/>
+  </compounddef>
+</doxygen>

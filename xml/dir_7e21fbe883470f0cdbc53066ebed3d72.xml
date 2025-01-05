@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_7e21fbe883470f0cdbc53066ebed3d72" kind="dir">
+    <compoundname>MLX42/src/utils</compoundname>
+    <innerfile refid="mlx__compare_8c">mlx_compare.c</innerfile>
+    <innerfile refid="mlx__error_8c">mlx_error.c</innerfile>
+    <innerfile refid="mlx__list_8c">mlx_list.c</innerfile>
+    <innerfile refid="mlx__utils_8c">mlx_utils.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/src/utils/"/>
+  </compounddef>
+</doxygen>

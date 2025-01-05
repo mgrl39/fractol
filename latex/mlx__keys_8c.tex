@@ -1,0 +1,138 @@
+\doxysection{MLX42/src/mlx\+\_\+keys.c File Reference}
+\hypertarget{mlx__keys_8c}{}\label{mlx__keys_8c}\index{MLX42/src/mlx\_keys.c@{MLX42/src/mlx\_keys.c}}
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+keys.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__keys_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c}{mlx\+\_\+key\+\_\+callback}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} key, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{scancode}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{MLX42_8h_a2f4ab7bf743142dae2e459aa18f9f1d4}{action}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mods}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__keys_8c_a4d6d36f9bc5b957e080c2a5422882270}{mlx\+\_\+key\+\_\+hook}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{MLX42_8h_ad6d21f88160d8a2a180419e7f4cc9b5f}{mlx\+\_\+keyfunc}} \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__keys_8c_aeca3680814ced1c4e67603419a2b3b8e}{mlx\+\_\+is\+\_\+key\+\_\+down}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{MLX42_8h_a384f75c85cf2a9ede19f2f5ec80cf817}{keys\+\_\+t}} key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__keys_8c_aeca3680814ced1c4e67603419a2b3b8e}\label{mlx__keys_8c_aeca3680814ced1c4e67603419a2b3b8e} 
+\index{mlx\_keys.c@{mlx\_keys.c}!mlx\_is\_key\_down@{mlx\_is\_key\_down}}
+\index{mlx\_is\_key\_down@{mlx\_is\_key\_down}!mlx\_keys.c@{mlx\_keys.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_is\_key\_down()}{mlx\_is\_key\_down()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+is\+\_\+key\+\_\+down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{MLX42_8h_a384f75c85cf2a9ede19f2f5ec80cf817}{keys\+\_\+t}}}]{key }\end{DoxyParamCaption})}
+
+Returns true or false if the key is down or not.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & The keycode to check, use MLX\+\_\+\+KEY\+\_\+... to specify! \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or false if the key is down or not. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__keys_8c_source_l00044}{44}} of file \mbox{\hyperlink{mlx__keys_8c_source}{mlx\+\_\+keys.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetKey}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ key)\ ==\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_PRESS}});}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+\Hypertarget{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c}\label{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c} 
+\index{mlx\_keys.c@{mlx\_keys.c}!mlx\_key\_callback@{mlx\_key\_callback}}
+\index{mlx\_key\_callback@{mlx\_key\_callback}!mlx\_keys.c@{mlx\_keys.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_key\_callback()}{mlx\_key\_callback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+key\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{key,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{scancode,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{action,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__keys_8c_source_l00017}{17}} of file \mbox{\hyperlink{mlx__keys_8c_source}{mlx\+\_\+keys.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetWindowUserPointer}}(window);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__key}{mlx\_key\_t}}\ key\_hook\ =\ ((\mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*)\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}})-\/>key\_hook;}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__key__data}{mlx\_key\_data\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{callback\_data}}\ =\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ key,}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a2f4ab7bf743142dae2e459aa18f9f1d4}{action}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{scancode}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mods}},}
+\DoxyCodeLine{00026\ \ \ \ \ \};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ key\_hook.\mbox{\hyperlink{structmlx__key_ac1d4cfe703545783836ec98c03ea7311}{func}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{callback\_data}},\ key\_hook.\mbox{\hyperlink{structmlx__key_a68754b86a374dcae2f7bb7ae14fef889}{param}});}
+\DoxyCodeLine{00029\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__keys_8c_a4d6d36f9bc5b957e080c2a5422882270}\label{mlx__keys_8c_a4d6d36f9bc5b957e080c2a5422882270} 
+\index{mlx\_keys.c@{mlx\_keys.c}!mlx\_key\_hook@{mlx\_key\_hook}}
+\index{mlx\_key\_hook@{mlx\_key\_hook}!mlx\_keys.c@{mlx\_keys.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_key\_hook()}{mlx\_key\_hook()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+key\+\_\+hook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{MLX42_8h_ad6d21f88160d8a2a180419e7f4cc9b5f}{mlx\+\_\+keyfunc}}}]{func,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+This function sets the key callback, which is called when a key is pressed on the keyboard. Useful for single keypress detection.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em func} & The keypress callback function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em param} & An additional optional parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__keys_8c_source_l00033}{33}} of file \mbox{\hyperlink{mlx__keys_8c_source}{mlx\+\_\+keys.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}});}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>key\_hook.func\ =\ \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}};}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>key\_hook.param\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetKeyCallback}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \mbox{\hyperlink{mlx__keys_8c_aa8f796c0ebaed29f94b3548f3a27511c}{mlx\_key\_callback}});}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{mlx__keys_8c_a4d6d36f9bc5b957e080c2a5422882270_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{mlx__keys_8c_a4d6d36f9bc5b957e080c2a5422882270_icgraph}
+\end{center}
+\end{figure}

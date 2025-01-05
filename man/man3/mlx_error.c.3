@@ -1,0 +1,132 @@
+.TH "MLX42/src/utils/mlx_error.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/utils/mlx_error.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBbool\fP \fBmlx_error\fP (\fBmlx_errno_t\fP \fBval\fP)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBchar\fP * \fBmlx_strerror\fP (\fBmlx_errno_t\fP \fBval\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBconst\fP \fBchar\fP * \fBmlx_errors\fP [\fBMLX_ERRMAX\fP]"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP mlx_error (\fBmlx_errno_t\fP val)"
+Functions to set the error number, simply for convenience\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIval\fP The error value\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Always false 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBmlx_error\&.c\fP\&..PP
+.nf
+44 {
+45     mlx_errno = val;
+46 #ifndef NDEBUG
+47     fprintf(stderr, "MLX42: %s", mlx_strerror(mlx_errno));
+48 #endif
+49     return (false);
+50 }
+.fi
+
+.SS "\fBconst\fP \fBchar\fP * mlx_strerror (\fBmlx_errno_t\fP val)"
+Gets the english description of the error code\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIval\fP The error code\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The error string that describes the error code\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBmlx_error\&.c\fP\&..PP
+.nf
+55 {
+56     MLX_ASSERT(val >= 0, "Index must be positive");
+57     MLX_ASSERT(val < MLX_ERRMAX, "Index out of bounds");
+58 
+59     return (mlx_errors[val]);
+60 }
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBconst\fP \fBchar\fP* mlx_errors[\fBMLX_ERRMAX\fP]\fC [static]\fP"
+\fBInitial value:\fP.PP
+.nf
+= {
+    "No Errors",
+    "File has invalid extension",
+    "Failed to open the file",
+    "PNG file is invalid or corrupted",
+    "XPM42 file is invalid or corrupted",
+    "The specified X or Y positions are out of bounds",
+    "The specified Width or Height dimensions are out of bounds",
+    "The provided image is invalid, might indicate mismanagement of images",
+    "Failed to compile the vertex shader\&.",
+    "Failed to compile the fragment shader\&.",
+    "Failed to compile the shaders\&.",
+    "Failed to allocate memory",
+    "Failed to initialize GLAD",
+    "Failed to initialize GLFW",
+    "Failed to create window",
+    "String is too big to be drawn",
+}
+.fi
+
+.PP
+Definition at line \fB18\fP of file \fBmlx_error\&.c\fP\&..PP
+.nf
+18                                             {
+19     "No Errors",
+20     "File has invalid extension",
+21     "Failed to open the file",
+22     "PNG file is invalid or corrupted",
+23     "XPM42 file is invalid or corrupted",
+24     "The specified X or Y positions are out of bounds",
+25     "The specified Width or Height dimensions are out of bounds",
+26     "The provided image is invalid, might indicate mismanagement of images",
+27     "Failed to compile the vertex shader\&.",
+28     "Failed to compile the fragment shader\&.",
+29     "Failed to compile the shaders\&.",
+30     "Failed to allocate memory",
+31     "Failed to initialize GLAD",
+32     "Failed to initialize GLFW",
+33     "Failed to create window",
+34     "String is too big to be drawn",
+35 };
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

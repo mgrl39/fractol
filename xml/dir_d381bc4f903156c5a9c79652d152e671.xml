@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_d381bc4f903156c5a9c79652d152e671" kind="dir">
+    <compoundname>MLX42/include/KHR</compoundname>
+    <innerfile refid="khrplatform_8h">khrplatform.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/include/KHR/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="classWindow" kind="class" language="C++" prot="public">
+    <compoundname>Window</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">testing::Test</basecompoundref>
+    <includes refid="WindowFixture_8hpp" local="no">WindowFixture.hpp</includes>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classWindow_1a4d88b01a1031fff3a377881d9f38d946" prot="protected" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+        <definition>mlx_t* Window::mlx</definition>
+        <argsstring></argsstring>
+        <name>mlx</name>
+        <qualifiedname>Window::mlx</qualifiedname>
+        <initializer>= <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">nullptr</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tests/WindowFixture.hpp" line="14" column="7" bodyfile="MLX42/tests/WindowFixture.hpp" bodystart="14" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="classWindow_1ac9adbe37d0371165d372a18557f4568c" prot="protected" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">constexpr</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">char</ref> *</type>
+        <definition>constexpr const char* Window::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>Window::name</qualifiedname>
+        <initializer>= &quot;MLX42&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tests/WindowFixture.hpp" line="16" column="29" bodyfile="MLX42/tests/WindowFixture.hpp" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classWindow_1a82c7215f26823feea34f1eb4787b7fe1" prot="protected" static="yes" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>const int32_t Window::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>Window::height</qualifiedname>
+        <initializer>= 400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tests/WindowFixture.hpp" line="17" column="22" bodyfile="MLX42/tests/WindowFixture.hpp" bodystart="17" bodyend="-1"/>
+        <referencedby refid="tests_8cpp_1a1f1e5623ca7f1155b035f979aa9cf58b" compoundref="tests_8cpp" startline="63" endline="86">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a91cc672d0a00ed4c9c957a7403d10c52" compoundref="tests_8cpp" startline="49" endline="61">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a0bea0b82a8268d65dc6d1a6f5a55750f" compoundref="tests_8cpp" startline="118" endline="139">TEST_F</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classWindow_1a1ac0c095feefd6b84ab62d832004c219" prot="protected" static="yes" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>const int32_t Window::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>Window::width</qualifiedname>
+        <initializer>= 400</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tests/WindowFixture.hpp" line="18" column="22" bodyfile="MLX42/tests/WindowFixture.hpp" bodystart="18" bodyend="-1"/>
+        <referencedby refid="tests_8cpp_1a1f1e5623ca7f1155b035f979aa9cf58b" compoundref="tests_8cpp" startline="63" endline="86">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a91cc672d0a00ed4c9c957a7403d10c52" compoundref="tests_8cpp" startline="49" endline="61">TEST_F</referencedby>
+        <referencedby refid="tests_8cpp_1a0bea0b82a8268d65dc6d1a6f5a55750f" compoundref="tests_8cpp" startline="118" endline="139">TEST_F</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classWindow_1a853c1fb2e3d27366fb37892161d17014" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void Window::SetUp</definition>
+        <argsstring>() override</argsstring>
+        <name>SetUp</name>
+        <qualifiedname>Window::SetUp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tests/WindowFixture.hpp" line="20" column="13" bodyfile="MLX42/tests/WindowFixture.hpp" bodystart="20" bodyend="29"/>
+        <references refid="MLX42_8h_1a4ccab922a58526490dee7512e5cc00e0a30034ccde62debe94d62f61f50ab5cc4" compoundref="MLX42_8h" startline="403">MLX_HEADLESS</references>
+        <references refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" compoundref="mlx__init_8c" startline="161" endline="197">mlx_init</references>
+        <references refid="MLX42_8h_1a72eecffc4e044413e45e9b5bfb1feda8" compoundref="mlx__init_8c" startline="199" endline="203">mlx_set_setting</references>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f" compoundref="MLX42_8h" startline="372">MLX_SUCCESS</references>
+      </memberdef>
+      <memberdef kind="function" id="classWindow_1a8f4f7c0ab925c5ab5667e607dd3b6c9e" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void Window::TearDown</definition>
+        <argsstring>() override</argsstring>
+        <name>TearDown</name>
+        <qualifiedname>Window::TearDown</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/tests/WindowFixture.hpp" line="31" column="13" bodyfile="MLX42/tests/WindowFixture.hpp" bodystart="31" bodyend="36"/>
+        <references refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f" compoundref="MLX42_8h" startline="372">MLX_SUCCESS</references>
+        <references refid="MLX42_8h_1afa6aa2f79f9fc81735bdf3b92421f9ca" compoundref="mlx__exit_8c" startline="36" endline="50">mlx_terminate</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Window</label>
+        <link refid="classWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>testing::Test</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Window</label>
+        <link refid="classWindow"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>#mlx</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>mlx</label>
+        <link refid="structmlx"/>
+      </node>
+      <node id="2">
+        <label>testing::Test</label>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/tests/WindowFixture.hpp" line="11" column="1" bodyfile="MLX42/tests/WindowFixture.hpp" bodystart="12" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classWindow_1a82c7215f26823feea34f1eb4787b7fe1" prot="protected" virt="non-virtual"><scope>Window</scope><name>height</name></member>
+      <member refid="classWindow_1a4d88b01a1031fff3a377881d9f38d946" prot="protected" virt="non-virtual"><scope>Window</scope><name>mlx</name></member>
+      <member refid="classWindow_1ac9adbe37d0371165d372a18557f4568c" prot="protected" virt="non-virtual"><scope>Window</scope><name>name</name></member>
+      <member refid="classWindow_1a853c1fb2e3d27366fb37892161d17014" prot="protected" virt="non-virtual"><scope>Window</scope><name>SetUp</name></member>
+      <member refid="classWindow_1a8f4f7c0ab925c5ab5667e607dd3b6c9e" prot="protected" virt="non-virtual"><scope>Window</scope><name>TearDown</name></member>
+      <member refid="classWindow_1a1ac0c095feefd6b84ab62d832004c219" prot="protected" virt="non-virtual"><scope>Window</scope><name>width</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

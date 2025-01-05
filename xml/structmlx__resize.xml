@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__resize" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_resize</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__resize_1a486a7f4c0430b3a2b2714cc7997e1a7b" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_resize::param</definition>
+        <argsstring></argsstring>
+        <name>param</name>
+        <qualifiedname>mlx_resize::param</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="140" column="5" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__resize_1a5e2fa503e12c10e0a3668051f90d0c0d" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1aa5c25b427cbf6d0fef4e7e3b06710d93" kindref="member">mlx_resizefunc</ref></type>
+        <definition>mlx_resizefunc mlx_resize::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <qualifiedname>mlx_resize::func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="141" column="15" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_resize</label>
+        <link refid="structmlx__resize"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="138" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="139" bodyend="142"/>
+    <listofallmembers>
+      <member refid="structmlx__resize_1a5e2fa503e12c10e0a3668051f90d0c0d" prot="public" virt="non-virtual"><scope>mlx_resize</scope><name>func</name></member>
+      <member refid="structmlx__resize_1a486a7f4c0430b3a2b2714cc7997e1a7b" prot="public" virt="non-virtual"><scope>mlx_resize</scope><name>param</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

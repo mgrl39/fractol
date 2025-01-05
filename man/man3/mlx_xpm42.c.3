@@ -1,0 +1,281 @@
+.TH "MLX42/src/textures/mlx_xpm42.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/textures/mlx_xpm42.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBuint8_t\fP \fBmlx_parse_hex_channel\fP (\fBchar\fP *\fBchannel\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBbool\fP \fBmlx_insert_xpm_entry\fP (\fBxpm_t\fP *\fBxpm\fP, \fBchar\fP *\fBline\fP, \fBuint32_t\fP *\fBctable\fP, \fBsize_t\fP \fBs\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBbool\fP \fBmlx_read_data\fP (\fBxpm_t\fP *\fBxpm\fP, \fBFILE\fP *\fBfile\fP, \fBuint32_t\fP *\fBctable\fP, \fBsize_t\fP \fBs\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBbool\fP \fBmlx_read_table\fP (\fBxpm_t\fP *\fBxpm\fP, \fBFILE\fP *\fBfile\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBbool\fP \fBmlx_read_xpm_header\fP (\fBxpm_t\fP *\fBxpm\fP, \fBFILE\fP *\fBfile\fP)"
+.br
+.ti -1c
+.RI "\fBxpm_t\fP * \fBmlx_load_xpm42\fP (\fBconst\fP \fBchar\fP *\fBpath\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_delete_xpm42\fP (\fBxpm_t\fP *\fBxpm\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP mlx_delete_xpm42 (\fBxpm_t\fP * xpm)"
+Deletes an XPM42 texture by freeing its allocated data\&.
+.PP
+This will not remove any already drawn XPMs, it simply deletes the XPM buffer\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIxpm\fP The xpm texture to delete\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB203\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+204 {
+205     MLX_NONNULL(xpm);
+206     free(xpm\->texture\&.pixels);
+207     free(xpm);
+208 }
+.fi
+
+.SS "\fBstatic\fP \fBbool\fP mlx_insert_xpm_entry (\fBxpm_t\fP * xpm, \fBchar\fP * line, \fBuint32_t\fP * ctable, \fBsize_t\fP s)\fC [static]\fP"
+Parses the XPM color value entry e\&.g: '\&.X #00FF00FF' into the color table while also verifying the format\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIxpm\fP The XPM\&. 
+.br
+\fIline\fP The line to parse\&. 
+.br
+\fIctable\fP The color hash table\&. 
+.br
+\fIs\fP Size of the hash table 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True or false depending on if it successfully parsed the line\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB64\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+65 {
+66     // NOTE: uintptr because windows likes to complain\&.\&.\&.
+67     // Verify the length of the Pixel string by checking backwards for the first
+68     // occurrence of a space and then check the distance by comparing with cpp\&.
+69     if (((uintptr_t)strrchr(line, ' ') \- (uintptr_t)line) != (uint64_t)xpm\->cpp)
+70         return (false);
+71     if (!isspace(line[xpm\->cpp]) || line[xpm\->cpp + 1] != '#' || !isalnum(line[xpm\->cpp + 2]))
+72         return (false);
+73 
+74     uint32_t color = 0;
+75     size_t start_offset = xpm\->cpp + 2;
+76     color |= mlx_parse_hex_channel(line + start_offset) << 24;
+77     color |= mlx_parse_hex_channel(line + start_offset + 2) << 16;
+78     color |= mlx_parse_hex_channel(line + start_offset + 4) << 8;
+79     color |= mlx_parse_hex_channel(line + start_offset + 6);
+80     
+81     int32_t index = mlx_fnv_hash(line, xpm\->cpp) % s;
+82     ctable[index] = xpm\->mode == 'm' ? mlx_rgba_to_mono(color) : color;
+83     return (true);
+84 }
+.fi
+
+.SS "\fBxpm_t\fP * mlx_load_xpm42 (\fBconst\fP \fBchar\fP * path)"
+Loads an XPM42 texture from the given file path\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP The file path to the XPM texture\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The XPM texture struct containing its information\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB181\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+182 {
+183     FILE* file;
+184     xpm_t* xpm = NULL;
+185 
+186     MLX_NONNULL(path);
+187     if (!strstr(path, "\&.xpm42"))
+188         return ((void*)mlx_error(MLX_INVEXT));
+189     if (!(file = fopen(path, "r")))
+190         return ((void*)mlx_error(MLX_INVFILE));
+191     if (!(xpm = calloc(1, sizeof(xpm_t))))
+192         return ((void*)mlx_error(MLX_MEMFAIL));
+193     if (!mlx_read_xpm_header(xpm, file))
+194     {
+195         mlx_freen(2, xpm\->texture\&.pixels, xpm);
+196         mlx_error(MLX_INVXPM);
+197         xpm = NULL;
+198     }
+199     fclose(file);
+200     return (xpm);
+201 }
+.fi
+
+.SS "\fBstatic\fP \fBuint8_t\fP mlx_parse_hex_channel (\fBchar\fP * channel)\fC [static]\fP"
+XPM is an obscure image format which can't seem to make up its mind whether it wants to be written in C code or not\&.
+.PP
+https://en.wikipedia.org/wiki/X_PixMap
+.PP
+This might anger some but instead I decided to write my own image format, very similar to XPM2, which seems to be the better option between the 3 versions\&. The only difference is in the header which carries the file type, width, height, color count and finally color type aka 'c' for RGBA8 or 'm' for monochrome output\&.
+.PP
+The changes, in my opinion, very much simplify the XPM format into something literally anybody can use without much guessing as to what does what\&.
+.PP
+Additionally with the C style format, the idea is that you simply include it directly into the compilation of the program (since it's just C)\&.
+.PP
+As convenient as this is, I just find it hideous especially the XPM3 variant\&. By sticking to the XPM style format, conversion should be very easy and straightforward to this format however\&. Parses HEX color channel e\&.g: '0F'
+.PP
+\fBParameters\fP
+.RS 4
+\fIchannel\fP The 2 character string to parse\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Int value of the channel\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB48\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+49 {
+50     char temp_chan[] = {channel[0], channel[1], '\\0'};
+51     return (strtol(temp_chan, NULL, 16));
+52 }
+.fi
+
+.SS "\fBstatic\fP \fBbool\fP mlx_read_data (\fBxpm_t\fP * xpm, \fBFILE\fP * file, \fBuint32_t\fP * ctable, \fBsize_t\fP s)\fC [static]\fP"
+Retrieves the pixel data line by line and then processes each pixel by hashing the characters and looking it up from the color table\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIxpm\fP The XPM\&. 
+.br
+\fIfile\fP The filepath to the XPM42 file\&. 
+.br
+\fIctable\fP The color hash table\&. 
+.br
+\fIs\fP Size of the hash table\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True or false depending on if it successfully parsed the line\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB96\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+97 {
+98     size_t line_len;
+99     char* line = NULL;
+100 
+101     for (int64_t y_xpm = 0; y_xpm < xpm\->texture\&.height; y_xpm++)
+102     {
+103         if (!mlx_getline(&line, &line_len, file))
+104             return (free(line), false);
+105         if (line[line_len \- 1] == '\\n')
+106             line_len\-\-;
+107         if (line_len != xpm\->texture\&.width * xpm\->cpp)
+108             return (free(line), false);
+109 
+110         // NOTE: Copy pixel by pixel as we need to retrieve the hash table\&.
+111         for (int64_t x_xpm = 0, x_line = 0; x_xpm < xpm\->texture\&.width; x_xpm++, x_line += xpm\->cpp)
+112         {
+113             uint8_t* pixelstart = &xpm\->texture\&.pixels[(y_xpm * xpm\->texture\&.width + x_xpm) * BPP];
+114             mlx_draw_pixel(pixelstart, ctable[mlx_fnv_hash(&line[x_line], xpm\->cpp) % s]);
+115         }
+116     }
+117     free(line);
+118     return (true);
+119 }
+.fi
+
+.SS "\fBstatic\fP \fBbool\fP mlx_read_table (\fBxpm_t\fP * xpm, \fBFILE\fP * file)\fC [static]\fP"
+For quick lookups we basically create a stack allocated lookup table with every ascii character in it\&. This should help avoid a \fBO(n)\fP case and give us a \fBO(1)\fP for very fast look ups\&.
+.PP
+Downside is we still need to iterate over each pixel to solve its color\&. So I hope this makes it at least a bit faster\&.
+.PP
+TODO: This buffer might be way to big! Do actual collision checks, for now just straight up raw dog this\&. 
+.PP
+Definition at line \fB132\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+133 {
+134     char* line = NULL;
+135     size_t line_len;
+136     uint32_t ctable[UINT16_MAX] = {0};
+137 
+138     for (int32_t i = 0; i < xpm\->color_count; i++)
+139     {
+140         if (!mlx_getline(&line, &line_len, file))
+141             return (free(line), false);
+142         if (!mlx_insert_xpm_entry(xpm, line, ctable, (sizeof(ctable) / BPP)))
+143             return (free(line), false);
+144     }
+145     free(line);
+146     return (mlx_read_data(xpm, file, ctable, (sizeof(ctable) / BPP)));
+147 }
+.fi
+
+.SS "\fBstatic\fP \fBbool\fP mlx_read_xpm_header (\fBxpm_t\fP * xpm, \fBFILE\fP * file)\fC [static]\fP"
+Reads the XPM42 file header which usually consists of a file type declaration of '!XPM42' followed by the next line containing image information such as width, height, unique color count and finally the color mode\&. Which is either c for Color or m for Monochrome\&. 
+.PP
+Definition at line \fB156\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+157 {
+158     int32_t flagc;
+159     char    buffer[64] = {0};
+160 
+161     // Check file type dec\&.\&.\&.
+162     if (!fgets(buffer, sizeof(buffer), file))
+163         return (false);
+164     if (strncmp(buffer, "!XPM42\\n", sizeof(buffer)) != 0)
+165         return (false);
+166 
+167     // Get header info \&.\&.\&.
+168     if (!fgets(buffer, sizeof(buffer), file))
+169         return (false);
+170     flagc = sscanf(buffer, "%i %i %i %i %c\\n", &xpm\->texture\&.width, &xpm\->texture\&.height, &xpm\->color_count, &xpm\->cpp, &xpm\->mode);
+171     if (flagc < 4 || xpm\->texture\&.width > INT16_MAX || xpm\->texture\&.height > INT16_MAX || \\
+172         !(xpm\->mode == 'c' || xpm\->mode == 'm') || xpm\->cpp > 10)
+173         return (false);
+174     xpm\->texture\&.bytes_per_pixel = BPP;
+175     xpm\->texture\&.pixels = calloc(xpm\->texture\&.width * xpm\->texture\&.height, sizeof(int32_t));
+176     return (xpm\->texture\&.pixels != NULL ? mlx_read_table(xpm, file) : false);
+177 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

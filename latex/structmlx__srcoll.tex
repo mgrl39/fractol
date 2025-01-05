@@ -1,0 +1,66 @@
+\doxysection{mlx\+\_\+srcoll Struct Reference}
+\hypertarget{structmlx__srcoll}{}\label{structmlx__srcoll}\index{mlx\_srcoll@{mlx\_srcoll}}
+
+
+{\ttfamily \#include $<$MLX42\+\_\+\+Int.\+h$>$}
+
+
+
+Collaboration diagram for mlx\+\_\+srcoll\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=141pt]{structmlx__srcoll__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structmlx__srcoll_a9cb32c4fb375f0b950f9f0e5d7e11a05}{param}}
+\item 
+\mbox{\hyperlink{MLX42_8h_ad23ff24bbca4321da68be76c2f29bb9c}{mlx\+\_\+scrollfunc}} \mbox{\hyperlink{structmlx__srcoll_adf1f89e8b52aa177ffc06759bedd6a62}{func}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+There are 2 types of hooks, special and generics.
+
+Specials\+: Specials are specific callback functions to a specific action such as window resizing or key presses. These are attached to the callbacks of glfw. In case MLX itself needs the callback we call the specials in that callback since there can only ever be a single callback.
+
+Generics\+: Generics are MLX42 specific hooks and can have multiple hooks at the same time, these are executed every frame and can be used as an alternative for keypresses or animations for instance.
+
+NOTE\+: Hooks could be achieved with va\+\_\+args to have any amount of args sized functor but we can\textquotesingle{}t/don\textquotesingle{}t want to let the user deal with va\+\_\+args and having to look up what args are what, etc...
+
+We want to keep it straightforward with functors already describing what params they have. 
+
+Definition at line \mbox{\hyperlink{MLX42__Int_8h_source_l00114}{114}} of file \mbox{\hyperlink{MLX42__Int_8h_source}{MLX42\+\_\+\+Int.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structmlx__srcoll_adf1f89e8b52aa177ffc06759bedd6a62}\label{structmlx__srcoll_adf1f89e8b52aa177ffc06759bedd6a62} 
+\index{mlx\_srcoll@{mlx\_srcoll}!func@{func}}
+\index{func@{func}!mlx\_srcoll@{mlx\_srcoll}}
+\doxysubsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MLX42_8h_ad23ff24bbca4321da68be76c2f29bb9c}{mlx\+\_\+scrollfunc}} mlx\+\_\+srcoll\+::func}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42__Int_8h_source_l00117}{117}} of file \mbox{\hyperlink{MLX42__Int_8h_source}{MLX42\+\_\+\+Int.\+h}}.
+
+\Hypertarget{structmlx__srcoll_a9cb32c4fb375f0b950f9f0e5d7e11a05}\label{structmlx__srcoll_a9cb32c4fb375f0b950f9f0e5d7e11a05} 
+\index{mlx\_srcoll@{mlx\_srcoll}!param@{param}}
+\index{param@{param}!mlx\_srcoll@{mlx\_srcoll}}
+\doxysubsubsection{\texorpdfstring{param}{param}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}\texorpdfstring{$\ast$}{*} mlx\+\_\+srcoll\+::param}
+
+
+
+Definition at line \mbox{\hyperlink{MLX42__Int_8h_source_l00116}{116}} of file \mbox{\hyperlink{MLX42__Int_8h_source}{MLX42\+\_\+\+Int.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+MLX42/include/\+MLX42/\mbox{\hyperlink{MLX42__Int_8h}{MLX42\+\_\+\+Int.\+h}}\end{DoxyCompactItemize}

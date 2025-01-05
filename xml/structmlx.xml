@@ -1,0 +1,197 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx" kind="struct" language="C++" prot="public">
+    <compoundname>mlx</compoundname>
+    <includes refid="MLX42_8h" local="no">MLX42.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx::window</definition>
+        <argsstring></argsstring>
+        <name>window</name>
+        <qualifiedname>mlx::window</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="362" column="5" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="362" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1a5101efc3def31516b965b23b97a13f1e" compoundref="mlx__window_8c" startline="63" endline="72">mlx_close_hook</referencedby>
+        <referencedby refid="MLX42_8h_1a5234b5f5d093fa79366df2f94c9bcb28" compoundref="mlx__exit_8c" startline="26" endline="30">mlx_close_window</referencedby>
+        <referencedby refid="MLX42_8h_1a9706bdf92e7a3fc890d75cf37cfcfdb0" compoundref="mlx__mouse_8c" startline="65" endline="74">mlx_cursor_hook</referencedby>
+        <referencedby refid="mlx__loop_8c_1ace92e4090704e7df7224295f6d83d7b6" compoundref="mlx__loop_8c" startline="17" endline="28">mlx_exec_loop_hooks</referencedby>
+        <referencedby refid="MLX42_8h_1a2cbce835d52e89e37e4bb410ceea776d" compoundref="mlx__utils_8c" startline="126" endline="131">mlx_focus</referencedby>
+        <referencedby refid="MLX42_8h_1a9069428691651ffd240a135bf390c3e1" compoundref="mlx__mouse_8c" startline="90" endline="100">mlx_get_mouse_pos</referencedby>
+        <referencedby refid="MLX42_8h_1afa5a15fcb6b547417000e5553eff09dd" compoundref="mlx__window_8c" startline="106" endline="113">mlx_get_window_pos</referencedby>
+        <referencedby refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" compoundref="mlx__init_8c" startline="161" endline="197">mlx_init</referencedby>
+        <referencedby refid="mlx__init_8c_1a8a415365a708f01e9a44e964d94dad2a" compoundref="mlx__init_8c" startline="101" endline="150">mlx_init_render</referencedby>
+        <referencedby refid="MLX42_8h_1aeca3680814ced1c4e67603419a2b3b8e" compoundref="mlx__keys_8c" startline="44" endline="49">mlx_is_key_down</referencedby>
+        <referencedby refid="MLX42_8h_1acf18386b9b547ef70ab845c5e296c287" compoundref="mlx__mouse_8c" startline="76" endline="81">mlx_is_mouse_down</referencedby>
+        <referencedby refid="MLX42_8h_1a4d6d36f9bc5b957e080c2a5422882270" compoundref="mlx__keys_8c" startline="33" endline="42">mlx_key_hook</referencedby>
+        <referencedby refid="MLX42_8h_1ac4bd53ff1f88113c67d2b020f1809512" compoundref="mlx__loop_8c" startline="93" endline="118">mlx_loop</referencedby>
+        <referencedby refid="MLX42_8h_1a6e0af3a5acc43e58e449cbbb6990feb2" compoundref="mlx__mouse_8c" startline="54" endline="63">mlx_mouse_hook</referencedby>
+        <referencedby refid="MLX42_8h_1a472569e9c4c30b925a20bf7cbbba9ba0" compoundref="mlx__window_8c" startline="74" endline="83">mlx_resize_hook</referencedby>
+        <referencedby refid="MLX42_8h_1a4b32bcfa185276fb7f4d3c4b876635f6" compoundref="mlx__mouse_8c" startline="43" endline="52">mlx_scroll_hook</referencedby>
+        <referencedby refid="MLX42_8h_1a6d72547f51845d3a9b25a85d5698f794" compoundref="mlx__cursor_8c" startline="50" endline="56">mlx_set_cursor</referencedby>
+        <referencedby refid="MLX42_8h_1abb5e50350b1f036fe195b520ee6442eb" compoundref="mlx__cursor_8c" startline="58" endline="63">mlx_set_cursor_mode</referencedby>
+        <referencedby refid="MLX42_8h_1a6c764e14ef85c6a2fef61bc5caa2287c" compoundref="mlx__window_8c" startline="85" endline="97">mlx_set_icon</referencedby>
+        <referencedby refid="MLX42_8h_1aa3113c37ccca07c71f83e0fe0671e69d" compoundref="mlx__mouse_8c" startline="83" endline="88">mlx_set_mouse_pos</referencedby>
+        <referencedby refid="MLX42_8h_1a1033f444c65370103e76bcf140296626" compoundref="mlx__window_8c" startline="124" endline="129">mlx_set_window_limit</referencedby>
+        <referencedby refid="MLX42_8h_1a86e65b680701a6c5bb78a1dccf648d20" compoundref="mlx__window_8c" startline="99" endline="104">mlx_set_window_pos</referencedby>
+        <referencedby refid="MLX42_8h_1ae5d34921e2aa34e6874376da5ef95016" compoundref="mlx__window_8c" startline="115" endline="122">mlx_set_window_size</referencedby>
+        <referencedby refid="MLX42_8h_1a3128b9e30bf9832c5e094276db823dd3" compoundref="mlx__window_8c" startline="131" endline="137">mlx_set_window_title</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx_1a17981c6577602cb97b8e13386786c7ab" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx::context</definition>
+        <argsstring></argsstring>
+        <name>context</name>
+        <qualifiedname>mlx::context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="363" column="5" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="363" bodyend="-1"/>
+        <referencedby refid="mlx__window_8c_1a9573e8039077cedc47592aa335f5b6b7" compoundref="mlx__window_8c" startline="53" endline="59">mlx_close_callback</referencedby>
+        <referencedby refid="MLX42_8h_1a5101efc3def31516b965b23b97a13f1e" compoundref="mlx__window_8c" startline="63" endline="72">mlx_close_hook</referencedby>
+        <referencedby refid="mlx__init_8c_1a6c46003ab2517553e8b627bc16d5b5b3" compoundref="mlx__init_8c" startline="23" endline="68">mlx_create_buffers</referencedby>
+        <referencedby refid="mlx__mouse_8c_1ad8835883f060f870b6ecdba029f6e136" compoundref="mlx__mouse_8c" startline="33" endline="39">mlx_cursor_cb</referencedby>
+        <referencedby refid="MLX42_8h_1a9706bdf92e7a3fc890d75cf37cfcfdb0" compoundref="mlx__mouse_8c" startline="65" endline="74">mlx_cursor_hook</referencedby>
+        <referencedby refid="MLX42_8h_1a997cfd3dd07ea85a91df958ae0d1e7b5" compoundref="mlx__images_8c" startline="204" endline="222">mlx_delete_image</referencedby>
+        <referencedby refid="mlx__loop_8c_1ace92e4090704e7df7224295f6d83d7b6" compoundref="mlx__loop_8c" startline="17" endline="28">mlx_exec_loop_hooks</referencedby>
+        <referencedby refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" compoundref="mlx__images_8c" startline="121" endline="159">mlx_image_to_window</referencedby>
+        <referencedby refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" compoundref="mlx__init_8c" startline="161" endline="197">mlx_init</referencedby>
+        <referencedby refid="mlx__init_8c_1a8a415365a708f01e9a44e964d94dad2a" compoundref="mlx__init_8c" startline="101" endline="150">mlx_init_render</referencedby>
+        <referencedby refid="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" compoundref="mlx__keys_8c" startline="17" endline="29">mlx_key_callback</referencedby>
+        <referencedby refid="MLX42_8h_1a4d6d36f9bc5b957e080c2a5422882270" compoundref="mlx__keys_8c" startline="33" endline="42">mlx_key_hook</referencedby>
+        <referencedby refid="MLX42_8h_1ac4bd53ff1f88113c67d2b020f1809512" compoundref="mlx__loop_8c" startline="93" endline="118">mlx_loop</referencedby>
+        <referencedby refid="MLX42_8h_1afc772cc4204df8de0388e9bb38768d10" compoundref="mlx__loop_8c" startline="70" endline="90">mlx_loop_hook</referencedby>
+        <referencedby refid="mlx__mouse_8c_1a71c3659a0555ad5f40d201573de27cbd" compoundref="mlx__mouse_8c" startline="25" endline="31">mlx_mouse_cb</referencedby>
+        <referencedby refid="MLX42_8h_1a6e0af3a5acc43e58e449cbbb6990feb2" compoundref="mlx__mouse_8c" startline="54" endline="63">mlx_mouse_hook</referencedby>
+        <referencedby refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" compoundref="mlx__images_8c" startline="161" endline="202">mlx_new_image</referencedby>
+        <referencedby refid="mlx__loop_8c_1aaa7ba75154ec3bba6511cc7cb9625baa" compoundref="mlx__loop_8c" startline="30" endline="66">mlx_render_images</referencedby>
+        <referencedby refid="mlx__window_8c_1a747ff0eb4456b5640979fa6c7c463285" compoundref="mlx__window_8c" startline="44" endline="51">mlx_resize_callback</referencedby>
+        <referencedby refid="MLX42_8h_1a472569e9c4c30b925a20bf7cbbba9ba0" compoundref="mlx__window_8c" startline="74" endline="83">mlx_resize_hook</referencedby>
+        <referencedby refid="mlx__mouse_8c_1ae23a4ecd5b9bddb1bb9a7a67aaf73bed" compoundref="mlx__mouse_8c" startline="17" endline="23">mlx_scroll_cb</referencedby>
+        <referencedby refid="MLX42_8h_1a4b32bcfa185276fb7f4d3c4b876635f6" compoundref="mlx__mouse_8c" startline="43" endline="52">mlx_scroll_hook</referencedby>
+        <referencedby refid="MLX42_8h_1afa6aa2f79f9fc81735bdf3b92421f9ca" compoundref="mlx__exit_8c" startline="36" endline="50">mlx_terminate</referencedby>
+        <referencedby refid="MLX42__Int_8h_1ada6f33f81205bccd1a11b4e1dfa672a9" compoundref="mlx__window_8c" startline="21" endline="42">mlx_update_matrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx_1a3a11be0a71d7c8dd0c329e1caa230a50" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx::width</definition>
+        <argsstring></argsstring>
+        <name>width</name>
+        <qualifiedname>mlx::width</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="364" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="364" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" compoundref="mlx__init_8c" startline="161" endline="197">mlx_init</referencedby>
+        <referencedby refid="MLX42_8h_1ac4bd53ff1f88113c67d2b020f1809512" compoundref="mlx__loop_8c" startline="93" endline="118">mlx_loop</referencedby>
+        <referencedby refid="MLX42_8h_1ae5d34921e2aa34e6874376da5ef95016" compoundref="mlx__window_8c" startline="115" endline="122">mlx_set_window_size</referencedby>
+        <referencedby refid="MLX42_8h_1a140fd59feca1fefb31944cf074fc4c87" compoundref="mlx__texture_8c" startline="17" endline="35">mlx_texture_to_image</referencedby>
+        <referencedby refid="MLX42__Int_8h_1ada6f33f81205bccd1a11b4e1dfa672a9" compoundref="mlx__window_8c" startline="21" endline="42">mlx_update_matrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx_1aaad5daa3b9d2466e0de9732f8ff434ee" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx::height</definition>
+        <argsstring></argsstring>
+        <name>height</name>
+        <qualifiedname>mlx::height</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="365" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="365" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" compoundref="mlx__init_8c" startline="161" endline="197">mlx_init</referencedby>
+        <referencedby refid="MLX42_8h_1ac4bd53ff1f88113c67d2b020f1809512" compoundref="mlx__loop_8c" startline="93" endline="118">mlx_loop</referencedby>
+        <referencedby refid="MLX42_8h_1ae5d34921e2aa34e6874376da5ef95016" compoundref="mlx__window_8c" startline="115" endline="122">mlx_set_window_size</referencedby>
+        <referencedby refid="MLX42__Int_8h_1ada6f33f81205bccd1a11b4e1dfa672a9" compoundref="mlx__window_8c" startline="21" endline="42">mlx_update_matrix</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx_1a115a945248d641f2a7a8fa3c43e6b79a" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">double</ref></type>
+        <definition>double mlx::delta_time</definition>
+        <argsstring></argsstring>
+        <name>delta_time</name>
+        <qualifiedname>mlx::delta_time</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="366" column="7" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="366" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1ac4bd53ff1f88113c67d2b020f1809512" compoundref="mlx__loop_8c" startline="93" endline="118">mlx_loop</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Main MLX handle, carries important data in regards to the program. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>window</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The window itself. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Abstracted opengl data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>width</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The width of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>height</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The height of the window. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>delta_time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time difference between the previous frame and the current frame. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx</label>
+        <link refid="structmlx"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42.h" line="360" column="1" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="361" bodyend="367"/>
+    <listofallmembers>
+      <member refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" prot="public" virt="non-virtual"><scope>mlx</scope><name>context</name></member>
+      <member refid="structmlx_1a115a945248d641f2a7a8fa3c43e6b79a" prot="public" virt="non-virtual"><scope>mlx</scope><name>delta_time</name></member>
+      <member refid="structmlx_1aaad5daa3b9d2466e0de9732f8ff434ee" prot="public" virt="non-virtual"><scope>mlx</scope><name>height</name></member>
+      <member refid="structmlx_1a3a11be0a71d7c8dd0c329e1caa230a50" prot="public" virt="non-virtual"><scope>mlx</scope><name>width</name></member>
+      <member refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" prot="public" virt="non-virtual"><scope>mlx</scope><name>window</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

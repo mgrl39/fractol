@@ -1,0 +1,568 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__list_8c" kind="file" language="C++">
+    <compoundname>mlx_list.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/utils/mlx_list.c</label>
+        <link refid="mlx__list_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__list_8c_1a7e545d3f7baaa10bc2524af8ab0d5787" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_lstsize</definition>
+        <argsstring>(mlx_list_t *lst)</argsstring>
+        <name>mlx_lstsize</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="17" column="9" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="17" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a8931f6d7d942eae7da73eae350f150b6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>static void mlx_lstdelone</definition>
+        <argsstring>(mlx_list_t *lst, void(*del)(void *))</argsstring>
+        <name>mlx_lstdelone</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+          <declname>lst</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref>(*)(<ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *)</type>
+          <declname>del</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="26" column="13" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="26" bodyend="31"/>
+        <referencedby refid="MLX42__Int_8h_1a7b443d2be908f580e504765e3ed2ba78" compoundref="mlx__list_8c" startline="33" endline="43">mlx_lstclear</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a7b443d2be908f580e504765e3ed2ba78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_lstclear</definition>
+        <argsstring>(mlx_list_t **lst, void(*del)(void *))</argsstring>
+        <name>mlx_lstclear</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> **</type>
+          <declname>lst</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref>(*)(<ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *)</type>
+          <declname>del</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="33" column="6" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="33" bodyend="43"/>
+        <references refid="mlx__list_8c_1a8931f6d7d942eae7da73eae350f150b6" compoundref="mlx__list_8c" startline="26" endline="31">mlx_lstdelone</references>
+        <references refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" compoundref="MLX42__Int_8h" startline="88">mlx_list::next</references>
+        <referencedby refid="MLX42_8h_1afa6aa2f79f9fc81735bdf3b92421f9ca" compoundref="mlx__exit_8c" startline="36" endline="50">mlx_terminate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1acdd55bf29013651c970a5858f2d1dcfd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+        <definition>mlx_list_t * mlx_lstnew</definition>
+        <argsstring>(void *content)</argsstring>
+        <name>mlx_lstnew</name>
+        <param>
+          <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>All sorts of internal functions shared in the library that should not be accessible to the user! No touch! </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="45" column="12" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="45" bodyend="56"/>
+        <references refid="structmlx__list_1a4ec1b7b3904979305c777e6520eee837" compoundref="MLX42__Int_8h" startline="87">mlx_list::content</references>
+        <referencedby refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" compoundref="mlx__images_8c" startline="121" endline="159">mlx_image_to_window</referencedby>
+        <referencedby refid="MLX42_8h_1afc772cc4204df8de0388e9bb38768d10" compoundref="mlx__loop_8c" startline="70" endline="90">mlx_loop_hook</referencedby>
+        <referencedby refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" compoundref="mlx__images_8c" startline="161" endline="202">mlx_new_image</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a0e833de4c4de8a1e06a313514f82eba3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+        <definition>mlx_list_t * mlx_lstlast</definition>
+        <argsstring>(mlx_list_t *lst)</argsstring>
+        <name>mlx_lstlast</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="58" column="12" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="58" bodyend="65"/>
+        <references refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" compoundref="MLX42__Int_8h" startline="88">mlx_list::next</references>
+        <referencedby refid="MLX42__Int_8h_1af1d87a93eba3b5bb7cc57ff8ea2e5ae8" compoundref="mlx__list_8c" startline="67" endline="79">mlx_lstadd_back</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1af1d87a93eba3b5bb7cc57ff8ea2e5ae8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_lstadd_back</definition>
+        <argsstring>(mlx_list_t **lst, mlx_list_t *new)</argsstring>
+        <name>mlx_lstadd_back</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> **</type>
+          <declname>lst</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="67" column="6" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="67" bodyend="79"/>
+        <references refid="mlx__list_8c_1a0e833de4c4de8a1e06a313514f82eba3" compoundref="mlx__list_8c" startline="58" endline="65">mlx_lstlast</references>
+        <referencedby refid="MLX42_8h_1afc772cc4204df8de0388e9bb38768d10" compoundref="mlx__loop_8c" startline="70" endline="90">mlx_loop_hook</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a3526094b6976d5e65ade883d3ed3d522" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_lstadd_front</definition>
+        <argsstring>(mlx_list_t **lst, mlx_list_t *new)</argsstring>
+        <name>mlx_lstadd_front</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> **</type>
+          <declname>lst</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="81" column="6" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="81" bodyend="90"/>
+        <referencedby refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" compoundref="mlx__images_8c" startline="121" endline="159">mlx_image_to_window</referencedby>
+        <referencedby refid="MLX42_8h_1abe515cadb9b88a9d064383da276c2467" compoundref="mlx__images_8c" startline="161" endline="202">mlx_new_image</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a4771a982050b3e2468d6fb4a8de9ab70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+        <definition>mlx_list_t * mlx_lstremove</definition>
+        <argsstring>(mlx_list_t **lst, void *value, bool(*comp)(void *, void *))</argsstring>
+        <name>mlx_lstremove</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> **</type>
+          <declname>lst</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref>(*)(<ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *, <ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *)</type>
+          <declname>comp</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the specified content from the list, if found. Also fixes any relinking that might be needed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">comp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Function to check if the content and value are the same. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The removed element, clean up as you wish. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="100" column="12" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="100" bodyend="115"/>
+        <references refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" compoundref="MLX42__Int_8h" startline="88">mlx_list::next</references>
+        <references refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" compoundref="MLX42__Int_8h" startline="89">mlx_list::prev</references>
+        <referencedby refid="MLX42_8h_1a997cfd3dd07ea85a91df958ae0d1e7b5" compoundref="mlx__images_8c" startline="204" endline="222">mlx_delete_image</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>static int32_t mlx_getzdata</definition>
+        <argsstring>(mlx_list_t *entry)</argsstring>
+        <name>mlx_getzdata</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="118" column="16" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="118" bodyend="123"/>
+        <referencedby refid="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" compoundref="mlx__list_8c" startline="126" endline="153">mlx_insertsort</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>static void mlx_insertsort</definition>
+        <argsstring>(mlx_list_t **head, mlx_list_t *new)</argsstring>
+        <name>mlx_insertsort</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> **</type>
+          <declname>head</declname>
+        </param>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> *</type>
+          <declname>new</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="126" column="13" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="126" bodyend="153"/>
+        <references refid="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" compoundref="mlx__list_8c" startline="118" endline="123">mlx_getzdata</references>
+        <references refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" compoundref="MLX42__Int_8h" startline="88">mlx_list::next</references>
+        <references refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" compoundref="MLX42__Int_8h" startline="89">mlx_list::prev</references>
+        <referencedby refid="MLX42__Int_8h_1a3600368649993a1cc09550339063d2fe" compoundref="mlx__list_8c" startline="161" endline="176">mlx_sort_renderqueue</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__list_8c_1a3600368649993a1cc09550339063d2fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_sort_renderqueue</definition>
+        <argsstring>(mlx_list_t **lst)</argsstring>
+        <name>mlx_sort_renderqueue</name>
+        <param>
+          <type><ref refid="MLX42__Int_8h_1af5b9ab9a31e586f63f5b66ebcd880872" kindref="member">mlx_list_t</ref> **</type>
+          <declname>lst</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Okay-ish sorting algorithm to sort the render queue / doubly linked list. We need to do this to fix transparency.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lst</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The render queue. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/utils/mlx_list.c" line="161" column="6" bodyfile="MLX42/src/utils/mlx_list.c" bodystart="161" bodyend="176"/>
+        <references refid="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" compoundref="mlx__list_8c" startline="126" endline="153">mlx_insertsort</references>
+        <references refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" compoundref="MLX42__Int_8h" startline="88">mlx_list::next</references>
+        <references refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" compoundref="MLX42__Int_8h" startline="89">mlx_list::prev</references>
+        <referencedby refid="mlx__loop_8c_1aaa7ba75154ec3bba6511cc7cb9625baa" compoundref="mlx__loop_8c" startline="30" endline="66">mlx_render_images</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_list.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2021/12/28<sp/>01:53:51<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2023/02/27<sp/>11:31:01<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Private<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="MLX42__Int_8h_1a7e545d3f7baaa10bc2524af8ab0d5787" refkind="member"><highlight class="normal"><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="mlx__list_8c_1a7e545d3f7baaa10bc2524af8ab0d5787" kindref="member">mlx_lstsize</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/>i;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(i<sp/>=<sp/>0;<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;<sp/>i++)</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>-&gt;next;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(i);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="mlx__list_8c_1a8931f6d7d942eae7da73eae350f150b6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__list_8c_1a8931f6d7d942eae7da73eae350f150b6" kindref="member">mlx_lstdelone</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">del</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*))</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">del</ref><sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">del</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>-&gt;content);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="MLX42__Int_8h_1a7b443d2be908f580e504765e3ed2ba78" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__list_8c_1a7b443d2be908f580e504765e3ed2ba78" kindref="member">mlx_lstclear</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">del</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*))</highlight></codeline>
+<codeline lineno="34"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">next_lst</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">next_lst</ref><sp/>=<sp/>(*lst)-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mlx__list_8c_1a8931f6d7d942eae7da73eae350f150b6" kindref="member">mlx_lstdelone</ref>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">del</ref>);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">next_lst</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="MLX42__Int_8h_1acdd55bf29013651c970a5858f2d1dcfd" refkind="member"><highlight class="normal"><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="mlx__list_8c_1acdd55bf29013651c970a5858f2d1dcfd" kindref="member">mlx_lstnew</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>content)</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">malloc</ref>(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>))))</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>-&gt;<ref refid="structmlx__list_1a4ec1b7b3904979305c777e6520eee837" kindref="member">content</ref><sp/>=<sp/>content;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>-&gt;next<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>-&gt;prev<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">out</ref>);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="MLX42__Int_8h_1a0e833de4c4de8a1e06a313514f82eba3" refkind="member"><highlight class="normal"><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="mlx__list_8c_1a0e833de4c4de8a1e06a313514f82eba3" kindref="member">mlx_lstlast</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>)</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>-&gt;next)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="MLX42__Int_8h_1af1d87a93eba3b5bb7cc57ff8ea2e5ae8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__list_8c_1af1d87a93eba3b5bb7cc57ff8ea2e5ae8" kindref="member">mlx_lstadd_back</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>,<sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>||<sp/>!</highlight><highlight class="keyword">new</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref><sp/>=<sp/><ref refid="mlx__list_8c_1a0e833de4c4de8a1e06a313514f82eba3" kindref="member">mlx_lstlast</ref>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;prev<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">temp</ref>-&gt;next<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="MLX42__Int_8h_1a3526094b6976d5e65ade883d3ed3d522" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__list_8c_1a3526094b6976d5e65ade883d3ed3d522" kindref="member">mlx_lstadd_front</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>,<sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>||<sp/>!</highlight><highlight class="keyword">new</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>((*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>)<sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*lst)-&gt;prev<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;next<sp/>=<sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;prev<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="92"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/>*<sp/>Removes<sp/>the<sp/>specified<sp/>content<sp/>from<sp/>the<sp/>list,<sp/>if<sp/>found.</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/>*<sp/>Also<sp/>fixes<sp/>any<sp/>relinking<sp/>that<sp/>might<sp/>be<sp/>needed.</highlight></codeline>
+<codeline lineno="95"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="96"><highlight class="comment"><sp/>*<sp/>@param[in]<sp/>lst<sp/>The<sp/>list</highlight></codeline>
+<codeline lineno="97"><highlight class="comment"><sp/>*<sp/>@param[in]<sp/>comp<sp/>Function<sp/>to<sp/>check<sp/>if<sp/>the<sp/>content<sp/>and<sp/>value<sp/>are<sp/>the<sp/>same.</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/>*<sp/>@returns<sp/>The<sp/>removed<sp/>element,<sp/>clean<sp/>up<sp/>as<sp/>you<sp/>wish.</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="MLX42__Int_8h_1a4771a982050b3e2468d6fb4a8de9ab70" refkind="member"><highlight class="normal"><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="mlx__list_8c_1a4771a982050b3e2468d6fb4a8de9ab70" kindref="member">mlx_lstremove</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1a00c583381eee9c272e088ff2da20162d" kindref="member">value</ref>,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">comp</ref>)(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*))</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>=<sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>&amp;&amp;<sp/>!<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">comp</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;content,<sp/><ref refid="glad_8h_1a00c583381eee9c272e088ff2da20162d" kindref="member">value</ref>))</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>==<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>==<sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;next<sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>-&gt;<ref refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" kindref="member">prev</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" kindref="member">prev</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;prev<sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" kindref="member">prev</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Retrieve<sp/>Z<sp/>value<sp/>from<sp/>queue.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" kindref="member">mlx_getzdata</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">entry</ref>)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structdraw__queue" kindref="compound">draw_queue_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">entry</ref>-&gt;content;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>-&gt;image-&gt;instances[<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">queue</ref>-&gt;instanceid].z);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Insert<sp/>the<sp/>entry<sp/>back<sp/>into<sp/>head<sp/>sorted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" kindref="member">mlx_insertsort</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">head</ref>,<sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">head</ref><sp/>==<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">head</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" kindref="member">mlx_getzdata</ref>(*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">head</ref>)<sp/>&gt;=<sp/><ref refid="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" kindref="member">mlx_getzdata</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref><sp/>=<sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">head</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>-&gt;<ref refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" kindref="member">prev</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">head</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref><sp/>=<sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">head</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Find<sp/>insertion<sp/>location.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>-&gt;next<sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref><sp/>&amp;&amp;<sp/><ref refid="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" kindref="member">mlx_getzdata</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>-&gt;next)<sp/>&lt;<sp/><ref refid="mlx__list_8c_1a14b0cd3bd33f2d9db36b32fe54837483" kindref="member">mlx_getzdata</ref>(</highlight><highlight class="keyword">new</highlight><highlight class="normal">))</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Insert<sp/>at<sp/>the<sp/>end</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>-&gt;next<sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>-&gt;<ref refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" kindref="member">prev</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal">-&gt;<ref refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" kindref="member">prev</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">current</ref>;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="155"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/>Okay-ish<sp/>sorting<sp/>algorithm<sp/>to<sp/>sort<sp/>the<sp/>render<sp/>queue<sp/>/<sp/>doubly<sp/>linked<sp/>list.</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/>We<sp/>need<sp/>to<sp/>do<sp/>this<sp/>to<sp/>fix<sp/>transparency.</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>@param<sp/>lst<sp/>The<sp/>render<sp/>queue.</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="MLX42__Int_8h_1a3600368649993a1cc09550339063d2fe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__list_8c_1a3600368649993a1cc09550339063d2fe" kindref="member">mlx_sort_renderqueue</ref>(<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">sorted</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>=<sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref>;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>!=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>*<sp/>next<sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Separate<sp/>entry<sp/>out<sp/>of<sp/>list<sp/>and<sp/>insert<sp/>it<sp/>back<sp/>but<sp/>sorted.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1ac7b65503d3374c3568b05e770c9af1c5" kindref="member">prev</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>-&gt;<ref refid="structmlx__list_1a0262c4dc70b6537dfbb1a60d3ddeb1cf" kindref="member">next</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">NULL</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="mlx__list_8c_1a7017c6b82e4b95400e50b4ab3bf906e8" kindref="member">mlx_insertsort</ref>(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">sorted</ref>,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lstcpy</ref><sp/>=<sp/>next;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>*<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">lst</ref><sp/>=<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">sorted</ref>;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/utils/mlx_list.c"/>
+  </compounddef>
+</doxygen>

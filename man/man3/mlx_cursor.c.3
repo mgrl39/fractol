@@ -1,0 +1,159 @@
+.TH "MLX42/src/mlx_cursor.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_cursor.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmlx_win_cursor_t\fP * \fBmlx_create_std_cursor\fP (\fBcursor_t\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_win_cursor_t\fP * \fBmlx_create_cursor\fP (\fBmlx_texture_t\fP *\fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_destroy_cursor\fP (\fBmlx_win_cursor_t\fP *\fBcursor\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_cursor\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_win_cursor_t\fP *\fBcursor\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_cursor_mode\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmouse_mode_t\fP \fBmode\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBmlx_win_cursor_t\fP * mlx_create_cursor (\fBmlx_texture_t\fP * texture)"
+Allows for the creation of custom cursors with a given texture\&.
+.PP
+Use mlx_set_cursor to select the specific cursor\&. Cursors are destroyed at \fBmlx_terminate()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItexture\fP The texture to use as cursor\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The cursor object or null on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB27\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+28 {
+29     MLX_NONNULL(texture);
+30 
+31     GLFWcursor* cursor;
+32     GLFWimage image = (GLFWimage) {
+33         \&.width = texture\->width,
+34         \&.height = texture\->height,
+35         \&.pixels = texture\->pixels
+36     };
+37 
+38     if ((cursor = glfwCreateCursor(&image, 0, 0)))
+39         return (cursor);
+40     return ((void *)mlx_error(MLX_MEMFAIL));
+41 }
+.fi
+
+.SS "\fBmlx_win_cursor_t\fP * mlx_create_std_cursor (\fBcursor_t\fP type)"
+Retrieves the system standard cursor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP The standard cursor type to create\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The cursor object or null on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+18 {
+19     MLX_ASSERT(type >= MLX_CURSOR_ARROW && type < MLX_CURSOR_VRESIZE, "Invalid standard cursor type");
+20 
+21     GLFWcursor* cursor;
+22     if ((cursor = glfwCreateStandardCursor(type)))
+23         return (cursor);
+24     return ((void *)mlx_error(MLX_MEMFAIL));
+25 }
+.fi
+
+.SS "\fBvoid\fP mlx_destroy_cursor (\fBmlx_win_cursor_t\fP * cursor)"
+Destroys the given cursor object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcursor\fP The cursor object to destroy\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+44 {
+45     MLX_NONNULL(cursor);
+46 
+47     glfwDestroyCursor(cursor);
+48 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_cursor (\fBmlx_t\fP * mlx, \fBmlx_win_cursor_t\fP * cursor)"
+Sets the current cursor to the given custom cursor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIcursor\fP The cursor object to display, if null default cursor is selected\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB50\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+51 {
+52     MLX_NONNULL(mlx);
+53     MLX_NONNULL(cursor);
+54 
+55     glfwSetCursor(mlx\->window, cursor);
+56 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_cursor_mode (\fBmlx_t\fP * mlx, \fBmouse_mode_t\fP mode)"
+Defines the state for the cursor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fImode\fP A specified mouse mode\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB58\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+59 {
+60     MLX_NONNULL(mlx);
+61 
+62     glfwSetInputMode(mlx\->window, GLFW_CURSOR, mode);
+63 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

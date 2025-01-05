@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_5f3049182cfa643dd832df871989887f" kind="dir">
+    <compoundname>MLX42/include</compoundname>
+    <innerdir refid="dir_705c6171032691ed5e2fa0f26c2aea45">MLX42/include/glad</innerdir>
+    <innerdir refid="dir_d381bc4f903156c5a9c79652d152e671">MLX42/include/KHR</innerdir>
+    <innerdir refid="dir_ad328e555e0957b5b4f5ce66e01ff68b">MLX42/include/lodepng</innerdir>
+    <innerdir refid="dir_909ac64afc39990a4557c544f3bc9439">MLX42/include/MLX42</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/include/"/>
+  </compounddef>
+</doxygen>

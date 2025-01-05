@@ -1,0 +1,150 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Basics_8md" kind="file" language="Markdown">
+    <compoundname>Basics.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Basics</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Before<sp/>starting<sp/>please<sp/>read<sp/>the<sp/>[index<sp/>page](./index.md).</highlight></codeline>
+<codeline><highlight class="normal">Starting<sp/>with<sp/>MLX42<sp/>is<sp/>very<sp/>straightforward.<sp/>Here<sp/>we<sp/>will<sp/>make<sp/>a<sp/>simple<sp/>program<sp/>that<sp/>will<sp/>use<sp/>a<sp/>makefile<sp/>and<sp/>compile</highlight></codeline>
+<codeline><highlight class="normal">MLX42.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Makefile<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you&apos;re<sp/>curious<sp/>as<sp/>to<sp/>how<sp/>to<sp/>configure<sp/>a<sp/>makefile<sp/>with<sp/>MLX42<sp/>here<sp/>is<sp/>a<sp/>Makefile<sp/>example<sp/>from<sp/>a<sp/>project.</highlight></codeline>
+<codeline><highlight class="normal">Use<sp/>this<sp/>as<sp/>a<sp/>guide<sp/>on<sp/>how<sp/>to<sp/>compile<sp/>MLX42<sp/>and<sp/>use<sp/>it<sp/>in<sp/>your<sp/>application.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">First<sp/>of<sp/>all<sp/>we<sp/>need<sp/>a<sp/>makefile<sp/>that<sp/>can<sp/>compile<sp/>our<sp/>program,<sp/>below<sp/>you<sp/>can<sp/>see<sp/>a<sp/>sample<sp/>makefile:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```makefile</highlight></codeline>
+<codeline><highlight class="normal">NAME<sp/><sp/><sp/><sp/>:=<sp/>Game</highlight></codeline>
+<codeline><highlight class="normal">CFLAGS<sp/><sp/>:=<sp/>-Wextra<sp/>-Wall<sp/>-Werror<sp/>-Wunreachable-code<sp/>-Ofast</highlight></codeline>
+<codeline><highlight class="normal">LIBMLX<sp/><sp/>:=<sp/>./lib/MLX42</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">HEADERS<sp/>:=<sp/>-I<sp/>./include<sp/>-I<sp/>$(LIBMLX)/include</highlight></codeline>
+<codeline><highlight class="normal">LIBS<sp/><sp/><sp/><sp/>:=<sp/>$(LIBMLX)/build/libmlx42.a<sp/>-ldl<sp/>-lglfw<sp/>-pthread<sp/>-lm</highlight></codeline>
+<codeline><highlight class="normal">SRCS<sp/><sp/><sp/><sp/>:=<sp/>$(shell<sp/>find<sp/>./src<sp/>-iname<sp/>&quot;*.c&quot;)</highlight></codeline>
+<codeline><highlight class="normal">OBJS<sp/><sp/><sp/><sp/>:=<sp/>${SRCS:.c=.o}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">all:<sp/>libmlx<sp/>$(NAME)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">libmlx:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@cmake<sp/>$(LIBMLX)<sp/>-B<sp/>$(LIBMLX)/build<sp/>&amp;&amp;<sp/>make<sp/>-C<sp/>$(LIBMLX)/build<sp/>-j4</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">%.o:<sp/>%.c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@$(CC)<sp/>$(CFLAGS)<sp/>-o<sp/>$@<sp/>-c<sp/>$&lt;<sp/>$(HEADERS)<sp/>&amp;&amp;<sp/>printf<sp/>&quot;Compiling:<sp/>$(notdir<sp/>$&lt;)&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">$(NAME):<sp/>$(OBJS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@$(CC)<sp/>$(OBJS)<sp/>$(LIBS)<sp/>$(HEADERS)<sp/>-o<sp/>$(NAME)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">clean:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@rm<sp/>-rf<sp/>$(OBJS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@rm<sp/>-rf<sp/>$(LIBMLX)/build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">fclean:<sp/>clean</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>@rm<sp/>-rf<sp/>$(NAME)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">re:<sp/>clean<sp/>all</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">.PHONY:<sp/>all,<sp/>clean,<sp/>fclean,<sp/>re,<sp/>libmlx</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Main</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Below<sp/>is<sp/>a<sp/>simple<sp/>main<sp/>into<sp/>starting<sp/>a<sp/>window.<sp/>MLX42<sp/>has<sp/>several<sp/>nice<sp/>features<sp/>that<sp/>allow<sp/>you<sp/>to<sp/>predefine<sp/>how<sp/>it<sp/>should<sp/>behave<sp/>during<sp/>runtime<sp/>such<sp/>as<sp/>`MLX_HEADLESS`<sp/>running<sp/>it<sp/>without<sp/>opening<sp/>a<sp/>window<sp/>or<sp/>`MLX_STRETCH_IMAGE`<sp/>which<sp/>stretches<sp/>the<sp/>window<sp/>content<sp/>with<sp/>the<sp/>window<sp/>size.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>exact<sp/>structure<sp/>`mlx_init()`<sp/>is<sp/>basically<sp/>a<sp/>handle<sp/>that<sp/>stores<sp/>important<sp/>information</highlight></codeline>
+<codeline><highlight class="normal">regarding<sp/>the<sp/>window<sp/>and<sp/>looks<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Main<sp/>MLX<sp/>handle,<sp/>carries<sp/>important<sp/>data<sp/>in<sp/>regards<sp/>to<sp/>the<sp/>program.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>window<sp/>The<sp/>window<sp/>itself.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>context<sp/>Abstracted<sp/>opengl<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>width<sp/>The<sp/>width<sp/>of<sp/>the<sp/>window.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>height<sp/>The<sp/>height<sp/>of<sp/>the<sp/>window.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>delta_time<sp/>The<sp/>time<sp/>difference<sp/>between<sp/>the<sp/>previous<sp/>frame<sp/>and<sp/>the<sp/>current<sp/>frame.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>struct<sp/>mlx</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>window;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>void*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>context;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/>width;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/>height;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/><sp/><sp/><sp/><sp/><sp/>delta_time;</highlight></codeline>
+<codeline><highlight class="normal">}<sp/><sp/><sp/>mlx_t;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Between<sp/>initializations<sp/>you<sp/>can<sp/>do<sp/>everything<sp/>that<sp/>is<sp/>required<sp/>such<sp/>as<sp/>drawing<sp/>your<sp/>image<sp/>or<sp/>opening<sp/>files.</highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>`mlx_loop()`<sp/>is<sp/>reached<sp/>the<sp/>program<sp/>remains<sp/>open<sp/>until<sp/>a<sp/>shutdown<sp/>is<sp/>somehow<sp/>requested,<sp/>e.g:<sp/>closing<sp/>the<sp/>window.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Because<sp/>we<sp/>want<sp/>programs<sp/>to<sp/>be<sp/>interactive<sp/>and<sp/>do<sp/>stuff<sp/>it&apos;s<sp/>very<sp/>useful<sp/>to<sp/>hook<sp/>into<sp/>the<sp/>looping<sp/>process<sp/>of<sp/>`mlx_loop()`.</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>order<sp/>to<sp/>achieve<sp/>this<sp/>we<sp/>use<sp/>[hooks](./Hooks.md).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">`NOTE:<sp/>Compile<sp/>MLX42<sp/>with<sp/>DEBUG=1<sp/>to<sp/>see<sp/>assertions<sp/>and<sp/>to<sp/>add<sp/>debug<sp/>flags.<sp/>This<sp/>can<sp/>help<sp/>you<sp/>find<sp/>critical<sp/>mistakes<sp/>during<sp/>development!`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Written<sp/>by<sp/>Bruh</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;unistd.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;MLX42/MLX42.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>WIDTH<sp/>256</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>HEIGHT<sp/>256</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Exit<sp/>the<sp/>program<sp/>as<sp/>failure.</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>ft_error(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fprintf(stderr,<sp/>&quot;%s&quot;,<sp/>mlx_strerror(mlx_errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/>Print<sp/>the<sp/>window<sp/>width<sp/>and<sp/>height.</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>ft_hook(void*<sp/>param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>mlx_t*<sp/>mlx<sp/>=<sp/>param;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>printf(&quot;WIDTH:<sp/>%d<sp/>|<sp/>HEIGHT:<sp/>%d\n&quot;,<sp/>mlx-&gt;width,<sp/>mlx-&gt;height);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>MLX<sp/>allows<sp/>you<sp/>to<sp/>define<sp/>its<sp/>core<sp/>behaviour<sp/>before<sp/>startup.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_set_setting(MLX_MAXIMIZED,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>&quot;42Balls&quot;,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!mlx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>/*<sp/>Do<sp/>stuff<sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Create<sp/>and<sp/>display<sp/>the<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_image_t*<sp/>img<sp/>=<sp/>mlx_new_image(mlx,<sp/>256,<sp/>256);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!img<sp/>||<sp/>(mlx_image_to_window(mlx,<sp/>img,<sp/>0,<sp/>0)<sp/>&lt;<sp/>0))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ft_error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Even<sp/>after<sp/>the<sp/>image<sp/>is<sp/>being<sp/>displayed,<sp/>we<sp/>can<sp/>still<sp/>modify<sp/>the<sp/>buffer.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_put_pixel(img,<sp/>0,<sp/>0,<sp/>0xFF0000FF);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Register<sp/>a<sp/>hook<sp/>and<sp/>pass<sp/>mlx<sp/>as<sp/>an<sp/>optional<sp/>param.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>NOTE:<sp/>Do<sp/>this<sp/>before<sp/>calling<sp/>mlx_loop!</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop_hook(mlx,<sp/>ft_hook,<sp/>mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Basics.md"/>
+  </compounddef>
+</doxygen>

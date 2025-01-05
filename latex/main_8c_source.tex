@@ -1,0 +1,246 @@
+\doxysection{main.\+c}
+\hypertarget{main_8c_source}{}\label{main_8c_source}\mbox{\hyperlink{main_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ main.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ meghribe\ <meghribe@student.42barcelon\ \ \ \ \ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/01/04\ 12:47:18\ by\ meghribe\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/01/05\ 12:54:03\ by\ meghribe\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fractol_8h}{fractol.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00015}00015\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00016}00016\ \textcolor{comment}{\ *\ @file\ main.c}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00017}00017\ \textcolor{comment}{\ *\ @brief\ Entry\ point\ for\ the\ Fractol\ application.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00018}00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00019}00019\ \textcolor{comment}{\ *\ This\ file\ contains\ the\ main\ function\ and\ orchestrates\ the\ entire\ fractal}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00020}00020\ \textcolor{comment}{\ *\ rendering\ process.\ It\ handles:}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ Command-\/line\ argument\ validation\ to\ ensure\ correct\ input.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ Initialization\ of\ the\ fractal\ type\ and\ parameters\ (Julia\ or\ Mandelbrot)}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00023}00023\ \textcolor{comment}{\ *\ -\/\ Setuup\ of\ the\ rendering\ environment\ using\ the\ MLX42\ graphics\ liibrary,}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00024}00024\ \textcolor{comment}{\ *\ \ \ including\ the\ creation\ of\ the\ window\ and\ image\ bufffer.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00025}00025\ \textcolor{comment}{\ *\ -\/\ Fractal\ rendering\ based\ on\ the\ user-\/specified\ parameters.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ Configuration\ of\ interactivee\ event\ hooks\ for\ keyboard\ and\ scroll\ inputs.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00027}00027\ \textcolor{comment}{\ *\ -\/\ Continuous\ updates\ through\ the\ main\ event\ loop.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00029}00029\ \textcolor{comment}{\ *\ The\ program\ terminates\ gracefully\ on\ completion\ or\ reports\ error\ for\ invalid}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00030}00030\ \textcolor{comment}{\ *\ inputs.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00031}00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00032}00032\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00033}00033\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00034}00034\ \textcolor{comment}{\ *\ @brief\ Validates\ if\ a\ string\ represents\ a\ valid\ number.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00035}00035\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00036}00036\ \textcolor{comment}{\ *\ This\ function\ checks\ iff\ the\ input\ string\ is\ a\ valid\ number,\ considering:}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00037}00037\ \textcolor{comment}{\ *\ -\/\ Optional\ leading\ spaces\ or\ tabs.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00038}00038\ \textcolor{comment}{\ *\ -\/\ An\ optional\ sign\ (+/-\/).}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00039}00039\ \textcolor{comment}{\ *\ -\/\ At\ least\ one\ digit.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00040}00040\ \textcolor{comment}{\ *\ -\/\ At\ most\ one\ decimal\ point\ with\ digits\ before\ or\ after\ it.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00041}00041\ \textcolor{comment}{\ *\ Invalid\ cases\ include\ multiple\ decimal\ points,\ invalid\ characters,\ }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00042}00042\ \textcolor{comment}{\ *\ or\ empty\ strings.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00043}00043\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00044}00044\ \textcolor{comment}{\ *\ @param\ str\ Input\ string\ to\ validate}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00045}00045\ \textcolor{comment}{\ *\ @return\ 1\ if\ the\ string\ is\ a\ valid\ number,\ 0\ otherwise.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00046}00046\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00047}\mbox{\hyperlink{main_8c_a3443f98f251000405fbc46a7951deaa9}{00047}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{main_8c_a3443f98f251000405fbc46a7951deaa9}{is\_valid\_number}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00048}00048\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00049}00049\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{int}\ valid\_status[2];}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00052}00052\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00053}00053\ \ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}}]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00054}00054\ \ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}}]\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[i]\ ==\ 32\ ||\ (str[i]\ >=\ 9\ \&\&\ str[i]\ <=\ 13))}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'-\/'}\ ||\ str[i]\ ==\ \textcolor{charliteral}{'+'})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00060}00060\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}}]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00065}00065\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00066}00066\ \ \ \ \ \ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}}]\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00067}00067\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00068}00068\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}}]\ \&\&\ (str[i]\ <\ \textcolor{charliteral}{'0'}\ ||\ str[i]\ >\ \textcolor{charliteral}{'9'}))}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{return}\ (valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}}]\ \&\&\ str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00075}00075\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00076}00076\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00077}00077\ \textcolor{comment}{\ *\ @brief\ Prints\ an\ error\ message\ and\ terminates\ the\ program.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00078}00078\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00079}00079\ \textcolor{comment}{\ *\ This\ function\ displays\ an\ error,\ the\ correct\ usage\ off\ the\ program,\ and}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00080}00080\ \textcolor{comment}{\ *\ list\ of\ available\ fractal\ types\ with\ examples.\ It\ then\ terminates\ the}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00081}00081\ \textcolor{comment}{\ *\ program\ with\ a\ failure\ status.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00082}00082\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00083}00083\ \textcolor{comment}{\ *\ @param\ message\ Error\ message\ to\ display.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00084}00084\ \textcolor{comment}{\ *\ @param\ argv\ Command-\/line\ arguments,\ used\ to\ show\ the\ program\ name\ in}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00085}00085\ \textcolor{comment}{\ *\ usage\ examples.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00086}00086\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00087}\mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{00087}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *message,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00088}00088\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00089}00089\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba}{LIGHT\_RED}}\ \textcolor{stringliteral}{"{}Error:\ "{}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00090}00090\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}((\textcolor{keywordtype}{char}\ *)message,\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00091}00091\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{stringliteral}{"{}\(\backslash\)n"{}}\ \mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba}{LIGHT\_RED}}\ \textcolor{stringliteral}{"{}Usage:\ "{}}\ \mbox{\hyperlink{fractol_8h_a5a7142ee95ebc63218ed3aac2ae06b13}{LIGHT\_GREEN}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(argv[0],\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{stringliteral}{"{}\ <fractal\_type>\ [parameters]\(\backslash\)n"{}}\ \mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba}{LIGHT\_RED}}\ \textcolor{stringliteral}{"{}Available\ fractal\ types:\(\backslash\)n"{}}\ \mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00096}00096\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_af0506fcfa991103f2a0747bb5c041c06}{LIGHT\_GOLD}}\ \textcolor{stringliteral}{"{}\(\backslash\)tmandelbrot"{}}\ \mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00097}00097\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tDisplays\ the\ Mandelbrot\ set.\(\backslash\)n"{}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00098}00098\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_af0506fcfa991103f2a0747bb5c041c06}{LIGHT\_GOLD}}\ \textcolor{stringliteral}{"{}\(\backslash\)tjulia\ [c\_re\ c\_im]"{}}\ \mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00099}00099\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{stringliteral}{"{}\(\backslash\)tDisplays\ the\ Julia\ set.\(\backslash\)n"{}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00100}00100\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_a664c8f5b9d90f79a49a16960b9ccedba}{LIGHT\_RED}}\ \textcolor{stringliteral}{"{}Example:\ "{}}\ \mbox{\hyperlink{fractol_8h_a5a7142ee95ebc63218ed3aac2ae06b13}{LIGHT\_GREEN}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00101}00101\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(argv[0],\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{stringliteral}{"{}\ julia\ 0.285\ -\/0.01\(\backslash\)n"{}}\ \mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}},\ 2);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00103}00103\ \ \ \ \ exit(EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00104}00104\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00105}00105\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00106}00106\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00107}00107\ \textcolor{comment}{\ *\ @brief\ Validates\ the\ command-\/line\ arguments\ for\ fractal\ rendering.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00108}00108\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00109}00109\ \textcolor{comment}{\ *\ This\ function\ checks\ that\ the\ user\ has\ specified\ a\ valid\ fractal\ type}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00110}00110\ \textcolor{comment}{\ *\ and\ the\ correct\ parameters.\ The\ supported\ fractals\ and\ their\ requirements}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00111}00111\ \textcolor{comment}{\ *\ are:}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00112}00112\ \textcolor{comment}{\ *\ -\/\ \`{}mandelbrot`:\ No\ additional\ arguments.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00113}00113\ \textcolor{comment}{\ *\ -\/\ \`{}julia`:\ Requires\ exactly\ two\ valid\ numbers\ representing\ the\ real\ and}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00114}00114\ \textcolor{comment}{\ *\ \ \ imaginary\ part\ of\ the\ parameter.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00115}00115\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00116}00116\ \textcolor{comment}{\ *\ If\ the\ arguments\ are\ invalid,\ the\ function\ calls\ \`{}exit\_with\_error()`\ to}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00117}00117\ \textcolor{comment}{\ *\ display\ an\ appropiate\ error\ message\ and\ terminate\ the\ program.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00118}00118\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00119}00119\ \textcolor{comment}{\ *\ @param\ argc\ Number\ of\ command-\/line\ arguments\ passed\ to\ the\ program.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00120}00120\ \textcolor{comment}{\ *\ @param\ argv\ Array\ of\ command-\/line\ argument\ strings.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00121}00121\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00122}\mbox{\hyperlink{main_8c_a9350b6f05ff8d1ac8cd5deca133fd37f}{00122}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_a9350b6f05ff8d1ac8cd5deca133fd37f}{validate\_arguments}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00123}00123\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ \ \ \ \ \ \ \ \ *e\_msg[5];}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00126}00126\ \ \ \ \ e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc}{NO\_TYPE}}]\ =\ \textcolor{stringliteral}{"{}No\ fractal\ type\ specified."{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00127}00127\ \ \ \ \ e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546}{INVALID\_TYPE}}]\ =\ \textcolor{stringliteral}{"{}Invalid\ fractal\ type.\ Use\ 'julia'\ or\ 'mandelbrot'."{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00128}00128\ \ \ \ \ e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7}{JULIA\_ARGS}}]\ =\ \textcolor{stringliteral}{"{}Julia\ needs:\ 'julia\ <c\_re>\ <c\_im>'."{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00129}00129\ \ \ \ \ e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68}{JULIA\_NUM}}]\ =\ \textcolor{stringliteral}{"{}Julia\ parameters\ must\ be\ valid\ numbers."{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00130}00130\ \ \ \ \ e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97}{MANDELBROT\_ARGS}}]\ =\ \textcolor{stringliteral}{"{}Mandelbrot\ needs:\ 'mandelbrot'."{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ <\ 2)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc}{NO\_TYPE}}],\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00133}00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}{ft\_strcmp}}(argv[1],\ \textcolor{stringliteral}{"{}mandelbrot"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00134}00134\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00135}00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 2)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00136}00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97}{MANDELBROT\_ARGS}}],\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ return\ ;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00138}00138\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00139}00139\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}{ft\_strcmp}}(argv[1],\ \textcolor{stringliteral}{"{}julia"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00140}00140\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (argc\ !=\ 4)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7}{JULIA\_ARGS}}],\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{main_8c_a3443f98f251000405fbc46a7951deaa9}{is\_valid\_number}}(argv[2])\ ||\ !\mbox{\hyperlink{main_8c_a3443f98f251000405fbc46a7951deaa9}{is\_valid\_number}}(argv[3]))}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68}{JULIA\_NUM}}],\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00145}00145\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00147}00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(e\_msg[\mbox{\hyperlink{fractol_8h_a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546}{INVALID\_TYPE}}],\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00148}00148\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00149}00149\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00150}00150\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00151}00151\ \textcolor{comment}{\ *\ @brief\ Initializes\ the\ MLX42\ rendering\ environment.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00152}00152\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00153}00153\ \textcolor{comment}{\ *\ This\ function\ sets\ up\ the\ environment\ for\ rendering\ fractals\ by:}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00154}00154\ \textcolor{comment}{\ *\ -\/\ Creating\ an\ MLX42\ window\ with\ thee\ given\ title.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00155}00155\ \textcolor{comment}{\ *\ -\/\ Allocating\ an\ image\ buffer\ for\ rendering.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00156}00156\ \textcolor{comment}{\ *\ -\/\ Setting\ initial\ offsets\ and\ zoom\ level\ for\ the\ fractal.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00157}00157\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00158}00158\ \textcolor{comment}{\ *\ If\ Julia\ set\ parameters\ (`c[COMPLEX\_RE]`\ or\ \`{}c[COMPLEX\_IM]`)\ are\ outside}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00159}00159\ \textcolor{comment}{\ *\ the\ range\ [-\/2.0,\ 2.0],\ it\ issues\ a\ warning\ about\ potential\ visual\ effects.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00160}00160\ \textcolor{comment}{\ *\ The\ function\ terminates\ the\ program\ in\ case\ of\ initialization\ failures.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00161}00161\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00162}00162\ \textcolor{comment}{\ *\ @param\ data\ Pointer\ to\ the\ data\ structure\ containing\ fractal\ information,}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00163}00163\ \textcolor{comment}{\ *\ \ offsets,\ zoom,\ and\ MLX42\ resources.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00164}00164\ \textcolor{comment}{\ *\ @param\ argv\ Array\ of\ argument\ strings,\ where\ argv[1]\ is\ used\ as\ the\ window\ }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00165}00165\ \textcolor{comment}{\ *\ title.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00166}00166\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00167}\mbox{\hyperlink{main_8c_af11254df8693917e711076d34d657214}{00167}}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{main_8c_af11254df8693917e711076d34d657214}{initialize\_window}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00168}00168\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00169}00169\ \ \ \ \ \textcolor{keywordflow}{if}\ ((data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ >\ 2.0\ ||\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ <\ -\/2}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ >\ 2.0\ ||\ data-\/>\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ <\ -\/2))}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00171}00171\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00172}00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_af0506fcfa991103f2a0747bb5c041c06}{LIGHT\_GOLD}}\ \textcolor{stringliteral}{"{}Warning:\ The\ values\ for\ Julia\ are"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00173}00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{stringliteral}{"{}\ outside\ the\ common\ range\ [-\/2.0,\ 2.0]\(\backslash\)n"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00174}00174\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\mbox{\hyperlink{fractol_8h_ab702106cf3b3e96750b6845ded4e0299}{RESET}}\ \textcolor{stringliteral}{"{}This\ may\ produce\ unusual\ or"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00175}00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{stringliteral}{"{}\ less\ interesting\ fractals.\(\backslash\)n"{}},\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00176}00176\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00177}00177\ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}}\ =\ mlx\_init(\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}},\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}},\ argv[1],\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00178}00178\ \ \ \ \ \textcolor{keywordflow}{if}\ (!data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00179}00179\ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00180}00180\ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}}\ =\ mlx\_new\_image(data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}},\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}},\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00181}00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (!data-\/>\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}})}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00182}00182\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00183}00183\ \ \ \ \ \ \ \ \ mlx\_terminate(data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00184}00184\ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00185}00185\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00186}00186\ \ \ \ \ \textcolor{keywordflow}{if}\ (mlx\_image\_to\_window(data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}},\ data-\/>\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}},\ 0,\ 0)\ ==\ -\/1)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00187}00187\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00188}00188\ \ \ \ \ \ \ \ \ mlx\_terminate(data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00189}00189\ \ \ \ \ \ \ \ \ exit\ (EXIT\_FAILURE);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00190}00190\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00191}00191\ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}]\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00192}00192\ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}]\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00193}00193\ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ =\ 1.0;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00194}00194\ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00195}00195\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00196}00196\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00197}00197\ \textcolor{comment}{\ *\ @brief\ Main\ entry\ point\ for\ the\ fractal\ rendering\ program.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00198}00198\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00199}00199\ \textcolor{comment}{\ *\ This\ function\ orchestrates\ the\ entire\ fractal\ rendering\ process\ by:}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00200}00200\ \textcolor{comment}{\ *\ -\/\ Validating\ the\ command-\/line\ arguments\ to\ ensure\ correct\ fractal\ type}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00201}00201\ \textcolor{comment}{\ *\ \ \ and\ parameters.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00202}00202\ \textcolor{comment}{\ *\ -\/\ Initializing\ the\ fractal\ type,\ including\ Julia\ parameters\ if\ applicable.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00203}00203\ \textcolor{comment}{\ *\ -\/\ Setting\ up\ the\ MLX42\ rendering\ environment,\ including\ the\ window}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00204}00204\ \textcolor{comment}{\ *\ \ \ and\ image\ buffer.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00205}00205\ \textcolor{comment}{\ *\ -\/\ Rendering\ the\ chosen\ fractal\ based\ on\ the\ input\ parameters.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00206}00206\ \textcolor{comment}{\ *\ -\/\ Configuring\ event\ hooks\ for\ used\ interaction\ (keyboard\ and\ scroll\ events).}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00207}00207\ \textcolor{comment}{\ *\ -\/\ Starting\ the\ main\ event\ loop\ for\ continuous\ interaction\ and\ updates.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00208}00208\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00209}00209\ \textcolor{comment}{\ *\ @param\ argc\ Number\ of\ arguments\ passed\ to\ the\ program.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00210}00210\ \textcolor{comment}{\ *\ @param\ argv\ Array\ of\ argument\ strings,\ including\ the\ program\ name\ and\ input\ }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00211}00211\ \textcolor{comment}{\ *\ \ parameters.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00212}00212\ \textcolor{comment}{\ *\ @return\ Returns\ \`{}EXIT\_SUCCESS`\ on\ successful\ execution,\ }}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00213}00213\ \textcolor{comment}{\ *\ \ or\ terminates\ on\ error.}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00214}00214\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00215}\mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{00215}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ *argv[])}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00216}00216\ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00217}00217\ \ \ \ \ \mbox{\hyperlink{structs__data}{t\_data}}\ \ \ \ data;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00218}00218\ \ \ \ \ \textcolor{keywordtype}{char}\ \ \ \ *error;}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00219}00219\ }
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00220}00220\ \ \ \ \ \mbox{\hyperlink{main_8c_a9350b6f05ff8d1ac8cd5deca133fd37f}{validate\_arguments}}(argc,\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00221}00221\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}{ft\_strcmp}}(argv[1],\ \textcolor{stringliteral}{"{}julia"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00222}00222\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00223}00223\ \ \ \ \ \ \ \ \ error\ =\ \textcolor{stringliteral}{"{}Julia\ parameters\ must\ be\ valid\ numbers."{}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00224}00224\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ =\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{JULIA}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00225}00225\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ \mbox{\hyperlink{fractol_8h_aba5be72a261c5846a5d6e7b315548d33}{ft\_atod}}(argv[2]);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00226}00226\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ \mbox{\hyperlink{fractol_8h_aba5be72a261c5846a5d6e7b315548d33}{ft\_atod}}(argv[3]);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ >\ INT\_MAX\ ||\ data.\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ <\ INT\_MIN)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(error,\ argv),\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00229}00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (data.\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ >\ INT\_MAX\ ||\ data.\mbox{\hyperlink{structs__data_aea66a7ab3ef1ad267c636e071830e36c}{c}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ <\ INT\_MIN)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00230}00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{main_8c_a2b8d2884ae79f1a4148a72db584e88f9}{exit\_with\_error}}(error,\ argv),\ 1);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00231}00231\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00232}00232\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}{ft\_strcmp}}(argv[1],\ \textcolor{stringliteral}{"{}mandelbrot"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ data.\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ =\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{MANDELBROT}};}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00234}00234\ \ \ \ \ \mbox{\hyperlink{main_8c_af11254df8693917e711076d34d657214}{initialize\_window}}(\&data,\ argv);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00235}00235\ \ \ \ \ \mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{render\_fractal}}(\&data);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00236}00236\ \ \ \ \ mlx\_key\_hook(data.\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}},\ \mbox{\hyperlink{fractol_8h_aa40f0dfb0dfb158de3f6f8b98f0de3ec}{handle\_key}},\ \&data);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00237}00237\ \ \ \ \ mlx\_scroll\_hook(data.\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}},\ \mbox{\hyperlink{fractol_8h_ace17996cda407bf3eb3480f07ccdd107}{handle\_scroll}},\ \&data);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00238}00238\ \ \ \ \ mlx\_loop(data.\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00239}00239\ \ \ \ \ mlx\_terminate(data.\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}});}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00240}00240\ \ \ \ \ \textcolor{keywordflow}{return}\ (EXIT\_SUCCESS);}
+\DoxyCodeLine{\Hypertarget{main_8c_source_l00241}00241\ \}}
+
+\end{DoxyCode}

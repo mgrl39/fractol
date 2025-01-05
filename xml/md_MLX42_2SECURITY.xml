@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="md_MLX42_2SECURITY" kind="page">
+    <compoundname>md_MLX42_2SECURITY</compoundname>
+    <title>Security Policy</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md_MLX42_2SECURITY_1autotoc_md311"/> </para>
+<sect1 id="md_MLX42_2SECURITY_1autotoc_md312">
+<title>Supported Versions</title>
+<para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Version   </para>
+</entry><entry thead="yes"><para>Supported    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>2.x.x   </para>
+</entry><entry thead="no"><para>✅    </para>
+</entry></row>
+<row>
+<entry thead="no"><para>1.0.x   </para>
+</entry><entry thead="no"><para>❌   </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="md_MLX42_2SECURITY_1autotoc_md313">
+<title>Reporting a Vulnerability</title>
+<para>For security issues please refrain from opening an issue! Instead write an email to <ulink url="mailto:main@w2wizard.dev">main@w2wizard.dev</ulink> </para>
+</sect1>
+    </detaileddescription>
+    <location file="MLX42/SECURITY.md"/>
+  </compounddef>
+</doxygen>

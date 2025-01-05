@@ -1,0 +1,349 @@
+\doxysection{MLX42/src/mlx\+\_\+mouse.c File Reference}
+\hypertarget{mlx__mouse_8c}{}\label{mlx__mouse_8c}\index{MLX42/src/mlx\_mouse.c@{MLX42/src/mlx\_mouse.c}}
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+mouse.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__mouse_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_ae23a4ecd5b9bddb1bb9a7a67aaf73bed}{mlx\+\_\+scroll\+\_\+cb}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}} \mbox{\hyperlink{glad_8h_ac20a0ffebf4c476650fcfa0633066f0e}{xoffset}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}} \mbox{\hyperlink{glad_8h_a76dfb6803dcff61037ba688b7f4242b8}{yoffset}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_a71c3659a0555ad5f40d201573de27cbd}{mlx\+\_\+mouse\+\_\+cb}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{button}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{MLX42_8h_a2f4ab7bf743142dae2e459aa18f9f1d4}{action}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mods}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_ad8835883f060f870b6ecdba029f6e136}{mlx\+\_\+cursor\+\_\+cb}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}window, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{xpos}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ypos}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_a4b32bcfa185276fb7f4d3c4b876635f6}{mlx\+\_\+scroll\+\_\+hook}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{MLX42_8h_ad23ff24bbca4321da68be76c2f29bb9c}{mlx\+\_\+scrollfunc}} \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_a6e0af3a5acc43e58e449cbbb6990feb2}{mlx\+\_\+mouse\+\_\+hook}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{MLX42_8h_a5c3bf36847955fb2ede32fcb28a6a161}{mlx\+\_\+mousefunc}} \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_a9706bdf92e7a3fc890d75cf37cfcfdb0}{mlx\+\_\+cursor\+\_\+hook}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{MLX42_8h_ad4c4c910151f676379dae74732de5166}{mlx\+\_\+cursorfunc}} \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} \mbox{\hyperlink{mlx__mouse_8c_acf18386b9b547ef70ab845c5e296c287}{mlx\+\_\+is\+\_\+mouse\+\_\+down}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{MLX42_8h_a1ee832109c0bfcd9ddb1cdfb237e5146}{mouse\+\_\+key\+\_\+t}} key)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_aa3113c37ccca07c71f83e0fe0671e69d}{mlx\+\_\+set\+\_\+mouse\+\_\+pos}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__mouse_8c_a9069428691651ffd240a135bf390c3e1}{mlx\+\_\+get\+\_\+mouse\+\_\+pos}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__mouse_8c_ad8835883f060f870b6ecdba029f6e136}\label{mlx__mouse_8c_ad8835883f060f870b6ecdba029f6e136} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_cursor\_cb@{mlx\_cursor\_cb}}
+\index{mlx\_cursor\_cb@{mlx\_cursor\_cb}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_cursor\_cb()}{mlx\_cursor\_cb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+cursor\+\_\+cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}}}]{xpos,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}}}]{ypos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00033}{33}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetWindowUserPointer}}(window);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__cursor}{mlx\_cursor\_t}}\ cursor\_hook\ =\ ((\mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*)\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}})-\/>cursor\_hook;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ cursor\_hook.\mbox{\hyperlink{structmlx__cursor_ad4f87bc3591f3f0302886c181c77f578}{func}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{xpos}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ypos}},\ cursor\_hook.\mbox{\hyperlink{structmlx__cursor_ab7eabf6837407c6a795125dbbff97a3d}{param}});}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{mlx__mouse_8c_ad8835883f060f870b6ecdba029f6e136_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__mouse_8c_a9706bdf92e7a3fc890d75cf37cfcfdb0}\label{mlx__mouse_8c_a9706bdf92e7a3fc890d75cf37cfcfdb0} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_cursor\_hook@{mlx\_cursor\_hook}}
+\index{mlx\_cursor\_hook@{mlx\_cursor\_hook}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_cursor\_hook()}{mlx\_cursor\_hook()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+cursor\+\_\+hook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{MLX42_8h_ad4c4c910151f676379dae74732de5166}{mlx\+\_\+cursorfunc}}}]{func,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+This function sets the cursor callback, which is called when the mouse position changes. Position is relative to the window.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em func} & The cursor callback function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em param} & An additional optional parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00065}{65}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}});}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>cursor\_hook.func\ =\ \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}};}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>cursor\_hook.param\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetCursorPosCallback}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \mbox{\hyperlink{mlx__mouse_8c_ad8835883f060f870b6ecdba029f6e136}{mlx\_cursor\_cb}});}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{mlx__mouse_8c_a9706bdf92e7a3fc890d75cf37cfcfdb0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__mouse_8c_a9069428691651ffd240a135bf390c3e1}\label{mlx__mouse_8c_a9069428691651ffd240a135bf390c3e1} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_get\_mouse\_pos@{mlx\_get\_mouse\_pos}}
+\index{mlx\_get\_mouse\_pos@{mlx\_get\_mouse\_pos}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_get\_mouse\_pos()}{mlx\_get\_mouse\_pos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+get\+\_\+mouse\+\_\+pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{x,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{y }\end{DoxyParamCaption})}
+
+Returns the current, relative, mouse cursor position on the window, starting from the top left corner.
+
+Negative values or values greater than window width or height indicate that it is outside the window.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ out}}  & {\em x} & The position. \\
+\hline
+\mbox{\texttt{ out}}  & {\em y} & The position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00090}{90}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}});}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}});}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{xd}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{yd}};}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetCursorPos}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{xd}},\ \&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{yd}});}
+\DoxyCodeLine{00098\ \ \ \ \ *\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}\ =\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}})\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{xd}};}
+\DoxyCodeLine{00099\ \ \ \ \ *\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ =\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}})\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{yd}};}
+\DoxyCodeLine{00100\ \}}
+
+\end{DoxyCode}
+\Hypertarget{mlx__mouse_8c_acf18386b9b547ef70ab845c5e296c287}\label{mlx__mouse_8c_acf18386b9b547ef70ab845c5e296c287} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_is\_mouse\_down@{mlx\_is\_mouse\_down}}
+\index{mlx\_is\_mouse\_down@{mlx\_is\_mouse\_down}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_is\_mouse\_down()}{mlx\_is\_mouse\_down()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{bool}} mlx\+\_\+is\+\_\+mouse\+\_\+down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{MLX42_8h_a1ee832109c0bfcd9ddb1cdfb237e5146}{mouse\+\_\+key\+\_\+t}}}]{key }\end{DoxyParamCaption})}
+
+Checks whether a mouse button is pressed or not.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em key} & A specific mouse key. e.\+g MLX\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or false if the mouse key is down or not. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00076}{76}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetMouseButton}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ key)\ ==\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFW\_PRESS}});}
+\DoxyCodeLine{00081\ \}}
+
+\end{DoxyCode}
+\Hypertarget{mlx__mouse_8c_a71c3659a0555ad5f40d201573de27cbd}\label{mlx__mouse_8c_a71c3659a0555ad5f40d201573de27cbd} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_mouse\_cb@{mlx\_mouse\_cb}}
+\index{mlx\_mouse\_cb@{mlx\_mouse\_cb}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_mouse\_cb()}{mlx\_mouse\_cb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+mouse\+\_\+cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{button,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{action,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{mods }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00025}{25}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetWindowUserPointer}}(window);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__mouse}{mlx\_mouse\_t}}\ mouse\_hook\ =\ ((\mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*)\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}})-\/>mouse\_hook;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ mouse\_hook.\mbox{\hyperlink{structmlx__mouse_aa62622d03955d87e96205dd0214a62d0}{func}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{button}},\ \mbox{\hyperlink{MLX42_8h_a2f4ab7bf743142dae2e459aa18f9f1d4}{action}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mods}},\ mouse\_hook.\mbox{\hyperlink{structmlx__mouse_aec3ab0e6b14dd0f7a2485c9ec62c71ac}{param}});}
+\DoxyCodeLine{00031\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{mlx__mouse_8c_a71c3659a0555ad5f40d201573de27cbd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__mouse_8c_a6e0af3a5acc43e58e449cbbb6990feb2}\label{mlx__mouse_8c_a6e0af3a5acc43e58e449cbbb6990feb2} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_mouse\_hook@{mlx\_mouse\_hook}}
+\index{mlx\_mouse\_hook@{mlx\_mouse\_hook}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_mouse\_hook()}{mlx\_mouse\_hook()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+mouse\+\_\+hook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{MLX42_8h_a5c3bf36847955fb2ede32fcb28a6a161}{mlx\+\_\+mousefunc}}}]{func,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+This function sets the mouse callback, which is called when a mouse does any sort of action such as pressing a key.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em func} & The mouse callback function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em param} & An additional optional parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00054}{54}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>mouse\_hook.func\ =\ \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}};}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>mouse\_hook.param\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetMouseButtonCallback}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \mbox{\hyperlink{mlx__mouse_8c_a71c3659a0555ad5f40d201573de27cbd}{mlx\_mouse\_cb}});}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{mlx__mouse_8c_a6e0af3a5acc43e58e449cbbb6990feb2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__mouse_8c_ae23a4ecd5b9bddb1bb9a7a67aaf73bed}\label{mlx__mouse_8c_ae23a4ecd5b9bddb1bb9a7a67aaf73bed} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_scroll\_cb@{mlx\_scroll\_cb}}
+\index{mlx\_scroll\_cb@{mlx\_scroll\_cb}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_scroll\_cb()}{mlx\_scroll\_cb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+scroll\+\_\+cb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWwindow}} \texorpdfstring{$\ast$}{*}}]{window,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}}}]{xoffset,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{double}}}]{yoffset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00017}{17}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetWindowUserPointer}}(window);}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__srcoll}{mlx\_scroll\_t}}\ scroll\_hook\ =\ ((\mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*)\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}})-\/>scroll\_hook;}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ scroll\_hook.\mbox{\hyperlink{structmlx__srcoll_adf1f89e8b52aa177ffc06759bedd6a62}{func}}(\mbox{\hyperlink{glad_8h_ac20a0ffebf4c476650fcfa0633066f0e}{xoffset}},\ \mbox{\hyperlink{glad_8h_a76dfb6803dcff61037ba688b7f4242b8}{yoffset}},\ scroll\_hook.\mbox{\hyperlink{structmlx__srcoll_a9cb32c4fb375f0b950f9f0e5d7e11a05}{param}});}
+\DoxyCodeLine{00023\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__mouse_8c_ae23a4ecd5b9bddb1bb9a7a67aaf73bed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__mouse_8c_a4b32bcfa185276fb7f4d3c4b876635f6}\label{mlx__mouse_8c_a4b32bcfa185276fb7f4d3c4b876635f6} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_scroll\_hook@{mlx\_scroll\_hook}}
+\index{mlx\_scroll\_hook@{mlx\_scroll\_hook}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_scroll\_hook()}{mlx\_scroll\_hook()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+scroll\+\_\+hook (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{MLX42_8h_ad23ff24bbca4321da68be76c2f29bb9c}{mlx\+\_\+scrollfunc}}}]{func,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+This function sets the scroll callback, which is called when a scrolling device is used, such as a mouse wheel.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em func} & The scroll wheel callback function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em param} & An additional optional parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00043}{43}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{structmlx__ctx}{mlx\_ctx\_t}}*\ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}\ =\ \mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_a17981c6577602cb97b8e13386786c7ab}{context}};}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>scroll\_hook.func\ =\ \mbox{\hyperlink{glad_8h_a18ae3ab36a07e388833b568cfdfa90c8}{func}};}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{mlxctx}}-\/>scroll\_hook.param\ =\ \mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetScrollCallback}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ \mbox{\hyperlink{mlx__mouse_8c_ae23a4ecd5b9bddb1bb9a7a67aaf73bed}{mlx\_scroll\_cb}});}
+\DoxyCodeLine{00052\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{mlx__mouse_8c_a4b32bcfa185276fb7f4d3c4b876635f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=253pt]{mlx__mouse_8c_a4b32bcfa185276fb7f4d3c4b876635f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__mouse_8c_aa3113c37ccca07c71f83e0fe0671e69d}\label{mlx__mouse_8c_aa3113c37ccca07c71f83e0fe0671e69d} 
+\index{mlx\_mouse.c@{mlx\_mouse.c}!mlx\_set\_mouse\_pos@{mlx\_set\_mouse\_pos}}
+\index{mlx\_set\_mouse\_pos@{mlx\_set\_mouse\_pos}!mlx\_mouse.c@{mlx\_mouse.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_set\_mouse\_pos()}{mlx\_set\_mouse\_pos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+set\+\_\+mouse\+\_\+pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{x,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{y }\end{DoxyParamCaption})}
+
+Sets the mouse position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em pos} & The position. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__mouse_8c_source_l00083}{83}} of file \mbox{\hyperlink{mlx__mouse_8c_source}{mlx\+\_\+mouse.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00084\ \{}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwSetCursorPos}}(\mbox{\hyperlink{structmlx}{mlx}}-\/>\mbox{\hyperlink{structmlx_ac62f9d62f0c49302f94703ba83c5c169}{window}},\ (\textcolor{keywordtype}{double})\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},\ (\textcolor{keywordtype}{double})\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}});}
+\DoxyCodeLine{00088\ \}}
+
+\end{DoxyCode}

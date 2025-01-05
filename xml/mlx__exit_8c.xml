@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="mlx__exit_8c" kind="file" language="C++">
+    <compoundname>mlx_exit.c</compoundname>
+    <includes refid="MLX42__Int_8h" local="yes">MLX42/MLX42_Int.h</includes>
+    <incdepgraph>
+      <node id="10">
+        <label>KHR/khrplatform.h</label>
+        <link refid="khrplatform_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/MLX42_Int.h</label>
+        <link refid="MLX42__Int_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>glad/glad.h</label>
+        <link refid="glad_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>lodepng/lodepng.h</label>
+        <link refid="lodepng_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/src/mlx_exit.c</label>
+        <link refid="mlx__exit_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>GLFW/glfw3.h</label>
+      </node>
+      <node id="18">
+        <label>assert.h</label>
+      </node>
+      <node id="16">
+        <label>ctype.h</label>
+      </node>
+      <node id="15">
+        <label>limits.h</label>
+      </node>
+      <node id="13">
+        <label>memory.h</label>
+      </node>
+      <node id="17">
+        <label>stdarg.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+      <node id="14">
+        <label>stdio.h</label>
+      </node>
+      <node id="12">
+        <label>stdlib.h</label>
+      </node>
+      <node id="8">
+        <label>string.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="mlx__exit_8c_1a9cb6cdcad0ae0d754857bdcfaf9065ef" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>static void mlx_free_image</definition>
+        <argsstring>(void *content)</argsstring>
+        <name>mlx_free_image</name>
+        <param>
+          <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_exit.c" line="17" column="13" bodyfile="MLX42/src/mlx_exit.c" bodystart="17" bodyend="22"/>
+        <references refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" compoundref="mlx__utils_8c" startline="89" endline="98">mlx_freen</references>
+        <referencedby refid="MLX42_8h_1afa6aa2f79f9fc81735bdf3b92421f9ca" compoundref="mlx__exit_8c" startline="36" endline="50">mlx_terminate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__exit_8c_1a5234b5f5d093fa79366df2f94c9bcb28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_close_window</definition>
+        <argsstring>(mlx_t *mlx)</argsstring>
+        <name>mlx_close_window</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Notifies MLX that it should stop rendering and exit the main loop. This is not the same as terminate, this simply tells MLX to close the window.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">mlx</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The MLX instance handle. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_exit.c" line="26" column="6" bodyfile="MLX42/src/mlx_exit.c" bodystart="26" bodyend="30"/>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <references refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" compoundref="MLX42_8h" startline="362">mlx::window</references>
+        <referencedby refid="tests_8cpp_1ae56913a43e3b5b5e85555bb584df8df2" compoundref="tests_8cpp" startline="89" endline="116">ft_draw</referencedby>
+        <referencedby refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" compoundref="utils_8c" startline="64" endline="86">handle_key</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="mlx__exit_8c_1afa6aa2f79f9fc81735bdf3b92421f9ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref></type>
+        <definition>void mlx_terminate</definition>
+        <argsstring>(mlx_t *mlx)</argsstring>
+        <name>mlx_terminate</name>
+        <param>
+          <type><ref refid="MLX42_8h_1afc5fa27c9de2859c5d399b2d9e27e17a" kindref="member">mlx_t</ref> *</type>
+          <declname>mlx</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>All of glfw &amp; glads resources are cleaned up by the terminate function. Now it&apos;s time to clean up our own mess. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/src/mlx_exit.c" line="36" column="6" bodyfile="MLX42/src/mlx_exit.c" bodystart="36" bodyend="50"/>
+        <references refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" compoundref="MLX42_8h" startline="363">mlx::context</references>
+        <references refid="glad_8h_1a94c0e17529ebff9ddffdf7715b2341cc" compoundref="glad_8h" startline="3359">glDeleteProgram</references>
+        <references refid="glad_8h_1ad241352c6eee6e79f09942ef0771db47" compoundref="glad_8h" startline="3428">glLinkProgram</references>
+        <references refid="glad_8h_1ad8e40c882d63c4671dea2ca2dfcf3046" compoundref="glad_8h" startline="3434">glUseProgram</references>
+        <references refid="mlx__exit_8c_1a9cb6cdcad0ae0d754857bdcfaf9065ef" compoundref="mlx__exit_8c" startline="17" endline="22">mlx_free_image</references>
+        <references refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" compoundref="mlx__utils_8c" startline="89" endline="98">mlx_freen</references>
+        <references refid="MLX42__Int_8h_1a7b443d2be908f580e504765e3ed2ba78" compoundref="mlx__list_8c" startline="33" endline="43">mlx_lstclear</references>
+        <references refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" compoundref="MLX42__Int_8h" startline="46">MLX_NONNULL</references>
+        <referencedby refid="main_8c_1af11254df8693917e711076d34d657214" compoundref="main_8c" startline="103" endline="130">initialize_window</referencedby>
+        <referencedby refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" compoundref="main_8c" startline="139" endline="165">main</referencedby>
+        <referencedby refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" compoundref="mlx__init_8c" startline="161" endline="197">mlx_init</referencedby>
+        <referencedby refid="classWindow_1a8f4f7c0ab925c5ab5667e607dd3b6c9e" compoundref="WindowFixture_8hpp" startline="31" endline="36">Window::TearDown</referencedby>
+        <referencedby refid="tests_8cpp_1a3e69cb2acfdf4102ece9c9a2927d8e84" compoundref="tests_8cpp" startline="25" endline="47">TEST</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>mlx_exit.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>W2Wizard<sp/>&lt;main@w2wizard.dev&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2021/12/28<sp/>02:43:22<sp/>by<sp/>W2Wizard<sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2023/06/08<sp/>18:12:20<sp/>by<sp/>XEDGit<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>########<sp/><sp/><sp/>odam.nl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="MLX42__Int_8h" kindref="compound">MLX42/MLX42_Int.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Private<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="mlx__exit_8c_1a9cb6cdcad0ae0d754857bdcfaf9065ef" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__exit_8c_1a9cb6cdcad0ae0d754857bdcfaf9065ef" kindref="member">mlx_free_image</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>content)</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__image" kindref="compound">mlx_image_t</ref>*<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref><sp/>=<sp/>content;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(4,<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;context,<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;pixels,<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>-&gt;instances,<sp/><ref refid="glad_8h_1aec574fbf4f773ad082a04988880945c7" kindref="member">img</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">//=<sp/>Public<sp/>=//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="MLX42_8h_1a5234b5f5d093fa79366df2f94c9bcb28" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__exit_8c_1a5234b5f5d093fa79366df2f94c9bcb28" kindref="member">mlx_close_window</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>)</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">glfwSetWindowShouldClose</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1ac62f9d62f0c49302f94703ba83c5c169" kindref="member">window</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="32"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>All<sp/>of<sp/>glfw<sp/>&amp;<sp/>glads<sp/>resources<sp/>are<sp/>cleaned<sp/>up<sp/>by<sp/>the<sp/>terminate<sp/>function.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>Now<sp/>it&apos;s<sp/>time<sp/>to<sp/>clean<sp/>up<sp/>our<sp/>own<sp/>mess.</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="MLX42_8h_1afa6aa2f79f9fc81735bdf3b92421f9ca" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="mlx__exit_8c_1afa6aa2f79f9fc81735bdf3b92421f9ca" kindref="member">mlx_terminate</ref>(<ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref>)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a0271f5f01990fc9f03093522bc76718c" kindref="member">MLX_NONNULL</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx__ctx" kindref="compound">mlx_ctx_t</ref><sp/>*</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref><sp/>=<sp/><ref refid="structmlx" kindref="compound">mlx</ref>-&gt;<ref refid="structmlx_1a17981c6577602cb97b8e13386786c7ab" kindref="member">context</ref>;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ad8e40c882d63c4671dea2ca2dfcf3046" kindref="member">glUseProgram</ref>(0);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ad241352c6eee6e79f09942ef0771db47" kindref="member">glLinkProgram</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;shaderprogram);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1a94c0e17529ebff9ddffdf7715b2341cc" kindref="member">glDeleteProgram</ref>(<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;shaderprogram);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">glfwTerminate</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a7b443d2be908f580e504765e3ed2ba78" kindref="member">mlx_lstclear</ref>((<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**)(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;hooks),<sp/>&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a7b443d2be908f580e504765e3ed2ba78" kindref="member">mlx_lstclear</ref>((<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**)(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;render_queue),<sp/>&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">free</ref>);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a7b443d2be908f580e504765e3ed2ba78" kindref="member">mlx_lstclear</ref>((<ref refid="structmlx__list" kindref="compound">mlx_list_t</ref>**)(&amp;<ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>-&gt;images),<sp/>&amp;<ref refid="mlx__exit_8c_1a9cb6cdcad0ae0d754857bdcfaf9065ef" kindref="member">mlx_free_image</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="MLX42__Int_8h_1a93b4ce5ceae0d22c22c6c9125c052616" kindref="member">mlx_freen</ref>(2,<sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">mlxctx</ref>,<sp/><ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/src/mlx_exit.c"/>
+  </compounddef>
+</doxygen>

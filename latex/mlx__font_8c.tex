@@ -1,0 +1,205 @@
+\doxysection{MLX42/src/font/mlx\+\_\+font.c File Reference}
+\hypertarget{mlx__font_8c}{}\label{mlx__font_8c}\index{MLX42/src/font/mlx\_font.c@{MLX42/src/font/mlx\_font.c}}
+{\ttfamily \#include "{}font.\+h"{}}\newline
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+font.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__font_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b}{mlx\+\_\+draw\+\_\+char}} (\mbox{\hyperlink{MLX42_8h_abc6cf404f5675c83f1e62fdbad192f2f}{mlx\+\_\+image\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{texoffset}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{MLX42_8h_abf95030dc43b4fba22354fb4ae0089a5}{mlx\+\_\+texture\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mlx__font_8c_a32147f4dab05c010e259546dd2407b66}{mlx\+\_\+get\+\_\+font}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{mlx__font_8c_acbe9b61e9dd84efb36ed5a71faae79a9}{mlx\+\_\+get\+\_\+texoffset}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} c)
+\item 
+\mbox{\hyperlink{MLX42_8h_abc6cf404f5675c83f1e62fdbad192f2f}{mlx\+\_\+image\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mlx__font_8c_a3c7e4790683c2dbc5159cb3a18c22e0b}{mlx\+\_\+put\+\_\+string}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b}\label{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b} 
+\index{mlx\_font.c@{mlx\_font.c}!mlx\_draw\_char@{mlx\_draw\_char}}
+\index{mlx\_draw\_char@{mlx\_draw\_char}!mlx\_font.c@{mlx\_font.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_draw\_char()}{mlx\_draw\_char()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{static}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+draw\+\_\+char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_abc6cf404f5675c83f1e62fdbad192f2f}{mlx\+\_\+image\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{image,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{texoffset,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{imgoffset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Does the actual copying of pixels form the atlas buffer to the image buffer.
+
+Skips any non-\/printable characters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em image} & The image to draw on. \\
+\hline
+{\em texture} & The font\+\_\+atlas. \\
+\hline
+{\em texoffset} & The character texture X offset. \\
+\hline
+{\em imgoffset} & The image X offset. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__font_8c_source_l00029}{29}} of file \mbox{\hyperlink{mlx__font_8c_source}{mlx\+\_\+font.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{texoffset}}\ <\ 0)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}};}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\_t}}\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ =\ 0;\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ <\ \mbox{\hyperlink{font_8h_a33f4fac49f2a5e27e2857eb27f054510}{FONT\_HEIGHT}};\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}++)}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}}\ =\ \&\mbox{\hyperlink{font_8h_aaac44d7ed095252ce671d33ae53adc70}{font\_atlas}}.\mbox{\hyperlink{structs__font_a210dbb07e24bfaf3e8ad5ab899363bfe}{pixels}}[(\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ *\ \mbox{\hyperlink{font_8h_aaac44d7ed095252ce671d33ae53adc70}{font\_atlas}}.\mbox{\hyperlink{structs__font_a759ef1ac84fa8677e5df4e10531d52f1}{width}}\ +\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{texoffset}})\ *\ \mbox{\hyperlink{MLX42__Int_8h_a8f40226da14df1fe52cd78fcda4ec5cb}{BPP}}];}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}}\ =\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>pixels\ +\ ((\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}\ *\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>width\ +\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}})\ *\ \mbox{\hyperlink{MLX42__Int_8h_a8f40226da14df1fe52cd78fcda4ec5cb}{BPP}});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{memcpy}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}},\ \mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}}\ *\ \mbox{\hyperlink{MLX42__Int_8h_a8f40226da14df1fe52cd78fcda4ec5cb}{BPP}});}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__font_8c_a32147f4dab05c010e259546dd2407b66}\label{mlx__font_8c_a32147f4dab05c010e259546dd2407b66} 
+\index{mlx\_font.c@{mlx\_font.c}!mlx\_get\_font@{mlx\_get\_font}}
+\index{mlx\_get\_font@{mlx\_get\_font}!mlx\_font.c@{mlx\_font.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_get\_font()}{mlx\_get\_font()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{MLX42_8h_abf95030dc43b4fba22354fb4ae0089a5}{mlx\+\_\+texture\+\_\+t}} \texorpdfstring{$\ast$}{*} mlx\+\_\+get\+\_\+font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve the texture data for the built-\/in font.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the built-\/in font texture. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__font_8c_source_l00046}{46}} of file \mbox{\hyperlink{mlx__font_8c_source}{mlx\+\_\+font.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keyword}{const}\ \mbox{\hyperlink{structmlx__texture}{mlx\_texture\_t}}*)\&\mbox{\hyperlink{font_8h_aaac44d7ed095252ce671d33ae53adc70}{font\_atlas}});}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}
+\Hypertarget{mlx__font_8c_acbe9b61e9dd84efb36ed5a71faae79a9}\label{mlx__font_8c_acbe9b61e9dd84efb36ed5a71faae79a9} 
+\index{mlx\_font.c@{mlx\_font.c}!mlx\_get\_texoffset@{mlx\_get\_texoffset}}
+\index{mlx\_get\_texoffset@{mlx\_get\_texoffset}!mlx\_font.c@{mlx\_font.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_get\_texoffset()}{mlx\_get\_texoffset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} mlx\+\_\+get\+\_\+texoffset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}}}]{c }\end{DoxyParamCaption})}
+
+This function lets you retrieve the X offset of the given char in the font texture.
+
+NOTE\+: A single character is 10 \texorpdfstring{$\ast$}{*} 20 in pixels!
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em c} & The character to get the offset from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative if found or -\/1 if not found. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__font_8c_source_l00051}{51}} of file \mbox{\hyperlink{mlx__font_8c_source}{mlx\+\_\+font.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{\_isprint}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{isprint}}(c);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//\ NOTE:\ Cheesy\ branchless\ operation\ :D}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//\ +2\ To\ skip\ line\ separator\ in\ texture}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordflow}{return}\ (-\/1\ *\ !\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{\_isprint}}\ +\ ((\mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}}\ +\ 2)\ *\ (c\ -\/\ 32))\ *\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{\_isprint}});}
+\DoxyCodeLine{00058\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__font_8c_acbe9b61e9dd84efb36ed5a71faae79a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__font_8c_a3c7e4790683c2dbc5159cb3a18c22e0b}\label{mlx__font_8c_a3c7e4790683c2dbc5159cb3a18c22e0b} 
+\index{mlx\_font.c@{mlx\_font.c}!mlx\_put\_string@{mlx\_put\_string}}
+\index{mlx\_put\_string@{mlx\_put\_string}!mlx\_font.c@{mlx\_font.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_put\_string()}{mlx\_put\_string()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MLX42_8h_abc6cf404f5675c83f1e62fdbad192f2f}{mlx\+\_\+image\+\_\+t}} \texorpdfstring{$\ast$}{*} mlx\+\_\+put\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{const}} \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{char}} \texorpdfstring{$\ast$}{*}}]{str,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{x,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{y }\end{DoxyParamCaption})}
+
+Draws a string on an image and then outputs it to the window.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em str} & The string to draw. \\
+\hline
+\mbox{\texttt{ in}}  & {\em x} & The X location. \\
+\hline
+\mbox{\texttt{ in}}  & {\em y} & The Y location. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Image ptr to the string. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__font_8c_source_l00060}{60}} of file \mbox{\hyperlink{mlx__font_8c_source}{mlx\+\_\+font.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{structmlx__image}{mlx\_image\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strlen}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}}\ >\ \mbox{\hyperlink{MLX42__Int_8h_a8cbe78424988489343e990ccd93ef86f}{MLX\_MAX\_STRING}})}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ((\textcolor{keywordtype}{void}*)\mbox{\hyperlink{MLX42__Int_8h_a3b5d95cdf353faaaa691ef8b2041b94f}{mlx\_error}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11a0d1211ffb4bf537150b83f3d56ed948f}{MLX\_STRTOOBIG}}));\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}}\ =\ \mbox{\hyperlink{MLX42_8h_abe515cadb9b88a9d064383da276c2467}{mlx\_new\_image}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}}\ *\ \mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}},\ \mbox{\hyperlink{font_8h_a33f4fac49f2a5e27e2857eb27f054510}{FONT\_HEIGHT}})))}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//\ Draw\ the\ text\ itself}}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}}\ =\ 0;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{len}};\ i++,\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}}\ +=\ \mbox{\hyperlink{font_8h_a7b2e9cc063e140c50b67a4f224988a45}{FONT\_WIDTH}})}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{mlx__font_8c_aaa302d6dd83e59468fb906706e37f60b}{mlx\_draw\_char}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}},\ \mbox{\hyperlink{mlx__font_8c_acbe9b61e9dd84efb36ed5a71faae79a9}{mlx\_get\_texoffset}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{str}}[i]),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{imgoffset}});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{MLX42_8h_a06dbfde4fce913678e09b0af263b0c06}{mlx\_image\_to\_window}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}},\ \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},\ \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})\ ==\ -\/1)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{MLX42_8h_a997cfd3dd07ea85a91df958ae0d1e7b5}{mlx\_delete\_image}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}}),\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}});}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{strimage}});}
+\DoxyCodeLine{00080\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__font_8c_a3c7e4790683c2dbc5159cb3a18c22e0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{mlx__font_8c_a3c7e4790683c2dbc5159cb3a18c22e0b_icgraph}
+\end{center}
+\end{figure}

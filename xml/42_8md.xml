@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="42_8md" kind="file" language="Markdown">
+    <compoundname>42.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;/br&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;img<sp/>src=&quot;./assets/logo.png&quot;<sp/>alt=&quot;42MLX_Logo&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;<sp/>style=&quot;margin-top:<sp/>8px;&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>&lt;sub&gt;Written<sp/>by<sp/>&lt;a<sp/>href=&quot;https://portfolio.w2wizard.dev/&quot;&gt;W2.Wizard&lt;/a&gt;<sp/>for<sp/>the<sp/>42<sp/>Network&lt;/sub&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/br&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;div<sp/>align=&quot;center&quot;&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>&lt;h1&gt;Welcome<sp/>to<sp/>the<sp/>MLX42,<sp/>42Campus<sp/>documentation&lt;/h1&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/div&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Foreword</highlight></codeline>
+<codeline><highlight class="normal">If<sp/>you&apos;re<sp/>considering<sp/>allowing<sp/>the<sp/>use<sp/>of<sp/>MLX42<sp/>in<sp/>your<sp/>campus<sp/>and<sp/>wondering<sp/>why<sp/>you<sp/>should<sp/>do<sp/>it,<sp/>how<sp/>it<sp/>should<sp/>work,<sp/>and<sp/>what<sp/>it<sp/>will<sp/>take<sp/>to<sp/>get<sp/>it<sp/>working,<sp/>then<sp/>you&apos;re<sp/>in<sp/>the<sp/>right<sp/>place!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>has<sp/>been<sp/>battle-tested<sp/>multiple<sp/>times<sp/>at<sp/>hackathons<sp/>and<sp/>other<sp/>campuses<sp/>and<sp/>has<sp/>received<sp/>over<sp/>500<sp/>commits<sp/>since<sp/>2021.<sp/>All<sp/>students<sp/>share<sp/>the<sp/>same<sp/>sentiment:<sp/>they<sp/>enjoy<sp/>using<sp/>the<sp/>library,<sp/>but<sp/>it&apos;s<sp/>not<sp/>too<sp/>easy<sp/>to<sp/>finish<sp/>the<sp/>projects.<sp/>During<sp/>that<sp/>time<sp/>many<sp/>bugs,<sp/>leaks,<sp/>and<sp/>segfaults<sp/>have<sp/>been<sp/>fixed.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>addresses<sp/>one<sp/>of<sp/>the<sp/>main<sp/>problems<sp/>at<sp/>42,<sp/>which<sp/>is<sp/>that<sp/>although<sp/>it<sp/>is<sp/>a<sp/>tech<sp/>school,<sp/>it<sp/>does<sp/>not<sp/>provide<sp/>its<sp/>students<sp/>with<sp/>well-maintained<sp/>tools<sp/>to<sp/>improve<sp/>their<sp/>education.<sp/>All<sp/>a<sp/>campus<sp/>wants<sp/>is<sp/>to<sp/>give<sp/>its<sp/>students<sp/>the<sp/>best<sp/>they<sp/>can.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Campus<sp/><sp/><sp/><sp/>|<sp/>Allowed<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Additional<sp/>Notes<sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>----------|:------------:|<sp/>:------------------|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Codam<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Mulhouse<sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Quebec<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Belo<sp/>Horizonte<sp/>|<sp/>❓<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>London<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Just<sp/>because<sp/>?<sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>São<sp/>Paulo<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Rio<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❓<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Malaga<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Singapore<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❓<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Asked<sp/>their<sp/>pedago,<sp/>awaiting<sp/>a<sp/>response.|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Barcelona<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Would<sp/>like<sp/>propose<sp/>some<sp/>modifications<sp/>preferably<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Nice<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Banned<sp/>`mlx_put_pixel`<sp/>&amp;<sp/>`mlx_resize_image`<sp/>otherwise<sp/>fully<sp/>authorized<sp/>🎊<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Berlin<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Banned<sp/>`mlx_put_pixel`<sp/>&amp;<sp/>`mlx_resize_image`<sp/>otherwise<sp/>fully<sp/>authorized<sp/>🎊`<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Heilbronn<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>1337<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>1337<sp/>Refers<sp/>to<sp/>every<sp/>campus<sp/>part<sp/>of<sp/>1337<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Angoulême<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Lausanne<sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❓<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>No<sp/>idea<sp/>how<sp/>to<sp/>reach<sp/>them<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Prague<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>19<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>No<sp/>reason<sp/>(?)<sp/>You<sp/>can<sp/>probably<sp/>blame<sp/>paris<sp/>again<sp/>I<sp/>guess<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Hive<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Le<sp/>Havre<sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Vienna<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❓<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Seoul<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>I<sp/>didn&apos;t<sp/>really<sp/>understand<sp/>why<sp/>but<sp/>basically<sp/>as<sp/>long<sp/>as<sp/>Paris<sp/>says<sp/>no<sp/>they<sp/>will<sp/>too<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Madrid<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>✅<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Authorized<sp/>since<sp/>the<sp/>Linux<sp/>migration<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Porto<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Not<sp/>Auth<sp/>from<sp/>Paris|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Lisboa<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Not<sp/>Auth<sp/>from<sp/>Paris|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Wolfsburg<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Not<sp/>Auth<sp/>from<sp/>Paris|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Urduliz<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Not<sp/>Auth<sp/>from<sp/>Paris|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Paris<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>❌<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Because<sp/>its<sp/>Paris<sp/>🤡🤡🤡|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Regarding<sp/>other<sp/>campuses<sp/>the<sp/>status<sp/>is<sp/>unknown.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Technical<sp/>comparison</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>MiniLibX</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>miniLibX<sp/>has<sp/>many<sp/>problems<sp/>that<sp/>have<sp/>been<sp/>around<sp/>for<sp/>almost<sp/>10+<sp/>years:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`Not<sp/>maintained`:<sp/>The<sp/>library<sp/>is<sp/>practically<sp/>dead,<sp/>and<sp/>it&apos;s<sp/>unclear<sp/>who<sp/>is<sp/>available<sp/>to<sp/>fix<sp/>the<sp/>bugs.<sp/>It<sp/>hasn&apos;t<sp/>had<sp/>any<sp/>changes<sp/>in<sp/>a<sp/>long<sp/>time,<sp/>and<sp/>student<sp/>pull<sp/>requests<sp/>on<sp/>Github<sp/>for<sp/>the<sp/>X11<sp/>version<sp/>go<sp/>unnoticed.<sp/>Issues<sp/>are<sp/>also<sp/>being<sp/>ignored.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`Poor<sp/>documentation`:<sp/>The<sp/>documentation<sp/>consists<sp/>of<sp/>a<sp/>few<sp/>man<sp/>pages<sp/>that<sp/>are<sp/>outdated<sp/>and<sp/>an<sp/>online<sp/>documentation<sp/>created<sp/>by<sp/>another<sp/>student.<sp/>It&apos;s<sp/>understandable<sp/>that<sp/>students<sp/>have<sp/>to<sp/>learn<sp/>on<sp/>their<sp/>own,<sp/>but<sp/>a<sp/>library<sp/>with<sp/>an<sp/>extensive<sp/>API<sp/>requires<sp/>proper<sp/>documentation<sp/>for<sp/>anyone<sp/>to<sp/>start<sp/>understanding<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`Poor<sp/>execution`:<sp/>There<sp/>are<sp/>multiple<sp/>versions:<sp/>OpenGL,<sp/>Swift,<sp/>and<sp/>X11.<sp/>Instead<sp/>of<sp/>becoming<sp/>better<sp/>with<sp/>each<sp/>new<sp/>iteration,<sp/>they<sp/>stay<sp/>the<sp/>same<sp/>with<sp/>no<sp/>real<sp/>improvement.<sp/>It<sp/>should<sp/>be<sp/>future-proof<sp/>and<sp/>not<sp/>dependent<sp/>on<sp/>a<sp/>specific<sp/>platform.<sp/>People<sp/>are<sp/>struggling<sp/>with<sp/>the<sp/>there<sp/>being<sp/>so<sp/>many<sp/>different<sp/>versions<sp/>that<sp/>they<sp/>start<sp/>losing<sp/>track<sp/>where<sp/>the<sp/>problem<sp/>actually<sp/>is.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`Not<sp/>cross-platform`:<sp/>Students<sp/>constantly<sp/>encounter<sp/>the<sp/>same<sp/>problem:<sp/>at<sp/>school<sp/>they<sp/>work<sp/>with<sp/>MacOS,<sp/>but<sp/>at<sp/>home<sp/>they<sp/>use<sp/>Linux.<sp/>Or<sp/>they<sp/>write<sp/>their<sp/>project<sp/>on<sp/>Linux,<sp/>but<sp/>want<sp/>to<sp/>show<sp/>it<sp/>to<sp/>their<sp/>parents<sp/>using<sp/>Windows<sp/>or<sp/>MacOS.<sp/>At<sp/>each<sp/>point,<sp/>miniLibX<sp/>fails<sp/>to<sp/>fill<sp/>that<sp/>gap.<sp/>The<sp/>pandemic<sp/>in<sp/>2019<sp/>showed<sp/>just<sp/>how<sp/>much<sp/>students<sp/>struggled<sp/>to<sp/>evaluate<sp/>each<sp/>other<sp/>using<sp/>different<sp/>machines<sp/>and<sp/>versions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>MLX42</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>main<sp/>goal<sp/>of<sp/>MLX42<sp/>is<sp/>to<sp/>address<sp/>all<sp/>of<sp/>these<sp/>shortcomings<sp/>of<sp/>the<sp/>original<sp/>versions.<sp/>There<sp/>are<sp/>some<sp/>differences,<sp/>mainly<sp/>in<sp/>the<sp/>way<sp/>images<sp/>are<sp/>rendered,<sp/>but<sp/>everything<sp/>else<sp/>is<sp/>basically<sp/>the<sp/>same.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">So<sp/>far,<sp/>all<sp/>of<sp/>the<sp/>drawbacks<sp/>of<sp/>miniLibX<sp/>have<sp/>been<sp/>taken<sp/>care<sp/>of,<sp/>and<sp/>students<sp/>using<sp/>it<sp/>are<sp/>enjoying<sp/>it!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Rendering</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">One<sp/>of<sp/>the<sp/>biggest<sp/>differences<sp/>between<sp/>the<sp/>two<sp/>libraries<sp/>is<sp/>the<sp/>way<sp/>rendering<sp/>is<sp/>handled.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>`miniLibX`,<sp/>students<sp/>change<sp/>the<sp/>buffer<sp/>of<sp/>an<sp/>image<sp/>and<sp/>then<sp/>push<sp/>it<sp/>to<sp/>the<sp/>window.</highlight></codeline>
+<codeline><highlight class="normal">In<sp/>`MLX42`,<sp/>students<sp/>put<sp/>the<sp/>image<sp/>to<sp/>the<sp/>window<sp/>and<sp/>can<sp/>change<sp/>the<sp/>buffer<sp/>at<sp/>any<sp/>time,<sp/>resulting<sp/>in<sp/>an<sp/>immediate<sp/>update<sp/>to<sp/>the<sp/>image.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>uses<sp/>instances<sp/>instead.<sp/>An<sp/>image<sp/>is<sp/>like<sp/>the<sp/>original<sp/>painting,<sp/>while<sp/>instances<sp/>are<sp/>individual<sp/>copies<sp/>of<sp/>this<sp/>painting<sp/>on<sp/>the<sp/>window.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>is<sp/>no<sp/>window<sp/>clearing<sp/>function<sp/>because<sp/>students<sp/>need<sp/>to<sp/>learn<sp/>how<sp/>to<sp/>properly<sp/>manage<sp/>their<sp/>images.<sp/>They<sp/>can<sp/>still<sp/>delete<sp/>images<sp/>and<sp/>turn<sp/>instances<sp/>on<sp/>or<sp/>off,<sp/>of<sp/>course.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Internally,<sp/>it<sp/>uses<sp/>batched<sp/>rendering<sp/>to<sp/>further<sp/>improve<sp/>performance.<sp/>The<sp/>actual<sp/>documentation<sp/>and<sp/>the<sp/>code<sp/>itself<sp/>have<sp/>more<sp/>details.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Maintained<sp/>&amp;<sp/>Open-source</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>main<sp/>goal<sp/>of<sp/>MLX42<sp/>is<sp/>to<sp/>empower<sp/>students<sp/>and<sp/>pedagogues<sp/>by<sp/>giving<sp/>them<sp/>the<sp/>ability<sp/>to<sp/>maintain<sp/>and<sp/>fix<sp/>bugs,<sp/>instead<sp/>of<sp/>leaving<sp/>their<sp/>complaints<sp/>unaddressed.<sp/>By<sp/>being<sp/>open-source,<sp/>students<sp/>can<sp/>explore<sp/>the<sp/>code<sp/>and<sp/>submit<sp/>pull<sp/>requests.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Documentation</highlight></codeline>
+<codeline><highlight class="normal">The<sp/>repository<sp/>comes<sp/>with<sp/>a<sp/>well-maintained<sp/>[Wiki](https://github.com/codam-coding-college/MLX42/wiki)<sp/>and<sp/>documentation<sp/>in<sp/>the<sp/>form<sp/>of<sp/>`markdown`<sp/>files<sp/>in<sp/>the<sp/>repository<sp/>root.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Build<sp/>system</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>initially<sp/>used<sp/>`make`,<sp/>but<sp/>it<sp/>was<sp/>inflexible<sp/>and<sp/>caused<sp/>weird<sp/>bugs<sp/>for<sp/>others.<sp/>Since<sp/>version<sp/>2.3.0<sp/>it<sp/>uses<sp/>`cmake`<sp/>for<sp/>a<sp/>truly<sp/>cross-platform<sp/>build<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Students<sp/>do<sp/>not<sp/>need<sp/>to<sp/>understand<sp/>how<sp/>to<sp/>use<sp/>`cmake`,<sp/>as<sp/>building<sp/>the<sp/>library<sp/>requires<sp/>only<sp/>two<sp/>shell<sp/>commands.<sp/>The<sp/>instructions<sp/>on<sp/>how<sp/>to<sp/>build<sp/>the<sp/>library<sp/>are<sp/>provided<sp/>to<sp/>them.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>XPM42</highlight></codeline>
+<codeline><highlight class="normal">For<sp/>historical<sp/>reasons,<sp/>I<sp/>included<sp/>my<sp/>own<sp/>file<sp/>format<sp/>that<sp/>mimics<sp/>XPM3.<sp/>In<sp/>the<sp/>original<sp/>miniLibX,<sp/>the<sp/>way<sp/>XPM<sp/>files<sp/>were<sp/>handled<sp/>made<sp/>no<sp/>sense,<sp/>as<sp/>they<sp/>were<sp/>supposed<sp/>to<sp/>be<sp/>compiled<sp/>into<sp/>the<sp/>binary.<sp/>Instead,<sp/>miniLibX<sp/>parsed<sp/>the<sp/>files<sp/>and<sp/>pasted<sp/>the<sp/>data<sp/>into<sp/>memory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>`tools`<sp/>folder,<sp/>there<sp/>is<sp/>a<sp/>python<sp/>script<sp/>that<sp/>converts<sp/>XPM3<sp/>to<sp/>XPM42.<sp/>XPM42<sp/>is<sp/>available<sp/>as<sp/>an<sp/>alternative,<sp/>but<sp/>it<sp/>is<sp/>highly<sp/>encouraged<sp/>to<sp/>use<sp/>the<sp/>PNG<sp/>importer,<sp/>which<sp/>does<sp/>not<sp/>leak<sp/>and<sp/>uses<sp/>lodepng<sp/>for<sp/>parsing.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>How<sp/>can<sp/>I<sp/>migrate?<sp/>What<sp/>is<sp/>necessary<sp/>to<sp/>change?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Migrating<sp/>to<sp/>MLX42<sp/>is<sp/>easy<sp/>and<sp/>requires<sp/>minimal<sp/>effort,<sp/>it<sp/>requires<sp/>just<sp/>2<sp/>dependencies<sp/>in<sp/>order<sp/>to<sp/>work.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Dependencies</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[CMake:<sp/>&gt;=<sp/>3.18.0](https://cmake.org/download/)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[GLFW:<sp/>&gt;=<sp/>3.3.6](https://github.com/glfw/glfw)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>is<sp/>up<sp/>to<sp/>your<sp/>pedago<sp/>staff<sp/>or<sp/>system<sp/>administrator<sp/>to<sp/>determine<sp/>how<sp/>to<sp/>distribute<sp/>MLX42<sp/>to<sp/>students.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>options<sp/>are:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`A`:<sp/>Install<sp/>it<sp/>on<sp/>the<sp/>machine<sp/>in<sp/>a<sp/>location<sp/>such<sp/>as<sp/>/usr/local/lib<sp/>and<sp/>use<sp/>-lmlx42<sp/>to<sp/>link<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`B`:<sp/>Have<sp/>students<sp/>clone<sp/>the<sp/>repository,<sp/>preferably<sp/>as<sp/>a<sp/>submodule,<sp/>and<sp/>include<sp/>it<sp/>in<sp/>their<sp/>repository.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>is<sp/>not<sp/>much<sp/>else<sp/>to<sp/>do<sp/>besides<sp/>these<sp/>steps.<sp/>It<sp/>is<sp/>a<sp/>straightforward<sp/>replacement,<sp/>and<sp/>the<sp/>choice<sp/>of<sp/>distribution<sp/>is<sp/>up<sp/>to<sp/>the<sp/>campus.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>F.A.Q</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;It<sp/>has<sp/>too<sp/>many<sp/>features!<sp/>I<sp/>think<sp/>students<sp/>should<sp/>implement<sp/>some<sp/>of<sp/>them<sp/>themselves<sp/>including<sp/>some<sp/>functions...&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>If<sp/>there<sp/>is<sp/>one<sp/>frustrating<sp/>point<sp/>in<sp/>this<sp/>entire<sp/>F.A.Q<sp/>then<sp/>it<sp/>is<sp/>this<sp/>one.<sp/>Because<sp/>42<sp/>Network&apos;s<sp/>pedago<sp/>never<sp/>actually<sp/>clarifies<sp/>what<sp/>this<sp/>even<sp/>means?<sp/>They<sp/>don&apos;t<sp/>communicate<sp/>what<sp/>is<sp/>supposededly<sp/>&quot;too<sp/>useful&quot;.<sp/>Because<sp/>if<sp/>they<sp/>did<sp/>then<sp/>it<sp/>wouldn&apos;t<sp/>require<sp/>having<sp/>to<sp/>write<sp/>this<sp/>entire<sp/>F.A.Q<sp/>and<sp/>pointing<sp/>out<sp/>all<sp/>their<sp/>flawed<sp/>arguments.<sp/>It&apos;s<sp/>been<sp/>2<sp/>years<sp/>now<sp/>and<sp/>not<sp/>once<sp/>have<sp/>the<sp/>maintainers<sp/>been<sp/>approached<sp/>by<sp/>the<sp/>network&apos;s<sp/>pedago.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">***WHAT***<sp/>functions<sp/>are<sp/>too<sp/>useful<sp/>you<sp/>may<sp/>wonder?<sp/>Well<sp/>really<sp/>there<sp/>aren&apos;t<sp/>many<sp/>if<sp/>any<sp/>that<sp/>we<sp/>can<sp/>think<sp/>of.<sp/>The<sp/>majority<sp/>of<sp/>additional<sp/>functions<sp/>are<sp/>just<sp/>GLFW<sp/>wrappers<sp/>to<sp/>enable<sp/>more<sp/>extensive<sp/>customization<sp/>of<sp/>the<sp/>window.<sp/>This<sp/>includes<sp/>setting<sp/>custom<sp/>cursors<sp/>or<sp/>app<sp/>icons<sp/>which<sp/>really<sp/>don&apos;t<sp/>add<sp/>any<sp/>complexity<sp/>nor<sp/>are<sp/>students<sp/>able<sp/>to<sp/>do<sp/>this<sp/>themselves<sp/>anyway.<sp/>They<sp/>are<sp/>available<sp/>without<sp/>impeding<sp/>their<sp/>learning.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>there<sp/>was<sp/>something<sp/>too<sp/>useful<sp/>that<sp/>really<sp/>criticaly<sp/>hinders<sp/>the<sp/>adoption<sp/>of<sp/>this<sp/>library.<sp/>I<sp/>would<sp/>advise<sp/>that<sp/>we<sp/>use<sp/>communication<sp/>much<sp/>like<sp/>any<sp/>other<sp/>species<sp/>of<sp/>this<sp/>planet<sp/>to<sp/>resolve<sp/>it.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;The<sp/>`mlx_put_pixel`<sp/>works<sp/>too<sp/>well...&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>Rather<sp/>than<sp/>purposefully<sp/>sabotaging<sp/>the<sp/>library<sp/>to<sp/>make<sp/>a<sp/>point,<sp/>I<sp/>deemed<sp/>it<sp/>necessary<sp/>that<sp/>the<sp/>library<sp/>simply<sp/>works.<sp/>By<sp/>default,<sp/>this<sp/>function<sp/>is<sp/>already<sp/>banned<sp/>by<sp/>all<sp/>subjects,<sp/>and<sp/>the<sp/>main<sp/>idea<sp/>was<sp/>to<sp/>force<sp/>students<sp/>to<sp/>use<sp/>images.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>MLX42<sp/>it<sp/>always<sp/>starts<sp/>with<sp/>an<sp/>image,<sp/>and<sp/>students<sp/>are<sp/>forced<sp/>to<sp/>face<sp/>images<sp/>no<sp/>matter<sp/>what.<sp/>They<sp/>still<sp/>face<sp/>the<sp/>same<sp/>learning<sp/>curve<sp/>of<sp/>how<sp/>to<sp/>modify<sp/>the<sp/>buffer<sp/>of<sp/>an<sp/>image<sp/>and<sp/>learn<sp/>the<sp/>concept<sp/>of<sp/>bit<sp/>shifting<sp/>one<sp/>way<sp/>or<sp/>another.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Our<sp/>proposal<sp/>is<sp/>to<sp/>allow<sp/>its<sp/>use<sp/>in<sp/>the<sp/>first<sp/>three<sp/>graphics<sp/>projects<sp/>(fract-ol,<sp/>fdf,<sp/>so_long)<sp/>and<sp/>later<sp/>ban<sp/>it<sp/>for<sp/>the<sp/>remaining<sp/>ones<sp/>(Cub3D,<sp/>MiniRT),<sp/>so<sp/>students<sp/>can<sp/>become<sp/>familiar<sp/>with<sp/>it<sp/>and<sp/>then<sp/>need<sp/>to<sp/>explore<sp/>its<sp/>workings.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Are<sp/>the<sp/>libraries<sp/>1:1<sp/>identical?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>No,<sp/>there<sp/>are<sp/>100%<sp/>breaking<sp/>changes,<sp/>and<sp/>changing<sp/>from<sp/>miniLibX<sp/>to<sp/>MLX42<sp/>will<sp/>not<sp/>be<sp/>a<sp/>simple<sp/>drop-in<sp/>replacement.<sp/>As<sp/>in<sp/>their<sp/>API<sp/>is<sp/>slightly<sp/>different.<sp/>That<sp/>was<sp/>not<sp/>the<sp/>idea<sp/>eitherway,<sp/>as<sp/>it<sp/>would<sp/>be<sp/>impossible<sp/>to<sp/>fix<sp/>the<sp/>problems<sp/>present<sp/>in<sp/>the<sp/>current<sp/>miniLibX.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>terms<sp/>of<sp/>usage,<sp/>it&apos;s<sp/>practically<sp/>identical,<sp/>while<sp/>the<sp/>API<sp/>Prototypes<sp/>are<sp/>slightly<sp/>different,<sp/>the<sp/>usage<sp/>is<sp/>roughly<sp/>the<sp/>same<sp/>and<sp/>the<sp/>only<sp/>core<sp/>difference<sp/>is<sp/>the<sp/>way<sp/>images<sp/>are<sp/>handled.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">My<sp/>suggestion<sp/>is<sp/>for<sp/>students<sp/>who<sp/>are<sp/>using<sp/>miniLibX<sp/>to<sp/>keep<sp/>using<sp/>it<sp/>to<sp/>finish<sp/>their<sp/>project<sp/>and<sp/>for<sp/>new<sp/>students<sp/>to<sp/>prefer<sp/>the<sp/>new<sp/>one<sp/>or<sp/>until<sp/>they<sp/>reach<sp/>the<sp/>next<sp/>graphical<sp/>project.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;With<sp/>regards<sp/>to<sp/>how<sp/>the<sp/>rendering<sp/>is<sp/>done,<sp/>won&apos;t<sp/>that<sp/>make<sp/>it<sp/>too<sp/>easy<sp/>for<sp/>students?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>After<sp/>almost<sp/>a<sp/>year<sp/>in<sp/>use,<sp/>both<sp/>new<sp/>students<sp/>who<sp/>didn&apos;t<sp/>use<sp/>the<sp/>old<sp/>one<sp/>and<sp/>students<sp/>who<sp/>used<sp/>both<sp/>managed<sp/>just<sp/>fine<sp/>and<sp/>even<sp/>appreciated<sp/>this<sp/>change<sp/>in<sp/>the<sp/>way<sp/>rendering<sp/>works<sp/>in<sp/>MLX42.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>is<sp/>not<sp/>taking<sp/>away<sp/>from<sp/>the<sp/>learning<sp/>experience,<sp/>it&apos;s<sp/>just<sp/>shifting<sp/>a<sp/>function<sp/>call<sp/>from<sp/>one<sp/>place<sp/>to<sp/>another.<sp/>Students<sp/>still<sp/>find<sp/>it<sp/>challenging<sp/>to<sp/>finish<sp/>the<sp/>actual<sp/>project,<sp/>as<sp/>they<sp/>still<sp/>need<sp/>to<sp/>learn<sp/>a<sp/>whole<sp/>new<sp/>library<sp/>and<sp/>how<sp/>it<sp/>operates.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;OpenGL?<sp/>Isn&apos;t<sp/>that<sp/>a<sp/>bit<sp/>old<sp/>by<sp/>now?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>Is<sp/>OpenGL<sp/>old?<sp/>Sure.<sp/>But<sp/>in<sp/>the<sp/>end,<sp/>students<sp/>don&apos;t<sp/>care.<sp/>You<sp/>could<sp/>argue<sp/>that<sp/>it&apos;s<sp/>less<sp/>future-proof<sp/>and<sp/>that<sp/>Vulkan<sp/>should<sp/>be<sp/>used<sp/>instead.<sp/>But<sp/>ask<sp/>yourself,<sp/>does<sp/>one<sp/>need<sp/>an<sp/>artillery<sp/>cannon<sp/>to<sp/>hunt<sp/>for<sp/>a<sp/>rabbit<sp/>in<sp/>a<sp/>forest?<sp/>If<sp/>your<sp/>answer<sp/>is<sp/>no,<sp/>then<sp/>why<sp/>does<sp/>one<sp/>need<sp/>Vulkan<sp/>to<sp/>render<sp/>a<sp/>bunch<sp/>of<sp/>quads<sp/>on<sp/>a<sp/>window?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenGL<sp/>is<sp/>easy<sp/>to<sp/>learn,<sp/>widely<sp/>supported<sp/>and<sp/>it<sp/>could<sp/>be<sp/>argued<sp/>that<sp/>it&apos;s<sp/>actually<sp/>useful<sp/>for<sp/>students<sp/>who<sp/>are<sp/>interested<sp/>in<sp/>graphics.<sp/>Anyway,<sp/>if<sp/>one<sp/>day<sp/>Vulkan<sp/>is<sp/>required,<sp/>a<sp/>branch<sp/>and<sp/>PR<sp/>can<sp/>be<sp/>created<sp/>and<sp/>merged!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Just<sp/>a<sp/>small<sp/>reminder<sp/>that<sp/>it<sp/>takes<sp/>roughly<sp/>[700+<sp/>lines<sp/>of<sp/>code](https://github.com/SaschaWillems/Vulkan/blob/master/examples/triangle/triangle.cpp)<sp/>to<sp/>render<sp/>a<sp/>triangle<sp/>with<sp/>vulkan...</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here<sp/>is<sp/>the<sp/>equivalent<sp/>in<sp/>[OpenGL](https://learnopengl.com/code_viewer_gh.php?code=src/1.getting_started/2.1.hello_triangle/hello_triangle.cpp).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;CMake?<sp/>Won&apos;t<sp/>that<sp/>confuse<sp/>them?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>It<sp/>is<sp/>2<sp/>simple<sp/>commands<sp/>that<sp/>are<sp/>described<sp/>in<sp/>the<sp/>README,<sp/>and<sp/>it&apos;s<sp/>a<sp/>good<sp/>opportunity<sp/>to<sp/>learn<sp/>a<sp/>new<sp/>way<sp/>to<sp/>build<sp/>your<sp/>projects.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Who<sp/>will<sp/>maintain<sp/>MLX42?<sp/>How<sp/>long<sp/>can<sp/>this<sp/>be<sp/>guaranteed?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>Currently<sp/>it<sp/>is<sp/>being<sp/>maintained<sp/>by<sp/>`lde-la-h`<sp/>(W2Wizard).<sp/>However<sp/>commits<sp/>from<sp/>the<sp/>42<sp/>Pedago<sp/>or<sp/>really<sp/>anyone<sp/>are<sp/>very<sp/>much<sp/>welcome.</highlight></codeline>
+<codeline><highlight class="normal">I<sp/>myself<sp/>have<sp/>been<sp/>taking<sp/>care<sp/>of<sp/>it<sp/>since<sp/>the<sp/>1st<sp/>of<sp/>January<sp/>2021<sp/>and<sp/>aim<sp/>to<sp/>continue<sp/>to<sp/>support<sp/>it<sp/>until<sp/>I<sp/>can&apos;t.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>time<sp/>comes,<sp/>someone<sp/>else<sp/>will<sp/>take<sp/>the<sp/>lead<sp/>of<sp/>maintaining<sp/>the<sp/>library<sp/>whoever<sp/>that<sp/>may<sp/>be.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;Do<sp/>we<sp/>need<sp/>to<sp/>update<sp/>translations<sp/>or<sp/>subjects,<sp/>etc??&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>Regarding<sp/>the<sp/>subjects,<sp/>as<sp/>long<sp/>as<sp/>the<sp/>library<sp/>not<sp/>being<sp/>adopted<sp/>there&apos;s<sp/>little<sp/>room<sp/>for<sp/>change<sp/>in<sp/>this<sp/>regard.<sp/>However<sp/>the<sp/>good<sp/>news<sp/>is<sp/>that<sp/>it<sp/>basically<sp/>requires<sp/>zero<sp/>effort<sp/>besides<sp/>updating<sp/>the<sp/>links<sp/>on<sp/>the<sp/>intra<sp/>and<sp/>maybe<sp/>changing<sp/>the<sp/>name<sp/>referenced<sp/>inside<sp/>the<sp/>pdf&apos;s.<sp/>There<sp/>is<sp/>really<sp/>nothing<sp/>necessary<sp/>to<sp/>change<sp/>besides<sp/>minor<sp/>things<sp/>and<sp/>to<sp/>adapt<sp/>these<sp/>changes<sp/>would<sp/>literally<sp/>just<sp/>require<sp/>at<sp/>most<sp/>a<sp/>day<sp/>of<sp/>effort.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you&apos;re<sp/>really<sp/>unusure,<sp/>you<sp/>as<sp/>a<sp/>pedago<sp/>/<sp/>campus<sp/>can<sp/>just<sp/>choose<sp/>to<sp/>adopt<sp/>it<sp/>and<sp/>mention<sp/>to<sp/>students<sp/>that<sp/>they<sp/>can<sp/>git<sp/>clone<sp/>it<sp/>from<sp/>here.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;What<sp/>if<sp/>we<sp/>want<sp/>to<sp/>ban<sp/>some<sp/>functions?&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>Contact<sp/>the<sp/>maintainer<sp/>or<sp/>make<sp/>a<sp/>PR<sp/>with<sp/>the<sp/>suggestion<sp/>and<sp/>watch<sp/>it<sp/>get<sp/>merged<sp/>or<sp/>rejected.<sp/>All<sp/>it<sp/>requires<sp/>is<sp/>communication...<sp/>Any<sp/>change<sp/>is<sp/>welcome<sp/>if<sp/>it<sp/>so<sp/>desired.<sp/>You<sp/>don&apos;t<sp/>have<sp/>to<sp/>accept<sp/>anything<sp/>as<sp/>is,<sp/>that<sp/>is<sp/>the<sp/>point<sp/>of<sp/>all<sp/>of<sp/>this.<sp/>That<sp/>if<sp/>something<sp/>needs<sp/>to<sp/>change,<sp/>it<sp/>can<sp/>actually<sp/>happen.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Q:<sp/>**_&quot;I<sp/>don&apos;t<sp/>like<sp/>the<sp/>fact<sp/>that<sp/>it<sp/>uses<sp/>GLFW<sp/>for<sp/>the<sp/>window...&quot;_**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">A:<sp/>`¯\_(ツ)_/¯`<sp/>Well<sp/>it&apos;s<sp/>better<sp/>than<sp/>using<sp/>the<sp/>native<sp/>windowing<sp/>framework,<sp/>at<sp/>least<sp/>it<sp/>is<sp/>portable,<sp/>at<sp/>least<sp/>if<sp/>something<sp/>is<sp/>wrong<sp/>with<sp/>it<sp/>students<sp/>can<sp/>actually<sp/>fix<sp/>it<sp/>by<sp/>making<sp/>a<sp/>PR<sp/>to<sp/>the<sp/>respective<sp/>repository.<sp/>Additionally<sp/>GLFW<sp/>is<sp/>pretty<sp/>standard<sp/>for<sp/>things<sp/>like<sp/>this,<sp/>simply<sp/>checkout<sp/>any<sp/>graphics<sp/>demo<sp/>and<sp/>somewhere<sp/>you<sp/>will<sp/>end<sp/>up<sp/>with<sp/>GLFW<sp/>under<sp/>the<sp/>hood<sp/>quite<sp/>often.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="MLX42/docs/42.md"/>
+  </compounddef>
+</doxygen>

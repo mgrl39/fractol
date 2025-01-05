@@ -1,0 +1,248 @@
+\doxysection{utils.\+c File Reference}
+\hypertarget{utils_8c}{}\label{utils_8c}\index{utils.c@{utils.c}}
+{\ttfamily \#include "{}fractol.\+h"{}}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+Include dependency graph for utils.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{utils_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{utils_8c_aba5be72a261c5846a5d6e7b315548d33}{ft\+\_\+atod}} (const char \texorpdfstring{$\ast$}{*}str)
+\begin{DoxyCompactList}\small\item\em Converts a string to a floating-\/point number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8c_a1f2ff2312e5994560c9537cd9173be94}{ft\+\_\+strcmp}} (const char \texorpdfstring{$\ast$}{*}s1, const char \texorpdfstring{$\ast$}{*}s2)
+\begin{DoxyCompactList}\small\item\em Compares two strings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_aa40f0dfb0dfb158de3f6f8b98f0de3ec}{handle\+\_\+key}} (mlx\+\_\+key\+\_\+data\+\_\+t keydata, void \texorpdfstring{$\ast$}{*}param)
+\begin{DoxyCompactList}\small\item\em Handles key inputs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{utils_8c_ace17996cda407bf3eb3480f07ccdd107}{handle\+\_\+scroll}} (double xdelta, double ydelta, void \texorpdfstring{$\ast$}{*}param)
+\begin{DoxyCompactList}\small\item\em Handles mouse scroll input for zooming. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{utils_8c_a36c588cff7b2e8e39224a1f6105fa39d}{fr\+\_\+putstr\+\_\+fd}} (char \texorpdfstring{$\ast$}{*}s, int fd)
+\begin{DoxyCompactList}\small\item\em Writes a string to a file descriptor and returns. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{utils_8c_a36c588cff7b2e8e39224a1f6105fa39d}\label{utils_8c_a36c588cff7b2e8e39224a1f6105fa39d} 
+\index{utils.c@{utils.c}!fr\_putstr\_fd@{fr\_putstr\_fd}}
+\index{fr\_putstr\_fd@{fr\_putstr\_fd}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{fr\_putstr\_fd()}{fr\_putstr\_fd()}}
+{\footnotesize\ttfamily int fr\+\_\+putstr\+\_\+fd (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{s,  }\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Writes a string to a file descriptor and returns. 
+
+Writes a string to a file descriptor. 
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00109}{109}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00110\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{00116\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00117\ \ \ \ \ count\ =\ 0;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{while}\ (s[i])}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ count\ +=\ write(fd,\ \&s[i++],\ 1);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordflow}{return}\ (count);}
+\DoxyCodeLine{00121\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8c_a36c588cff7b2e8e39224a1f6105fa39d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8c_aba5be72a261c5846a5d6e7b315548d33}\label{utils_8c_aba5be72a261c5846a5d6e7b315548d33} 
+\index{utils.c@{utils.c}!ft\_atod@{ft\_atod}}
+\index{ft\_atod@{ft\_atod}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{ft\_atod()}{ft\_atod()}}
+{\footnotesize\ttfamily double ft\+\_\+atod (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{str }\end{DoxyParamCaption})}
+
+
+
+Converts a string to a floating-\/point number. 
+
+Converts a string to a double. 
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00019}{19}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{structs__atod__data}{t\_atod\_data}}\ \ d;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ =\ 0.0;}
+\DoxyCodeLine{00024\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{fraction}}\ =\ 0.0;}
+\DoxyCodeLine{00025\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{divisor}}\ =\ 10.0;}
+\DoxyCodeLine{00026\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{sign}}\ =\ 1;}
+\DoxyCodeLine{00027\ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ 32\ ||\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ >=\ 9\ \&\&\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ <=\ 13))}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ \textcolor{charliteral}{'-\/'}\ ||\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ \textcolor{charliteral}{'+'})}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++]\ ==\ \textcolor{charliteral}{'-\/'})}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{sign}}\ =\ -\/1;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{while}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ =\ d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ *\ 10.0\ +\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ ==\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{00036\ \ \ \ \ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++;}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{fraction}}\ +=\ (str[d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}]\ -\/\ \textcolor{charliteral}{'0'})\ /\ d.\mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{divisor}};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_a1c034b51d1bacc5038e4bcf05719f691}{divisor}}\ *=\ 10.0;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ d.\mbox{\hyperlink{structs__atod__data_abed26d433d70b1637d4bdcfbb51467ea}{i}}++;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordflow}{return}\ (d.\mbox{\hyperlink{structs__atod__data_aa630f6198f75165f9742e6665a82efd4}{sign}}\ *\ (d.\mbox{\hyperlink{structs__atod__data_a5ff3667aaad7e7690c7cf296dbf94f05}{result}}\ +\ d.\mbox{\hyperlink{structs__atod__data_a3d0824c3315752e075d95d225a95a72c}{fraction}}));}
+\DoxyCodeLine{00046\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{utils_8c_aba5be72a261c5846a5d6e7b315548d33_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8c_a1f2ff2312e5994560c9537cd9173be94}\label{utils_8c_a1f2ff2312e5994560c9537cd9173be94} 
+\index{utils.c@{utils.c}!ft\_strcmp@{ft\_strcmp}}
+\index{ft\_strcmp@{ft\_strcmp}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{ft\_strcmp()}{ft\_strcmp()}}
+{\footnotesize\ttfamily int ft\+\_\+strcmp (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{s1,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Compares two strings. 
+
+
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00051}{51}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{while}\ (s1[i]\ ==\ s2[i]\ \&\&\ s1[i])}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{return}\ (s1[i]\ -\/\ s2[i]);}
+\DoxyCodeLine{00059\ \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8c_a1f2ff2312e5994560c9537cd9173be94_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8c_aa40f0dfb0dfb158de3f6f8b98f0de3ec}\label{utils_8c_aa40f0dfb0dfb158de3f6f8b98f0de3ec} 
+\index{utils.c@{utils.c}!handle\_key@{handle\_key}}
+\index{handle\_key@{handle\_key}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{handle\_key()}{handle\_key()}}
+{\footnotesize\ttfamily void handle\+\_\+key (\begin{DoxyParamCaption}\item[{mlx\+\_\+key\+\_\+data\+\_\+t}]{keydata,  }\item[{void \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+
+
+Handles key inputs. 
+
+
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00064}{64}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{structs__data}{t\_data}}\ \ \ \ *data;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ data\ =\ (\mbox{\hyperlink{structs__data}{t\_data}}\ *)param;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_ESCAPE)}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ mlx\_close\_window(data-\/>\mbox{\hyperlink{structs__data_aa08af92adf0cee639d22b46c2d8b0b97}{mlx}});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_W)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}]\ -\/=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_S)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}]\ +=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_A)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}]\ -\/=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_D)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}]\ +=\ 0.1\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_UP)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f}{ZOOM\_IN}};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (keydata.key\ ==\ MLX\_KEY\_DOWN)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb}{ZOOM\_OUT}};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ <\ 1e-\/5)}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ =\ 1e-\/5;}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{render\_fractal}}(data);}
+\DoxyCodeLine{00086\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8c_aa40f0dfb0dfb158de3f6f8b98f0de3ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{utils_8c_aa40f0dfb0dfb158de3f6f8b98f0de3ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{utils_8c_ace17996cda407bf3eb3480f07ccdd107}\label{utils_8c_ace17996cda407bf3eb3480f07ccdd107} 
+\index{utils.c@{utils.c}!handle\_scroll@{handle\_scroll}}
+\index{handle\_scroll@{handle\_scroll}!utils.c@{utils.c}}
+\doxysubsubsection{\texorpdfstring{handle\_scroll()}{handle\_scroll()}}
+{\footnotesize\ttfamily void handle\+\_\+scroll (\begin{DoxyParamCaption}\item[{double}]{xdelta,  }\item[{double}]{ydelta,  }\item[{void \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+
+
+Handles mouse scroll input for zooming. 
+
+Handles scroll inputs. 
+
+Definition at line \mbox{\hyperlink{utils_8c_source_l00091}{91}} of file \mbox{\hyperlink{utils_8c_source}{utils.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{structs__data}{t\_data}}\ \ \ \ *data;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ (void)xdelta;}
+\DoxyCodeLine{00096\ \ \ \ \ data\ =\ (\mbox{\hyperlink{structs__data}{t\_data}}\ *)param;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{if}\ (ydelta\ >\ 0)}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_aa813bcbaa49ae9634074bf0b9631c60f}{ZOOM\_IN}};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ *=\ \mbox{\hyperlink{fractol_8h_a8e0f57f5fcbd0dc149358de9eaa2e4fb}{ZOOM\_OUT}};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ <\ 1e-\/5)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ =\ 1e-\/5;}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{render\_fractal}}(data);}
+\DoxyCodeLine{00104\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{utils_8c_ace17996cda407bf3eb3480f07ccdd107_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{utils_8c_ace17996cda407bf3eb3480f07ccdd107_icgraph}
+\end{center}
+\end{figure}

@@ -1,0 +1,169 @@
+.TH "utils.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+utils.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fractol\&.h'\fP
+.br
+\fC#include <unistd\&.h>\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBft_atod\fP (const char *str)"
+.br
+.RI "Converts a string to a floating-point number\&. "
+.ti -1c
+.RI "int \fBft_strcmp\fP (const char *s1, const char *s2)"
+.br
+.RI "Compares two strings\&. "
+.ti -1c
+.RI "void \fBhandle_key\fP (mlx_key_data_t keydata, void *param)"
+.br
+.RI "Handles key inputs\&. "
+.ti -1c
+.RI "void \fBhandle_scroll\fP (double xdelta, double ydelta, void *param)"
+.br
+.RI "Handles mouse scroll input for zooming\&. "
+.ti -1c
+.RI "int \fBfr_putstr_fd\fP (char *s, int fd)"
+.br
+.RI "Writes a string to a file descriptor and returns\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "int fr_putstr_fd (char * s, int fd)"
+
+.PP
+Writes a string to a file descriptor and returns\&. Writes a string to a file descriptor\&. 
+.PP
+Definition at line \fB109\fP of file \fButils\&.c\fP\&..PP
+.nf
+110 {
+111     int i;
+112     int count;
+113 
+114     if (!s)
+115         return (0);
+116     i = 0;
+117     count = 0;
+118     while (s[i])
+119         count += write(fd, &s[i++], 1);
+120     return (count);
+121 }
+.fi
+
+.SS "double ft_atod (const char * str)"
+
+.PP
+Converts a string to a floating-point number\&. Converts a string to a double\&. 
+.PP
+Definition at line \fB19\fP of file \fButils\&.c\fP\&..PP
+.nf
+20 {
+21     t_atod_data d;
+22 
+23     d\&.result = 0\&.0;
+24     d\&.fraction = 0\&.0;
+25     d\&.divisor = 10\&.0;
+26     d\&.sign = 1;
+27     d\&.i = 0;
+28     while (str[d\&.i] == 32 || (str[d\&.i] >= 9 && str[d\&.i] <= 13))
+29         d\&.i++;
+30     if (str[d\&.i] == '\-' || str[d\&.i] == '+')
+31         if (str[d\&.i++] == '\-')
+32             d\&.sign = \-1;
+33     while (str[d\&.i] >= '0' && str[d\&.i] <= '9')
+34         d\&.result = d\&.result * 10\&.0 + (str[d\&.i++] \- '0');
+35     if (str[d\&.i] == '\&.')
+36     {
+37         d\&.i++;
+38         while (str[d\&.i] >= '0' && str[d\&.i] <= '9')
+39         {
+40             d\&.fraction += (str[d\&.i] \- '0') / d\&.divisor;
+41             d\&.divisor *= 10\&.0;
+42             d\&.i++;
+43         }
+44     }
+45     return (d\&.sign * (d\&.result + d\&.fraction));
+46 }
+.fi
+
+.SS "int ft_strcmp (const char * s1, const char * s2)"
+
+.PP
+Compares two strings\&. 
+.PP
+Definition at line \fB51\fP of file \fButils\&.c\fP\&..PP
+.nf
+52 {
+53     int i;
+54 
+55     i = 0;
+56     while (s1[i] == s2[i] && s1[i])
+57         i++;
+58     return (s1[i] \- s2[i]);
+59 }
+.fi
+
+.SS "void handle_key (mlx_key_data_t keydata, void * param)"
+
+.PP
+Handles key inputs\&. 
+.PP
+Definition at line \fB64\fP of file \fButils\&.c\fP\&..PP
+.nf
+65 {
+66     t_data  *data;
+67 
+68     data = (t_data *)param;
+69     if (keydata\&.key == MLX_KEY_ESCAPE)
+70         mlx_close_window(data\->mlx);
+71     else if (keydata\&.key == MLX_KEY_W)
+72         data\->offset[OFFSET_Y] \-= 0\&.1 / data\->zoom;
+73     else if (keydata\&.key == MLX_KEY_S)
+74         data\->offset[OFFSET_Y] += 0\&.1 / data\->zoom;
+75     else if (keydata\&.key == MLX_KEY_A)
+76         data\->offset[OFFSET_X] \-= 0\&.1 / data\->zoom;
+77     else if (keydata\&.key == MLX_KEY_D)
+78         data\->offset[OFFSET_X] += 0\&.1 / data\->zoom;
+79     else if (keydata\&.key == MLX_KEY_UP)
+80         data\->zoom *= ZOOM_IN;
+81     else if (keydata\&.key == MLX_KEY_DOWN)
+82         data\->zoom *= ZOOM_OUT;
+83     if (data\->zoom < 1e\-5)
+84         data\->zoom = 1e\-5;
+85     render_fractal(data);
+86 }
+.fi
+
+.SS "void handle_scroll (double xdelta, double ydelta, void * param)"
+
+.PP
+Handles mouse scroll input for zooming\&. Handles scroll inputs\&. 
+.PP
+Definition at line \fB91\fP of file \fButils\&.c\fP\&..PP
+.nf
+92 {
+93     t_data  *data;
+94 
+95     (void)xdelta;
+96     data = (t_data *)param;
+97     if (ydelta > 0)
+98         data\->zoom *= ZOOM_IN;
+99     else
+100         data\->zoom *= ZOOM_OUT;
+101     if (data\->zoom < 1e\-5)
+102         data\->zoom = 1e\-5;
+103     render_fractal(data);
+104 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

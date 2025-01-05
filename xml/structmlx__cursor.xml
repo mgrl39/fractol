@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__cursor" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_cursor</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__cursor_1ab7eabf6837407c6a795125dbbff97a3d" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_cursor::param</definition>
+        <argsstring></argsstring>
+        <name>param</name>
+        <qualifiedname>mlx_cursor::param</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="128" column="5" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="128" bodyend="-1"/>
+        <referencedby refid="mlx__mouse_8c_1ad8835883f060f870b6ecdba029f6e136" compoundref="mlx__mouse_8c" startline="33" endline="39">mlx_cursor_cb</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__cursor_1ad4f87bc3591f3f0302886c181c77f578" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1ad4c4c910151f676379dae74732de5166" kindref="member">mlx_cursorfunc</ref></type>
+        <definition>mlx_cursorfunc mlx_cursor::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <qualifiedname>mlx_cursor::func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="129" column="15" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="129" bodyend="-1"/>
+        <referencedby refid="mlx__mouse_8c_1ad8835883f060f870b6ecdba029f6e136" compoundref="mlx__mouse_8c" startline="33" endline="39">mlx_cursor_cb</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_cursor</label>
+        <link refid="structmlx__cursor"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="126" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="127" bodyend="130"/>
+    <listofallmembers>
+      <member refid="structmlx__cursor_1ad4f87bc3591f3f0302886c181c77f578" prot="public" virt="non-virtual"><scope>mlx_cursor</scope><name>func</name></member>
+      <member refid="structmlx__cursor_1ab7eabf6837407c6a795125dbbff97a3d" prot="public" virt="non-virtual"><scope>mlx_cursor</scope><name>param</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

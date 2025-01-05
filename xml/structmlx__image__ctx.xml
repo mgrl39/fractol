@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__image__ctx" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_image_ctx</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__image__ctx_1a54602bb761f688f9511f78b83c16e2ad" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a68c4714e43d8e827d80759f9cb864f3c" kindref="member">GLuint</ref></type>
+        <definition>GLuint mlx_image_ctx::texture</definition>
+        <argsstring></argsstring>
+        <name>texture</name>
+        <qualifiedname>mlx_image_ctx::texture</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="208" column="7" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="208" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__image__ctx_1a252420965acb494a1937b6d2036043f3" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t mlx_image_ctx::instances_capacity</definition>
+        <argsstring></argsstring>
+        <name>instances_capacity</name>
+        <qualifiedname>mlx_image_ctx::instances_capacity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="209" column="7" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="209" bodyend="-1"/>
+        <referencedby refid="mlx__images_8c_1a8191539ebf00b641dee5842619d95845" compoundref="mlx__images_8c" startline="87" endline="101">mlx_grow_instances</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_image_ctx</label>
+        <link refid="structmlx__image__ctx"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="206" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="207" bodyend="210"/>
+    <listofallmembers>
+      <member refid="structmlx__image__ctx_1a252420965acb494a1937b6d2036043f3" prot="public" virt="non-virtual"><scope>mlx_image_ctx</scope><name>instances_capacity</name></member>
+      <member refid="structmlx__image__ctx_1a54602bb761f688f9511f78b83c16e2ad" prot="public" virt="non-virtual"><scope>mlx_image_ctx</scope><name>texture</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

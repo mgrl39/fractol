@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_30bd0080fce9ee385070a39f9acfac0d" kind="dir">
+    <compoundname>MLX42/src</compoundname>
+    <innerdir refid="dir_067e6f7381e63a110d5a508e608a7722">MLX42/src/font</innerdir>
+    <innerdir refid="dir_2e19c031ff13f949ea0e4f22629af210">MLX42/src/textures</innerdir>
+    <innerdir refid="dir_7e21fbe883470f0cdbc53066ebed3d72">MLX42/src/utils</innerdir>
+    <innerfile refid="mlx__cursor_8c">mlx_cursor.c</innerfile>
+    <innerfile refid="mlx__exit_8c">mlx_exit.c</innerfile>
+    <innerfile refid="mlx__images_8c">mlx_images.c</innerfile>
+    <innerfile refid="mlx__init_8c">mlx_init.c</innerfile>
+    <innerfile refid="mlx__keys_8c">mlx_keys.c</innerfile>
+    <innerfile refid="mlx__loop_8c">mlx_loop.c</innerfile>
+    <innerfile refid="mlx__monitor_8c">mlx_monitor.c</innerfile>
+    <innerfile refid="mlx__mouse_8c">mlx_mouse.c</innerfile>
+    <innerfile refid="mlx__put__pixel_8c">mlx_put_pixel.c</innerfile>
+    <innerfile refid="mlx__window_8c">mlx_window.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/src/"/>
+  </compounddef>
+</doxygen>

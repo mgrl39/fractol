@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLodePNGDecompressSettings" kind="struct" language="C++" prot="public">
+    <compoundname>LodePNGDecompressSettings</compoundname>
+    <includes refid="lodepng_8h" local="no">lodepng.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLodePNGDecompressSettings_1afab4b919650b51b4d2f175a60ed6c580" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecompressSettings::ignore_adler32</definition>
+        <argsstring></argsstring>
+        <name>ignore_adler32</name>
+        <qualifiedname>LodePNGDecompressSettings::ignore_adler32</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="316" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="316" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecompressSettings_1a0bdb19d05ae04b4fce7ed8c72463ab57" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecompressSettings::ignore_nlen</definition>
+        <argsstring></argsstring>
+        <name>ignore_nlen</name>
+        <qualifiedname>LodePNGDecompressSettings::ignore_nlen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="317" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="317" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecompressSettings_1a44a3616151a81422c237a5334752299c" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t LodePNGDecompressSettings::max_output_size</definition>
+        <argsstring></argsstring>
+        <name>max_output_size</name>
+        <qualifiedname>LodePNGDecompressSettings::max_output_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="324" column="10" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="324" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecompressSettings_1a9dd432e46330dbd2ce3ef1929c64337d" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref>(*</type>
+        <definition>unsigned(* LodePNGDecompressSettings::custom_zlib) (unsigned char **, size_t *, const unsigned char *, size_t, const LodePNGDecompressSettings *)</definition>
+        <argsstring>)(unsigned char **, size_t *, const unsigned char *, size_t, const LodePNGDecompressSettings *)</argsstring>
+        <name>custom_zlib</name>
+        <qualifiedname>LodePNGDecompressSettings::custom_zlib</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="328" column="3" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="328" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecompressSettings_1a023aa5946c99934d40280850a4d8b204" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref>(*</type>
+        <definition>unsigned(* LodePNGDecompressSettings::custom_inflate) (unsigned char **, size_t *, const unsigned char *, size_t, const LodePNGDecompressSettings *)</definition>
+        <argsstring>)(unsigned char **, size_t *, const unsigned char *, size_t, const LodePNGDecompressSettings *)</argsstring>
+        <name>custom_inflate</name>
+        <qualifiedname>LodePNGDecompressSettings::custom_inflate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="334" column="3" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="334" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecompressSettings_1a66e3608b541c64bb275c0ac1a80c3ec6" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">const</ref> <ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>const void* LodePNGDecompressSettings::custom_context</definition>
+        <argsstring></argsstring>
+        <name>custom_context</name>
+        <qualifiedname>LodePNGDecompressSettings::custom_context</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="338" column="14" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="338" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LodePNGDecompressSettings</label>
+        <link refid="structLodePNGDecompressSettings"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/lodepng/lodepng.h" line="314" column="1" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="314" bodyend="339"/>
+    <listofallmembers>
+      <member refid="structLodePNGDecompressSettings_1a66e3608b541c64bb275c0ac1a80c3ec6" prot="public" virt="non-virtual"><scope>LodePNGDecompressSettings</scope><name>custom_context</name></member>
+      <member refid="structLodePNGDecompressSettings_1a023aa5946c99934d40280850a4d8b204" prot="public" virt="non-virtual"><scope>LodePNGDecompressSettings</scope><name>custom_inflate</name></member>
+      <member refid="structLodePNGDecompressSettings_1a9dd432e46330dbd2ce3ef1929c64337d" prot="public" virt="non-virtual"><scope>LodePNGDecompressSettings</scope><name>custom_zlib</name></member>
+      <member refid="structLodePNGDecompressSettings_1afab4b919650b51b4d2f175a60ed6c580" prot="public" virt="non-virtual"><scope>LodePNGDecompressSettings</scope><name>ignore_adler32</name></member>
+      <member refid="structLodePNGDecompressSettings_1a0bdb19d05ae04b4fce7ed8c72463ab57" prot="public" virt="non-virtual"><scope>LodePNGDecompressSettings</scope><name>ignore_nlen</name></member>
+      <member refid="structLodePNGDecompressSettings_1a44a3616151a81422c237a5334752299c" prot="public" virt="non-virtual"><scope>LodePNGDecompressSettings</scope><name>max_output_size</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

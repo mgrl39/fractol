@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_6ccce3a88a09911dc4988bfaa7e3d33d" kind="dir">
+    <compoundname>MLX42</compoundname>
+    <innerdir refid="dir_e113d0d3809052ecc699eb04faa04f8e">MLX42/docs</innerdir>
+    <innerdir refid="dir_5f3049182cfa643dd832df871989887f">MLX42/include</innerdir>
+    <innerdir refid="dir_8005a7f332b285f40e924048e1618a03">MLX42/lib</innerdir>
+    <innerdir refid="dir_30bd0080fce9ee385070a39f9acfac0d">MLX42/src</innerdir>
+    <innerdir refid="dir_b06d24d59dc76f92a34175294a0488e4">MLX42/tests</innerdir>
+    <innerdir refid="dir_00e27dcaa8decb8cd1f2a52446537e6b">MLX42/tools</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/"/>
+  </compounddef>
+</doxygen>

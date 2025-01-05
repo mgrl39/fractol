@@ -1,0 +1,333 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="auxiliary__explained_8md" kind="file" language="Markdown">
+    <compoundname>auxiliary_explained.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Funciones<sp/>Auxiliares</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Este<sp/>archivo<sp/>documenta<sp/>las<sp/>funciones<sp/>auxiliares<sp/>utilizadas<sp/>en<sp/>el<sp/>proyecto.<sp/>Estas<sp/>funciones<sp/>son<sp/>clave<sp/>para<sp/>manejar<sp/>tareas<sp/>como<sp/>salida<sp/>de<sp/>texto,<sp/>manipulación<sp/>de<sp/>cadenas<sp/>y<sp/>conversión<sp/>de<sp/>datos.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>ft_strcmp</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>ft_strcmp(const<sp/>char<sp/>*s1,<sp/>const<sp/>char<sp/>*s2)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>i;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(s1[i]<sp/>==<sp/>s2[i]<sp/>&amp;&amp;<sp/>s1[i])</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(s1[i]<sp/>-<sp/>s2[i]);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline><highlight class="normal">`ft_strcmp`<sp/>compara<sp/>dos<sp/>cadenas<sp/>de<sp/>texto<sp/>(`s1`<sp/>y<sp/>`s2`)<sp/>carácter<sp/>por<sp/>carácter.<sp/>Si<sp/>ambas<sp/>cadenas<sp/>son<sp/>idénticas,<sp/>devuelve<sp/>`0`.<sp/>Si<sp/>no,<sp/>devuelve<sp/>la<sp/>diferencia<sp/>numérica<sp/>entre<sp/>los<sp/>valores<sp/>ASCII<sp/>del<sp/>primer<sp/>par<sp/>de<sp/>caracteres<sp/>diferentes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`const<sp/>char<sp/>*s1`:<sp/>Puntero<sp/>a<sp/>la<sp/>primera<sp/>cadena<sp/>de<sp/>texto<sp/>que<sp/>se<sp/>desea<sp/>comparar.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`const<sp/>char<sp/>*s2`:<sp/>Puntero<sp/>a<sp/>la<sp/>segunda<sp/>cadena<sp/>de<sp/>texto<sp/>que<sp/>se<sp/>desea<sp/>comparar.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Retorno</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Devuelve<sp/>`0`<sp/>si<sp/>las<sp/>cadenas<sp/>son<sp/>iguales.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Devuelve<sp/>un<sp/>valor<sp/>positivo<sp/>si<sp/>`s1`<sp/>es<sp/>mayor<sp/>que<sp/>`s2`<sp/>(el<sp/>primer<sp/>carácter<sp/>diferente<sp/>en<sp/>`s1`<sp/>tiene<sp/>un<sp/>valor<sp/>ASCII<sp/>mayor<sp/>que<sp/>en<sp/>`s2`).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Devuelve<sp/>un<sp/>valor<sp/>negativo<sp/>si<sp/>`s1`<sp/>es<sp/>menor<sp/>que<sp/>`s2`<sp/>(el<sp/>primer<sp/>carácter<sp/>diferente<sp/>en<sp/>`s1`<sp/>tiene<sp/>un<sp/>valor<sp/>ASCII<sp/>menor<sp/>que<sp/>en<sp/>`s2`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>funcionamiento</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Iteración<sp/>carácter<sp/>por<sp/>carácter:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Compara<sp/>los<sp/>caracteres<sp/>correspondientes<sp/>de<sp/>`s1`<sp/>y<sp/>`s2`<sp/>hasta<sp/>que<sp/>encuentra<sp/>una<sp/>diferencia<sp/>o<sp/>llega<sp/>al<sp/>final<sp/>de<sp/>una<sp/>de<sp/>las<sp/>cadenas.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Verificación<sp/>de<sp/>igualdad:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>los<sp/>caracteres<sp/>son<sp/>iguales,<sp/>sigue<sp/>comparando.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>encuentra<sp/>un<sp/>carácter<sp/>diferente,<sp/>calcula<sp/>y<sp/>devuelve<sp/>la<sp/>diferencia<sp/>entre<sp/>sus<sp/>valores<sp/>ASCII.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Cadena<sp/>más<sp/>corta:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>una<sp/>cadena<sp/>termina<sp/>antes<sp/>que<sp/>la<sp/>otra,<sp/>la<sp/>función<sp/>considera<sp/>que<sp/>la<sp/>más<sp/>corta<sp/>es<sp/>&quot;menor&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>de<sp/>uso</highlight></codeline>
+<codeline><highlight class="normal">**Es<sp/>el<sp/>encargado<sp/>de<sp/>detectar<sp/>si<sp/>han<sp/>indicado<sp/>`mandelbrot`<sp/>o<sp/>`julia`**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Por<sp/>qué<sp/>es<sp/>útil?</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>es<sp/>esencial<sp/>para<sp/>la<sp/>comparación<sp/>de<sp/>cadenas<sp/>en<sp/>algoritmos<sp/>como<sp/>la<sp/>ordenación<sp/>de<sp/>palabras<sp/>alfabéticamente,<sp/>búsqueda<sp/>en<sp/>bases<sp/>de<sp/>datos,<sp/>o<sp/>cualquier<sp/>otra<sp/>operación<sp/>que<sp/>requiera<sp/>conocer<sp/>el<sp/>orden<sp/>relativo<sp/>entre<sp/>dos<sp/>cadenas<sp/>de<sp/>texto.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>fr_putstr_fd</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>fr_putstr_fd(char<sp/>*s,<sp/>int<sp/>fd)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>i;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>count;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!s)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(s[i])</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>+=<sp/>write(fd,<sp/>&amp;s[i++],<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(count);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline><highlight class="normal">`fr_putstr_fd`<sp/>escribe<sp/>una<sp/>cadena<sp/>de<sp/>texto<sp/>(`s`)<sp/>en<sp/>un<sp/>descriptor<sp/>de<sp/>archivo<sp/>(`fd`).<sp/>Es<sp/>similar<sp/>a<sp/>`puts`<sp/>pero<sp/>con<sp/>la<sp/>capacidad<sp/>de<sp/>escribir<sp/>en<sp/>cualquier<sp/>descriptor<sp/>de<sp/>archivo,<sp/>como<sp/>salida<sp/>estándar<sp/>(1)<sp/>o<sp/>error<sp/>estándar<sp/>(2).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`char<sp/>*s`:<sp/>Puntero<sp/>a<sp/>la<sp/>cadena<sp/>de<sp/>texto<sp/>que<sp/>se<sp/>desea<sp/>escribir.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`int<sp/>fd`:<sp/>Descriptor<sp/>de<sp/>archivo<sp/>donde<sp/>se<sp/>escribe<sp/>la<sp/>cadena:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`1`<sp/>para<sp/>salida<sp/>estándar<sp/>(`stdout`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`2`<sp/>para<sp/>salida<sp/>de<sp/>error<sp/>(`stderr`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Retorno</highlight></codeline>
+<codeline><highlight class="normal">Devuelve<sp/>el<sp/>número<sp/>total<sp/>de<sp/>caracteres<sp/>escritos.<sp/>Si<sp/>la<sp/>cadena<sp/>es<sp/>`NULL`,<sp/>devuelve<sp/>`0`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>funcionamiento</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Validación<sp/>inicial:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>la<sp/>cadena<sp/>`s`<sp/>es<sp/>`NULL`,<sp/>la<sp/>función<sp/>retorna<sp/>`0`<sp/>inmediatamente.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Iteración<sp/>y<sp/>escritura:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Recorre<sp/>la<sp/>cadena<sp/>carácter<sp/>por<sp/>carácter<sp/>usando<sp/>un<sp/>índice<sp/>(`i`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Escribe<sp/>cada<sp/>carácter<sp/>en<sp/>el<sp/>descriptor<sp/>de<sp/>archivo<sp/>usando<sp/>`write`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Incrementa<sp/>un<sp/>contador<sp/>(`count`)<sp/>con<sp/>el<sp/>número<sp/>de<sp/>bytes<sp/>escritos.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Devolución:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Retorna<sp/>el<sp/>valor<sp/>acumulado<sp/>en<sp/>`count`,<sp/>que<sp/>representa<sp/>el<sp/>total<sp/>de<sp/>caracteres<sp/>escritos.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>de<sp/>uso</highlight></codeline>
+<codeline><highlight class="normal">**Es<sp/>el<sp/>encargado<sp/>de<sp/>imprimir<sp/>los<sp/>errores<sp/>cuando<sp/>no<sp/>indican<sp/>los<sp/>parametros<sp/>correctamente.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Por<sp/>qué<sp/>es<sp/>útil?</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>simplifica<sp/>la<sp/>escritura<sp/>en<sp/>descriptores<sp/>de<sp/>archivo,<sp/>permitiendo<sp/>imprimir<sp/>mensajes<sp/>personalizados<sp/>en<sp/>la<sp/>salida<sp/>estándar<sp/>o<sp/>en<sp/>la<sp/>salida<sp/>de<sp/>error,<sp/>sin<sp/>necesidad<sp/>de<sp/>gestionar<sp/>directamente<sp/>`write`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>is_valid_number</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>int<sp/><sp/>is_valid_number(const<sp/>char<sp/>*str)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>i;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/>valid_status[2];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>valid_status[HAS_DIGIT]<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>valid_status[HAS_POINT]<sp/>=<sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(str[i]<sp/>==<sp/>32<sp/>||<sp/>(str[i]<sp/>&gt;=<sp/>9<sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/>13))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(str[i]<sp/>==<sp/>&apos;-&apos;<sp/>||<sp/>str[i]<sp/>==<sp/>&apos;+&apos;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(str[i]<sp/>&gt;=<sp/>&apos;0&apos;<sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/>&apos;9&apos;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid_status[HAS_DIGIT]<sp/>=<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(str[i]<sp/>==<sp/>&apos;.&apos;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>valid_status[HAS_POINT]<sp/>=<sp/>1;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(valid_status[HAS_POINT]<sp/>&amp;&amp;<sp/>(str[i]<sp/>&lt;<sp/>&apos;0&apos;<sp/>||<sp/>str[i]<sp/>&gt;<sp/>&apos;9&apos;))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(0);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>while<sp/>(str[i]<sp/>&gt;=<sp/>&apos;0&apos;<sp/>&amp;&amp;<sp/>str[i]<sp/>&lt;=<sp/>&apos;9&apos;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(valid_status[HAS_DIGIT]<sp/>&amp;&amp;<sp/>str[i]<sp/>==<sp/>&apos;\0&apos;);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline><highlight class="normal">`is_valid_number`<sp/>verifica<sp/>si<sp/>una<sp/>cadena<sp/>de<sp/>texto<sp/>representa<sp/>un<sp/>número<sp/>válido.<sp/>Esto<sp/>incluye<sp/>números<sp/>enteros<sp/>y<sp/>de<sp/>punto<sp/>flotante<sp/>con<sp/>signo<sp/>opcional.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`const<sp/>char<sp/>*str`:<sp/>Puntero<sp/>a<sp/>la<sp/>cadena<sp/>de<sp/>texto<sp/>que<sp/>se<sp/>desea<sp/>validar.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Retorno</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Devuelve<sp/>`1`<sp/>si<sp/>la<sp/>cadena<sp/>es<sp/>un<sp/>número<sp/>válido.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Devuelve<sp/>`0`<sp/>si<sp/>la<sp/>cadena<sp/>no<sp/>es<sp/>válida<sp/>como<sp/>número.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>funcionamiento</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Ignora<sp/>los<sp/>espacios<sp/>iniciales<sp/>y<sp/>caracteres<sp/>de<sp/>control.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Permite<sp/>un<sp/>signo<sp/>(`+`<sp/>o<sp/>`-`)<sp/>al<sp/>inicio.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Verifica<sp/>que<sp/>la<sp/>cadena<sp/>contenga<sp/>al<sp/>menos<sp/>un<sp/>dígito<sp/>antes<sp/>o<sp/>después<sp/>de<sp/>un<sp/>punto<sp/>decimal<sp/>(`.`).</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Si<sp/>hay<sp/>un<sp/>punto<sp/>decimal,<sp/>asegura<sp/>que<sp/>le<sp/>sigan<sp/>dígitos.</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Comprueba<sp/>que<sp/>no<sp/>haya<sp/>caracteres<sp/>adicionales<sp/>después<sp/>del<sp/>número.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>de<sp/>uso</highlight></codeline>
+<codeline><highlight class="normal">**Es<sp/>el<sp/>encargado<sp/>de<sp/>validar<sp/>que<sp/>las<sp/>coordenadas<sp/>pasadas<sp/>para<sp/>`julia`<sp/>sean<sp/>números<sp/>correctos.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Por<sp/>qué<sp/>es<sp/>útil?</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>asegura<sp/>que<sp/>los<sp/>parámetros<sp/>numéricos<sp/>proporcionados<sp/>por<sp/>el<sp/>usuario<sp/>sean<sp/>válidos,<sp/>evitando<sp/>errores<sp/>en<sp/>cálculos<sp/>posteriores.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>4.<sp/>calculate_color</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>calculate_color(int<sp/>iterations)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>double<sp/><sp/>t;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int<sp/><sp/><sp/><sp/><sp/>base_gray;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t_color<sp/>color;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t<sp/>=<sp/>(double)iterations<sp/>/<sp/>MAX_ITERATIONS;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>base_gray<sp/>=<sp/>(30<sp/>+<sp/>190<sp/>*<sp/>(t<sp/>*<sp/>(1<sp/>-<sp/>0.2<sp/>*<sp/>t)));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.r<sp/>=<sp/>base_gray<sp/>-<sp/>(5<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t<sp/>*<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.g<sp/>=<sp/>base_gray<sp/>-<sp/>(10<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>(1<sp/>-<sp/>t));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.b<sp/>=<sp/>base_gray<sp/>-<sp/>(15<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>((0xFF<sp/>&lt;&lt;<sp/>24)<sp/>|<sp/>(color.r<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(color.g<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>color.b);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline><highlight class="normal">`calculate_color`<sp/>genera<sp/>un<sp/>color<sp/>basado<sp/>en<sp/>el<sp/>número<sp/>de<sp/>iteraciones<sp/>realizadas<sp/>para<sp/>un<sp/>píxel<sp/>en<sp/>el<sp/>fractal.<sp/>Produce<sp/>un<sp/>gradiente<sp/>suave<sp/>para<sp/>mejorar<sp/>la<sp/>apariencia<sp/>visual<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`int<sp/>iterations`:<sp/>Número<sp/>de<sp/>iteraciones<sp/>para<sp/>el<sp/>píxel<sp/>actual.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Retorno</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Devuelve<sp/>el<sp/>color<sp/>calculado<sp/>en<sp/>formato<sp/>ARGB<sp/>(Alpha-Red-Green-Blue).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>funcionamiento</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>**Cálculo<sp/>del<sp/>factor<sp/>`t`:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Normaliza<sp/>el<sp/>número<sp/>de<sp/>iteraciones<sp/>(`iterations`)<sp/>al<sp/>rango<sp/>`[0,<sp/>1]`<sp/>dividiéndolo<sp/>por<sp/>el<sp/>máximo<sp/>permitido<sp/>(`MAX_ITERATIONS`).</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>**Base<sp/>gris:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Calcula<sp/>una<sp/>base<sp/>de<sp/>gris<sp/>a<sp/>partir<sp/>de<sp/>`t`,<sp/>ajustando<sp/>el<sp/>brillo<sp/>para<sp/>crear<sp/>un<sp/>efecto<sp/>de<sp/>gradiente.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>base_gray<sp/>=<sp/>(30<sp/>+<sp/>190<sp/>*<sp/>(t<sp/>*<sp/>(1<sp/>-<sp/>0.2<sp/>*<sp/>t)));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>`t`<sp/>se<sp/>ajusta<sp/>para<sp/>crear<sp/>una<sp/>curva<sp/>suave<sp/>mediante<sp/>la<sp/>fórmula:<sp/>`t<sp/>*<sp/>(<sp/>1<sp/>-<sp/>0.2<sp/>*<sp/>t)`.<sp/>Esto<sp/>gnera<sp/>una<sp/>transición<sp/>fluida<sp/>en<sp/>el<sp/>gradiente.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>**Componentes<sp/>RGB:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Ajusta<sp/>cada<sp/>componente<sp/>(`r`,<sp/>`g`,<sp/>`b`)<sp/>para<sp/>añadir<sp/>variaciones<sp/>de<sp/>color<sp/>dependiendo<sp/>del<sp/>nivel<sp/>de<sp/>iteración.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.r<sp/>=<sp/>base_gray<sp/>-<sp/>(5<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t<sp/>*<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.g<sp/>=<sp/>base_gray<sp/>-<sp/>(10<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>(1<sp/>-<sp/>t));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>color.b<sp/>=<sp/>base_gray<sp/>-<sp/>(15<sp/>*<sp/>(1<sp/>-<sp/>t)<sp/>*<sp/>t);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Cada<sp/>componente<sp/>tiene<sp/>una<sp/>fórmula<sp/>ligeramente<sp/>diferente<sp/>para<sp/>generar<sp/>colors<sp/>distintivos<sp/>y<sp/>visualmente<sp/>agradables:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>El<sp/>rojo<sp/>depende<sp/>más<sp/>de<sp/>t^3<sp/>(potencia<sp/>alta).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>El<sp/>azul<sp/>se<sp/>ajusta<sp/>con<sp/>(1<sp/>-<sp/>t)^2<sp/>(mas<sp/>dominante<sp/>en<sp/>el<sp/>rango<sp/>medio).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>El<sp/>azul<sp/>usa<sp/>una<sp/>combinación<sp/>de<sp/>(1<sp/>-<sp/>t)<sp/>y<sp/>t<sp/>para<sp/>un<sp/>efeco<sp/>más<sp/>suave.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/>**Formato<sp/>ARGB:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Combina<sp/>los<sp/>componentes<sp/>en<sp/>un<sp/>entero<sp/>de<sp/>32<sp/>bits<sp/>con<sp/>un<sp/>canal<sp/>Alpha<sp/>completamente<sp/>opaco<sp/>(`0xFF`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>return<sp/>(0xFF<sp/>&lt;&lt;<sp/>24<sp/>|<sp/>(color.r<sp/>&lt;&lt;<sp/>16)<sp/>|<sp/>(color.g<sp/>&lt;&lt;<sp/>8)<sp/>|<sp/>color.b);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>La<sp/>función<sp/>empaqueta<sp/>los<sp/>componentes<sp/>en<sp/>un<sp/>entero<sp/>en<sp/>formato<sp/>ARGB<sp/>(Alpha,<sp/>Red,<sp/>Green,<sp/>Blue):</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`0xFF<sp/>&lt;&lt;<sp/>24`<sp/>-&gt;<sp/>Fija<sp/>el<sp/>canal<sp/>alfa<sp/>a<sp/>255<sp/>(completamente<sp/>opaco).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`(color.r<sp/>&lt;&lt;<sp/>16)`<sp/>-&gt;<sp/>Inserta<sp/>el<sp/>componente<sp/>rojo<sp/>en<sp/>los<sp/>bits<sp/>altos.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`(color.g<sp/>&lt;&lt;<sp/>8)`<sp/>-&gt;<sp/>Inserta<sp/>el<sp/>componente<sp/>verde.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`color.b`<sp/>-&gt;<sp/>Inserta<sp/>el<sp/>componente<sp/>azul.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>de<sp/>uso</highlight></codeline>
+<codeline><highlight class="normal">**Es<sp/>el<sp/>encargado<sp/>de<sp/>calcular<sp/>el<sp/>color<sp/>de<sp/>cada<sp/>píxel<sp/>en<sp/>función<sp/>de<sp/>su<sp/>número<sp/>de<sp/>iteraciones.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Por<sp/>qué<sp/>es<sp/>útil?</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>mejora<sp/>significativamente<sp/>la<sp/>representación<sp/>visual<sp/>del<sp/>fractal,<sp/>permitiendo<sp/>distinguir<sp/>las<sp/>diferentes<sp/>áreas<sp/>según<sp/>su<sp/>comportamiento<sp/>iterativo<sp/>y<sp/>creando<sp/>una<sp/>experiencia<sp/>más<sp/>atractiva<sp/>para<sp/>el<sp/>usuario.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>5.<sp/>calculate_scales_and_limits</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Definición</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>calculate_scales_and_limits(t_render_vars<sp/>*vars,<sp/>t_data<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;scale[SCALE_X]<sp/>=<sp/>4.0<sp/>/<sp/>(WIDTH<sp/>*<sp/>data-&gt;zoom);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;scale[SCALE_Y]<sp/>=<sp/>4.0<sp/>/<sp/>(HEIGHT<sp/>*<sp/>data-&gt;zoom);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;start[COMPLEX_RE]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;zoom<sp/>+<sp/>data-&gt;offset[OFFSET_X];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;start[COMPLEX_IM]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;zoom<sp/>+<sp/>data-&gt;offset[OFFSET_Y];</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;pixels<sp/>=<sp/>(uint32_t<sp/>*)data-&gt;img-&gt;pixels;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">La<sp/>función<sp/>`calculate_scales_and_limits`<sp/>calcula<sp/>las<sp/>escalas<sp/>y<sp/>límites<sp/>del<sp/>plano<sp/>complejo<sp/>que<sp/>se<sp/>usarán<sp/>para<sp/>renderizar<sp/>el<sp/>fractal<sp/>en<sp/>la<sp/>ventana<sp/>gráfica.<sp/>Estos<sp/>valores<sp/>permiten<sp/>traducir<sp/>cada<sp/>píxel<sp/>de<sp/>la<sp/>pantalla<sp/>a<sp/>un<sp/>número<sp/>complejo,<sp/>lo<sp/>que<sp/>es<sp/>esencial<sp/>para<sp/>los<sp/>cálculos<sp/>iterativos<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Parámetros</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`t_render_vars<sp/>*vars`:<sp/>Estructura<sp/>donde<sp/>se<sp/>almacenan<sp/>las<sp/>escalas,<sp/>los<sp/>límites<sp/>iniciales<sp/>del<sp/>plano<sp/>complejo,<sp/>y<sp/>un<sp/>puntero<sp/>al<sp/>buffer<sp/>de<sp/>píxeles.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`t_data<sp/>*data`:<sp/>Contiene<sp/>la<sp/>información<sp/>del<sp/>fractal,<sp/>como<sp/>el<sp/>nivel<sp/>de<sp/>zoom<sp/>y<sp/>el<sp/>desplazamiento<sp/>actual.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Detalles<sp/>del<sp/>funcionamiento</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>1.<sp/>Cálculo<sp/>de<sp/>las<sp/>escalas</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;scale[SCALE_X]<sp/>=<sp/>4.0<sp/>/<sp/>(WIDTH<sp/>*<sp/>data-&gt;zoom);</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;scale[SCALE_Y]<sp/>=<sp/>4.0<sp/>/<sp/>(HEIGHT<sp/>*<sp/>data-&gt;zoom);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**¿Por<sp/>qué<sp/>4.0?**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>El<sp/>plano<sp/>complejo<sp/>inicial<sp/>tiene<sp/>un<sp/>rango<sp/>estándar<sp/>de<sp/>`[-2.0,<sp/>+2.0]`<sp/>en<sp/>ambos<sp/>ejes<sp/>(real<sp/>e<sp/>imaginario).<sp/>Este<sp/>rango<sp/>totaliza<sp/>una<sp/>longitud<sp/>de<sp/>`4.0`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**¿Qué<sp/>hace<sp/>la<sp/>escala?**<sp/>-<sp/>La<sp/>escala<sp/>indica<sp/>cuánto<sp/>representa<sp/>cada<sp/>píxel<sp/>en<sp/>el<sp/>plano<sp/>complejo.<sp/>Por<sp/>ejemplo:<sp/>-<sp/>Con<sp/>`zoom<sp/>=<sp/>1.0`,<sp/>cada<sp/>píxel<sp/>representa<sp/>`4.0<sp/>/<sp/>WIDTH`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Con<sp/>`zoom<sp/>=<sp/>2.0`,<sp/>la<sp/>escala<sp/>es<sp/>más<sp/>pequeña,<sp/>permitiendo<sp/>un<sp/>mayor<sp/>detalle<sp/>al<sp/>acercarse.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.<sp/>Cálculo<sp/>de<sp/>los<sp/>límites<sp/>iniciales</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;start[COMPLEX_RE]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;zoom<sp/>+<sp/>data-&gt;offset[OFFSET_X];</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;start[COMPLEX_IM]<sp/>=<sp/>-2.0<sp/>/<sp/>data-&gt;zoom<sp/>+<sp/>data-&gt;offset[OFFSET_Y];</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**¿Por<sp/>qué<sp/>-2.0?**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>La<sp/>esquina<sp/>superior<sp/>izquierda<sp/>del<sp/>rango<sp/>inicial<sp/>del<sp/>fractal<sp/>comienza<sp/>en<sp/>`(-2.0,<sp/>-2.0)`<sp/>en<sp/>el<sp/>plano<sp/>complejo.<sp/>Este<sp/>punto<sp/>corresponde<sp/>al<sp/>primer<sp/>píxel<sp/>de<sp/>la<sp/>ventana<sp/>gráfica.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Zoom<sp/>y<sp/>desplazamiento:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>El<sp/>`zoom`<sp/>ajusta<sp/>el<sp/>tamaño<sp/>del<sp/>rango<sp/>visible<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>El<sp/>desplazamiento<sp/>(`data-&gt;offset`)<sp/>permite<sp/>mover<sp/>el<sp/>rango<sp/>visible<sp/>del<sp/>fractal<sp/>a<sp/>diferentes<sp/>partes<sp/>del<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>3.<sp/>Asignación<sp/>del<sp/>buffer<sp/>de<sp/>píxeles</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">vars-&gt;pixels<sp/>=<sp/>(uint32_t<sp/>*)data-&gt;img-&gt;pixels;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**¿Qué<sp/>es<sp/>`data-&gt;img-&gt;pixels`?**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Es<sp/>un<sp/>puntero<sp/>al<sp/>área<sp/>de<sp/>memoria<sp/>donde<sp/>se<sp/>almacenan<sp/>los<sp/>colores<sp/>de<sp/>cada<sp/>píxel<sp/>que<sp/>se<sp/>renderizarán<sp/>en<sp/>la<sp/>ventana<sp/>gráfica.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**¿Por<sp/>qué<sp/>se<sp/>castea<sp/>a<sp/>`uint32_t`?**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Los<sp/>píxeles<sp/>están<sp/>representados<sp/>como<sp/>enteros<sp/>de<sp/>32<sp/>bits<sp/>(ARGB:<sp/>Alpha,<sp/>Red,<sp/>Green,<sp/>Blue).<sp/>Castearlos<sp/>a<sp/>`uint32_t`<sp/>facilita<sp/>modificar<sp/>el<sp/>color<sp/>de<sp/>cada<sp/>píxel<sp/>de<sp/>manera<sp/>eficiente.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Ejemplo<sp/>práctico</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Supongamos:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Ventana<sp/>gráfica:**<sp/>`WIDTH<sp/>=<sp/>800`,<sp/>`HEIGHT<sp/>=<sp/>800`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Zoom<sp/>inicial:**<sp/>`1.0`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Desplazamiento<sp/>inicial:**<sp/>`[OFFSET_X,<sp/>OFFSET_Y]<sp/>=<sp/>[0.0,<sp/>0.0]`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Resultado:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>**Escalas:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```plaintext</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>scale[SCALE_X]<sp/>=<sp/>4.0<sp/>/<sp/>800<sp/>=<sp/>0.005</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>scale[SCALE_Y]<sp/>=<sp/>4.0<sp/>/<sp/>800<sp/>=<sp/>0.005</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Límites<sp/>iniciales:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```plaintext</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>start[COMPLEX_RE]<sp/>=<sp/>-2.0<sp/>+<sp/>0.0<sp/>=<sp/>-2.0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>start[COMPLEX_IM]<sp/>=<sp/>-2.0<sp/>+<sp/>0.0<sp/>=<sp/>-2.0</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Buffer<sp/>de<sp/>píxeles:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`vars-&gt;pixels`<sp/>apunta<sp/>al<sp/>inicio<sp/>del<sp/>buffer<sp/>de<sp/>memoria<sp/>donde<sp/>se<sp/>almacenan<sp/>los<sp/>colores<sp/>de<sp/>los<sp/>píxeles.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Importancia<sp/>de<sp/>esta<sp/>función</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Traducción<sp/>entre<sp/>píxeles<sp/>y<sp/>el<sp/>plano<sp/>complejo:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Cada<sp/>píxel<sp/>de<sp/>la<sp/>pantalla<sp/>se<sp/>corresponde<sp/>con<sp/>un<sp/>número<sp/>complejo<sp/>en<sp/>el<sp/>plano.<sp/>Esta<sp/>función<sp/>establece<sp/>esa<sp/>correspondencia<sp/>de<sp/>manera<sp/>precisa.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Adaptabilidad<sp/>al<sp/>zoom<sp/>y<sp/>desplazamiento:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Permite<sp/>acercarse<sp/>o<sp/>alejarse<sp/>del<sp/>fractal<sp/>ajustando<sp/>las<sp/>escalas,<sp/>y<sp/>desplazarse<sp/>por<sp/>diferentes<sp/>partes<sp/>del<sp/>fractal<sp/>modificando<sp/>los<sp/>límites.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Eficiencia:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Precalcular<sp/>las<sp/>escalas<sp/>y<sp/>los<sp/>límites<sp/>evita<sp/>realizar<sp/>estos<sp/>cálculos<sp/>para<sp/>cada<sp/>píxel,<sp/>mejorando<sp/>el<sp/>rendimiento<sp/>del<sp/>renderizado.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">4.<sp/>**¿Por<sp/>qué<sp/>es<sp/>crucial?**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Sin<sp/>estas<sp/>escalas<sp/>y<sp/>límites,<sp/>sería<sp/>imposible<sp/>generar<sp/>el<sp/>fractal<sp/>correctamente.<sp/>Los<sp/>fractales<sp/>son<sp/>gráficos<sp/>basados<sp/>en<sp/>números<sp/>complejos,<sp/>y<sp/>esta<sp/>función<sp/>conecta<sp/>el<sp/>mundo<sp/>&quot;físico&quot;<sp/>de<sp/>los<sp/>píxeles<sp/>con<sp/>el<sp/>mundo<sp/>&quot;matemático&quot;<sp/>del<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline></codeline>
+    </programlisting>
+    <location file="auxiliary_explained.md"/>
+  </compounddef>
+</doxygen>

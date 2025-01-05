@@ -1,0 +1,2623 @@
+.TH "MLX42/include/MLX42/MLX42.h" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/include/MLX42/MLX42.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stddef\&.h>\fP
+.br
+\fC#include <stdint\&.h>\fP
+.br
+\fC#include <stdbool\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBmlx_texture\fP"
+.br
+.ti -1c
+.RI "struct \fBxpm\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_instance\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_key_data\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx_image\fP"
+.br
+.ti -1c
+.RI "struct \fBmlx\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBaction\fP \fBaction_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBmodifier_key\fP \fBmodifier_key_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBmouse_key\fP \fBmouse_key_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBmouse_mode\fP \fBmouse_mode_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBcursor\fP \fBcursor_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBkeys\fP \fBkeys_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_texture\fP \fBmlx_texture_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBxpm\fP \fBxpm_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_instance\fP \fBmlx_instance_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_key_data\fP \fBmlx_key_data_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx_image\fP \fBmlx_image_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBmlx\fP \fBmlx_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBmlx_errno\fP \fBmlx_errno_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBmlx_settings\fP \fBmlx_settings_t\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBvoid\fP(* \fBmlx_scrollfunc\fP) (\fBdouble\fP \fBxdelta\fP, \fBdouble\fP \fBydelta\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBvoid\fP(* \fBmlx_mousefunc\fP) (\fBmouse_key_t\fP \fBbutton\fP, \fBaction_t\fP \fBaction\fP, \fBmodifier_key_t\fP \fBmods\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBvoid\fP(* \fBmlx_cursorfunc\fP) (\fBdouble\fP \fBxpos\fP, \fBdouble\fP \fBypos\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBvoid\fP(* \fBmlx_keyfunc\fP) (\fBmlx_key_data_t\fP \fBkeydata\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBvoid\fP(* \fBmlx_resizefunc\fP) (\fBint32_t\fP \fBwidth\fP, \fBint32_t\fP \fBheight\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBvoid\fP(* \fBmlx_closefunc\fP) (\fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBvoid\fP \fBmlx_win_cursor_t\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBaction\fP { \fBMLX_RELEASE\fP = 0, \fBMLX_PRESS\fP = 1, \fBMLX_REPEAT\fP = 2 }"
+.br
+.ti -1c
+.RI "enum \fBmodifier_key\fP { \fBMLX_SHIFT\fP = 0x0001, \fBMLX_CONTROL\fP = 0x0002, \fBMLX_ALT\fP = 0x0004, \fBMLX_SUPERKEY\fP = 0x0008, \fBMLX_CAPSLOCK\fP = 0x0010, \fBMLX_NUMLOCK\fP = 0x0020 }"
+.br
+.ti -1c
+.RI "enum \fBmouse_key\fP { \fBMLX_MOUSE_BUTTON_LEFT\fP = 0, \fBMLX_MOUSE_BUTTON_RIGHT\fP = 1, \fBMLX_MOUSE_BUTTON_MIDDLE\fP = 2 }"
+.br
+.ti -1c
+.RI "enum \fBmouse_mode\fP { \fBMLX_MOUSE_NORMAL\fP = 0x00034001, \fBMLX_MOUSE_HIDDEN\fP = 0x00034002, \fBMLX_MOUSE_DISABLED\fP = 0x00034003 }"
+.br
+.ti -1c
+.RI "enum \fBcursor\fP { \fBMLX_CURSOR_ARROW\fP = 0x00036001, \fBMLX_CURSOR_IBEAM\fP = 0x00036002, \fBMLX_CURSOR_CROSSHAIR\fP = 0x00036003, \fBMLX_CURSOR_HAND\fP = 0x00036004, \fBMLX_CURSOR_HRESIZE\fP = 0x00036005, \fBMLX_CURSOR_VRESIZE\fP = 0x00036006 }"
+.br
+.ti -1c
+.RI "enum \fBkeys\fP { \fBMLX_KEY_SPACE\fP = 32, \fBMLX_KEY_APOSTROPHE\fP = 39, \fBMLX_KEY_COMMA\fP = 44, \fBMLX_KEY_MINUS\fP = 45, \fBMLX_KEY_PERIOD\fP = 46, \fBMLX_KEY_SLASH\fP = 47, \fBMLX_KEY_0\fP = 48, \fBMLX_KEY_1\fP = 49, \fBMLX_KEY_2\fP = 50, \fBMLX_KEY_3\fP = 51, \fBMLX_KEY_4\fP = 52, \fBMLX_KEY_5\fP = 53, \fBMLX_KEY_6\fP = 54, \fBMLX_KEY_7\fP = 55, \fBMLX_KEY_8\fP = 56, \fBMLX_KEY_9\fP = 57, \fBMLX_KEY_SEMICOLON\fP = 59, \fBMLX_KEY_EQUAL\fP = 61, \fBMLX_KEY_A\fP = 65, \fBMLX_KEY_B\fP = 66, \fBMLX_KEY_C\fP = 67, \fBMLX_KEY_D\fP = 68, \fBMLX_KEY_E\fP = 69, \fBMLX_KEY_F\fP = 70, \fBMLX_KEY_G\fP = 71, \fBMLX_KEY_H\fP = 72, \fBMLX_KEY_I\fP = 73, \fBMLX_KEY_J\fP = 74, \fBMLX_KEY_K\fP = 75, \fBMLX_KEY_L\fP = 76, \fBMLX_KEY_M\fP = 77, \fBMLX_KEY_N\fP = 78, \fBMLX_KEY_O\fP = 79, \fBMLX_KEY_P\fP = 80, \fBMLX_KEY_Q\fP = 81, \fBMLX_KEY_R\fP = 82, \fBMLX_KEY_S\fP = 83, \fBMLX_KEY_T\fP = 84, \fBMLX_KEY_U\fP = 85, \fBMLX_KEY_V\fP = 86, \fBMLX_KEY_W\fP = 87, \fBMLX_KEY_X\fP = 88, \fBMLX_KEY_Y\fP = 89, \fBMLX_KEY_Z\fP = 90, \fBMLX_KEY_LEFT_BRACKET\fP = 91, \fBMLX_KEY_BACKSLASH\fP = 92, \fBMLX_KEY_RIGHT_BRACKET\fP = 93, \fBMLX_KEY_GRAVE_ACCENT\fP = 96, \fBMLX_KEY_ESCAPE\fP = 256, \fBMLX_KEY_ENTER\fP = 257, \fBMLX_KEY_TAB\fP = 258, \fBMLX_KEY_BACKSPACE\fP = 259, \fBMLX_KEY_INSERT\fP = 260, \fBMLX_KEY_DELETE\fP = 261, \fBMLX_KEY_RIGHT\fP = 262, \fBMLX_KEY_LEFT\fP = 263, \fBMLX_KEY_DOWN\fP = 264, \fBMLX_KEY_UP\fP = 265, \fBMLX_KEY_PAGE_UP\fP = 266, \fBMLX_KEY_PAGE_DOWN\fP = 267, \fBMLX_KEY_HOME\fP = 268, \fBMLX_KEY_END\fP = 269, \fBMLX_KEY_CAPS_LOCK\fP = 280, \fBMLX_KEY_SCROLL_LOCK\fP = 281, \fBMLX_KEY_NUM_LOCK\fP = 282, \fBMLX_KEY_PRINT_SCREEN\fP = 283, \fBMLX_KEY_PAUSE\fP = 284, \fBMLX_KEY_F1\fP = 290, \fBMLX_KEY_F2\fP = 291, \fBMLX_KEY_F3\fP = 292, \fBMLX_KEY_F4\fP = 293, \fBMLX_KEY_F5\fP = 294, \fBMLX_KEY_F6\fP = 295, \fBMLX_KEY_F7\fP = 296, \fBMLX_KEY_F8\fP = 297, \fBMLX_KEY_F9\fP = 298, \fBMLX_KEY_F10\fP = 299, \fBMLX_KEY_F11\fP = 300, \fBMLX_KEY_F12\fP = 301, \fBMLX_KEY_F13\fP = 302, \fBMLX_KEY_F14\fP = 303, \fBMLX_KEY_F15\fP = 304, \fBMLX_KEY_F16\fP = 305, \fBMLX_KEY_F17\fP = 306, \fBMLX_KEY_F18\fP = 307, \fBMLX_KEY_F19\fP = 308, \fBMLX_KEY_F20\fP = 309, \fBMLX_KEY_F21\fP = 310, \fBMLX_KEY_F22\fP = 311, \fBMLX_KEY_F23\fP = 312, \fBMLX_KEY_F24\fP = 313, \fBMLX_KEY_F25\fP = 314, \fBMLX_KEY_KP_0\fP = 320, \fBMLX_KEY_KP_1\fP = 321, \fBMLX_KEY_KP_2\fP = 322, \fBMLX_KEY_KP_3\fP = 323, \fBMLX_KEY_KP_4\fP = 324, \fBMLX_KEY_KP_5\fP = 325, \fBMLX_KEY_KP_6\fP = 326, \fBMLX_KEY_KP_7\fP = 327, \fBMLX_KEY_KP_8\fP = 328, \fBMLX_KEY_KP_9\fP = 329, \fBMLX_KEY_KP_DECIMAL\fP = 330, \fBMLX_KEY_KP_DIVIDE\fP = 331, \fBMLX_KEY_KP_MULTIPLY\fP = 332, \fBMLX_KEY_KP_SUBTRACT\fP = 333, \fBMLX_KEY_KP_ADD\fP = 334, \fBMLX_KEY_KP_ENTER\fP = 335, \fBMLX_KEY_KP_EQUAL\fP = 336, \fBMLX_KEY_LEFT_SHIFT\fP = 340, \fBMLX_KEY_LEFT_CONTROL\fP = 341, \fBMLX_KEY_LEFT_ALT\fP = 342, \fBMLX_KEY_LEFT_SUPER\fP = 343, \fBMLX_KEY_RIGHT_SHIFT\fP = 344, \fBMLX_KEY_RIGHT_CONTROL\fP = 345, \fBMLX_KEY_RIGHT_ALT\fP = 346, \fBMLX_KEY_RIGHT_SUPER\fP = 347, \fBMLX_KEY_MENU\fP = 348 }"
+.br
+.ti -1c
+.RI "enum \fBmlx_errno\fP { \fBMLX_SUCCESS\fP = 0, \fBMLX_INVEXT\fP, \fBMLX_INVFILE\fP, \fBMLX_INVPNG\fP, \fBMLX_INVXPM\fP, \fBMLX_INVPOS\fP, \fBMLX_INVDIM\fP, \fBMLX_INVIMG\fP, \fBMLX_VERTFAIL\fP, \fBMLX_FRAGFAIL\fP, \fBMLX_SHDRFAIL\fP, \fBMLX_MEMFAIL\fP, \fBMLX_GLADFAIL\fP, \fBMLX_GLFWFAIL\fP, \fBMLX_WINFAIL\fP, \fBMLX_STRTOOBIG\fP, \fBMLX_ERRMAX\fP }"
+.br
+.ti -1c
+.RI "enum \fBmlx_settings\fP { \fBMLX_STRETCH_IMAGE\fP = 0, \fBMLX_FULLSCREEN\fP, \fBMLX_MAXIMIZED\fP, \fBMLX_DECORATED\fP, \fBMLX_HEADLESS\fP, \fBMLX_SETTINGS_MAX\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBconst\fP \fBchar\fP * \fBmlx_strerror\fP (\fBmlx_errno_t\fP \fBval\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_t\fP * \fBmlx_init\fP (\fBint32_t\fP \fBwidth\fP, \fBint32_t\fP \fBheight\fP, \fBconst\fP \fBchar\fP *\fBtitle\fP, \fBbool\fP \fBresize\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_setting\fP (\fBmlx_settings_t\fP \fBsetting\fP, \fBint32_t\fP \fBvalue\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_close_window\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_loop\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_icon\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_texture_t\fP *\fBimage\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_terminate\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBdouble\fP \fBmlx_get_time\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_focus\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_get_monitor_size\fP (\fBint32_t\fP \fBindex\fP, \fBint32_t\fP *\fBwidth\fP, \fBint32_t\fP *\fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBxpos\fP, \fBint32_t\fP \fBypos\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_get_window_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP *\fBxpos\fP, \fBint32_t\fP *\fBypos\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_size\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBnew_width\fP, \fBint32_t\fP \fBnew_height\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_limit\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBmin_w\fP, \fBint32_t\fP \fBmin_h\fP, \fBint32_t\fP \fBmax_w\fP, \fBint32_t\fP \fBmax_h\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_window_title\fP (\fBmlx_t\fP *\fBmlx\fP, \fBconst\fP \fBchar\fP *\fBtitle\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_is_key_down\fP (\fBmlx_t\fP *\fBmlx\fP, \fBkeys_t\fP key)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_is_mouse_down\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmouse_key_t\fP key)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_get_mouse_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP *\fBx\fP, \fBint32_t\fP *\fBy\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_mouse_pos\fP (\fBmlx_t\fP *\fBmlx\fP, \fBint32_t\fP \fBx\fP, \fBint32_t\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_cursor_mode\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmouse_mode_t\fP \fBmode\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_win_cursor_t\fP * \fBmlx_create_std_cursor\fP (\fBcursor_t\fP \fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_win_cursor_t\fP * \fBmlx_create_cursor\fP (\fBmlx_texture_t\fP *\fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_destroy_cursor\fP (\fBmlx_win_cursor_t\fP *\fBcursor\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_cursor\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_win_cursor_t\fP *\fBcursor\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_scroll_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_scrollfunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_mouse_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_mousefunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_cursor_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_cursorfunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_key_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_keyfunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_close_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_closefunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_resize_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_resizefunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_loop_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBvoid\fP(*\fBf\fP)(\fBvoid\fP *), \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_texture_t\fP * \fBmlx_load_png\fP (\fBconst\fP \fBchar\fP *\fBpath\fP)"
+.br
+.ti -1c
+.RI "\fBxpm_t\fP * \fBmlx_load_xpm42\fP (\fBconst\fP \fBchar\fP *\fBpath\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_delete_texture\fP (\fBmlx_texture_t\fP *\fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_delete_xpm42\fP (\fBxpm_t\fP *\fBxpm\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_image_t\fP * \fBmlx_texture_to_image\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_texture_t\fP *\fBtexture\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_put_pixel\fP (\fBmlx_image_t\fP *\fBimage\fP, \fBuint32_t\fP \fBx\fP, \fBuint32_t\fP \fBy\fP, \fBuint32_t\fP \fBcolor\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_image_t\fP * \fBmlx_new_image\fP (\fBmlx_t\fP *\fBmlx\fP, \fBuint32_t\fP \fBwidth\fP, \fBuint32_t\fP \fBheight\fP)"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_image_to_window\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_image_t\fP *\fBimg\fP, \fBint32_t\fP \fBx\fP, \fBint32_t\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_delete_image\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_image_t\fP *\fBimage\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_resize_image\fP (\fBmlx_image_t\fP *\fBimg\fP, \fBuint32_t\fP \fBnwidth\fP, \fBuint32_t\fP \fBnheight\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_set_instance_depth\fP (\fBmlx_instance_t\fP *\fBinstance\fP, \fBint32_t\fP zdepth)"
+.br
+.ti -1c
+.RI "\fBmlx_image_t\fP * \fBmlx_put_string\fP (\fBmlx_t\fP *\fBmlx\fP, \fBconst\fP \fBchar\fP *\fBstr\fP, \fBint32_t\fP \fBx\fP, \fBint32_t\fP \fBy\fP)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBmlx_texture_t\fP * \fBmlx_get_font\fP (\fBvoid\fP)"
+.br
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_get_texoffset\fP (\fBchar\fP c)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBmlx_errno_t\fP \fBmlx_errno\fP"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBtypedef\fP \fBenum\fP \fBaction\fP \fBaction_t\fP"
+MLX42 is a cross-platform low level and simple graphics library written in C and uses OpenGL and GLFW for it's underlying windowing and rendering system\&.
+.PP
+It's a much more up-to-date alternative to the miniLibX which has been extensively proven to be fragile, unmaintained, deprecated and just plain painfully bad to work with\&. Also its code quality is dubious\&.
+.PP
+Some structs contain potential void* which are to be ignored as they simply represent points of abstraction to the hidden internal header\&. This abstraction is crucial as the whole point of this lib so to hide all the bells and whistles in the 'engine'\&. Most user's have no need for the inner workings eitherway (shaders, vertex buffer, \&.\&.\&.)\&. 
+.br
+ The input key codes are copied straight from GLFW\&. Any new entries should have the exact same values as defined in the glfw3\&.h\&. A key action such as pressing or releasing a key\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIRELEASE\fP Execute when the key is being released\&. 
+.br
+\fIPRESS\fP Execute when the key is being pressed\&. 
+.br
+\fIREPEAT\fP Execute when the key is being held down\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBenum\fP \fBcursor\fP \fBcursor_t\fP"
+Various cursors that are standard\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIARROW\fP The regular arrow cursor\&. 
+.br
+\fIIBEAM\fP The text input I-beam cursor shape\&. 
+.br
+\fICROSSHAIR\fP The crosshair shape cursor\&. 
+.br
+\fIHAND\fP The hand shape cursor\&. 
+.br
+\fIHRESIZE\fP The horizontal resize arrow shape\&. 
+.br
+\fIVRESIZE\fP The vertical resize arrow shape\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBenum\fP \fBkeys\fP \fBkeys_t\fP"
+All sorts of keyboard keycodes\&.
+.PP
+KP = Keypad\&. 
+.SS "\fBtypedef\fP \fBvoid\fP(* mlx_closefunc) (\fBvoid\fP *\fBparam\fP)"
+Callback function used to handle window closing which is called when the user attempts to close the window, for example by clicking the close widget in the title bar\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIparam\fP Additional parameter to pass on to the function\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB462\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBtypedef\fP \fBvoid\fP(* mlx_cursorfunc) (\fBdouble\fP \fBxpos\fP, \fBdouble\fP \fBypos\fP, \fBvoid\fP *\fBparam\fP)"
+Callback function used to handle raw mouse movement\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIxpos\fP The mouse x position\&. 
+.br
+\fIypos\fP The mouse y position\&. 
+.br
+\fIparam\fP Additional parameter to pass on to the function\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB433\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBtypedef\fP \fBenum\fP \fBmlx_errno\fP \fBmlx_errno_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_image\fP \fBmlx_image_t\fP"
+An image with an individual buffer that can be rendered\&. Any value can be modified except the width/height and context\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP The width of the image\&. 
+.br
+\fIheight\fP The height of the image\&. 
+.br
+\fIpixels\fP The literal pixel data\&. 
+.br
+\fIinstances\fP An instance carrying the X, Y and Z location data\&. 
+.br
+\fIcount\fP The element count of the instances array\&. 
+.br
+\fIenabled\fP If true the image is drawn onto the screen, else it's not\&. 
+.br
+\fIcontext\fP Abstracted OpenGL data\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_instance\fP \fBmlx_instance_t\fP"
+An image instance can be summarized as just a simple x, y & z coordinate\&.
+.PP
+Coordinates start from the top left of the screen at 0,0 and increase towards the bottom right\&.
+.PP
+NOTE: To change the z value, use mlx_set_instance_depth!
+.PP
+\fBParameters\fP
+.RS 4
+\fIx\fP The x location\&. 
+.br
+\fIy\fP The y location\&. 
+.br
+\fIz\fP The z depth, controls if the image is on the fore or background\&. 
+.br
+\fIenabled\fP If true, the instance is drawn, else it's not\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_key_data\fP \fBmlx_key_data_t\fP"
+Key function callback data\&. Data related to the mlx_key_hook function
+.PP
+\fBParameters\fP
+.RS 4
+\fIkey\fP The key that was pressed\&. 
+.br
+\fIaction\fP The action that was done with the key\&. 
+.br
+\fIos_key\fP The os_key is unique for every key, and will have a different value/keycode depending on the platform\&. They may be consistent on different platforms\&. 
+.br
+\fImodifier\fP The modifier key that was pressed, 0 if no key was pressed\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBvoid\fP(* mlx_keyfunc) (\fBmlx_key_data_t\fP \fBkeydata\fP, \fBvoid\fP *\fBparam\fP)"
+Callback function used to handle key presses\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIkeydata\fP The callback data, contains info on key, action, \&.\&.\&. 
+.br
+\fIparam\fP Additional parameter to pass on to the function\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB441\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBtypedef\fP \fBvoid\fP(* mlx_mousefunc) (\fBmouse_key_t\fP \fBbutton\fP, \fBaction_t\fP \fBaction\fP, \fBmodifier_key_t\fP \fBmods\fP, \fBvoid\fP *\fBparam\fP)"
+Callback function used to handle mouse actions\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIbutton\fP The mouse button/key pressed\&. 
+.br
+\fIaction\fP The mouse action that took place\&. 
+.br
+\fImods\fP The modifier keys pressed together with the mouse key\&. 
+.br
+\fIparam\fP Additional parameter to pass on to the function\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB424\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBtypedef\fP \fBvoid\fP(* mlx_resizefunc) (\fBint32_t\fP \fBwidth\fP, \fBint32_t\fP \fBheight\fP, \fBvoid\fP *\fBparam\fP)"
+Callback function used to handle window resizing\&.
+.PP
+WARNING: The function is called every frame during which the window is being resized, be aware!
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP The new width of the window\&. 
+.br
+\fIheight\fP The new height of the window\&. 
+.br
+\fIparam\fP Additional parameter to pass on to the function\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB453\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBtypedef\fP \fBvoid\fP(* mlx_scrollfunc) (\fBdouble\fP \fBxdelta\fP, \fBdouble\fP \fBydelta\fP, \fBvoid\fP *\fBparam\fP)"
+Callback function used to handle scrolling\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIxdelta\fP The mouse x delta\&. 
+.br
+\fIydelta\fP The mouse y delta\&. 
+.br
+\fIparam\fP Additional parameter to pass on to the function\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB414\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBtypedef\fP \fBenum\fP \fBmlx_settings\fP \fBmlx_settings_t\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx\fP \fBmlx_t\fP"
+Main MLX handle, carries important data in regards to the program\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIwindow\fP The window itself\&. 
+.br
+\fIcontext\fP Abstracted opengl data\&. 
+.br
+\fIwidth\fP The width of the window\&. 
+.br
+\fIheight\fP The height of the window\&. 
+.br
+\fIdelta_time\fP The time difference between the previous frame and the current frame\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBmlx_texture\fP \fBmlx_texture_t\fP"
+Base object for disk loaded textures\&. It contains rudementary information about the texture\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP The width of the texture\&. 
+.br
+\fIheight\fP The height of the texture\&. 
+.br
+\fIpixels\fP The literal pixel data\&. 
+.br
+\fIbytes_per_pixel\fP The amount of bytes in a pixel, always 4\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBvoid\fP \fBmlx_win_cursor_t\fP"
+Typedef for a window cursor object, these eventually expand to the native cursor object, but are hidden from the user\&.
+.PP
+Under GLFW they are named GLFWcursor and have a wrapper for each implementation\&. You can find the ACTUAL cursor in the following files at GLFW named under *_platform\&.h 
+.PP
+Definition at line \fB471\fP of file \fBMLX42\&.h\fP\&.
+.SS "\fBtypedef\fP \fBenum\fP \fBmodifier_key\fP \fBmodifier_key_t\fP"
+Key modifiers, such as shift, control or alt\&. These keys are flags meaning you can combine them to detect key combinations such as CTRL + ALT so CTRL | ALT\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fISHIFT\fP The shift key\&. 
+.br
+\fICONTROL\fP The control key\&. 
+.br
+\fIALT\fP The alt key\&. 
+.br
+\fISUPERKEY\fP The Superkey such as the Windows Key or Command\&. 
+.br
+\fICAPSLOCK\fP The capslock key\&. 
+.br
+\fINUMLOCK\fP The numlock key\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBenum\fP \fBmouse_key\fP \fBmouse_key_t\fP"
+The mouse button keycodes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fILEFT\fP The left mouse button\&. 
+.br
+\fIRIGHT\fP The right mouse button\&. 
+.br
+\fIMIDDLE\fP The middle mouse button, aka the Scrollwheel\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBenum\fP \fBmouse_mode\fP \fBmouse_mode_t\fP"
+Various mouse/cursor states\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINORMAL\fP Simple visible default cursor\&. 
+.br
+\fIHIDDEN\fP The cursor is not rendered but still functions\&. 
+.br
+\fIDISABLED\fP The cursor is not rendered, nor is it functional\&. 
+.RE
+.PP
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBxpm\fP \fBxpm_t\fP"
+Struct containing data regarding an XPM image\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItexture\fP The texture data of the XPM\&. 
+.br
+\fIcolor_count\fP The amount of colors available\&. 
+.br
+\fIcpp\fP The amount of characters per pixel\&. 
+.br
+\fImode\fP The color mode, either (c)olor or (m)onochrome\&. 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "\fBenum\fP \fBaction\fP"
+MLX42 is a cross-platform low level and simple graphics library written in C and uses OpenGL and GLFW for it's underlying windowing and rendering system\&.
+.PP
+It's a much more up-to-date alternative to the miniLibX which has been extensively proven to be fragile, unmaintained, deprecated and just plain painfully bad to work with\&. Also its code quality is dubious\&.
+.PP
+Some structs contain potential void* which are to be ignored as they simply represent points of abstraction to the hidden internal header\&. This abstraction is crucial as the whole point of this lib so to hide all the bells and whistles in the 'engine'\&. Most user's have no need for the inner workings eitherway (shaders, vertex buffer, \&.\&.\&.)\&. 
+.br
+ The input key codes are copied straight from GLFW\&. Any new entries should have the exact same values as defined in the glfw3\&.h\&. A key action such as pressing or releasing a key\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIRELEASE\fP Execute when the key is being released\&. 
+.br
+\fIPRESS\fP Execute when the key is being pressed\&. 
+.br
+\fIREPEAT\fP Execute when the key is being held down\&. 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_RELEASE \fP\fP
+.TP
+\fB\fIMLX_PRESS \fP\fP
+.TP
+\fB\fIMLX_REPEAT \fP\fP
+.PP
+Definition at line \fB53\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+54 {
+55     MLX_RELEASE = 0,
+56     MLX_PRESS   = 1,
+57     MLX_REPEAT  = 2,
+58 }   action_t;
+.fi
+
+.SS "\fBenum\fP \fBcursor\fP"
+Various cursors that are standard\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIARROW\fP The regular arrow cursor\&. 
+.br
+\fIIBEAM\fP The text input I-beam cursor shape\&. 
+.br
+\fICROSSHAIR\fP The crosshair shape cursor\&. 
+.br
+\fIHAND\fP The hand shape cursor\&. 
+.br
+\fIHRESIZE\fP The horizontal resize arrow shape\&. 
+.br
+\fIVRESIZE\fP The vertical resize arrow shape\&. 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_CURSOR_ARROW \fP\fP
+.TP
+\fB\fIMLX_CURSOR_IBEAM \fP\fP
+.TP
+\fB\fIMLX_CURSOR_CROSSHAIR \fP\fP
+.TP
+\fB\fIMLX_CURSOR_HAND \fP\fP
+.TP
+\fB\fIMLX_CURSOR_HRESIZE \fP\fP
+.TP
+\fB\fIMLX_CURSOR_VRESIZE \fP\fP
+.PP
+Definition at line \fB117\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+118 {
+119     MLX_CURSOR_ARROW        = 0x00036001,
+120     MLX_CURSOR_IBEAM        = 0x00036002,
+121     MLX_CURSOR_CROSSHAIR    = 0x00036003,
+122     MLX_CURSOR_HAND         = 0x00036004,
+123     MLX_CURSOR_HRESIZE      = 0x00036005,
+124     MLX_CURSOR_VRESIZE      = 0x00036006,
+125 }   cursor_t;
+.fi
+
+.SS "\fBenum\fP \fBkeys\fP"
+All sorts of keyboard keycodes\&.
+.PP
+KP = Keypad\&. 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_KEY_SPACE \fP\fP
+.TP
+\fB\fIMLX_KEY_APOSTROPHE \fP\fP
+.TP
+\fB\fIMLX_KEY_COMMA \fP\fP
+.TP
+\fB\fIMLX_KEY_MINUS \fP\fP
+.TP
+\fB\fIMLX_KEY_PERIOD \fP\fP
+.TP
+\fB\fIMLX_KEY_SLASH \fP\fP
+.TP
+\fB\fIMLX_KEY_0 \fP\fP
+.TP
+\fB\fIMLX_KEY_1 \fP\fP
+.TP
+\fB\fIMLX_KEY_2 \fP\fP
+.TP
+\fB\fIMLX_KEY_3 \fP\fP
+.TP
+\fB\fIMLX_KEY_4 \fP\fP
+.TP
+\fB\fIMLX_KEY_5 \fP\fP
+.TP
+\fB\fIMLX_KEY_6 \fP\fP
+.TP
+\fB\fIMLX_KEY_7 \fP\fP
+.TP
+\fB\fIMLX_KEY_8 \fP\fP
+.TP
+\fB\fIMLX_KEY_9 \fP\fP
+.TP
+\fB\fIMLX_KEY_SEMICOLON \fP\fP
+.TP
+\fB\fIMLX_KEY_EQUAL \fP\fP
+.TP
+\fB\fIMLX_KEY_A \fP\fP
+.TP
+\fB\fIMLX_KEY_B \fP\fP
+.TP
+\fB\fIMLX_KEY_C \fP\fP
+.TP
+\fB\fIMLX_KEY_D \fP\fP
+.TP
+\fB\fIMLX_KEY_E \fP\fP
+.TP
+\fB\fIMLX_KEY_F \fP\fP
+.TP
+\fB\fIMLX_KEY_G \fP\fP
+.TP
+\fB\fIMLX_KEY_H \fP\fP
+.TP
+\fB\fIMLX_KEY_I \fP\fP
+.TP
+\fB\fIMLX_KEY_J \fP\fP
+.TP
+\fB\fIMLX_KEY_K \fP\fP
+.TP
+\fB\fIMLX_KEY_L \fP\fP
+.TP
+\fB\fIMLX_KEY_M \fP\fP
+.TP
+\fB\fIMLX_KEY_N \fP\fP
+.TP
+\fB\fIMLX_KEY_O \fP\fP
+.TP
+\fB\fIMLX_KEY_P \fP\fP
+.TP
+\fB\fIMLX_KEY_Q \fP\fP
+.TP
+\fB\fIMLX_KEY_R \fP\fP
+.TP
+\fB\fIMLX_KEY_S \fP\fP
+.TP
+\fB\fIMLX_KEY_T \fP\fP
+.TP
+\fB\fIMLX_KEY_U \fP\fP
+.TP
+\fB\fIMLX_KEY_V \fP\fP
+.TP
+\fB\fIMLX_KEY_W \fP\fP
+.TP
+\fB\fIMLX_KEY_X \fP\fP
+.TP
+\fB\fIMLX_KEY_Y \fP\fP
+.TP
+\fB\fIMLX_KEY_Z \fP\fP
+.TP
+\fB\fIMLX_KEY_LEFT_BRACKET \fP\fP
+.TP
+\fB\fIMLX_KEY_BACKSLASH \fP\fP
+.TP
+\fB\fIMLX_KEY_RIGHT_BRACKET \fP\fP
+.TP
+\fB\fIMLX_KEY_GRAVE_ACCENT \fP\fP
+.TP
+\fB\fIMLX_KEY_ESCAPE \fP\fP
+.TP
+\fB\fIMLX_KEY_ENTER \fP\fP
+.TP
+\fB\fIMLX_KEY_TAB \fP\fP
+.TP
+\fB\fIMLX_KEY_BACKSPACE \fP\fP
+.TP
+\fB\fIMLX_KEY_INSERT \fP\fP
+.TP
+\fB\fIMLX_KEY_DELETE \fP\fP
+.TP
+\fB\fIMLX_KEY_RIGHT \fP\fP
+.TP
+\fB\fIMLX_KEY_LEFT \fP\fP
+.TP
+\fB\fIMLX_KEY_DOWN \fP\fP
+.TP
+\fB\fIMLX_KEY_UP \fP\fP
+.TP
+\fB\fIMLX_KEY_PAGE_UP \fP\fP
+.TP
+\fB\fIMLX_KEY_PAGE_DOWN \fP\fP
+.TP
+\fB\fIMLX_KEY_HOME \fP\fP
+.TP
+\fB\fIMLX_KEY_END \fP\fP
+.TP
+\fB\fIMLX_KEY_CAPS_LOCK \fP\fP
+.TP
+\fB\fIMLX_KEY_SCROLL_LOCK \fP\fP
+.TP
+\fB\fIMLX_KEY_NUM_LOCK \fP\fP
+.TP
+\fB\fIMLX_KEY_PRINT_SCREEN \fP\fP
+.TP
+\fB\fIMLX_KEY_PAUSE \fP\fP
+.TP
+\fB\fIMLX_KEY_F1 \fP\fP
+.TP
+\fB\fIMLX_KEY_F2 \fP\fP
+.TP
+\fB\fIMLX_KEY_F3 \fP\fP
+.TP
+\fB\fIMLX_KEY_F4 \fP\fP
+.TP
+\fB\fIMLX_KEY_F5 \fP\fP
+.TP
+\fB\fIMLX_KEY_F6 \fP\fP
+.TP
+\fB\fIMLX_KEY_F7 \fP\fP
+.TP
+\fB\fIMLX_KEY_F8 \fP\fP
+.TP
+\fB\fIMLX_KEY_F9 \fP\fP
+.TP
+\fB\fIMLX_KEY_F10 \fP\fP
+.TP
+\fB\fIMLX_KEY_F11 \fP\fP
+.TP
+\fB\fIMLX_KEY_F12 \fP\fP
+.TP
+\fB\fIMLX_KEY_F13 \fP\fP
+.TP
+\fB\fIMLX_KEY_F14 \fP\fP
+.TP
+\fB\fIMLX_KEY_F15 \fP\fP
+.TP
+\fB\fIMLX_KEY_F16 \fP\fP
+.TP
+\fB\fIMLX_KEY_F17 \fP\fP
+.TP
+\fB\fIMLX_KEY_F18 \fP\fP
+.TP
+\fB\fIMLX_KEY_F19 \fP\fP
+.TP
+\fB\fIMLX_KEY_F20 \fP\fP
+.TP
+\fB\fIMLX_KEY_F21 \fP\fP
+.TP
+\fB\fIMLX_KEY_F22 \fP\fP
+.TP
+\fB\fIMLX_KEY_F23 \fP\fP
+.TP
+\fB\fIMLX_KEY_F24 \fP\fP
+.TP
+\fB\fIMLX_KEY_F25 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_0 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_1 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_2 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_3 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_4 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_5 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_6 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_7 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_8 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_9 \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_DECIMAL \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_DIVIDE \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_MULTIPLY \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_SUBTRACT \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_ADD \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_ENTER \fP\fP
+.TP
+\fB\fIMLX_KEY_KP_EQUAL \fP\fP
+.TP
+\fB\fIMLX_KEY_LEFT_SHIFT \fP\fP
+.TP
+\fB\fIMLX_KEY_LEFT_CONTROL \fP\fP
+.TP
+\fB\fIMLX_KEY_LEFT_ALT \fP\fP
+.TP
+\fB\fIMLX_KEY_LEFT_SUPER \fP\fP
+.TP
+\fB\fIMLX_KEY_RIGHT_SHIFT \fP\fP
+.TP
+\fB\fIMLX_KEY_RIGHT_CONTROL \fP\fP
+.TP
+\fB\fIMLX_KEY_RIGHT_ALT \fP\fP
+.TP
+\fB\fIMLX_KEY_RIGHT_SUPER \fP\fP
+.TP
+\fB\fIMLX_KEY_MENU \fP\fP
+.PP
+Definition at line \fB132\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+133 {
+134     MLX_KEY_SPACE           = 32,
+135     MLX_KEY_APOSTROPHE      = 39,
+136     MLX_KEY_COMMA           = 44,
+137     MLX_KEY_MINUS           = 45,
+138     MLX_KEY_PERIOD          = 46,
+139     MLX_KEY_SLASH           = 47,
+140     MLX_KEY_0               = 48,
+141     MLX_KEY_1               = 49,
+142     MLX_KEY_2               = 50,
+143     MLX_KEY_3               = 51,
+144     MLX_KEY_4               = 52,
+145     MLX_KEY_5               = 53,
+146     MLX_KEY_6               = 54,
+147     MLX_KEY_7               = 55,
+148     MLX_KEY_8               = 56,
+149     MLX_KEY_9               = 57,
+150     MLX_KEY_SEMICOLON       = 59,
+151     MLX_KEY_EQUAL           = 61,
+152     MLX_KEY_A               = 65,
+153     MLX_KEY_B               = 66,
+154     MLX_KEY_C               = 67,
+155     MLX_KEY_D               = 68,
+156     MLX_KEY_E               = 69,
+157     MLX_KEY_F               = 70,
+158     MLX_KEY_G               = 71,
+159     MLX_KEY_H               = 72,
+160     MLX_KEY_I               = 73,
+161     MLX_KEY_J               = 74,
+162     MLX_KEY_K               = 75,
+163     MLX_KEY_L               = 76,
+164     MLX_KEY_M               = 77,
+165     MLX_KEY_N               = 78,
+166     MLX_KEY_O               = 79,
+167     MLX_KEY_P               = 80,
+168     MLX_KEY_Q               = 81,
+169     MLX_KEY_R               = 82,
+170     MLX_KEY_S               = 83,
+171     MLX_KEY_T               = 84,
+172     MLX_KEY_U               = 85,
+173     MLX_KEY_V               = 86,
+174     MLX_KEY_W               = 87,
+175     MLX_KEY_X               = 88,
+176     MLX_KEY_Y               = 89,
+177     MLX_KEY_Z               = 90,
+178     MLX_KEY_LEFT_BRACKET    = 91,
+179     MLX_KEY_BACKSLASH       = 92,
+180     MLX_KEY_RIGHT_BRACKET   = 93,
+181     MLX_KEY_GRAVE_ACCENT    = 96,
+182     MLX_KEY_ESCAPE          = 256,
+183     MLX_KEY_ENTER           = 257,
+184     MLX_KEY_TAB             = 258,
+185     MLX_KEY_BACKSPACE       = 259,
+186     MLX_KEY_INSERT          = 260,
+187     MLX_KEY_DELETE          = 261,
+188     MLX_KEY_RIGHT           = 262,
+189     MLX_KEY_LEFT            = 263,
+190     MLX_KEY_DOWN            = 264,
+191     MLX_KEY_UP              = 265,
+192     MLX_KEY_PAGE_UP         = 266,
+193     MLX_KEY_PAGE_DOWN       = 267,
+194     MLX_KEY_HOME            = 268,
+195     MLX_KEY_END             = 269,
+196     MLX_KEY_CAPS_LOCK       = 280,
+197     MLX_KEY_SCROLL_LOCK     = 281,
+198     MLX_KEY_NUM_LOCK        = 282,
+199     MLX_KEY_PRINT_SCREEN    = 283,
+200     MLX_KEY_PAUSE           = 284,
+201     MLX_KEY_F1              = 290,
+202     MLX_KEY_F2              = 291,
+203     MLX_KEY_F3              = 292,
+204     MLX_KEY_F4              = 293,
+205     MLX_KEY_F5              = 294,
+206     MLX_KEY_F6              = 295,
+207     MLX_KEY_F7              = 296,
+208     MLX_KEY_F8              = 297,
+209     MLX_KEY_F9              = 298,
+210     MLX_KEY_F10             = 299,
+211     MLX_KEY_F11             = 300,
+212     MLX_KEY_F12             = 301,
+213     MLX_KEY_F13             = 302,
+214     MLX_KEY_F14             = 303,
+215     MLX_KEY_F15             = 304,
+216     MLX_KEY_F16             = 305,
+217     MLX_KEY_F17             = 306,
+218     MLX_KEY_F18             = 307,
+219     MLX_KEY_F19             = 308,
+220     MLX_KEY_F20             = 309,
+221     MLX_KEY_F21             = 310,
+222     MLX_KEY_F22             = 311,
+223     MLX_KEY_F23             = 312,
+224     MLX_KEY_F24             = 313,
+225     MLX_KEY_F25             = 314,
+226     MLX_KEY_KP_0            = 320,
+227     MLX_KEY_KP_1            = 321,
+228     MLX_KEY_KP_2            = 322,
+229     MLX_KEY_KP_3            = 323,
+230     MLX_KEY_KP_4            = 324,
+231     MLX_KEY_KP_5            = 325,
+232     MLX_KEY_KP_6            = 326,
+233     MLX_KEY_KP_7            = 327,
+234     MLX_KEY_KP_8            = 328,
+235     MLX_KEY_KP_9            = 329,
+236     MLX_KEY_KP_DECIMAL      = 330,
+237     MLX_KEY_KP_DIVIDE       = 331,
+238     MLX_KEY_KP_MULTIPLY     = 332,
+239     MLX_KEY_KP_SUBTRACT     = 333,
+240     MLX_KEY_KP_ADD          = 334,
+241     MLX_KEY_KP_ENTER        = 335,
+242     MLX_KEY_KP_EQUAL        = 336,
+243     MLX_KEY_LEFT_SHIFT      = 340,
+244     MLX_KEY_LEFT_CONTROL    = 341,
+245     MLX_KEY_LEFT_ALT        = 342,
+246     MLX_KEY_LEFT_SUPER      = 343,
+247     MLX_KEY_RIGHT_SHIFT     = 344,
+248     MLX_KEY_RIGHT_CONTROL   = 345,
+249     MLX_KEY_RIGHT_ALT       = 346,
+250     MLX_KEY_RIGHT_SUPER     = 347,
+251     MLX_KEY_MENU            = 348,
+252 }   keys_t;
+.fi
+
+.SS "\fBenum\fP \fBmlx_errno\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_SUCCESS \fP\fP
+.TP
+\fB\fIMLX_INVEXT \fP\fP
+.TP
+\fB\fIMLX_INVFILE \fP\fP
+.TP
+\fB\fIMLX_INVPNG \fP\fP
+.TP
+\fB\fIMLX_INVXPM \fP\fP
+.TP
+\fB\fIMLX_INVPOS \fP\fP
+.TP
+\fB\fIMLX_INVDIM \fP\fP
+.TP
+\fB\fIMLX_INVIMG \fP\fP
+.TP
+\fB\fIMLX_VERTFAIL \fP\fP
+.TP
+\fB\fIMLX_FRAGFAIL \fP\fP
+.TP
+\fB\fIMLX_SHDRFAIL \fP\fP
+.TP
+\fB\fIMLX_MEMFAIL \fP\fP
+.TP
+\fB\fIMLX_GLADFAIL \fP\fP
+.TP
+\fB\fIMLX_GLFWFAIL \fP\fP
+.TP
+\fB\fIMLX_WINFAIL \fP\fP
+.TP
+\fB\fIMLX_STRTOOBIG \fP\fP
+.TP
+\fB\fIMLX_ERRMAX \fP\fP
+.PP
+Definition at line \fB370\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+371 {
+372     MLX_SUCCESS = 0,    // No Errors
+373     MLX_INVEXT,         // File has an invalid extension
+374     MLX_INVFILE,        // File was invalid / does not exist\&.
+375     MLX_INVPNG,         // Something is wrong with the given PNG file\&.
+376     MLX_INVXPM,         // Something is wrong with the given XPM file\&.
+377     MLX_INVPOS,         // The specified X/Y positions are out of bounds\&.
+378     MLX_INVDIM,         // The specified W/H dimensions are out of bounds\&.
+379     MLX_INVIMG,         // The provided image is invalid, might indicate mismanagement of images\&.
+380     MLX_VERTFAIL,       // Failed to compile the vertex shader\&.
+381     MLX_FRAGFAIL,       // Failed to compile the fragment shader\&.
+382     MLX_SHDRFAIL,       // Failed to compile the shaders\&.
+383     MLX_MEMFAIL,        // Dynamic memory allocation has failed\&.
+384     MLX_GLADFAIL,       // OpenGL loader has failed\&.
+385     MLX_GLFWFAIL,       // GLFW failed to initialize\&.
+386     MLX_WINFAIL,        // Failed to create a window\&.
+387     MLX_STRTOOBIG,      // The string is too big to be drawn\&.
+388     MLX_ERRMAX,         // Error count
+389 }   mlx_errno_t;
+.fi
+
+.SS "\fBenum\fP \fBmlx_settings\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_STRETCH_IMAGE \fP\fP
+.TP
+\fB\fIMLX_FULLSCREEN \fP\fP
+.TP
+\fB\fIMLX_MAXIMIZED \fP\fP
+.TP
+\fB\fIMLX_DECORATED \fP\fP
+.TP
+\fB\fIMLX_HEADLESS \fP\fP
+.TP
+\fB\fIMLX_SETTINGS_MAX \fP\fP
+.PP
+Definition at line \fB397\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+398 {
+399     MLX_STRETCH_IMAGE = 0,  // Should images resize with the window as it's being resized or not\&. Default: false
+400     MLX_FULLSCREEN,         // Should the window be in Fullscreen, note it will fullscreen at the given resolution\&. Default: false
+401     MLX_MAXIMIZED,          // Start the window in a maximized state, overwrites the fullscreen state if this is true\&. Default: false
+402     MLX_DECORATED,          // Have the window be decorated with a window bar\&. Default: true
+403     MLX_HEADLESS,           // Run in headless mode, no window is created\&. (NOTE: Still requires some form of window manager such as xvfb)
+404     MLX_SETTINGS_MAX,       // Setting count\&.
+405 }   mlx_settings_t;
+.fi
+
+.SS "\fBenum\fP \fBmodifier_key\fP"
+Key modifiers, such as shift, control or alt\&. These keys are flags meaning you can combine them to detect key combinations such as CTRL + ALT so CTRL | ALT\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fISHIFT\fP The shift key\&. 
+.br
+\fICONTROL\fP The control key\&. 
+.br
+\fIALT\fP The alt key\&. 
+.br
+\fISUPERKEY\fP The Superkey such as the Windows Key or Command\&. 
+.br
+\fICAPSLOCK\fP The capslock key\&. 
+.br
+\fINUMLOCK\fP The numlock key\&. 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_SHIFT \fP\fP
+.TP
+\fB\fIMLX_CONTROL \fP\fP
+.TP
+\fB\fIMLX_ALT \fP\fP
+.TP
+\fB\fIMLX_SUPERKEY \fP\fP
+.TP
+\fB\fIMLX_CAPSLOCK \fP\fP
+.TP
+\fB\fIMLX_NUMLOCK \fP\fP
+.PP
+Definition at line \fB72\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+73 {
+74     MLX_SHIFT       = 0x0001,
+75     MLX_CONTROL     = 0x0002,
+76     MLX_ALT         = 0x0004,
+77     MLX_SUPERKEY    = 0x0008,
+78     MLX_CAPSLOCK    = 0x0010,
+79     MLX_NUMLOCK     = 0x0020,
+80 }   modifier_key_t;
+.fi
+
+.SS "\fBenum\fP \fBmouse_key\fP"
+The mouse button keycodes\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fILEFT\fP The left mouse button\&. 
+.br
+\fIRIGHT\fP The right mouse button\&. 
+.br
+\fIMIDDLE\fP The middle mouse button, aka the Scrollwheel\&. 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_MOUSE_BUTTON_LEFT \fP\fP
+.TP
+\fB\fIMLX_MOUSE_BUTTON_RIGHT \fP\fP
+.TP
+\fB\fIMLX_MOUSE_BUTTON_MIDDLE \fP\fP
+.PP
+Definition at line \fB88\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+89 {
+90     MLX_MOUSE_BUTTON_LEFT   = 0,
+91     MLX_MOUSE_BUTTON_RIGHT  = 1,
+92     MLX_MOUSE_BUTTON_MIDDLE = 2,
+93 }   mouse_key_t;
+.fi
+
+.SS "\fBenum\fP \fBmouse_mode\fP"
+Various mouse/cursor states\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fINORMAL\fP Simple visible default cursor\&. 
+.br
+\fIHIDDEN\fP The cursor is not rendered but still functions\&. 
+.br
+\fIDISABLED\fP The cursor is not rendered, nor is it functional\&. 
+.RE
+.PP
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIMLX_MOUSE_NORMAL \fP\fP
+.TP
+\fB\fIMLX_MOUSE_HIDDEN \fP\fP
+.TP
+\fB\fIMLX_MOUSE_DISABLED \fP\fP
+.PP
+Definition at line \fB101\fP of file \fBMLX42\&.h\fP\&..PP
+.nf
+102 {
+103     MLX_MOUSE_NORMAL    = 0x00034001,
+104     MLX_MOUSE_HIDDEN    = 0x00034002,
+105     MLX_MOUSE_DISABLED  = 0x00034003,
+106 }   mouse_mode_t;
+.fi
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP mlx_close_hook (\fBmlx_t\fP * mlx, \fBmlx_closefunc\fP func, \fBvoid\fP * param)"
+This function sets the close callback, which is called in attempt to close the window device such as a close window widget used in the window bar\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The close callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB63\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+64 {
+65     MLX_NONNULL(mlx);
+66     MLX_NONNULL(func);
+67 
+68     mlx_ctx_t* mlxctx = mlx\->context;
+69     mlxctx\->close_hook\&.func = func;
+70     mlxctx\->close_hook\&.param = param;
+71     glfwSetWindowCloseCallback(mlx\->window, mlx_close_callback);
+72 }
+.fi
+
+.SS "\fBvoid\fP mlx_close_window (\fBmlx_t\fP * mlx)"
+Notifies MLX that it should stop rendering and exit the main loop\&. This is not the same as terminate, this simply tells MLX to close the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBmlx_exit\&.c\fP\&..PP
+.nf
+27 {
+28     MLX_NONNULL(mlx);
+29     glfwSetWindowShouldClose(mlx\->window, true);
+30 }
+.fi
+
+.SS "\fBmlx_win_cursor_t\fP * mlx_create_cursor (\fBmlx_texture_t\fP * texture)"
+Allows for the creation of custom cursors with a given texture\&.
+.PP
+Use mlx_set_cursor to select the specific cursor\&. Cursors are destroyed at \fBmlx_terminate()\fP\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItexture\fP The texture to use as cursor\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The cursor object or null on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB27\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+28 {
+29     MLX_NONNULL(texture);
+30 
+31     GLFWcursor* cursor;
+32     GLFWimage image = (GLFWimage) {
+33         \&.width = texture\->width,
+34         \&.height = texture\->height,
+35         \&.pixels = texture\->pixels
+36     };
+37 
+38     if ((cursor = glfwCreateCursor(&image, 0, 0)))
+39         return (cursor);
+40     return ((void *)mlx_error(MLX_MEMFAIL));
+41 }
+.fi
+
+.SS "\fBmlx_win_cursor_t\fP * mlx_create_std_cursor (\fBcursor_t\fP type)"
+Retrieves the system standard cursor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItype\fP The standard cursor type to create\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The cursor object or null on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+18 {
+19     MLX_ASSERT(type >= MLX_CURSOR_ARROW && type < MLX_CURSOR_VRESIZE, "Invalid standard cursor type");
+20 
+21     GLFWcursor* cursor;
+22     if ((cursor = glfwCreateStandardCursor(type)))
+23         return (cursor);
+24     return ((void *)mlx_error(MLX_MEMFAIL));
+25 }
+.fi
+
+.SS "\fBvoid\fP mlx_cursor_hook (\fBmlx_t\fP * mlx, \fBmlx_cursorfunc\fP func, \fBvoid\fP * param)"
+This function sets the cursor callback, which is called when the mouse position changes\&. Position is relative to the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The cursor callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB65\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+66 {
+67     MLX_NONNULL(mlx);
+68     MLX_NONNULL(func);
+69 
+70     mlx_ctx_t* const mlxctx = mlx\->context;
+71     mlxctx\->cursor_hook\&.func = func;
+72     mlxctx\->cursor_hook\&.param = param;
+73     glfwSetCursorPosCallback(mlx\->window, mlx_cursor_cb);
+74 }
+.fi
+
+.SS "\fBvoid\fP mlx_delete_image (\fBmlx_t\fP * mlx, \fBmlx_image_t\fP * image)"
+Deleting an image will remove it from the render queue as well as any and all instances it might have\&. Additionally, just as extra measures sets all the data to NULL\&.
+.PP
+If you simply wish to stop rendering an image without de-allocation set the 'enabled' boolean in the image struct\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIimage\fP The image to delete\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB204\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+205 {
+206     MLX_NONNULL(mlx);
+207     MLX_NONNULL(image);
+208 
+209     mlx_ctx_t* mlxctx = mlx\->context;
+210 
+211     // Delete all instances in the render queue
+212     mlx_list_t* quelst;
+213     while ((quelst = mlx_lstremove(&mlxctx\->render_queue, image, &mlx_equal_inst)))
+214         mlx_freen(2, quelst\->content, quelst);
+215 
+216     mlx_list_t* imglst;
+217     if ((imglst = mlx_lstremove(&mlxctx\->images, image, &mlx_equal_image)))
+218     {
+219         glDeleteTextures(1, &((mlx_image_ctx_t*)image\->context)\->texture);
+220         mlx_freen(5, image\->pixels, image\->instances, image\->context, imglst, image);
+221     }
+222 }
+.fi
+
+.SS "\fBvoid\fP mlx_delete_texture (\fBmlx_texture_t\fP * texture)"
+Deletes a texture by freeing its allocated data\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fItexture\fP The texture to free\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB37\fP of file \fBmlx_texture\&.c\fP\&..PP
+.nf
+38 {
+39     MLX_NONNULL(texture);
+40 
+41     mlx_freen(2, texture\->pixels, texture);
+42 }
+.fi
+
+.SS "\fBvoid\fP mlx_delete_xpm42 (\fBxpm_t\fP * xpm)"
+Deletes an XPM42 texture by freeing its allocated data\&.
+.PP
+This will not remove any already drawn XPMs, it simply deletes the XPM buffer\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIxpm\fP The xpm texture to delete\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB203\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+204 {
+205     MLX_NONNULL(xpm);
+206     free(xpm\->texture\&.pixels);
+207     free(xpm);
+208 }
+.fi
+
+.SS "\fBvoid\fP mlx_destroy_cursor (\fBmlx_win_cursor_t\fP * cursor)"
+Destroys the given cursor object\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIcursor\fP The cursor object to destroy\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+44 {
+45     MLX_NONNULL(cursor);
+46 
+47     glfwDestroyCursor(cursor);
+48 }
+.fi
+
+.SS "\fBvoid\fP mlx_focus (\fBmlx_t\fP * mlx)"
+This function brings the specified window to front and sets input focus\&.
+.PP
+Do not use this function to steal focus from other applications unless you are certain that is what the user wants\&. Focus stealing can be extremely disruptive\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB126\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+127 {
+128     MLX_NONNULL(mlx);
+129 
+130     glfwFocusWindow(mlx\->window);
+131 }
+.fi
+
+.SS "\fBconst\fP \fBmlx_texture_t\fP * mlx_get_font (\fBvoid\fP)"
+Retrieve the texture data for the built-in font\&.
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the built-in font texture\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB46\fP of file \fBmlx_font\&.c\fP\&..PP
+.nf
+47 {
+48     return ((const mlx_texture_t*)&font_atlas);
+49 }
+.fi
+
+.SS "\fBvoid\fP mlx_get_monitor_size (\fBint32_t\fP index, \fBint32_t\fP * width, \fBint32_t\fP * height)"
+Gets the size of the specified monitor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP Normally 0, in case of multiple windows, can be specified 
+.br
+\fIwidth\fP The width of the window\&. 
+.br
+\fIheight\fP The height of the window\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_monitor\&.c\fP\&..PP
+.nf
+18 {
+19     MLX_ASSERT(index >= 0, "Index out of bounds");
+20     MLX_NONNULL(width);
+21     MLX_NONNULL(height);
+22 
+23     *width = 0;
+24     *height = 0;
+25     
+26     int32_t monitor_count;
+27     GLFWmonitor** monitors = glfwGetMonitors(&monitor_count);
+28     if (index > monitor_count || !monitors)
+29         return;
+30 
+31     const GLFWvidmode* vidmode;
+32     if ((vidmode = glfwGetVideoMode(monitors[index])))
+33     {
+34         *width = vidmode\->width;
+35         *height = vidmode\->height;
+36     }
+37 }
+.fi
+
+.SS "\fBvoid\fP mlx_get_mouse_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP * x, \fBint32_t\fP * y)"
+Returns the current, relative, mouse cursor position on the window, starting from the top left corner\&.
+.PP
+Negative values or values greater than window width or height indicate that it is outside the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIx\fP The position\&. 
+.br
+\fIy\fP The position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB90\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+91 {
+92     MLX_NONNULL(mlx);
+93     MLX_NONNULL(x);
+94     MLX_NONNULL(y);
+95 
+96     double xd, yd;
+97     glfwGetCursorPos(mlx\->window, &xd, &yd);
+98     *x = (int32_t)xd;
+99     *y = (int32_t)yd;
+100 }
+.fi
+
+.SS "\fBint32_t\fP mlx_get_texoffset (\fBchar\fP c)"
+This function lets you retrieve the X offset of the given char in the font texture\&.
+.PP
+NOTE: A single character is 10 * 20 in pixels!
+.PP
+\fBParameters\fP
+.RS 4
+\fIc\fP The character to get the offset from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Non-negative if found or -1 if not found\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB51\fP of file \fBmlx_font\&.c\fP\&..PP
+.nf
+52 {
+53     const bool _isprint = isprint(c);
+54 
+55     // NOTE: Cheesy branchless operation :D
+56     // +2 To skip line separator in texture
+57     return (\-1 * !_isprint + ((FONT_WIDTH + 2) * (c \- 32)) * _isprint);
+58 }
+.fi
+
+.SS "\fBdouble\fP mlx_get_time (\fBvoid\fP)"
+Gets the elapsed time since MLX was initialized\&.
+.PP
+\fBReturns\fP
+.RS 4
+The amount of time elapsed in seconds\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB121\fP of file \fBmlx_utils\&.c\fP\&..PP
+.nf
+122 {
+123     return (glfwGetTime());
+124 }
+.fi
+
+.SS "\fBvoid\fP mlx_get_window_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP * xpos, \fBint32_t\fP * ypos)"
+Gets the window's position\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIxpos\fP The x position\&. 
+.br
+\fIypos\fP The y position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB106\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+107 {
+108     MLX_NONNULL(mlx);
+109     MLX_NONNULL(xpos);
+110     MLX_NONNULL(ypos);
+111 
+112     glfwGetWindowPos(mlx\->window, xpos, ypos);
+113 }
+.fi
+
+.SS "\fBint32_t\fP mlx_image_to_window (\fBmlx_t\fP * mlx, \fBmlx_image_t\fP * img, \fBint32_t\fP x, \fBint32_t\fP y)"
+Draws a new instance of an image, it will then share the same pixel buffer as the image\&.
+.PP
+NOTE: Keep in mind that the instance array gets reallocated, try to store the return value to the instance! NOT the pointer! It will become invalid!
+.PP
+WARNING: Try to display as few images on the window as possible, drawing too many images will cause a loss in performance!
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIimg\fP The image to draw on the screen\&. 
+.br
+\fIx\fP The X position\&. 
+.br
+\fIy\fP The Y position\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Index to the instance, or -1 on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB121\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+122 {
+123     MLX_NONNULL(mlx);
+124     MLX_NONNULL(img);
+125 
+126     // Allocate buffers\&.\&.\&.
+127     img\->count++;
+128     bool did_realloc;
+129     mlx_instance_t* instances = mlx_grow_instances(img, &did_realloc);
+130     draw_queue_t* queue = calloc(1, sizeof(draw_queue_t));
+131     if (!instances || !queue)
+132     {
+133         if (did_realloc)
+134             free(instances);
+135         return (free(queue), mlx_error(MLX_MEMFAIL), \-1);
+136     }
+137 
+138     // Set data\&.\&.\&.
+139     queue\->image = img;
+140     int32_t index = queue\->instanceid = img\->count \- 1;
+141     img\->instances = instances;
+142     img\->instances[index]\&.x = x;
+143     img\->instances[index]\&.y = y;
+144 
+145     // NOTE: We keep updating the Z for the convenience of the user\&.
+146     // Always update Z depth to prevent overlapping images by default\&.
+147     img\->instances[index]\&.z = ((mlx_ctx_t*)mlx\->context)\->zdepth++;
+148     img\->instances[index]\&.enabled = true;
+149 
+150     // Add draw call\&.\&.\&.
+151     sort_queue = true;
+152     mlx_list_t* templst;
+153     if ((templst = mlx_lstnew(queue)))
+154     {
+155         mlx_lstadd_front(&((mlx_ctx_t*)mlx\->context)\->render_queue, templst);
+156         return (index);
+157     }
+158     return (mlx_freen(2, instances, queue), mlx_error(MLX_MEMFAIL), \-1);
+159 }
+.fi
+
+.SS "\fBmlx_t\fP * mlx_init (\fBint32_t\fP width, \fBint32_t\fP height, \fBconst\fP \fBchar\fP * title, \fBbool\fP resize)"
+Initializes a new MLX42 Instance\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIwidth\fP The width of the window\&. 
+.br
+\fIheight\fP The height of the window\&. 
+.br
+\fItitle\fP The title of the window\&. 
+.br
+\fIresize\fP Enable window resizing\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Ptr to the MLX handle or null on failure\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB161\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+162 {
+163     MLX_NONNULL(title);
+164     MLX_ASSERT(width > 0, "Window width must be positive");
+165     MLX_ASSERT(height > 0, "Window height must be positive");
+166 
+167     bool init;
+168     mlx_t* mlx;
+169     if (!(init = glfwInit()))
+170         return ((void*)mlx_error(MLX_GLFWFAIL));
+171     if (!(mlx = calloc(1, sizeof(mlx_t))))
+172         return ((void*)mlx_error(MLX_MEMFAIL));
+173     if (!(mlx\->context = calloc(1, sizeof(mlx_ctx_t))))
+174         return (free(mlx), (void*)mlx_error(MLX_MEMFAIL));
+175 
+176     mlx_ctx_t* const mlxctx = mlx\->context;
+177     mlx\->width = width;
+178     mlx\->height = height;
+179     mlxctx\->initialWidth = width;
+180     mlxctx\->initialHeight = height;
+181 
+182     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+183     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+184     glfwWindowHint(GLFW_MAXIMIZED, mlx_settings[MLX_MAXIMIZED]);
+185     glfwWindowHint(GLFW_DECORATED, mlx_settings[MLX_DECORATED]);
+186     glfwWindowHint(GLFW_VISIBLE, !mlx_settings[MLX_HEADLESS]);
+187     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+188 #ifdef __APPLE__
+189     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+190 #endif
+191     glfwWindowHint(GLFW_RESIZABLE, resize);
+192     if (!(mlx\->window = glfwCreateWindow(width, height, title, mlx_settings[MLX_FULLSCREEN] ? glfwGetPrimaryMonitor() : NULL, NULL)))
+193         return (mlx_terminate(mlx), (void*)mlx_error(MLX_WINFAIL));
+194     if (!mlx_init_render(mlx) || !mlx_create_buffers(mlx))
+195         return (mlx_terminate(mlx), NULL);
+196     return (mlx);
+197 }
+.fi
+
+.SS "\fBbool\fP mlx_is_key_down (\fBmlx_t\fP * mlx, \fBkeys_t\fP key)"
+Returns true or false if the key is down or not\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIkey\fP The keycode to check, use MLX_KEY_\&.\&.\&. to specify! 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True or false if the key is down or not\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBmlx_keys\&.c\fP\&..PP
+.nf
+45 {
+46     MLX_NONNULL(mlx);
+47 
+48     return (glfwGetKey(mlx\->window, key) == GLFW_PRESS);
+49 }
+.fi
+
+.SS "\fBbool\fP mlx_is_mouse_down (\fBmlx_t\fP * mlx, \fBmouse_key_t\fP key)"
+Checks whether a mouse button is pressed or not\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIkey\fP A specific mouse key\&. e\&.g MLX_MOUSE_BUTTON_0 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True or false if the mouse key is down or not\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB76\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+77 {
+78     MLX_NONNULL(mlx);
+79 
+80     return (glfwGetMouseButton(mlx\->window, key) == GLFW_PRESS);
+81 }
+.fi
+
+.SS "\fBvoid\fP mlx_key_hook (\fBmlx_t\fP * mlx, \fBmlx_keyfunc\fP func, \fBvoid\fP * param)"
+This function sets the key callback, which is called when a key is pressed on the keyboard\&. Useful for single keypress detection\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The keypress callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB33\fP of file \fBmlx_keys\&.c\fP\&..PP
+.nf
+34 {
+35     MLX_NONNULL(mlx);
+36     MLX_NONNULL(func);
+37 
+38     mlx_ctx_t* mlxctx = mlx\->context;
+39     mlxctx\->key_hook\&.func = func;
+40     mlxctx\->key_hook\&.param = param;
+41     glfwSetKeyCallback(mlx\->window, mlx_key_callback);
+42 }
+.fi
+
+.SS "\fBmlx_texture_t\fP * mlx_load_png (\fBconst\fP \fBchar\fP * path)"
+Decode/load a PNG file into a buffer\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP Path to the PNG file\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+If successful the texture data is returned, else NULL\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_png\&.c\fP\&..PP
+.nf
+18 {
+19     MLX_NONNULL(path);
+20 
+21     mlx_texture_t* image;
+22     if (!(image = malloc(sizeof(mlx_texture_t))))
+23         return ((void*)mlx_error(MLX_MEMFAIL));
+24 
+25     uint32_t error;
+26     image\->bytes_per_pixel = BPP;
+27     if ((error = lodepng_decode32_file(&image\->pixels, &image\->width, &image\->height, path)))
+28     {
+29         free(image);
+30         // Explicitly print error on purpose
+31         fprintf(stderr, "MLX42: LodePNG: %s\\n", lodepng_error_text(error));
+32         return ((void*)mlx_error(MLX_INVPNG));
+33     }
+34     return (image);
+35 }
+.fi
+
+.SS "\fBxpm_t\fP * mlx_load_xpm42 (\fBconst\fP \fBchar\fP * path)"
+Loads an XPM42 texture from the given file path\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIpath\fP The file path to the XPM texture\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The XPM texture struct containing its information\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB181\fP of file \fBmlx_xpm42\&.c\fP\&..PP
+.nf
+182 {
+183     FILE* file;
+184     xpm_t* xpm = NULL;
+185 
+186     MLX_NONNULL(path);
+187     if (!strstr(path, "\&.xpm42"))
+188         return ((void*)mlx_error(MLX_INVEXT));
+189     if (!(file = fopen(path, "r")))
+190         return ((void*)mlx_error(MLX_INVFILE));
+191     if (!(xpm = calloc(1, sizeof(xpm_t))))
+192         return ((void*)mlx_error(MLX_MEMFAIL));
+193     if (!mlx_read_xpm_header(xpm, file))
+194     {
+195         mlx_freen(2, xpm\->texture\&.pixels, xpm);
+196         mlx_error(MLX_INVXPM);
+197         xpm = NULL;
+198     }
+199     fclose(file);
+200     return (xpm);
+201 }
+.fi
+
+.SS "\fBvoid\fP mlx_loop (\fBmlx_t\fP * mlx)"
+Initializes the rendering of MLX, this function won't return until mlx_close_window is called, meaning it will loop until the user requests that the window should close\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB93\fP of file \fBmlx_loop\&.c\fP\&..PP
+.nf
+94 {
+95     MLX_NONNULL(mlx);
+96 
+97     double start, oldstart = 0;
+98     while (!glfwWindowShouldClose(mlx\->window))
+99     {
+100         start = glfwGetTime();
+101         mlx\->delta_time = start \- oldstart;
+102         oldstart = start;
+103     
+104         glClearColor(0\&.2f, 0\&.2f, 0\&.2f, 1\&.0f);
+105         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+106         glfwGetWindowSize(mlx\->window, &(mlx\->width), &(mlx\->height));
+107 
+108         if ((mlx\->width > 1 || mlx\->height > 1))
+109             mlx_update_matrix(mlx);
+110 
+111         mlx_exec_loop_hooks(mlx);
+112         mlx_render_images(mlx);
+113         mlx_flush_batch(mlx\->context);
+114 
+115         glfwSwapBuffers(mlx\->window);
+116         glfwPollEvents();
+117     }
+118 }
+.fi
+
+.SS "\fBbool\fP mlx_loop_hook (\fBmlx_t\fP * mlx, \fBvoid\fP(*)(\fBvoid\fP *) f, \fBvoid\fP * param)"
+Generic loop hook for any custom hooks to add to the main loop\&. Executes a function per frame, so be careful\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIf\fP The function\&. 
+.br
+\fIparam\fP The parameter to pass on to the function\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Whether or not the hook was added successfully\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB70\fP of file \fBmlx_loop\&.c\fP\&..PP
+.nf
+71 {
+72     MLX_NONNULL(mlx);
+73     MLX_NONNULL(f);
+74 
+75     mlx_hook_t* hook;
+76     if (!(hook = malloc(sizeof(mlx_hook_t))))
+77         return (mlx_error(MLX_MEMFAIL));
+78 
+79     mlx_list_t* lst;
+80     if (!(lst = mlx_lstnew(hook)))
+81     {
+82         free(hook);
+83         return (mlx_error(MLX_MEMFAIL));
+84     }
+85     hook\->func = f;
+86     hook\->param = param;
+87     const mlx_ctx_t *mlxctx = mlx\->context;
+88     mlx_lstadd_back((mlx_list_t**)(&mlxctx\->hooks), lst);
+89     return (true);
+90 }
+.fi
+
+.SS "\fBvoid\fP mlx_mouse_hook (\fBmlx_t\fP * mlx, \fBmlx_mousefunc\fP func, \fBvoid\fP * param)"
+This function sets the mouse callback, which is called when a mouse does any sort of action such as pressing a key\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The mouse callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+55 {
+56     MLX_NONNULL(mlx);
+57     MLX_NONNULL(func);
+58 
+59     mlx_ctx_t* const mlxctx = mlx\->context;
+60     mlxctx\->mouse_hook\&.func = func;
+61     mlxctx\->mouse_hook\&.param = param;
+62     glfwSetMouseButtonCallback(mlx\->window, mlx_mouse_cb);
+63 }
+.fi
+
+.SS "\fBmlx_image_t\fP * mlx_new_image (\fBmlx_t\fP * mlx, \fBuint32_t\fP width, \fBuint32_t\fP height)"
+Creates and allocates a new image buffer\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIwidth\fP The desired width of the image\&. 
+.br
+\fIheight\fP The desired height of the image\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the image buffer, if it failed to allocate then NULL\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB161\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+162 {
+163     MLX_NONNULL(mlx);
+164 
+165     if (!width || !height || width > INT16_MAX || height > INT16_MAX)
+166         return ((void*)mlx_error(MLX_INVDIM));
+167 
+168     const mlx_ctx_t* mlxctx = mlx\->context;
+169     mlx_image_t* newimg = calloc(1, sizeof(mlx_image_t));
+170     mlx_image_ctx_t* newctx = calloc(1, sizeof(mlx_image_ctx_t));
+171     if (!newimg || !newctx)
+172     {
+173         mlx_freen(2, newimg, newctx);
+174         return ((void *)mlx_error(MLX_MEMFAIL));
+175     }
+176     newimg\->enabled = true;
+177     newimg\->context = newctx;
+178     (*(uint32_t*)&newimg\->width) = width;
+179     (*(uint32_t*)&newimg\->height) = height;
+180     if (!(newimg\->pixels = calloc(width * height, sizeof(int32_t))))
+181     {
+182         mlx_freen(2, newimg, newctx);
+183         return ((void *)mlx_error(MLX_MEMFAIL));
+184     }
+185 
+186     mlx_list_t* newentry;
+187     if (!(newentry = mlx_lstnew(newimg)))
+188     {
+189         mlx_freen(3, newimg\->pixels, newimg\->context, newimg);
+190         return ((void *)mlx_error(MLX_MEMFAIL));
+191     }
+192 
+193     // Generate OpenGL texture
+194     glGenTextures(1, &newctx\->texture);
+195     glBindTexture(GL_TEXTURE_2D, newctx\->texture);
+196     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+197     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+198     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+199     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+200     mlx_lstadd_front((mlx_list_t**)(&mlxctx\->images), newentry);
+201     return (newimg);
+202 }
+.fi
+
+.SS "\fBvoid\fP mlx_put_pixel (\fBmlx_image_t\fP * image, \fBuint32_t\fP x, \fBuint32_t\fP y, \fBuint32_t\fP color)"
+Sets / puts a pixel onto an image\&.
+.PP
+NOTE: It is considered undefined behaviour when putting a pixel beyond the bounds of an image\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIimage\fP The MLX instance handle\&. 
+.br
+\fIx\fP The X coordinate position\&. 
+.br
+\fIy\fP The Y coordinate position\&. 
+.br
+\fIcolor\fP The color value to put\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBmlx_put_pixel\&.c\fP\&..PP
+.nf
+27 {
+28     MLX_NONNULL(image);
+29     MLX_ASSERT(x < image\->width, "Pixel is out of bounds");
+30     MLX_ASSERT(y < image\->height, "Pixel is out of bounds");
+31 
+32     uint8_t* pixelstart = &image\->pixels[(y * image\->width + x) * BPP];
+33     mlx_draw_pixel(pixelstart, color);
+34 }
+.fi
+
+.SS "\fBmlx_image_t\fP * mlx_put_string (\fBmlx_t\fP * mlx, \fBconst\fP \fBchar\fP * str, \fBint32_t\fP x, \fBint32_t\fP y)"
+Draws a string on an image and then outputs it to the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIstr\fP The string to draw\&. 
+.br
+\fIx\fP The X location\&. 
+.br
+\fIy\fP The Y location\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Image ptr to the string\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB60\fP of file \fBmlx_font\&.c\fP\&..PP
+.nf
+61 {
+62     MLX_NONNULL(mlx);
+63     MLX_NONNULL(str);
+64 
+65     mlx_image_t* strimage;
+66     const size_t len = strlen(str);
+67     if (len > MLX_MAX_STRING)
+68         return ((void*)mlx_error(MLX_STRTOOBIG));   
+69     if (!(strimage = mlx_new_image(mlx, len * FONT_WIDTH, FONT_HEIGHT)))
+70         return (NULL);
+71 
+72     // Draw the text itself
+73     int32_t imgoffset = 0;
+74     for (size_t i = 0; i < len; i++, imgoffset += FONT_WIDTH)
+75         mlx_draw_char(strimage, mlx_get_texoffset(str[i]), imgoffset);
+76 
+77     if (mlx_image_to_window(mlx, strimage, x, y) == \-1)
+78         return (mlx_delete_image(mlx, strimage), NULL);
+79     return (strimage);
+80 }
+.fi
+
+.SS "\fBvoid\fP mlx_resize_hook (\fBmlx_t\fP * mlx, \fBmlx_resizefunc\fP func, \fBvoid\fP * param)"
+This function sets the resize callback, which is called when the window is resized
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The resize callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB74\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+75 {
+76     MLX_NONNULL(mlx);
+77     MLX_NONNULL(func);
+78 
+79     mlx_ctx_t* mlxctx = mlx\->context;
+80     mlxctx\->resize_hook\&.func = func;
+81     mlxctx\->resize_hook\&.param = param;
+82     glfwSetWindowSizeCallback(mlx\->window, mlx_resize_callback);
+83 }
+.fi
+
+.SS "\fBbool\fP mlx_resize_image (\fBmlx_image_t\fP * img, \fBuint32_t\fP nwidth, \fBuint32_t\fP nheight)"
+Allows you to resize an image, a new pixel buffer is allocated to fit & the previous data is scaled to fit the new size\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIimg\fP The image to resize\&. 
+.br
+\fInwidth\fP The new width\&. 
+.br
+\fInheight\fP The new height\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True if image was resized or false on error\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB224\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+225 {
+226     MLX_NONNULL(img);
+227 
+228     if (!nwidth || !nheight || nwidth > INT16_MAX || nheight > INT16_MAX)
+229         return (mlx_error(MLX_INVDIM));
+230     if (nwidth != img\->width || nheight != img\->height)
+231     {
+232         uint32_t* origin = (uint32_t*)img\->pixels;
+233         float wstep = (float)img\->width / nwidth;
+234         float hstep = (float)img\->height / nheight;
+235 
+236         uint8_t* tempbuff = calloc(nwidth * nheight, BPP);
+237         if (!tempbuff)
+238             return (mlx_error(MLX_MEMFAIL));
+239         img\->pixels = tempbuff;
+240         glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, nwidth, nheight, 0, GL_RGBA, GL_UNSIGNED_BYTE, img\->pixels);
+241 
+242         uint32_t* destin = (uint32_t*)img\->pixels;
+243         for (uint32_t j = 0; j < nheight; j++)
+244             for (uint32_t i = 0; i < nwidth; i++)
+245                 destin[j * nwidth + i] = origin[(uint32_t)(j * hstep) * img\->width + (uint32_t)(i * wstep)];
+246         (*(uint32_t*)&img\->width) = nwidth;
+247         (*(uint32_t*)&img\->height) = nheight;
+248         free(origin);
+249     }
+250     return (true);
+251 }
+.fi
+
+.SS "\fBvoid\fP mlx_scroll_hook (\fBmlx_t\fP * mlx, \fBmlx_scrollfunc\fP func, \fBvoid\fP * param)"
+This function sets the scroll callback, which is called when a scrolling device is used, such as a mouse wheel\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The scroll wheel callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB43\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+44 {
+45     MLX_NONNULL(mlx);
+46     MLX_NONNULL(func);
+47 
+48     mlx_ctx_t* const mlxctx = mlx\->context;
+49     mlxctx\->scroll_hook\&.func = func;
+50     mlxctx\->scroll_hook\&.param = param;
+51     glfwSetScrollCallback(mlx\->window, mlx_scroll_cb);
+52 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_cursor (\fBmlx_t\fP * mlx, \fBmlx_win_cursor_t\fP * cursor)"
+Sets the current cursor to the given custom cursor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIcursor\fP The cursor object to display, if null default cursor is selected\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB50\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+51 {
+52     MLX_NONNULL(mlx);
+53     MLX_NONNULL(cursor);
+54 
+55     glfwSetCursor(mlx\->window, cursor);
+56 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_cursor_mode (\fBmlx_t\fP * mlx, \fBmouse_mode_t\fP mode)"
+Defines the state for the cursor\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fImode\fP A specified mouse mode\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB58\fP of file \fBmlx_cursor\&.c\fP\&..PP
+.nf
+59 {
+60     MLX_NONNULL(mlx);
+61 
+62     glfwSetInputMode(mlx\->window, GLFW_CURSOR, mode);
+63 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_icon (\fBmlx_t\fP * mlx, \fBmlx_texture_t\fP * image)"
+Lets you set a custom image as the program icon\&.
+.PP
+NOTE: In MacOS this function does nothing, you should use the bundles icon to set the dock bar icon\&. 
+.PP
+\fBSee also\fP
+.RS 4
+: https://9to5mac.com/2021/11/08/change-mac-icons/ 
+.PP
+: https://github.com/glfw/glfw/issues/2041
+.RE
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIimage\fP The image to use as icon\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB85\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+86 {
+87     MLX_NONNULL(mlx);
+88     MLX_NONNULL(image);
+89 
+90     const GLFWimage icon = {
+91         \&.width = image\->width,
+92         \&.height = image\->height,
+93         \&.pixels = image\->pixels
+94     };
+95 
+96     glfwSetWindowIcon(mlx\->window, 1, &icon);
+97 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_instance_depth (\fBmlx_instance_t\fP * instance, \fBint32_t\fP zdepth)"
+Sets the depth / Z axis value of an instance\&.
+.PP
+NOTE: Keep in mind that images that are on the same Z layer cut each other off\&. so if you don't see your image anymore make sure it's not conflicting by being on the same layer as another image\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIinstance\fP The instance on which to change the depth\&. 
+.br
+\fIzdepth\fP The new depth value\&. 
+.RE
+.PP
+NOTE: The reason why we don't sort directly is that the user might call this function multiple times in a row and we don't want to sort for every change\&. Pre-loop wise that is\&.
+.PP
+Definition at line \fB105\fP of file \fBmlx_images\&.c\fP\&..PP
+.nf
+106 {
+107     MLX_NONNULL(instance);
+108 
+109     if (instance\->z == zdepth)
+110         return;
+111     instance\->z = zdepth;
+112 
+113     /**
+114      * NOTE: The reason why we don't sort directly is that
+115      * the user might call this function multiple times in a row and we don't
+116      * want to sort for every change\&. Pre\-loop wise that is\&.
+117      */
+118     sort_queue = true;
+119 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_mouse_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP x, \fBint32_t\fP y)"
+Sets the mouse position\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIpos\fP The position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB83\fP of file \fBmlx_mouse\&.c\fP\&..PP
+.nf
+84 {
+85     MLX_NONNULL(mlx);
+86 
+87     glfwSetCursorPos(mlx\->window, (double)x, (double)y);
+88 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_setting (\fBmlx_settings_t\fP setting, \fBint32_t\fP value)"
+Set a setting for MLX42\&. Settings can manipulate the core behaviour of the engine\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIsetting\fP The settings value, See mlx_settings_t type\&. 
+.br
+\fIvalue\fP Settings value to determine the state of the setting\&. Can be a boolean or an enum / macro\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB199\fP of file \fBmlx_init\&.c\fP\&..PP
+.nf
+200 {
+201     MLX_ASSERT(setting >= 0 && setting < MLX_SETTINGS_MAX, "Invalid settings value");
+202     mlx_settings[setting] = value;
+203 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_limit (\fBmlx_t\fP * mlx, \fBint32_t\fP min_w, \fBint32_t\fP min_h, \fBint32_t\fP max_w, \fBint32_t\fP max_h)"
+Sets the size limits of the specified window\&. Will force the window to not be resizable past or below the given values\&.
+.PP
+Pass -1 for no limit to any of the min/max parameters to ignore that boundary\&. For instance if you want a min window size but the max window size can be whatever\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fImin_w\fP The min width of the window\&. 
+.br
+\fImax_w\fP The max width of the window\&. 
+.br
+\fImin_h\fP The min height of the window\&. 
+.br
+\fImax_h\fP The max height of the window\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB124\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+125 {
+126     MLX_NONNULL(mlx);
+127 
+128     glfwSetWindowSizeLimits(mlx\->window, min_w, min_h, max_w, max_h);
+129 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_pos (\fBmlx_t\fP * mlx, \fBint32_t\fP xpos, \fBint32_t\fP ypos)"
+Sets the window's position\&.
+.PP
+Do not use this function to move an already visible window unless you have very good reasons for doing so, as it will confuse and annoy the user\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIxpos\fP The x position\&. 
+.br
+\fIypos\fP The y position\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB99\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+100 {
+101     MLX_NONNULL(mlx);
+102 
+103     glfwSetWindowPos(mlx\->window, xpos, ypos);
+104 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_size (\fBmlx_t\fP * mlx, \fBint32_t\fP new_width, \fBint32_t\fP new_height)"
+Changes the window size to the newly specified values\&. Use this to update the window width and height values in the mlx handle\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fInew_width\fP The new desired width\&. 
+.br
+\fInew_height\fP The new desired height\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB115\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+116 {
+117     MLX_NONNULL(mlx);
+118 
+119     mlx\->width = new_width;
+120     mlx\->height = new_height;
+121     glfwSetWindowSize(mlx\->window, new_width, new_height);
+122 }
+.fi
+
+.SS "\fBvoid\fP mlx_set_window_title (\fBmlx_t\fP * mlx, \fBconst\fP \fBchar\fP * title)"
+Sets the title of the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fItitle\fP The window title\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB131\fP of file \fBmlx_window\&.c\fP\&..PP
+.nf
+132 {
+133     MLX_NONNULL(mlx);
+134     MLX_NONNULL(title);
+135 
+136     glfwSetWindowTitle(mlx\->window, title);
+137 }
+.fi
+
+.SS "\fBconst\fP \fBchar\fP * mlx_strerror (\fBmlx_errno_t\fP val)"
+Gets the english description of the error code\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIval\fP The error code\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The error string that describes the error code\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB54\fP of file \fBmlx_error\&.c\fP\&..PP
+.nf
+55 {
+56     MLX_ASSERT(val >= 0, "Index must be positive");
+57     MLX_ASSERT(val < MLX_ERRMAX, "Index out of bounds");
+58 
+59     return (mlx_errors[val]);
+60 }
+.fi
+
+.SS "\fBvoid\fP mlx_terminate (\fBmlx_t\fP * mlx)"
+Terminates MLX and cleans up any of its used resources\&. Using any functions that require mlx afterwards will be considered undefined behaviour, beware of segfaults\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&.
+.RE
+.PP
+All of glfw & glads resources are cleaned up by the terminate function\&. Now it's time to clean up our own mess\&. 
+.PP
+Definition at line \fB36\fP of file \fBmlx_exit\&.c\fP\&..PP
+.nf
+37 {
+38     MLX_NONNULL(mlx);
+39 
+40     mlx_ctx_t *const mlxctx = mlx\->context;
+41 
+42     glUseProgram(0);
+43     glLinkProgram(mlxctx\->shaderprogram);
+44     glDeleteProgram(mlxctx\->shaderprogram);
+45     glfwTerminate();
+46     mlx_lstclear((mlx_list_t**)(&mlxctx\->hooks), &free);
+47     mlx_lstclear((mlx_list_t**)(&mlxctx\->render_queue), &free);
+48     mlx_lstclear((mlx_list_t**)(&mlxctx\->images), &mlx_free_image);
+49     mlx_freen(2, mlxctx, mlx);
+50 }
+.fi
+
+.SS "\fBmlx_image_t\fP * mlx_texture_to_image (\fBmlx_t\fP * mlx, \fBmlx_texture_t\fP * texture)"
+Converts a given texture to an image\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fItexture\fP The texture to use to create the image from\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+mlx_image_t* The image created from the texture\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_texture\&.c\fP\&..PP
+.nf
+18 {
+19     MLX_NONNULL(mlx);
+20     MLX_NONNULL(texture);
+21 
+22     mlx_image_t* image = mlx_new_image(mlx, texture\->width, texture\->height);
+23     if (image == NULL)
+24         return (NULL);
+25 
+26     uint8_t* pixelx;
+27     uint8_t* pixeli;
+28     for (uint32_t i = 0; i < texture\->height; i++)
+29     {
+30         pixelx = &texture\->pixels[(i * texture\->width) * texture\->bytes_per_pixel];
+31         pixeli = &image\->pixels[(i * image\->width) * texture\->bytes_per_pixel];
+32         memmove(pixeli, pixelx, texture\->width * texture\->bytes_per_pixel);
+33     }
+34     return (image);
+35 }
+.fi
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBmlx_errno_t\fP \fBmlx_errno\fP\fC [extern]\fP"
+
+.PP
+Definition at line \fB158\fP of file \fBmlx_init\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

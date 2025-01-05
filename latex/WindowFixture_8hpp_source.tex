@@ -1,0 +1,43 @@
+\doxysection{Window\+Fixture.\+hpp}
+\hypertarget{WindowFixture_8hpp_source}{}\label{WindowFixture_8hpp_source}\index{MLX42/tests/WindowFixture.hpp@{MLX42/tests/WindowFixture.hpp}}
+\mbox{\hyperlink{WindowFixture_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00001}00001\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00002}00002\ \textcolor{comment}{//\ Codam\ Coding\ College,\ Amsterdam\ @\ 2022-\/2023\ by\ Jelle\ van\ Kraaij.}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00003}00003\ \textcolor{comment}{//\ See\ README\ in\ the\ root\ project\ for\ more\ information.}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00004}00004\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00006}00006\ \textcolor{preprocessor}{\#\ pragma\ once}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00008}00008\ \textcolor{preprocessor}{\#\ include\ <gtest/gtest.h>}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00009}00009\ \textcolor{preprocessor}{\#\ include\ <\mbox{\hyperlink{MLX42_8h}{MLX42/MLX42.h}}>}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00011}\mbox{\hyperlink{classWindow}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classWindow}{Window}}\ :\ \textcolor{keyword}{public}\ ::testing::Test}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00012}00012\ \{}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00013}00013\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00014}\mbox{\hyperlink{classWindow_a4d88b01a1031fff3a377881d9f38d946}{00014}}\ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx\_t}}*\ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00016}\mbox{\hyperlink{classWindow_ac9adbe37d0371165d372a18557f4568c}{00016}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}\ =\ \textcolor{stringliteral}{"{}MLX42"{}};}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00017}\mbox{\hyperlink{classWindow_a82c7215f26823feea34f1eb4787b7fe1}{00017}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}\ =\ 400;}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00018}\mbox{\hyperlink{classWindow_a1ac0c095feefd6b84ab62d832004c219}{00018}}\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}\ =\ 400;}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00020}\mbox{\hyperlink{classWindow_a853c1fb2e3d27366fb37892161d17014}{00020}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWindow_a853c1fb2e3d27366fb37892161d17014}{SetUp}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00021}00021\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ reset\ error\ code\ as\ it\ is\ shared\ between\ tests}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}}\ =\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}};}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_a72eecffc4e044413e45e9b5bfb1feda8}{mlx\_set\_setting}}(\mbox{\hyperlink{MLX42_8h_a4ccab922a58526490dee7512e5cc00e0a30034ccde62debe94d62f61f50ab5cc4}{MLX\_HEADLESS}},\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_EQ}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}},\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structmlx}{mlx}}\ =\ \mbox{\hyperlink{MLX42_8h_a32988a5ce7aaa25a448b61b0ac410cec}{mlx\_init}}(\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}},\ \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}},\ \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}},\ \textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_NE}}(\mbox{\hyperlink{structmlx}{mlx}},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_EQ}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}},\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00031}\mbox{\hyperlink{classWindow_a8f4f7c0ab925c5ab5667e607dd3b6c9e}{00031}}\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classWindow_a8f4f7c0ab925c5ab5667e607dd3b6c9e}{TearDown}}()\textcolor{keyword}{\ override}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00032}00032\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_NE}}(\mbox{\hyperlink{structmlx}{mlx}},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{MLX42_8h_afa6aa2f79f9fc81735bdf3b92421f9ca}{mlx\_terminate}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{ASSERT\_EQ}}(\mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11}{mlx\_errno}},\ \mbox{\hyperlink{MLX42_8h_a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f}{MLX\_SUCCESS}});}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00036}00036\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{WindowFixture_8hpp_source_l00037}00037\ \};}
+
+\end{DoxyCode}

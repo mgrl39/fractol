@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__instance" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_instance</compoundname>
+    <includes refid="MLX42_8h" local="no">MLX42.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__instance_1a9b95bea19763667a6012218a68242c6c" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_instance::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>mlx_instance::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="303" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="303" bodyend="-1"/>
+        <referencedby refid="MLX42_8h_1a06dbfde4fce913678e09b0af263b0c06" compoundref="mlx__images_8c" startline="121" endline="159">mlx_image_to_window</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__instance_1ab949f77baee71a123804fd6f34cbf083" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_instance::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>mlx_instance::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="304" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__instance_1a32cdd771ef09e3ab5a3850a6c42e2052" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref></type>
+        <definition>int32_t mlx_instance::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>mlx_instance::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="305" column="8" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__instance_1a29f2428180b452e57537e7f84f94f625" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">bool</ref></type>
+        <definition>bool mlx_instance::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <qualifiedname>mlx_instance::enabled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42.h" line="306" column="5" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="306" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An image instance can be summarized as just a simple x, y &amp; z coordinate.</para>
+<para>Coordinates start from the top left of the screen at 0,0 and increase towards the bottom right.</para>
+<para>NOTE: To change the z value, use mlx_set_instance_depth!</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x location. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The y location. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>z</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The z depth, controls if the image is on the fore or background. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>enabled</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, the instance is drawn, else it&apos;s not. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_instance</label>
+        <link refid="structmlx__instance"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42.h" line="301" column="1" bodyfile="MLX42/include/MLX42/MLX42.h" bodystart="302" bodyend="307"/>
+    <listofallmembers>
+      <member refid="structmlx__instance_1a29f2428180b452e57537e7f84f94f625" prot="public" virt="non-virtual"><scope>mlx_instance</scope><name>enabled</name></member>
+      <member refid="structmlx__instance_1a9b95bea19763667a6012218a68242c6c" prot="public" virt="non-virtual"><scope>mlx_instance</scope><name>x</name></member>
+      <member refid="structmlx__instance_1ab949f77baee71a123804fd6f34cbf083" prot="public" virt="non-virtual"><scope>mlx_instance</scope><name>y</name></member>
+      <member refid="structmlx__instance_1a32cdd771ef09e3ab5a3850a6c42e2052" prot="public" virt="non-virtual"><scope>mlx_instance</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="WindowFixture_8hpp" kind="file" language="C++">
+    <compoundname>WindowFixture.hpp</compoundname>
+    <includes local="no">gtest/gtest.h</includes>
+    <includes refid="MLX42_8h" local="no">MLX42/MLX42.h</includes>
+    <includedby refid="tests_8cpp" local="yes">MLX42/tests/tests.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+        <link refid="MLX42_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>MLX42/tests/WindowFixture.hpp</label>
+        <link refid="WindowFixture_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>gtest/gtest.h</label>
+      </node>
+      <node id="6">
+        <label>stdbool.h</label>
+      </node>
+      <node id="4">
+        <label>stddef.h</label>
+      </node>
+      <node id="5">
+        <label>stdint.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>MLX42/tests/WindowFixture.hpp</label>
+        <link refid="WindowFixture_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>MLX42/tests/tests.cpp</label>
+        <link refid="tests_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classWindow" prot="public">Window</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Codam<sp/>Coding<sp/>College,<sp/>Amsterdam<sp/>@<sp/>2022-2023<sp/>by<sp/>Jelle<sp/>van<sp/>Kraaij.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>See<sp/>README<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>-----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;gtest/gtest.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#<sp/>include<sp/>&lt;<ref refid="MLX42_8h" kindref="compound">MLX42/MLX42.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="classWindow" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classWindow" kindref="compound">Window</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>::testing::Test</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14" refid="classWindow_1a4d88b01a1031fff3a377881d9f38d946" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structmlx" kindref="compound">mlx_t</ref>*<sp/><ref refid="structmlx" kindref="compound">mlx</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classWindow_1ac9adbe37d0371165d372a18557f4568c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="glad_8h_1aaced7cfc21e7d37775d6921bb8177239" kindref="member">name</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;MLX42&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="17" refid="classWindow_1a82c7215f26823feea34f1eb4787b7fe1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1a60075de22f90a1223dc0bea98d2ee4d5" kindref="member">height</ref><sp/>=<sp/>400;</highlight></codeline>
+<codeline lineno="18" refid="classWindow_1a1ac0c095feefd6b84ab62d832004c219" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int32_t</ref><sp/><ref refid="glad_8h_1a6879d830f164725df67adeeabca3ea47" kindref="member">width</ref><sp/>=<sp/>400;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="classWindow_1a853c1fb2e3d27366fb37892161d17014" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classWindow_1a853c1fb2e3d27366fb37892161d17014" kindref="member">SetUp</ref>()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="21"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>reset<sp/>error<sp/>code<sp/>as<sp/>it<sp/>is<sp/>shared<sp/>between<sp/>tests</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11" kindref="member">mlx_errno</ref><sp/>=<sp/><ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f" kindref="member">MLX_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42_8h_1a72eecffc4e044413e45e9b5bfb1feda8" kindref="member">mlx_set_setting</ref>(<ref refid="MLX42_8h_1a4ccab922a58526490dee7512e5cc00e0a30034ccde62debe94d62f61f50ab5cc4" kindref="member">MLX_HEADLESS</ref>,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ASSERT_EQ</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11" kindref="member">mlx_errno</ref>,<sp/><ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f" kindref="member">MLX_SUCCESS</ref>);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structmlx" kindref="compound">mlx</ref><sp/>=<sp/><ref refid="MLX42_8h_1a32988a5ce7aaa25a448b61b0ac410cec" kindref="member">mlx_init</ref>(<ref refid="glad_8h_1a6879d830f164725df67adeeabca3ea47" kindref="member">width</ref>,<sp/><ref refid="glad_8h_1a60075de22f90a1223dc0bea98d2ee4d5" kindref="member">height</ref>,<sp/><ref refid="glad_8h_1aaced7cfc21e7d37775d6921bb8177239" kindref="member">name</ref>,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ASSERT_NE</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ASSERT_EQ</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11" kindref="member">mlx_errno</ref>,<sp/><ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f" kindref="member">MLX_SUCCESS</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classWindow_1a8f4f7c0ab925c5ab5667e607dd3b6c9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classWindow_1a8f4f7c0ab925c5ab5667e607dd3b6c9e" kindref="member">TearDown</ref>()</highlight><highlight class="keyword"><sp/>override</highlight></codeline>
+<codeline lineno="32"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ASSERT_NE</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>,<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="MLX42_8h_1afa6aa2f79f9fc81735bdf3b92421f9ca" kindref="member">mlx_terminate</ref>(<ref refid="structmlx" kindref="compound">mlx</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">ASSERT_EQ</ref>(<ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11" kindref="member">mlx_errno</ref>,<sp/><ref refid="MLX42_8h_1a965edec72d16c41bb7f4190f4dcd7e11ab53ba30eccb3f650e5aa2da659bb369f" kindref="member">MLX_SUCCESS</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/tests/WindowFixture.hpp"/>
+  </compounddef>
+</doxygen>

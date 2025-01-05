@@ -1,0 +1,654 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="main__explained_8md" kind="file" language="Markdown">
+    <compoundname>main_explained.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Main<sp/>Explained</highlight></codeline>
+<codeline><highlight class="normal">Este<sp/>archivo<sp/>explica<sp/>el<sp/>main<sp/>paso<sp/>a<sp/>paso.<sp/></highlight></codeline>
+<codeline><highlight class="normal">##<sp/>1.<sp/>main:<sp/>punto<sp/>de<sp/>entrada.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">int<sp/>main(int<sp/>argc,<sp/>char<sp/>*argv[])</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">El<sp/>main<sp/>es<sp/>el<sp/>**punto<sp/>de<sp/>entrada<sp/>del<sp/>programa**,<sp/>es<sp/>decir,<sp/>el<sp/>inicio.<sp/>Los<sp/>dos<sp/>argumentos<sp/>que<sp/>toma<sp/>son<sp/>`argc`<sp/>y<sp/>`argv`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`argc`<sp/>indica<sp/>el<sp/>número<sp/>de<sp/>argumentos<sp/>pasados<sp/>por<sp/>línea<sp/>de<sp/>comandos.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`argv`<sp/>es<sp/>el<sp/>array<sp/>de<sp/>cadenas<sp/>que<sp/>contiene<sp/>los<sp/>argumentos.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Cuando<sp/>escribimos<sp/>en<sp/>la<sp/>terminal:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">./fractol<sp/>mandelbrot</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**argc**<sp/>vale<sp/>**2**,<sp/>ya<sp/>que<sp/>son<sp/>dos<sp/>argumentos<sp/>(`./fractol`<sp/>y<sp/>`mandelbrot`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**argv**<sp/>tiene<sp/>dos<sp/>valores:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>argv[0]<sp/>-&gt;<sp/>`./fractol`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>argv[1]<sp/>-&gt;<sp/>`mandelbrot`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Estos<sp/>són<sp/>los<sp/>argumentos<sp/>que,<sp/>seguidamente,<sp/>verificaremos<sp/>si<sp/>nos<sp/>los<sp/>han<sp/>pasado<sp/>correctamente.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>2.<sp/>t_data<sp/>data:<sp/>La<sp/>estructura<sp/>principal</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">t_data<sp/><sp/>data</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>línea<sp/>crea<sp/>una<sp/>variable<sp/>llamada<sp/>`data`,<sp/>que<sp/>es<sp/>una<sp/>estructura<sp/>(`struct`)<sp/>que<sp/>contiene<sp/>toda<sp/>la<sp/>información<sp/>importante<sp/>del<sp/>programa.<sp/>Piensa<sp/>en<sp/>ella<sp/>como<sp/>un<sp/>&quot;almacén&quot;<sp/>**datos<sp/>esenciales**<sp/>como:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>nivel<sp/>de<sp/>zoom.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>desplazamiento<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>La<sp/>constante<sp/>c<sp/>(para<sp/>Julia).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>La<sp/>ventana<sp/>gráfica.</highlight></codeline>
+<codeline><highlight class="normal">**¿Por<sp/>qué<sp/>usamos<sp/>una<sp/>estructura?**</highlight></codeline>
+<codeline><highlight class="normal">Usar<sp/>una<sp/>estructura<sp/>nos<sp/>permite<sp/>pasar<sp/>toda<sp/>la<sp/>información<sp/>a<sp/>las<sp/>funciones<sp/>sin<sp/>tener<sp/>que<sp/>manejar<sp/>un<sp/>montón<sp/>de<sp/>variables<sp/>sueltas.<sp/>Es<sp/>mas<sp/>limpio<sp/>y<sp/>organizado.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.1<sp/>El<sp/>nivel<sp/>de<sp/>zoom.</highlight></codeline>
+<codeline><highlight class="normal">**¿Qué<sp/>es?**<sp/>--&gt;<sp/>El<sp/>nivel<sp/>de<sp/>zoom<sp/>controla<sp/>cuánto<sp/>&quot;te<sp/>acercas&quot;<sp/>o<sp/>&quot;te<sp/>alejas&quot;<sp/>del<sp/>fractal.<sp/>Piensa<sp/>en<sp/>el<sp/>fractal<sp/>como<sp/>una<sp/>imagen<sp/>infinita,<sp/>con<sp/>detalles<sp/>infinitos.<sp/>El<sp/>zoom<sp/>determina<sp/>qué<sp/>parte<sp/>de<sp/>esa<sp/>imagen<sp/>estas<sp/>viendo<sp/>y<sp/>con<sp/>qué<sp/>nivel<sp/>de<sp/>detalle.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Zoom<sp/>inicial:**<sp/>Cuando<sp/>el<sp/>programa<sp/>inicia,<sp/>el<sp/>zoom<sp/>es<sp/>**1.0**,<sp/>lo<sp/>que<sp/>significa<sp/>que<sp/>estás<sp/>viendo<sp/>el<sp/>fractal<sp/>en<sp/>su<sp/>escala<sp/>original<sp/>(sin<sp/>acercarte<sp/>ni<sp/>alejarte).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Zoom<sp/>mayor<sp/>a<sp/>1.0:**<sp/>Te<sp/>estas<sp/>acercando<sp/>al<sp/>fractal.<sp/>Por<sp/>ejemplo:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Con<sp/>zoom<sp/>=<sp/>2.0,<sp/>ves<sp/>una<sp/>region<sp/>mas<sp/>pequeña<sp/>pero<sp/>con<sp/>más<sp/>detalle.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Zoom<sp/>menor<sp/>a<sp/>1.0:**<sp/>Te<sp/>estas<sp/>alejando<sp/>del<sp/>fractal.<sp/>Por<sp/>ejemplo:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Con<sp/>zoom:<sp/>0.5,<sp/>ves<sp/>una<sp/>región<sp/>más<sp/>grande<sp/>pero<sp/>con<sp/>menos<sp/>detalle.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**¿Por<sp/>qué<sp/>es<sp/>importante?**<sp/>--&gt;<sp/>El<sp/>fractal<sp/>es<sp/>infinito,<sp/>así<sp/>que<sp/>el<sp/>zoom<sp/>te<sp/>permite<sp/>explorar<sp/>sus<sp/>distintas<sp/>&quot;capas&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.2<sp/>El<sp/>desplazamiento<sp/>del<sp/>fractal</highlight></codeline>
+<codeline><highlight class="normal">**¿Qué<sp/>es?**<sp/>--&gt;<sp/>El<sp/>desplazamiento<sp/>(también<sp/>llamado<sp/>&quot;offset&quot;)<sp/>se<sp/>refiere<sp/>a<sp/>mover<sp/>el<sp/>fractal<sp/>en<sp/>el<sp/>plano<sp/>complejo.<sp/>Imagina<sp/>que<sp/>el<sp/>fractal<sp/>es<sp/>un<sp/>lienzo</highlight></codeline>
+<codeline><highlight class="normal">que<sp/>puedes<sp/>desplizar<sp/>hacia<sp/>arriba,<sp/>abajo,<sp/>izquierda<sp/>o<sp/>derecha.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Offset<sp/>inicial:**<sp/>Al<sp/>principio,<sp/>el<sp/>fractal<sp/>está<sp/>&quot;centrado&quot;<sp/>en<sp/>la<sp/>pantalla.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`offset[X]<sp/>=<sp/>0.0`<sp/>--&gt;<sp/>No<sp/>hay<sp/>desplazamiento<sp/>horizontal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`offset[Y]<sp/>=<sp/>0.0`<sp/>--&gt;<sp/>No<sp/>hay<sp/>desplazamiento<sp/>vertical.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Cambios<sp/>de<sp/>offset:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`offset[X]<sp/>=<sp/>0.5`<sp/>--&gt;<sp/>El<sp/>fractal<sp/>se<sp/>mueve<sp/>hacia<sp/>la<sp/>izquierda<sp/>(en<sp/>el<sp/>plano,<sp/>te<sp/>desplazas<sp/>hacia<sp/>la<sp/>derecha).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`offset[Y]<sp/>=<sp/>-0.5`<sp/>--&gt;<sp/>El<sp/>fractal<sp/>se<sp/>mueve<sp/>hacia<sp/>abajo<sp/>(en<sp/>el<sp/>plano,<sp/>te<sp/>desplazas<sp/>hacia<sp/>arriba).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**¿Por<sp/>qué<sp/>es<sp/>importante?**<sp/>Permite<sp/>explorar<sp/>partes<sp/>del<sp/>fractal<sp/>que<sp/>no<sp/>están<sp/>en<sp/>el<sp/>centro.<sp/></highlight></codeline>
+<codeline><highlight class="normal">Sin<sp/>desplazamiento,<sp/>solo<sp/>podrías<sp/>ver<sp/>el<sp/>origen<sp/>del<sp/>fractal<sp/>(−2.0−2.0<sp/>a<sp/>+2.0+2.0<sp/>en<sp/>el<sp/>plano<sp/>complejo).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.2.1<sp/>Definición<sp/>del<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline><highlight class="normal">El<sp/>plano<sp/>complejo<sp/>es<sp/>un<sp/>sistema<sp/>de<sp/>coordenadas<sp/>dónde:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>eje<sp/>**horizontal**<sp/>representa<sp/>los<sp/>números<sp/>reales<sp/>(`Re`).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>eje<sp/>**vertical**<sp/>representa<sp/>los<sp/>números<sp/>imaginarios<sp/>(`Im`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Ejemplo:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>punto<sp/>(-2.0,<sp/>-2.0)<sp/>en<sp/>el<sp/>plano<sp/>complejo<sp/>representa<sp/>el<sp/>número<sp/>-2.0<sp/>-2.0i.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>punto<sp/>(1.0,<sp/>0.5)<sp/>representa<sp/>1.0<sp/>+<sp/>0.5i</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>2.2.2<sp/>El<sp/>rango<sp/>inicial<sp/>[-2.0,<sp/>+2.0]</highlight></codeline>
+<codeline><highlight class="normal">**Por<sp/>qué<sp/>[-2.0,<sp/>+2.0]**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Mandelbrot:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>El<sp/>fractal<sp/>de<sp/>Mandelbrot<sp/>es<sp/>**contenido**<sp/>en<sp/>un<sp/>subconjunto<sp/>del<sp/>plano<sp/>complejo:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>`c`<sp/>esta<sp/>entre<sp/>[-2.0,<sp/>+2.0]<sp/>en<sp/>Re<sp/>y<sp/>[-2.0,<sp/>+2.0]<sp/>en<sp/>Im.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Fuera<sp/>de<sp/>este<sp/>rango,<sp/>la<sp/>función<sp/>iterativa<sp/>del<sp/>fractal<sp/>no<sp/>tiene<sp/>comportamiento<sp/>interesante<sp/>(los<sp/>puntos<sp/>divergen<sp/>rápidamente<sp/>y<sp/>no<sp/>contribuyen<sp/>a<sp/>la<sp/>iamgen).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Julia:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>Los<sp/>fractales<sp/>de<sp/>Julia<sp/>también<sp/>se<sp/>definen<sp/>y<sp/>son<sp/>más<sp/>interesantes<sp/>dentro<sp/>del<sp/>rango<sp/>[−2.0,+2.0].</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Qué<sp/>significa<sp/>esto<sp/>para<sp/>la<sp/>ventana<sp/>gráfica**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Cuando<sp/>inicializas<sp/>el<sp/>fractal<sp/>sin<sp/>desplazamiento:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>La<sp/>esquina<sp/>superior<sp/>izquierda<sp/>de<sp/>la<sp/>ventana<sp/>gráfica<sp/>corresponde<sp/>a<sp/>(−2.0,+2.0)<sp/>en<sp/>el<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>La<sp/>esquina<sp/>inferior<sp/>derecha<sp/>corresponde<sp/>a<sp/>(+2.0,−2.0).</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.3<sp/>La<sp/>constante<sp/>c<sp/>(para<sp/>Julia)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**¿Qué<sp/>es?**<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">En<sp/>el<sp/>fractal<sp/>de<sp/>Julia,<sp/>la<sp/>constante<sp/>`c`<sp/>es<sp/>un<sp/>número<sp/>complejo<sp/>que<sp/>se<sp/>mantiene<sp/>fijo<sp/>durante<sp/>las<sp/>iteraciones.<sp/>Es<sp/>el<sp/>**parámetro<sp/>clave<sp/>que<sp/>define<sp/>la<sp/>forma<sp/>y<sp/>el<sp/>comportamiento<sp/>del<sp/>fractal.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Formato:**<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">```text</highlight></codeline>
+<codeline><highlight class="normal">c<sp/>=<sp/>c_real<sp/>+<sp/>c_im<sp/>*<sp/>i</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Donde:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**c_real:**<sp/>Es<sp/>la<sp/>parte<sp/>real<sp/>de<sp/>`c`.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**c_im:**<sp/>Es<sp/>la<sp/>parte<sp/>imaginaria<sp/>de<sp/>`c`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Ejemplo:<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Si<sp/>el<sp/>usuario<sp/>introduce<sp/>los<sp/>valores<sp/>`0.285`<sp/>y<sp/>`-0.01`<sp/>como<sp/>argumentos<sp/>para<sp/>Julia,<sp/>entonces:<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">```text</highlight></codeline>
+<codeline><highlight class="normal">c<sp/>=<sp/>0.285<sp/>-<sp/>0.01i</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>¿Qué<sp/>hace<sp/>c?<sp/></highlight></codeline>
+<codeline><highlight class="normal">En<sp/>Julia,<sp/>cada<sp/>punto<sp/>del<sp/>plano<sp/>complejo<sp/>(cada<sp/>píxel)<sp/>pasa<sp/>por<sp/>la<sp/>fórmula<sp/>iterativa:<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">```text</highlight></codeline>
+<codeline><highlight class="normal">z_next<sp/>=<sp/>(z_current)^2<sp/>+<sp/>c</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Donde:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`z_current`<sp/>es<sp/>el<sp/>valor<sp/>actual<sp/>del<sp/>punto.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`c`<sp/>es<sp/>la<sp/>constante<sp/>fija.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**¿Por<sp/>qué<sp/>es<sp/>importante?**<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">Cambiar<sp/>el<sp/>valor<sp/>de<sp/>`c`<sp/>altera<sp/>completamente<sp/>la<sp/>forma<sp/>del<sp/>fractal<sp/>de<sp/>Julia.<sp/></highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Esto<sp/>permite<sp/>al<sp/>usuario<sp/>explorar<sp/>configuraciones<sp/>visualmente<sp/>únicas<sp/>y<sp/>descubrir<sp/>distintas<sp/>formas<sp/>y<sp/>patrones.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Esto<sp/>se<sp/>refleja<sp/>directamente<sp/>en<sp/>el<sp/>código**<sp/>porque<sp/>`c`<sp/>es<sp/>la<sp/>constante<sp/>utilizada<sp/>en<sp/>las<sp/>iteraciones<sp/>para<sp/>decidir<sp/>si<sp/>un<sp/>punto<sp/>&quot;pertenece&quot;<sp/>al<sp/>fractal<sp/>o<sp/>no.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Cada<sp/>valor<sp/>de<sp/>c<sp/>genera<sp/>un<sp/>fractal<sp/>visualmente<sp/>diferente**,<sp/>lo<sp/>que<sp/>permite<sp/>explorar<sp/>configuraciones<sp/>únicas<sp/>y<sp/>patrones<sp/>completamente<sp/>nuevos.<sp/>Sin<sp/>esta<sp/>constante,<sp/>el<sp/>fractal<sp/>de<sp/>Julia<sp/>no<sp/>tendría<sp/>variabilidad<sp/>ni<sp/>personalización.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>2.4<sp/>La<sp/>ventana<sp/>gráfica</highlight></codeline>
+<codeline><highlight class="normal">**¿Qué<sp/>es?**<sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal">La<sp/>ventana<sp/>gráfica<sp/>es<sp/>el<sp/>&quot;lienzo&quot;<sp/>donde<sp/>se<sp/>dibuja<sp/>el<sp/>fractal.<sp/>Cada<sp/>píxel<sp/>en<sp/>la<sp/>ventana<sp/>gráfica<sp/>se<sp/>traduce<sp/>a<sp/>un<sp/>punto<sp/>en<sp/>el<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Dimensiones:**</highlight></codeline>
+<codeline><highlight class="normal">En<sp/>mi<sp/>caso:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Ancho:<sp/>`WIDTH`<sp/>800</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Alto:<sp/>`HEIGHT`<sp/>800</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">(estas<sp/>dos<sp/>se<sp/>encuentran<sp/>definidas<sp/>en<sp/>**fractol.h**)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Relación<sp/>con<sp/>el<sp/>plano<sp/>complejo:**</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>La<sp/>esquina<sp/>superior<sp/>izquierda<sp/>de<sp/>la<sp/>ventana<sp/>gráfica<sp/>corresponde<sp/>a<sp/>un<sp/>punto<sp/>en<sp/>el<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Cada<sp/>píxel<sp/>se<sp/>mapea<sp/>a<sp/>una<sp/>coordenada<sp/>en<sp/>el<sp/>plano<sp/>complejo<sp/>usando<sp/>escalas<sp/>calculadas.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Explicación<sp/>&quot;intermedia&quot;**:</highlight></codeline>
+<codeline><highlight class="normal">La<sp/>ventana<sp/>gráfica<sp/>es<sp/>el<sp/>&apos;lienzo&apos;<sp/>donde<sp/>se<sp/>dibuja<sp/>el<sp/>fractal.<sp/>Cada<sp/>píxel<sp/>en<sp/>la<sp/>ventana<sp/>gráfica<sp/>se<sp/>traduce<sp/>a<sp/>un<sp/>punto<sp/>en<sp/>el<sp/>plano<sp/>complejo.<sp/>La<sp/>ventana<sp/>es<sp/>gestionada<sp/>por<sp/>mlx,<sp/>mientras<sp/>que<sp/>el<sp/>contenido<sp/>que<sp/>se<sp/>dibuja<sp/>primero<sp/>se<sp/>calcula<sp/>y<sp/>almacena<sp/>en<sp/>un<sp/>buffer<sp/>de<sp/>imagen<sp/>llamado<sp/>img.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Un<sp/>buffer<sp/>de<sp/>imagen<sp/>es<sp/>una<sp/>región<sp/>de<sp/>memoria<sp/>dedicada<sp/>que<sp/>actúa<sp/>como<sp/>un<sp/>&apos;borrador<sp/>digital&apos;,<sp/>donde<sp/>se<sp/>realizan<sp/>los<sp/>cálculos<sp/>y<sp/>dibujos<sp/>del<sp/>fractal<sp/>antes<sp/>de<sp/>enviarlos<sp/>a<sp/>la<sp/>pantalla.<sp/>Esto<sp/>asegura<sp/>un<sp/>renderizado<sp/>fluido<sp/>y<sp/>evita<sp/>que<sp/>el<sp/>usuario<sp/>vea<sp/>parpadeos<sp/>o<sp/>actualizaciones<sp/>parciales<sp/>durante<sp/>el<sp/>cálculo.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>3.<sp/>Validación<sp/>de<sp/>argumentos<sp/>(validate_arguments)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>validate_arguments(int<sp/>argc,<sp/>char<sp/>*argv[])</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>3.1<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>verifica<sp/>si<sp/>los<sp/>argumentos<sp/>pasados<sp/>al<sp/>programa<sp/>son<sp/>válidos<sp/>y<sp/>corresponden<sp/>a<sp/>un<sp/>tipo<sp/>de<sp/>fractal<sp/>soportado<sp/>(`mandelbrot`<sp/>o<sp/>`julia`).<sp/>Si<sp/>no<sp/>se<sp/>cumplen<sp/>los<sp/>requisitos,<sp/>se<sp/>muestra<sp/>un<sp/>mensaje<sp/>de<sp/>error<sp/>y<sp/>el<sp/>programa<sp/>termina.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.2<sp/>Parámetros<sp/>de<sp/>entrada</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`argc`<sp/>-&gt;<sp/>Número<sp/>de<sp/>argumentos<sp/>pasados<sp/>al<sp/>programa<sp/>desde<sp/>la<sp/>línea<sp/>de<sp/>comandos.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`argv`<sp/>-&gt;<sp/>Array<sp/>de<sp/>cadenas<sp/>que<sp/>contiene<sp/>los<sp/>argumentos.<sp/>Ejemplo:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>`argv[0]`<sp/>-&gt;<sp/>Nombre<sp/>del<sp/>programa<sp/>(`./fractol`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>`argv[1]`<sp/>-&gt;<sp/>Tipo<sp/>de<sp/>fractal<sp/>(`mandelbrot`<sp/>o<sp/>`julia`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>`argv[2]`,<sp/>`argv[3]`<sp/>-&gt;<sp/>Valores<sp/>obligatorios<sp/>de<sp/>Julia<sp/>(`c_real`<sp/>y<sp/>`c_im`).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>3.2<sp/>¿Cómo<sp/>funciona?</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>**Mensajes<sp/>de<sp/>error<sp/>predefinidos:**</highlight></codeline>
+<codeline><highlight class="normal">La<sp/>función<sp/>comienza<sp/>creando<sp/>un<sp/>array<sp/>`e_msg`<sp/>con<sp/>mensajes<sp/>de<sp/>error<sp/>que<sp/>se<sp/>utilizarán<sp/>según<sp/>el<sp/>caso.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">char<sp/>*e_msg[5];</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">e_msg[NO_TYPE]<sp/>=<sp/>&quot;No<sp/>fractal<sp/>type<sp/>specified.&quot;;</highlight></codeline>
+<codeline><highlight class="normal">e_msg[INVALID_TYPE]<sp/>=<sp/>&quot;Invalid<sp/>fractal<sp/>type.<sp/>Use<sp/>&apos;julia&apos;<sp/>or<sp/>&apos;mandelbrot&apos;.&quot;;</highlight></codeline>
+<codeline><highlight class="normal">e_msg[JULIA_ARGS]<sp/>=<sp/>&quot;Julia<sp/>needs:<sp/>&apos;julia<sp/>&lt;c_re&gt;<sp/>&lt;c_im&gt;&apos;.&quot;;</highlight></codeline>
+<codeline><highlight class="normal">e_msg[JULIA_NUM]<sp/>=<sp/>&quot;Julia<sp/>parameters<sp/>must<sp/>be<sp/>valid<sp/>numbers.&quot;;</highlight></codeline>
+<codeline><highlight class="normal">e_msg[MANDELBROT_ARGS]<sp/>=<sp/>&quot;Mandelbrot<sp/>needs:<sp/>&apos;mandelbrot&apos;.&quot;;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">**Nota:**<sp/>Las<sp/>constantes<sp/>como<sp/>`NO_TYPE`<sp/>y<sp/>`INVALID_TYPE`<sp/>son<sp/>valores<sp/>de<sp/>una<sp/>enumeración<sp/>(enum)<sp/>definida<sp/>en<sp/>**fractol.h**.<sp/>Una<sp/>enumeración<sp/>es<sp/>una<sp/>forma<sp/>de<sp/>definir<sp/>un<sp/>conjunto<sp/>de<sp/>valores<sp/>constantes<sp/>asociados<sp/>a<sp/>nombres<sp/>legibles.<sp/>Esto<sp/>hace<sp/>que<sp/>el<sp/>código<sp/>sea<sp/>más<sp/>claro<sp/>y<sp/>fácil<sp/>de<sp/>mantener.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>**¿Faltan<sp/>argumentos?**</highlight></codeline>
+<codeline><highlight class="normal">Si<sp/>no<sp/>se<sp/>pasa<sp/>ningún<sp/>argumento<sp/>(es<sp/>decir,<sp/>`argc<sp/>&lt;<sp/>2`),<sp/>se<sp/>muestra<sp/>un<sp/>mensaje<sp/>de<sp/>error<sp/>y<sp/>se<sp/>termina<sp/>el<sp/>programa:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(argc<sp/>&lt;<sp/>2)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit_with_error(e_msg[NO_TYPE],<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>**Validación<sp/>del<sp/>tipo<sp/>de<sp/>fractal:**</highlight></codeline>
+<codeline><highlight class="normal">Si<sp/>el<sp/>primer<sp/>argumento<sp/>es<sp/>`&quot;mandelbrot&quot;`,<sp/>la<sp/>función<sp/>verifica<sp/>que<sp/>no<sp/>haya<sp/>argumentos<sp/>adicionales<sp/>(`argc<sp/>!=<sp/>2`).</highlight></codeline>
+<codeline><highlight class="normal">Si<sp/>hay<sp/>argumentos<sp/>extras,<sp/>se<sp/>muestra<sp/>un<sp/>mensaje<sp/>de<sp/>error:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(ft_strcmp(argv[1],<sp/>&quot;mandelbrot&quot;)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(argc<sp/>!=<sp/>2)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit_with_error(e_msg[MANDELBROT_ARGS],<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Si<sp/>el<sp/>primer<sp/>argumento<sp/>es<sp/>`&quot;julia&quot;`,<sp/>la<sp/>función<sp/>verifica<sp/>que:<sp/>Se<sp/>hayan<sp/>pasado<sp/>exactamente<sp/>4<sp/>argumentos<sp/>(`argc<sp/>!=<sp/>4`)<sp/>y<sp/>que<sp/>los<sp/>valores<sp/>de<sp/>`argv[2]`<sp/>y<sp/>`argv[3]`<sp/>sean<sp/>números<sp/>válidos,<sp/>utilizando<sp/>la<sp/>función<sp/>auxiliar<sp/>`is_valid_number`.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(ft_strcmp(argv[1],<sp/>&quot;julia&quot;)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(argc<sp/>!=<sp/>4)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit_with_error(e_msg[JULIA_ARGS],<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!is_valid_number(argv[2])<sp/>||<sp/>!is_valid_number(argv[3]))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>exit_with_error(e_msg[JULIA_NUM],<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>**Tipo<sp/>inválido:**</highlight></codeline>
+<codeline><highlight class="normal">Si<sp/>el<sp/>argumento<sp/>no<sp/>es<sp/>`&quot;mandelbrot&quot;`<sp/>ni<sp/>`&quot;julia&quot;`,<sp/>se<sp/>muestra<sp/>un<sp/>mensaje<sp/>de<sp/>error<sp/>correspondiente:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit_with_error(e_msg[INVALID_TYPE],<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>3.3<sp/>¿Qué<sp/>pasa<sp/>si<sp/>hay<sp/>un<sp/>error?</highlight></codeline>
+<codeline><highlight class="normal">La<sp/>función<sp/>utiliza<sp/>`exit_with_error`<sp/>para<sp/>mostrar<sp/>un<sp/>mensaje<sp/>de<sp/>error<sp/>específico<sp/>y<sp/>termina<sp/>el<sp/>programa<sp/>con<sp/>un<sp/>código<sp/>de<sp/>error.<sp/>Esto<sp/>asegura<sp/>que<sp/>el<sp/>programa<sp/>no<sp/>continúe<sp/>con<sp/>entradas<sp/>incorrectas.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>exit_with_error(const<sp/>char<sp/>*message,<sp/>char<sp/>*argv[])</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(LIGHT_RED<sp/>&quot;Error:<sp/>&quot;,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd((char<sp/>*)message,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(&quot;\n&quot;<sp/>RESET,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(LIGHT_RED<sp/>&quot;Usage:<sp/>&quot;<sp/>LIGHT_GREEN,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(argv[0],<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(&quot;<sp/>&lt;fractal_type&gt;<sp/>[parameters]\n&quot;<sp/>RESET,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(LIGHT_RED<sp/>&quot;Available<sp/>fractal<sp/>types:\n&quot;<sp/>RESET,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(LIGHT_GOLD<sp/>&quot;\tmandelbrot&quot;<sp/>RESET,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(&quot;\t\tDisplays<sp/>the<sp/>Mandelbrot<sp/>set.\n&quot;,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(LIGHT_GOLD<sp/>&quot;\tjulia<sp/>[c_re<sp/>c_im]&quot;<sp/>RESET,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(&quot;\tDisplays<sp/>the<sp/>Julia<sp/>set.\n&quot;,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(LIGHT_RED<sp/>&quot;Example:<sp/>&quot;<sp/>LIGHT_GREEN,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(argv[0],<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>fr_putstr_fd(&quot;<sp/>julia<sp/>0.285<sp/>-0.01\n&quot;<sp/>RESET,<sp/>2);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>3.4<sp/>Ejemplo<sp/>práctico</highlight></codeline>
+<codeline><highlight class="normal">Supongamos<sp/>que<sp/>ejecutamos:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">./fractol<sp/>julia<sp/>0.285<sp/>-0.01</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`argc<sp/>=<sp/>4`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`argv`:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`argv[0]`<sp/>=<sp/>`&quot;./fractol&quot;`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`argv[1]`<sp/>=<sp/>`&quot;julia&quot;`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`argv[2]`<sp/>=<sp/>`&quot;0.285&quot;`</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-<sp/>`argv[3]`<sp/>=<sp/>`&quot;-0.01&quot;`</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>La<sp/>función<sp/>verifica<sp/>que<sp/>`argv[1]<sp/>==<sp/>&quot;julia&quot;`.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Comprueba<sp/>que<sp/>`argc<sp/>==<sp/>4`.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Valida<sp/>que<sp/>`&quot;0.285&quot;`<sp/>y<sp/>`&quot;-0.01&quot;`<sp/>sean<sp/>números<sp/>válidos.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Si<sp/>todo<sp/>es<sp/>correcto,<sp/>la<sp/>validación<sp/>pasa<sp/>y<sp/>el<sp/>programa<sp/>continúa.</highlight></codeline>
+<codeline><highlight class="normal">##<sp/>4.<sp/>Configuración<sp/>del<sp/>tipo<sp/>de<sp/>fractal<sp/>y<sp/>parámetros</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>sección<sp/>del<sp/>código<sp/>se<sp/>encarga<sp/>de<sp/>configurar<sp/>el<sp/>tipo<sp/>de<sp/>fractal<sp/>(Julia<sp/>o<sp/>Mandelbrot)<sp/>y,<sp/>en<sp/>el<sp/>caso<sp/>del<sp/>fractal<sp/>de<sp/>Julia,<sp/>de<sp/>inicializar<sp/>los<sp/>valores<sp/>de<sp/>la<sp/>constante<sp/>`c`.<sp/>Esto<sp/>es<sp/>fundamental<sp/>para<sp/>que<sp/>el<sp/>programa<sp/>sepa<sp/>qué<sp/>tipo<sp/>de<sp/>fractal<sp/>debe<sp/>generar<sp/>y<sp/>qué<sp/>parámetros<sp/>utilizar.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(ft_strcmp(argv[1],<sp/>&quot;julia&quot;)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data.fractal_type<sp/>=<sp/>JULIA;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data.c[COMPLEX_RE]<sp/>=<sp/>ft_atod(argv[2]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data.c[COMPLEX_IM]<sp/>=<sp/>ft_atod(argv[3]);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">else<sp/>if<sp/>(ft_strcmp(argv[1],<sp/>&quot;mandelbrot&quot;)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data.fractal_type<sp/>=<sp/>MANDELBROT;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>4.1<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">El<sp/>bloque<sp/>condicional<sp/>verifica<sp/>el<sp/>argumento<sp/>`argv[1]`<sp/>para<sp/>determinar<sp/>si<sp/>el<sp/>usuario<sp/>ha<sp/>seleccionado<sp/>el<sp/>fractal<sp/>de<sp/>Julia<sp/>o<sp/>el<sp/>de<sp/>Mandelbrot.<sp/>Según<sp/>el<sp/>resultado,<sp/>inicializa<sp/>las<sp/>variables<sp/>correspondientes<sp/>en<sp/>la<sp/>estructura<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>Comparación<sp/>del<sp/>tipo<sp/>de<sp/>fractal:<sp/>Julia</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(ft_strcmp(argv[1],<sp/>&quot;julia&quot;)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Aquí,<sp/>se<sp/>utiliza<sp/>la<sp/>función<sp/>ft_strcmp<sp/>para<sp/>comparar<sp/>el<sp/>argumento<sp/>`argv[1]`<sp/>con<sp/>la<sp/>cadena<sp/>&quot;julia&quot;.<sp/>Si<sp/>son<sp/>iguales<sp/>(es<sp/>decir,<sp/>el<sp/>usuario<sp/>ha<sp/>solicitado<sp/>un<sp/>fractal<sp/>de<sp/>Julia),<sp/>la<sp/>función<sp/>devolverá<sp/>0,<sp/>eso<sp/>quiere<sp/>decir<sp/>que<sp/>la<sp/>condición<sp/>se<sp/>cumple<sp/>y<sp/>entraíamos<sp/>al<sp/>siguiente<sp/>punto:</highlight></codeline>
+<codeline><highlight class="normal">#####<sp/>Configuración<sp/>de<sp/>la<sp/>estructura<sp/>data<sp/>para<sp/>Julia</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">data.fractal_type<sp/>=<sp/>JULIA;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">La<sp/>estructura<sp/>data<sp/>contiene<sp/>el<sp/>campo<sp/>`fractal_type`,<sp/>que<sp/>se<sp/>define<sp/>como<sp/>un<sp/>valor<sp/>de<sp/>la<sp/>enumeración<sp/>`t_fractal_type`.<sp/>En<sp/>este<sp/>caso,<sp/>se<sp/>le<sp/>asigna<sp/>el<sp/>valor<sp/>JULIA,<sp/>**indicando<sp/>que<sp/>el<sp/>programa<sp/>debe<sp/>generar<sp/>un<sp/>fractal<sp/>de<sp/>Julia**.</highlight></codeline>
+<codeline><highlight class="normal">#####<sp/>Conversión<sp/>de<sp/>los<sp/>parámetros<sp/>de<sp/>Julia</highlight></codeline>
+<codeline><highlight class="normal">Los<sp/>argumentos<sp/>`argv[2]`<sp/>y<sp/>`argv[3]`<sp/>contienen<sp/>las<sp/>partes<sp/>real<sp/>e<sp/>imaginaria<sp/>de<sp/>la<sp/>constante<sp/>`c`,<sp/>respectivamente.<sp/>Estos<sp/>valores<sp/>tan<sp/>importantes<sp/>que<sp/>anteriormente<sp/>hemos<sp/>hablado<sp/>de<sp/>ellos.</highlight></codeline>
+<codeline><highlight class="normal">Se<sp/>utiliza<sp/>la<sp/>función<sp/>ft_atod<sp/>para<sp/>convertir<sp/>estas<sp/>cadenas<sp/>de<sp/>texto<sp/>(como<sp/>`&quot;0.285&quot;`)<sp/>en<sp/>números<sp/>de<sp/>punto<sp/>flotante<sp/>(como<sp/>`0.285`).</highlight></codeline>
+<codeline><highlight class="normal">Luego,<sp/>se<sp/>almacenan<sp/>en<sp/>los<sp/>campos<sp/>`c[COMPLEX_RE]`<sp/>y<sp/>`c[COMPLEX_IM]`<sp/>de<sp/>la<sp/>estructura<sp/>data.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>Comparación<sp/>del<sp/>tipo<sp/>de<sp/>fractal:<sp/>Mandelbrot</highlight></codeline>
+<codeline><highlight class="normal">En<sp/>cambio<sp/>si<sp/>no<sp/>se<sp/>cumple,<sp/>quiere<sp/>decir<sp/>que<sp/>el<sp/>usuario<sp/>ha<sp/>solicitado<sp/>Mandelbrot.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">else<sp/>if<sp/>(ft_strcmp(argv[1],<sp/>&quot;mandelbrot&quot;)<sp/>==<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">#####<sp/>Configuración<sp/>de<sp/>la<sp/>estructura<sp/>data<sp/>para<sp/>mandelbrot</highlight></codeline>
+<codeline><highlight class="normal">En<sp/>este<sp/>caso<sp/>es<sp/>mucho<sp/>mas<sp/>facil,<sp/>se<sp/>asigna<sp/>el<sp/>valor<sp/>MANDELBROT<sp/>al<sp/>campo<sp/>fractal_type<sp/>de<sp/>la<sp/>estructura<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">data.fractal_type<sp/>=<sp/>MANDELBROT;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>4.2<sp/>Ejemplo<sp/>práctico</highlight></codeline>
+<codeline><highlight class="normal">Si<sp/>la<sp/>**entrada<sp/>del<sp/>usuario:**<sp/>és<sp/>la<sp/>siguiente:</highlight></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">./fractol<sp/>julia<sp/>0.285<sp/>-0.01</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">**Resultados<sp/>en<sp/>el<sp/>programa:**</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`argv[1]`<sp/>es<sp/>`&quot;julia&quot;`,<sp/>por<sp/>lo<sp/>que:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`data.fractal_type`<sp/>=<sp/>`JULIA`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`data.c[COMPLEX_RE]`<sp/>=<sp/>`0.285`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`data.c[COMPLEX_IM]`<sp/>=<sp/>`-0.01`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">El<sp/>programa<sp/>utiliza<sp/>estos<sp/>valores<sp/>para<sp/>renderizar<sp/>un<sp/>fractal<sp/>de<sp/>Julia<sp/>con<sp/>la<sp/>constante<sp/>`c<sp/>=<sp/>0.285<sp/>-<sp/>0.01i`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>5.<sp/>Ciclo<sp/>principal<sp/>del<sp/>programa</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>sección<sp/>describe<sp/>el<sp/>flujo<sp/>final<sp/>del<sp/>`main`,<sp/>donde<sp/>**se<sp/>configuran<sp/>los<sp/>elementos<sp/>gráficos,<sp/>se<sp/>renderiza<sp/>el<sp/>fractal,<sp/>se<sp/>manejan<sp/>los<sp/>eventos<sp/>de<sp/>usuario<sp/>y<sp/>se<sp/>inicia<sp/>el<sp/>bucle<sp/>principal<sp/>del<sp/>programa**.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>initialize_window(&amp;data,<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>render_fractal(&amp;data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_key_hook(data.mlx,<sp/>handle_key,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_scroll_hook(data.mlx,<sp/>handle_scroll,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(data.mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(data.mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>5.1<sp/>Inicialización<sp/>de<sp/>la<sp/>ventana<sp/>gráfica</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">initialize_window(&amp;data,<sp/>argv);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>se<sp/>encarga<sp/>de<sp/>preparar<sp/>todo<sp/>lo<sp/>necesario<sp/>para<sp/>que<sp/>el<sp/>programa<sp/>pueda<sp/>trabajar<sp/>con<sp/>gráficos:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Creación<sp/>de<sp/>la<sp/>ventana:<sp/>Utiliza<sp/>la<sp/>biblioteca<sp/>MLX42<sp/>para<sp/>inicializar<sp/>una<sp/>ventana<sp/>de<sp/>dimensiones<sp/>predefinidas<sp/>(en<sp/>este<sp/>caso,<sp/>800x800<sp/>píxeles).</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Asignación<sp/>del<sp/>buffer<sp/>de<sp/>imagen:<sp/>Crea<sp/>un<sp/>espacio<sp/>en<sp/>memoria<sp/>(img)<sp/>donde<sp/>se<sp/>dibujará<sp/>el<sp/>fractal<sp/>antes<sp/>de<sp/>mostrarlo<sp/>en<sp/>la<sp/>ventana.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Valores<sp/>iniciales:<sp/>Configura<sp/>los<sp/>valores<sp/>iniciales<sp/>para<sp/>el<sp/>zoom,<sp/>los<sp/>desplazamientos<sp/>(offset)<sp/>y<sp/>otros<sp/>parámetros<sp/>necesarios.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**¿Por<sp/>qué<sp/>es<sp/>importante?**</highlight></codeline>
+<codeline><highlight class="normal">Sin<sp/>esta<sp/>inicialización,<sp/>el<sp/>programa<sp/>no<sp/>tendría<sp/>un<sp/>área<sp/>gráfica<sp/>donde<sp/>dibujar<sp/>el<sp/>fractal<sp/>ni<sp/>un<sp/>contexto<sp/>para<sp/>gestionar<sp/>los<sp/>eventos.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.1.1<sp/>Creación<sp/>de<sp/>la<sp/>ventana<sp/>(mlx_init)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">data-&gt;mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>argv[1],<sp/>false);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(!data-&gt;mlx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>línea<sp/>inicializa<sp/>una<sp/>nueva<sp/>instancia<sp/>de<sp/>MLX42,<sp/>que<sp/>crea<sp/>y<sp/>gestiona<sp/>la<sp/>ventana<sp/>gráfica<sp/>del<sp/>programa.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Parámetros<sp/>de<sp/>entrada:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`WIDTH`<sp/>y<sp/>`HEIGHT`<sp/>especifican<sp/>las<sp/>dimensiones<sp/>de<sp/>la<sp/>ventana<sp/>gráfica,<sp/>que<sp/>en<sp/>este<sp/>caso<sp/>son<sp/>800x800<sp/>píxeles.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`argv[1]`<sp/>proporciona<sp/>el<sp/>título<sp/>de<sp/>la<sp/>ventana<sp/>(por<sp/>ejemplo,<sp/>`&quot;mandelbrot&quot;`<sp/>o<sp/>`&quot;julia&quot;`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`false`<sp/>indica<sp/>que<sp/>la<sp/>ventana<sp/>no<sp/>será<sp/>redimensionable.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Funcionamiento:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Internamente,<sp/>la<sp/>función<sp/>**reserva<sp/>recursos**<sp/>para<sp/>inicializar<sp/>el<sp/>contexto<sp/>gráfico<sp/>y<sp/>crea<sp/>una<sp/>ventana<sp/>con<sp/>las<sp/>especificaciones<sp/>dadas.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>algo<sp/>falla<sp/>durante<sp/>esta<sp/>inicialización<sp/>(por<sp/>ejemplo,<sp/>falta<sp/>de<sp/>memoria<sp/>o<sp/>error<sp/>de<sp/>configuración),<sp/>`mlx_init`<sp/>devuelve<sp/>`NULL`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Validación<sp/>de<sp/>errores:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>`mlx_init`<sp/>retorna<sp/>`NULL`,<sp/>significa<sp/>que<sp/>la<sp/>ventana<sp/>no<sp/>pudo<sp/>ser<sp/>creada.<sp/>En<sp/>este<sp/>caso:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>El<sp/>programa<sp/>finaliza<sp/>con<sp/>`exit(EXIT_FAILURE)`<sp/>para<sp/>evitar<sp/>problemas<sp/>mayores<sp/>(como<sp/>intentos<sp/>de<sp/>usar<sp/>recursos<sp/>no<sp/>inicializados).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">Sin<sp/>esta<sp/>ventana,<sp/>el<sp/>programa<sp/>no<sp/>podría<sp/>mostrar<sp/>nada<sp/>en<sp/>pantalla<sp/>ni<sp/>interactuar<sp/>con<sp/>el<sp/>usuario.<sp/>Además,<sp/>`mlx_init`<sp/>devuelve<sp/>un<sp/>puntero<sp/>(`mlx`)<sp/>que<sp/>será<sp/>necesario<sp/>para<sp/>todas<sp/>las<sp/>funciones<sp/>de<sp/>MLX42<sp/>posteriores.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.1.2<sp/>Creación<sp/>del<sp/>buffer<sp/>de<sp/>imagen<sp/>(mlx_new_image)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">data-&gt;img<sp/>=<sp/>mlx_new_image(data-&gt;mlx,<sp/>WIDTH,<sp/>HEIGHT);</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(!data-&gt;img)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(data-&gt;mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">Crea<sp/>un<sp/>**buffer<sp/>de<sp/>imagen**<sp/>(almacenado<sp/>en<sp/>`data-&gt;img`)<sp/>donde<sp/>se<sp/>realizará<sp/>todo<sp/>el<sp/>dibujo<sp/>antes<sp/>de<sp/>mostrarlo<sp/>en<sp/>la<sp/>ventana.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Parámetros<sp/>de<sp/>entrada:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`data-&gt;mlx`:<sp/>El<sp/>puntero<sp/>al<sp/>contexto<sp/>de<sp/>MLX<sp/>creado<sp/>previamente<sp/>con<sp/>`mlx_init`.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`WIDTH`<sp/>y<sp/>`HEIGHT`:<sp/>Dimensiones<sp/>del<sp/>buffer<sp/>de<sp/>imagen<sp/>(en<sp/>este<sp/>caso,<sp/>800x800<sp/>píxeles).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Funcionamiento:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>La<sp/>función<sp/>**reserva<sp/>memoria**<sp/>para<sp/>un<sp/>buffer<sp/>de<sp/>imagen<sp/>de<sp/>las<sp/>dimensiones<sp/>dadas.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Este<sp/>buffer<sp/>actúa<sp/>como<sp/>un<sp/>espacio<sp/>temporal<sp/>donde<sp/>se<sp/>almacenan<sp/>los<sp/>píxeles<sp/>antes<sp/>de<sp/>que<sp/>sean<sp/>enviados<sp/>a<sp/>la<sp/>ventana<sp/>gráfica.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Validación<sp/>de<sp/>errores:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>`mlx_new_image`<sp/>retorna<sp/>`NULL`,<sp/>significa<sp/>que<sp/>el<sp/>buffer<sp/>de<sp/>imagen<sp/>no<sp/>pudo<sp/>ser<sp/>creado<sp/>(por<sp/>ejemplo,<sp/>por<sp/>falta<sp/>de<sp/>memoria).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>En<sp/>este<sp/>caso:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>Se<sp/>libera<sp/>el<sp/>recurso<sp/>de<sp/>la<sp/>ventana<sp/>(`mlx_terminate`)<sp/>para<sp/>evitar<sp/>fugas<sp/>de<sp/>memoria.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>El<sp/>programa<sp/>se<sp/>cierra<sp/>con<sp/>`exit(EXIT_FAILURE)`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">El<sp/>buffer<sp/>de<sp/>imagen<sp/>es<sp/>fundamental<sp/>porque<sp/>permite<sp/>realizar<sp/>los<sp/>cálculos<sp/>del<sp/>fractal<sp/>sin<sp/>parpadeos<sp/>ni<sp/>interrupciones<sp/>visibles<sp/>para<sp/>el<sp/>usuario.<sp/>Esto<sp/>asegura<sp/>un<sp/>renderizado<sp/>fluido.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.1.3<sp/>Mostrar<sp/>la<sp/>imagen<sp/>en<sp/>la<sp/>ventana<sp/>(mlx_image_to_window)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">if<sp/>(mlx_image_to_window(data-&gt;mlx,<sp/>data-&gt;img,<sp/>0,<sp/>0)<sp/>==<sp/>-1)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(data-&gt;mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">Asocia<sp/>el<sp/>buffer<sp/>de<sp/>imagen<sp/>(`data-&gt;img`)<sp/>con<sp/>la<sp/>ventana<sp/>gráfica<sp/>(`data-&gt;mlx`)<sp/>y<sp/>muestra<sp/>su<sp/>contenido<sp/>en<sp/>la<sp/>posición<sp/>`(0,<sp/>0)`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Parámetros<sp/>de<sp/>entrada:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`data-&gt;mlx`:<sp/>Puntero<sp/>al<sp/>contexto<sp/>de<sp/>MLX.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`data-&gt;img`:<sp/>Puntero<sp/>al<sp/>buffer<sp/>de<sp/>imagen<sp/>creado<sp/>previamente.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`0,<sp/>0`:<sp/>Coordenadas<sp/>de<sp/>la<sp/>esquina<sp/>superior<sp/>izquierda<sp/>donde<sp/>se<sp/>colocará<sp/>la<sp/>imagen.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Funcionamiento:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>La<sp/>función<sp/>asigna<sp/>el<sp/>contenido<sp/>del<sp/>buffer<sp/>de<sp/>imagen<sp/>a<sp/>la<sp/>ventana<sp/>gráfica<sp/>en<sp/>las<sp/>coordenadas<sp/>especificadas.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Internamente,<sp/>también<sp/>gestiona<sp/>el<sp/>orden<sp/>de<sp/>renderizado<sp/>(profundidad<sp/>Z)<sp/>para<sp/>evitar<sp/>solapamientos<sp/>no<sp/>deseados.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">3.<sp/>**Validación<sp/>de<sp/>errores:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>la<sp/>función<sp/>retorna<sp/>`-1`,<sp/>significa<sp/>que<sp/>hubo<sp/>un<sp/>error<sp/>al<sp/>intentar<sp/>asociar<sp/>la<sp/>imagen<sp/>con<sp/>la<sp/>ventana.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>En<sp/>este<sp/>caso:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>Se<sp/>libera<sp/>el<sp/>recurso<sp/>de<sp/>la<sp/>ventana<sp/>(`mlx_terminate`).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>-<sp/>El<sp/>programa<sp/>se<sp/>cierra<sp/>con<sp/>`exit(EXIT_FAILURE)`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>operación<sp/>es<sp/>la<sp/>que<sp/>permite<sp/>que<sp/>el<sp/>fractal<sp/>sea<sp/>visible<sp/>en<sp/>pantalla.<sp/>Sin<sp/>este<sp/>paso,<sp/>aunque<sp/>el<sp/>cálculo<sp/>del<sp/>fractal<sp/>sea<sp/>correcto,<sp/>no<sp/>se<sp/>mostraría<sp/>nada<sp/>al<sp/>usuario.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.1.4<sp/>Inicialización<sp/>de<sp/>valores</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">data-&gt;offset[OFFSET_X]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline><highlight class="normal">data-&gt;offset[OFFSET_Y]<sp/>=<sp/>0.0;</highlight></codeline>
+<codeline><highlight class="normal">data-&gt;zoom<sp/>=<sp/>1.0;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">Establece<sp/>los<sp/>valores<sp/>iniciales<sp/>para<sp/>el<sp/>[desplazamiento](#autotoc_md11)<sp/>y<sp/>el<sp/>[zoom](#autotoc_md9)<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Desplazamiento**<sp/>(`offset`):</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`OFFSET_X`<sp/>y<sp/>`OFFSET_Y`<sp/>controlan<sp/>el<sp/>movimiento<sp/>del<sp/>fractal<sp/>en<sp/>el<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Al<sp/>inicializar<sp/>en<sp/>`0.0`,<sp/>el<sp/>fractal<sp/>está<sp/>&quot;centrado&quot;.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>**Zoom:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`zoom`<sp/>controla<sp/>el<sp/>nivel<sp/>de<sp/>ampliación<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Al<sp/>inicializar<sp/>en<sp/>`1.0`,<sp/>se<sp/>visualiza<sp/>el<sp/>fractal<sp/>en<sp/>su<sp/>escala<sp/>original.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">Estos<sp/>valores<sp/>son<sp/>esenciales<sp/>para<sp/>calcular<sp/>correctamente<sp/>las<sp/>coordenadas<sp/>del<sp/>plano<sp/>complejo<sp/>y<sp/>generar<sp/>el<sp/>fractal<sp/>en<sp/>pantalla.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.1.5<sp/>Resumen<sp/>de<sp/>initialize_window</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>**Crea<sp/>la<sp/>ventana<sp/>gráfica:**<sp/>Se<sp/>utiliza<sp/>`mlx_init`<sp/>para<sp/>crear<sp/>una<sp/>ventana<sp/>de<sp/>800x800<sp/>píxeles.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>**Asigna<sp/>un<sp/>buffer<sp/>de<sp/>imagen:**<sp/>`mlx_new_image`<sp/>crea<sp/>un<sp/>área<sp/>de<sp/>memoria<sp/>para<sp/>realizar<sp/>los<sp/>cálculos<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>**Muestra<sp/>la<sp/>imagen<sp/>en<sp/>la<sp/>ventana:**<sp/>`mlx_image_to_window`<sp/>asocia<sp/>el<sp/>buffer<sp/>de<sp/>imagen<sp/>con<sp/>la<sp/>ventana<sp/>para<sp/>que<sp/>sea<sp/>visible.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>**Establece<sp/>valores<sp/>iniciales:**<sp/>Se<sp/>configuran<sp/>el<sp/>zoom<sp/>y<sp/>el<sp/>desplazamiento<sp/>para<sp/>que<sp/>el<sp/>fractal<sp/>aparezca<sp/>centrado<sp/>y<sp/>sin<sp/>ampliación.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.1.6<sp/>¿Qué<sp/>debe<sp/>recordar<sp/>un<sp/>desarrollador?</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Validar<sp/>retornos:**<sp/>Siempre<sp/>comprobar<sp/>los<sp/>retornos<sp/>de<sp/>`mlx_init`,<sp/>`mlx_new_image`<sp/>y<sp/>`mlx_image_to_window`<sp/>para<sp/>manejar<sp/>posibles<sp/>fallos.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Liberar<sp/>recursos:**<sp/>Usar<sp/>`mlx_terminate`<sp/>en<sp/>caso<sp/>de<sp/>errores<sp/>para<sp/>evitar<sp/>fugas<sp/>de<sp/>memoria.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Secuencia<sp/>correcta:**<sp/>Primero<sp/>inicializar<sp/>MLX,<sp/>luego<sp/>el<sp/>buffer<sp/>de<sp/>imagen<sp/>y<sp/>finalmente<sp/>asociarlos<sp/>con<sp/>la<sp/>ventana.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline><highlight class="normal">###<sp/>5.2<sp/>Renderización<sp/>del<sp/>fractal</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>render_fractal(t_data<sp/>*data)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(data-&gt;fractal_type<sp/>==<sp/>JULIA)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>render_julia(data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(data-&gt;fractal_type<sp/>==<sp/>MANDELBROT)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>render_mandelbrot(data);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">####<sp/>¿Qué<sp/>hace<sp/>esta<sp/>función?</highlight></codeline>
+<codeline><highlight class="normal">`render_fractal`<sp/>es<sp/>una<sp/>función<sp/>delegadora<sp/>que<sp/>decide<sp/>qué<sp/>tipo<sp/>de<sp/>fractal<sp/>dibujar<sp/>basándose<sp/>en<sp/>el<sp/>valor<sp/>de<sp/>`data-&gt;fractal_type`<sp/>(definido<sp/>anteriormente).<sp/>Esto<sp/>permite<sp/>que<sp/>el<sp/>código<sp/>sea<sp/>modular<sp/>y<sp/>flexible,<sp/>separando<sp/>la<sp/>lógica<sp/>de<sp/>renderización<sp/>específica<sp/>para<sp/>cada<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Parámetro<sp/>de<sp/>entrada:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`data`:<sp/>Es<sp/>un<sp/>puntero<sp/>a<sp/>la<sp/>estructura<sp/>principal<sp/>`t_data`,<sp/>que<sp/>contiene<sp/>toda<sp/>la<sp/>información<sp/>necesaria,<sp/>como<sp/>el<sp/>tipo<sp/>de<sp/>fractal<sp/>y<sp/>los<sp/>valores<sp/>de<sp/>zoom,<sp/>desplazamiento,<sp/>y<sp/>buffer<sp/>de<sp/>imagen.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Decisión<sp/>basada<sp/>en<sp/>el<sp/>tipo<sp/>de<sp/>fractal:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Si<sp/>`data-&gt;fractal_type`<sp/>es<sp/>JULIA,<sp/>llama<sp/>a<sp/>**render_julia(data)**<sp/>para<sp/>generar<sp/>y<sp/>dibujar<sp/>un<sp/>fractal<sp/>de<sp/>Julia.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Si<sp/>`data-&gt;fractal_type`<sp/>es<sp/>MANDELBROT,<sp/>llama<sp/>a<sp/>**render_mandelbrot(data)**<sp/>para<sp/>generar<sp/>y<sp/>dibujar<sp/>un<sp/>fractal<sp/>de<sp/>Mandelbrot.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Modularidad<sp/>y<sp/>escalabilidad</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>función<sp/>es<sp/>clave<sp/>para<sp/>mantener<sp/>el<sp/>código<sp/>organizado<sp/>y<sp/>modular,<sp/>ya<sp/>que<sp/>abstrae<sp/>las<sp/>diferencias<sp/>entre<sp/>los<sp/>fractales.<sp/>Si<sp/>en<sp/>el<sp/>futuro<sp/>se<sp/>quiere<sp/>añadir<sp/>otro<sp/>tipo<sp/>de<sp/>fractal,<sp/>solo<sp/>será<sp/>necesario:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Definir<sp/>una<sp/>nueva<sp/>función<sp/>de<sp/>renderización<sp/>(por<sp/>ejemplo,<sp/>`render_tricorn`).</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Añadir<sp/>una<sp/>nueva<sp/>condición<sp/>a<sp/>esta<sp/>función.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>else<sp/>if<sp/>(data-&gt;fractal_type<sp/>==<sp/>TRICORN)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>render_tricorn(data);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Más<sp/>adelante<sp/>en<sp/>la<sp/>documentación,<sp/>se<sp/>explicará<sp/>en<sp/>detalle<sp/>cómo<sp/>funcionan<sp/>las<sp/>funciones<sp/>de<sp/>renderización<sp/>específicas,<sp/>como<sp/>`render_julia`<sp/>y<sp/>`render_mandelbrot`.<sp/>En<sp/>esa<sp/>sección,<sp/>analizaremos<sp/>los<sp/>algoritmos<sp/>iterativos<sp/>utilizados,<sp/>cómo<sp/>se<sp/>manejan<sp/>los<sp/>píxeles<sp/>y<sp/>cómo<sp/>se<sp/>ajustan<sp/>las<sp/>coordenadas<sp/>al<sp/>plano<sp/>complejo.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>5.3<sp/>Manejo<sp/>de<sp/>eventos<sp/>con<sp/>MLX42</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>sección<sp/>del<sp/>código<sp/>utiliza<sp/>las<sp/>funciones<sp/>de<sp/>la<sp/>biblioteca<sp/>MLX42<sp/>para<sp/>configurar<sp/>los<sp/>eventos<sp/>de<sp/>usuario<sp/>y<sp/>manejar<sp/>el<sp/>ciclo<sp/>principal<sp/>de<sp/>la<sp/>aplicación.<sp/>Aquí<sp/>explicaremos<sp/>cada<sp/>una<sp/>de<sp/>las<sp/>funciones<sp/>relacionadas<sp/>con<sp/>la<sp/>gestión<sp/>de<sp/>entradas<sp/>y<sp/>el<sp/>bucle<sp/>principal.</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_key_hook(data.mlx,<sp/>handle_key,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_scroll_hook(data.mlx,<sp/>handle_scroll,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(data.mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(data.mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.3.1<sp/>Asignación<sp/>de<sp/>eventos<sp/>de<sp/>teclado<sp/>(`mlx_key_hook`)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">mlx_key_hook(data.mlx,<sp/>handle_key,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">Asocia<sp/>la<sp/>función<sp/>`handle_key`<sp/>con<sp/>los<sp/>eventos<sp/>de<sp/>teclado.<sp/>Cada<sp/>vez<sp/>que<sp/>el<sp/>usuario<sp/>presione<sp/>una<sp/>tecla,<sp/>`handle_key`<sp/>será<sp/>ejecutada<sp/>para<sp/>interpretar<sp/>y<sp/>procesar<sp/>la<sp/>entrada.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Parámetros<sp/>de<sp/>mlx_key_hook:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`mlx`:<sp/>Puntero<sp/>a<sp/>la<sp/>instancia<sp/>de<sp/>MLX,<sp/>necesaria<sp/>para<sp/>configurar<sp/>el<sp/>evento<sp/>en<sp/>la<sp/>ventana<sp/>gráfica.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`func`:<sp/>Puntero<sp/>a<sp/>la<sp/>función<sp/>de<sp/>callback<sp/>(en<sp/>este<sp/>caso,<sp/>`handle_key`),<sp/>que<sp/>define<sp/>cómo<sp/>se<sp/>manejan<sp/>los<sp/>eventos<sp/>de<sp/>teclado.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`param`:<sp/>Puntero<sp/>a<sp/>datos<sp/>adicionales<sp/>(en<sp/>este<sp/>caso,<sp/>`&amp;data`),<sp/>que<sp/>se<sp/>pasa<sp/>como<sp/>argumento<sp/>a<sp/>la<sp/>función<sp/>de<sp/>callback.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>La<sp/>función<sp/>handle_key:</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>es<sp/>la<sp/>implementación<sp/>personalizada<sp/>de<sp/>la<sp/>función<sp/>de<sp/>callback<sp/>que<sp/>procesa<sp/>los<sp/>eventos<sp/>de<sp/>teclado:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/><sp/><sp/><sp/>handle_key(mlx_key_data_t<sp/>keydata,<sp/>void<sp/>*param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t_data<sp/><sp/>*data;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data<sp/>=<sp/>(t_data<sp/>*)param;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_ESCAPE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_close_window(data-&gt;mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_W)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;offset[OFFSET_Y]<sp/>-=<sp/>0.1<sp/>/<sp/>data-&gt;zoom;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_S)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;offset[OFFSET_Y]<sp/>+=<sp/>0.1<sp/>/<sp/>data-&gt;zoom;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_A)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;offset[OFFSET_X]<sp/>-=<sp/>0.1<sp/>/<sp/>data-&gt;zoom;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_D)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;offset[OFFSET_X]<sp/>+=<sp/>0.1<sp/>/<sp/>data-&gt;zoom;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_UP)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;zoom<sp/>*=<sp/>ZOOM_IN;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_DOWN)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;zoom<sp/>*=<sp/>ZOOM_OUT;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>render_fractal(data);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Parámetros<sp/>de<sp/>handle_key:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`mlx_key_data_t<sp/>keydata`:<sp/>Estructura<sp/>que<sp/>contiene<sp/>información<sp/>sobre<sp/>la<sp/>tecla<sp/>presionada,<sp/>como:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`key`:<sp/>Identificador<sp/>de<sp/>la<sp/>tecla<sp/>(e.g.,<sp/>`MLX_KEY_W`<sp/>para<sp/>la<sp/>tecla<sp/>W).</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>`action`:<sp/>Tipo<sp/>de<sp/>acción<sp/>(presionar,<sp/>soltar,<sp/>etc.).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`void<sp/>*param`:<sp/>Un<sp/>puntero<sp/>genérico<sp/>que<sp/>en<sp/>este<sp/>caso<sp/>apunta<sp/>a<sp/>`t_data`,<sp/>permitiendo<sp/>modificar<sp/>los<sp/>datos<sp/>del<sp/>fractal<sp/>en<sp/>respuesta<sp/>a<sp/>la<sp/>entrada<sp/>del<sp/>usuario.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Funcionamiento<sp/>en<sp/>este<sp/>programa:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Cierre<sp/>de<sp/>la<sp/>ventana:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>el<sp/>usuario<sp/>presiona<sp/>`ESC`,<sp/>la<sp/>ventana<sp/>se<sp/>cierra<sp/>utilizando<sp/>`mlx_close_window`.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Movimiento<sp/>del<sp/>fractal:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>W/S:<sp/>Mueve<sp/>el<sp/>fractal<sp/>hacia<sp/>arriba<sp/>o<sp/>abajo<sp/>en<sp/>el<sp/>plano<sp/>complejo.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>A/D:<sp/>Mueve<sp/>el<sp/>fractal<sp/>hacia<sp/>la<sp/>izquierda<sp/>o<sp/>derecha.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Zoom:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Flecha<sp/>arriba<sp/>(`UP`):<sp/>Aumenta<sp/>el<sp/>nivel<sp/>de<sp/>zoom,<sp/>acercándose<sp/>al<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Flecha<sp/>abajo<sp/>(`DOWN`):<sp/>Disminuye<sp/>el<sp/>nivel<sp/>de<sp/>zoom,<sp/>alejándose.</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Renderización:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Después<sp/>de<sp/>procesar<sp/>una<sp/>acción,<sp/>`render_fractal`<sp/>se<sp/>llama<sp/>para<sp/>actualizar<sp/>la<sp/>ventana<sp/>con<sp/>los<sp/>cambios.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">Permite<sp/>que<sp/>el<sp/>usuario<sp/>explore<sp/>el<sp/>fractal<sp/>de<sp/>manera<sp/>interactiva<sp/>en<sp/>tiempo<sp/>real,<sp/>adaptando<sp/>la<sp/>visualización<sp/>según<sp/>las<sp/>teclas<sp/>presionadas.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Notas<sp/>importantes:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`&amp;data`<sp/>conecta<sp/>`handle_key`<sp/>con<sp/>la<sp/>estructura<sp/>principal<sp/>del<sp/>programa,<sp/>permitiendo<sp/>que<sp/>los<sp/>cambios<sp/>en<sp/>el<sp/>zoom<sp/>o<sp/>desplazamiento<sp/>afecten<sp/>directamente<sp/>al<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>El<sp/>diseño<sp/>modular<sp/>de<sp/>`mlx_key_hook`<sp/>y<sp/>`handle_key`<sp/>asegura<sp/>que<sp/>el<sp/>código<sp/>sea<sp/>extensible<sp/>y<sp/>fácil<sp/>de<sp/>mantener.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.3.2<sp/>Asignación<sp/>de<sp/>eventos<sp/>de<sp/>scroll<sp/>(mlx_scroll_hook)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">mlx_scroll_hook(data.mlx,<sp/>handle_scroll,<sp/>&amp;data);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">Asocia<sp/>la<sp/>función<sp/>`handle_scroll`<sp/>con<sp/>los<sp/>eventos<sp/>de<sp/>desplazamiento<sp/>del<sp/>ratón<sp/>(scroll).<sp/>Esto<sp/>incluye<sp/>acciones<sp/>como<sp/>mover<sp/>la<sp/>rueda<sp/>del<sp/>ratón<sp/>hacia<sp/>arriba<sp/>o<sp/>hacia<sp/>abajo<sp/>para<sp/>realizar<sp/>zoom<sp/>en<sp/>el<sp/>fractal.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Parámetros<sp/>de<sp/>mlx_scroll_hook:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`mlx`:<sp/>Puntero<sp/>a<sp/>la<sp/>instancia<sp/>de<sp/>MLX,<sp/>necesaria<sp/>para<sp/>registrar<sp/>los<sp/>eventos<sp/>de<sp/>scroll<sp/>en<sp/>la<sp/>ventana<sp/>gráfica.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`func`:<sp/>Puntero<sp/>a<sp/>la<sp/>función<sp/>de<sp/>callback<sp/>(en<sp/>este<sp/>caso,<sp/>`handle_scroll`),<sp/>que<sp/>define<sp/>cómo<sp/>se<sp/>manejan<sp/>los<sp/>eventos<sp/>de<sp/>scroll.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`param`:<sp/>Puntero<sp/>a<sp/>datos<sp/>adicionales<sp/>(en<sp/>este<sp/>caso,<sp/>`&amp;data`),<sp/>que<sp/>se<sp/>pasa<sp/>como<sp/>argumento<sp/>a<sp/>la<sp/>función<sp/>de<sp/>callback.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>La<sp/>función<sp/>handle_scroll:</highlight></codeline>
+<codeline><highlight class="normal">Esta<sp/>es<sp/>la<sp/>implementación<sp/>personalizada<sp/>de<sp/>la<sp/>función<sp/>de<sp/>callback<sp/>para<sp/>manejar<sp/>eventos<sp/>de<sp/>scroll:</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/><sp/><sp/><sp/>handle_scroll(double<sp/>xdelta,<sp/>double<sp/>ydelta,<sp/>void<sp/>*param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>t_data<sp/><sp/>*data;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>(void)xdelta;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>data<sp/>=<sp/>(t_data<sp/>*)param;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(ydelta<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;zoom<sp/>*=<sp/>ZOOM_IN;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>data-&gt;zoom<sp/>*=<sp/>ZOOM_OUT;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>render_fractal(data);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Parámetros<sp/>de<sp/>`handle_scroll`:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`xdelta`:<sp/>Cantidad<sp/>de<sp/>desplazamiento<sp/>en<sp/>el<sp/>eje<sp/>horizontal<sp/>(no<sp/>utilizado<sp/>en<sp/>este<sp/>caso).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`ydelta`:<sp/>Cantidad<sp/>de<sp/>desplazamiento<sp/>en<sp/>el<sp/>eje<sp/>vertical,<sp/>que<sp/>determina<sp/>si<sp/>el<sp/>usuario<sp/>está<sp/>desplazando<sp/>hacia<sp/>arriba<sp/>o<sp/>hacia<sp/>abajo.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Un<sp/>valor<sp/>positivo<sp/>indica<sp/>un<sp/>desplazamiento<sp/>hacia<sp/>arriba.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>-<sp/>Un<sp/>valor<sp/>negativo<sp/>indica<sp/>un<sp/>desplazamiento<sp/>hacia<sp/>abajo.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`param`:<sp/>Puntero<sp/>genérico<sp/>que<sp/>en<sp/>este<sp/>caso<sp/>apunta<sp/>a<sp/>`t_data`,<sp/>permitiendo<sp/>modificar<sp/>los<sp/>datos<sp/>del<sp/>fractal<sp/>en<sp/>respuesta<sp/>al<sp/>evento<sp/>de<sp/>scroll.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Funcionamiento<sp/>en<sp/>este<sp/>programa:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Zoom<sp/>in:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>`ydelta<sp/>&gt;<sp/>0`<sp/>(scroll<sp/>hacia<sp/>arriba),<sp/>el<sp/>programa<sp/>aumenta<sp/>el<sp/>nivel<sp/>de<sp/>zoom<sp/>multiplicando<sp/>`data-&gt;zoom`<sp/>por<sp/>un<sp/>factor<sp/>de<sp/>ampliación<sp/>(`ZOOM_IN`).</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Zoom<sp/>out:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Si<sp/>`ydelta<sp/>&lt;<sp/>0`<sp/>(scroll<sp/>hacia<sp/>abajo),<sp/>el<sp/>programa<sp/>disminuye<sp/>el<sp/>nivel<sp/>de<sp/>zoom<sp/>multiplicando<sp/>`data-&gt;zoom`<sp/>por<sp/>un<sp/>factor<sp/>de<sp/>reducción<sp/>(`ZOOM_OUT`).</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Renderización:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Después<sp/>de<sp/>ajustar<sp/>el<sp/>zoom,<sp/>se<sp/>llama<sp/>a<sp/>`render_fractal(data)`<sp/>para<sp/>actualizar<sp/>la<sp/>ventana<sp/>gráfica<sp/>con<sp/>los<sp/>nuevos<sp/>valores.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">El<sp/>scroll<sp/>permite<sp/>que<sp/>el<sp/>usuario<sp/>explore<sp/>el<sp/>fractal<sp/>con<sp/>mayor<sp/>fluidez,<sp/>ajustando<sp/>el<sp/>nivel<sp/>de<sp/>zoom<sp/>de<sp/>manera<sp/>rápida<sp/>y<sp/>precisa.<sp/>Esto<sp/>mejora<sp/>la<sp/>experiencia<sp/>interactiva<sp/>y<sp/>facilita<sp/>la<sp/>exploración<sp/>de<sp/>los<sp/>detalles<sp/>del<sp/>fractal.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Notas<sp/>importantes:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`&amp;data`<sp/>conecta<sp/>la<sp/>función<sp/>de<sp/>scroll<sp/>con<sp/>los<sp/>datos<sp/>principales<sp/>del<sp/>fractal,<sp/>permitiendo<sp/>modificar<sp/>parámetros<sp/>como<sp/>el<sp/>zoom<sp/>en<sp/>tiempo<sp/>real.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Se<sp/>ignora<sp/>el<sp/>desplazamiento<sp/>horizontal<sp/>(`xdelta`)<sp/>ya<sp/>que<sp/>en<sp/>este<sp/>programa<sp/>solo<sp/>interesa<sp/>el<sp/>zoom<sp/>vertical.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Es<sp/>importante<sp/>mantener<sp/>la<sp/>función<sp/>modular<sp/>para<sp/>que<sp/>sea<sp/>reutilizable<sp/>o<sp/>extensible<sp/>en<sp/>futuras<sp/>características.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.3.3<sp/>Inicio<sp/>del<sp/>bucle<sp/>principal<sp/>(mlx_loop)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">mlx_loop(data.mlx);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">Inicia<sp/>el<sp/>bucle<sp/>principal<sp/>de<sp/>la<sp/>aplicación.<sp/>Este<sp/>bucle:</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>Procesa<sp/>los<sp/>eventos<sp/>de<sp/>usuario,<sp/>como<sp/>teclado<sp/>y<sp/>scroll.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Actualiza<sp/>la<sp/>ventana<sp/>gráfica<sp/>según<sp/>sea<sp/>necesario.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>No<sp/>se<sp/>detiene<sp/>hasta<sp/>que<sp/>el<sp/>usuario<sp/>cierre<sp/>la<sp/>ventana.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Parámetros:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`data.mlx`:<sp/>Puntero<sp/>a<sp/>la<sp/>instancia<sp/>de<sp/>MLX.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">El<sp/>bucle<sp/>principal<sp/>asegura<sp/>que<sp/>la<sp/>aplicación<sp/>permanezca<sp/>activa,<sp/>respondiendo<sp/>a<sp/>eventos<sp/>en<sp/>tiempo<sp/>real<sp/>y<sp/>actualizando<sp/>continuamente<sp/>la<sp/>ventana<sp/>gráfica.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Nota:</highlight></codeline>
+<codeline><highlight class="normal">**El<sp/>bucle<sp/>es<sp/>infinito<sp/>y<sp/>solo<sp/>se<sp/>detiene<sp/>cuando<sp/>el<sp/>usuario<sp/>cierra<sp/>explícitamente<sp/>la<sp/>ventana.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">---</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.3.4<sp/>Finalización<sp/>del<sp/>programa<sp/>(mlx_terminate)</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">mlx_terminate(data.mlx);</highlight></codeline>
+<codeline><highlight class="normal">return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Qué<sp/>hace?</highlight></codeline>
+<codeline><highlight class="normal">**Libera<sp/>todos<sp/>los<sp/>recursos<sp/>asignados<sp/>por<sp/>MLX,<sp/>como<sp/>la<sp/>ventana,<sp/>el<sp/>contexto<sp/>gráfico<sp/>y<sp/>los<sp/>buffers<sp/>asociados.**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Parámetros:</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`data.mlx`:<sp/>Puntero<sp/>a<sp/>la<sp/>instancia<sp/>de<sp/>MLX.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>¿Por<sp/>qué<sp/>es<sp/>importante?</highlight></codeline>
+<codeline><highlight class="normal">Garantiza<sp/>que<sp/>no<sp/>haya<sp/>fugas<sp/>de<sp/>memoria<sp/>ni<sp/>recursos<sp/>innecesarios<sp/>en<sp/>uso<sp/>al<sp/>finalizar<sp/>el<sp/>programa.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>Nota<sp/>importante:</highlight></codeline>
+<codeline><highlight class="normal">Intentar<sp/>usar<sp/>cualquier<sp/>función<sp/>de<sp/>MLX<sp/>después<sp/>de<sp/>llamar<sp/>a<sp/>`mlx_terminate`<sp/>es<sp/>comportamiento<sp/>indefinido<sp/>y<sp/>puede<sp/>causar<sp/>errores<sp/>graves.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>5.3.5<sp/>Resumen<sp/>de<sp/>manejo<sp/>de<sp/>eventos<sp/>con<sp/>MLX42</highlight></codeline>
+<codeline><highlight class="normal">1.<sp/>**Interacción:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`mlx_key_hook`:<sp/>Configura<sp/>los<sp/>eventos<sp/>de<sp/>teclado<sp/>para<sp/>mover<sp/>y<sp/>ajustar<sp/>el<sp/>fractal.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`mlx_scroll_hook`:<sp/>Configura<sp/>los<sp/>eventos<sp/>de<sp/>scroll<sp/>para<sp/>controlar<sp/>el<sp/>zoom.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>**Ciclo<sp/>principal:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`mlx_loop`:<sp/>Mantiene<sp/>el<sp/>programa<sp/>activo,<sp/>procesando<sp/>eventos<sp/>y<sp/>actualizando<sp/>la<sp/>ventana.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>**Liberación<sp/>de<sp/>recursos:**</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>`mlx_terminate`:<sp/>Libera<sp/>todos<sp/>los<sp/>recursos<sp/>gráficos<sp/>y<sp/>finaliza<sp/>el<sp/>programa<sp/>correctamente.</highlight></codeline>
+    </programlisting>
+    <location file="main_explained.md"/>
+  </compounddef>
+</doxygen>

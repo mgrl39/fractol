@@ -1,0 +1,107 @@
+\doxysection{MLX42/src/textures/mlx\+\_\+texture.c File Reference}
+\hypertarget{mlx__texture_8c}{}\label{mlx__texture_8c}\index{MLX42/src/textures/mlx\_texture.c@{MLX42/src/textures/mlx\_texture.c}}
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+texture.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__texture_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{MLX42_8h_abc6cf404f5675c83f1e62fdbad192f2f}{mlx\+\_\+image\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{mlx__texture_8c_a140fd59feca1fefb31944cf074fc4c87}{mlx\+\_\+texture\+\_\+to\+\_\+image}} (\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structmlx}{mlx}}, \mbox{\hyperlink{MLX42_8h_abf95030dc43b4fba22354fb4ae0089a5}{mlx\+\_\+texture\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__texture_8c_ae065852b98e9a3facb2eb5f69ac280a1}{mlx\+\_\+delete\+\_\+texture}} (\mbox{\hyperlink{MLX42_8h_abf95030dc43b4fba22354fb4ae0089a5}{mlx\+\_\+texture\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__texture_8c_ae065852b98e9a3facb2eb5f69ac280a1}\label{mlx__texture_8c_ae065852b98e9a3facb2eb5f69ac280a1} 
+\index{mlx\_texture.c@{mlx\_texture.c}!mlx\_delete\_texture@{mlx\_delete\_texture}}
+\index{mlx\_delete\_texture@{mlx\_delete\_texture}!mlx\_texture.c@{mlx\_texture.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_delete\_texture()}{mlx\_delete\_texture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+delete\+\_\+texture (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_abf95030dc43b4fba22354fb4ae0089a5}{mlx\+\_\+texture\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{texture }\end{DoxyParamCaption})}
+
+Deletes a texture by freeing its allocated data.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em texture} & The texture to free. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__texture_8c_source_l00037}{37}} of file \mbox{\hyperlink{mlx__texture_8c_source}{mlx\+\_\+texture.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a93b4ce5ceae0d22c22c6c9125c052616}{mlx\_freen}}(2,\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>pixels,\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}});}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{mlx__texture_8c_ae065852b98e9a3facb2eb5f69ac280a1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{mlx__texture_8c_a140fd59feca1fefb31944cf074fc4c87}\label{mlx__texture_8c_a140fd59feca1fefb31944cf074fc4c87} 
+\index{mlx\_texture.c@{mlx\_texture.c}!mlx\_texture\_to\_image@{mlx\_texture\_to\_image}}
+\index{mlx\_texture\_to\_image@{mlx\_texture\_to\_image}!mlx\_texture.c@{mlx\_texture.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_texture\_to\_image()}{mlx\_texture\_to\_image()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{MLX42_8h_abc6cf404f5675c83f1e62fdbad192f2f}{mlx\+\_\+image\+\_\+t}} \texorpdfstring{$\ast$}{*} mlx\+\_\+texture\+\_\+to\+\_\+image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{MLX42_8h_afc5fa27c9de2859c5d399b2d9e27e17a}{mlx\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mlx,  }\item[{\mbox{\hyperlink{MLX42_8h_abf95030dc43b4fba22354fb4ae0089a5}{mlx\+\_\+texture\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{texture }\end{DoxyParamCaption})}
+
+Converts a given texture to an image.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mlx} & The MLX instance handle. \\
+\hline
+\mbox{\texttt{ in}}  & {\em texture} & The texture to use to create the image from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mlx\+\_\+image\+\_\+t\texorpdfstring{$\ast$}{*} The image created from the texture. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{mlx__texture_8c_source_l00017}{17}} of file \mbox{\hyperlink{mlx__texture_8c_source}{mlx\+\_\+texture.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{structmlx}{mlx}});}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}});}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{structmlx__image}{mlx\_image\_t}}*\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}\ =\ \mbox{\hyperlink{MLX42_8h_abe515cadb9b88a9d064383da276c2467}{mlx\_new\_image}}(\mbox{\hyperlink{structmlx}{mlx}},\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>\mbox{\hyperlink{structmlx_a3a11be0a71d7c8dd0c329e1caa230a50}{width}},\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>height);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}\ ==\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}})}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{NULL}});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint8\_t}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{uint32\_t}}\ i\ =\ 0;\ i\ <\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>height;\ i++)}
+\DoxyCodeLine{00029\ \ \ \ \ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}}\ =\ \&\mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>pixels[(i\ *\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>width)\ *\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>bytes\_per\_pixel];}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}}\ =\ \&\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>pixels[(i\ *\ \mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}}-\/>width)\ *\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>bytes\_per\_pixel];}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{memmove}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixeli}},\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{pixelx}},\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>width\ *\ \mbox{\hyperlink{glad_8h_a0b57774cb59b667df4a205ae0b1a50e2}{texture}}-\/>bytes\_per\_pixel);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{glad_8h_a85495a7fedb50406e7c705a4e7ddba12}{image}});}
+\DoxyCodeLine{00035\ \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__texture_8c_a140fd59feca1fefb31944cf074fc4c87_cgraph}
+\end{center}
+\end{figure}

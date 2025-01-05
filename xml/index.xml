@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.8" xml:lang="en-US">
+  <compound refid="structs__atod__data" kind="struct"><name>s_atod_data</name>
+    <member refid="structs__atod__data_1abed26d433d70b1637d4bdcfbb51467ea" kind="variable"><name>i</name></member>
+    <member refid="structs__atod__data_1aa630f6198f75165f9742e6665a82efd4" kind="variable"><name>sign</name></member>
+    <member refid="structs__atod__data_1a5ff3667aaad7e7690c7cf296dbf94f05" kind="variable"><name>result</name></member>
+    <member refid="structs__atod__data_1a1c034b51d1bacc5038e4bcf05719f691" kind="variable"><name>divisor</name></member>
+    <member refid="structs__atod__data_1a3d0824c3315752e075d95d225a95a72c" kind="variable"><name>fraction</name></member>
+  </compound>
+  <compound refid="structs__color" kind="struct"><name>s_color</name>
+    <member refid="structs__color_1a251e854381c6945efbbffc33796e6035" kind="variable"><name>r</name></member>
+    <member refid="structs__color_1a6d246ab8c311f6f86da2f9aa129b98d9" kind="variable"><name>g</name></member>
+    <member refid="structs__color_1a0710590bfa61f9db131e534589070ac8" kind="variable"><name>b</name></member>
+  </compound>
+  <compound refid="structs__data" kind="struct"><name>s_data</name>
+    <member refid="structs__data_1af81d0c6f22e2c417d5a0cd7378706a25" kind="variable"><name>zoom</name></member>
+    <member refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kind="variable"><name>c</name></member>
+    <member refid="structs__data_1a462c4df11d1c6a21c10c49e5d9f21643" kind="variable"><name>offset</name></member>
+    <member refid="structs__data_1aa08af92adf0cee639d22b46c2d8b0b97" kind="variable"><name>mlx</name></member>
+    <member refid="structs__data_1a7219bc7304b78827d357121c4e6a2c6c" kind="variable"><name>img</name></member>
+    <member refid="structs__data_1a5a2ba0847a14013a3bd6a83d2cf8636c" kind="variable"><name>fractal_type</name></member>
+  </compound>
+  <compound refid="structs__render__vars" kind="struct"><name>s_render_vars</name>
+    <member refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kind="variable"><name>iterations</name></member>
+    <member refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kind="variable"><name>scale</name></member>
+    <member refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kind="variable"><name>start</name></member>
+    <member refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kind="variable"><name>z</name></member>
+    <member refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kind="variable"><name>z_squared</name></member>
+    <member refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kind="variable"><name>c_re</name></member>
+    <member refid="structs__render__vars_1aa6b2c1e48bbd07e7bd81edb6cff6f171" kind="variable"><name>c_re_centered</name></member>
+    <member refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kind="variable"><name>c_im</name></member>
+    <member refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" kind="variable"><name>pixels</name></member>
+    <member refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kind="variable"><name>row</name></member>
+  </compound>
+  <compound refid="auxiliary__explained_8md" kind="file"><name>auxiliary_explained.md</name>
+  </compound>
+  <compound refid="calcs_8c" kind="file"><name>calcs.c</name>
+    <member refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" kind="function"><name>calculate_scales_and_limits</name></member>
+    <member refid="calcs_8c_1aa136a596dce9e2897d5eb0805a5a459f" kind="function"><name>precompute_coords</name></member>
+    <member refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" kind="function"><name>render_fractal</name></member>
+    <member refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kind="function"><name>calculate_color</name></member>
+  </compound>
+  <compound refid="fractol_8h" kind="file"><name>fractol.h</name>
+    <member refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kind="define"><name>WIDTH</name></member>
+    <member refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kind="define"><name>HEIGHT</name></member>
+    <member refid="fractol_8h_1aa813bcbaa49ae9634074bf0b9631c60f" kind="define"><name>ZOOM_IN</name></member>
+    <member refid="fractol_8h_1a8e0f57f5fcbd0dc149358de9eaa2e4fb" kind="define"><name>ZOOM_OUT</name></member>
+    <member refid="fractol_8h_1a7a1f70b32a536263893f6dd2d2770ad7" kind="define"><name>FRACTAL_LIMIT</name></member>
+    <member refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kind="define"><name>MAX_ITERATIONS</name></member>
+    <member refid="fractol_8h_1ab702106cf3b3e96750b6845ded4e0299" kind="define"><name>RESET</name></member>
+    <member refid="fractol_8h_1a664c8f5b9d90f79a49a16960b9ccedba" kind="define"><name>LIGHT_RED</name></member>
+    <member refid="fractol_8h_1af0506fcfa991103f2a0747bb5c041c06" kind="define"><name>LIGHT_GOLD</name></member>
+    <member refid="fractol_8h_1a5a7142ee95ebc63218ed3aac2ae06b13" kind="define"><name>LIGHT_GREEN</name></member>
+    <member refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12" kind="enum"><name>e_fractal_type</name></member>
+    <member refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7" kind="enumvalue"><name>MANDELBROT</name></member>
+    <member refid="fractol_8h_1a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41" kind="enumvalue"><name>JULIA</name></member>
+    <member refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6" kind="enum"><name>e_offset_index</name></member>
+    <member refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80" kind="enumvalue"><name>OFFSET_X</name></member>
+    <member refid="fractol_8h_1a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f" kind="enumvalue"><name>OFFSET_Y</name></member>
+    <member refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dad" kind="enum"><name>e_scale_index</name></member>
+    <member refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kind="enumvalue"><name>SCALE_X</name></member>
+    <member refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" kind="enumvalue"><name>SCALE_Y</name></member>
+    <member refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55" kind="enum"><name>e_complex_index</name></member>
+    <member refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kind="enumvalue"><name>COMPLEX_RE</name></member>
+    <member refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kind="enumvalue"><name>COMPLEX_IM</name></member>
+    <member refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1b" kind="enum"><name>e_number_flags</name></member>
+    <member refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d" kind="enumvalue"><name>HAS_DIGIT</name></member>
+    <member refid="fractol_8h_1a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e" kind="enumvalue"><name>HAS_POINT</name></member>
+    <member refid="fractol_8h_1a581490c368c73129213a8e3006762b1b" kind="enum"><name>e_err_msg</name></member>
+    <member refid="fractol_8h_1a581490c368c73129213a8e3006762b1bab7edd9ce665944b457c9862d412f80cc" kind="enumvalue"><name>NO_TYPE</name></member>
+    <member refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba7314b0d0e4638eaaeb8690b8555a6546" kind="enumvalue"><name>INVALID_TYPE</name></member>
+    <member refid="fractol_8h_1a581490c368c73129213a8e3006762b1baf1cc2817b68c5ce7e63ad753069381e7" kind="enumvalue"><name>JULIA_ARGS</name></member>
+    <member refid="fractol_8h_1a581490c368c73129213a8e3006762b1ba3c9cc5dcf305531063a900838a7eec68" kind="enumvalue"><name>JULIA_NUM</name></member>
+    <member refid="fractol_8h_1a581490c368c73129213a8e3006762b1bafc7771e03a15ffa7a6580fbfb992be97" kind="enumvalue"><name>MANDELBROT_ARGS</name></member>
+    <member refid="fractol_8h_1a87e2208c89c44020c05fae234f5d17d7" kind="typedef"><name>t_fractal_type</name></member>
+    <member refid="fractol_8h_1a28da728f4eaa09c08c9c92968b1126c5" kind="typedef"><name>t_offset_index</name></member>
+    <member refid="fractol_8h_1acc52c36a8d0ef83a52f4bd64e75379d9" kind="typedef"><name>t_scale_index</name></member>
+    <member refid="fractol_8h_1ab6761e1fd55084307b894e7fb9301183" kind="typedef"><name>t_complex_index</name></member>
+    <member refid="fractol_8h_1a2e791bec888de17dac932dc1f31b3797" kind="typedef"><name>t_number_flags</name></member>
+    <member refid="fractol_8h_1a43da74144dd0bc8864f91dfed33bd6bf" kind="typedef"><name>t_color</name></member>
+    <member refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kind="typedef"><name>t_data</name></member>
+    <member refid="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" kind="typedef"><name>t_render_vars</name></member>
+    <member refid="fractol_8h_1ab9cfae5f88a2c51a1b5d39245e0dcaed" kind="typedef"><name>t_atod_data</name></member>
+    <member refid="fractol_8h_1af548b6205acd0da6696adf5b79aa23a3" kind="function"><name>calculate_scales_and_limits</name></member>
+    <member refid="fractol_8h_1aa136a596dce9e2897d5eb0805a5a459f" kind="function"><name>precompute_coords</name></member>
+    <member refid="fractol_8h_1af87a6532ce68469fef69f9c207960094" kind="function"><name>calculate_color</name></member>
+    <member refid="fractol_8h_1aba5be72a261c5846a5d6e7b315548d33" kind="function"><name>ft_atod</name></member>
+    <member refid="fractol_8h_1a1f2ff2312e5994560c9537cd9173be94" kind="function"><name>ft_strcmp</name></member>
+    <member refid="fractol_8h_1a36c588cff7b2e8e39224a1f6105fa39d" kind="function"><name>fr_putstr_fd</name></member>
+    <member refid="fractol_8h_1a6010a48038dd00722649b2e7ad69668d" kind="function"><name>render_fractal</name></member>
+    <member refid="fractol_8h_1ac4c610e75a028afb898607ea03e80b30" kind="function"><name>render_mandelbrot</name></member>
+    <member refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" kind="function"><name>render_julia</name></member>
+    <member refid="fractol_8h_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" kind="function"><name>handle_key</name></member>
+    <member refid="fractol_8h_1ace17996cda407bf3eb3480f07ccdd107" kind="function"><name>handle_scroll</name></member>
+  </compound>
+  <compound refid="julia_8c" kind="file"><name>julia.c</name>
+    <member refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" kind="function"><name>julia_iterations</name></member>
+    <member refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" kind="function"><name>render_julia_row</name></member>
+    <member refid="julia_8c_1ac62d3b22b714b98af9c4faeac6e6e650" kind="function"><name>render_julia</name></member>
+  </compound>
+  <compound refid="julia__calcs_8md" kind="file"><name>julia_calcs.md</name>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1a3443f98f251000405fbc46a7951deaa9" kind="function"><name>is_valid_number</name></member>
+    <member refid="main_8c_1a2b8d2884ae79f1a4148a72db584e88f9" kind="function"><name>exit_with_error</name></member>
+    <member refid="main_8c_1a9350b6f05ff8d1ac8cd5deca133fd37f" kind="function"><name>validate_arguments</name></member>
+    <member refid="main_8c_1af11254df8693917e711076d34d657214" kind="function"><name>initialize_window</name></member>
+    <member refid="main_8c_1a0ddf1224851353fc92bfbff6f499fa97" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="main__explained_8md" kind="file"><name>main_explained.md</name>
+  </compound>
+  <compound refid="Makefile" kind="file"><name>Makefile</name>
+  </compound>
+  <compound refid="mandelbrot_8c" kind="file"><name>mandelbrot.c</name>
+    <member refid="mandelbrot_8c_1adb033de8daea75468f78428253a261cf" kind="function"><name>compute_next_iteration</name></member>
+    <member refid="mandelbrot_8c_1acedaf5af2ba2cbe5b5efefb43b1068d4" kind="function"><name>mandelbrot_iterations</name></member>
+    <member refid="mandelbrot_8c_1af0b8186beab597df25a8f56717d0cb44" kind="function"><name>mandelbrot_escape_check</name></member>
+    <member refid="mandelbrot_8c_1a41962ad3e954759faba4734b566ba90e" kind="function"><name>render_mandelbrot_row</name></member>
+    <member refid="mandelbrot_8c_1ac4c610e75a028afb898607ea03e80b30" kind="function"><name>render_mandelbrot</name></member>
+  </compound>
+  <compound refid="mandelbrot__calcs_8md" kind="file"><name>mandelbrot_calcs.md</name>
+  </compound>
+  <compound refid="README_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="utils_8c" kind="file"><name>utils.c</name>
+    <member refid="utils_8c_1aba5be72a261c5846a5d6e7b315548d33" kind="function"><name>ft_atod</name></member>
+    <member refid="utils_8c_1a1f2ff2312e5994560c9537cd9173be94" kind="function"><name>ft_strcmp</name></member>
+    <member refid="utils_8c_1aa40f0dfb0dfb158de3f6f8b98f0de3ec" kind="function"><name>handle_key</name></member>
+    <member refid="utils_8c_1ace17996cda407bf3eb3480f07ccdd107" kind="function"><name>handle_scroll</name></member>
+    <member refid="utils_8c_1a36c588cff7b2e8e39224a1f6105fa39d" kind="function"><name>fr_putstr_fd</name></member>
+  </compound>
+  <compound refid="md_auxiliary__explained" kind="page"><name>md_auxiliary__explained</name>
+  </compound>
+  <compound refid="md_julia__calcs" kind="page"><name>md_julia__calcs</name>
+  </compound>
+  <compound refid="md_main__explained" kind="page"><name>md_main__explained</name>
+  </compound>
+  <compound refid="md_mandelbrot__calcs" kind="page"><name>md_mandelbrot__calcs</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

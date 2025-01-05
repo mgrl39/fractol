@@ -1,0 +1,148 @@
+\doxysection{calcs.\+c}
+\hypertarget{calcs_8c_source}{}\label{calcs_8c_source}\mbox{\hyperlink{calcs_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00001}00001\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00002}00002\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00003}00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :::\ \ \ \ \ \ ::::::::\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00004}00004\ \textcolor{comment}{/*\ \ \ calcs.c\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :+:\ \ \ \ \ \ :+:\ \ \ \ :+:\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00005}00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +:+\ +:+\ \ \ \ \ \ \ \ \ +:+\ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00006}00006\ \textcolor{comment}{/*\ \ \ By:\ meghribe\ <meghribe@student.42barcelona.co\ \ +\#+\ \ +:+\ \ \ \ \ \ \ +\#+\ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00007}00007\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\#+\#+\#+\#+\#+\ \ \ +\#+\ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00008}00008\ \textcolor{comment}{/*\ \ \ Created:\ 2025/01/03\ 02:00:53\ by\ meghribe\ \ \ \ \ \ \ \ \ \ \#+\#\ \ \ \ \#+\#\ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00009}00009\ \textcolor{comment}{/*\ \ \ Updated:\ 2025/01/05\ 13:19:20\ by\ meghribe\ \ \ \ \ \ \ \ \ \#\#\#\ \ \ \#\#\#\#\#\#\#\#.fr\ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00010}00010\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00011}00011\ \textcolor{comment}{/*\ **************************************************************************\ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{fractol_8h}{fractol.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00015}00015\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00016}00016\ \textcolor{comment}{\ *\ @file\ calcs.c}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00017}00017\ \textcolor{comment}{\ *\ @brief\ Core\ calculations\ for\ fractal\ rendering.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00018}00018\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00019}00019\ \textcolor{comment}{\ *\ This\ file\ contains\ the\ functions\ responsible\ for\ performing\ the\ core}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00020}00020\ \textcolor{comment}{\ *\ calculations\ required\ to\ render\ fractals.\ It\ handles:}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00021}00021\ \textcolor{comment}{\ *\ -\/\ Scaling\ and\ positioning\ the\ fractal\ within\ the\ rendering\ window.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00022}00022\ \textcolor{comment}{\ *\ -\/\ Precomputing\ the\ coordinates\ ffor\ each\ pixel\ to\ optimize\ rendering}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00023}00023\ \textcolor{comment}{\ *\ \ \ performance.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00024}00024\ \textcolor{comment}{\ *\ -\/\ Rendering\ the\ fractal\ by\ delegating\ to\ specific\ algorithms}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00025}00025\ \textcolor{comment}{\ *\ \ \ (Julia\ or\ Mandelbrot).}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00026}00026\ \textcolor{comment}{\ *\ -\/\ Mapping\ iteration\ counts\ to\ colors\ for\ visually\ representing\ }}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00027}00027\ \textcolor{comment}{\ *\ \ \ fractal\ complexity.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00029}00029\ \textcolor{comment}{\ *\ \ \ For\ non-\/technical\ users:}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00030}00030\ \textcolor{comment}{\ *\ \ \ -\/\ This\ file\ performs\ the\ "{}math\ magic"{}\ that\ powers\ the\ fractal\ visuals,}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00031}00031\ \textcolor{comment}{\ *\ \ \ \ \ \ calculating\ where\ and\ howw\ the\ fractal\ is\ drawn\ and\ colored\ on\ }}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00032}00032\ \textcolor{comment}{\ *\ \ \ \ \ \ the\ screen.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00033}00033\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00034}00034\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00035}00035\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00036}00036\ \textcolor{comment}{\ *\ @brief\ Calculates\ the\ scales\ and\ starting\ points\ for\ the\ fractal\ rendering.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00037}00037\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00038}00038\ \textcolor{comment}{\ *\ This\ function\ determines\ how\ the\ fractal\ is\ scaled\ and\ positioned\ on\ the}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00039}00039\ \textcolor{comment}{\ *\ screen.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00040}00040\ \textcolor{comment}{\ *\ It\ computes\ the\ scale\ factors\ for\ each\ pixel\ and\ establishes\ the}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00041}00041\ \textcolor{comment}{\ *\ starting\ points\ ffor\ the\ real\ and\ imaginary\ part\ of\ the\ fractal\ based\ on\ the}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00042}00042\ \textcolor{comment}{\ *\ zoom\ level\ and\ offsets.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00043}00043\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00044}00044\ \textcolor{comment}{\ *\ For\ non-\/technical\ users:}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00045}00045\ \textcolor{comment}{\ *\ -\/\ Think\ of\ it\ as\ setting\ the\ "{}zoom"{}\ and\ "{}pam"{}\ for\ the\ fractal\ to\ display\ it}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00046}00046\ \textcolor{comment}{\ *\ \ \ correctly\ on\ the\ screen.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00047}00047\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00048}00048\ \textcolor{comment}{\ *\ @param\ vars\ Pointer\ to\ the\ rendering\ variables\ structure.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00049}00049\ \textcolor{comment}{\ *\ @param\ data\ Pointer\ to\ the\ main\ data\ structure\ containing\ fractal\ }}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00050}00050\ \textcolor{comment}{\ *\ \ information.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00051}00051\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00052}\mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{00052}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00053}00053\ \{}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00054}00054\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00055}00055\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00056}00056\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}];}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00057}00057\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}];}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00058}00058\ \ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ =\ (uint32\_t\ *)data-\/>\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}}-\/>pixels;}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00059}00059\ \}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00060}00060\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00061}00061\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00062}00062\ \textcolor{comment}{\ *\ @brief\ Precomputes\ the\ coordinates\ for\ each\ pixel\ in\ the\ fractal.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00063}00063\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00064}00064\ \textcolor{comment}{\ *\ This\ function\ calculates\ the\ real\ and\ imaginary\ parts\ of\ the\ fractal\ for}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00065}00065\ \textcolor{comment}{\ *\ each\ pixel\ on\ the\ screen,\ storing\ them\ in\ arrays\ for\ quick\ access\ during}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00066}00066\ \textcolor{comment}{\ *\ rendering.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00067}00067\ \textcolor{comment}{\ *\ It\ ensures\ that\ every\ point\ is\ prepared\ for\ the\ fractal\ calculations.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00068}00068\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00069}00069\ \textcolor{comment}{\ *\ For\ non-\/technical\ users:}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00070}00070\ \textcolor{comment}{\ *\ -\/\ Imagine\ this\ as\ creating\ a\ "{}grid"{}\ of\ points\ where\ the\ fractal\ will\ be}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00071}00071\ \textcolor{comment}{\ *\ \ \ drawn.\ This\ points\ tell\ the\ program\ where\ to\ caalculate\ the\ colors.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00072}00072\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00073}00073\ \textcolor{comment}{\ *\ @param\ c\_re\ Pointer\ to\ the\ array\ storing\ real\ coordinates.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00074}00074\ \textcolor{comment}{\ *\ @param\ c\_im\ Pointer\ to\ the\ array\ storing\ imaginary\ coordinates.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00075}00075\ \textcolor{comment}{\ *\ @param\ vars\ Pointer\ to\ the\ rendering\ variables\ structure.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00076}00076\ \textcolor{comment}{\ *\ @return\ Returns\ 1\ on\ success,\ or\ 0\ if\ memory\ allocation\ fails.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00077}00077\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00078}\mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{00078}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{calcs_8c_aa136a596dce9e2897d5eb0805a5a459f}{precompute\_coords}}(\textcolor{keywordtype}{double}\ **c\_re,\ \textcolor{keywordtype}{double}\ **c\_im,\ \mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars)}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00079}00079\ \{}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00082}00082\ \ \ \ \ *c\_re\ =\ (\textcolor{keywordtype}{double}\ *)malloc(\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00083}00083\ \ \ \ \ *c\_im\ =\ (\textcolor{keywordtype}{double}\ *)malloc(\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}));}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(*c\_re)\ ||\ !(*c\_im))}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (free(*c\_re),\ free(*c\_im),\ 0);}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00086}00086\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ \mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}})}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00088}00088\ \ \ \ \ \ \ \ \ (*c\_re)[i]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ +\ i\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}];}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00089}00089\ \ \ \ \ i\ =\ -\/1;}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{while}\ (++i\ <\ \mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}})}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ (*c\_im)[i]\ =\ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ +\ i\ *\ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}];}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00092}00092\ \ \ \ \ \textcolor{keywordflow}{return}\ (1);}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00094}00094\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00095}00095\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00096}00096\ \textcolor{comment}{\ *\ @brief\ Renders\ the\ chosen\ fractal\ on\ the\ screen.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00097}00097\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00098}00098\ \textcolor{comment}{\ *\ This\ function\ selects\ the\ appropiate\ rendering\ algorithm\ based\ on\ the\ fractal}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00099}00099\ \textcolor{comment}{\ *\ type\ chosen\ by\ the\ user\ (Julia\ or\ Mandelbrot)\ and\ renders\ it\ on\ the\ screen.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00100}00100\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00101}00101\ \textcolor{comment}{\ *\ For\ non-\/technical\ users:}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00102}00102\ \textcolor{comment}{\ *\ \ -\/\ Depending\ on\ the\ type\ of\ fractal\ (Julia\ or\ Mandelbrot),\ this\ function}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00103}00103\ \textcolor{comment}{\ *\ \ draws\ the\ chosen\ fractal\ pattern\ for\ you\ to\ see.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00104}00104\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00105}00105\ \textcolor{comment}{\ *\ @param\ data\ Pointer\ to\ the\ main\ data\ structure\ containing\ fractal\ and}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00106}00106\ \textcolor{comment}{\ *\ rendering\ details.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00107}00107\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00108}\mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{00108}}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{calcs_8c_a6010a48038dd00722649b2e7ad69668d}{render\_fractal}}(\mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00109}00109\ \{}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00110}00110\ \ \ \ \ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ ==\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a6f8f3219a598fcd6038302ab91897d41}{JULIA}})}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00111}00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_ac62d3b22b714b98af9c4faeac6e6e650}{render\_julia}}(data);}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (data-\/>\mbox{\hyperlink{structs__data_a5a2ba0847a14013a3bd6a83d2cf8636c}{fractal\_type}}\ ==\ \mbox{\hyperlink{fractol_8h_a1062913c9edc7196b03714d4b329be12a4182f946175d0f995c0532d4ece9d1d7}{MANDELBROT}})}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00113}00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{fractol_8h_ac4c610e75a028afb898607ea03e80b30}{render\_mandelbrot}}(data);}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00115}00115\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00116}00116\ \textcolor{comment}{/**}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00117}00117\ \textcolor{comment}{\ *\ @brief\ Calculates\ the\ color\ of\ a\ pixel\ based\ on\ how\ many\ iterations\ it\ takes}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00118}00118\ \textcolor{comment}{\ *\ to\ "{}escape"{}.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00119}00119\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00120}00120\ \textcolor{comment}{\ *\ This\ function\ determines\ the\ color\ of\ each\ pixel\ in\ the\ fractal\ by\ mapping}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00121}00121\ \textcolor{comment}{\ *\ the\ iteration\ count\ (how\ many\ steps\ we\ are\ needed\ to\ reach\ a\ threshold)}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00122}00122\ \textcolor{comment}{\ *\ to\ a\ color\ gradient.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00123}00123\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00124}00124\ \textcolor{comment}{\ *\ For\ non-\/technical\ users:}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00125}00125\ \textcolor{comment}{\ *\ -\/\ The\ function\ decides\ the\ color\ of\ each\ pooint\ in\ the\ fractal,\ creating\ the}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00126}00126\ \textcolor{comment}{\ *\ \ \ beautiful\ patterns\ you\ see\ based\ on\ how\ "{}complex"{}\ the\ point\ is.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00127}00127\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00128}00128\ \textcolor{comment}{\ *\ @param\ iterations\ Number\ of\ iterations\ required\ for\ the\ opint\ to\ "{}escape"{}.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00129}00129\ \textcolor{comment}{\ *\ @return\ Returns\ the\ calculated\ color\ as\ an\ integer.}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00130}00130\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00131}\mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{00131}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(\textcolor{keywordtype}{int}\ iterations)}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00132}00132\ \{}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{double}\ \ it\_count;}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00134}00134\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ base\_gray;}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00135}00135\ \ \ \ \ \mbox{\hyperlink{structs__color}{t\_color}}\ \ color;}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00136}00136\ }
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00137}00137\ \ \ \ \ it\_count\ =\ (double)iterations\ /\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}};}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00138}00138\ \ \ \ \ base\_gray\ =\ (30\ +\ 190\ *\ (it\_count\ *\ (1\ -\/\ 0.2\ *\ it\_count)));}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00139}00139\ \ \ \ \ color.\mbox{\hyperlink{structs__color_a251e854381c6945efbbffc33796e6035}{r}}\ =\ base\_gray\ -\/\ (5\ *\ (1\ -\/\ it\_count)\ *\ it\_count\ *\ it\_count);}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00140}00140\ \ \ \ \ color.\mbox{\hyperlink{structs__color_a6d246ab8c311f6f86da2f9aa129b98d9}{g}}\ =\ base\_gray\ -\/\ (10\ *\ (1\ -\/\ it\_count)\ *\ (1\ -\/\ it\_count));}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00141}00141\ \ \ \ \ color.\mbox{\hyperlink{structs__color_a0710590bfa61f9db131e534589070ac8}{b}}\ =\ base\_gray\ -\/\ (15\ *\ (1\ -\/\ it\_count)\ *\ it\_count);}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00142}00142\ \ \ \ \ \textcolor{keywordflow}{return}\ ((0xFF\ <<\ 24)\ |\ (color.\mbox{\hyperlink{structs__color_a251e854381c6945efbbffc33796e6035}{r}}\ <<\ 16)\ |\ (color.\mbox{\hyperlink{structs__color_a6d246ab8c311f6f86da2f9aa129b98d9}{g}}\ <<\ 8)\ |\ color.\mbox{\hyperlink{structs__color_a0710590bfa61f9db131e534589070ac8}{b}});}
+\DoxyCodeLine{\Hypertarget{calcs_8c_source_l00143}00143\ \}}
+
+\end{DoxyCode}

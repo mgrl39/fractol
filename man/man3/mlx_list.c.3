@@ -1,0 +1,274 @@
+.TH "MLX42/src/utils/mlx_list.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/utils/mlx_list.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBint32_t\fP \fBmlx_lstsize\fP (\fBmlx_list_t\fP *\fBlst\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_lstdelone\fP (\fBmlx_list_t\fP *\fBlst\fP, \fBvoid\fP(*\fBdel\fP)(\fBvoid\fP *))"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_lstclear\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBvoid\fP(*\fBdel\fP)(\fBvoid\fP *))"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBmlx_lstnew\fP (\fBvoid\fP *content)"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBmlx_lstlast\fP (\fBmlx_list_t\fP *\fBlst\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_lstadd_back\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBmlx_list_t\fP *\fBnew\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_lstadd_front\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBmlx_list_t\fP *\fBnew\fP)"
+.br
+.ti -1c
+.RI "\fBmlx_list_t\fP * \fBmlx_lstremove\fP (\fBmlx_list_t\fP **\fBlst\fP, \fBvoid\fP *\fBvalue\fP, \fBbool\fP(*\fBcomp\fP)(\fBvoid\fP *, \fBvoid\fP *))"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBint32_t\fP \fBmlx_getzdata\fP (\fBmlx_list_t\fP *\fBentry\fP)"
+.br
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_insertsort\fP (\fBmlx_list_t\fP **\fBhead\fP, \fBmlx_list_t\fP *\fBnew\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_sort_renderqueue\fP (\fBmlx_list_t\fP **\fBlst\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBstatic\fP \fBint32_t\fP mlx_getzdata (\fBmlx_list_t\fP * entry)\fC [static]\fP"
+
+.PP
+Definition at line \fB118\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+119 {
+120     const draw_queue_t* queue = entry\->content;
+121 
+122     return (queue\->image\->instances[queue\->instanceid]\&.z);
+123 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_insertsort (\fBmlx_list_t\fP ** head, \fBmlx_list_t\fP * new)\fC [static]\fP"
+
+.PP
+Definition at line \fB126\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+127 {
+128     mlx_list_t* current;
+129 
+130     if (*head == NULL)
+131         *head = new;
+132     else if (mlx_getzdata(*head) >= mlx_getzdata(new))
+133     {
+134         new\->next = *head;
+135         new\->next\->prev = new;
+136         *head = new;
+137     }
+138     else
+139     {
+140         current = *head;
+141 
+142         // Find insertion location\&.
+143         while (current\->next != NULL && mlx_getzdata(current\->next) < mlx_getzdata(new))
+144             current = current\->next;
+145         new\->next = current\->next;
+146 
+147         // Insert at the end
+148         if (current\->next != NULL)
+149             new\->next\->prev = new;
+150         current\->next = new;
+151         new\->prev = current;
+152     }
+153 }
+.fi
+
+.SS "\fBvoid\fP mlx_lstadd_back (\fBmlx_list_t\fP ** lst, \fBmlx_list_t\fP * new)"
+
+.PP
+Definition at line \fB67\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+68 {
+69     if (!lst || !new)
+70         return;
+71     if (!*lst)
+72         *lst = new;
+73     else
+74     {
+75         mlx_list_t* temp = mlx_lstlast(*lst);
+76         new\->prev = temp;
+77         temp\->next = new;
+78     }
+79 }
+.fi
+
+.SS "\fBvoid\fP mlx_lstadd_front (\fBmlx_list_t\fP ** lst, \fBmlx_list_t\fP * new)"
+
+.PP
+Definition at line \fB81\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+82 {
+83     if (!lst || !new)
+84         return;
+85     if ((*lst) != NULL)
+86         (*lst)\->prev = new;
+87     new\->next = *lst;
+88     new\->prev = NULL;
+89     *lst = new;
+90 }
+.fi
+
+.SS "\fBvoid\fP mlx_lstclear (\fBmlx_list_t\fP ** lst, \fBvoid\fP(*)(\fBvoid\fP *) del)"
+
+.PP
+Definition at line \fB33\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+34 {
+35     mlx_list_t* next_lst;
+36 
+37     while (*lst != NULL)
+38     {
+39         next_lst = (*lst)\->next;
+40         mlx_lstdelone(*lst, del);
+41         *lst = next_lst;
+42     }
+43 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_lstdelone (\fBmlx_list_t\fP * lst, \fBvoid\fP(*)(\fBvoid\fP *) del)\fC [static]\fP"
+
+.PP
+Definition at line \fB26\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+27 {
+28     if (del != NULL)
+29         del(lst\->content);
+30     free(lst);
+31 }
+.fi
+
+.SS "\fBmlx_list_t\fP * mlx_lstlast (\fBmlx_list_t\fP * lst)"
+
+.PP
+Definition at line \fB58\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+59 {
+60     if (!lst)
+61         return (NULL);
+62     while (lst\->next)
+63         lst = lst\->next;
+64     return (lst);
+65 }
+.fi
+
+.SS "\fBmlx_list_t\fP * mlx_lstnew (\fBvoid\fP * content)"
+All sorts of internal functions shared in the library that should not be accessible to the user! No touch! 
+.PP
+Definition at line \fB45\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+46 {
+47     mlx_list_t* out = NULL;
+48 
+49     if ((out = malloc(sizeof(mlx_list_t))))
+50     {
+51         out\->content = content;
+52         out\->next = NULL;
+53         out\->prev = NULL;
+54     }
+55     return (out);
+56 }
+.fi
+
+.SS "\fBmlx_list_t\fP * mlx_lstremove (\fBmlx_list_t\fP ** lst, \fBvoid\fP * value, \fBbool\fP(*)(\fBvoid\fP *, \fBvoid\fP *) comp)"
+Removes the specified content from the list, if found\&. Also fixes any relinking that might be needed\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIlst\fP The list 
+.br
+\fIcomp\fP Function to check if the content and value are the same\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The removed element, clean up as you wish\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB100\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+101 {
+102     mlx_list_t* lstcpy = *lst;
+103 
+104     while (lstcpy && !comp(lstcpy\->content, value))
+105         lstcpy = lstcpy\->next;
+106     if (lstcpy == NULL)
+107         return (NULL);
+108     if (lstcpy == *lst)
+109         *lst = lstcpy\->next;
+110     if (lstcpy\->next != NULL)
+111         lstcpy\->next\->prev = lstcpy\->prev;
+112     if (lstcpy\->prev != NULL)
+113         lstcpy\->prev\->next = lstcpy\->next;
+114     return (lstcpy);
+115 }
+.fi
+
+.SS "\fBint32_t\fP mlx_lstsize (\fBmlx_list_t\fP * lst)"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+18 {
+19     int32_t i;
+20 
+21     for (i = 0; lst != NULL; i++)
+22         lst = lst\->next;
+23     return (i);
+24 }
+.fi
+
+.SS "\fBvoid\fP mlx_sort_renderqueue (\fBmlx_list_t\fP ** lst)"
+Okay-ish sorting algorithm to sort the render queue / doubly linked list\&. We need to do this to fix transparency\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIlst\fP The render queue\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB161\fP of file \fBmlx_list\&.c\fP\&..PP
+.nf
+162 {
+163     mlx_list_t* sorted = NULL;
+164     mlx_list_t* lstcpy = *lst;
+165 
+166     while (lstcpy != NULL)
+167     {
+168         mlx_list_t* next = lstcpy\->next;
+169 
+170         // Separate entry out of list and insert it back but sorted\&.
+171         lstcpy\->prev = lstcpy\->next = NULL;
+172         mlx_insertsort(&sorted, lstcpy);
+173         lstcpy = next;
+174     }
+175     *lst = sorted;
+176 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

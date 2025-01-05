@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="XPM42_8md" kind="file" language="Markdown">
+    <compoundname>XPM42.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>XPM42</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">XPM42<sp/>is<sp/>a<sp/>custom<sp/>file<sp/>format<sp/>made<sp/>for<sp/>MLX42<sp/>to<sp/>provide<sp/>an<sp/>easy<sp/>to<sp/>use<sp/>and<sp/>understand<sp/>image<sp/>file<sp/>format<sp/>to<sp/>learn<sp/>how<sp/></highlight></codeline>
+<codeline><highlight class="normal">images<sp/>can<sp/>be<sp/>stored.<sp/>The<sp/>format<sp/>is<sp/>based<sp/>on<sp/>the<sp/>actual<sp/>[XPM3](https://en.wikipedia.org/wiki/X_PixMap)<sp/>format.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">An<sp/>XPM<sp/>file<sp/>basically<sp/>stores<sp/>a<sp/>look-up<sp/>table<sp/>inside<sp/>of<sp/>it<sp/>to<sp/>fetch<sp/>which<sp/>character<sp/>corresponds<sp/>to<sp/>which<sp/>color.<sp/>Additionally<sp/>in<sp/>the</highlight></codeline>
+<codeline><highlight class="normal">header<sp/>there<sp/>is<sp/>a<sp/>character<sp/>per<sp/>pixel<sp/>count,<sp/>this<sp/>is<sp/>due<sp/>to<sp/>the<sp/>limitation<sp/>of<sp/>the<sp/>amount<sp/>of<sp/>characters.<sp/>Each<sp/>&apos;Pixel&apos;<sp/>in<sp/>the<sp/>XPM<sp/>data<sp/>can<sp/></highlight></codeline>
+<codeline><highlight class="normal">be<sp/>represented<sp/>by<sp/>multiple<sp/>characters.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>example<sp/>`*.`<sp/>would<sp/>be<sp/>viewed<sp/>as<sp/>a<sp/>single<sp/>pixel<sp/>if<sp/>the<sp/>characters<sp/>per<sp/>pixel<sp/>count<sp/>was<sp/>2.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Layout</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>file<sp/>format<sp/>looks<sp/>as<sp/>follows:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline><highlight class="normal">!XPM42<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;-<sp/>File<sp/>declaration</highlight></codeline>
+<codeline><highlight class="normal">16<sp/>7<sp/>2<sp/>1<sp/>c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;-<sp/>Width<sp/>|<sp/>Height<sp/>|<sp/>Color<sp/>count<sp/>|<sp/>Characters<sp/>per<sp/>Pixel<sp/>|<sp/>Mode<sp/>(C:<sp/>Color<sp/>or<sp/>M:<sp/>Monochrome)</highlight></codeline>
+<codeline><highlight class="normal">*<sp/>#FF0000FF<sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;-<sp/>Entry<sp/>always:<sp/>&lt;Char&gt;<sp/>&lt;Space&gt;<sp/>&lt;Hexadecimal&gt;<sp/>Colors<sp/>MUST<sp/>have<sp/>all<sp/>four<sp/>channels<sp/>(RGBA)</highlight></codeline>
+<codeline><highlight class="normal">.<sp/>#00000000</highlight></codeline>
+<codeline><highlight class="normal">**..*...........<sp/><sp/>&lt;-<sp/>Literal<sp/>pixel<sp/>data</highlight></codeline>
+<codeline><highlight class="normal">*.*.*...........</highlight></codeline>
+<codeline><highlight class="normal">**..*..**.**..**</highlight></codeline>
+<codeline><highlight class="normal">*.*.*.*.*.*..*.*</highlight></codeline>
+<codeline><highlight class="normal">**..*..**.*...**</highlight></codeline>
+<codeline><highlight class="normal">...............*</highlight></codeline>
+<codeline><highlight class="normal">.............**.</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Inner<sp/>workings</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Reading<sp/>an<sp/>XPM42<sp/>does<sp/>a<sp/>whole<sp/>bunch<sp/>of<sp/>stuff<sp/>but<sp/>in<sp/>essence<sp/>it<sp/>reads<sp/>the<sp/>file<sp/>header<sp/>and<sp/>inserts<sp/>each<sp/>color<sp/>entry<sp/>into<sp/>a<sp/>hash<sp/>table<sp/>for<sp/>fast<sp/>lookups<sp/>of<sp/>the<sp/>color<sp/>value,<sp/>the<sp/>hash<sp/>used<sp/>is<sp/>FNV-1a.<sp/>Why,<sp/>because<sp/>it&apos;s<sp/>an<sp/>easy<sp/>to<sp/>use<sp/>hash<sp/>and<sp/>also<sp/>my<sp/>favourite.<sp/>After<sp/>the<sp/>header<sp/>is<sp/>read<sp/>and<sp/>the<sp/>color<sp/>values<sp/>are<sp/>inserted<sp/>into<sp/>the<sp/>table<sp/>each<sp/>line<sp/>is<sp/>then<sp/>read<sp/>and<sp/>each<sp/>character<sp/>is<sp/>processed<sp/>and<sp/>inserted<sp/>into<sp/>the<sp/>pixel<sp/>buffer<sp/>of<sp/>the<sp/>XPM.<sp/>There<sp/>is<sp/>no<sp/>collision<sp/>checking<sp/>for<sp/>the<sp/>lookup<sp/>table,<sp/>so<sp/>artefacts<sp/>may<sp/>be<sp/>present.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Tools</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>the<sp/>root<sp/>of<sp/>the<sp/>repository<sp/>is<sp/>a<sp/>tools<sp/>directory<sp/>in<sp/>which<sp/>a<sp/>python<sp/>script<sp/>can<sp/>convert<sp/>an<sp/>existing<sp/>XPM3<sp/>file<sp/>to<sp/>XPM42.</highlight></codeline>
+<codeline><highlight class="normal">Use<sp/>this<sp/>script<sp/>if<sp/>you<sp/>wish<sp/>to<sp/>use<sp/>the<sp/>XPM42<sp/>file<sp/>format.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```C</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;unistd.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;MLX42/MLX42.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>WIDTH<sp/>5120</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>HEIGHT<sp/>2880</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">static<sp/>void<sp/>error(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>puts(mlx_strerror(mlx_errno));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>exit(EXIT_FAILURE);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Start<sp/>mlx</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>&quot;Test&quot;,<sp/>true);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!mlx)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Try<sp/>to<sp/>load<sp/>the<sp/>file</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>xpm_t*<sp/>xpm<sp/>=<sp/>mlx_load_xpm42(&quot;./temp/42.xpm42&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!xpm)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Convert<sp/>texture<sp/>to<sp/>a<sp/>displayable<sp/>image</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_image_t*<sp/>img<sp/>=<sp/>mlx_texture_to_image(mlx,<sp/>&amp;xpm-&gt;texture);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!img)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Display<sp/>the<sp/>image</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_image_to_window(mlx,<sp/>img,<sp/>0,<sp/>0)<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>error();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Optional,<sp/>terminate<sp/>will<sp/>clean<sp/>up<sp/>any<sp/>leftovers,<sp/>this<sp/>is<sp/>just<sp/>to<sp/>demonstrate.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_delete_image(mlx,<sp/>img);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_delete_xpm42(xpm);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">![Example](./assets/XPM_Demo.png)</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/XPM42.md"/>
+  </compounddef>
+</doxygen>

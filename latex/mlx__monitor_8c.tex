@@ -1,0 +1,64 @@
+\doxysection{MLX42/src/mlx\+\_\+monitor.c File Reference}
+\hypertarget{mlx__monitor_8c}{}\label{mlx__monitor_8c}\index{MLX42/src/mlx\_monitor.c@{MLX42/src/mlx\_monitor.c}}
+{\ttfamily \#include "{}MLX42/\+MLX42\+\_\+\+Int.\+h"{}}\newline
+Include dependency graph for mlx\+\_\+monitor.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mlx__monitor_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{mlx__monitor_8c_a5f5233dda4cabad7ec3744a81705c7b3}{mlx\+\_\+get\+\_\+monitor\+\_\+size}} (\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}, \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{mlx__monitor_8c_a5f5233dda4cabad7ec3744a81705c7b3}\label{mlx__monitor_8c_a5f5233dda4cabad7ec3744a81705c7b3} 
+\index{mlx\_monitor.c@{mlx\_monitor.c}!mlx\_get\_monitor\_size@{mlx\_get\_monitor\_size}}
+\index{mlx\_get\_monitor\_size@{mlx\_get\_monitor\_size}!mlx\_monitor.c@{mlx\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{mlx\_get\_monitor\_size()}{mlx\_get\_monitor\_size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} mlx\+\_\+get\+\_\+monitor\+\_\+size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{width,  }\item[{\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{height }\end{DoxyParamCaption})}
+
+Gets the size of the specified monitor.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em index} & Normally 0, in case of multiple windows, can be specified \\
+\hline
+\mbox{\texttt{ in}}  & {\em width} & The width of the window. \\
+\hline
+\mbox{\texttt{ in}}  & {\em height} & The height of the window. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{mlx__monitor_8c_source_l00017}{17}} of file \mbox{\hyperlink{mlx__monitor_8c_source}{mlx\+\_\+monitor.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_acaa6ebdc9d544398d3ffaa40a75bdfbb}{MLX\_ASSERT}}(\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}\ >=\ 0,\ \textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}});}
+\DoxyCodeLine{00021\ \ \ \ \ \mbox{\hyperlink{MLX42__Int_8h_a0271f5f01990fc9f03093522bc76718c}{MLX\_NONNULL}}(\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ *\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \ \ *\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}\ =\ 0;}
+\DoxyCodeLine{00025\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{int32\_t}}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitor\_count}};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWmonitor}}**\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitors}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetMonitors}}(\&\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitor\_count}});}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}\ >\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitor\_count}}\ ||\ !\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitors}})}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{GLFWvidmode}}*\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{if}\ ((\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{glfwGetVideoMode}}(\mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{monitors}}[\mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}])))}
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}}-\/>width;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}\ =\ \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{vidmode}}-\/>height;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ \}}
+
+\end{DoxyCode}

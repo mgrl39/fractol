@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structLodePNGDecoderSettings" kind="struct" language="C++" prot="public">
+    <compoundname>LodePNGDecoderSettings</compoundname>
+    <includes refid="lodepng_8h" local="no">lodepng.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1a9ae8fef9880bef97a3e932f8ea942ed8" prot="public" static="no" mutable="no">
+        <type><ref refid="structLodePNGDecompressSettings" kindref="compound">LodePNGDecompressSettings</ref></type>
+        <definition>LodePNGDecompressSettings LodePNGDecoderSettings::zlibsettings</definition>
+        <argsstring></argsstring>
+        <name>zlibsettings</name>
+        <qualifiedname>LodePNGDecoderSettings::zlibsettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="731" column="29" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="731" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1a6390c403d2a5718242337bbbaf15131d" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecoderSettings::ignore_crc</definition>
+        <argsstring></argsstring>
+        <name>ignore_crc</name>
+        <qualifiedname>LodePNGDecoderSettings::ignore_crc</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="734" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="734" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1a51c3ce791f1b1d325d5e1f7e18caeeea" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecoderSettings::ignore_critical</definition>
+        <argsstring></argsstring>
+        <name>ignore_critical</name>
+        <qualifiedname>LodePNGDecoderSettings::ignore_critical</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="735" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="735" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1aa8f3907b3dcaf09892a752806be2fc59" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecoderSettings::ignore_end</definition>
+        <argsstring></argsstring>
+        <name>ignore_end</name>
+        <qualifiedname>LodePNGDecoderSettings::ignore_end</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="736" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="736" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1af26f2b29cd338ce4476bee9571a0818a" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecoderSettings::color_convert</definition>
+        <argsstring></argsstring>
+        <name>color_convert</name>
+        <qualifiedname>LodePNGDecoderSettings::color_convert</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="742" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="742" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1aa1212905c3f73d9fffef2c04a220d951" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecoderSettings::read_text_chunks</definition>
+        <argsstring></argsstring>
+        <name>read_text_chunks</name>
+        <qualifiedname>LodePNGDecoderSettings::read_text_chunks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="745" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="745" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1a8775e4fc539dc457916720f52b442f27" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">unsigned</ref></type>
+        <definition>unsigned LodePNGDecoderSettings::remember_unknown_chunks</definition>
+        <argsstring></argsstring>
+        <name>remember_unknown_chunks</name>
+        <qualifiedname>LodePNGDecoderSettings::remember_unknown_chunks</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="748" column="12" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="748" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1a7f2842321dd4144180cb79ff4b5eaf5e" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t LodePNGDecoderSettings::max_text_size</definition>
+        <argsstring></argsstring>
+        <name>max_text_size</name>
+        <qualifiedname>LodePNGDecoderSettings::max_text_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="753" column="10" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="753" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structLodePNGDecoderSettings_1a3a945371fad61a0a8becfa5ab1c9d71e" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">size_t</ref></type>
+        <definition>size_t LodePNGDecoderSettings::max_icc_size</definition>
+        <argsstring></argsstring>
+        <name>max_icc_size</name>
+        <qualifiedname>LodePNGDecoderSettings::max_icc_size</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/lodepng/lodepng.h" line="758" column="10" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="758" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>LodePNGDecoderSettings</label>
+        <link refid="structLodePNGDecoderSettings"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+zlibsettings</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>LodePNGDecompressSettings</label>
+        <link refid="structLodePNGDecompressSettings"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/lodepng/lodepng.h" line="730" column="1" bodyfile="MLX42/include/lodepng/lodepng.h" bodystart="730" bodyend="760"/>
+    <listofallmembers>
+      <member refid="structLodePNGDecoderSettings_1af26f2b29cd338ce4476bee9571a0818a" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>color_convert</name></member>
+      <member refid="structLodePNGDecoderSettings_1a6390c403d2a5718242337bbbaf15131d" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>ignore_crc</name></member>
+      <member refid="structLodePNGDecoderSettings_1a51c3ce791f1b1d325d5e1f7e18caeeea" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>ignore_critical</name></member>
+      <member refid="structLodePNGDecoderSettings_1aa8f3907b3dcaf09892a752806be2fc59" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>ignore_end</name></member>
+      <member refid="structLodePNGDecoderSettings_1a3a945371fad61a0a8becfa5ab1c9d71e" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>max_icc_size</name></member>
+      <member refid="structLodePNGDecoderSettings_1a7f2842321dd4144180cb79ff4b5eaf5e" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>max_text_size</name></member>
+      <member refid="structLodePNGDecoderSettings_1aa1212905c3f73d9fffef2c04a220d951" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>read_text_chunks</name></member>
+      <member refid="structLodePNGDecoderSettings_1a8775e4fc539dc457916720f52b442f27" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>remember_unknown_chunks</name></member>
+      <member refid="structLodePNGDecoderSettings_1a9ae8fef9880bef97a3e932f8ea942ed8" prot="public" virt="non-virtual"><scope>LodePNGDecoderSettings</scope><name>zlibsettings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

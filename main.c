@@ -6,14 +6,43 @@
 /*   By: meghribe <meghribe@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:47:18 by meghribe          #+#    #+#             */
-/*   Updated: 2025/01/04 16:33:20 by meghribe         ###   ########.fr       */
+/*   Updated: 2025/01/05 12:54:03 by meghribe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
 /**
- * @brief Checks if a string is a valid number.
+ * @file main.c
+ * @brief Entry point for the Fractol application.
+ *
+ * This file contains the main function and orchestrates the entire fractal
+ * rendering process. It handles:
+ * - Command-line argument validation to ensure correct input.
+ * - Initialization of the fractal type and parameters (Julia or Mandelbrot)
+ * - Setuup of the rendering environment using the MLX42 graphics liibrary,
+ *   including the creation of the window and image bufffer.
+ * - Fractal rendering based on the user-specified parameters.
+ * - Configuration of interactivee event hooks for keyboard and scroll inputs.
+ * - Continuous updates through the main event loop.
+ *
+ * The program terminates gracefully on completion or reports error for invalid
+ * inputs.
+ */
+
+/**
+ * @brief Validates if a string represents a valid number.
+ *
+ * This function checks iff the input string is a valid number, considering:
+ * - Optional leading spaces or tabs.
+ * - An optional sign (+/-).
+ * - At least one digit.
+ * - At most one decimal point with digits before or after it.
+ * Invalid cases include multiple decimal points, invalid characters, 
+ * or empty strings.
+ *
+ * @param str Input string to validate
+ * @return 1 if the string is a valid number, 0 otherwise.
  */
 static int	is_valid_number(const char *str)
 {
@@ -45,7 +74,15 @@ static int	is_valid_number(const char *str)
 }
 
 /**
- * @brief Prints an error message and exists the program.
+ * @brief Prints an error message and terminates the program.
+ *
+ * This function displays an error, the correct usage off the program, and
+ * list of available fractal types with examples. It then terminates the
+ * program with a failure status.
+ *
+ * @param message Error message to display.
+ * @param argv Command-line arguments, used to show the program name in
+ * usage examples.
  */
 static void	exit_with_error(const char *message, char *argv[])
 {
@@ -67,7 +104,20 @@ static void	exit_with_error(const char *message, char *argv[])
 }
 
 /**
- * @brief Validates the command-line arguments.
+ * @brief Validates the command-line arguments for fractal rendering.
+ *
+ * This function checks that the user has specified a valid fractal type
+ * and the correct parameters. The supported fractals and their requirements
+ * are:
+ * - `mandelbrot`: No additional arguments.
+ * - `julia`: Requires exactly two valid numbers representing the real and
+ *   imaginary part of the parameter.
+ *
+ * If the arguments are invalid, the function calls `exit_with_error()` to
+ * display an appropiate error message and terminate the program.
+ *
+ * @param argc Number of command-line arguments passed to the program.
+ * @param argv Array of command-line argument strings.
  */
 static void	validate_arguments(int argc, char *argv[])
 {
@@ -98,7 +148,21 @@ static void	validate_arguments(int argc, char *argv[])
 }
 
 /**
- * @brief Initializes the MLX42 window and image.
+ * @brief Initializes the MLX42 rendering environment.
+ *
+ * This function sets up the environment for rendering fractals by:
+ * - Creating an MLX42 window with thee given title.
+ * - Allocating an image buffer for rendering.
+ * - Setting initial offsets and zoom level for the fractal.
+ *
+ * If Julia set parameters (`c[COMPLEX_RE]` or `c[COMPLEX_IM]`) are outside
+ * the range [-2.0, 2.0], it issues a warning about potential visual effects.
+ * The function terminates the program in case of initialization failures.
+ *
+ * @param data Pointer to the data structure containing fractal information,
+ * 	offsets, zoom, and MLX42 resources.
+ * @param argv Array of argument strings, where argv[1] is used as the window 
+ * title.
  */
 static void	initialize_window(t_data *data, char *argv[])
 {
@@ -130,11 +194,23 @@ static void	initialize_window(t_data *data, char *argv[])
 }
 
 /**
- * @brief Main function.
- * - Validates the command-line arguments.
- * - Initializes the fractal type and parameters.
- * - Sets up the rendering environment and renders the fractal.
- * - Configures event hooks and starts the main event loop.
+ * @brief Main entry point for the fractal rendering program.
+ *
+ * This function orchestrates the entire fractal rendering process by:
+ * - Validating the command-line arguments to ensure correct fractal type
+ *   and parameters.
+ * - Initializing the fractal type, including Julia parameters if applicable.
+ * - Setting up the MLX42 rendering environment, including the window
+ *   and image buffer.
+ * - Rendering the chosen fractal based on the input parameters.
+ * - Configuring event hooks for used interaction (keyboard and scroll events).
+ * - Starting the main event loop for continuous interaction and updates.
+ *
+ * @param argc Number of arguments passed to the program.
+ * @param argv Array of argument strings, including the program name and input 
+ * 	parameters.
+ * @return Returns `EXIT_SUCCESS` on successful execution, 
+ * 	or terminates on error.
  */
 int	main(int argc, char *argv[])
 {

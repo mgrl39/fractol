@@ -1,0 +1,180 @@
+.TH "mandelbrot.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mandelbrot.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fractol\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBcompute_next_iteration\fP (\fBt_render_vars\fP *vars, int i)"
+.br
+.RI "Computes the next iteration for a single point in the Mandelbrot set\&. "
+.ti -1c
+.RI "static void \fBmandelbrot_iterations\fP (\fBt_render_vars\fP *vars, int i)"
+.br
+.RI "Performs the iterations for a single point in the Mandelbrot set\&. "
+.ti -1c
+.RI "static int \fBmandelbrot_escape_check\fP (\fBt_render_vars\fP *vars, int i, \fBt_data\fP *data)"
+.br
+.RI "Performs an early scape check for a point in the Mandelbrot set\&. "
+.ti -1c
+.RI "static void \fBrender_mandelbrot_row\fP (\fBt_render_vars\fP *vars, \fBt_data\fP *data, int y)"
+.br
+.RI "Renders a single row of the Mandelbrot set\&. "
+.ti -1c
+.RI "void \fBrender_mandelbrot\fP (\fBt_data\fP *data)"
+.br
+.RI "Renders the Mandelbrot set fractal\&. "
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "static void compute_next_iteration (\fBt_render_vars\fP * vars, int i)\fC [static]\fP"
+
+.PP
+Computes the next iteration for a single point in the Mandelbrot set\&. 
+.PP
+Definition at line \fB18\fP of file \fBmandelbrot\&.c\fP\&..PP
+.nf
+19 {
+20     double  temp_z_re;
+21 
+22     temp_z_re = vars\->z_squared[COMPLEX_RE] \- vars\->z_squared[COMPLEX_IM];
+23     temp_z_re += vars\->c_re[i];
+24     vars\->z[COMPLEX_IM] = (2\&.0 * vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_IM]);
+25     vars\->z[COMPLEX_IM] += vars\->c_im;
+26     vars\->z[COMPLEX_RE] = temp_z_re;
+27     vars\->z_squared[COMPLEX_RE] = vars\->z[COMPLEX_RE] * vars\->z[COMPLEX_RE];
+28     vars\->z_squared[COMPLEX_IM] = vars\->z[COMPLEX_IM] * vars\->z[COMPLEX_IM];
+29 }
+.fi
+
+.SS "static int mandelbrot_escape_check (\fBt_render_vars\fP * vars, int i, \fBt_data\fP * data)\fC [static]\fP"
+
+.PP
+Performs an early scape check for a point in the Mandelbrot set\&. 
+.PP
+Definition at line \fB61\fP of file \fBmandelbrot\&.c\fP\&..PP
+.nf
+62 {
+63     int     max_color;
+64     double  dist_sq;
+65     double  esc_chk;
+66     double  bound_condition;
+67 
+68     max_color = calculate_color(MAX_ITERATIONS);
+69     vars\->c_re_centered = vars\->c_re[i] \- 0\&.25;
+70     dist_sq = vars\->c_re_centered * vars\->c_re_centered;
+71     dist_sq += vars\->c_im * vars\->c_im;
+72     esc_chk = dist_sq * (dist_sq + vars\->c_re_centered);
+73     if ((data\->zoom > 1\&.0) && (esc_chk < 0\&.25 * vars\->c_im * vars\->c_im))
+74         return (vars\->row[i] = max_color, 1);
+75     bound_condition = (vars\->c_re[i] + 1) * (vars\->c_re[i] + 1);
+76     bound_condition += vars\->c_im * vars\->c_im;
+77     if (bound_condition < 0\&.0625)
+78         return (vars\->row[i] = max_color, 1);
+79     return (0);
+80 }
+.fi
+
+.SS "static void mandelbrot_iterations (\fBt_render_vars\fP * vars, int i)\fC [static]\fP"
+
+.PP
+Performs the iterations for a single point in the Mandelbrot set\&. 
+.PP
+Definition at line \fB34\fP of file \fBmandelbrot\&.c\fP\&..PP
+.nf
+35 {
+36     double  current_magnitude_squared;
+37     double  escape_radius_squared;
+38 
+39     escape_radius_squared = 4\&.0;
+40     vars\->z[COMPLEX_RE] = 0\&.0;
+41     vars\->z[COMPLEX_IM] = 0\&.0;
+42     vars\->z_squared[COMPLEX_RE] = 0;
+43     vars\->z_squared[COMPLEX_IM] = 0;
+44     vars\->iterations = 0;
+45     while (1)
+46     {
+47         current_magnitude_squared = vars\->z_squared[COMPLEX_RE];
+48         current_magnitude_squared += vars\->z_squared[COMPLEX_IM];
+49         if (vars\->iterations >= MAX_ITERATIONS)
+50             break ;
+51         if (current_magnitude_squared > escape_radius_squared)
+52             break ;
+53         compute_next_iteration(vars, i);
+54         vars\->iterations++;
+55     }
+56 }
+.fi
+
+.SS "void render_mandelbrot (\fBt_data\fP * data)"
+
+.PP
+Renders the Mandelbrot set fractal\&. Render the Mandelbrot fractal\&. 
+.PP
+Definition at line \fB115\fP of file \fBmandelbrot\&.c\fP\&..PP
+.nf
+116 {
+117     t_render_vars   vars;
+118     double          *precomputed_c_re;
+119     double          *precomputed_c_im;
+120     int             y;
+121 
+122     calculate_scales_and_limits(&vars, data);
+123     if (!precompute_coords(&precomputed_c_re, &precomputed_c_im, &vars))
+124         return ;
+125     y = 0;
+126     while (y < HEIGHT)
+127     {
+128         vars\&.c_im = precomputed_c_im[y];
+129         render_mandelbrot_row(&vars, data, y++);
+130     }
+131     free(precomputed_c_re);
+132     free(precomputed_c_im);
+133 }
+.fi
+
+.SS "static void render_mandelbrot_row (\fBt_render_vars\fP * vars, \fBt_data\fP * data, int y)\fC [static]\fP"
+
+.PP
+Renders a single row of the Mandelbrot set\&. 
+.PP
+Definition at line \fB85\fP of file \fBmandelbrot\&.c\fP\&..PP
+.nf
+86 {
+87     int x;
+88     int i;
+89 
+90     x = 0;
+91     while (x < WIDTH)
+92     {
+93         vars\->row = vars\->pixels + (y * WIDTH + x);
+94         vars\->c_re[0] = vars\->start[COMPLEX_RE] + x * vars\->scale[SCALE_X];
+95         vars\->c_re[1] = vars\->start[COMPLEX_RE];
+96         vars\->c_re[1] += (x + 1) * vars\->scale[SCALE_X];
+97         i = 0;
+98         while (i < 2)
+99         {
+100             if (mandelbrot_escape_check(vars, i, data))
+101             {
+102                 i++;
+103                 continue ;
+104             }
+105             mandelbrot_iterations(vars, i);
+106             vars\->row[i++] = calculate_color(vars\->iterations);
+107         }
+108         x += 2;
+109     }
+110 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Input_8md" kind="file" language="Markdown">
+    <compoundname>Input.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Input<sp/>methods</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MLX42<sp/>provides<sp/>various<sp/>ways<sp/>of<sp/>detecting<sp/>input,<sp/>you<sp/>can<sp/>read<sp/>about<sp/>all<sp/>the<sp/>available<sp/>hooks<sp/>on<sp/>the<sp/>[Hooks](./Hooks.md)<sp/>page.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Key<sp/>Detection</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Generic<sp/>Hook<sp/>+<sp/>function</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>easiest<sp/>way<sp/>of<sp/>detecting<sp/>continuous<sp/>keypressing<sp/>is<sp/>via<sp/>a<sp/>generic<sp/>hook<sp/>and<sp/>then<sp/>checking<sp/>if<sp/>the<sp/>specific<sp/>key<sp/>is<sp/>down.</highlight></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>the<sp/>&apos;traditional&apos;<sp/>way<sp/>of<sp/>detecting<sp/>if<sp/>a<sp/>key<sp/>is<sp/>down<sp/>even<sp/>in<sp/>modern<sp/>game<sp/>engines.<sp/>It<sp/>provides<sp/>the<sp/>quickest<sp/>feedback<sp/>and<sp/>if<sp/>it&apos;s<sp/>used<sp/>to,<sp/>say,<sp/>move<sp/>a<sp/>character,<sp/>the<sp/>smoothest<sp/>result.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/><sp/><sp/><sp/>hook(void<sp/>*param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t<sp/><sp/><sp/>*mlx;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx<sp/>=<sp/>param;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(param,<sp/>MLX_KEY_ESCAPE))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>mlx_close_window(param);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(param,<sp/>MLX_KEY_UP))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_img-&gt;instances[0].y<sp/>-=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(param,<sp/>MLX_KEY_DOWN))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_img-&gt;instances[0].y<sp/>+=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(param,<sp/>MLX_KEY_LEFT))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_img-&gt;instances[0].x<sp/>-=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(mlx_is_key_down(param,<sp/>MLX_KEY_RIGHT))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>g_img-&gt;instances[0].x<sp/>+=<sp/>5;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Hook<sp/>Function</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>more<sp/>exact<sp/>input<sp/>detection<sp/>such<sp/>as<sp/>checking<sp/>if<sp/>the<sp/>key<sp/>was<sp/>pressed<sp/>with<sp/>`Alt`<sp/>or<sp/>`ctrl`<sp/>you<sp/>should<sp/>use<sp/>the<sp/>actual<sp/>Key<sp/>hook.</highlight></codeline>
+<codeline><highlight class="normal">Keep<sp/>in<sp/>mind<sp/>that<sp/>using<sp/>a<sp/>keyhook<sp/>results<sp/>in<sp/>a<sp/>slower<sp/>feedback<sp/>compared<sp/>to<sp/>using<sp/>a<sp/>generic<sp/>hook<sp/>but<sp/>grants<sp/>you<sp/>more<sp/>control<sp/>in<sp/>key<sp/>detection.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">void<sp/><sp/><sp/><sp/>key_hook(mlx_key_data_t<sp/>keydata,<sp/>void*<sp/>param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_A<sp/>&amp;&amp;<sp/>keydata.action<sp/>==<sp/>MLX_RELEASE<sp/>&amp;&amp;<sp/>keydata.modifier<sp/>==<sp/>MLX_CONTROL)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;Gotta<sp/>grab<sp/>it<sp/>all!&quot;);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Input.md"/>
+  </compounddef>
+</doxygen>

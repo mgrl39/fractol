@@ -1,0 +1,101 @@
+.TH "MLX42/src/mlx_keys.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_keys.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_key_callback\fP (\fBGLFWwindow\fP *window, \fBint32_t\fP key, \fBint32_t\fP \fBscancode\fP, \fBint32_t\fP \fBaction\fP, \fBint32_t\fP \fBmods\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_key_hook\fP (\fBmlx_t\fP *\fBmlx\fP, \fBmlx_keyfunc\fP \fBfunc\fP, \fBvoid\fP *\fBparam\fP)"
+.br
+.ti -1c
+.RI "\fBbool\fP \fBmlx_is_key_down\fP (\fBmlx_t\fP *\fBmlx\fP, \fBkeys_t\fP key)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBbool\fP mlx_is_key_down (\fBmlx_t\fP * mlx, \fBkeys_t\fP key)"
+Returns true or false if the key is down or not\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIkey\fP The keycode to check, use MLX_KEY_\&.\&.\&. to specify! 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+True or false if the key is down or not\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB44\fP of file \fBmlx_keys\&.c\fP\&..PP
+.nf
+45 {
+46     MLX_NONNULL(mlx);
+47 
+48     return (glfwGetKey(mlx\->window, key) == GLFW_PRESS);
+49 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_key_callback (\fBGLFWwindow\fP * window, \fBint32_t\fP key, \fBint32_t\fP scancode, \fBint32_t\fP action, \fBint32_t\fP mods)\fC [static]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_keys\&.c\fP\&..PP
+.nf
+18 {
+19     const mlx_t* mlx = glfwGetWindowUserPointer(window);
+20     const mlx_key_t key_hook = ((mlx_ctx_t*)mlx\->context)\->key_hook;
+21     const mlx_key_data_t callback_data = {
+22         key,
+23         action,
+24         scancode,
+25         mods,
+26     };
+27 
+28     key_hook\&.func(callback_data, key_hook\&.param);
+29 }
+.fi
+
+.SS "\fBvoid\fP mlx_key_hook (\fBmlx_t\fP * mlx, \fBmlx_keyfunc\fP func, \fBvoid\fP * param)"
+This function sets the key callback, which is called when a key is pressed on the keyboard\&. Useful for single keypress detection\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.br
+\fIfunc\fP The keypress callback function\&. 
+.br
+\fIparam\fP An additional optional parameter\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB33\fP of file \fBmlx_keys\&.c\fP\&..PP
+.nf
+34 {
+35     MLX_NONNULL(mlx);
+36     MLX_NONNULL(func);
+37 
+38     mlx_ctx_t* mlxctx = mlx\->context;
+39     mlxctx\->key_hook\&.func = func;
+40     mlxctx\->key_hook\&.param = param;
+41     glfwSetKeyCallback(mlx\->window, mlx_key_callback);
+42 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

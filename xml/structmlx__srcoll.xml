@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__srcoll" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_srcoll</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__srcoll_1a9cb32c4fb375f0b950f9f0e5d7e11a05" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_srcoll::param</definition>
+        <argsstring></argsstring>
+        <name>param</name>
+        <qualifiedname>mlx_srcoll::param</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="116" column="5" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="mlx__mouse_8c_1ae23a4ecd5b9bddb1bb9a7a67aaf73bed" compoundref="mlx__mouse_8c" startline="17" endline="23">mlx_scroll_cb</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__srcoll_1adf1f89e8b52aa177ffc06759bedd6a62" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1ad23ff24bbca4321da68be76c2f29bb9c" kindref="member">mlx_scrollfunc</ref></type>
+        <definition>mlx_scrollfunc mlx_srcoll::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <qualifiedname>mlx_srcoll::func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="117" column="15" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="117" bodyend="-1"/>
+        <referencedby refid="mlx__mouse_8c_1ae23a4ecd5b9bddb1bb9a7a67aaf73bed" compoundref="mlx__mouse_8c" startline="17" endline="23">mlx_scroll_cb</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>There are 2 types of hooks, special and generics.</para>
+<para>Specials: Specials are specific callback functions to a specific action such as window resizing or key presses. These are attached to the callbacks of glfw. In case MLX itself needs the callback we call the specials in that callback since there can only ever be a single callback.</para>
+<para>Generics: Generics are MLX42 specific hooks and can have multiple hooks at the same time, these are executed every frame and can be used as an alternative for keypresses or animations for instance.</para>
+<para>NOTE: Hooks could be achieved with va_args to have any amount of args sized functor but we can&apos;t/don&apos;t want to let the user deal with va_args and having to look up what args are what, etc...</para>
+<para>We want to keep it straightforward with functors already describing what params they have. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_srcoll</label>
+        <link refid="structmlx__srcoll"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="114" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="115" bodyend="118"/>
+    <listofallmembers>
+      <member refid="structmlx__srcoll_1adf1f89e8b52aa177ffc06759bedd6a62" prot="public" virt="non-virtual"><scope>mlx_srcoll</scope><name>func</name></member>
+      <member refid="structmlx__srcoll_1a9cb32c4fb375f0b950f9f0e5d7e11a05" prot="public" virt="non-virtual"><scope>mlx_srcoll</scope><name>param</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

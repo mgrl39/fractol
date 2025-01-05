@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structgladGLversionStruct" kind="struct" language="C++" prot="public">
+    <compoundname>gladGLversionStruct</compoundname>
+    <includes refid="glad_8h" local="no">glad.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structgladGLversionStruct_1ac7f9db11d2679df12ef0313b728554db" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int</ref></type>
+        <definition>int gladGLversionStruct::major</definition>
+        <argsstring></argsstring>
+        <name>major</name>
+        <qualifiedname>gladGLversionStruct::major</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/glad/glad.h" line="51" column="9" bodyfile="MLX42/include/glad/glad.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="glad_8c_1a1e6b94e667c5087bcd17801e4e4942a3" compoundref="glad_8c" startline="2442" endline="2501">find_coreGL</referencedby>
+        <referencedby refid="glad_8h_1a1f34fdf1c2f94c05c53d2a1cd3d80537" compoundref="glad_8c" startline="2503" endline="2531">gladLoadGLLoader</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structgladGLversionStruct_1acc2bff1c8966c6866f2ad6f5a4e475b2" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int</ref></type>
+        <definition>int gladGLversionStruct::minor</definition>
+        <argsstring></argsstring>
+        <name>minor</name>
+        <qualifiedname>gladGLversionStruct::minor</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/glad/glad.h" line="52" column="9" bodyfile="MLX42/include/glad/glad.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="glad_8c_1a1e6b94e667c5087bcd17801e4e4942a3" compoundref="glad_8c" startline="2442" endline="2501">find_coreGL</referencedby>
+        <referencedby refid="glad_8h_1a1f34fdf1c2f94c05c53d2a1cd3d80537" compoundref="glad_8c" startline="2503" endline="2531">gladLoadGLLoader</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>gladGLversionStruct</label>
+        <link refid="structgladGLversionStruct"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/glad/glad.h" line="50" column="1" bodyfile="MLX42/include/glad/glad.h" bodystart="50" bodyend="53"/>
+    <listofallmembers>
+      <member refid="structgladGLversionStruct_1ac7f9db11d2679df12ef0313b728554db" prot="public" virt="non-virtual"><scope>gladGLversionStruct</scope><name>major</name></member>
+      <member refid="structgladGLversionStruct_1acc2bff1c8966c6866f2ad6f5a4e475b2" prot="public" virt="non-virtual"><scope>gladGLversionStruct</scope><name>minor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

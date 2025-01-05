@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_77c6173859c713ba017353a9818bb849" kind="dir">
+    <compoundname>MLX42/lib/glad</compoundname>
+    <innerfile refid="glad_8c">glad.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="MLX42/lib/glad/"/>
+  </compounddef>
+</doxygen>

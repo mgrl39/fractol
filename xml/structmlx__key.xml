@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__key" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_key</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__key_1a68754b86a374dcae2f7bb7ae14fef889" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_key::param</definition>
+        <argsstring></argsstring>
+        <name>param</name>
+        <qualifiedname>mlx_key::param</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="146" column="5" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="146" bodyend="-1"/>
+        <referencedby refid="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" compoundref="mlx__keys_8c" startline="17" endline="29">mlx_key_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__key_1ac1d4cfe703545783836ec98c03ea7311" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1ad6d21f88160d8a2a180419e7f4cc9b5f" kindref="member">mlx_keyfunc</ref></type>
+        <definition>mlx_keyfunc mlx_key::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <qualifiedname>mlx_key::func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="147" column="12" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="147" bodyend="-1"/>
+        <referencedby refid="mlx__keys_8c_1aa8f796c0ebaed29f94b3548f3a27511c" compoundref="mlx__keys_8c" startline="17" endline="29">mlx_key_callback</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_key</label>
+        <link refid="structmlx__key"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+func</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>mlx_key_data</label>
+        <link refid="structmlx__key__data"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="144" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="145" bodyend="148"/>
+    <listofallmembers>
+      <member refid="structmlx__key_1ac1d4cfe703545783836ec98c03ea7311" prot="public" virt="non-virtual"><scope>mlx_key</scope><name>func</name></member>
+      <member refid="structmlx__key_1a68754b86a374dcae2f7bb7ae14fef889" prot="public" virt="non-virtual"><scope>mlx_key</scope><name>param</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

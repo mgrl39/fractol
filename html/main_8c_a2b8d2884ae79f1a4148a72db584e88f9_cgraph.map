@@ -1,0 +1,5 @@
+<map id="exit_with_error" name="exit_with_error">
+<area shape="rect" id="Node000001" title="Prints an error message and terminates the program." alt="" coords="5,5,125,31"/>
+<area shape="rect" id="Node000002" href="$utils_8c.html#a36c588cff7b2e8e39224a1f6105fa39d" title="Writes a string to a file descriptor." alt="" coords="173,5,271,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,15,159,15,159,21,126,21"/>
+</map>

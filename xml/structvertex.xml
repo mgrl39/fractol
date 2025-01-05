@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structvertex" kind="struct" language="C++" prot="public">
+    <compoundname>vertex</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structvertex_1a664a5bbbbca4e1a99d85a163f6a08405" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref></type>
+        <definition>float vertex::x</definition>
+        <argsstring></argsstring>
+        <name>x</name>
+        <qualifiedname>vertex::x</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="76" column="6" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvertex_1aea3246afd0395032be285a49bcd4b146" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref></type>
+        <definition>float vertex::y</definition>
+        <argsstring></argsstring>
+        <name>y</name>
+        <qualifiedname>vertex::y</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="77" column="6" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvertex_1afe9862f7d3456ee2d352d94cbe5a84da" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref></type>
+        <definition>float vertex::z</definition>
+        <argsstring></argsstring>
+        <name>z</name>
+        <qualifiedname>vertex::z</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="78" column="6" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvertex_1a947017e88dc8afee895a2a56a1a813e1" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref></type>
+        <definition>float vertex::u</definition>
+        <argsstring></argsstring>
+        <name>u</name>
+        <qualifiedname>vertex::u</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="79" column="6" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvertex_1a741ab308258eb5904f2c2bc20372a10d" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">float</ref></type>
+        <definition>float vertex::v</definition>
+        <argsstring></argsstring>
+        <name>v</name>
+        <qualifiedname>vertex::v</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="80" column="6" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structvertex_1ad98948586f67725bf2422af3441a7e6c" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1ab8deb215e5fa725f23a79257d7b494dd" kindref="member">int8_t</ref></type>
+        <definition>int8_t vertex::tex</definition>
+        <argsstring></argsstring>
+        <name>tex</name>
+        <qualifiedname>vertex::tex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="81" column="7" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>vertex</label>
+        <link refid="structvertex"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="74" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="75" bodyend="82"/>
+    <listofallmembers>
+      <member refid="structvertex_1ad98948586f67725bf2422af3441a7e6c" prot="public" virt="non-virtual"><scope>vertex</scope><name>tex</name></member>
+      <member refid="structvertex_1a947017e88dc8afee895a2a56a1a813e1" prot="public" virt="non-virtual"><scope>vertex</scope><name>u</name></member>
+      <member refid="structvertex_1a741ab308258eb5904f2c2bc20372a10d" prot="public" virt="non-virtual"><scope>vertex</scope><name>v</name></member>
+      <member refid="structvertex_1a664a5bbbbca4e1a99d85a163f6a08405" prot="public" virt="non-virtual"><scope>vertex</scope><name>x</name></member>
+      <member refid="structvertex_1aea3246afd0395032be285a49bcd4b146" prot="public" virt="non-virtual"><scope>vertex</scope><name>y</name></member>
+      <member refid="structvertex_1afe9862f7d3456ee2d352d94cbe5a84da" prot="public" virt="non-virtual"><scope>vertex</scope><name>z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="structmlx__close" kind="struct" language="C++" prot="public">
+    <compoundname>mlx_close</compoundname>
+    <includes refid="MLX42__Int_8h" local="no">MLX42_Int.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmlx__close_1acf207066f59ee3bbb60bf4c4465941fe" prot="public" static="no" mutable="no">
+        <type><ref refid="glad_8h_1a950fc91edb4504f62f1c577bf4727c29" kindref="member">void</ref> *</type>
+        <definition>void* mlx_close::param</definition>
+        <argsstring></argsstring>
+        <name>param</name>
+        <qualifiedname>mlx_close::param</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="134" column="5" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="134" bodyend="-1"/>
+        <referencedby refid="mlx__window_8c_1a9573e8039077cedc47592aa335f5b6b7" compoundref="mlx__window_8c" startline="53" endline="59">mlx_close_callback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmlx__close_1a11afa76b2d6c1ce4cc2c116359dae801" prot="public" static="no" mutable="no">
+        <type><ref refid="MLX42_8h_1a3e79c4e956e18583c344c18c9a67954b" kindref="member">mlx_closefunc</ref></type>
+        <definition>mlx_closefunc mlx_close::func</definition>
+        <argsstring></argsstring>
+        <name>func</name>
+        <qualifiedname>mlx_close::func</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="MLX42/include/MLX42/MLX42_Int.h" line="135" column="14" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="135" bodyend="-1"/>
+        <referencedby refid="mlx__window_8c_1a9573e8039077cedc47592aa335f5b6b7" compoundref="mlx__window_8c" startline="53" endline="59">mlx_close_callback</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>mlx_close</label>
+        <link refid="structmlx__close"/>
+      </node>
+    </collaborationgraph>
+    <location file="MLX42/include/MLX42/MLX42_Int.h" line="132" column="1" bodyfile="MLX42/include/MLX42/MLX42_Int.h" bodystart="133" bodyend="136"/>
+    <listofallmembers>
+      <member refid="structmlx__close_1a11afa76b2d6c1ce4cc2c116359dae801" prot="public" virt="non-virtual"><scope>mlx_close</scope><name>func</name></member>
+      <member refid="structmlx__close_1acf207066f59ee3bbb60bf4c4465941fe" prot="public" virt="non-virtual"><scope>mlx_close</scope><name>param</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,80 @@
+.TH "MLX42/src/mlx_exit.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/src/mlx_exit.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'MLX42/MLX42_Int\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBstatic\fP \fBvoid\fP \fBmlx_free_image\fP (\fBvoid\fP *content)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_close_window\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBmlx_terminate\fP (\fBmlx_t\fP *\fBmlx\fP)"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "\fBvoid\fP mlx_close_window (\fBmlx_t\fP * mlx)"
+Notifies MLX that it should stop rendering and exit the main loop\&. This is not the same as terminate, this simply tells MLX to close the window\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImlx\fP The MLX instance handle\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB26\fP of file \fBmlx_exit\&.c\fP\&..PP
+.nf
+27 {
+28     MLX_NONNULL(mlx);
+29     glfwSetWindowShouldClose(mlx\->window, true);
+30 }
+.fi
+
+.SS "\fBstatic\fP \fBvoid\fP mlx_free_image (\fBvoid\fP * content)\fC [static]\fP"
+
+.PP
+Definition at line \fB17\fP of file \fBmlx_exit\&.c\fP\&..PP
+.nf
+18 {
+19     mlx_image_t* img = content;
+20 
+21     mlx_freen(4, img\->context, img\->pixels, img\->instances, img);
+22 }
+.fi
+
+.SS "\fBvoid\fP mlx_terminate (\fBmlx_t\fP * mlx)"
+All of glfw & glads resources are cleaned up by the terminate function\&. Now it's time to clean up our own mess\&. 
+.PP
+Definition at line \fB36\fP of file \fBmlx_exit\&.c\fP\&..PP
+.nf
+37 {
+38     MLX_NONNULL(mlx);
+39 
+40     mlx_ctx_t *const mlxctx = mlx\->context;
+41 
+42     glUseProgram(0);
+43     glLinkProgram(mlxctx\->shaderprogram);
+44     glDeleteProgram(mlxctx\->shaderprogram);
+45     glfwTerminate();
+46     mlx_lstclear((mlx_list_t**)(&mlxctx\->hooks), &free);
+47     mlx_lstclear((mlx_list_t**)(&mlxctx\->render_queue), &free);
+48     mlx_lstclear((mlx_list_t**)(&mlxctx\->images), &mlx_free_image);
+49     mlx_freen(2, mlxctx, mlx);
+50 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

@@ -1,0 +1,322 @@
+.TH "main.c" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+main.c \- Entry point for the Fractol application\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'fractol\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBis_valid_number\fP (const char *str)"
+.br
+.RI "Validates if a string represents a valid number\&. "
+.ti -1c
+.RI "static void \fBexit_with_error\fP (const char *message, char *argv[])"
+.br
+.RI "Prints an error message and terminates the program\&. "
+.ti -1c
+.RI "static void \fBvalidate_arguments\fP (int argc, char *argv[])"
+.br
+.RI "Validates the command-line arguments for fractal rendering\&. "
+.ti -1c
+.RI "static void \fBinitialize_window\fP (\fBt_data\fP *data, char *argv[])"
+.br
+.RI "Initializes the MLX42 rendering environment\&. "
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.RI "Main entry point for the fractal rendering program\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Entry point for the Fractol application\&. 
+
+This file contains the main function and orchestrates the entire fractal rendering process\&. It handles:
+.IP "\(bu" 2
+Command-line argument validation to ensure correct input\&.
+.IP "\(bu" 2
+Initialization of the fractal type and parameters (Julia or Mandelbrot)
+.IP "\(bu" 2
+Setuup of the rendering environment using the MLX42 graphics liibrary, including the creation of the window and image bufffer\&.
+.IP "\(bu" 2
+Fractal rendering based on the user-specified parameters\&.
+.IP "\(bu" 2
+Configuration of interactivee event hooks for keyboard and scroll inputs\&.
+.IP "\(bu" 2
+Continuous updates through the main event loop\&.
+.PP
+.PP
+The program terminates gracefully on completion or reports error for invalid inputs\&. 
+.PP
+Definition in file \fBmain\&.c\fP\&.
+.SH "Function Documentation"
+.PP 
+.SS "static void exit_with_error (const char * message, char * argv[])\fC [static]\fP"
+
+.PP
+Prints an error message and terminates the program\&. This function displays an error, the correct usage off the program, and list of available fractal types with examples\&. It then terminates the program with a failure status\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fImessage\fP Error message to display\&. 
+.br
+\fIargv\fP Command-line arguments, used to show the program name in usage examples\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB87\fP of file \fBmain\&.c\fP\&..PP
+.nf
+88 {
+89     fr_putstr_fd(LIGHT_RED "Error: ", 2);
+90     fr_putstr_fd((char *)message, 2);
+91     fr_putstr_fd("\\n" RESET, 2);
+92     fr_putstr_fd(LIGHT_RED "Usage: " LIGHT_GREEN, 2);
+93     fr_putstr_fd(argv[0], 2);
+94     fr_putstr_fd(" <fractal_type> [parameters]\\n" RESET, 2);
+95     fr_putstr_fd(LIGHT_RED "Available fractal types:\\n" RESET, 2);
+96     fr_putstr_fd(LIGHT_GOLD "\\tmandelbrot" RESET, 2);
+97     fr_putstr_fd("\\t\\tDisplays the Mandelbrot set\&.\\n", 2);
+98     fr_putstr_fd(LIGHT_GOLD "\\tjulia [c_re c_im]" RESET, 2);
+99     fr_putstr_fd("\\tDisplays the Julia set\&.\\n", 2);
+100     fr_putstr_fd(LIGHT_RED "Example: " LIGHT_GREEN, 2);
+101     fr_putstr_fd(argv[0], 2);
+102     fr_putstr_fd(" julia 0\&.285 \-0\&.01\\n" RESET, 2);
+103     exit(EXIT_FAILURE);
+104 }
+.fi
+
+.SS "static void initialize_window (\fBt_data\fP * data, char * argv[])\fC [static]\fP"
+
+.PP
+Initializes the MLX42 rendering environment\&. This function sets up the environment for rendering fractals by:
+.IP "\(bu" 2
+Creating an MLX42 window with thee given title\&.
+.IP "\(bu" 2
+Allocating an image buffer for rendering\&.
+.IP "\(bu" 2
+Setting initial offsets and zoom level for the fractal\&.
+.PP
+.PP
+If Julia set parameters (\fCc[COMPLEX_RE]\fP or \fCc[COMPLEX_IM]\fP) are outside the range [-2\&.0, 2\&.0], it issues a warning about potential visual effects\&. The function terminates the program in case of initialization failures\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP Pointer to the data structure containing fractal information, offsets, zoom, and MLX42 resources\&. 
+.br
+\fIargv\fP Array of argument strings, where argv[1] is used as the window title\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB167\fP of file \fBmain\&.c\fP\&..PP
+.nf
+168 {
+169     if ((data\->c[COMPLEX_RE] > 2\&.0 || data\->c[COMPLEX_RE] < \-2
+170             || data\->c[COMPLEX_IM] > 2\&.0 || data\->c[COMPLEX_IM] < \-2))
+171     {
+172         fr_putstr_fd(LIGHT_GOLD "Warning: The values for Julia are", 1);
+173         fr_putstr_fd(" outside the common range [\-2\&.0, 2\&.0]\\n", 1);
+174         fr_putstr_fd(RESET "This may produce unusual or", 1);
+175         fr_putstr_fd(" less interesting fractals\&.\\n", 1);
+176     }
+177     data\->mlx = mlx_init(WIDTH, HEIGHT, argv[1], false);
+178     if (!data\->mlx)
+179         exit (EXIT_FAILURE);
+180     data\->img = mlx_new_image(data\->mlx, WIDTH, HEIGHT);
+181     if (!data\->img)
+182     {
+183         mlx_terminate(data\->mlx);
+184         exit (EXIT_FAILURE);
+185     }
+186     if (mlx_image_to_window(data\->mlx, data\->img, 0, 0) == \-1)
+187     {
+188         mlx_terminate(data\->mlx);
+189         exit (EXIT_FAILURE);
+190     }
+191     data\->offset[OFFSET_X] = 0\&.0;
+192     data\->offset[OFFSET_Y] = 0\&.0;
+193     data\->zoom = 1\&.0;
+194 }
+.fi
+
+.SS "static int is_valid_number (const char * str)\fC [static]\fP"
+
+.PP
+Validates if a string represents a valid number\&. This function checks iff the input string is a valid number, considering:
+.IP "\(bu" 2
+Optional leading spaces or tabs\&.
+.IP "\(bu" 2
+An optional sign (+/-)\&.
+.IP "\(bu" 2
+At least one digit\&.
+.IP "\(bu" 2
+At most one decimal point with digits before or after it\&. Invalid cases include multiple decimal points, invalid characters, or empty strings\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIstr\fP Input string to validate 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+1 if the string is a valid number, 0 otherwise\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB47\fP of file \fBmain\&.c\fP\&..PP
+.nf
+48 {
+49     int i;
+50     int valid_status[2];
+51 
+52     i = 0;
+53     valid_status[HAS_DIGIT] = 0;
+54     valid_status[HAS_POINT] = 0;
+55     while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+56         i++;
+57     if (str[i] == '\-' || str[i] == '+')
+58         i++;
+59     while (str[i] >= '0' && str[i] <= '9')
+60     {
+61         valid_status[HAS_DIGIT] = 1;
+62         i++;
+63     }
+64     if (str[i] == '\&.')
+65     {
+66         valid_status[HAS_POINT] = 1;
+67         i++;
+68     }
+69     if (valid_status[HAS_POINT] && (str[i] < '0' || str[i] > '9'))
+70         return (0);
+71     while (str[i] >= '0' && str[i] <= '9')
+72         i++;
+73     return (valid_status[HAS_DIGIT] && str[i] == '\\0');
+74 }
+.fi
+
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Main entry point for the fractal rendering program\&. This function orchestrates the entire fractal rendering process by:
+.IP "\(bu" 2
+Validating the command-line arguments to ensure correct fractal type and parameters\&.
+.IP "\(bu" 2
+Initializing the fractal type, including Julia parameters if applicable\&.
+.IP "\(bu" 2
+Setting up the MLX42 rendering environment, including the window and image buffer\&.
+.IP "\(bu" 2
+Rendering the chosen fractal based on the input parameters\&.
+.IP "\(bu" 2
+Configuring event hooks for used interaction (keyboard and scroll events)\&.
+.IP "\(bu" 2
+Starting the main event loop for continuous interaction and updates\&.
+.PP
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP Number of arguments passed to the program\&. 
+.br
+\fIargv\fP Array of argument strings, including the program name and input parameters\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+Returns \fCEXIT_SUCCESS\fP on successful execution, or terminates on error\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB215\fP of file \fBmain\&.c\fP\&..PP
+.nf
+216 {
+217     t_data  data;
+218     char    *error;
+219 
+220     validate_arguments(argc, argv);
+221     if (ft_strcmp(argv[1], "julia") == 0)
+222     {
+223         error = "Julia parameters must be valid numbers\&.";
+224         data\&.fractal_type = JULIA;
+225         data\&.c[COMPLEX_RE] = ft_atod(argv[2]);
+226         data\&.c[COMPLEX_IM] = ft_atod(argv[3]);
+227         if (data\&.c[COMPLEX_RE] > INT_MAX || data\&.c[COMPLEX_RE] < INT_MIN)
+228             return (exit_with_error(error, argv), 1);
+229         if (data\&.c[COMPLEX_IM] > INT_MAX || data\&.c[COMPLEX_IM] < INT_MIN)
+230             return (exit_with_error(error, argv), 1);
+231     }
+232     else if (ft_strcmp(argv[1], "mandelbrot") == 0)
+233         data\&.fractal_type = MANDELBROT;
+234     initialize_window(&data, argv);
+235     render_fractal(&data);
+236     mlx_key_hook(data\&.mlx, handle_key, &data);
+237     mlx_scroll_hook(data\&.mlx, handle_scroll, &data);
+238     mlx_loop(data\&.mlx);
+239     mlx_terminate(data\&.mlx);
+240     return (EXIT_SUCCESS);
+241 }
+.fi
+
+.SS "static void validate_arguments (int argc, char * argv[])\fC [static]\fP"
+
+.PP
+Validates the command-line arguments for fractal rendering\&. This function checks that the user has specified a valid fractal type and the correct parameters\&. The supported fractals and their requirements are:
+.IP "\(bu" 2
+\fCmandelbrot\fP: No additional arguments\&.
+.IP "\(bu" 2
+\fCjulia\fP: Requires exactly two valid numbers representing the real and imaginary part of the parameter\&.
+.PP
+.PP
+If the arguments are invalid, the function calls \fC\fBexit_with_error()\fP\fP to display an appropiate error message and terminate the program\&.
+.PP
+\fBParameters\fP
+.RS 4
+\fIargc\fP Number of command-line arguments passed to the program\&. 
+.br
+\fIargv\fP Array of command-line argument strings\&. 
+.RE
+.PP
+
+.PP
+Definition at line \fB122\fP of file \fBmain\&.c\fP\&..PP
+.nf
+123 {
+124     char            *e_msg[5];
+125 
+126     e_msg[NO_TYPE] = "No fractal type specified\&.";
+127     e_msg[INVALID_TYPE] = "Invalid fractal type\&. Use 'julia' or 'mandelbrot'\&.";
+128     e_msg[JULIA_ARGS] = "Julia needs: 'julia <c_re> <c_im>'\&.";
+129     e_msg[JULIA_NUM] = "Julia parameters must be valid numbers\&.";
+130     e_msg[MANDELBROT_ARGS] = "Mandelbrot needs: 'mandelbrot'\&.";
+131     if (argc < 2)
+132         exit_with_error(e_msg[NO_TYPE], argv);
+133     if (ft_strcmp(argv[1], "mandelbrot") == 0)
+134     {
+135         if (argc != 2)
+136             exit_with_error(e_msg[MANDELBROT_ARGS], argv);
+137         return ;
+138     }
+139     if (ft_strcmp(argv[1], "julia") == 0)
+140     {
+141         if (argc != 4)
+142             exit_with_error(e_msg[JULIA_ARGS], argv);
+143         if (!is_valid_number(argv[2]) || !is_valid_number(argv[3]))
+144             exit_with_error(e_msg[JULIA_NUM], argv);
+145     }
+146     else
+147         exit_with_error(e_msg[INVALID_TYPE], argv);
+148 }
+.fi
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.

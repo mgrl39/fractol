@@ -1,0 +1,374 @@
+\chapter{Funciones Auxiliares}
+\hypertarget{md_auxiliary__explained}{}\label{md_auxiliary__explained}\index{Funciones Auxiliares@{Funciones Auxiliares}}
+\label{md_auxiliary__explained_autotoc_md0}%
+\Hypertarget{md_auxiliary__explained_autotoc_md0}%
+ Este archivo documenta las funciones auxiliares utilizadas en el proyecto. Estas funciones son clave para manejar tareas como salida de texto, manipulación de cadenas y conversión de datos.\hypertarget{md_auxiliary__explained_autotoc_md1}{}\doxysection{\texorpdfstring{1. ft\+\_\+strcmp}{1. ft\_strcmp}}\label{md_auxiliary__explained_autotoc_md1}
+\hypertarget{md_auxiliary__explained_autotoc_md2}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_auxiliary__explained_autotoc_md2}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{fractol_8h_a1f2ff2312e5994560c9537cd9173be94}{ft\_strcmp}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s1,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *s2)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (s1[i]\ ==\ s2[i]\ \&\&\ s1[i])}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (s1[i]\ -\/\ s2[i]);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_auxiliary__explained_autotoc_md3}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_auxiliary__explained_autotoc_md3}
+{\ttfamily ft\+\_\+strcmp} compara dos cadenas de texto ({\ttfamily s1} y {\ttfamily s2}) carácter por carácter. Si ambas cadenas son idénticas, devuelve {\ttfamily 0}. Si no, devuelve la diferencia numérica entre los valores ASCII del primer par de caracteres diferentes.\hypertarget{md_auxiliary__explained_autotoc_md4}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_auxiliary__explained_autotoc_md4}
+
+\begin{DoxyItemize}
+\item {\ttfamily const char \texorpdfstring{$\ast$}{*}s1}\+: Puntero a la primera cadena de texto que se desea comparar.
+\item {\ttfamily const char \texorpdfstring{$\ast$}{*}s2}\+: Puntero a la segunda cadena de texto que se desea comparar.
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md5}{}\doxysubsection{\texorpdfstring{Retorno}{Retorno}}\label{md_auxiliary__explained_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Devuelve {\ttfamily 0} si las cadenas son iguales.
+\item Devuelve un valor positivo si {\ttfamily s1} es mayor que {\ttfamily s2} (el primer carácter diferente en {\ttfamily s1} tiene un valor ASCII mayor que en {\ttfamily s2}).
+\item Devuelve un valor negativo si {\ttfamily s1} es menor que {\ttfamily s2} (el primer carácter diferente en {\ttfamily s1} tiene un valor ASCII menor que en {\ttfamily s2}).
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md6}{}\doxysubsection{\texorpdfstring{Detalles del funcionamiento}{Detalles del funcionamiento}}\label{md_auxiliary__explained_autotoc_md6}
+
+\begin{DoxyEnumerate}
+\item Iteración carácter por carácter\+:
+\begin{DoxyItemize}
+\item Compara los caracteres correspondientes de {\ttfamily s1} y {\ttfamily s2} hasta que encuentra una diferencia o llega al final de una de las cadenas.
+\end{DoxyItemize}
+\item Verificación de igualdad\+:
+\begin{DoxyItemize}
+\item Si los caracteres son iguales, sigue comparando.
+\item Si encuentra un carácter diferente, calcula y devuelve la diferencia entre sus valores ASCII.
+\end{DoxyItemize}
+\item Cadena más corta\+:
+\begin{DoxyItemize}
+\item Si una cadena termina antes que la otra, la función considera que la más corta es "{}menor"{}.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_auxiliary__explained_autotoc_md7}{}\doxysubsection{\texorpdfstring{Ejemplo de uso}{Ejemplo de uso}}\label{md_auxiliary__explained_autotoc_md7}
+{\bfseries{Es el encargado de detectar si han indicado {\ttfamily mandelbrot} o {\ttfamily julia}}}\hypertarget{md_auxiliary__explained_autotoc_md8}{}\doxysubsection{\texorpdfstring{¿\+Por qué es útil?}{¿Por qué es útil?}}\label{md_auxiliary__explained_autotoc_md8}
+Esta función es esencial para la comparación de cadenas en algoritmos como la ordenación de palabras alfabéticamente, búsqueda en bases de datos, o cualquier otra operación que requiera conocer el orden relativo entre dos cadenas de texto.\hypertarget{md_auxiliary__explained_autotoc_md9}{}\doxysection{\texorpdfstring{2. fr\+\_\+putstr\+\_\+fd}{2. fr\_putstr\_fd}}\label{md_auxiliary__explained_autotoc_md9}
+\hypertarget{md_auxiliary__explained_autotoc_md10}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_auxiliary__explained_autotoc_md10}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{fractol_8h_a36c588cff7b2e8e39224a1f6105fa39d}{fr\_putstr\_fd}}(\textcolor{keywordtype}{char}\ *s,\ \textcolor{keywordtype}{int}\ fd)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ count;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!s)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ count\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (s[i])}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ count\ +=\ write(fd,\ \&s[i++],\ 1);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (count);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_auxiliary__explained_autotoc_md11}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_auxiliary__explained_autotoc_md11}
+{\ttfamily fr\+\_\+putstr\+\_\+fd} escribe una cadena de texto ({\ttfamily s}) en un descriptor de archivo ({\ttfamily fd}). Es similar a {\ttfamily puts} pero con la capacidad de escribir en cualquier descriptor de archivo, como salida estándar (1) o error estándar (2).\hypertarget{md_auxiliary__explained_autotoc_md12}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_auxiliary__explained_autotoc_md12}
+
+\begin{DoxyItemize}
+\item {\ttfamily char \texorpdfstring{$\ast$}{*}s}\+: Puntero a la cadena de texto que se desea escribir.
+\item {\ttfamily int fd}\+: Descriptor de archivo donde se escribe la cadena\+:
+\begin{DoxyItemize}
+\item {\ttfamily 1} para salida estándar ({\ttfamily stdout}).
+\item {\ttfamily 2} para salida de error ({\ttfamily stderr}).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md13}{}\doxysubsection{\texorpdfstring{Retorno}{Retorno}}\label{md_auxiliary__explained_autotoc_md13}
+Devuelve el número total de caracteres escritos. Si la cadena es {\ttfamily NULL}, devuelve {\ttfamily 0}.\hypertarget{md_auxiliary__explained_autotoc_md14}{}\doxysubsection{\texorpdfstring{Detalles del funcionamiento}{Detalles del funcionamiento}}\label{md_auxiliary__explained_autotoc_md14}
+
+\begin{DoxyEnumerate}
+\item Validación inicial\+:
+\begin{DoxyItemize}
+\item Si la cadena {\ttfamily s} es {\ttfamily NULL}, la función retorna {\ttfamily 0} inmediatamente.
+\end{DoxyItemize}
+\item Iteración y escritura\+:
+\begin{DoxyItemize}
+\item Recorre la cadena carácter por carácter usando un índice ({\ttfamily i}).
+\item Escribe cada carácter en el descriptor de archivo usando {\ttfamily write}.
+\item Incrementa un contador ({\ttfamily count}) con el número de bytes escritos.
+\end{DoxyItemize}
+\item Devolución\+:
+\begin{DoxyItemize}
+\item Retorna el valor acumulado en {\ttfamily count}, que representa el total de caracteres escritos.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_auxiliary__explained_autotoc_md15}{}\doxysubsection{\texorpdfstring{Ejemplo de uso}{Ejemplo de uso}}\label{md_auxiliary__explained_autotoc_md15}
+{\bfseries{Es el encargado de imprimir los errores cuando no indican los parametros correctamente.}}\hypertarget{md_auxiliary__explained_autotoc_md16}{}\doxysubsection{\texorpdfstring{¿\+Por qué es útil?}{¿Por qué es útil?}}\label{md_auxiliary__explained_autotoc_md16}
+Esta función simplifica la escritura en descriptores de archivo, permitiendo imprimir mensajes personalizados en la salida estándar o en la salida de error, sin necesidad de gestionar directamente {\ttfamily write}.\hypertarget{md_auxiliary__explained_autotoc_md17}{}\doxysection{\texorpdfstring{3. is\+\_\+valid\+\_\+number}{3. is\_valid\_number}}\label{md_auxiliary__explained_autotoc_md17}
+\hypertarget{md_auxiliary__explained_autotoc_md18}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_auxiliary__explained_autotoc_md18}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{main_8c_a3443f98f251000405fbc46a7951deaa9}{is\_valid\_number}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *str)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ i;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ valid\_status[2];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ i\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}}]\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}}]\ =\ 0;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (str[i]\ ==\ 32\ ||\ (str[i]\ >=\ 9\ \&\&\ str[i]\ <=\ 13))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'-\/'}\ ||\ str[i]\ ==\ \textcolor{charliteral}{'+'})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}}]\ =\ 1;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (str[i]\ ==\ \textcolor{charliteral}{'.'})}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}}]\ =\ 1;}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1ba084cc7f26f3d3e4642872a909a7ff92e}{HAS\_POINT}}]\ \&\&\ (str[i]\ <\ \textcolor{charliteral}{'0'}\ ||\ str[i]\ >\ \textcolor{charliteral}{'9'}))}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (0);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{while}\ (str[i]\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ str[i]\ <=\ \textcolor{charliteral}{'9'})}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ (valid\_status[\mbox{\hyperlink{fractol_8h_a19064498c6efed3153a2d9de768b0b1bab6bdc72cb84462cb6e636af3b60d344d}{HAS\_DIGIT}}]\ \&\&\ str[i]\ ==\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_auxiliary__explained_autotoc_md19}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_auxiliary__explained_autotoc_md19}
+{\ttfamily is\+\_\+valid\+\_\+number} verifica si una cadena de texto representa un número válido. Esto incluye números enteros y de punto flotante con signo opcional.\hypertarget{md_auxiliary__explained_autotoc_md20}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_auxiliary__explained_autotoc_md20}
+
+\begin{DoxyItemize}
+\item {\ttfamily const char \texorpdfstring{$\ast$}{*}str}\+: Puntero a la cadena de texto que se desea validar.
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md21}{}\doxysubsection{\texorpdfstring{Retorno}{Retorno}}\label{md_auxiliary__explained_autotoc_md21}
+
+\begin{DoxyItemize}
+\item Devuelve {\ttfamily 1} si la cadena es un número válido.
+\item Devuelve {\ttfamily 0} si la cadena no es válida como número.
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md22}{}\doxysubsection{\texorpdfstring{Detalles del funcionamiento}{Detalles del funcionamiento}}\label{md_auxiliary__explained_autotoc_md22}
+
+\begin{DoxyEnumerate}
+\item Ignora los espacios iniciales y caracteres de control.
+\item Permite un signo ({\ttfamily +} o {\ttfamily -\/}) al inicio.
+\item Verifica que la cadena contenga al menos un dígito antes o después de un punto decimal ({\ttfamily .}).
+\item Si hay un punto decimal, asegura que le sigan dígitos.
+\item Comprueba que no haya caracteres adicionales después del número.
+\end{DoxyEnumerate}\hypertarget{md_auxiliary__explained_autotoc_md23}{}\doxysubsection{\texorpdfstring{Ejemplo de uso}{Ejemplo de uso}}\label{md_auxiliary__explained_autotoc_md23}
+{\bfseries{Es el encargado de validar que las coordenadas pasadas para {\ttfamily julia} sean números correctos.}}\hypertarget{md_auxiliary__explained_autotoc_md24}{}\doxysubsection{\texorpdfstring{¿\+Por qué es útil?}{¿Por qué es útil?}}\label{md_auxiliary__explained_autotoc_md24}
+Esta función asegura que los parámetros numéricos proporcionados por el usuario sean válidos, evitando errores en cálculos posteriores.\hypertarget{md_auxiliary__explained_autotoc_md25}{}\doxysection{\texorpdfstring{4. calculate\+\_\+color}{4. calculate\_color}}\label{md_auxiliary__explained_autotoc_md25}
+\hypertarget{md_auxiliary__explained_autotoc_md26}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_auxiliary__explained_autotoc_md26}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ \mbox{\hyperlink{calcs_8c_af87a6532ce68469fef69f9c207960094}{calculate\_color}}(\textcolor{keywordtype}{int}\ iterations)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ \ t;}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ base\_gray;}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{structs__color}{t\_color}}\ color;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ t\ =\ (double)iterations\ /\ \mbox{\hyperlink{fractol_8h_a0a3abbca80bc98e7abcb3ae73abe0f14}{MAX\_ITERATIONS}};}
+\DoxyCodeLine{\ \ \ \ base\_gray\ =\ (30\ +\ 190\ *\ (t\ *\ (1\ -\/\ 0.2\ *\ t)));}
+\DoxyCodeLine{\ \ \ \ color.\mbox{\hyperlink{structs__color_a251e854381c6945efbbffc33796e6035}{r}}\ =\ base\_gray\ -\/\ (5\ *\ (1\ -\/\ t)\ *\ t\ *\ t);}
+\DoxyCodeLine{\ \ \ \ color.g\ =\ base\_gray\ -\/\ (10\ *\ (1\ -\/\ t)\ *\ (1\ -\/\ t));}
+\DoxyCodeLine{\ \ \ \ color.b\ =\ base\_gray\ -\/\ (15\ *\ (1\ -\/\ t)\ *\ t);}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ ((0xFF\ <<\ 24)\ |\ (color.r\ <<\ 16)\ |\ (color.g\ <<\ 8)\ |\ color.b);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_auxiliary__explained_autotoc_md27}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_auxiliary__explained_autotoc_md27}
+{\ttfamily calculate\+\_\+color} genera un color basado en el número de iteraciones realizadas para un píxel en el fractal. Produce un gradiente suave para mejorar la apariencia visual del fractal.\hypertarget{md_auxiliary__explained_autotoc_md28}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_auxiliary__explained_autotoc_md28}
+
+\begin{DoxyItemize}
+\item {\ttfamily int iterations}\+: Número de iteraciones para el píxel actual.
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md29}{}\doxysubsection{\texorpdfstring{Retorno}{Retorno}}\label{md_auxiliary__explained_autotoc_md29}
+
+\begin{DoxyItemize}
+\item Devuelve el color calculado en formato ARGB (Alpha-\/\+Red-\/\+Green-\/\+Blue).
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md30}{}\doxysubsection{\texorpdfstring{Detalles del funcionamiento}{Detalles del funcionamiento}}\label{md_auxiliary__explained_autotoc_md30}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Cálculo del factor {\ttfamily t}\+:}}
+\begin{DoxyItemize}
+\item Normaliza el número de iteraciones ({\ttfamily iterations}) al rango {\ttfamily \mbox{[}0, 1\mbox{]}} dividiéndolo por el máximo permitido ({\ttfamily MAX\+\_\+\+ITERATIONS}).
+\end{DoxyItemize}
+\item {\bfseries{Base gris\+:}}
+\begin{DoxyItemize}
+\item Calcula una base de gris a partir de {\ttfamily t}, ajustando el brillo para crear un efecto de gradiente. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{base\_gray\ =\ (30\ +\ 190\ *\ (t\ *\ (1\ -\/\ 0.2\ *\ t)));}
+
+\end{DoxyCode}
+ {\ttfamily t} se ajusta para crear una curva suave mediante la fórmula\+: {\ttfamily t \texorpdfstring{$\ast$}{*} ( 1 -\/ 0.\+2 \texorpdfstring{$\ast$}{*} t)}. Esto gnera una transición fluida en el gradiente.
+\end{DoxyItemize}
+\item {\bfseries{Componentes RGB\+:}}
+\begin{DoxyItemize}
+\item Ajusta cada componente ({\ttfamily r}, {\ttfamily g}, {\ttfamily b}) para añadir variaciones de color dependiendo del nivel de iteración. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{color.r\ =\ base\_gray\ -\/\ (5\ *\ (1\ -\/\ t)\ *\ t\ *\ t);}
+\DoxyCodeLine{color.g\ =\ base\_gray\ -\/\ (10\ *\ (1\ -\/\ t)\ *\ (1\ -\/\ t));}
+\DoxyCodeLine{color.b\ =\ base\_gray\ -\/\ (15\ *\ (1\ -\/\ t)\ *\ t);}
+
+\end{DoxyCode}
+
+\begin{DoxyItemize}
+\item Cada componente tiene una fórmula ligeramente diferente para generar colors distintivos y visualmente agradables\+:
+\begin{DoxyItemize}
+\item El rojo depende más de t\texorpdfstring{$^\wedge$}{\string^}3 (potencia alta).
+\item El azul se ajusta con (1 -\/ t)\texorpdfstring{$^\wedge$}{\string^}2 (mas dominante en el rango medio).
+\item El azul usa una combinación de (1 -\/ t) y t para un efeco más suave.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item {\bfseries{Formato ARGB\+:}}
+\begin{DoxyItemize}
+\item Combina los componentes en un entero de 32 bits con un canal Alpha completamente opaco ({\ttfamily 0x\+FF}). 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{return}\ (0xFF\ <<\ 24\ |\ (color.r\ <<\ 16)\ |\ (color.g\ <<\ 8)\ |\ color.b);}
+
+\end{DoxyCode}
+
+\item La función empaqueta los componentes en un entero en formato ARGB (Alpha, Red, Green, Blue)\+:
+\begin{DoxyItemize}
+\item {\ttfamily 0x\+FF \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 24} -\/\texorpdfstring{$>$}{>} Fija el canal alfa a 255 (completamente opaco).
+\item {\ttfamily (color.\+r \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 16)} -\/\texorpdfstring{$>$}{>} Inserta el componente rojo en los bits altos.
+\item {\ttfamily (color.\+g \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 8)} -\/\texorpdfstring{$>$}{>} Inserta el componente verde.
+\item {\ttfamily color.\+b} -\/\texorpdfstring{$>$}{>} Inserta el componente azul.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_auxiliary__explained_autotoc_md31}{}\doxysubsection{\texorpdfstring{Ejemplo de uso}{Ejemplo de uso}}\label{md_auxiliary__explained_autotoc_md31}
+{\bfseries{Es el encargado de calcular el color de cada píxel en función de su número de iteraciones.}}\hypertarget{md_auxiliary__explained_autotoc_md32}{}\doxysubsection{\texorpdfstring{¿\+Por qué es útil?}{¿Por qué es útil?}}\label{md_auxiliary__explained_autotoc_md32}
+Esta función mejora significativamente la representación visual del fractal, permitiendo distinguir las diferentes áreas según su comportamiento iterativo y creando una experiencia más atractiva para el usuario.\hypertarget{md_auxiliary__explained_autotoc_md33}{}\doxysection{\texorpdfstring{5. calculate\+\_\+scales\+\_\+and\+\_\+limits}{5. calculate\_scales\_and\_limits}}\label{md_auxiliary__explained_autotoc_md33}
+\hypertarget{md_auxiliary__explained_autotoc_md34}{}\doxysubsection{\texorpdfstring{Definición}{Definición}}\label{md_auxiliary__explained_autotoc_md34}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ \mbox{\hyperlink{calcs_8c_af548b6205acd0da6696adf5b79aa23a3}{calculate\_scales\_and\_limits}}(\mbox{\hyperlink{structs__render__vars}{t\_render\_vars}}\ *vars,\ \mbox{\hyperlink{structs__data}{t\_data}}\ *data)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a0d03489cebdef050251bdf227262060a}{scale}}[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}});}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}];}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_a867e8aa6f9487511119528560b6d32f9}{start}}[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ -\/2.0\ /\ data-\/>\mbox{\hyperlink{structs__data_af81d0c6f22e2c417d5a0cd7378706a25}{zoom}}\ +\ data-\/>\mbox{\hyperlink{structs__data_a462c4df11d1c6a21c10c49e5d9f21643}{offset}}[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}];}
+\DoxyCodeLine{\ \ \ \ vars-\/>\mbox{\hyperlink{structs__render__vars_ad7b4a461937285f0f0480797f9fc2dda}{pixels}}\ =\ (uint32\_t\ *)data-\/>\mbox{\hyperlink{structs__data_a7219bc7304b78827d357121c4e6a2c6c}{img}}-\/>pixels;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_auxiliary__explained_autotoc_md35}{}\doxysubsection{\texorpdfstring{¿\+Qué hace esta función?}{¿Qué hace esta función?}}\label{md_auxiliary__explained_autotoc_md35}
+La función {\ttfamily calculate\+\_\+scales\+\_\+and\+\_\+limits} calcula las escalas y límites del plano complejo que se usarán para renderizar el fractal en la ventana gráfica. Estos valores permiten traducir cada píxel de la pantalla a un número complejo, lo que es esencial para los cálculos iterativos del fractal.\hypertarget{md_auxiliary__explained_autotoc_md36}{}\doxysubsection{\texorpdfstring{Parámetros}{Parámetros}}\label{md_auxiliary__explained_autotoc_md36}
+
+\begin{DoxyItemize}
+\item {\ttfamily t\+\_\+render\+\_\+vars \texorpdfstring{$\ast$}{*}vars}\+: Estructura donde se almacenan las escalas, los límites iniciales del plano complejo, y un puntero al buffer de píxeles.
+\item {\ttfamily t\+\_\+data \texorpdfstring{$\ast$}{*}data}\+: Contiene la información del fractal, como el nivel de zoom y el desplazamiento actual.
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_auxiliary__explained_autotoc_md38}{}\doxysubsection{\texorpdfstring{Detalles del funcionamiento}{Detalles del funcionamiento}}\label{md_auxiliary__explained_autotoc_md38}
+\hypertarget{md_auxiliary__explained_autotoc_md39}{}\doxysubsubsection{\texorpdfstring{1. Cálculo de las escalas}{1. Cálculo de las escalas}}\label{md_auxiliary__explained_autotoc_md39}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vars-\/>scale[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9}{SCALE\_X}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_a241aeeb764887ae5e3de58b98f04b16d}{WIDTH}}\ *\ data-\/>zoom);}
+\DoxyCodeLine{vars-\/>scale[\mbox{\hyperlink{fractol_8h_a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4}{SCALE\_Y}}]\ =\ 4.0\ /\ (\mbox{\hyperlink{fractol_8h_aed89bd71aee8be823e8a20ec4e093c1e}{HEIGHT}}\ *\ data-\/>zoom);}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{¿\+Por qué 4.\+0?}}
+\begin{DoxyItemize}
+\item El plano complejo inicial tiene un rango estándar de {\ttfamily \mbox{[}-\/2.\+0, +2.\+0\mbox{]}} en ambos ejes (real e imaginario). Este rango totaliza una longitud de {\ttfamily 4.\+0}.
+\end{DoxyItemize}
+\item {\bfseries{¿\+Qué hace la escala?}} -\/ La escala indica cuánto representa cada píxel en el plano complejo. Por ejemplo\+: -\/ Con {\ttfamily zoom = 1.\+0}, cada píxel representa {\ttfamily 4.\+0 / WIDTH}.
+\begin{DoxyItemize}
+\item Con {\ttfamily zoom = 2.\+0}, la escala es más pequeña, permitiendo un mayor detalle al acercarse.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_auxiliary__explained_autotoc_md41}{}\doxysubsubsection{\texorpdfstring{2. Cálculo de los límites iniciales}{2. Cálculo de los límites iniciales}}\label{md_auxiliary__explained_autotoc_md41}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vars-\/>start[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233}{COMPLEX\_RE}}]\ =\ -\/2.0\ /\ data-\/>zoom\ +\ data-\/>offset[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6afb536e799ac4fb85c36a2bbfc14bcb80}{OFFSET\_X}}];}
+\DoxyCodeLine{vars-\/>start[\mbox{\hyperlink{fractol_8h_a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245}{COMPLEX\_IM}}]\ =\ -\/2.0\ /\ data-\/>zoom\ +\ data-\/>offset[\mbox{\hyperlink{fractol_8h_a8534bb19ca3de1a5f0282b41e510e1f6ad3e4d17b884318df8faaed364a0af37f}{OFFSET\_Y}}];}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{¿\+Por qué -\/2.\+0?}}
+\begin{DoxyItemize}
+\item La esquina superior izquierda del rango inicial del fractal comienza en {\ttfamily (-\/2.\+0, -\/2.\+0)} en el plano complejo. Este punto corresponde al primer píxel de la ventana gráfica.
+\end{DoxyItemize}
+\item {\bfseries{Zoom y desplazamiento\+:}}
+\begin{DoxyItemize}
+\item El {\ttfamily zoom} ajusta el tamaño del rango visible del fractal.
+\item El desplazamiento ({\ttfamily data-\/\texorpdfstring{$>$}{>}offset}) permite mover el rango visible del fractal a diferentes partes del plano complejo.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_auxiliary__explained_autotoc_md43}{}\doxysubsubsection{\texorpdfstring{3. Asignación del buffer de píxeles}{3. Asignación del buffer de píxeles}}\label{md_auxiliary__explained_autotoc_md43}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{vars-\/>pixels\ =\ (uint32\_t\ *)data-\/>img-\/>pixels;}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{¿\+Qué es {\ttfamily data-\/\texorpdfstring{$>$}{>}img-\/\texorpdfstring{$>$}{>}pixels}?}}
+\begin{DoxyItemize}
+\item Es un puntero al área de memoria donde se almacenan los colores de cada píxel que se renderizarán en la ventana gráfica.
+\end{DoxyItemize}
+\item {\bfseries{¿\+Por qué se castea a {\ttfamily uint32\+\_\+t}?}}
+\begin{DoxyItemize}
+\item Los píxeles están representados como enteros de 32 bits (ARGB\+: Alpha, Red, Green, Blue). Castearlos a {\ttfamily uint32\+\_\+t} facilita modificar el color de cada píxel de manera eficiente.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md_auxiliary__explained_autotoc_md45}{}\doxysubsection{\texorpdfstring{Ejemplo práctico}{Ejemplo práctico}}\label{md_auxiliary__explained_autotoc_md45}
+\hypertarget{md_auxiliary__explained_autotoc_md46}{}\doxysubsubsection{\texorpdfstring{Supongamos\+:}{Supongamos:}}\label{md_auxiliary__explained_autotoc_md46}
+
+\begin{DoxyItemize}
+\item {\bfseries{Ventana gráfica\+:}} {\ttfamily WIDTH = 800}, {\ttfamily HEIGHT = 800}.
+\item {\bfseries{Zoom inicial\+:}} {\ttfamily 1.\+0}.
+\item {\bfseries{Desplazamiento inicial\+:}} {\ttfamily \mbox{[}OFFSET\+\_\+X, OFFSET\+\_\+Y\mbox{]} = \mbox{[}0.\+0, 0.\+0\mbox{]}}.
+\end{DoxyItemize}\hypertarget{md_auxiliary__explained_autotoc_md47}{}\doxysubsubsection{\texorpdfstring{Resultado\+:}{Resultado:}}\label{md_auxiliary__explained_autotoc_md47}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Escalas\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{scale[SCALE\_X]\ =\ 4.0\ /\ 800\ =\ 0.005}
+\DoxyCodeLine{scale[SCALE\_Y]\ =\ 4.0\ /\ 800\ =\ 0.005}
+
+\end{DoxyCode}
+
+\item {\bfseries{Límites iniciales\+:}} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{start[COMPLEX\_RE]\ =\ -\/2.0\ +\ 0.0\ =\ -\/2.0}
+\DoxyCodeLine{start[COMPLEX\_IM]\ =\ -\/2.0\ +\ 0.0\ =\ -\/2.0}
+
+\end{DoxyCode}
+
+\item {\bfseries{Buffer de píxeles\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily vars-\/\texorpdfstring{$>$}{>}pixels} apunta al inicio del buffer de memoria donde se almacenan los colores de los píxeles.
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+\DoxyHorRuler{0}
+\hypertarget{md_auxiliary__explained_autotoc_md49}{}\doxysubsection{\texorpdfstring{Importancia de esta función}{Importancia de esta función}}\label{md_auxiliary__explained_autotoc_md49}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Traducción entre píxeles y el plano complejo\+:}}
+\begin{DoxyItemize}
+\item Cada píxel de la pantalla se corresponde con un número complejo en el plano. Esta función establece esa correspondencia de manera precisa.
+\end{DoxyItemize}
+\item {\bfseries{Adaptabilidad al zoom y desplazamiento\+:}}
+\begin{DoxyItemize}
+\item Permite acercarse o alejarse del fractal ajustando las escalas, y desplazarse por diferentes partes del fractal modificando los límites.
+\end{DoxyItemize}
+\item {\bfseries{Eficiencia\+:}}
+\begin{DoxyItemize}
+\item Precalcular las escalas y los límites evita realizar estos cálculos para cada píxel, mejorando el rendimiento del renderizado.
+\end{DoxyItemize}
+\item {\bfseries{¿\+Por qué es crucial?}}
+\begin{DoxyItemize}
+\item Sin estas escalas y límites, sería imposible generar el fractal correctamente. Los fractales son gráficos basados en números complejos, y esta función conecta el mundo "{}físico"{} de los píxeles con el mundo "{}matemático"{} del plano complejo. 
+\end{DoxyItemize}
+\end{DoxyEnumerate}

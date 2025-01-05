@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="Hooks_8md" kind="file" language="Markdown">
+    <compoundname>Hooks.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">&lt;!----------------------------------------------------------------------------</highlight></codeline>
+<codeline><highlight class="normal">Copyright<sp/>@<sp/>2021-2022<sp/>Codam<sp/>Coding<sp/>College.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline><highlight class="normal">See<sp/>copyright<sp/>and<sp/>license<sp/>notice<sp/>in<sp/>the<sp/>root<sp/>project<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline><highlight class="normal">-----------------------------------------------------------------------------&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Hooks<sp/>in<sp/>MLX42</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Hooks<sp/>allow<sp/>you<sp/>to<sp/>add<sp/>your<sp/>own<sp/>functions<sp/>to<sp/>the<sp/>main<sp/>loop<sp/>execution<sp/>of<sp/>the<sp/>program,<sp/>aka<sp/>these<sp/>functions<sp/>get<sp/>executed<sp/>every<sp/>frame.</highlight></codeline>
+<codeline><highlight class="normal">They<sp/>also<sp/>serve<sp/>to<sp/>intercept<sp/>certain<sp/>keypresses<sp/>such<sp/>as<sp/>scrolling<sp/>or<sp/>pressing<sp/>enter.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Only<sp/>one<sp/>hook<sp/>can<sp/>be<sp/>set<sp/>at<sp/>a<sp/>time!<sp/>You<sp/>cannot<sp/>attach/have<sp/>multiple<sp/>specialized<sp/>hooks.</highlight></codeline>
+<codeline><highlight class="normal">You<sp/>can<sp/>however<sp/>have<sp/>multiple<sp/>generic<sp/>hooks.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Specialized<sp/>Hooks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Scroll<sp/>hook</highlight></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Callback<sp/>function<sp/>used<sp/>to<sp/>handle<sp/>scrolling.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>x<sp/>The<sp/>mouse<sp/>x<sp/>delta.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>y<sp/>The<sp/>mouse<sp/>y<sp/>delta.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>Additional<sp/>parameter<sp/>to<sp/>pass<sp/>to<sp/>the<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>void<sp/>(*mlx_scrollfunc)(double<sp/>xdelta,<sp/>double<sp/>ydelta,<sp/>void*<sp/>param);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>This<sp/>function<sp/>sets<sp/>the<sp/>scroll<sp/>callback,<sp/>which<sp/>is<sp/>called<sp/>when<sp/>a<sp/>scrolling<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>device<sp/>is<sp/>used,<sp/>such<sp/>as<sp/>a<sp/>mouse<sp/>wheel.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>mlx<sp/>The<sp/>MLX<sp/>instance<sp/>handle.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>func<sp/>The<sp/>scroll<sp/>wheel<sp/>callback<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>An<sp/>additional<sp/>optional<sp/>parameter.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>mlx_scroll_hook(mlx_t*<sp/>mlx,<sp/>mlx_scrollfunc<sp/>func,<sp/>void*<sp/>param);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Close<sp/>Hook</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Callback<sp/>function<sp/>used<sp/>to<sp/>handle<sp/>window<sp/>closing<sp/>which<sp/>is<sp/>called<sp/>when<sp/>the<sp/>user<sp/>attempts<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>to<sp/>close<sp/>the<sp/>window,<sp/>for<sp/>example<sp/>by<sp/>clicking<sp/>the<sp/>close<sp/>widget<sp/>in<sp/>the<sp/>title<sp/>bar.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>Additional<sp/>parameter<sp/>to<sp/>pass<sp/>to<sp/>the<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>void<sp/>(*mlx_closefunc)(void*<sp/>param);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>This<sp/>function<sp/>sets<sp/>the<sp/>close<sp/>callback,<sp/>which<sp/>is<sp/>called<sp/>in<sp/>attempt<sp/>to<sp/>close<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>the<sp/>window<sp/>device<sp/>such<sp/>as<sp/>a<sp/>close<sp/>window<sp/>widget<sp/>used<sp/>in<sp/>the<sp/>window<sp/>bar.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>mlx<sp/>The<sp/>MLX<sp/>instance<sp/>handle.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>func<sp/>The<sp/>close<sp/>callback<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>An<sp/>additional<sp/>optional<sp/>parameter.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>mlx_close_hook(mlx_t*<sp/>mlx,<sp/>mlx_closefunc<sp/>func,<sp/>void*<sp/>param);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Resize<sp/>Hook</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Callback<sp/>function<sp/>used<sp/>to<sp/>handle<sp/>window<sp/>resizing.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>width<sp/>The<sp/>new<sp/>width<sp/>of<sp/>the<sp/>window.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>height<sp/>The<sp/>new<sp/>height<sp/>of<sp/>the<sp/>window.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>Additional<sp/>parameter<sp/>to<sp/>pass<sp/>to<sp/>the<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>void<sp/>(*mlx_resizefunc)(int32_t<sp/>width,<sp/>int32_t<sp/>height,<sp/>void*<sp/>param);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>This<sp/>function<sp/>sets<sp/>the<sp/>resize<sp/>callback,<sp/>which<sp/>is<sp/>called<sp/>when<sp/>the<sp/>window<sp/>is</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>resized</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>mlx<sp/>The<sp/>MLX<sp/>instance<sp/>handle.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>func<sp/>The<sp/>resize<sp/>callback<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>An<sp/>additional<sp/>optional<sp/>parameter.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>mlx_resize_hook(mlx_t*<sp/>mlx,<sp/>mlx_resizefunc<sp/>func,<sp/>void*<sp/>param);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Key<sp/>hook</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Use<sp/>a<sp/>key<sp/>hook<sp/>if<sp/>you<sp/>want<sp/>single<sp/>keypress<sp/>detection<sp/>or<sp/>more<sp/>precision<sp/>as<sp/>to<sp/>how<sp/>a<sp/>key<sp/>is<sp/>pressed,<sp/>such<sp/>as<sp/>checking<sp/>for<sp/>modifier<sp/>keys<sp/>or<sp/>getting<sp/>the<sp/>raw<sp/>os<sp/>keycode.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Key<sp/>function<sp/>callback<sp/>data.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Data<sp/>related<sp/>to<sp/>the<sp/>mlx_key_hook<sp/>function</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>key<sp/>The<sp/>key<sp/>that<sp/>was<sp/>pressed.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>action<sp/>The<sp/>action<sp/>that<sp/>was<sp/>done<sp/>with<sp/>the<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>os_key<sp/>The<sp/>os_key<sp/>is<sp/>unique<sp/>for<sp/>every<sp/>key,<sp/>and<sp/>will<sp/>have<sp/>a<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>different<sp/>value/keycode<sp/>depending<sp/>on<sp/>the<sp/>platform.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>They<sp/>may<sp/>be<sp/>consistent<sp/>on<sp/>different<sp/>platforms.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param<sp/>modifier<sp/>The<sp/>modifier<sp/>key<sp/>that<sp/>was<sp/>pressed,<sp/>0<sp/>if<sp/>none.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>struct<sp/>mlx_key_data</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>keys_t<sp/><sp/><sp/><sp/><sp/><sp/>key;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>action_t<sp/><sp/><sp/><sp/>action;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>int32_t<sp/><sp/><sp/><sp/><sp/>os_key;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>modifier_key_t<sp/><sp/>modifier;</highlight></codeline>
+<codeline><highlight class="normal">}<sp/><sp/><sp/>mlx_key_data_t;</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Callback<sp/>function<sp/>used<sp/>to<sp/>handle<sp/>keypresses.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>keydata<sp/>The<sp/>callback<sp/>data,<sp/>contains<sp/>info<sp/>on<sp/>key,<sp/>action,<sp/>...</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>Additional<sp/>parameter<sp/>to<sp/>pass<sp/>to<sp/>the<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">typedef<sp/>void<sp/>(*mlx_keyfunc)(mlx_key_data_t<sp/>keydata,<sp/>void*<sp/>param);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>This<sp/>function<sp/>sets<sp/>the<sp/>key<sp/>callback,<sp/>which<sp/>is<sp/>called<sp/>when<sp/>a<sp/>key<sp/>is<sp/>pressed</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>on<sp/>the<sp/>keyboard.<sp/>Useful<sp/>for<sp/>single<sp/>key<sp/>press<sp/>detection.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>mlx<sp/>The<sp/>MLX<sp/>instance<sp/>handle.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>func<sp/>The<sp/>key<sp/>press<sp/>callback<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>An<sp/>additional<sp/>optional<sp/>parameter.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>mlx_key_hook(mlx_t*<sp/>mlx,<sp/>mlx_keyfunc<sp/>func,<sp/>void*<sp/>param);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Generic<sp/>Hook</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Generic<sp/>hooks<sp/>execute<sp/>each<sp/>frame<sp/>and<sp/>are<sp/>useful<sp/>for<sp/>stuff<sp/>that<sp/>needs<sp/>to<sp/>be<sp/>updated<sp/>every<sp/>frame.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">/**</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Generic<sp/>loop<sp/>hook<sp/>for<sp/>any<sp/>custom<sp/>hooks<sp/>to<sp/>add<sp/>to<sp/>the<sp/>main<sp/>loop.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>Executes<sp/>a<sp/>function<sp/>per<sp/>frame,<sp/>so<sp/>be<sp/>careful.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>mlx<sp/>The<sp/>MLX<sp/>instance<sp/>handle.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>f<sp/>The<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@param[in]<sp/>param<sp/>The<sp/>parameter<sp/>to<sp/>pass<sp/>onto<sp/>the<sp/>function.</highlight></codeline>
+<codeline><highlight class="normal"><sp/>*<sp/>@returns<sp/>Wether<sp/>the<sp/>hook<sp/>was<sp/>added<sp/>successfully.<sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>mlx_loop_hook(mlx_t*<sp/>mlx,<sp/>void<sp/>(*f)(void*),<sp/>void*<sp/>param);</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Examples</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Here<sp/>are<sp/>some<sp/>simple<sp/>examples<sp/>on<sp/>how<sp/>to<sp/>implement<sp/>each<sp/>one<sp/>of<sp/>the<sp/>hooks<sp/>in<sp/>a<sp/>simple<sp/>fashion.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Key<sp/>Hook</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;MLX42/MLX42.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>WIDTH<sp/>720</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>HEIGHT<sp/>480</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>my_keyhook(mlx_key_data_t<sp/>keydata,<sp/>void*<sp/>param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>If<sp/>we<sp/>PRESS<sp/>the<sp/>&apos;J&apos;<sp/>key,<sp/>print<sp/>&quot;Hello&quot;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_J<sp/>&amp;&amp;<sp/>keydata.action<sp/>==<sp/>MLX_PRESS)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;Hello<sp/>&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>If<sp/>we<sp/>RELEASE<sp/>the<sp/>&apos;K&apos;<sp/>key,<sp/>print<sp/>&quot;World&quot;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_K<sp/>&amp;&amp;<sp/>keydata.action<sp/>==<sp/>MLX_RELEASE)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;World&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>If<sp/>we<sp/>HOLD<sp/>the<sp/>&apos;L&apos;<sp/>key,<sp/>print<sp/>&quot;!&quot;.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(keydata.key<sp/>==<sp/>MLX_KEY_L<sp/>&amp;&amp;<sp/>keydata.action<sp/>==<sp/>MLX_REPEAT)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;!&quot;);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!(mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>&quot;MLX42&quot;,<sp/>true)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(EXIT_FAILURE);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_key_hook(mlx,<sp/>&amp;my_keyhook,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Scroll<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdlib.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;stdio.h&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&quot;MLX42/MLX42.h&quot;</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>WIDTH<sp/>720</highlight></codeline>
+<codeline><highlight class="normal">#define<sp/>HEIGHT<sp/>480</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">void<sp/>my_scrollhook(double<sp/>xdelta,<sp/>double<sp/>ydelta,<sp/>void*<sp/>param)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Simple<sp/>up<sp/>or<sp/>down<sp/>detection.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(ydelta<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;Up!&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(ydelta<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;Down!&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//<sp/>Can<sp/>also<sp/>detect<sp/>a<sp/>mousewheel<sp/>that<sp/>goes<sp/>along<sp/>the<sp/>X<sp/>(e.g:<sp/>MX<sp/>Master<sp/>3)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(xdelta<sp/>&lt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;Sliiiide<sp/>to<sp/>the<sp/>left!&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else<sp/>if<sp/>(xdelta<sp/>&gt;<sp/>0)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>puts(&quot;Sliiiide<sp/>to<sp/>the<sp/>right!&quot;);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">int32_t<sp/>main(void)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_t*<sp/>mlx;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!(mlx<sp/>=<sp/>mlx_init(WIDTH,<sp/>HEIGHT,<sp/>&quot;MLX42&quot;,<sp/>true)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(EXIT_FAILURE);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_scroll_hook(mlx,<sp/>&amp;my_scrollhook,<sp/>NULL);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_loop(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>mlx_terminate(mlx);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(EXIT_SUCCESS);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="MLX42/docs/Hooks.md"/>
+  </compounddef>
+</doxygen>

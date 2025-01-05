@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="julia_8c" kind="file" language="C++">
+    <compoundname>julia.c</compoundname>
+    <includes refid="fractol_8h" local="yes">fractol.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>fractol.h</label>
+        <link refid="fractol_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>julia.c</label>
+        <link refid="julia_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>MLX42/MLX42.h</label>
+      </node>
+      <node id="4">
+        <label>limits.h</label>
+      </node>
+      <node id="5">
+        <label>stdlib.h</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="julia_8c_1a06a8d464c822682fafa59d5a404516bb" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void julia_iterations</definition>
+        <argsstring>(t_render_vars *vars, t_data *data)</argsstring>
+        <name>julia_iterations</name>
+        <param>
+          <type><ref refid="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" kindref="member">t_render_vars</ref> *</type>
+          <declname>vars</declname>
+        </param>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Performs the iterations for a signle point in the Julia set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function applies the Julia set formula iteratively to determine whether a given point escapes the threshold. The number of iterations taken before escape determines the point&apos;s color.</para>
+<para><itemizedlist>
+<listitem><para><bold>Core Algorithm:</bold> The formula <computeroutput>z = z^2 + c</computeroutput> is applied, where:<itemizedlist>
+<listitem><para><computeroutput>z</computeroutput> is a complex number, represented by real (<computeroutput>z_re</computeroutput>) and imaginary (<computeroutput>z_im</computeroutput>) parts.</para>
+</listitem><listitem><para><computeroutput>c</computeroutput> is a constant defined by the user (real and imaginary parts).</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Bounding Condition:</bold> The iteerations stop when:<itemizedlist>
+<listitem><para>The sum of the squares of the real and imaginary parts exceeds 4.0.</para>
+</listitem><listitem><para>The maximum number of iterations (<computeroutput>MAX_ITERATIONS</computeroutput>) is reached.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Optimization:</bold> Squared values (<computeroutput>z_re^2</computeroutput> and <computeroutput>z_im^2</computeroutput>) are cached to avoid redundant calculations.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vars</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the structure holding rendering variables (e.g., <computeroutput>z</computeroutput> and <computeroutput>iterations</computeroutput>). @params data Pointer to the main fractal data, including the Julia constant (<computeroutput>c</computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="julia.c" line="84" column="12" bodyfile="julia.c" bodystart="84" bodyend="102"/>
+        <references refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" compoundref="fractol_8h" startline="94">s_data::c</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
+        <references refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" compoundref="fractol_8h" startline="106">s_render_vars::iterations</references>
+        <references refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" compoundref="fractol_8h" startline="193">MAX_ITERATIONS</references>
+        <references refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" compoundref="fractol_8h" startline="109">s_render_vars::z</references>
+        <references refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" compoundref="fractol_8h" startline="110">s_render_vars::z_squared</references>
+        <referencedby refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void render_julia_row</definition>
+        <argsstring>(t_render_vars *vars, t_data *data, int y)</argsstring>
+        <name>render_julia_row</name>
+        <param>
+          <type><ref refid="fractol_8h_1a73bbfaa62c5d442e2541ea8e5626611d" kindref="member">t_render_vars</ref> *</type>
+          <declname>vars</declname>
+        </param>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>y</declname>
+        </param>
+        <briefdescription>
+<para>Renders a single row of the Julia set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function processes one row of the pixel in the Juliaa set by iterating through each pixel, applying the Juliaa set formula, and determining its color.</para>
+<para><itemizedlist>
+<listitem><para><bold>Coordinate Mapping:</bold><itemizedlist>
+<listitem><para>Each pixel is mapped to a complex number (<computeroutput>z</computeroutput>) based on its position and the scaling factors calculated from the zoom and offsets.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Iteration and Coloring:</bold><itemizedlist>
+<listitem><para>The Julia set formula is applied iteratively for each pixel.</para>
+</listitem><listitem><para>The number of iterations is used to calculate the pixel&apos;s color.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Row Processing:</bold> Each pixel in the row is processed sequentially, and the result is stored in the image buffer.</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>vars</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the rendering variables structure (e.g., pixel and scaling). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the main fractal data. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>y</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The current row index being processed (0 for the first row, up to <computeroutput>HEIGHT - 1</computeroutput>). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="julia.c" line="126" column="12" bodyfile="julia.c" bodystart="126" bodyend="143"/>
+        <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
+        <references refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" compoundref="fractol_8h" startline="111">s_render_vars::c_re</references>
+        <references refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" compoundref="calcs_8c" startline="131" endline="143">calculate_color</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" compoundref="fractol_8h" startline="52">COMPLEX_RE</references>
+        <references refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" compoundref="fractol_8h" startline="106">s_render_vars::iterations</references>
+        <references refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" compoundref="julia_8c" startline="84" endline="102">julia_iterations</references>
+        <references refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" compoundref="fractol_8h" startline="114">s_render_vars::pixels</references>
+        <references refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" compoundref="fractol_8h" startline="115">s_render_vars::row</references>
+        <references refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" compoundref="fractol_8h" startline="107">s_render_vars::scale</references>
+        <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" compoundref="fractol_8h" startline="43">SCALE_X</references>
+        <references refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" compoundref="fractol_8h" startline="108">s_render_vars::start</references>
+        <references refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" compoundref="fractol_8h" startline="188">WIDTH</references>
+        <references refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" compoundref="fractol_8h" startline="109">s_render_vars::z</references>
+        <references refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" compoundref="fractol_8h" startline="110">s_render_vars::z_squared</references>
+        <referencedby refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" compoundref="julia_8c" startline="165" endline="177">render_julia</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="julia_8c_1ac62d3b22b714b98af9c4faeac6e6e650" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void render_julia</definition>
+        <argsstring>(t_data *data)</argsstring>
+        <name>render_julia</name>
+        <param>
+          <type><ref refid="fractol_8h_1a24e28e95867f9681b9d87781b1caa65b" kindref="member">t_data</ref> *</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Renders the Julia set fractal. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Renders the Julia fractal.</para>
+<para>This function handles the full rendering process for the Julia set by iterating through all rows of the screen, rendering each row sequentially.</para>
+<para><itemizedlist>
+<listitem><para><bold>Setup:</bold><itemizedlist>
+<listitem><para>Calculates the scaling and starting coordinates based on the zoom level and positional offsets provided by the user.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Row-by-Row Rendering:</bold><itemizedlist>
+<listitem><para>For each row on the screen (<computeroutput>y</computeroutput> coordinate), the corresponding imaginary coordinate is computed.</para>
+</listitem><listitem><para>The row is passed to <computeroutput>render_julia_row</computeroutput>, which handles the pixel-by-pixel rendering.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem><para><bold>Full Image Construction:</bold><itemizedlist>
+<listitem><para>The ffunction processes every row until the entire fractal is rendered.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the main fractal data structure, including rendering details such as zoom, offsets, and fractal paarameters. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="julia.c" line="165" column="5" bodyfile="julia.c" bodystart="165" bodyend="177"/>
+        <references refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" compoundref="fractol_8h" startline="113">s_render_vars::c_im</references>
+        <references refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" compoundref="calcs_8c" startline="52" endline="59">calculate_scales_and_limits</references>
+        <references refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" compoundref="fractol_8h" startline="53">COMPLEX_IM</references>
+        <references refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" compoundref="fractol_8h" startline="189">HEIGHT</references>
+        <references refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" compoundref="julia_8c" startline="126" endline="143">render_julia_row</references>
+        <references refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" compoundref="fractol_8h" startline="107">s_render_vars::scale</references>
+        <references refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" compoundref="fractol_8h" startline="44">SCALE_Y</references>
+        <references refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" compoundref="fractol_8h" startline="108">s_render_vars::start</references>
+        <referencedby refid="calcs_8c_1a6010a48038dd00722649b2e7ad69668d" compoundref="calcs_8c" startline="108" endline="114">render_fractal</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:::<sp/><sp/><sp/><sp/><sp/><sp/>::::::::<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>julia.c<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/><sp/>:+:<sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>By:<sp/>meghribe<sp/>&lt;meghribe@student.42barcelona.co<sp/><sp/>+#+<sp/><sp/>+:+<sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>+#+#+#+#+#+<sp/><sp/><sp/>+#+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Created:<sp/>2024/12/24<sp/>19:09:26<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/>#+#<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/>Updated:<sp/>2025/01/05<sp/>14:00:18<sp/>by<sp/>meghribe<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>###<sp/><sp/><sp/>########.fr<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>**************************************************************************<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="fractol_8h" kindref="compound">fractol.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="15"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>@file<sp/>julia</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Implementation<sp/>of<sp/>the<sp/>Julia<sp/>set<sp/>rendering.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>handles<sp/>all<sp/>calculations<sp/>and<sp/>rendering<sp/>logic<sp/>for<sp/>he<sp/>Julia<sp/>set</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/>fractal.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>It<sp/>contains<sp/>functions<sp/>that:</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>-<sp/>Perrform<sp/>the<sp/>iterative<sp/>mathematical<sp/>calculations<sp/>for<sp/>each<sp/>point<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/>Julia<sp/>set.</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>-<sp/>Render<sp/>invidiaul<sp/>rows<sp/>of<sp/>the<sp/>fractal<sp/>to<sp/>optimize<sp/>performance.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>-<sp/>Manage<sp/>the<sp/>rendering<sp/>off<sp/>the<sp/>entire<sp/>fractal<sp/>based<sp/>on<sp/>user-defined</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*<sp/><sp/><sp/>parameters.</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>###<sp/>For<sp/>Technical<sp/>Users:</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>-<sp/>**Core<sp/>Alrogithm:**<sp/>The<sp/>Julia<sp/>set<sp/>is<sp/>calculated<sp/>iteratively<sp/>using<sp/>the</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/><sp/><sp/>formula:<sp/>`z<sp/>=<sp/>z^2<sp/>+<sp/>c`,<sp/>where<sp/>`z`<sp/>is<sp/>a<sp/>complex<sp/>number<sp/>and<sp/>`c`<sp/>is</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/><sp/><sp/>a<sp/>constant<sp/>parameter.</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/><sp/><sp/>The<sp/>function<sp/>computes<sp/>whether<sp/>each<sp/>point<sp/>&quot;escapes&quot;<sp/>or<sp/>remains<sp/>bounded</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/><sp/><sp/>within<sp/>a<sp/>set<sp/>threshold.</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>-<sp/>**Optimization:**<sp/>The<sp/>fractal<sp/>is<sp/>rendered<sp/>row<sp/>by<sp/>row<sp/>to<sp/>efficiently</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/><sp/><sp/>utilize<sp/>memory<sp/>and<sp/>computational<sp/>resources.<sp/>Intermediate<sp/>results<sp/>like</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/><sp/><sp/>squared<sp/>values<sp/>are<sp/>stored<sp/>to<sp/>avoid<sp/>redundant<sp/>calculations.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>-<sp/>**Color<sp/>Mapping:**<sp/>Each<sp/>point&apos;s<sp/>&quot;escape<sp/>time&quot;<sp/>determines<sp/>its<sp/>color,</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/><sp/><sp/>creating<sp/>the<sp/>fractal&apos;s<sp/>visually<sp/>striking<sp/>patterns.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>###<sp/>For<sp/>Non-Technical<sp/>Users:</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>-<sp/>**What<sp/>is<sp/>the<sp/>Julia<sp/>Set?**</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*<sp/><sp/><sp/>The<sp/>Julia<sp/>set<sp/>is<sp/>a<sp/>mathematical<sp/>pattern<sp/>generated<sp/>by<sp/>repeatedly</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/><sp/><sp/>applying<sp/>a<sp/>formula<sp/>to<sp/>points<sp/>on<sp/>a<sp/>grid.<sp/>Some<sp/>points<sp/>&quot;escape&quot;<sp/>quickly,</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*<sp/><sp/><sp/>while<sp/>others<sp/>stay<sp/>trapped.<sp/>The<sp/>resulting<sp/>image<sp/>is<sp/>mesmerizing,<sp/>intricate</highlight></codeline>
+<codeline lineno="45"><highlight class="comment"><sp/>*<sp/><sp/><sp/>design.</highlight></codeline>
+<codeline lineno="46"><highlight class="comment"><sp/>*<sp/>-<sp/>**How<sp/>does<sp/>this<sp/>file<sp/>work?**</highlight></codeline>
+<codeline lineno="47"><highlight class="comment"><sp/>*<sp/><sp/><sp/>Think<sp/>of<sp/>this<sp/>like<sp/>as<sp/>the<sp/>&quot;artist&quot;<sp/>responsible<sp/>for<sp/>drawing<sp/>the<sp/>Julia<sp/>set.</highlight></codeline>
+<codeline lineno="48"><highlight class="comment"><sp/>*<sp/><sp/><sp/>It<sp/>decides:</highlight></codeline>
+<codeline lineno="49"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Where<sp/>each<sp/>point<sp/>in<sp/>the<sp/>fractal<sp/>goes<sp/>on<sp/>the<sp/>screen.</highlight></codeline>
+<codeline lineno="50"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>How<sp/>many<sp/>iterations<sp/>it<sp/>takes<sp/>for<sp/>each<sp/>point<sp/>to<sp/>escape<sp/>the<sp/>threshold.</highlight></codeline>
+<codeline lineno="51"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>What<sp/>color<sp/>each<sp/>point<sp/>should<sp/>have<sp/>based<sp/>on<sp/>its<sp/>behavior.</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>-<sp/>**Why<sp/>is<sp/>it<sp/>row<sp/>by<sp/>row?**</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/><sp/><sp/>Instead<sp/>of<sp/>drawing<sp/>the<sp/>entire<sp/>image<sp/>at<sp/>once,<sp/>this<sp/>program<sp/>works<sp/>row<sp/>by<sp/>row</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*<sp/><sp/><sp/>for<sp/>better<sp/>performance,<sp/>like<sp/>filling<sp/>in<sp/>coloring<sp/>book<sp/>on<sp/>line<sp/>at<sp/>a<sp/>time</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/><sp/><sp/>Instead<sp/>of<sp/>drawing<sp/>the<sp/>entire<sp/>image<sp/>at<sp/>once,<sp/>this<sp/>program<sp/>works<sp/>row<sp/>by<sp/>row</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/><sp/><sp/>for<sp/>better<sp/>performance,<sp/>like<sp/>filling<sp/>in<sp/>coloring<sp/>book<sp/>on<sp/>line<sp/>at<sp/>a<sp/>time.</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*<sp/>The<sp/>Julia<sp/>set<sp/>is<sp/>unique<sp/>because<sp/>its<sp/>shape<sp/>depends<sp/>on<sp/>the<sp/>user-provided</highlight></codeline>
+<codeline lineno="59"><highlight class="comment"><sp/>*<sp/>parameters.<sp/>You<sp/>can<sp/>explore<sp/>endless<sp/>variations<sp/>by<sp/>tweaking<sp/>the<sp/>input<sp/>values!</highlight></codeline>
+<codeline lineno="60"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="62"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="63"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Performs<sp/>the<sp/>iterations<sp/>for<sp/>a<sp/>signle<sp/>point<sp/>in<sp/>the<sp/>Julia<sp/>set.</highlight></codeline>
+<codeline lineno="64"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="65"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>applies<sp/>the<sp/>Julia<sp/>set<sp/>formula<sp/>iteratively<sp/>to<sp/>determine</highlight></codeline>
+<codeline lineno="66"><highlight class="comment"><sp/>*<sp/>whether<sp/>a<sp/>given<sp/>point<sp/>escapes<sp/>the<sp/>threshold.<sp/>The<sp/>number<sp/>of<sp/>iterations<sp/>taken</highlight></codeline>
+<codeline lineno="67"><highlight class="comment"><sp/>*<sp/>before<sp/>escape<sp/>determines<sp/>the<sp/>point&apos;s<sp/>color.</highlight></codeline>
+<codeline lineno="68"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="69"><highlight class="comment"><sp/>*<sp/>-<sp/>**Core<sp/>Algorithm:**<sp/>The<sp/>formula<sp/>`z<sp/>=<sp/>z^2<sp/>+<sp/>c`<sp/>is<sp/>applied,<sp/>where:</highlight></codeline>
+<codeline lineno="70"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>`z`<sp/>is<sp/>a<sp/>complex<sp/>number,<sp/>represented<sp/>by<sp/>real<sp/>(`z_re`)<sp/>and<sp/></highlight></codeline>
+<codeline lineno="71"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>imaginary<sp/>(`z_im`)<sp/>parts.</highlight></codeline>
+<codeline lineno="72"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>`c`<sp/>is<sp/>a<sp/>constant<sp/>defined<sp/>by<sp/>the<sp/>user<sp/>(real<sp/>and<sp/>imaginary<sp/>parts).</highlight></codeline>
+<codeline lineno="73"><highlight class="comment"><sp/>*<sp/>-<sp/>**Bounding<sp/>Condition:**<sp/>The<sp/>iteerations<sp/>stop<sp/>when:</highlight></codeline>
+<codeline lineno="74"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>sum<sp/>of<sp/>the<sp/>squares<sp/>of<sp/>the<sp/>real<sp/>and<sp/>imaginary<sp/>parts<sp/>exceeds<sp/>4.0.</highlight></codeline>
+<codeline lineno="75"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>maximum<sp/>number<sp/>of<sp/>iterations<sp/>(`MAX_ITERATIONS`)<sp/>is<sp/>reached.</highlight></codeline>
+<codeline lineno="76"><highlight class="comment"><sp/>*<sp/>-<sp/>**Optimization:**<sp/>Squared<sp/>values<sp/>(`z_re^2`<sp/>and<sp/>`z_im^2`)<sp/>are<sp/>cached</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/><sp/><sp/>to<sp/>avoid<sp/>redundant<sp/>calculations.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>@param<sp/>vars<sp/>Pointer<sp/>to<sp/>the<sp/>structure<sp/>holding<sp/>rendering<sp/>variables</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/><sp/>(e.g.,<sp/>`z`<sp/>and<sp/>`iterations`).</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>@params<sp/>data<sp/>Pointer<sp/>to<sp/>the<sp/>main<sp/>fractal<sp/>data,<sp/>including<sp/>the<sp/>Julia</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*<sp/><sp/>constant<sp/>(`c`).</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" kindref="member">julia_iterations</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><sp/>temp_z_re;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>&lt;=<sp/>4.0<sp/>&amp;&amp;<sp/>\</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref><sp/>&lt;<sp/><ref refid="fractol_8h_1a0a3abbca80bc98e7abcb3ae73abe0f14" kindref="member">MAX_ITERATIONS</ref>)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>-=<sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp_z_re<sp/>+=<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>2.0<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>\</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+<sp/>data-&gt;<ref refid="structs__data_1aea66a7ab3ef1ad267c636e071830e36c" kindref="member">c</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>temp_z_re;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>++;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="104"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="105"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Renders<sp/>a<sp/>single<sp/>row<sp/>of<sp/>the<sp/>Julia<sp/>set.</highlight></codeline>
+<codeline lineno="106"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="107"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>processes<sp/>one<sp/>row<sp/>of<sp/>the<sp/>pixel<sp/>in<sp/>the<sp/>Juliaa<sp/>set<sp/>by<sp/>iterating</highlight></codeline>
+<codeline lineno="108"><highlight class="comment"><sp/>*<sp/>through<sp/>each<sp/>pixel,<sp/>applying<sp/>the<sp/>Juliaa<sp/>set<sp/>formula,<sp/>and<sp/>determining<sp/>its</highlight></codeline>
+<codeline lineno="109"><highlight class="comment"><sp/>*<sp/>color.</highlight></codeline>
+<codeline lineno="110"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/>*<sp/>-<sp/>**Coordinate<sp/>Mapping:**</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Each<sp/>pixel<sp/>is<sp/>mapped<sp/>to<sp/>a<sp/>complex<sp/>number<sp/>(`z`)<sp/>based<sp/>on<sp/>its<sp/>position</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>the<sp/>scaling<sp/>factors<sp/>calculated<sp/>from<sp/>the<sp/>zoom<sp/>and<sp/>offsets.</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/>*<sp/>-<sp/>**Iteration<sp/>and<sp/>Coloring:**</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>Julia<sp/>set<sp/>formula<sp/>is<sp/>applied<sp/>iteratively<sp/>for<sp/>each<sp/>pixel.</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>number<sp/>of<sp/>iterations<sp/>is<sp/>used<sp/>to<sp/>calculate<sp/>the<sp/>pixel&apos;s<sp/>color.</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/>*<sp/>-<sp/>**Row<sp/>Processing:**<sp/>Each<sp/>pixel<sp/>in<sp/>the<sp/>row<sp/>is<sp/>processed<sp/>sequentially,</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/>*<sp/><sp/><sp/>and<sp/>the<sp/>result<sp/>is<sp/>stored<sp/>in<sp/>the<sp/>image<sp/>buffer.</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="120"><highlight class="comment"><sp/>*<sp/>@param<sp/>vars<sp/>Pointer<sp/>to<sp/>the<sp/>rendering<sp/>variables<sp/>structure<sp/>(e.g.,<sp/>pixel<sp/>and</highlight></codeline>
+<codeline lineno="121"><highlight class="comment"><sp/>*<sp/><sp/>scaling).</highlight></codeline>
+<codeline lineno="122"><highlight class="comment"><sp/>*<sp/>@param<sp/>data<sp/>Pointer<sp/>to<sp/>the<sp/>main<sp/>fractal<sp/>data.</highlight></codeline>
+<codeline lineno="123"><highlight class="comment"><sp/>*<sp/>@param<sp/>y<sp/>The<sp/>current<sp/>row<sp/>index<sp/>being<sp/>processed<sp/>(0<sp/>for<sp/>the<sp/>first<sp/>row,<sp/>up<sp/>to</highlight></codeline>
+<codeline lineno="124"><highlight class="comment"><sp/>*<sp/>`HEIGHT<sp/>-<sp/>1`).</highlight></codeline>
+<codeline lineno="125"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" kindref="member">render_julia_row</ref>(<ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/>*vars,<sp/><ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>y)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>x;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>x<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(x<sp/>&lt;<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref>)</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>+<sp/>x<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dadac53e7e73b43a225ffb4110c5aeebded9" kindref="member">SCALE_X</ref>];</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a6673853b0b178f5bcb6fb4d3660f10b6" kindref="member">c_re</ref>[0];</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a77402fdc000e2e9ed3509cc1a2646233" kindref="member">COMPLEX_RE</ref>];</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a03845e187059cd1b0b313ff324f9942e" kindref="member">z_squared</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>*<sp/>vars-&gt;<ref refid="structs__render__vars_1adf3486a0e1093b75ebe536aeaa1c34fc" kindref="member">z</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>];</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="julia_8c_1a06a8d464c822682fafa59d5a404516bb" kindref="member">julia_iterations</ref>(vars,<sp/>data);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref><sp/>=<sp/>vars-&gt;<ref refid="structs__render__vars_1ad7b4a461937285f0f0480797f9fc2dda" kindref="member">pixels</ref><sp/>+<sp/>y<sp/>*<sp/><ref refid="fractol_8h_1a241aeeb764887ae5e3de58b98f04b16d" kindref="member">WIDTH</ref><sp/>+<sp/>x;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*vars-&gt;<ref refid="structs__render__vars_1a2653a5d2f79c285d9a4a26f0b2503e45" kindref="member">row</ref><sp/>=<sp/><ref refid="calcs_8c_1af87a6532ce68469fef69f9c207960094" kindref="member">calculate_color</ref>(vars-&gt;<ref refid="structs__render__vars_1a5f47d1db1bc1c9c2d47804f17c24c4bf" kindref="member">iterations</ref>);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x++;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment"></highlight></codeline>
+<codeline lineno="145"><highlight class="comment">/**</highlight></codeline>
+<codeline lineno="146"><highlight class="comment"><sp/>*<sp/>@brief<sp/>Renders<sp/>the<sp/>Julia<sp/>set<sp/>fractal.</highlight></codeline>
+<codeline lineno="147"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="148"><highlight class="comment"><sp/>*<sp/>This<sp/>function<sp/>handles<sp/>the<sp/>full<sp/>rendering<sp/>process<sp/>for<sp/>the<sp/>Julia<sp/>set<sp/>by</highlight></codeline>
+<codeline lineno="149"><highlight class="comment"><sp/>*<sp/>iterating<sp/>through<sp/>all<sp/>rows<sp/>of<sp/>the<sp/>screen,<sp/>rendering<sp/>each<sp/>row<sp/>sequentially.</highlight></codeline>
+<codeline lineno="150"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="151"><highlight class="comment"><sp/>*<sp/>-<sp/>**Setup:**</highlight></codeline>
+<codeline lineno="152"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>Calculates<sp/>the<sp/>scaling<sp/>and<sp/>starting<sp/>coordinates<sp/>based<sp/>on<sp/>the<sp/>zoom<sp/>level</highlight></codeline>
+<codeline lineno="153"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>and<sp/>positional<sp/>offsets<sp/>provided<sp/>by<sp/>the<sp/>user.</highlight></codeline>
+<codeline lineno="154"><highlight class="comment"><sp/>*<sp/>-<sp/>**Row-by-Row<sp/>Rendering:**</highlight></codeline>
+<codeline lineno="155"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>For<sp/>each<sp/>row<sp/>on<sp/>the<sp/>screen<sp/>(`y`<sp/>coordinate),<sp/>the<sp/>corresponding<sp/>imaginary</highlight></codeline>
+<codeline lineno="156"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>coordinate<sp/>is<sp/>computed.</highlight></codeline>
+<codeline lineno="157"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>row<sp/>is<sp/>passed<sp/>to<sp/>`render_julia_row`,<sp/>which<sp/>handles<sp/>the<sp/>pixel-by-pixel</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/>*<sp/><sp/><sp/>rendering.</highlight></codeline>
+<codeline lineno="159"><highlight class="comment"><sp/>*<sp/>-<sp/>**Full<sp/>Image<sp/>Construction:**</highlight></codeline>
+<codeline lineno="160"><highlight class="comment"><sp/>*<sp/><sp/><sp/>-<sp/>The<sp/>ffunction<sp/>processes<sp/>every<sp/>row<sp/>until<sp/>the<sp/>entire<sp/>fractal<sp/>is<sp/>rendered.</highlight></codeline>
+<codeline lineno="161"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="162"><highlight class="comment"><sp/>*<sp/>@param<sp/>data<sp/>Pointer<sp/>to<sp/>the<sp/>main<sp/>fractal<sp/>data<sp/>structure,<sp/>including<sp/>rendering</highlight></codeline>
+<codeline lineno="163"><highlight class="comment"><sp/>*<sp/><sp/>details<sp/>such<sp/>as<sp/>zoom,<sp/>offsets,<sp/>and<sp/>fractal<sp/>paarameters.</highlight></codeline>
+<codeline lineno="164"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="fractol_8h_1ac62d3b22b714b98af9c4faeac6e6e650" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="julia_8c_1ac62d3b22b714b98af9c4faeac6e6e650" kindref="member">render_julia</ref>(<ref refid="structs__data" kindref="compound">t_data</ref><sp/>*data)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structs__render__vars" kindref="compound">t_render_vars</ref><sp/><sp/><sp/>vars;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="calcs_8c_1af548b6205acd0da6696adf5b79aa23a3" kindref="member">calculate_scales_and_limits</ref>(&amp;vars,<sp/>data);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>y<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(y<sp/>&lt;<sp/><ref refid="fractol_8h_1aed89bd71aee8be823e8a20ec4e093c1e" kindref="member">HEIGHT</ref>)</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>vars.<ref refid="structs__render__vars_1a38d0efc46f2ec97abb42cc0d426fcb34" kindref="member">c_im</ref><sp/>=<sp/>vars.<ref refid="structs__render__vars_1a867e8aa6f9487511119528560b6d32f9" kindref="member">start</ref>[<ref refid="fractol_8h_1a926517f53e9ee2b8c827d9a3d4f60a55a0ddc108dab70c9b1d3ffff7513fa0245" kindref="member">COMPLEX_IM</ref>]<sp/>+<sp/>y<sp/>*<sp/>vars.<ref refid="structs__render__vars_1a0d03489cebdef050251bdf227262060a" kindref="member">scale</ref>[<ref refid="fractol_8h_1a50d3efcd54a8f011ade268a9b8aa8dada4bbdf62f20331dbd03177169cb6fc9f4" kindref="member">SCALE_Y</ref>];</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="julia_8c_1ac8f82667795f7c5ff50e0bdceae44afc" kindref="member">render_julia_row</ref>(&amp;vars,<sp/>data,<sp/>y++);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="julia.c"/>
+  </compounddef>
+</doxygen>

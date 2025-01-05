@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_f7fc468bc35628dd9b688d25c35ff0f6" kind="dir">
+    <compoundname>/home/dev/frfr</compoundname>
+    <innerdir refid="dir_d40633b623420761bd216885f77ce5d7">/home/dev/frfr/latex</innerdir>
+    <innerfile refid="calcs_8c">calcs.c</innerfile>
+    <innerfile refid="fractol_8h">fractol.h</innerfile>
+    <innerfile refid="julia_8c">julia.c</innerfile>
+    <innerfile refid="main_8c">main.c</innerfile>
+    <innerfile refid="Makefile">Makefile</innerfile>
+    <innerfile refid="mandelbrot_8c">mandelbrot.c</innerfile>
+    <innerfile refid="utils_8c">utils.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dev/frfr/"/>
+  </compounddef>
+</doxygen>

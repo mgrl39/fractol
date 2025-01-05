@@ -1,0 +1,674 @@
+.TH "MLX42/include/lodepng/lodepng.h" 3 "Version 1.0" "Fractol" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MLX42/include/lodepng/lodepng.h
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <string\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBLodePNGDecompressSettings\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGCompressSettings\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGColorMode\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGTime\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGInfo\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGDecoderSettings\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGColorStats\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGEncoderSettings\fP"
+.br
+.ti -1c
+.RI "struct \fBLodePNGState\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_ZLIB\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_PNG\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_DECODER\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_ENCODER\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_DISK\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_ANCILLARY_CHUNKS\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_ERROR_TEXT\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_ALLOCATORS\fP"
+.br
+.ti -1c
+.RI "#\fBdefine\fP \fBLODEPNG_COMPILE_CRC\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBLodePNGColorType\fP \fBLodePNGColorType\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGDecompressSettings\fP \fBLodePNGDecompressSettings\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGCompressSettings\fP \fBLodePNGCompressSettings\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGColorMode\fP \fBLodePNGColorMode\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGTime\fP \fBLodePNGTime\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGInfo\fP \fBLodePNGInfo\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGDecoderSettings\fP \fBLodePNGDecoderSettings\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBenum\fP \fBLodePNGFilterStrategy\fP \fBLodePNGFilterStrategy\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGColorStats\fP \fBLodePNGColorStats\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGEncoderSettings\fP \fBLodePNGEncoderSettings\fP"
+.br
+.ti -1c
+.RI "\fBtypedef\fP \fBstruct\fP \fBLodePNGState\fP \fBLodePNGState\fP"
+.br
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBLodePNGColorType\fP { \fBLCT_GREY\fP = 0, \fBLCT_RGB\fP = 2, \fBLCT_PALETTE\fP = 3, \fBLCT_GREY_ALPHA\fP = 4, \fBLCT_RGBA\fP = 6, \fBLCT_MAX_OCTET_VALUE\fP = 255 }"
+.br
+.ti -1c
+.RI "enum \fBLodePNGFilterStrategy\fP { \fBLFS_ZERO\fP = 0, \fBLFS_ONE\fP = 1, \fBLFS_TWO\fP = 2, \fBLFS_THREE\fP = 3, \fBLFS_FOUR\fP = 4, \fBLFS_MINSUM\fP, \fBLFS_ENTROPY\fP, \fBLFS_BRUTE_FORCE\fP, \fBLFS_PREDEFINED\fP }"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_decode_memory\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_decode32\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_decode24\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_decode_file\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBconst\fP \fBchar\fP *\fBfilename\fP, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_decode32_file\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBconst\fP \fBchar\fP *\fBfilename\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_decode24_file\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBconst\fP \fBchar\fP *\fBfilename\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_encode_memory\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_encode32\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_encode24\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_encode_file\fP (\fBconst\fP \fBchar\fP *\fBfilename\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_encode32_file\fP (\fBconst\fP \fBchar\fP *\fBfilename\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_encode24_file\fP (\fBconst\fP \fBchar\fP *\fBfilename\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBchar\fP * \fBlodepng_error_text\fP (\fBunsigned\fP \fBcode\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_decompress_settings_init\fP (\fBLodePNGDecompressSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_compress_settings_init\fP (\fBLodePNGCompressSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_color_mode_init\fP (\fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_color_mode_cleanup\fP (\fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_color_mode_copy\fP (\fBLodePNGColorMode\fP *\fBdest\fP, \fBconst\fP \fBLodePNGColorMode\fP *\fBsource\fP)"
+.br
+.ti -1c
+.RI "\fBLodePNGColorMode\fP \fBlodepng_color_mode_make\fP (\fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_palette_clear\fP (\fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_palette_add\fP (\fBLodePNGColorMode\fP *\fBinfo\fP, \fBunsigned\fP \fBchar\fP \fBr\fP, \fBunsigned\fP \fBchar\fP \fBg\fP, \fBunsigned\fP \fBchar\fP \fBb\fP, \fBunsigned\fP \fBchar\fP \fBa\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_get_bpp\fP (\fBconst\fP \fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_get_channels\fP (\fBconst\fP \fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_is_greyscale_type\fP (\fBconst\fP \fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_is_alpha_type\fP (\fBconst\fP \fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_is_palette_type\fP (\fBconst\fP \fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_has_palette_alpha\fP (\fBconst\fP \fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_can_have_alpha\fP (\fBconst\fP \fBLodePNGColorMode\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBsize_t\fP \fBlodepng_get_raw_size\fP (\fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP, \fBconst\fP \fBLodePNGColorMode\fP *\fBcolor\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_info_init\fP (\fBLodePNGInfo\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_info_cleanup\fP (\fBLodePNGInfo\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_info_copy\fP (\fBLodePNGInfo\fP *\fBdest\fP, \fBconst\fP \fBLodePNGInfo\fP *\fBsource\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_add_text\fP (\fBLodePNGInfo\fP *\fBinfo\fP, \fBconst\fP \fBchar\fP *key, \fBconst\fP \fBchar\fP *\fBstr\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_clear_text\fP (\fBLodePNGInfo\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_add_itext\fP (\fBLodePNGInfo\fP *\fBinfo\fP, \fBconst\fP \fBchar\fP *key, \fBconst\fP \fBchar\fP *\fBlangtag\fP, \fBconst\fP \fBchar\fP *\fBtranskey\fP, \fBconst\fP \fBchar\fP *\fBstr\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_clear_itext\fP (\fBLodePNGInfo\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_set_icc\fP (\fBLodePNGInfo\fP *\fBinfo\fP, \fBconst\fP \fBchar\fP *\fBname\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBprofile\fP, \fBunsigned\fP \fBprofile_size\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_clear_icc\fP (\fBLodePNGInfo\fP *\fBinfo\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_convert\fP (\fBunsigned\fP \fBchar\fP *\fBout\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBconst\fP \fBLodePNGColorMode\fP *\fBmode_out\fP, \fBconst\fP \fBLodePNGColorMode\fP *\fBmode_in\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_decoder_settings_init\fP (\fBLodePNGDecoderSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_color_stats_init\fP (\fBLodePNGColorStats\fP *\fBstats\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_compute_color_stats\fP (\fBLodePNGColorStats\fP *\fBstats\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP, \fBconst\fP \fBLodePNGColorMode\fP *\fBmode_in\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_encoder_settings_init\fP (\fBLodePNGEncoderSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_state_init\fP (\fBLodePNGState\fP *\fBstate\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_state_cleanup\fP (\fBLodePNGState\fP *\fBstate\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_state_copy\fP (\fBLodePNGState\fP *\fBdest\fP, \fBconst\fP \fBLodePNGState\fP *\fBsource\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_decode\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBLodePNGState\fP *\fBstate\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_inspect\fP (\fBunsigned\fP *\fBw\fP, \fBunsigned\fP *\fBh\fP, \fBLodePNGState\fP *\fBstate\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_inspect_chunk\fP (\fBLodePNGState\fP *\fBstate\fP, \fBsize_t\fP \fBpos\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_encode\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBimage\fP, \fBunsigned\fP \fBw\fP, \fBunsigned\fP \fBh\fP, \fBLodePNGState\fP *\fBstate\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_chunk_length\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_chunk_type\fP (\fBchar\fP \fBtype\fP[5], \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP \fBlodepng_chunk_type_equals\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP, \fBconst\fP \fBchar\fP *\fBtype\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP \fBlodepng_chunk_ancillary\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP \fBlodepng_chunk_private\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP \fBlodepng_chunk_safetocopy\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP * \fBlodepng_chunk_data\fP (\fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBunsigned\fP \fBchar\fP * \fBlodepng_chunk_data_const\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_chunk_check_crc\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBvoid\fP \fBlodepng_chunk_generate_crc\fP (\fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP * \fBlodepng_chunk_next\fP (\fBunsigned\fP \fBchar\fP *\fBchunk\fP, \fBunsigned\fP \fBchar\fP *\fBend\fP)"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBunsigned\fP \fBchar\fP * \fBlodepng_chunk_next_const\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBend\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBchar\fP * \fBlodepng_chunk_find\fP (\fBunsigned\fP \fBchar\fP *\fBchunk\fP, \fBunsigned\fP \fBchar\fP *\fBend\fP, \fBconst\fP \fBchar\fP \fBtype\fP[5])"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBunsigned\fP \fBchar\fP * \fBlodepng_chunk_find_const\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBend\fP, \fBconst\fP \fBchar\fP \fBtype\fP[5])"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_chunk_append\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBchunk\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_chunk_create\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBunsigned\fP \fBlength\fP, \fBconst\fP \fBchar\fP *\fBtype\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBdata\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_crc32\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBbuf\fP, \fBsize_t\fP \fBlen\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_inflate\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP, \fBconst\fP \fBLodePNGDecompressSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_zlib_decompress\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP, \fBconst\fP \fBLodePNGDecompressSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_zlib_compress\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP, \fBconst\fP \fBLodePNGCompressSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_huffman_code_lengths\fP (\fBunsigned\fP *\fBlengths\fP, \fBconst\fP \fBunsigned\fP *\fBfrequencies\fP, \fBsize_t\fP \fBnumcodes\fP, \fBunsigned\fP \fBmaxbitlen\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_deflate\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBunsigned\fP \fBchar\fP *\fBin\fP, \fBsize_t\fP \fBinsize\fP, \fBconst\fP \fBLodePNGCompressSettings\fP *\fBsettings\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_load_file\fP (\fBunsigned\fP \fBchar\fP **\fBout\fP, \fBsize_t\fP *\fBoutsize\fP, \fBconst\fP \fBchar\fP *\fBfilename\fP)"
+.br
+.ti -1c
+.RI "\fBunsigned\fP \fBlodepng_save_file\fP (\fBconst\fP \fBunsigned\fP \fBchar\fP *\fBbuffer\fP, \fBsize_t\fP \fBbuffersize\fP, \fBconst\fP \fBchar\fP *\fBfilename\fP)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "\fBconst\fP \fBchar\fP * \fBLODEPNG_VERSION_STRING\fP"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBLodePNGDecompressSettings\fP \fBlodepng_default_decompress_settings\fP"
+.br
+.ti -1c
+.RI "\fBconst\fP \fBLodePNGCompressSettings\fP \fBlodepng_default_compress_settings\fP"
+.br
+.in -1c
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#\fBdefine\fP LODEPNG_COMPILE_ALLOCATORS"
+
+.PP
+Definition at line \fB91\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_ANCILLARY_CHUNKS"
+
+.PP
+Definition at line \fB75\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_CRC"
+
+.PP
+Definition at line \fB102\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_DECODER"
+
+.PP
+Definition at line \fB56\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_DISK"
+
+.PP
+Definition at line \fB68\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_ENCODER"
+
+.PP
+Definition at line \fB62\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_ERROR_TEXT"
+
+.PP
+Definition at line \fB82\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_PNG"
+
+.PP
+Definition at line \fB50\fP of file \fBlodepng\&.h\fP\&.
+.SS "#\fBdefine\fP LODEPNG_COMPILE_ZLIB"
+
+.PP
+Definition at line \fB44\fP of file \fBlodepng\&.h\fP\&.
+.SH "Typedef Documentation"
+.PP 
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGColorMode\fP \fBLodePNGColorMode\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGColorStats\fP \fBLodePNGColorStats\fP"
+
+.SS "\fBtypedef\fP \fBenum\fP \fBLodePNGColorType\fP \fBLodePNGColorType\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGCompressSettings\fP \fBLodePNGCompressSettings\fP"
+
+.PP
+Definition at line \fB350\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGDecoderSettings\fP \fBLodePNGDecoderSettings\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGDecompressSettings\fP \fBLodePNGDecompressSettings\fP"
+
+.PP
+Definition at line \fB313\fP of file \fBlodepng\&.h\fP\&.
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGEncoderSettings\fP \fBLodePNGEncoderSettings\fP"
+
+.SS "\fBtypedef\fP \fBenum\fP \fBLodePNGFilterStrategy\fP \fBLodePNGFilterStrategy\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGInfo\fP \fBLodePNGInfo\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGState\fP \fBLodePNGState\fP"
+
+.SS "\fBtypedef\fP \fBstruct\fP \fBLodePNGTime\fP \fBLodePNGTime\fP"
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "\fBenum\fP \fBLodePNGColorType\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILCT_GREY \fP\fP
+.TP
+\fB\fILCT_RGB \fP\fP
+.TP
+\fB\fILCT_PALETTE \fP\fP
+.TP
+\fB\fILCT_GREY_ALPHA \fP\fP
+.TP
+\fB\fILCT_RGBA \fP\fP
+.TP
+\fB\fILCT_MAX_OCTET_VALUE \fP\fP
+.PP
+Definition at line \fB121\fP of file \fBlodepng\&.h\fP\&..PP
+.nf
+121                               {
+122   LCT_GREY = 0, /*grayscale: 1,2,4,8,16 bit*/
+123   LCT_RGB = 2, /*RGB: 8,16 bit*/
+124   LCT_PALETTE = 3, /*palette: 1,2,4,8 bit*/
+125   LCT_GREY_ALPHA = 4, /*grayscale with alpha: 8,16 bit*/
+126   LCT_RGBA = 6, /*RGB with alpha: 8,16 bit*/
+127   /*LCT_MAX_OCTET_VALUE lets the compiler allow this enum to represent any invalid
+128   byte value from 0 to 255 that could be present in an invalid PNG file header\&. Do
+129   not use, compare with or set the name LCT_MAX_OCTET_VALUE, instead either use
+130   the valid color type names above, or numeric values like 1 or 7 when checking for
+131   particular disallowed color type byte values, or cast to integer to print it\&.*/
+132   LCT_MAX_OCTET_VALUE = 255
+133 } LodePNGColorType;
+.fi
+
+.SS "\fBenum\fP \fBLodePNGFilterStrategy\fP"
+
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fILFS_ZERO \fP\fP
+.TP
+\fB\fILFS_ONE \fP\fP
+.TP
+\fB\fILFS_TWO \fP\fP
+.TP
+\fB\fILFS_THREE \fP\fP
+.TP
+\fB\fILFS_FOUR \fP\fP
+.TP
+\fB\fILFS_MINSUM \fP\fP
+.TP
+\fB\fILFS_ENTROPY \fP\fP
+.TP
+\fB\fILFS_BRUTE_FORCE \fP\fP
+.TP
+\fB\fILFS_PREDEFINED \fP\fP
+.PP
+Definition at line \fB767\fP of file \fBlodepng\&.h\fP\&..PP
+.nf
+767                                    {
+768   /*every filter at zero*/
+769   LFS_ZERO = 0,
+770   /*every filter at 1, 2, 3 or 4 (path), unlike LFS_ZERO not a good choice, but for testing*/
+771   LFS_ONE = 1,
+772   LFS_TWO = 2,
+773   LFS_THREE = 3,
+774   LFS_FOUR = 4,
+775   /*Use filter that gives minimum sum, as described in the official PNG filter heuristic\&.*/
+776   LFS_MINSUM,
+777   /*Use the filter type that gives smallest Shannon entropy for this scanline\&. Depending
+778   on the image, this is better or worse than minsum\&.*/
+779   LFS_ENTROPY,
+780   /*
+781   Brute\-force\-search PNG filters by compressing each filter for each scanline\&.
+782   Experimental, very slow, and only rarely gives better compression than MINSUM\&.
+783   */
+784   LFS_BRUTE_FORCE,
+785   /*use predefined_filters buffer: you specify the filter type for each scanline*/
+786   LFS_PREDEFINED
+787 } LodePNGFilterStrategy;
+.fi
+
+.SH "Function Documentation"
+.PP 
+.SS "\fBunsigned\fP lodepng_add_itext (\fBLodePNGInfo\fP * info, \fBconst\fP \fBchar\fP * key, \fBconst\fP \fBchar\fP * langtag, \fBconst\fP \fBchar\fP * transkey, \fBconst\fP \fBchar\fP * str)"
+
+.SS "\fBunsigned\fP lodepng_add_text (\fBLodePNGInfo\fP * info, \fBconst\fP \fBchar\fP * key, \fBconst\fP \fBchar\fP * str)"
+
+.SS "\fBunsigned\fP lodepng_can_have_alpha (\fBconst\fP \fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP \fBchar\fP lodepng_chunk_ancillary (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP lodepng_chunk_append (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP lodepng_chunk_check_crc (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP lodepng_chunk_create (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBunsigned\fP length, \fBconst\fP \fBchar\fP * type, \fBconst\fP \fBunsigned\fP \fBchar\fP * data)"
+
+.SS "\fBunsigned\fP \fBchar\fP * lodepng_chunk_data (\fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBconst\fP \fBunsigned\fP \fBchar\fP * lodepng_chunk_data_const (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP \fBchar\fP * lodepng_chunk_find (\fBunsigned\fP \fBchar\fP * chunk, \fBunsigned\fP \fBchar\fP * end, \fBconst\fP \fBchar\fP type[5])"
+
+.SS "\fBconst\fP \fBunsigned\fP \fBchar\fP * lodepng_chunk_find_const (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk, \fBconst\fP \fBunsigned\fP \fBchar\fP * end, \fBconst\fP \fBchar\fP type[5])"
+
+.SS "\fBvoid\fP lodepng_chunk_generate_crc (\fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP lodepng_chunk_length (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP \fBchar\fP * lodepng_chunk_next (\fBunsigned\fP \fBchar\fP * chunk, \fBunsigned\fP \fBchar\fP * end)"
+
+.SS "\fBconst\fP \fBunsigned\fP \fBchar\fP * lodepng_chunk_next_const (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk, \fBconst\fP \fBunsigned\fP \fBchar\fP * end)"
+
+.SS "\fBunsigned\fP \fBchar\fP lodepng_chunk_private (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP \fBchar\fP lodepng_chunk_safetocopy (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBvoid\fP lodepng_chunk_type (\fBchar\fP type[5], \fBconst\fP \fBunsigned\fP \fBchar\fP * chunk)"
+
+.SS "\fBunsigned\fP \fBchar\fP lodepng_chunk_type_equals (\fBconst\fP \fBunsigned\fP \fBchar\fP * chunk, \fBconst\fP \fBchar\fP * type)"
+
+.SS "\fBvoid\fP lodepng_clear_icc (\fBLodePNGInfo\fP * info)"
+
+.SS "\fBvoid\fP lodepng_clear_itext (\fBLodePNGInfo\fP * info)"
+
+.SS "\fBvoid\fP lodepng_clear_text (\fBLodePNGInfo\fP * info)"
+
+.SS "\fBvoid\fP lodepng_color_mode_cleanup (\fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_color_mode_copy (\fBLodePNGColorMode\fP * dest, \fBconst\fP \fBLodePNGColorMode\fP * source)"
+
+.SS "\fBvoid\fP lodepng_color_mode_init (\fBLodePNGColorMode\fP * info)"
+
+.SS "\fBLodePNGColorMode\fP lodepng_color_mode_make (\fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+
+.SS "\fBvoid\fP lodepng_color_stats_init (\fBLodePNGColorStats\fP * stats)"
+
+.SS "\fBvoid\fP lodepng_compress_settings_init (\fBLodePNGCompressSettings\fP * settings)"
+
+.SS "\fBunsigned\fP lodepng_compute_color_stats (\fBLodePNGColorStats\fP * stats, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h, \fBconst\fP \fBLodePNGColorMode\fP * mode_in)"
+
+.SS "\fBunsigned\fP lodepng_convert (\fBunsigned\fP \fBchar\fP * out, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBconst\fP \fBLodePNGColorMode\fP * mode_out, \fBconst\fP \fBLodePNGColorMode\fP * mode_in, \fBunsigned\fP w, \fBunsigned\fP h)"
+
+.SS "\fBunsigned\fP lodepng_crc32 (\fBconst\fP \fBunsigned\fP \fBchar\fP * buf, \fBsize_t\fP len)"
+
+.SS "\fBunsigned\fP lodepng_decode (\fBunsigned\fP \fBchar\fP ** out, \fBunsigned\fP * w, \fBunsigned\fP * h, \fBLodePNGState\fP * state, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize)"
+
+.SS "\fBunsigned\fP lodepng_decode24 (\fBunsigned\fP \fBchar\fP ** out, \fBunsigned\fP * w, \fBunsigned\fP * h, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize)"
+
+.SS "\fBunsigned\fP lodepng_decode24_file (\fBunsigned\fP \fBchar\fP ** out, \fBunsigned\fP * w, \fBunsigned\fP * h, \fBconst\fP \fBchar\fP * filename)"
+
+.SS "\fBunsigned\fP lodepng_decode32 (\fBunsigned\fP \fBchar\fP ** out, \fBunsigned\fP * w, \fBunsigned\fP * h, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize)"
+
+.SS "\fBunsigned\fP lodepng_decode32_file (\fBunsigned\fP \fBchar\fP ** out, \fBunsigned\fP * w, \fBunsigned\fP * h, \fBconst\fP \fBchar\fP * filename)"
+
+.SS "\fBunsigned\fP lodepng_decode_file (\fBunsigned\fP \fBchar\fP ** out, \fBunsigned\fP * w, \fBunsigned\fP * h, \fBconst\fP \fBchar\fP * filename, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+
+.SS "\fBunsigned\fP lodepng_decode_memory (\fBunsigned\fP \fBchar\fP ** out, \fBunsigned\fP * w, \fBunsigned\fP * h, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+
+.SS "\fBvoid\fP lodepng_decoder_settings_init (\fBLodePNGDecoderSettings\fP * settings)"
+
+.SS "\fBvoid\fP lodepng_decompress_settings_init (\fBLodePNGDecompressSettings\fP * settings)"
+
+.SS "\fBunsigned\fP lodepng_deflate (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize, \fBconst\fP \fBLodePNGCompressSettings\fP * settings)"
+
+.SS "\fBunsigned\fP lodepng_encode (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h, \fBLodePNGState\fP * state)"
+
+.SS "\fBunsigned\fP lodepng_encode24 (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h)"
+
+.SS "\fBunsigned\fP lodepng_encode24_file (\fBconst\fP \fBchar\fP * filename, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h)"
+
+.SS "\fBunsigned\fP lodepng_encode32 (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h)"
+
+.SS "\fBunsigned\fP lodepng_encode32_file (\fBconst\fP \fBchar\fP * filename, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h)"
+
+.SS "\fBunsigned\fP lodepng_encode_file (\fBconst\fP \fBchar\fP * filename, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+
+.SS "\fBunsigned\fP lodepng_encode_memory (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * image, \fBunsigned\fP w, \fBunsigned\fP h, \fBLodePNGColorType\fP colortype, \fBunsigned\fP bitdepth)"
+
+.SS "\fBvoid\fP lodepng_encoder_settings_init (\fBLodePNGEncoderSettings\fP * settings)"
+
+.SS "\fBconst\fP \fBchar\fP * lodepng_error_text (\fBunsigned\fP code)"
+
+.SS "\fBunsigned\fP lodepng_get_bpp (\fBconst\fP \fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_get_channels (\fBconst\fP \fBLodePNGColorMode\fP * info)"
+
+.SS "\fBsize_t\fP lodepng_get_raw_size (\fBunsigned\fP w, \fBunsigned\fP h, \fBconst\fP \fBLodePNGColorMode\fP * color)"
+
+.SS "\fBunsigned\fP lodepng_has_palette_alpha (\fBconst\fP \fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_huffman_code_lengths (\fBunsigned\fP * lengths, \fBconst\fP \fBunsigned\fP * frequencies, \fBsize_t\fP numcodes, \fBunsigned\fP maxbitlen)"
+
+.SS "\fBunsigned\fP lodepng_inflate (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize, \fBconst\fP \fBLodePNGDecompressSettings\fP * settings)"
+
+.SS "\fBvoid\fP lodepng_info_cleanup (\fBLodePNGInfo\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_info_copy (\fBLodePNGInfo\fP * dest, \fBconst\fP \fBLodePNGInfo\fP * source)"
+
+.SS "\fBvoid\fP lodepng_info_init (\fBLodePNGInfo\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_inspect (\fBunsigned\fP * w, \fBunsigned\fP * h, \fBLodePNGState\fP * state, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize)"
+
+.SS "\fBunsigned\fP lodepng_inspect_chunk (\fBLodePNGState\fP * state, \fBsize_t\fP pos, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize)"
+
+.SS "\fBunsigned\fP lodepng_is_alpha_type (\fBconst\fP \fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_is_greyscale_type (\fBconst\fP \fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_is_palette_type (\fBconst\fP \fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_load_file (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBchar\fP * filename)"
+
+.SS "\fBunsigned\fP lodepng_palette_add (\fBLodePNGColorMode\fP * info, \fBunsigned\fP \fBchar\fP r, \fBunsigned\fP \fBchar\fP g, \fBunsigned\fP \fBchar\fP b, \fBunsigned\fP \fBchar\fP a)"
+
+.SS "\fBvoid\fP lodepng_palette_clear (\fBLodePNGColorMode\fP * info)"
+
+.SS "\fBunsigned\fP lodepng_save_file (\fBconst\fP \fBunsigned\fP \fBchar\fP * buffer, \fBsize_t\fP buffersize, \fBconst\fP \fBchar\fP * filename)"
+
+.SS "\fBunsigned\fP lodepng_set_icc (\fBLodePNGInfo\fP * info, \fBconst\fP \fBchar\fP * name, \fBconst\fP \fBunsigned\fP \fBchar\fP * profile, \fBunsigned\fP profile_size)"
+
+.SS "\fBvoid\fP lodepng_state_cleanup (\fBLodePNGState\fP * state)"
+
+.SS "\fBvoid\fP lodepng_state_copy (\fBLodePNGState\fP * dest, \fBconst\fP \fBLodePNGState\fP * source)"
+
+.SS "\fBvoid\fP lodepng_state_init (\fBLodePNGState\fP * state)"
+
+.SS "\fBunsigned\fP lodepng_zlib_compress (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize, \fBconst\fP \fBLodePNGCompressSettings\fP * settings)"
+
+.SS "\fBunsigned\fP lodepng_zlib_decompress (\fBunsigned\fP \fBchar\fP ** out, \fBsize_t\fP * outsize, \fBconst\fP \fBunsigned\fP \fBchar\fP * in, \fBsize_t\fP insize, \fBconst\fP \fBLodePNGDecompressSettings\fP * settings)"
+
+.SH "Variable Documentation"
+.PP 
+.SS "\fBconst\fP \fBLodePNGCompressSettings\fP lodepng_default_compress_settings\fC [extern]\fP"
+
+.SS "\fBconst\fP \fBLodePNGDecompressSettings\fP lodepng_default_decompress_settings\fC [extern]\fP"
+
+.SS "\fBconst\fP \fBchar\fP* LODEPNG_VERSION_STRING\fC [extern]\fP"
+
+.PP
+Definition at line \fB47\fP of file \fBlodepng\&.c\fP\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Fractol from the source code\&.
